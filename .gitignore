@@ -1,0 +1,6 @@
+__pycache__/
+.web-session.json
+
+# Scratch and personal strays that must never reach history
+resume*.pdf
+*.bak.pdf

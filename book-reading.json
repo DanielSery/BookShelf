@@ -1,0 +1,37 @@
+{
+  "reading": {
+    "morning-star": {
+      "key": "morning-star",
+      "title": "Morning Star",
+      "altTitle": "",
+      "author": "Pierce Brown",
+      "cover": "https://covers.openlibrary.org/b/id/8566174-M.jpg",
+      "started": "2026-08-26",
+      "progress": "",
+      "notes": "",
+      "updated": "2026-08-26 19:13"
+    },
+    "valka-stareho-muze": {
+      "key": "old-mans-war",
+      "title": "Válka starého muže",
+      "altTitle": "Old Man's War",
+      "author": "John Scalzi",
+      "cover": "https://cache.obalkyknih.cz/file/cover/3251590/preview510",
+      "started": "2026-08-26",
+      "progress": "",
+      "notes": "",
+      "updated": "2026-08-26 19:46"
+    },
+    "pocitani-hvezd": {
+      "key": "pocitani-hvezd",
+      "title": "Počítání hvězd",
+      "altTitle": "The Calculating Stars",
+      "author": "Mary Robinette Kowal",
+      "cover": "https://cache.obalkyknih.cz/file/cover/2704156/preview510",
+      "started": "2026-08-26",
+      "progress": "",
+      "notes": "",
+      "updated": "2026-08-26 19:46"
+    }
+  }
+}

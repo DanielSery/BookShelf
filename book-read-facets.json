@@ -1,0 +1,264 @@
+{
+ "_readme": "Genre, form and audience for the books in books-read.md, so the Read tab filters on the same three facets as Candidates. Facts only - the score and the reason live in books-read.md and nothing here may duplicate them. Kept out of books-read.md because that file is hand-maintained prose-plus-table and its parser requires exactly five columns; kept out of book-media.json because that file is regenerable and this is authored.",
+ "schema": 1,
+ "_key": "slug(title) - the SAME join key as book-media.json's readMedia namespace, computed by the identical slug() in index.html and tools/fetch-media.py. Renaming a title in books-read.md therefore costs a missing facet row, not a broken one, and the Gaps panel reports the orphan rather than hiding the book.",
+ "_audience": "Who the edition was published for: adult | ya | childrens. A FACT, not a verdict - how much the children's register actually cost is axis:childrens in book-recommendations.md, and this file is what gives that rule its evidence. Note what the read log now shows on that axis: childrens-audience books run 84 (The Hobbit) and 82 (The Little Prince) down to 51 (Harry Potter), and the low end is low for OCCULT, not for register - so the spread is not a children's penalty.",
+ "_form": "novel | novella | stories | nonfiction | verse. `verse` matches the enum tools/promote.py validates against; it exists because Havran 40 ties the lowest score in the log and the reader named the form itself as a cause, which no existing axis covered - short PROSE merely fails to earn points under the short-idea-driven suspension, verse costs.",
+ "facets": {
+  "red-rising": {
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "project-hail-mary": {
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "golden-son-red-rising-2": {
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "seeking-allah-finding-jesus": {
+   "genre": "testimony",
+   "form": "nonfiction",
+   "audience": "adult"
+  },
+  "mockingjay-hunger-games-3": {
+   "genre": "sf",
+   "form": "novel",
+   "audience": "ya"
+  },
+  "speaker-for-the-dead-ender-2": {
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "the-hunger-games": {
+   "genre": "sf",
+   "form": "novel",
+   "audience": "ya"
+  },
+  "sunrise-on-the-reaping": {
+   "genre": "sf",
+   "form": "novel",
+   "audience": "ya"
+  },
+  "ender-s-game": {
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "the-hobbit": {
+   "genre": "fantasy",
+   "form": "novel",
+   "audience": "childrens"
+  },
+  "the-lord-of-the-rings-series": {
+   "genre": "fantasy",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "catching-fire-hunger-games-2": {
+   "genre": "sf",
+   "form": "novel",
+   "audience": "ya"
+  },
+  "the-hitchhiker-s-guide-to-the-galaxy": {
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "the-martian": {
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "the-little-prince": {
+   "genre": "allegory",
+   "form": "novella",
+   "audience": "childrens"
+  },
+  "ender-saga-3-5-xenocide-onward": {
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "the-silmarillion": {
+   "genre": "fantasy",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "ender-s-shadow-series": {
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "male-zeny-little-women": {
+   "genre": "litfic",
+   "form": "novel",
+   "audience": "ya"
+  },
+  "animal-farm": {
+   "genre": "allegory",
+   "form": "novella",
+   "audience": "adult"
+  },
+  "saturnin": {
+   "genre": "litfic",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "the-count-of-monte-cristo": {
+   "genre": "historical",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "son-of-hamas": {
+   "genre": "testimony",
+   "form": "nonfiction",
+   "audience": "adult"
+  },
+  "pycha-a-predsudek-pride-and-prejudice": {
+   "genre": "litfic",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "ranger-s-apprentice-hranicaruv-ucen-1-14": {
+   "genre": "fantasy",
+   "form": "novel",
+   "audience": "childrens"
+  },
+  "les-miserables": {
+   "genre": "historical",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "hitchhiker-s-sequels-2-5": {
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "labyrint-sveta-a-raj-srdce": {
+   "genre": "allegory",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "unfinished-tales": {
+   "genre": "fantasy",
+   "form": "stories",
+   "audience": "adult"
+  },
+  "artemis": {
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "exodus": {
+   "genre": "historical",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "the-chronicles-of-narnia": {
+   "genre": "fantasy",
+   "form": "novel",
+   "audience": "childrens"
+  },
+  "quo-vadis": {
+   "genre": "historical",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "the-ballad-of-songbirds-and-snakes": {
+   "genre": "sf",
+   "form": "novel",
+   "audience": "ya"
+  },
+  "1984": {
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "divergent-series": {
+   "genre": "sf",
+   "form": "novel",
+   "audience": "ya"
+  },
+  "promena-the-metamorphosis": {
+   "genre": "litfic",
+   "form": "novella",
+   "audience": "adult"
+  },
+  "percy-jackson-full-series": {
+   "genre": "fantasy",
+   "form": "novel",
+   "audience": "childrens"
+  },
+  "oliver-twist": {
+   "genre": "litfic",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "ready-player-one": {
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "mortal-engines-smrtelne-stroje": {
+   "genre": "sf",
+   "form": "novel",
+   "audience": "ya"
+  },
+  "the-witcher-series": {
+   "genre": "fantasy",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "harry-potter-series": {
+   "genre": "fantasy",
+   "form": "novel",
+   "audience": "childrens"
+  },
+  "the-diary-of-a-young-girl": {
+   "genre": "testimony",
+   "form": "nonfiction",
+   "audience": "ya"
+  },
+  "havran-the-raven": {
+   "genre": "litfic",
+   "form": "verse",
+   "audience": "adult"
+  },
+  "guards-guards-discworld-8": {
+   "genre": "fantasy",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "the-colour-of-magic-discworld-1": {
+   "genre": "fantasy",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "the-gunslinger-the-dark-tower-1": {
+   "genre": "fantasy",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "valka-stareho-muze-old-man-s-war": {
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "caropisci-foundryside": {
+   "genre": "fantasy",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "mort-discworld-4": {
+   "genre": "fantasy",
+   "form": "novel",
+   "audience": "adult"
+  }
+ }
+}

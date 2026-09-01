@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<html lang="en" data-palette="#86b6ef,#2a78d6,#0d366b">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book shelf — screened, scored, filterable</title>
+<style>
+  :root {
+    color-scheme: light;
+    --plane:        #f9f9f7;
+    --surface:      #fcfcfb;
+    --ink:          #0b0b0b;
+    --ink-2:        #52514e;
+    --ink-muted:    #898781;
+    --hairline:     #e1e0d9;
+    --border:       rgba(11,11,11,0.10);
+    --track:        #eeede8;
+    --band-low:     #86b6ef;
+    --band-mid:     #2a78d6;
+    --band-high:    #0d366b;
+    /* Band letter colours. Documented categorical slots, except B: slot-4
+       yellow #eda100 measures 2.11:1 on this surface, unreadable as a glyph, so
+       it is darkened to 82% toward ink -> 3.03:1, measured not guessed. */
+    --b-S: #2a78d6; --b-A: #008300; --b-B: #c48602; --b-C: #eb6834; --b-F: #e34948;
+    --status-good:     #0ca30c;
+    --status-warning:  #fab219;
+    --status-serious:  #ec835a;
+    --status-critical: #d03b3b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) {
+      color-scheme: dark;
+      --plane: #0d0d0d; --surface: #1a1a19;
+      --ink: #ffffff; --ink-2: #c3c2b7; --ink-muted: #898781;
+      --hairline: #2c2c2a; --border: rgba(255,255,255,0.10); --track: #26261f;
+      --band-low: #184f95; --band-mid: #3987e5; --band-high: #b7d3f6;
+      --b-S: #3987e5; --b-A: #008300; --b-B: #c98500; --b-C: #d95926; --b-F: #e66767;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --plane: #0d0d0d; --surface: #1a1a19;
+    --ink: #ffffff; --ink-2: #c3c2b7; --ink-muted: #898781;
+    --hairline: #2c2c2a; --border: rgba(255,255,255,0.10); --track: #26261f;
+    --band-low: #184f95; --band-mid: #3987e5; --band-high: #b7d3f6;
+    --b-S: #3987e5; --b-A: #008300; --b-B: #c98500; --b-C: #d95926; --b-F: #e66767;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--plane); color: var(--ink);
+    font: 14px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  a { color: inherit; }
+  header.top {
+    position: sticky; top: 0; z-index: 20; background: var(--plane);
+    border-bottom: 1px solid var(--hairline); padding: 14px 20px 0;
+  }
+  .titlerow { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+  h1 { font-size: 17px; font-weight: 650; margin: 0; letter-spacing: -0.01em; }
+  .sub { color: var(--ink-muted); font-size: 12px; }
+  .spacer { flex: 1; }
+  button, select, input {
+    font: inherit; color: var(--ink); background: var(--surface);
+    border: 1px solid var(--border); border-radius: 6px; padding: 5px 8px;
+  }
+  button { cursor: pointer; }
+  button:hover, select:hover { border-color: var(--ink-muted); }
+
+
+  .tabs { display: flex; gap: 2px; margin: 10px 0 0; }
+  .tab {
+    background: none; border: none; border-bottom: 2px solid transparent;
+    border-radius: 0; padding: 7px 12px; color: var(--ink-2); font-weight: 500;
+  }
+  .tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--band-mid); }
+
+  .filters {
+    display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+    padding: 12px 20px; border-bottom: 1px solid var(--hairline); background: var(--surface);
+  }
+  .filters label { font-size: 12px; color: var(--ink-muted); }
+  #q { min-width: 220px; }
+  .chk { display: flex; align-items: center; gap: 5px; font-size: 12px; color: var(--ink-2); }
+
+  main { padding: 18px 20px 60px; }
+  .banner {
+    display: flex; gap: 10px; align-items: flex-start; margin-bottom: 16px;
+    padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border);
+    background: var(--surface); font-size: 13px;
+  }
+  .banner .mark { flex: none; font-weight: 700; }
+  .banner.critical { border-left: 3px solid var(--status-critical); }
+  .banner.critical .mark { color: var(--status-critical); }
+
+  .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
+  .card {
+    display: grid; grid-template-columns: 108px 1fr; gap: 14px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px;
+  }
+  .card.dim { opacity: 0.62; }
+
+  .bS { --bandcolor: var(--b-S); } .bA { --bandcolor: var(--b-A); }
+  .bB { --bandcolor: var(--b-B); } .bC { --bandcolor: var(--b-C); }
+  .bF { --bandcolor: var(--b-F); } .bN { --bandcolor: var(--ink-muted); }
+
+  .legend { display: inline-flex; align-items: center; gap: 9px; font-weight: 400; color: var(--ink-muted); }
+  .legend i { font-style: normal; font-weight: 700; color: var(--bandcolor); }
+  .colside { display: flex; flex-direction: column; }
+  .cover, .cover-ph {
+    width: 108px; height: 162px; border-radius: 4px; border: 1px solid var(--border);
+    object-fit: cover; background: var(--track);
+  }
+  .cover-ph {
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    color: var(--ink-muted); font-size: 11px; padding: 6px; line-height: 1.3;
+  }
+  .bk-title { font-weight: 620; letter-spacing: -0.01em; }
+  .bk-alt, .bk-author { color: var(--ink-2); font-size: 12.5px; }
+  .bk-meta { color: var(--ink-muted); }
+  .bk-author { margin-bottom: 8px; }
+
+  .scoreblock { margin: 6px 0 10px; }
+  .scorerow { display: flex; align-items: baseline; gap: 9px; margin-bottom: 6px; }
+  .score {
+    font-size: 30px; font-weight: 660; line-height: 1.05;
+    letter-spacing: -0.03em; font-variant-numeric: tabular-nums;
+  }
+  .score.none { font-size: 22px; color: var(--ink-muted); }
+  .bandletter {
+    font-size: 34px; font-weight: 750; line-height: 1; letter-spacing: -0.03em;
+    color: var(--bandcolor); flex: none;
+  }
+  .bandletter.small { font-size: 20px; font-weight: 700; }
+  .scorelabel { font-size: 13px; font-weight: 450; color: var(--ink-muted); }
+  .band { font-size: 11px; font-weight: 600; color: var(--ink-2); border: 1px solid var(--border); border-radius: 4px; padding: 1px 5px; white-space: nowrap; }
+  .bar { position: relative; display: block; height: 10px; background: var(--track); border-radius: 5px; }
+  .bar > i {
+    position: absolute; top: 0; height: 10px; border-radius: 5px; display: block;
+    box-shadow: 0 0 0 2px var(--surface);
+  }
+  .bar.low  > i { background: var(--band-low); }
+  .bar.mid  > i { background: var(--band-mid); }
+  .bar.high > i { background: var(--band-high); }
+
+  .badges { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px; }
+  .badge {
+    font-size: 11px; border-radius: 4px; padding: 1px 6px;
+    border: 1px solid var(--border); color: var(--ink-2); background: var(--surface);
+  }
+  .badge.risk     { border-left: 3px solid var(--status-serious); }
+  .badge.blocked  { border-left: 3px solid var(--status-critical); color: var(--ink); font-weight: 600; }
+  .badge.stale    { border-left: 3px solid var(--status-warning); }
+  .badge.cz       { border-left: 3px solid var(--status-good); }
+  .badge.en       { border-left: 3px solid var(--band-mid); }
+  .badge.tier     { border-left: 3px solid var(--band-mid); font-weight: 600; color: var(--ink); }
+  .badge.scope    { border-left: 3px solid var(--ink-muted); }
+
+  .blurb { color: var(--ink-2); font-size: 12.5px; margin: 0 0 8px; }
+  .why { font-size: 12.5px; margin: 0 0 8px; }
+  .why b { font-weight: 600; }
+  .why.clip {
+    display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 5; overflow: hidden;
+  }
+  .why.clip.open { display: block; -webkit-line-clamp: unset; }
+  button.more {
+    font: inherit; font-size: 11.5px; padding: 0; margin: -4px 0 8px;
+    background: none; border: 0; color: var(--ink-muted); cursor: pointer;
+  }
+  button.more:hover { color: var(--ink); }
+  .access { font-size: 12px; color: var(--ink-2); }
+  .access em { font-style: normal; color: var(--ink-muted); }
+  .access a.route {
+    display: inline-block; font-size: 12px; font-weight: 600; text-decoration: none;
+    color: var(--ink); background: var(--track); border: 1px solid var(--border);
+    border-radius: 5px; padding: 2px 8px; margin-right: 2px;
+  }
+  .access a.route:hover { border-color: var(--band-mid); color: var(--band-mid); }
+  .leaned { font-size: 11px; color: var(--ink-muted); }
+
+  table { border-collapse: collapse; width: 100%; font-size: 13px; background: var(--surface); }
+  th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+  th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-muted); font-weight: 600; white-space: nowrap; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  td.bandcell { color: var(--bandcolor); font-weight: 700; }
+  .grouphead { margin: 22px 0 8px; font-size: 13px; font-weight: 620; }
+  .grouphead:first-child { margin-top: 0; }
+  .grouphead span { color: var(--ink-muted); font-weight: 400; }
+  .empty { color: var(--ink-muted); padding: 40px 0; text-align: center; }
+  .err { border-left: 3px solid var(--status-critical); padding-left: 10px; }
+  [hidden] { display: none !important; }
+
+  /* ---- reading shelf ---- */
+  .nt { margin-top: 10px; }
+  .nt label { display: block; font-size: 11px; color: var(--ink-muted); margin-bottom: 6px; }
+  .nt input, .nt textarea {
+    width: 100%; font: inherit; font-size: 12.5px; padding: 6px 8px; margin-top: 2px;
+    border: 1px solid var(--border); border-radius: 7px; background: var(--plane); color: var(--ink);
+  }
+  .nt textarea { resize: vertical; min-height: 84px; line-height: 1.5; }
+  .nt input:focus, .nt textarea:focus { outline: 2px solid var(--band-mid); outline-offset: -1px; }
+  .saved { font-size: 11px; color: var(--ink-muted); }
+  .saved[data-s="dirty"] { color: var(--status-warning); }
+  .saved[data-s="fail"] { color: var(--status-critical); }
+  .acts .danger:hover { color: var(--status-critical); border-color: var(--status-critical); }
+
+  /* Stacked under the cover, so the column width is the button width — the
+     labels wrap instead of being clipped, and a pill shape would look wrong
+     full-bleed. The inline .acts pills survive for buttons inside prose. */
+  .acts.stack { display: grid; gap: 4px; margin-top: 10px; }
+  .acts.stack button {
+    width: 100%; text-align: left; border-radius: 6px;
+    padding: 4px 7px; font-size: 11.5px; line-height: 1.35;
+  }
+
+  /* ---- agent panel ---- */
+  .acts { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+  .acts button {
+    font: inherit; font-size: 12px; padding: 3px 9px; border-radius: 999px;
+    border: 1px solid var(--border); background: var(--surface); color: var(--ink-2);
+    cursor: pointer;
+  }
+  .acts button:hover { color: var(--ink); border-color: var(--ink-muted); }
+
+  #panel {
+    position: fixed; top: 0; right: 0; bottom: 0; width: min(460px, 100vw);
+    background: var(--surface); border-left: 1px solid var(--hairline);
+    display: none; flex-direction: column; z-index: 40;
+  }
+  #panel[data-open] { display: flex; }
+  body[data-panel] header.top, body[data-panel] .filters, body[data-panel] main {
+    padding-right: min(476px, 100vw);
+  }
+  #panel .phead {
+    display: flex; align-items: center; gap: 8px; padding: 12px 14px;
+    border-bottom: 1px solid var(--hairline);
+  }
+  #panel .phead b { font-size: 13px; font-weight: 650; }
+  #panel .phead .spacer { flex: 1; }
+  #panel .phead button { font: inherit; font-size: 12px; padding: 3px 9px; }
+  /* min-height:0 or the transcript refuses to shrink and pushes the reply box
+     off the bottom of the panel once a few turns have accumulated. */
+  #log { flex: 1 1 auto; min-height: 0; overflow-y: auto; padding: 12px 14px; font-size: 13px; line-height: 1.55; }
+  #log .turn { margin-bottom: 14px; }
+  #log .you {
+    color: var(--ink); font-weight: 600; border-left: 2px solid var(--band-mid);
+    padding-left: 9px; white-space: pre-wrap;
+  }
+  #log .said { white-space: pre-wrap; color: var(--ink); }
+  #log .act {
+    color: var(--ink-muted); font-size: 12px; font-family: ui-monospace, monospace;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  #log .fail { color: var(--status-critical); }
+  #log .note { color: var(--ink-muted); font-size: 12px; }
+  #log .wrote { color: var(--status-good); font-size: 12px; }
+  #reply { border-top: 1px solid var(--hairline); padding: 10px 14px; }
+  #reply textarea {
+    width: 100%; resize: none; font: inherit; font-size: 13px; padding: 8px;
+    border: 1px solid var(--border); border-radius: 8px;
+    background: var(--plane); color: var(--ink);
+  }
+  #reply .row { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+  #reply .row .spacer { flex: 1; }
+  #reply button { font: inherit; font-size: 12px; padding: 4px 12px; }
+
+  #actions { flex: 0 1 auto; min-height: 0; overflow-y: auto; padding: 6px 0 10px; }
+  #pform { flex: 0 1 auto; min-height: 0; }
+  #actions .agroup {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em;
+    color: var(--ink-muted); font-weight: 600; padding: 14px 14px 5px;
+  }
+  #actions button {
+    display: block; width: 100%; text-align: left; font: inherit; font-size: 13px;
+    background: none; border: 0; border-left: 2px solid transparent;
+    padding: 7px 14px; color: var(--ink); cursor: pointer;
+  }
+  #actions button:hover { background: var(--track); border-left-color: var(--band-mid); }
+  #actions button i { display: block; font-style: normal; font-size: 11.5px; color: var(--ink-muted); }
+  #pform { padding: 12px 14px; overflow-y: auto; }
+  #pform label { display: block; margin-bottom: 10px; font-size: 12px; color: var(--ink-2); }
+  #pform label span { display: block; margin-bottom: 3px; }
+  #pform input, #pform textarea, #pform select {
+    width: 100%; font: inherit; font-size: 13px; padding: 6px 8px;
+    border: 1px solid var(--border); border-radius: 7px;
+    background: var(--plane); color: var(--ink);
+  }
+  #pform textarea { resize: vertical; }
+  #pform .opt { color: var(--ink-muted); font-weight: 400; }
+  #pform .go { font-size: 13px; padding: 6px 16px; }
+  #pform .lane { font-size: 11.5px; color: var(--ink-muted); margin: 0 0 12px; }
+  #pstate { font-size: 12px; color: var(--ink-muted); }
+  #pstate.busy { color: var(--status-warning); }
+  #pstate.gone { color: var(--status-critical); }
+  #quota {
+    display: none; margin: 0 14px 10px; padding: 8px 10px; border-radius: 8px;
+    font-size: 12px; background: var(--track); color: var(--ink-2);
+  }
+  #quota[data-show] { display: block; }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="titlerow">
+    <h1>Book shelf</h1>
+    <span class="sub" id="stamp"></span>
+    <span class="spacer"></span>
+    <button id="askbtn" title="Log, decide, screen and maintain the shelf">Actions</button>
+    <button id="theme" title="Toggle light / dark">Theme</button>
+  </div>
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" data-view="candidates" aria-selected="true">Candidates</button>
+    <button class="tab" role="tab" data-view="reading" aria-selected="false">Reading</button>
+    <button class="tab" role="tab" data-view="read" aria-selected="false">Read</button>
+    <button class="tab" role="tab" data-view="rejected" aria-selected="false">Rejected</button>
+  </div>
+</header>
+
+<div class="filters" id="filters">
+  <input id="q" type="search" placeholder="Search title, author, reason…" autocomplete="off">
+  <label data-for="candidates">Access <select id="access"></select></label>
+  <label data-for="candidates read">Genre <select id="genre"></select></label>
+  <label data-for="candidates read">Form <select id="form"></select></label>
+  <label data-for="candidates read">Audience <select id="audience"></select></label>
+  <label data-for="candidates read">Origin <select id="origin"></select></label>
+  <label data-for="candidates read">Min score <select id="minscore">
+    <option value="0">any</option>
+    <option value="50">50 · C and up</option>
+    <option value="65">65 · B and up</option>
+    <option value="75">75 · A and up</option>
+    <option value="85">85 · S and up</option>
+  </select></label>
+  <label data-for="rejected">Filter <select id="rfilter"></select></label>
+  <label data-for="rejected">Scope <select id="rscope"></select></label>
+  <label data-for="candidates read rejected reading">Sort <select id="sort"></select></label>
+  <label class="chk" data-for="candidates"><input type="checkbox" id="norisk"> no open risks</label>
+  <label class="chk" data-for="candidates"><input type="checkbox" id="hideblocked" checked> hide blocked<span id="nblocked"></span></label>
+  <label class="chk" data-for="candidates read rejected reading"><input type="checkbox" id="astable"> table view</label>
+</div>
+
+<main>
+  <div id="banners"></div>
+  <div id="view"></div>
+</main>
+
+<aside id="panel" aria-label="Actions">
+  <div class="phead">
+    <button id="pback" hidden title="Back to the action list">←</button>
+    <b id="ptitle">Actions</b>
+    <span id="pstate">idle</span>
+    <span class="spacer"></span>
+    <button id="pstop" hidden>Stop</button>
+    <button id="pnew" title="Forget the conversation so far. Data files are untouched.">Reset</button>
+    <button id="pclose">Close</button>
+  </div>
+  <div id="quota"></div>
+  <div id="actions"></div>
+  <form id="pform" hidden></form>
+  <div id="log"></div>
+  <form id="reply" hidden>
+    <textarea id="say" rows="2" placeholder="Answer the question above…"></textarea>
+    <div class="row">
+      <span class="note">Enter to send · Shift+Enter for a new line</span>
+      <span class="spacer"></span>
+      <button type="submit">Reply</button>
+    </div>
+  </form>
+</aside>
+
+<script>
+const BAND = [[95,'S+'],[85,'S'],[75,'A'],[65,'B'],[50,'C'],[0,'F']];
+const band = s => BAND.find(b => s >= b[0])[1];
+const cls  = s => s >= 85 ? 'high' : s >= 65 ? 'mid' : 'low';
+
+// The letter IS the encoding; colour is a redundant cue on top of it, which is
+// why C-orange and F-red sitting close in colour space is acceptable here —
+// nothing is ever distinguished by hue alone.
+const TONE = { 'S+': 'bS', S: 'bS', A: 'bA', B: 'bB', C: 'bC', F: 'bF' };
+const tone = s => TONE[band(s)];
+const LEGEND = '<span class="legend">' +
+  ['S', 'A', 'B', 'C', 'F'].map(l => `<i class="${TONE[l]}">${l}</i>`).join('') +
+  '</span>';
+
+// Two axes on purpose. Candidates never fall below 66, so a 50-100 axis spends
+// its width where the differences are; read books run down to 30 and need the
+// room. The tabs are never on screen together, and each header says its range.
+const AXIS = { candidates: [50, 100], read: [30, 100] };
+const pctIn = (v, view) => {
+  const [lo, hi] = AXIS[view] || AXIS.candidates;
+  return Math.max(0, Math.min(100, (v - lo) / (hi - lo) * 100));
+};
+
+// A bulk exclusion written from the catalogue's own genre heading by
+// tools/screen-headings.py — ~1,200 rows, none of which anybody read. fetch-media.py
+// skips them by design, so counting them as a cover gap reports a permanent shortfall
+// the reader can do nothing about.
+const HEADING_VETO = r => String(r.source || '').startsWith('catalogue-heading');
+
+// A coverNote means the two-pass lookup already ran and Open Library had nothing, so
+// the row is settled and re-running fetch-media.py cannot clear it. Only a row nothing
+// has looked up yet is a gap worth naming.
+const NO_COVER = m => !m.cover && !m.coverNote;
+const esc = t => String(t == null ? '' : t).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const nice = id => String(id).replace(/^(axis|author|series):/, '').replace(/-/g, ' ');
+const hm = m => m == null ? '' : Math.floor(m / 60) + ' h ' + String(m % 60).padStart(2, '0') + ' m';
+const daysSince = iso => { const d = new Date(iso + 'T00:00:00'); return isNaN(d) ? null : Math.round((Date.now() - d) / 86400000); };
+const jsonl = text => text.split('\n').filter(l => l.trim()).map(l => JSON.parse(l));
+
+// Must match slug() in tools/fetch-media.py — this is the join key for the
+// read and rejected tabs, which have no book key of their own.
+const slug = s => s.normalize('NFKD').replace(/[̀-ͯ]/g, '')
+  .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60);
+
+const GENRE = {
+  sf: 'science fiction', fantasy: 'fantasy', litfic: 'literary fiction',
+  historical: 'historical', testimony: 'testimony / memoir',
+  allegory: 'allegory / fable', thriller: 'thriller',
+};
+const FORM = { novel: 'novel', novella: 'novella', stories: 'stories',
+               nonfiction: 'non-fiction', verse: 'verse' };
+// Who the edition was published FOR — a fact, orthogonal to genre. Whether an
+// adult should read it anyway is axis:childrens, priced in the estimate.
+const AUDIENCE = { adult: 'adult', ya: 'young adult', childrens: "children's" };
+// What language the work was WRITTEN in, not what the reading costs — how much a
+// translation loses is the reader's own judgement and is not recorded anywhere here.
+const ORIGIN = { cs: 'Czech original', foreign: 'translation' };
+
+const SORTS = {
+  candidates: [['mid','predicted score'],['high','best case'],['low','safest floor'],
+               ['title','title'],['author','author'],['length','shortest listen']],
+  reading:    [['started','most recently started'],['oldest','longest on the go'],
+               ['title','title'],['author','author']],
+  read:       [['score','score'],['title','title'],['author','author']],
+  rejected:   [['filter','filter'],['entity','name'],['author','author'],['level','scope']],
+};
+
+const today = () => {
+  const d = new Date();
+  return new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+};
+
+function parseReadTable(md) {
+  const lines = md.split('\n');
+  const head = lines.findIndex(l => /^\|\s*Book\s*\|\s*Author\s*\|\s*Score\s*\|/i.test(l));
+  if (head < 0) throw new Error('books-read.md: score table header not found');
+  const rows = [], bad = [];
+  for (let i = head + 2; i < lines.length; i++) {
+    const l = lines[i].trim();
+    if (!l.startsWith('|')) break;
+    const c = l.replace(/^\|/, '').replace(/\|$/, '').split('|').map(s => s.trim());
+    if (c.length !== 5 || !/^\d+$/.test(c[2])) { bad.push(l); continue; }
+    rows.push({ title: c[0], author: c[1], score: +c[2], tier: c[3], notes: c[4], key: slug(c[0]) });
+  }
+  return { rows, bad };
+}
+
+const state = { view: 'candidates' };
+let D = null;
+
+/* ---------- reading shelf ----------
+   The one part of the page that writes. It goes straight to serve.py, not
+   through an agent: notes are typed a word at a time and must survive a browser
+   crash, and no skill owns book-reading.json. Every edit lands in D.reading
+   immediately and is flushed to disk on a debounce, so a re-render mid-sentence
+   shows what was typed rather than what was last saved. */
+
+const PENDING = new Map();
+
+const SAVED_TEXT = { dirty: 'unsaved…', ok: 'saved', fail: 'not saved — is serve.py running?' };
+
+function markSaved(key, s) {
+  const el = document.getElementById('sv-' + key);
+  if (!el) return;
+  el.dataset.s = s;
+  el.textContent = SAVED_TEXT[s];
+}
+
+function editReading(key, patch) {
+  const e = D.reading[key];
+  if (!e) return;
+  Object.assign(e, patch);
+  markSaved(key, 'dirty');
+  clearTimeout(PENDING.get(key));
+  PENDING.set(key, setTimeout(() => flushReading(key), 700));
+}
+
+async function flushReading(key) {
+  clearTimeout(PENDING.get(key));
+  PENDING.delete(key);
+  const e = D.reading[key];
+  if (!e) return false;
+  try {
+    const r = await fetch('/api/reading/' + encodeURIComponent(key), {
+      method: 'PUT', headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(e), keepalive: true,
+    });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    markSaved(key, 'ok');
+    return true;
+  } catch {
+    markSaved(key, 'fail');
+    return false;
+  }
+}
+
+async function startReading(v) {
+  const title = String(v.title || '').trim();
+  if (!title) return null;
+  const key = slug(title);
+  if (!D.reading[key]) {
+    D.reading[key] = {
+      key: v.key || '', title, altTitle: v.alt || '', author: v.author || '',
+      cover: v.cover || '', started: today(), progress: v.progress || '', notes: v.notes || '',
+    };
+    if (!await flushReading(key)) {
+      delete D.reading[key];
+      openPanel();
+      line('fail', `Could not save to serve.py — "${title}" is not on the shelf.`);
+      return null;
+    }
+  }
+  setView('reading');
+  return key;
+}
+
+async function stopReading(key) {
+  const e = D.reading[key];
+  if (!e) return;
+  if (!confirm(`Take "${e.title}" off the reading shelf?` +
+      (e.notes ? ' The notes you wrote are deleted with it.' : ''))) return;
+  clearTimeout(PENDING.get(key));
+  PENDING.delete(key);
+  delete D.reading[key];
+  render();
+  const gone = await fetch('/api/reading/' + encodeURIComponent(key), { method: 'DELETE' })
+    .then(r => r.ok, () => false);
+  // Without this the card is gone from the screen but still on disk, and it
+  // reappears at the next reload with no explanation.
+  if (!gone) {
+    openPanel();
+    line('fail', `Removed "${e.title}" from the view, but serve.py did not delete it — it will come back.`);
+  }
+}
+
+async function load() {
+  const get = async (p, kind) => {
+    const r = await fetch(p, { cache: 'no-store' });
+    if (!r.ok) throw new Error(p + ' → HTTP ' + r.status);
+    return kind === 'text' ? r.text() : r.json();
+  };
+  const [cache, revsDoc, media, estText, rejText, readMd, readingDoc, readFacets, originDoc] = await Promise.all([
+    get('book-cache.json'), get('book-revs.json'), get('book-media.json'),
+    get('book-estimates.jsonl', 'text'), get('book-rejects.jsonl', 'text'),
+    get('books-read.md', 'text'), get('/api/reading').catch(() => ({ reading: {} })),
+    // Facets for read books live in their own file: books-read.md is hand-maintained
+    // and its parser requires exactly five columns. Absent is survivable — the Gaps
+    // panel reports the orphans rather than the filter hiding them.
+    get('book-read-facets.json').catch(() => ({ facets: {} })),
+    get('book-origin.json').catch(() => ({ books: {}, read: {} })),
+  ]);
+
+  const est = jsonl(estText).slice(1);
+  const revs = revsDoc.revs;
+  const byKey = Object.fromEntries(cache.books.map(b => [b.key, b]));
+  const ttl = cache._ttlDays || {};
+  const M = media.media || {}, RM = media.readMedia || {}, JM = media.rejectMedia || {};
+  const OB = originDoc.books || {}, OR = originDoc.read || {};
+
+  const books = est.map(e => {
+    const b = byKey[e.key] || {}, m = M[e.key] || {};
+    const cz = b.cz || {}, en = b.enAudio || {};
+    const stale = [];
+    for (const [route, r, k] of [['CZ print', cz, 'cz'], ['EN audio', en, 'enAudio']]) {
+      const lim = ttl[k + '.' + r.state], age = r.checked ? daysSince(r.checked) : null;
+      if (lim && age != null && age > lim) stale.push(route + ' checked ' + age + ' d ago, TTL ' + lim + ' d');
+    }
+    const drift = Object.entries(e.deps || {}).filter(([d, v]) => revs[d] !== v)
+      .map(([d, v]) => d + ' @' + v + ' vs @' + revs[d]);
+    return {
+      ...e, cache: b, cz, en, media: m, stale, drift,
+      mid: e.est ? (e.est[0] + e.est[1]) / 2 : -1,
+      minutes: en.totalMin || null,
+      hasCz: cz.state === 'verified', hasEn: en.state === 'verified',
+      genre: b.genre || '', form: b.form || '', audience: b.audience || 'adult',
+      origin: (OB[e.key] || {}).orig || '',
+      hay: [e.key, e.t, b.title, b.czTitle, b.author, e.why, m.blurb,
+            GENRE[b.genre] || b.genre, FORM[b.form] || b.form,
+            AUDIENCE[b.audience] || b.audience,
+            ORIGIN[(OB[e.key] || {}).orig] || ''].join(' ').toLowerCase(),
+    };
+  });
+
+  const read = parseReadTable(readMd);
+  const RF = readFacets.facets || {};
+  read.rows.forEach(r => {
+    r.media = RM[r.key] || {};
+    const f = RF[r.key] || {};
+    r.genre = f.genre || ''; r.form = f.form || '';
+    // '' rather than 'adult': an unfaceted read row must not masquerade as adult,
+    // or a renamed title silently joins the wrong bucket instead of showing as a gap.
+    r.audience = f.audience || '';
+    r.origin = (OR[r.key] || {}).orig || '';
+    r.hay = [r.title, r.author, r.notes, r.tier, GENRE[f.genre] || f.genre || '',
+             FORM[f.form] || f.form || '', AUDIENCE[f.audience] || f.audience || '',
+             ORIGIN[r.origin] || ''].join(' ').toLowerCase();
+  });
+  read.unfaceted = read.rows.filter(r => !r.genre || !r.form || !r.audience);
+  read.unorigined = read.rows.filter(r => !r.origin);
+
+  const rejects = jsonl(rejText).slice(1).map(r => ({
+    ...r, author: r.author || '', media: JM[slug(r.entity + '-' + (r.author || ''))] || {},
+    hay: [r.entity, r.author || '', r.why, r.filter, r.level].join(' ').toLowerCase(),
+  }));
+
+  const reading = readingDoc.reading || {};
+  // An entry the reader is still typing into has not reached the server yet, so
+  // the server's copy is the stale one — keep the local one.
+  const prev = (D && D.reading) || {};
+  PENDING.forEach((_, s) => { if (prev[s]) reading[s] = prev[s]; });
+  const readSlugs = new Set(read.rows.map(r => r.key));
+  Object.keys(reading).forEach(s => {
+    const done = readSlugs.has(s) ||
+      (reading[s].altTitle && readSlugs.has(slug(reading[s].altTitle)));
+    if (done && !PENDING.has(s)) {
+      delete reading[s];
+      fetch('/api/reading/' + encodeURIComponent(s), { method: 'DELETE' }).catch(() => {});
+    }
+  });
+
+  D = {
+    cache, revs, books, read, rejects, reading, fetched: media.fetched,
+    booksByKey: Object.fromEntries(books.map(b => [b.key, b])),
+    booksBySlug: Object.fromEntries(books.slice().reverse()
+      .map(b => [slug(b.cache.czTitle || b.cache.title || b.t || ''), b])),
+  };
+  stamp();
+  fillSelect('rfilter', 'all filters', [...new Set(rejects.map(r => r.filter))].sort().map(f => [f, nice(f)]));
+  fillSelect('rscope', 'all scopes', [...new Set(rejects.map(r => r.level))].sort().map(l => [l, l]));
+  fillAccess(); setView('candidates');
+}
+
+// A book you have started is no longer a candidate. Entries are keyed by
+// slug(title), and one started from a card also carries the candidate's own key
+// — the two are different strings, so both have to be matched.
+function shelfKeys() {
+  const keys = new Set();
+  Object.entries(D.reading).forEach(([k, r]) => { keys.add(k); if (r.key) keys.add(r.key); });
+  return keys;
+}
+
+const onShelf = (b, keys) =>
+  keys.has(b.key) || keys.has(slug(b.cache.czTitle || b.cache.title || ''));
+
+// The book behind a reading entry, so its catalogue and audio links survive the
+// move off the Candidates tab. Absent for a book started by hand.
+const shelfBook = r => (r.key && D.booksByKey[r.key]) || D.booksBySlug[slug(r.title || '')] || null;
+
+function stamp() {
+  const keys = shelfKeys();
+  const live = D.books.filter(b => !onShelf(b, keys)).length;
+  document.getElementById('stamp').textContent =
+    `${live} candidates · ${Object.keys(D.reading).length} on the go · ` +
+    `${D.read.rows.length} read · ${D.rejects.length} rejected · covers ${D.fetched || '?'}`;
+}
+
+function fillSelect(id, allLabel, pairs) {
+  document.getElementById(id).innerHTML =
+    `<option value="">${esc(allLabel)}</option>` +
+    pairs.map(([v, l]) => `<option value="${esc(v)}">${esc(l)}</option>`).join('');
+}
+
+// Genre / form / audience are shared by the Candidates and Read tabs, so the counts
+// have to be rebuilt per view — showing 239 adult candidates while looking at 48 read
+// books would be a plain lie. The selection survives the rebuild when the value still
+// exists on the new tab, which is what makes "children's + YA" carry across.
+function fillFacets(view) {
+  const rows = view === 'read' ? D.read.rows : D.books.filter(b => !b.blocked);
+  const facet = (key, dict) => {
+    const n = {};
+    rows.forEach(b => { if (b[key]) n[b[key]] = (n[b[key]] || 0) + 1; });
+    return Object.keys(n).sort((a, c) => n[c] - n[a]).map(v => [v, `${dict[v] || v} (${n[v]})`]);
+  };
+  for (const [id, all, pairs] of [
+    ['genre', 'all genres', facet('genre', GENRE)],
+    ['form', 'any form', facet('form', FORM)],
+    // 'kids' is a convenience union, not a stored value: the question actually asked
+    // is "show me the children's shelf", which is ya + childrens together.
+    ['audience', 'any audience', facet('audience', AUDIENCE).concat([['kids', "— children's + YA"]])],
+    ['origin', 'any origin', facet('origin', ORIGIN)],
+  ]) {
+    const keep = F(id).value;
+    fillSelect(id, all, pairs);
+    F(id).value = pairs.some(([v]) => v === keep) ? keep : '';
+  }
+}
+
+function fillAccess() {
+  const live = D.books.filter(x => !x.blocked);
+  const n = f => live.filter(f).length;
+  fillSelect('access', 'any', [
+    ['either', `CZ print or EN audio (${n(x => x.hasCz || x.hasEn)})`],
+    ['cz', `CZ print (${n(x => x.hasCz)})`],
+    ['en', `free EN audio (${n(x => x.hasEn)})`],
+    ['none', `no route yet (${n(x => !x.hasCz && !x.hasEn)})`],
+  ]);
+  const blocked = D.books.length - live.length;
+  document.getElementById('nblocked').textContent = blocked ? ` (${blocked})` : '';
+}
+
+function banners() {
+  const out = [];
+  const drifted = D.books.filter(b => b.drift.length);
+  if (drifted.length) out.push(`<div class="banner critical"><span class="mark">!</span><div>
+    <b>${drifted.length} estimate${drifted.length > 1 ? 's' : ''} carry a stale dependency.</b>
+    That can only mean a <code>/book-log</code> run did not finish its PROPAGATE phase, or the
+    profile was edited by hand. These numbers were derived under a rule that has since changed —
+    run <code>/book-log</code> before trusting them.
+    <div class="leaned">${drifted.map(b => esc(b.key) + ' — ' + esc(b.drift.join(', '))).join('<br>')}</div>
+  </div></div>`);
+  if (D.read.bad.length) out.push(`<div class="banner critical"><span class="mark">!</span><div>
+    <b>${D.read.bad.length} unparsable row${D.read.bad.length > 1 ? 's' : ''} in books-read.md.</b>
+    Shown rather than dropped, so the read list is never silently short:
+    <div class="leaned err">${D.read.bad.map(esc).join('<br>')}</div>
+  </div></div>`);
+  if (D.read.unfaceted.length) out.push(`<div class="banner"><span class="mark">·</span><div>
+    <b>${D.read.unfaceted.length} read book${D.read.unfaceted.length === 1 ? '' : 's'} without genre, form or audience.</b>
+    The Read tab's facet filters exclude ${D.read.unfaceted.length === 1 ? 'it' : 'them'} rather than guessing —
+    an unclassified book is not evidence of being adult. Add a row to
+    <code>book-read-facets.json</code>, keyed on the title slug:
+    <div class="leaned">${D.read.unfaceted.map(r => esc(r.key) + ' — ' + esc(r.title)).join('<br>')}</div>
+  </div></div>`);
+  const noOrigin = D.books.filter(b => !b.origin).map(b => b.key)
+    .concat(D.read.unorigined.map(r => r.key));
+  if (noOrigin.length) out.push(`<div class="banner"><span class="mark">·</span><div>
+    <b>${noOrigin.length} book${noOrigin.length === 1 ? '' : 's'} with no origin recorded.</b>
+    The Origin filter excludes ${noOrigin.length === 1 ? 'it' : 'them'} under either value rather
+    than assuming a translation. Add a row to <code>book-origin.json</code> —
+    <code>books</code> keyed on the cache key, <code>read</code> on the title slug —
+    or re-run <code>python tools/fetch-origin.py</code>.
+    <div class="leaned">${noOrigin.map(esc).join('<br>')}</div>
+  </div></div>`);
+  const nc = D.books.filter(b => NO_COVER(b.media)).length
+           + D.read.rows.filter(r => NO_COVER(r.media)).length
+           + D.rejects.filter(r => NO_COVER(r.media) && !HEADING_VETO(r)).length;
+  const nb = D.books.filter(b => !b.media.blurb).length;
+  if (nc || nb) out.push(`<div class="banner"><span class="mark">·</span><div>
+    ${nc} row${nc === 1 ? '' : 's'} without a cover${nb ? ` and ${nb} candidate${nb === 1 ? '' : 's'} without a blurb` : ''} —
+    a gap in <code>book-media.json</code>, not an error.
+    Run <code>python tools/fetch-media.py &lt;today&gt;</code> to refill.
+  </div></div>`);
+  return out.join('');
+}
+
+function cover(media, fallback) {
+  return media.cover
+    ? `<img class="cover" src="${esc(media.cover)}" alt="" loading="lazy"
+         onerror="this.outerHTML='<div class=&quot;cover-ph&quot;>${esc(fallback)}</div>'">`
+    : `<div class="cover-ph">${esc(fallback)}</div>`;
+}
+
+function bar(view, lo, hi, tone, label) {
+  const l = pctIn(lo, view), w = Math.max(3, pctIn(hi, view) - l);
+  return `<span class="bar ${tone}" title="${esc(label)}"><i style="left:${l}%;width:${w}%"></i></span>`;
+}
+
+// A card button opens that action's form with the book already filled in. It
+// never sends anything by itself, so a stray click costs nothing.
+function acts(list, cls) {
+  return `<div class="acts${cls ? ' ' + cls : ''}">` + list.map(([label, action, values]) =>
+    `<button type="button" data-act="${action}" data-vals="${esc(JSON.stringify(values))}">${esc(label)}</button>`
+  ).join('') + '</div>';
+}
+
+// Takes already-escaped html. The toggle stays hidden until markClips() has
+// measured the paragraph, so cards with a short reason never grow a dead button.
+function whyBlock(html) {
+  return `<p class="why clip">${html}</p>
+    <button type="button" class="more" data-more hidden>Show more</button>`;
+}
+
+function shell(o) {
+  return `<article class="card ${o.tone || 'bN'}${o.dim ? ' dim' : ''}">
+    <div class="colside">${cover(o.media, o.fallback)}${o.left || ''}</div>
+    <div>
+      <div class="bk-title">${esc(o.title)}</div>
+      ${o.alt ? `<div class="bk-alt">${esc(o.alt)}</div>` : ''}
+      <div class="bk-author">${esc(o.author)}${o.meta ? ` <span class="bk-meta">${esc(o.meta)}</span>` : ''}</div>
+      ${o.score || ''}
+      ${o.badges && o.badges.length ? `<div class="badges">${o.badges.join('')}</div>` : ''}
+      ${o.body || ''}
+    </div>
+  </article>`;
+}
+
+function accessLine(b) {
+  const bits = [];
+  if (b.cz.state === 'verified') {
+    const d = [b.cz.publisher, b.cz.year].filter(Boolean).join(' ');
+    const label = 'Borrow — Czech print';
+    const head = b.cz.recordUrl
+      ? `<a class="route" href="${esc(b.cz.recordUrl)}" target="_blank" rel="noreferrer"
+           title="Open the catalogue record at Městská knihovna Valašské Meziříčí">${label} ↗</a>`
+      : `<b>${label}</b>`;
+    bits.push(head + (d ? ' <em>' + esc(d) : ' <em>') +
+      (b.cz.translator ? (d ? ', ' : '') + 'přel. ' + esc(b.cz.translator) : '') + '</em>' +
+      (b.cz.recordUrl ? '' : ' <span class="leaned">no catalogue link recorded</span>'));
+  }
+  if (b.en.state === 'verified' || b.en.state === 'doubtful') {
+    const parts = b.en.parts || [];
+    // Short aliases: the runtime is stated once for the whole listen, so per-link
+    // labels only have to say which part they are.
+    const links = parts.map((p, i) =>
+      `<a class="route" href="${esc(p.url)}" target="_blank" rel="noreferrer"
+         title="${esc(parts.length > 1 ? 'Part ' + (i + 1) + ' — ' + hm(p.runtimeMin) : hm(p.runtimeMin))}"
+        >▶ ${parts.length > 1 ? i + 1 : 'Listen'}</a>`);
+    const cov = b.en.publishedMin && b.en.totalMin
+      ? Math.round(b.en.totalMin / b.en.publishedMin * 100) + '% of published' : '';
+    bits.push(`${links.join(' ')} <em>Free English audio` +
+      (b.en.totalMin ? ', ' + hm(b.en.totalMin) : '') +
+      (parts.length > 1 ? ` in ${parts.length} parts` : '') +
+      (cov ? ', ' + cov : '') + (b.en.unofficial ? ', unofficial upload' : '') + '</em>');
+  }
+  if (!bits.length) bits.push('<span style="color:var(--ink-muted)">No route verified yet' +
+    (b.cz.state === 'none' && b.en.state === 'none' ? ' — both routes checked and empty, re-check rather than trusting it' : '') + '</span>');
+  return bits.join('<br>');
+}
+
+function candidateCard(b) {
+  const badges = [];
+  if (b.blocked) badges.push(`<span class="badge blocked">blocked · ${esc(nice(b.blocked))}</span>`);
+  (b.risks || []).forEach(r => badges.push(`<span class="badge risk">risk · ${esc(nice(r))}</span>`));
+  if (b.hasCz) badges.push('<span class="badge cz">CZ print</span>');
+  if (b.hasEn) badges.push('<span class="badge en">EN audio</span>');
+  if (b.en.state === 'doubtful') badges.push('<span class="badge stale">audio may be abridged</span>');
+  b.stale.forEach(s => badges.push(`<span class="badge stale">re-verify · ${esc(s)}</span>`));
+
+  const score = b.est
+    ? `<div class="scoreblock">
+         <div class="scorerow"><span class="bandletter">${band(b.mid)}</span>
+           <span class="score">${b.est[0]}–${b.est[1]}</span>
+           <span class="scorelabel">predicted</span></div>
+         ${bar('candidates', b.est[0], b.est[1], cls(b.mid), `Predicted ${b.est[0]}–${b.est[1]}, conditional on no risk firing`)}
+       </div>`
+    : `<div class="scoreblock"><div class="scorerow">
+         <span class="bandletter small">—</span>
+         <span class="scorelabel">excluded, fails a hard filter</span></div></div>`;
+
+  const czt = b.cache.czTitle, en = b.cache.title;
+  return shell({
+    media: b.media, fallback: b.cache.author || '', dim: !!b.blocked,
+    tone: b.est ? tone(b.mid) : 'bN',
+    title: czt || en, alt: czt && en && czt !== en ? en : '',
+    author: (b.cache.author || '') + (b.cache.series ? ' · ' + b.cache.series : ''),
+    // 'adult' is the overwhelming default and stating it on 239 of 296 cards is noise.
+    // Same for 'translation', which is 88% of the shelf — only the Czech original is
+    // worth a word.
+    meta: [GENRE[b.genre] || b.genre, FORM[b.form] || b.form,
+           b.audience !== 'adult' ? AUDIENCE[b.audience] || b.audience : null,
+           b.origin === 'cs' ? ORIGIN.cs : null]
+          .filter(Boolean).join(' · '),
+    score, badges,
+    left: acts([
+      ['Start reading', 'startReading', { key: b.key, title: czt || en, alt: czt && en && czt !== en ? en : '',
+                                          author: b.cache.author || '', cover: b.media.cover || '' }],
+      ['Log it…', 'log', { title: czt || en, author: b.cache.author || '' }],
+      ['Snooze…', 'snooze', { title: czt || en }],
+      ['Look properly', 'promote', { title: czt || en, author: b.cache.author || '' }],
+      ['Refresh access', 'refresh', { title: czt || en }],
+      ['Reject…', 'reject', { entity: czt || en }],
+      ['Why this number?', 'explain', { title: czt || en }],
+    ], 'stack'),
+    body: `${b.media.blurb ? `<p class="blurb">${esc(b.media.blurb)}</p>` : ''}
+      ${whyBlock(`<b>Why:</b> ${esc(b.why)}`)}
+      ${(b.leanedOn || []).length ? `<div class="leaned">Prediction rests on: ${b.leanedOn.map(x => esc(nice(x))).join(', ')}</div>` : ''}
+      <div class="access" style="margin-top:8px">${accessLine(b)}</div>`,
+  });
+}
+
+function readingCard(key, r) {
+  const days = r.started ? daysSince(r.started) : null;
+  const score = `<div class="scoreblock"><div class="scorerow">
+    <span class="bandletter small">▶</span>
+    <span class="scorelabel">reading${days == null ? '' : ' · day ' + (days + 1)}${
+      r.started ? ' · started ' + esc(r.started) : ''}</span></div></div>`;
+  const b = shelfBook(r);
+  const media = (b && b.media) || (r.cover ? { cover: r.cover } : {});
+  const badges = [];
+  if (r.sent) badges.push(`<span class="badge stale">sent to the log ${esc(r.sent)} — still here until it lands in Read</span>`);
+  if (b && b.hasCz) badges.push('<span class="badge cz">CZ print</span>');
+  if (b && b.hasEn) badges.push('<span class="badge en">EN audio</span>');
+  if (b && b.en.state === 'doubtful') badges.push('<span class="badge stale">audio may be abridged</span>');
+  const access = b
+    ? `<div class="access">${accessLine(b)}</div>`
+    : `<div class="access"><em>Not on the shelf, so no borrow or listen link is recorded.</em>
+       <div class="acts"><button type="button" data-act="promote" data-vals="${
+         esc(JSON.stringify({ title: r.title, author: r.author || '' }))}">Find a route</button></div></div>`;
+  return shell({
+    media, fallback: r.author || 'no cover', tone: 'bN',
+    title: r.title, alt: r.altTitle && r.altTitle !== r.title ? r.altTitle : '',
+    author: r.author || 'author not recorded', score, badges,
+    left: `<div class="acts stack">
+      <button type="button" data-rd="log" data-key="${esc(key)}">Finish &amp; log…</button>
+      <button type="button" data-rd="dnf" data-key="${esc(key)}">Gave up…</button>
+      <button type="button" class="danger" data-rd="stop" data-key="${esc(key)}">Take it off the shelf</button>
+    </div>`,
+    body: `${access}
+    <div class="nt">
+      <label>Where you are
+        <input id="pg-${esc(key)}" data-nt="progress" data-key="${esc(key)}" value="${esc(r.progress || '')}"
+               placeholder="chapter 9, a third in…"></label>
+      <label>Notes as you go — this is what <code>/book-log</code> gets handed
+        <textarea id="nt-${esc(key)}" data-nt="notes" data-key="${esc(key)}"
+                  placeholder="What is working, what is not. Pacing, POV, the ending…">${esc(r.notes || '')}</textarea></label>
+      <span class="saved" id="sv-${esc(key)}" data-s="${PENDING.has(key) ? 'dirty' : 'ok'}"
+        >${SAVED_TEXT[PENDING.has(key) ? 'dirty' : 'ok']}</span>
+    </div>`,
+  });
+}
+
+function readingView() {
+  const q = F('q').value.trim().toLowerCase();
+  const all = Object.entries(D.reading);
+  let rows = all.filter(([, r]) => !q ||
+    [r.title, r.altTitle, r.author, r.progress, r.notes].join(' ').toLowerCase().includes(q));
+  if (!rows.length) return `<div class="empty">${all.length
+    ? 'Nothing matches that search.'
+    : 'Nothing on the go. Open a candidate and press <b>Start reading</b>, or use Actions → Start a book.'}</div>`;
+  const k = {
+    started: ([, r]) => -(Date.parse(r.started) || 0),
+    oldest: ([, r]) => Date.parse(r.started) || Infinity,
+    title: ([, r]) => (r.title || '').toLowerCase(),
+    author: ([, r]) => (r.author || '').toLowerCase(),
+  }[F('sort').value] || (([, r]) => (r.title || '').toLowerCase());
+  rows.sort((a, b) => { const x = k(a), y = k(b); return x < y ? -1 : x > y ? 1 : 0; });
+  const head = `<div class="grouphead">${rows.length} of ${all.length} on the go
+    <span>· notes save to <code>book-reading.json</code> as you type, no agent involved.
+    Finishing one hands the notes to <code>/book-log</code>, which is what writes the score.</span></div>`;
+  return head + (F('astable').checked
+    ? `<table><thead><tr><th>Book</th><th>Author</th><th>Started</th><th>Where you are</th><th>Access</th><th>Notes</th>
+        </tr></thead><tbody>${rows.map(([, r]) => {
+          const b = shelfBook(r);
+          return `<tr><td>${esc(r.title)}</td><td>${esc(r.author)}</td>
+        <td>${esc(r.started || '')}</td><td>${esc(r.progress || '')}</td>
+        <td>${b ? [b.hasCz ? 'CZ print' : null, b.hasEn ? 'EN audio' : null].filter(Boolean).join(' + ') || '—' : '—'}</td>
+        <td>${esc(r.notes || '')}</td></tr>`;
+        }).join('')}</tbody></table>`
+    : `<div class="grid">${rows.map(([key, r]) => readingCard(key, r)).join('')}</div>`);
+}
+
+function readCard(r) {
+  const score = `<div class="scoreblock">
+    <div class="scorerow"><span class="bandletter">${esc(r.tier)}</span>
+      <span class="score">${r.score}</span>
+      <span class="scorelabel">scored</span></div>
+    ${bar('read', r.score, r.score, cls(r.score), `Scored ${r.score} — ${r.tier}`)}</div>`;
+  const dnf = /(^|[^A-Za-z])DNF([^A-Za-z]|$)|abandon|unfinished/i.test(r.notes);
+  return shell({
+    media: r.media, fallback: r.author, title: r.title, author: r.author, score,
+    tone: tone(r.score),
+    meta: [GENRE[r.genre] || r.genre, FORM[r.form] || r.form,
+           r.audience && r.audience !== 'adult' ? AUDIENCE[r.audience] || r.audience : null,
+           r.origin === 'cs' ? ORIGIN.cs : null]
+          .filter(Boolean).join(' · '),
+    badges: dnf ? ['<span class="badge blocked">did not finish</span>'] : [],
+    left: acts([
+      ['Correct the score…', 'correct', { title: r.title }],
+      ['More by this author', 'screenAuthor', { author: r.author }],
+    ], 'stack'),
+    body: r.notes ? whyBlock(esc(r.notes)) : '',
+  });
+}
+
+function rejectCard(r) {
+  const score = `<div class="scoreblock"><div class="scorerow">
+    <span class="bandletter small">—</span>
+    <span class="scorelabel">excluded, ${esc(nice(r.filter))}</span></div></div>`;
+  return shell({
+    media: r.media, fallback: r.level === 'category' ? 'category' : r.author,
+    dim: true, tone: 'bN', title: r.entity,
+    author: r.author || (r.level === 'category' ? 'whole category' : 'author not recorded'),
+    score,
+    badges: [`<span class="badge blocked">${esc(nice(r.filter))}</span>`,
+             `<span class="badge scope">${esc(r.level)}-level</span>`],
+    left: acts([
+      ['Reconsider…', 'reconsider', { entity: r.entity }],
+      ['Why was it cut?', 'explain', { title: r.entity }],
+    ], 'stack'),
+    body: `${whyBlock(esc(r.why))}
+      <div class="leaned">Recorded ${esc(r.at)} · ${esc(r.source)}</div>`,
+  });
+}
+
+function sortBy(rows, key) {
+  const k = {
+    mid: b => -b.mid, high: b => -(b.est ? b.est[1] : -1), low: b => -(b.est ? b.est[0] : -1),
+    // title/author are shared across all three tabs, whose rows have different
+    // shapes: candidates nest the title under .cache, read rows carry it flat,
+    // rejects call it .entity.
+    title: b => ((b.cache ? b.cache.czTitle || b.cache.title : b.title || b.entity) || '').toLowerCase(),
+    author: b => ((b.cache && b.cache.author) || b.author || '').toLowerCase(),
+    length: b => b.minutes == null ? Infinity : b.minutes,
+    score: r => -r.score,
+    filter: r => r.filter + ' ' + r.entity,
+    entity: r => r.entity.toLowerCase(),
+    level: r => r.level + ' ' + r.entity,
+  }[key];
+  return rows.slice().sort((a, b) => { const x = k(a), y = k(b); return x < y ? -1 : x > y ? 1 : 0; });
+}
+
+const F = id => document.getElementById(id);
+
+function candidates() {
+  const q = F('q').value.trim().toLowerCase(), acc = F('access').value;
+  const min = +F('minscore').value, sort = F('sort').value;
+  const gen = F('genre').value, frm = F('form').value, aud = F('audience').value;
+  const org = F('origin').value;
+  const keys = shelfKeys();
+  const shelved = D.books.filter(b => onShelf(b, keys));
+  let rows = D.books.filter(b => {
+    if (shelved.includes(b)) return false;
+    if (F('hideblocked').checked && b.blocked) return false;
+    if (q && !b.hay.includes(q)) return false;
+    if (gen && b.genre !== gen) return false;
+    if (frm && b.form !== frm) return false;
+    if (aud === 'kids' ? b.audience === 'adult' : aud && b.audience !== aud) return false;
+    // A book with no origin row is excluded by either value rather than defaulting to
+    // 'translation', for the same reason an unfaceted read row is not adult by default.
+    if (org && b.origin !== org) return false;
+    if (F('norisk').checked && ((b.risks || []).length || b.blocked)) return false;
+    if (min && !(b.est && b.est[1] >= min)) return false;
+    if (acc === 'cz' && !b.hasCz) return false;
+    if (acc === 'en' && !b.hasEn) return false;
+    if (acc === 'either' && !(b.hasCz || b.hasEn)) return false;
+    if (acc === 'none' && (b.hasCz || b.hasEn)) return false;
+    return true;
+  });
+  if (!rows.length) return '<div class="empty">Nothing matches those filters.</div>';
+  rows = sortBy(rows, sort);
+  const facetNote = [gen ? GENRE[gen] || gen : null, frm ? FORM[frm] || frm : null,
+    aud ? (aud === 'kids' ? "children's + YA" : AUDIENCE[aud] || aud) : null,
+    org ? ORIGIN[org] || org : null].filter(Boolean).join(' · ');
+  const head = `<div class="grouphead">${rows.length} of ${D.books.length - shelved.length}${
+      facetNote ? ' · ' + esc(facetNote) : ''} ${LEGEND}
+    <span>· predicted range on a 50–100 axis; the range assumes no listed risk fires${
+      shelved.length ? ' · ' + shelved.length + ' more ' + (shelved.length === 1 ? 'is' : 'are') +
+        ' on the <b>Reading</b> tab, with the borrow and listen links kept there' : ''}</span></div>`;
+  return head + (F('astable').checked
+    ? `<table><thead><tr><th>Book</th><th>Author</th><th>Genre</th><th class="num">Predicted</th><th>Band</th>
+        <th>Risks</th><th>Access</th><th>Why</th></tr></thead><tbody>
+        ${rows.map(b => `<tr class="${b.est ? tone(b.mid) : 'bN'}"><td>${esc(b.cache.czTitle || b.cache.title)}</td>
+          <td>${esc(b.cache.author || '')}</td>
+          <td>${esc([GENRE[b.genre] || b.genre, FORM[b.form] || b.form,
+                     b.audience !== 'adult' ? AUDIENCE[b.audience] || b.audience : null,
+                     b.origin === 'cs' ? ORIGIN.cs : null]
+                    .filter(Boolean).join(', '))}</td>
+          <td class="num">${b.est ? b.est[0] + '–' + b.est[1] : '—'}</td>
+          <td class="bandcell">${b.est ? band(b.mid) : 'blocked'}</td>
+          <td>${(b.blocked ? ['blocked: ' + nice(b.blocked)] : []).concat((b.risks || []).map(nice)).map(esc).join(', ')}</td>
+          <td>${[b.hasCz ? 'CZ print' : null, b.hasEn ? 'EN audio' : null].filter(Boolean).join(' + ') || '—'}</td>
+          <td>${esc(b.why)}</td></tr>`).join('')}</tbody></table>`
+    : `<div class="grid">${rows.map(candidateCard).join('')}</div>`);
+}
+
+function readView() {
+  const q = F('q').value.trim().toLowerCase(), min = +F('minscore').value;
+  const gen = F('genre').value, frm = F('form').value, aud = F('audience').value;
+  const org = F('origin').value;
+  let rows = D.read.rows.filter(r => {
+    if (q && !r.hay.includes(q)) return false;
+    if (r.score < min) return false;
+    if (gen && r.genre !== gen) return false;
+    if (frm && r.form !== frm) return false;
+    // An unfaceted row has audience '' and is excluded by any audience filter,
+    // including 'kids' — being unclassified is not evidence of being adult.
+    if (aud === 'kids' ? !(r.audience === 'ya' || r.audience === 'childrens')
+                       : aud && r.audience !== aud) return false;
+    if (org && r.origin !== org) return false;
+    return true;
+  });
+  if (!rows.length) return '<div class="empty">Nothing matches those filters.</div>';
+  rows = sortBy(rows, F('sort').value);
+  const facetNote = [gen ? GENRE[gen] || gen : null, frm ? FORM[frm] || frm : null,
+    aud ? (aud === 'kids' ? "children's + YA" : AUDIENCE[aud] || aud) : null,
+    org ? ORIGIN[org] || org : null].filter(Boolean).join(' · ');
+  const mean = Math.round(rows.reduce((s, r) => s + r.score, 0) / rows.length);
+  const head = `<div class="grouphead">${rows.length} of ${D.read.rows.length} read${
+      facetNote ? ' · ' + esc(facetNote) : ''} ${LEGEND}
+    <span>· actual scores on a 30–100 axis, wider than the candidates axis because these run down to 30.
+    This is the scale every prediction is anchored against.${
+      facetNote ? ` Mean of this slice: <b>${mean}</b> — a small-sample average, not a rule.` : ''}</span></div>`;
+  return head + (F('astable').checked
+    ? `<table><thead><tr><th class="num">Score</th><th>Tier</th><th>Book</th><th>Author</th>
+        <th>Genre</th><th>Notes</th></tr></thead><tbody>${rows.map(r => `<tr class="${tone(r.score)}">
+        <td class="num">${r.score}</td><td class="bandcell">${esc(r.tier)}</td>
+        <td>${esc(r.title)}</td><td>${esc(r.author)}</td>
+        <td>${esc([GENRE[r.genre] || r.genre, FORM[r.form] || r.form,
+                   r.audience && r.audience !== 'adult' ? AUDIENCE[r.audience] || r.audience : null,
+                   r.origin === 'cs' ? ORIGIN.cs : null]
+                  .filter(Boolean).join(', '))}</td>
+        <td>${esc(r.notes)}</td></tr>`).join('')}</tbody></table>`
+    : `<div class="grid">${rows.map(readCard).join('')}</div>`);
+}
+
+function rejectedView() {
+  const q = F('q').value.trim().toLowerCase(), f = F('rfilter').value, sc = F('rscope').value;
+  let rows = D.rejects.filter(r => (!q || r.hay.includes(q)) &&
+    (!f || r.filter === f) && (!sc || r.level === sc));
+  if (!rows.length) return '<div class="empty">Nothing matches those filters.</div>';
+  rows = sortBy(rows, F('sort').value);
+  const head = `<div class="grouphead">${rows.length} of ${D.rejects.length} excluded without being read
+    <span>· read-and-disliked books are in the Read tab with a real score, not here.
+    Scope matters: an Earthsea objection must not sink Le Guin.</span></div>`;
+  return head + (F('astable').checked
+    ? `<table><thead><tr><th>Entity</th><th>Author</th><th>Filter</th><th>Scope</th><th>Why</th>
+        </tr></thead><tbody>${rows.map(r => `<tr><td>${esc(r.entity)}</td><td>${esc(r.author)}</td>
+        <td>${esc(nice(r.filter))}</td><td>${esc(r.level)}</td><td>${esc(r.why)}</td></tr>`).join('')}</tbody></table>`
+    : `<div class="grid">${rows.map(rejectCard).join('')}</div>`);
+}
+
+function setView(v) {
+  state.view = v;
+  document.querySelectorAll('.tab').forEach(t => t.setAttribute('aria-selected', String(t.dataset.view === v)));
+  document.querySelectorAll('#filters [data-for]').forEach(el => {
+    el.hidden = !el.dataset.for.split(' ').includes(v);
+  });
+  const sel = F('sort'), keep = sel.value;
+  sel.innerHTML = SORTS[v].map(([k, l]) => `<option value="${k}">${esc(l)}</option>`).join('');
+  // Set it explicitly rather than relying on the browser auto-selecting option 0:
+  // sortBy() looks the key up in a map, so an empty value is a crash, not a default.
+  sel.value = SORTS[v].some(([k]) => k === keep) ? keep : SORTS[v][0][0];
+  if (v === 'candidates' || v === 'read') fillFacets(v);
+  render();
+}
+
+const VIEWS = { candidates, reading: readingView, read: readView, rejected: rejectedView };
+
+function render() {
+  stamp();
+  document.getElementById('banners').innerHTML = banners();
+  document.getElementById('view').innerHTML = VIEWS[state.view]();
+  markClips();
+}
+
+function markClips() {
+  document.querySelectorAll('#view .why.clip').forEach(p => {
+    const btn = p.nextElementSibling;
+    if (btn && btn.hasAttribute('data-more')) btn.hidden = p.scrollHeight <= p.clientHeight + 1;
+  });
+}
+
+document.getElementById('theme').onclick = () => {
+  const cur = document.documentElement.dataset.theme;
+  const dark = cur ? cur === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  document.documentElement.dataset.theme = dark ? 'light' : 'dark';
+};
+document.querySelectorAll('.tab').forEach(t => t.onclick = () => setView(t.dataset.view));
+document.getElementById('filters').addEventListener('input', render);
+
+/* ---------- action panel ----------
+   The page never writes data. Every action here composes a slash command for a
+   skill that already owns the file it touches; the panel only shows what the
+   agent did. Actions that need a shell (the tools/*.py sweeps) run in the job
+   lane; the rest run in the conversation lane, because /book-log elicits a score
+   by comparison and has to be able to ask. */
+
+const LANE_NOTE = {
+  chat: 'Runs in the conversation — it may ask you something before it writes.',
+  job:  'Runs as a background job. Screening sweeps draw on your Claude plan limits.',
+  local: 'Saved straight to book-reading.json. No agent runs and no score is recorded — ' +
+         'that happens when you finish the book and log it.',
+};
+
+const ACTIONS = [
+  { id: 'start', group: 'Read & rate', lane: 'local',
+    label: 'Start a book', hint: 'Put it on the reading shelf and take notes as you go',
+    fields: [
+      { name: 'title', label: 'Book', required: true },
+      { name: 'author', label: 'Author' },
+      { name: 'progress', label: 'Where you are', opt: 'blank if you are starting now' },
+      { name: 'notes', label: 'First impressions', type: 'textarea' },
+    ],
+    run: v => startReading(v) },
+
+  { id: 'log', group: 'Read & rate', lane: 'chat',
+    label: 'Log a finished book', hint: 'Score it, and propagate what it implies',
+    fields: [
+      { name: 'title', label: 'Book', required: true },
+      { name: 'author', label: 'Author' },
+      { name: 'score', label: 'Score out of 100', type: 'number', opt: 'blank to be asked by comparison' },
+      { name: 'why', label: 'What worked, what did not', type: 'textarea' },
+    ],
+    build: v => `/book-log ${v.title}${v.author ? ' by ' + v.author : ''}` +
+      (v.score ? ` — ${v.score}/100` : ' — I am not sure of the score; place it by comparison') +
+      (v.why ? `. ${v.why}` : '') },
+
+  { id: 'dnf', group: 'Read & rate', lane: 'chat',
+    label: 'Log a book I gave up on', hint: 'DNF, with the point you stopped',
+    fields: [
+      { name: 'title', label: 'Book', required: true },
+      { name: 'author', label: 'Author' },
+      { name: 'where', label: 'Where you stopped', placeholder: 'a third in, chapter 9…' },
+      { name: 'why', label: 'Why you put it down', type: 'textarea', required: true },
+    ],
+    build: v => `/book-log DNF: I gave up on ${v.title}${v.author ? ' by ' + v.author : ''}` +
+      (v.where ? ` ${v.where}` : '') + `. ${v.why}` },
+
+  { id: 'correct', group: 'Read & rate', lane: 'chat',
+    label: 'Correct a score', hint: 'Change a rating already in the log',
+    fields: [
+      { name: 'title', label: 'Book', required: true },
+      { name: 'score', label: 'New score out of 100', type: 'number', required: true },
+      { name: 'why', label: 'What changed your mind', type: 'textarea' },
+    ],
+    build: v => `/book-log correct ${v.title} to ${v.score}/100${v.why ? '. ' + v.why : ''}` },
+
+  { id: 'next', group: 'Decide', lane: 'chat',
+    label: 'What should I read next?', hint: 'A short argued shortlist, not the whole grid',
+    fields: [
+      { name: 'route', label: 'Access route', type: 'select',
+        options: [['', 'either route'], ['Czech print from the library', 'Czech print'],
+                  ['free English audiobook', 'free English audio']] },
+      { name: 'mood', label: 'Anything you are in the mood for', placeholder: 'short, funny, no doorstops…' },
+    ],
+    build: v => '/book-suggest what should I read next?' +
+      (v.route ? ` Restrict it to ${v.route}.` : '') + (v.mood ? ` I am in the mood for ${v.mood}.` : '') },
+
+  { id: 'snooze', group: 'Decide', lane: 'chat',
+    label: 'Snooze a title', hint: 'Not now — a preference, never a missing link',
+    fields: [
+      { name: 'title', label: 'Book', required: true },
+      { name: 'months', label: 'For how long', type: 'select',
+        options: [['three months', '3 months'], ['six months', '6 months'], ['a year', '12 months']] },
+      { name: 'why', label: 'Reason', required: true, placeholder: 'not in the mood for another doorstop' },
+    ],
+    build: v => `/book-suggest snooze ${v.title} for ${v.months || 'six months'} — ${v.why}` },
+
+  { id: 'explain', group: 'Decide', lane: 'chat',
+    label: 'Explain a prediction or a reject', hint: 'Why this number, why this book is not listed',
+    fields: [{ name: 'title', label: 'Book or author', required: true }],
+    build: v => `/book-suggest explain what is recorded for ${v.title}: the predicted range and the axis it ` +
+      `leaned on, or — if it was screened out — which filter killed it and at what level. Quote the record, do not re-derive it.` },
+
+  { id: 'screenAuthor', group: 'Screen & maintain', lane: 'job',
+    label: 'Screen an author', hint: 'Sweep the catalogue for everything they wrote',
+    fields: [{ name: 'author', label: 'Author', required: true }],
+    build: v => `/book-screen sweep the catalogue for ${v.author} — every title, triaged, with access verified ` +
+      `and an estimate for anything that survives` },
+
+  { id: 'screenCategory', group: 'Screen & maintain', lane: 'job',
+    label: 'Screen a category', hint: 'A genre, an imprint, a period',
+    fields: [{ name: 'what', label: 'What to sweep', required: true, placeholder: 'Czech SF published since 2015' }],
+    build: v => `/book-screen sweep: ${v.what}` },
+
+  { id: 'promote', group: 'Screen & maintain', lane: 'job',
+    label: 'Look at a candidate properly', hint: 'Promote a triage row to a real estimate',
+    fields: [
+      { name: 'title', label: 'Book', required: true },
+      { name: 'author', label: 'Author' },
+    ],
+    build: v => `/book-screen promote ${v.title}${v.author ? ' by ' + v.author : ''} to tier 2 — verify the access ` +
+      `routes, derive an est range with its deps and risks, and fetch the cover and blurb` },
+
+  { id: 'refresh', group: 'Screen & maintain', lane: 'job',
+    label: 'Refresh access routes', hint: 'Re-check links whose cache has expired',
+    fields: [{ name: 'title', label: 'Book', opt: 'blank re-checks everything past its TTL' }],
+    build: v => v.title
+      ? `/book-screen refresh the access routes for ${v.title}`
+      : `/book-screen refresh every access route in book-cache.json that is past its TTL, and report what changed` },
+
+  { id: 'reject', group: 'Screen & maintain', lane: 'job',
+    label: 'Reject a title or author', hint: 'Screen it out, naming the axis that killed it',
+    fields: [
+      { name: 'entity', label: 'Book, series or author', required: true },
+      { name: 'level', label: 'How wide', type: 'select',
+        options: [['title', 'this title only'], ['series', 'the whole series'],
+                  ['author', 'everything by this author'], ['category', 'the whole category']] },
+      { name: 'filter', label: 'Filter that kills it', type: 'select', options: 'axes' },
+      { name: 'why', label: 'Why', required: true, type: 'textarea' },
+    ],
+    build: v => `/book-screen reject ${v.entity} at ${v.level || 'title'} level` +
+      (v.filter ? `, filter: ${v.filter}` : '') + `. ${v.why}` },
+
+  { id: 'reconsider', group: 'Screen & maintain', lane: 'job',
+    label: 'Reconsider a rejection', hint: 'The objection no longer holds',
+    fields: [
+      { name: 'entity', label: 'Book, series or author', required: true },
+      { name: 'why', label: 'Why it no longer applies', required: true, type: 'textarea' },
+    ],
+    build: v => `/book-screen reconsider ${v.entity} — ${v.why}` },
+
+  { id: 'health', group: 'Screen & maintain', lane: 'job',
+    label: 'Check the shelf is consistent', hint: 'Stale deps, missing estimates, crossrefs',
+    fields: [],
+    build: () => '/book-screen check the shelf for broken invariants and report without fixing anything: ' +
+      'estimates whose dep revs do not match book-revs.json, books in book-cache.json with no line in ' +
+      'book-estimates.jsonl, lines for books already in books-read.md, access entries past their TTL, ' +
+      'and the exit status of python tools/crossrefs.py' },
+];
+
+const byId = id => ACTIONS.find(a => a.id === id);
+
+const panel = document.getElementById('panel');
+const logEl = document.getElementById('log');
+const sayEl = document.getElementById('say');
+const stateEl = document.getElementById('pstate');
+const titleEl = document.getElementById('ptitle');
+const quotaEl = document.getElementById('quota');
+const stopBtn = document.getElementById('pstop');
+const backBtn = document.getElementById('pback');
+const listEl = document.getElementById('actions');
+// Not 'form' — the Form facet <select> in the filters already owns that id,
+// and it comes first in the document, so getElementById would hand back the
+// select and every panel action would silently do nothing.
+const formEl = document.getElementById('pform');
+const replyEl = document.getElementById('reply');
+
+const openPanel = () => {
+  panel.setAttribute('data-open', '');
+  document.body.setAttribute('data-panel', '');
+};
+const closePanel = () => {
+  panel.removeAttribute('data-open');
+  document.body.removeAttribute('data-panel');
+};
+
+function showList() {
+  titleEl.textContent = 'Actions';
+  backBtn.hidden = true;
+  formEl.hidden = true;
+  listEl.hidden = false;
+  let html = '', group = null;
+  ACTIONS.forEach(a => {
+    if (a.group !== group) { group = a.group; html += `<div class="agroup">${esc(group)}</div>`; }
+    html += `<button type="button" data-open="${a.id}">${esc(a.label)}<i>${esc(a.hint)}</i></button>`;
+  });
+  listEl.innerHTML = html;
+}
+
+// The reject filter list is built from the dep counters, so it can only offer an
+// axis that already exists — an invented filter id would land in
+// book-rejects.jsonl and never match a search for that axis again.
+function axisOptions() {
+  const fromRevs = Object.keys((D && D.revs) || {}).filter(k => k.startsWith('axis:'));
+  const fromRejects = ((D && D.rejects) || []).map(r => r.filter);
+  const all = [...new Set([...fromRevs, ...fromRejects])].filter(Boolean).sort();
+  return [['', 'let the skill decide'], ...all.map(a => [a, nice(a)])];
+}
+
+function showForm(id, prefill) {
+  const a = byId(id);
+  if (!a) return;
+  openPanel();
+  titleEl.textContent = a.label;
+  backBtn.hidden = false;
+  listEl.hidden = true;
+  formEl.hidden = false;
+  formEl.dataset.action = id;
+  if (prefill && prefill._reading) formEl.dataset.reading = prefill._reading;
+  else delete formEl.dataset.reading;
+  formEl.innerHTML = `<p class="lane">${esc(LANE_NOTE[a.lane])}</p>` + a.fields.map(f => {
+    const val = esc((prefill && prefill[f.name]) || '');
+    const opt = f.opt ? ` <span class="opt">— ${esc(f.opt)}</span>` : '';
+    const head = `<span>${esc(f.label)}${f.required ? '' : opt}</span>`;
+    if (f.type === 'textarea')
+      return `<label>${head}<textarea name="${f.name}" rows="3">${val}</textarea></label>`;
+    if (f.type === 'select') {
+      const opts = f.options === 'axes' ? axisOptions() : f.options;
+      return `<label>${head}<select name="${f.name}">` +
+        opts.map(([v, l]) => `<option value="${esc(v)}">${esc(l)}</option>`).join('') + `</select></label>`;
+    }
+    return `<label>${head}<input name="${f.name}" type="${f.type || 'text'}" value="${val}"` +
+      (f.placeholder ? ` placeholder="${esc(f.placeholder)}"` : '') + `></label>`;
+  }).join('') + `<button class="go" type="submit">Run</button>`;
+  const first = formEl.querySelector('input, textarea, select');
+  if (first) first.focus();
+}
+
+function line(kind, text) {
+  const div = document.createElement('div');
+  div.className = 'turn ' + kind;
+  div.textContent = text;
+  logEl.append(div);
+  logEl.scrollTop = logEl.scrollHeight;
+}
+
+function uiState() {
+  return {
+    tab: state.view,
+    search: document.getElementById('q').value || undefined,
+    minScore: document.getElementById('minscore').value,
+    sort: document.getElementById('sort').value,
+  };
+}
+
+async function send(text, lane, label) {
+  openPanel();
+  line('you', label || text);
+  if (lane !== 'job') replyEl.hidden = false;
+  try {
+    const r = await fetch(lane === 'job' ? '/api/job' : '/api/prompt', {
+      method: 'POST', headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ text, ui: uiState() }),
+    });
+    if (r.status === 409) line('note', 'Still working on the previous request — wait, or press Stop.');
+    else if (!r.ok) line('fail', 'Server said ' + r.status + '. Is serve.py still running?');
+  } catch {
+    line('fail', 'No connection to serve.py.');
+  }
+}
+
+formEl.addEventListener('submit', e => {
+  e.preventDefault();
+  const a = byId(formEl.dataset.action);
+  const v = Object.fromEntries(new FormData(formEl).entries());
+  const missing = a.fields.filter(f => f.required && !String(v[f.name] || '').trim());
+  if (missing.length) {
+    line('note', 'Fill in: ' + missing.map(f => f.label).join(', '));
+    formEl.querySelector(`[name="${missing[0].name}"]`).focus();
+    return;
+  }
+  const subject = v.title || v.entity || v.author || v.what;
+  if (a.run) {
+    a.run(v);
+    line('wrote', '✓ ' + a.label.toLowerCase() + (subject ? ' — ' + subject : ''));
+    showList();
+    return;
+  }
+  // The entry stays on the shelf until the book shows up in books-read.md: the
+  // run can be interrupted or answered wrong, and the notes are the only copy.
+  const from = formEl.dataset.reading;
+  if (from && D.reading[from]) {
+    editReading(from, { sent: today() });
+    if (state.view === 'reading') render();
+  }
+  send(a.build(v), a.lane, a.label + (subject ? ' — ' + subject : ''));
+  showList();
+});
+
+listEl.addEventListener('click', e => {
+  const b = e.target.closest('button[data-open]');
+  if (b) showForm(b.dataset.open);
+});
+
+document.getElementById('askbtn').onclick = () =>
+  panel.hasAttribute('data-open') ? closePanel() : (showList(), openPanel());
+document.getElementById('pclose').onclick = closePanel;
+backBtn.onclick = showList;
+stopBtn.onclick = () => fetch('/api/interrupt', { method: 'POST' });
+document.getElementById('pnew').onclick = async () => {
+  await fetch('/api/session/new', { method: 'POST' });
+  logEl.innerHTML = '';
+  replyEl.hidden = true;
+  line('note', 'Conversation forgotten. Your data files are untouched.');
+};
+
+replyEl.addEventListener('submit', e => {
+  e.preventDefault();
+  const text = sayEl.value.trim();
+  if (!text) return;
+  sayEl.value = '';
+  send(text, 'chat');
+});
+sayEl.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); replyEl.requestSubmit(); }
+});
+
+document.addEventListener('click', e => {
+  const more = e.target.closest('button[data-more]');
+  if (more) {
+    const p = more.previousElementSibling;
+    more.textContent = p.classList.toggle('open') ? 'Show less' : 'Show more';
+    return;
+  }
+  const rd = e.target.closest('button[data-rd]');
+  if (rd) return readingAct(rd.dataset.rd, rd.dataset.key);
+  const b = e.target.closest('.acts button[data-act]');
+  if (!b) return;
+  const vals = JSON.parse(b.dataset.vals || '{}');
+  if (b.dataset.act === 'startReading') return void startReading(vals);
+  showForm(b.dataset.act, vals);
+});
+
+// Read the note out of D.reading rather than out of the button, so a sentence
+// typed since the card was rendered still reaches the skill.
+function readingAct(act, key) {
+  const r = D.reading[key];
+  if (!r) return;
+  if (act === 'stop') return void stopReading(key);
+  const base = { title: r.title, author: r.author, why: r.notes, _reading: key };
+  showForm(act, act === 'dnf' ? { ...base, where: r.progress } : base);
+}
+
+const viewEl = document.getElementById('view');
+viewEl.addEventListener('input', e => {
+  const el = e.target.closest('[data-nt]');
+  if (el) editReading(el.dataset.key, { [el.dataset.nt]: el.value });
+});
+viewEl.addEventListener('focusout', e => {
+  const el = e.target.closest('[data-nt]');
+  if (el && PENDING.has(el.dataset.key)) flushReading(el.dataset.key);
+});
+addEventListener('beforeunload', () => PENDING.forEach((_, k) => flushReading(k)));
+
+// load() finishes with setView('candidates') and rebuilds the facet selects, so a
+// live reload has to put the view and the filter values back or the grid jumps
+// under the reader's hands every time the agent writes a file.
+let reloadTimer = null;
+function scheduleReload() {
+  clearTimeout(reloadTimer);
+  reloadTimer = setTimeout(async () => {
+    const ids = ['q', 'access', 'genre', 'form', 'audience', 'origin', 'minscore',
+                 'rfilter', 'rscope', 'sort'];
+    const was = { view: state.view };
+    ids.forEach(id => { was[id] = document.getElementById(id).value; });
+    const checks = ['norisk', 'hideblocked', 'astable'];
+    checks.forEach(id => { was[id] = document.getElementById(id).checked; });
+    // An agent writing a file must not yank the caret out of a half-typed note.
+    const on = document.activeElement;
+    const caret = on && on.matches && on.matches('[data-nt]')
+      ? { id: on.id, s: on.selectionStart, e: on.selectionEnd } : null;
+    try {
+      await load();
+    } catch (err) {
+      line('fail', 'Reload failed: ' + err.message);
+      return;
+    }
+    ids.forEach(id => {
+      const el = document.getElementById(id);
+      if ([...el.options || []].some(o => o.value === was[id]) || el.tagName === 'INPUT') el.value = was[id];
+    });
+    checks.forEach(id => { document.getElementById(id).checked = was[id]; });
+    setView(was.view);
+    if (caret) {
+      const el = document.getElementById(caret.id);
+      if (el) { el.focus(); el.setSelectionRange(caret.s, caret.e); }
+    }
+  }, 250);
+}
+
+function onEvent(ev) {
+  switch (ev.type) {
+    case 'text': line('said', ev.text); break;
+    case 'tool': line('act', '· ' + ev.name + (ev.detail ? ' ' + ev.detail : '')); break;
+    case 'thinking': line('act', '· thinking'); break;
+    case 'changed':
+      line('wrote', '✓ wrote ' + ev.file);
+      scheduleReload();
+      break;
+    case 'error': line('fail', ev.text); break;
+    case 'job':
+      if (ev.state === 'running') line('note', 'Job ' + ev.id + ' started.');
+      if (ev.state === 'done') line('note', 'Job ' + ev.id + ' finished.');
+      if (ev.state === 'cancelled') line('note', 'Job ' + ev.id + ' cancelled.');
+      break;
+    case 'result':
+      if (ev.is_error) line('fail', 'Ended: ' + ev.subtype + (ev.errors ? ' — ' + ev.errors.join('; ') : ''));
+      break;
+    case 'status':
+      stopBtn.hidden = !(ev.state === 'busy' || ev.state === 'starting');
+      stateEl.className = stopBtn.hidden ? '' : 'busy';
+      stateEl.textContent = { starting: 'starting…', busy: 'working…', idle: 'ready', closed: 'idle' }[ev.state] || ev.state;
+      break;
+    case 'ratelimit': {
+      const pct = ev.utilization == null ? null : Math.round(ev.utilization * 100);
+      if (ev.status === 'allowed') { quotaEl.removeAttribute('data-show'); break; }
+      const when = ev.resets_at ? new Date(ev.resets_at * 1000).toLocaleTimeString() : 'later';
+      quotaEl.textContent = ev.status === 'rejected'
+        ? `Claude plan limit reached (${ev.limit_type || 'usage'}). Resets around ${when}.`
+        : `Approaching your plan limit${pct == null ? '' : ' (' + pct + '% used)'} — resets around ${when}.`;
+      quotaEl.setAttribute('data-show', '');
+      break;
+    }
+  }
+}
+
+// A 404 here means this page came from some other server on the same port — a
+// leftover `python -m http.server` shadows serve.py on Windows, and "not
+// reachable" would send the reader looking for a crash that never happened.
+async function diagnose() {
+  try {
+    const r = await fetch('/api/state', { cache: 'no-store' });
+    if (r.status === 404) return 'wrong server on this port — stop it, run ./serve.ps1';
+    return r.ok ? null : 'serve.py replied ' + r.status;
+  } catch {
+    return 'serve.py not running';
+  }
+}
+
+function connect() {
+  const es = new EventSource('/api/events');
+  es.onmessage = e => { try { onEvent(JSON.parse(e.data)); } catch {} };
+  es.onerror = async () => {
+    es.close();
+    stateEl.className = 'gone';
+    stateEl.textContent = await diagnose() || 'reconnecting…';
+    setTimeout(connect, 3000);
+  };
+  es.onopen = () => {
+    if (stateEl.className === 'gone') { stateEl.className = ''; stateEl.textContent = 'ready'; }
+  };
+}
+connect();
+showList();
+
+
+load().catch(e => {
+  document.getElementById('banners').innerHTML =
+    `<div class="banner critical"><span class="mark">!</span><div><b>Could not load the data.</b>
+     ${esc(e.message)}<br>Open this page over HTTP — <code>./serve.ps1</code> — not by double-clicking it.
+     <code>fetch</code> is blocked on <code>file://</code>.</div></div>`;
+});
+</script>
+</body>
+</html>
