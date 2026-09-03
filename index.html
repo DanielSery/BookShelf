@@ -327,7 +327,7 @@
   <label data-for="candidates read">Min score <select id="minscore">
     <option value="0">any</option>
     <option value="50">50 · C and up</option>
-    <option value="65">65 · B and up</option>
+    <option value="65" selected>65 · B and up</option>
     <option value="75">75 · A and up</option>
     <option value="85">85 · S and up</option>
   </select></label>
@@ -1028,7 +1028,7 @@ function candidates() {
     // 'translation', for the same reason an unfaceted read row is not adult by default.
     if (org && b.origin !== org) return false;
     if (F('norisk').checked && ((b.risks || []).length || b.blocked)) return false;
-    if (min && !(b.est && b.est[1] >= min)) return false;
+    if (min && !(b.est && b.est[0] >= min)) return false;
     if (acc === 'cz' && !b.hasCz) return false;
     if (acc === 'en' && !b.hasEn) return false;
     if (acc === 'either' && !(b.hasCz || b.hasEn)) return false;
