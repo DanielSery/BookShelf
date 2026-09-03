@@ -37,12 +37,20 @@ calibration** — and `tools/reader-profile.md` for the rules. The short version
 - **Loves** page time on what characters *want and why* over what they do; a premise
   whose consequences are actually worked out; a protagonist who is both interesting
   *and* worth rooting for; a book that leaves an idea behind.
-- **Five hard filters, and only five:** a confusing opening with several plot lines
-  starting at once; real-world occult *practised on the page*; detective/mystery; a book
-  whose premise IS an affair within a marriage or engagement, whatever the framing; and
-  a book whose plot is mainly sexual behaviour or a sexual relationship. Everything else
-  is graded, never a veto. (No-readable-route was a sixth and is now decided for you in
-  `cz`.)
+- **Six hard filters you decide, and only six:** a confusing opening; real-world occult
+  *practised on the page*; detective/mystery; a book whose premise IS an affair within a
+  marriage or engagement, whatever the framing; a book whose plot is mainly sexual
+  behaviour or a sexual relationship; and **a book whose premise is a same-sex romance**
+  (new 2026-09-02 — same prominence-vetoes/amount-grades shape as the other two content
+  filters). Everything else is graded, never a veto. (No-readable-route is a seventh and
+  is decided for you in `cz`.)
+- **Two of those bars have a stated bound — read them before you use them.** The
+  **opening** filter is mitigable on its shape-two form: *Čaropisci* was abandoned in
+  chapter one and then read to the end at **67** once the reader looked the premise up, so
+  a book whose only objection is a no-context opening is a proposal with a
+  read-the-premise-first note, not a reject. The **occult** filter grades instead of
+  vetoing when the rite is the system's *origin or elevation mechanic* rather than
+  something the story stages on the page — same book, same score, the hierofant sacrifice.
 - **Graded, with measured weights:** sexual content on three dimensions that all cost —
   volume, explicitness and crudeness (*Artemis* 69 docked for crudeness at small volume,
   *Ready Player One* 55 and *The Witcher* 53 sunk by volume); worldbuilding self-consistency; heavy
@@ -416,7 +424,7 @@ Field rules:
   `absorb` fills them from `book-revs.json` and adds the six mandatory axes plus the
   author id.
 
-  **The axis vocabulary is closed. These 25 ids are the only ones that exist:**
+  **The axis vocabulary is closed. These 27 ids are the only ones that exist:**
 
   ```
   axis:bleakness                  axis:character-differentiation
@@ -428,11 +436,19 @@ Field rules:
   axis:motives                    axis:multi-pov
   axis:occult                     axis:opening
   axis:prophecy                   axis:protagonist
-  axis:sequels                    axis:sexual-content
+  axis:same-sex-romance           axis:sequels
+  axis:sex-portrayal              axis:sexual-content
   axis:sexual-treatment           axis:short-idea-driven
   axis:unearned-competence        axis:verse
   axis:worldbuilding
   ```
+
+  The last two were added 2026-09-02 off *Čaropisci* 67. **`axis:same-sex-romance`** is a
+  same-sex romance and its prominence — premise level is filter 7 and a reject, below that
+  a heavy graded deduction. **`axis:sex-portrayal`** is a one-sided competence contrast
+  between the sexes: men shown as dumb or incompetent while women are shown as good or
+  clever, graded on how strong the contrast is. Neither is about framing, and neither is a
+  count of who is competent.
 
   A near-miss is worse than an omission and your file will be refused: when a rule
   changes, `/book-log` bumps that id's counter and greps the estimates for it, so a

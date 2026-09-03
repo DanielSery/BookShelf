@@ -32,6 +32,16 @@ a re-run after screening in new books costs only the new titles.
 import json, io, os, re, sys, time, unicodedata
 import urllib.parse, urllib.request
 
+# The unrowed-author report prints Czech names, and a cp1252 console kills the process
+# on the first one - after book-origin.json is already written, so the run looks like a
+# crash but the output is complete. Reconfigure rather than strip the accents: the names
+# are the actionable part of that report.
+for _s in (sys.stdout, sys.stderr):
+    try:
+        _s.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
 UA = {"User-Agent": "Mozilla/5.0 (book-shelf/1.0 personal reading list)"}
 BASE = "https://katalog.mekvalmez.cz/api/search"
 TAG = re.compile(r"<[^>]+>")
@@ -75,6 +85,55 @@ CS_AUTHORS = {
     "Vojtěch Matocha", "Václav Dvořák", "Věra Mertlíková", "Zdena Frýbová",
     "Zuzana Hartmanová", "Zuzana Strachotová", "Zuzana Svěží",
     "written and drawn by Josef Čapek",
+    # Backfilled 2026-09-01, the 45 books the 118-book run left unrowed. Every one is a
+    # Czech name on a Czech publisher with a catalogue record carrying no translation
+    # statement, which is the weakest of the three rules and why they need naming here.
+    # Emma Surdu is the only one that needed checking outside the repo: Czech-Romanian,
+    # writing in Czech - Sauronova nevesta was published as the first Czech-language
+    # fan fiction to reach print, not as a translation of one.
+    "Barbora Camillová", "Blanka Luxova", "Daniela Krolupperová", "David Kostak",
+    "Emma Surdu", "Eva Tvrdá", "Filip Vávra", "Gábina Pokorná", "Ivan R. Vičar",
+    "Ivana Kocmanová", "Jana Májová", "Jarmila Dolanská", "Jaromír Sypal",
+    "Jaroslav Formánek", "Jaroslav Konvička", "Jindřich Šimon Baar",
+    "Kateřina Kubalová", "Ladislav Malý", "Lenka Jakešová", "Marie Fasorova",
+    "Marketa Hejkalova", "Markéta Pilátová", "Martin Ryšavý", "Martina Mia Svobodová",
+    "Martina Spinkova", "Miloš Ešner", "Miroslav Stuchlý", "Ondrej Sekora",
+    "Pavel Radosta", "Petra Braunová", "Petra Lukesova", "Renata Špačková",
+    "Richard Vokurka", "Stanislava Reschová", "Tereza Kaňkovská Kučerová",
+    "Tereza Ricanova", "Tom Gottwald", "Tom Jurka", "Tomáš Hanák",
+    "Vanessa Vernerova", "Veronika Válková", "Zdeněk Novák", "Zdeňka Šiborová",
+    # Backfilled 2026-09-02 from the 120-book run: Czech children's and YA authors, all
+    # on Czech publishers with no translation statement. `Eva Papouskova` appears twice
+    # in the catalogue, accented and not, and `aname()` now collapses the two - one entry
+    # covers both, which is what that normalisation was added for.
+    "Adam Folta", "Alžběta Johanka Petrová", "Dagmar Urbankova", "Eva Papoušková",
+    "Helena Beránková", "Iva Hlavackova", "Ivana Pecháčková", "Jakub Plachý",
+    "Jana Buresova", "Jana M. Brůžková", "Jiri Bulin", "Martina Dolezalova",
+    "Michal Cunderle", "Miloš Kratochvíl", "Oldřiška Ciprová", "Olga Cerna",
+    "Otakar Batlicka", "Pavla Holanová", "Premysl Janyr", "Radka Zadinova",
+    "Renáta Fučíková", "Stanislava Nopova", "Veronika Valentová", "Vojtech Steklac",
+    "Vratislav Manak",
+    # And 38 more from the second 120-book run, same shape: Czech picture-book, early-
+    # reader and middle-grade authors on Czech imprints with no translation statement.
+    "Adéla Rosípalová", "Anna Burdová", "Arnošt Goldflam", "Barbora Melíková",
+    "Barbora Stolínová", "Bohunka Trelová", "Daisy Mrázková", "Dominika Mecová",
+    "Evelína Koubová", "Ilona Komárková", "Iva Hoňková", "Jan Lebeda",
+    "Jaromír Štejnar", "Klára Smolíková", "Kristýna Täubelová", "Lída Holá",
+    "Marie Urbánková", "Marie Šnajdrová", "Markéta Harasimová", "Marta Dancingerová",
+    "Marta Knauerová", "Martina Kučerová", "Michaela Fišarová", "Milada Kubátová",
+    "Miroslava Salajková", "Olga Rusnáková", "Ondřej Neff", "Pavel Šrut",
+    "Petr Váša", "Petra Martišková", "Renata Štulcová", "Renáta Navrátilová",
+    "Tereza Kopecká", "Tereza Pařízková", "Tereza Shalvarová", "Veronika Krištofová",
+    "Veronika Souralová", "Šárka Sochová Landová",
+    # The science-fiction run, 2026-09-02. Czech SF is a much bigger share of the shelf
+    # than the earlier slices suggested: 41 of that run's 119 books. `Thomas Blanc` is
+    # the only one that needed checking - a Czech pseudonym, debut 2019, launched at
+    # Karlovy Vary, illustrated by Mirek Vojacek - not a French author.
+    "Adam Pýcha", "Aleš Pitzmos", "Jan Kotouč", "Jan Kovanic", "Jana Rečková",
+    "Jiří W. Procházka", "Josef Pecinovský", "Josef Rubáš", "Karel Cubeca",
+    "Kristýna Sněgoňová", "Marek Skřipský", "Pavel Bareš", "Pavel Fritz",
+    "Pavel Hénik", "Petr Heteša", "Petr Rušeb", "Thomas Blanc", "Vladimír Šlechta",
+    "Vlaďka Sacká", "editor Ondřej Jireš",
 }
 
 # Only the authors the two deterministic rules never reach: a Czech record that omits
@@ -94,6 +153,8 @@ FOREIGN_AUTHORS = {
     "Pierce Brown", "Ray Bradbury", "Roald Dahl", "Robert Silverberg",
     "Sarah A. Parker", "Sarah Beth Durst", "Sequoia Nagamatsu", "TJ Klune",
     "William Gibson", "Yann Martel",
+    "Jan Hora (podle Rudyarda Kiplinga)",
+    "Alice Oseman", "John Hare", "Katarína Macurová", "Kjŏng-tchak", "Tanya Stewner",
 }
 
 # Only where the honest value needed something no field in the repo states.
@@ -105,6 +166,15 @@ NOTES = {
         "The Spanish 'Soy Milena de Praga' (Galaxia Gutenberg, Feb 2024) preceded the "
         "Czech Ikar edition; no translator is recorded because Zgustová writes in both "
         "languages.",
+    "maugli":
+        "A Czech RETELLING, not a translation: Jan Hora rewrote Kipling rather than "
+        "translating him, so no translator is recorded. Filed `foreign` because the work "
+        "being read is still Kipling's and was written in English — the adaptation is a "
+        "route to it, not a Czech original.",
+    "mesicni-zrnko":
+        "Macurová writes in Slovak, so the Czech edition is a translation. Recorded "
+        "because Slovak is the one language where `foreign` looks wrong at a glance — "
+        "the field is about what the work was written in, not how far it had to travel.",
     "ortel-kafka": "Kafka wrote in German — Czech-born is not Czech-language.",
     "zert-kundera":
         "Kundera's Czech-language period. The French novels (Slowness, Identity, "
@@ -124,6 +194,18 @@ def norm(s):
 
 def slug(x):
     return norm(x)[:60]
+
+
+def aname(a):
+    """An author as an unordered bag of surname-length words, diacritics folded.
+
+    The two lists below were matched by exact string until 2026-09-01, and the catalogue
+    writes one author several ways: MARC-inverted ("Brycz, Pavel"), unaccented, and with
+    a middle initial. Four books in one run were reported unrowed for an author already
+    named in CS_AUTHORS. Words shorter than three characters go, which drops initials.
+    Deliberately NOT de-feminised - Novak and Novakova are different people, and a wrong
+    value in the small cs bucket is exactly what the filter exists to expose."""
+    return frozenset(w for w in norm(a).split("-") if len(w) >= 3)
 
 
 def rd(name):
@@ -175,6 +257,12 @@ def statements(book):
 cache = json.load(rd("book-cache.json"))
 need = [b for b in cache["books"] if not (b.get("cz") or {}).get("translator")]
 
+CS_N = {aname(a) for a in CS_AUTHORS}
+FOREIGN_N = {aname(a) for a in FOREIGN_AUTHORS}
+both = CS_N & FOREIGN_N
+if both:
+    sys.exit("author in both lists after normalising: " + repr(both))
+
 ev = {}
 if os.path.exists(EVIDENCE):
     for l in io.open(EVIDENCE, encoding="utf-8"):
@@ -201,9 +289,9 @@ for b in cache["books"]:
         o, src = "foreign", "translator"
     elif translated:
         o, src = "foreign", "statement"
-    elif a in CS_AUTHORS:
+    elif aname(a) in CS_N:
         o, src = "cs", "author"
-    elif a in FOREIGN_AUTHORS:
+    elif aname(a) in FOREIGN_N:
         o, src = "foreign", "author"
     else:
         unknown.append((k, a))

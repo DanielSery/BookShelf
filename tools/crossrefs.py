@@ -52,7 +52,21 @@ pass reported zero):
 import json, io, re, sys, unicodedata
 
 CACHE, EST, READ = "book-cache.json", "book-estimates.jsonl", "books-read.md"
+PROFILE = "tools/reader-profile.md"
 MIN_LEN = 3
+
+# Not every NN-NN is a borrowed score. Six of the 2026-09-01 hits were not: two rows
+# quoted the infidelity axis's own published "an approving subplot 30-40" (which happens
+# to equal two unrelated candidates' est), and four counted something - "ages 11-15",
+# "chapters 18-22". So a range the RULES publish is exempt, and so is one introduced as
+# an age, chapter or page count. The rules mean reader-profile.md and NOT
+# book-recommendations.md: that file carries the Candidate table, and whitelisting its
+# ranges would whitelist every estimate in the repo.
+# Cost, stated: the profile also publishes the scoring ladder (50-65, 65-75, 75-85,
+# 85-95), so a row borrowing a neighbour's est that happens to BE a ladder band now
+# passes. Small in practice - a real borrowed est is arbitrary (64-74, 72-82), and the
+# title, series and batch-relative checks catch the citation itself either way.
+COUNTED = re.compile(r"\b(?:age[sd]?|chapters?|pages?|pp\.?)\s+$", re.I)
 
 # Titles that are also ordinary language, and so unusable as needles. Each earned
 # its place by blocking a correct estimate on 2026-08-26: `Empire` fired on the
@@ -78,12 +92,45 @@ STOP_TITLES = {"empire", "the joke", "the truth",
                # person, place or holiday trips them: "Robin" fired on "Robin-Hood-style"
                # and on a character called Fanny Robin, "Hannibal" and "Atlantis" on the
                # historical figure and the myth.
-               "robin", "atlantis", "hannibal", "disney", "flawed"}
+               "robin", "atlantis", "hannibal", "disney", "flawed",
+               # Added 2026-09-01 from a full 1113-row pass: 40 hits, all one-word or
+               # ordinary-phrase titles used as language rather than as citations. THE
+               # PATTERN, now clear enough to state: a short single-word needle that is
+               # also a common noun is unusable, and the capitalisation rule does not
+               # save it because these appear capitalised at the start of a sentence.
+               "rad", "the religion", "legie", "the legion", "the last human",
+               "the first time",
+               "poprve", "the names", "jmena", "underground", "gallant", "never",
+               "nikdy", "eternal", "pure", "cisty", "den", "day", "the coup",
+               "prevrat", "relentless", "nezdolna", "titans", "titani", "arena",
+               "roman arena", "pisek", "sand", "moc", "malice", "led", "ice",
+               "a small town", "zapadakov",
+               # And more real-world proper nouns, the "robin"/"atlantis" case above:
+               # franchises and places a row names as a cultural comparison, and a
+               # character called Gerta inside a book whose own title is Gerty.
+               "providence", "star wars", "minecraft", "einstein", "gerta",
+               "warleggan", "the atlas",
+               # 2026-09-02, the same shape again and every one a false positive: `Winter`
+               # is a season and one half of a book's own declared premise, `Matilda` a
+               # character in the book being estimated, `Protector` a rank in it, `The Fox`
+               # the protagonist of Fantastic Mr Fox, and `Trans` the first half of
+               # Trans-Siberian - flat() turns the hyphen into a space, so a compound
+               # cannot be told from a citation once the text is normalised.
+               "winter", "matilda", "protector", "the fox", "trans",
+               # 2026-09-02, the science-fiction run: `On the Road` fired on "companionship
+               # on the road", and `Foundation` on a tribute anthology listing the honoured
+               # author's own universes - "robots, the Foundation, and several one-off
+               # series". `Foundation` is a series name six candidates share, so exempting
+               # it costs the most of any entry here; the alternative was blocking a
+               # correct estimate, which is the trade this set has always made.
+               "on the road", "foundation"}
 
 # Phrasing that argues from the neighbours without naming one.
 # "the Author(s) row" is exempt: that points at the Authors table in
 # book-recommendations.md, which is the rules layer and is allowed.
-PHRASES = [r"in this batch", r"the (?!Authors?\b)[A-Z][a-z]+ row\b", r"another candidate",
+# "in the batch" too, not just "in this batch": a row reading "the one Sharpe entry in
+# the batch not built around a battle" passed the narrower version.
+PHRASES = [r"in th(?:is|e) batch", r"the (?!Authors?\b)[A-Z][a-z]+ row\b", r"another candidate",
            r"already carrying", r"second route", r"see that line",
            r"same (?:reasoning|disposition|axis|range|method) as",
            # A superlative only counts when it ranks BOOKS. "the lead is widely
@@ -100,10 +147,23 @@ PHRASES = [r"in this batch", r"the (?!Authors?\b)[A-Z][a-z]+ row\b", r"another c
            r"cheapest way to test", r"than the other [A-Z]"]
 
 
-def flat(s):
-    """Strip diacritics and punctuation, keep case: the file stores why-text as ASCII."""
+def flat(s, breaks=False):
+    """Strip diacritics and punctuation, keep case: the file stores why-text as ASCII.
+
+    `breaks` keeps sentence boundaries as `|`, and is set for the why-text only. Without
+    it a multi-word needle matches straight across a full stop, because the stop becomes
+    a space: "what you cannot see may still be there. There is a thought in that"
+    flattened to "there There" and reported the candidate `There There` on 2026-09-02.
+    `|` is not alphanumeric, so the single-word boundary assertions are unaffected.
+    Cost, stated: a needle that itself spans a colon or dash - `Runes: The Creature of a
+    Thousand Faces` - can no longer match a why that quotes it in full, since the text
+    now carries `|` where the colon was. Such a title is cited by its short form or its
+    Czech title in practice, and both are separate needles."""
     s = unicodedata.normalize("NFKD", s or "")
     s = "".join(c for c in s if not unicodedata.combining(c))
+    if breaks:
+        s = re.sub(r"[.!?;:]+", " | ", s)
+        return re.sub(r"[^A-Za-z0-9|]+", " ", s).strip()
     return re.sub(r"[^A-Za-z0-9]+", " ", s).strip()
 
 
@@ -143,6 +203,15 @@ def read_titles():
     return sorted(set(out), key=len, reverse=True)
 
 
+def profile_bands():
+    try:
+        p = io.open(PROFILE, encoding="utf-8").read()
+    except OSError:
+        return set()
+    return {(int(a), int(b)) for a, b in
+            re.findall(r"(?<![\d-])(\d{2})\s*-\s*(\d{2})(?![\d-])", p)}
+
+
 def series_names(books):
     """series -> the keys carrying it. A name only one candidate holds is not a
     cross-reference when that candidate uses it, so the owner is checked per row."""
@@ -162,7 +231,9 @@ def main():
     books = json.load(io.open(CACHE, encoding="utf-8"))["books"]
     names = {b["key"]: titles(b) for b in books}
     series = series_names(books)
+    own_series = {b["key"]: (b.get("series") or "").split("#")[0] for b in books}
     scored = read_titles()
+    bands = profile_bands()
     rows = []
     for i, line in enumerate(io.open(EST, encoding="utf-8"), 1):
         if line.strip():
@@ -172,17 +243,28 @@ def main():
 
     hits = 0
     for lineno, r in rows:
-        text = flat(r.get("why", ""))
+        text = flat(r.get("why", ""), breaks=True)
         own = names.get(r["key"], []) + [flat(r.get("t", ""))]
         # Longest first, and read titles before own titles: "Son of Hamas" must go
         # before the bare "Son" of any candidate can match inside it.
         for o in scored + sorted(own, key=len, reverse=True):
             if o:
                 text = re.sub(re.escape(o), " ", text, flags=re.I)
+        # A needle whose every word already appears in THIS row's own title or series is
+        # the row talking about its own book or its own world, not citing a neighbour.
+        # `Nyxia` is a candidate and also the in-world substance the Nyxia Triad is named
+        # after, so "Nyxia itself remains a material with declared rules" reported the
+        # sibling volume on 2026-09-02. Blanking own titles cannot catch it: the row's
+        # title is `Nyxia Uprising`, and the bare word survives.
+        ownw = set()
+        for o in own + [flat(own_series.get(r["key"], ""))]:
+            ownw |= {w.lower() for w in o.split() if w}
         for key, ts in names.items():
             if key == r["key"]:
                 continue
             for t in ts:
+                if ownw and {w.lower() for w in t.split()} <= ownw:
+                    continue
                 if find(t, text):
                     print(f"{EST}:{lineno} {r['key']} -> names candidate {key} ({t})")
                     hits += 1
@@ -197,8 +279,12 @@ def main():
                 hits += 1
         # Dates are NN-NN too, so only ranges outside a YYYY-MM-DD are read as one.
         est = r.get("est") or []
-        for m in re.finditer(r"(?<!\d[-\d])\b(\d{2})\s*-\s*(\d{2})\b(?!-)", r.get("why", "")):
-            if list(map(int, m.groups())) != list(est):
+        why = r.get("why", "")
+        for m in re.finditer(r"(?<!\d[-\d])\b(\d{2})\s*-\s*(\d{2})\b(?!-)", why):
+            pair = tuple(map(int, m.groups()))
+            if pair in bands or COUNTED.search(why[max(0, m.start() - 12):m.start()]):
+                continue
+            if list(pair) != list(est):
                 print(f"{EST}:{lineno} {r['key']} -> cites range {m.group(0)}, own est {est}")
                 hits += 1
     print(f"{len(rows)} estimates scanned, {hits} cross-references")

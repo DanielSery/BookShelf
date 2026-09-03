@@ -29,7 +29,7 @@ it replaced, and one batch of holdout up front would have caught it.
     python tools/promote.py holdout <dir> [--n 10]
     python tools/promote.py queue   <dir> [--n 10] [--min-score 4] [--include-unranked]
     python tools/promote.py batch   <dir> [--per 15] [--per-author 15] [--n 200]
-                                          [--unknown]
+                                          [--unknown] [--cls litfic,sf-fantasy]
     python tools/promote.py absorb  <dir> [--force-low]
     python tools/promote.py score   <dir>
 
@@ -39,7 +39,7 @@ selection excludes. See cmd_batch.
 import json, io, os, re, sys, glob, statistics, collections, difflib, unicodedata
 
 CACHE, EST, MEDIA = "book-cache.json", "book-estimates.jsonl", "book-media.json"
-REJECTS, REVS = "book-rejects.jsonl", "book-revs.json"
+REJECTS, REVS, READ = "book-rejects.jsonl", "book-revs.json", "books-read.md"
 STORE, TRIAGE = "book-ai-rank.jsonl", "book-triage.jsonl"
 INFID = "book-infidelity-screen.jsonl"
 CATALOG = "book-catalog.jsonl"
@@ -303,6 +303,65 @@ def load_infidelity():
     return out
 
 
+_MARC_SF = re.compile(r"sci|vedeckofant|v[ěe]deckofant|fantastick|robot|kosmick|utopi|dystop", re.I)
+_MARC_FA = re.compile(r"fantasy|pohadk|poh[áa]dk|magi|carod|[čc]arod[ěe]j|draci|dr[áa][čc]|mytolog", re.I)
+
+
+def marc_genre(f):
+    """`sf` / `fantasy` / None, from the librarian's genre-form heading and keywords.
+
+    The triage class `sf-fantasy` is one bucket and the two halves do not score alike:
+    over the promoted books the agents assigned `sf` 36% of the time reached the propose
+    line against `fantasy` 16.5%. This is a cheap pre-promotion proxy for that split and
+    it agrees with the agent's own later verdict on 129 of 140 (92%).
+
+    HONEST SIZE OF THE EDGE. That 36-vs-16 gap is measured over ALL promoted sf-fantasy
+    books, which includes the hand-curated `tier2` band and the recognised `rec=1` ones.
+    Inside the cell a queue actually draws from now - band `A?`, `rec=0`, no dissent -
+    it shrinks to 16.4% (12/73) against 12.1% (12/99). Real, worth ordering on, and
+    nothing like a filter: 4 of the 12 fantasy hits would be lost by excluding them."""
+    b = " ".join((f.get("gf") or []) + (f.get("kw") or []))
+    if not b:
+        return None
+    s, a = bool(_MARC_SF.search(b)), bool(_MARC_FA.search(b))
+    return "sf" if s and not a else "fantasy" if a and not s else None
+
+
+def read_rows():
+    """(title, author) for every row of the books-read.md table."""
+    out = []
+    try:
+        lines = io.open(READ, encoding="utf-8").readlines()
+    except OSError:
+        return out
+    hdr = [i for i, l in enumerate(lines)
+           if re.match(r"^\|\s*Book\s*\|\s*Author\s*\|\s*Score\s*\|", l, re.I)]
+    if not hdr:
+        return out
+    for l in lines[hdr[0] + 2:]:
+        if not l.strip().startswith("|"):
+            break
+        c = [x.strip() for x in l.strip().strip("|").split("|")]
+        if len(c) >= 3 and c[0]:
+            out.append((c[0], c[1]))
+    return out
+
+
+def read_titles():
+    """Every de-accented read title, plus the part before any parenthetical.
+
+    `Harry Potter (series)` must yield the bare `Harry Potter`, and `Golden Son (Red
+    Rising #2)` the bare `Golden Son` - a why cites the short form, and leaving it
+    unblanked exposes it to a candidate needle."""
+    out = set()
+    for t, _ in read_rows():
+        for x in (deacc(t), deacc(t).split("(")[0]):
+            x = x.strip()
+            if len(x) >= NEEDLE_MIN:
+                out.add(x)
+    return out
+
+
 def already_decided():
     """Keys in book-cache.json and de-accented titles in book-rejects.jsonl.
 
@@ -323,12 +382,25 @@ def already_decided():
     have a blank author, and `Volani Cthulhu - Spisy 3/II` slipped back into the queue
     after being rejected because `authorid("")` cannot match `authorid("H. P. Lovecraft")`.
     A blank author cannot disambiguate anything, so the title is the best evidence there.
+
+    FOURTH CHANNEL, books-read.md, added 2026-09-01. The cache was assumed to cover
+    everything already handled, but /book-log DELETES the cache entry when it logs a
+    book, so all 51 read books were queueable - a promotion agent would spend a batch
+    predicting a range for a book that already carries a real score. Found when
+    `Pycha a predsudek` (read, 75) turned up in a run-6 queue.
     """
     keys, pairs, titles, authors, series = set(), set(), set(), set(), set()
     try:
         keys = {b["key"] for b in json.load(io.open(CACHE, encoding="utf-8"))["books"]}
     except OSError:
         pass
+    for t, a in read_rows():
+        # Same parenthetical split as the reject rows below: the read table writes
+        # `Pycha a predsudek (Pride and Prejudice)` and the catalogue holds each half.
+        alias = [x.strip().lower() for x in re.split(r"[()]", deacc(t)) if len(x.strip()) > 4]
+        titles.update(alias)
+        if a.strip():
+            pairs.update((x, authorid(a)) for x in alias)
     for r in load_jsonl(REJECTS):
         # deacc(), NOT just lower(). Both callers compare against deacc(title), so a
         # reject entity written WITH diacritics never matched and the whole
@@ -445,7 +517,7 @@ def eligible_score(A, r, unranked_ok):
 
 
 def cmd_batch(outdir, per=15, n=200, minscore=4, per_author=15, top=0, unranked_ok=False,
-              unknown=False):
+              unknown=False, clsfilter=None):
     """Group the queue so one agent covers several books and the fixed context is
     paid once instead of once per book.
 
@@ -500,10 +572,19 @@ def cmd_batch(outdir, per=15, n=200, minscore=4, per_author=15, top=0, unranked_
     # second of those. This is the one check that cannot be bypassed.
     hdgs = A.load_headings()
     donekeys, donepairs, donetitles, doneauthors, doneseries = already_decided()
-    cand, redone, unranked, vetoed = [], 0, 0, 0
+    cand, redone, unranked, vetoed, offcls = [], 0, 0, 0, 0
     for k, w in wk.items():
         r = store.get(k)
         if not r or r.get("done") or w["skip"] or "s" not in r:
+            continue
+        # The triage class is the best predictor available before promotion, and the
+        # score is not: measured over 1,275 promoted books, `litfic` reached the propose
+        # line 29.7% of the time, `sf-fantasy` 26.4%, `testimony-allegory` 23.8%, against
+        # `childrens` 8.4% and `unknown` 7.5% - while a raw score of 4 beat a raw 3 by
+        # 18.4% to 13.4%. Runs 5 to 7 selected on score alone, drew 358 books from the
+        # children's end of that spread, and returned 5 above the line.
+        if clsfilter and w["cls"] not in clsfilter:
+            offcls += 1
             continue
         if A.heading_veto(hdgs.get(k, [])):
             vetoed += 1
@@ -533,7 +614,15 @@ def cmd_batch(outdir, per=15, n=200, minscore=4, per_author=15, top=0, unranked_
             continue
         cand.append((s, w["rank"], k, w))
     if unknown:
-        cand.sort(key=lambda x: (-researchable(x[3], (facts or {}).get(x[2], {})), -x[0], -x[1]))
+        # marc_genre first: it is the one ordering term in this sort with a measured
+        # edge inside the cell being drawn from. `researchable()` keeps its place behind
+        # it, but see its docstring - over 1,305 books `orig` predicts nothing (20.6%
+        # against 17.7%) and neither does `gf` (18.2% against 18.1%), so it is mostly
+        # sorting on noise and only the author term is doing anything.
+        pref = {"sf": 0, None: 1, "fantasy": 2}
+        cand.sort(key=lambda x: (pref[marc_genre((facts or {}).get(x[2], {}))],
+                                 -researchable(x[3], (facts or {}).get(x[2], {})),
+                                 -x[0], -x[1]))
     else:
         cand.sort(key=lambda x: (-x[0], -x[1]))
     # `top` slices BEFORE grouping, so an author whose books straddle the cut is
@@ -614,8 +703,16 @@ def cmd_batch(outdir, per=15, n=200, minscore=4, per_author=15, top=0, unranked_
     if unknown:
         withorig = sum(1 for t in sent if t.get("orig"))
         noauthor = sum(1 for t in sent if not (t.get("author") or "").strip())
-        mode = (f"  UNKNOWN pool (rec=0 only), ordered by researchability: "
+        # `sent` carries the staged-file key (a title slug); facts are keyed by WORK key.
+        wkof = {keyfor(w): k for _, _, k, w in cand}
+        marc = collections.Counter(
+            marc_genre((facts or {}).get(wkof.get(t["key"], ""), {})) or "-" for t in sent)
+        mode = (f"  UNKNOWN pool (rec=0 only), MARC genre first then researchability: "
+                f"{marc['sf']} sf, {marc['fantasy']} fantasy, {marc['-']} unsplit | "
                 f"{withorig} carry an original title, {noauthor} have no author at all\n")
+    if clsfilter:
+        mode += (f"  triage class filter {sorted(clsfilter)}: {offcls} works excluded "
+                 f"for being another class\n")
     print(f"{len(cand)} queued works -> {min(len(groups), n)} batches ({nb} books) in {outdir}\n"
           f"{mode}"
           f"  heading-vetoed (catalogue genre heading decides the filter): {vetoed}\n"
@@ -707,12 +804,23 @@ def _candidate_needles():
     isolation does not hold, so the gate moved here - in front of the write - instead
     of running after it.
     """
+    # SHARED WITH tools/crossrefs.py, not a second list. That module has spent four runs
+    # collecting titles that are also ordinary language - `the first time`, `legie`,
+    # `winter`, `the fox` - each one added because it blocked a correct estimate. This
+    # gate had no such exemption at all until 2026-09-02, when it refused a correct file
+    # for the phrase "here they are separated for the first time". Two modules answering
+    # the same question must not disagree about the answer.
+    try:
+        sys.path.insert(0, "tools")
+        from crossrefs import STOP_TITLES
+    except ImportError:
+        STOP_TITLES = frozenset()
     titles, ranges = [], set()
     try:
         for b in json.load(io.open(CACHE, encoding="utf-8"))["books"]:
             for t in [b.get("title"), b.get("czTitle")] + (b.get("czTitleAliases") or []):
                 t = deacc(t or "")
-                if len(t) >= NEEDLE_MIN:
+                if len(t) >= NEEDLE_MIN and t.lower() not in STOP_TITLES:
                     titles.append(t)
     except OSError:
         pass
@@ -720,6 +828,21 @@ def _candidate_needles():
         for r in load_jsonl(EST):
             if r.get("est"):
                 ranges.add(f"{r['est'][0]}-{r['est'][1]}")
+    except OSError:
+        pass
+    # SUBTRACT THE BANDS THE PROFILE ITSELF PUBLISHES (2026-08-31). reader-profile.md
+    # prints graded bands an estimate is *supposed* to cite - "a neutral subplot 45-55,
+    # an approving subplot 30-40", plus the scoring bands - and two correct files were
+    # refused for quoting one, because 30-40 happens to equal the est of two unrelated
+    # candidates. The collision is accidental and the citation is legitimate, so a rule
+    # band can never be evidence of having read the estimates file.
+    # Cost, stated: a candidate whose est exactly equals a published band could now be
+    # cited unnoticed - 4 of 1111 rows today. That is the cheaper error, the same trade
+    # STOP_TITLES makes in tools/crossrefs.py: a false positive blocks correct work.
+    try:
+        prof = io.open(PROFILE, encoding="utf-8").read()
+        for m in re.finditer(r"(?<![\d-])(\d{2})\s*-\s*(\d{2})(?![\d-])", prof):
+            ranges.discard(f"{int(m.group(1))}-{int(m.group(2))}")
     except OSError:
         pass
     return titles, ranges
@@ -742,7 +865,12 @@ SIBLING_REL = re.compile(
     # Hastrman is one novel structured in two books. Same false-positive shape as the
     # Elantris "weakest of the three", which ranked three POV characters in one novel.
     r"(?<!novel's )(?<!novels )(?<!book's )(?<!books )(?<!its )(?<!this )"
-    r"(?:series|first|second|third|fourth|later|earlier|previous|preceding|next|"
+    # `series` was in this alternation until 2026-09-02 and did not belong: it is not an
+    # ordinal, so it fired on "a short illustrated series volume for pre-teen girls" -
+    # a description of this book's own register, which the prompt explicitly permits
+    # ("write 'a sequel', not 'a volume 3'"). "the series opener" is caught by its own
+    # branch below, and "series book 2" by the numeric one.
+    r"(?:first|second|third|fourth|later|earlier|previous|preceding|next|"
     r"opening|final|last)\s+(?:opener|volume|book|instal+ments?|instal+ment|entry|entries)|"
     r"\b(?:vol\.?|volume|book)\s*(?:[2-9]|1\d)\b|"
     r"the (?:series )?opener|\bmid-series\b|"
@@ -762,6 +890,14 @@ def validate(d, needles=None):
         bad.append(f"why argues from a sibling volume ({m.group(0)!r}) — reading order and "
                    f"which entry is stronger are facts, so move them to `flags`; `why` "
                    f"carries only this book against books-read.md")
+    # A READ book's title can never be a forbidden reference - citing one is the entire
+    # point of the step - so it must not be a needle's context either. Blanked first,
+    # longest first, exactly as tools/crossrefs.py has always done it. Without this,
+    # five correct occult rejects were refused on 2026-09-01 for citing `Harry Potter`
+    # 51, the log's own anchor for that objection: a companion art book titled `Harry
+    # Potter` sits in the cache, so the read title and a candidate title are identical.
+    for r in sorted(read_titles(), key=len, reverse=True):
+        why = re.sub(re.escape(r), " ", why, flags=re.I)
     own = {deacc(d.get("title") or ""), deacc(d.get("czTitle") or "")}
     for t in titles:
         if t in own:
@@ -1084,9 +1220,11 @@ if __name__ == "__main__":
     elif a[0] == "queue":
         cmd_queue(a[1], g("--n", 10), g("--min-score", 4), "--include-unranked" in sys.argv)
     elif a[0] == "batch":
+        cf = (set(sys.argv[sys.argv.index("--cls") + 1].split(","))
+              if "--cls" in sys.argv else None)
         cmd_batch(a[1], g("--per", 15), g("--n", 200), g("--min-score", 4),
                   g("--per-author", 15), g("--top", 0), "--include-unranked" in sys.argv,
-                  "--unknown" in sys.argv)
+                  "--unknown" in sys.argv, cf)
     elif a[0] == "holdout":
         cmd_holdout(a[1], g("--n", 10))
     elif a[0] == "absorb":
