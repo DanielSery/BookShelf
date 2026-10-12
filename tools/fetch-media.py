@@ -20,6 +20,11 @@ coverless edition record even when the work has covers.
 A row whose lookup came back empty is left with cover=null and a coverNote, and
 later runs skip it: the note SETTLES the row. Pass --retry-missing to search for
 those again, once Open Library has had time to gain the cover.
+
+A cover on obalkyknih.cz (the Czech edition, written by fetch-library.py) also
+gets coverOL, an Open Library cover of the same work. obalkyknih.cz serves only
+registered library catalogues, so the GitHub Pages copy of the viewer shows
+coverOL instead. coverOL=null settles the row the same way a coverNote does.
 """
 import io
 import json
@@ -37,6 +42,7 @@ CACHE = os.path.join(ROOT, "book-cache.json")
 MEDIA = os.path.join(ROOT, "book-media.json")
 READ = os.path.join(ROOT, "books-read.md")
 REJECTS = os.path.join(ROOT, "book-rejects.jsonl")
+OL_COVER = "https://covers.openlibrary.org/b/id/%d-M.jpg"
 
 # Entity strings that name a body of work rather than a book — look the author
 # up instead of trying to search for "34 collections".
@@ -82,12 +88,22 @@ def resolve(queries):
     return None, None
 
 
+def wants_ol_copy(rec, retry):
+    if "obalkyknih.cz" not in rec["cover"]:
+        return False
+    return "coverOL" not in rec or (retry and rec["coverOL"] is None)
+
+
 def fill(bucket, wanted, today, label, retry):
-    """wanted: list of (key, [query dicts]). Returns (fetched, failed, dropped)."""
-    fetched, failed, settled = [], [], 0
+    """wanted: list of (key, [query dicts]). Returns the keys still without a cover."""
+    fetched, failed, settled, ol_found, ol_none = [], [], 0, [], []
     for key, queries in wanted:
         rec = bucket.setdefault(key, {})
         if rec.get("cover"):
+            if queries and wants_ol_copy(rec, retry):
+                cover_i, _ = resolve(queries)
+                rec["coverOL"] = OL_COVER % cover_i if cover_i else None
+                (ol_found if cover_i else ol_none).append(key)
             continue
         if rec.get("coverNote") and not retry:
             settled += 1
@@ -98,7 +114,7 @@ def fill(bucket, wanted, today, label, retry):
             continue
         cover_i, isbn = resolve(queries)
         if cover_i:
-            rec["cover"] = "https://covers.openlibrary.org/b/id/%d-M.jpg" % cover_i
+            rec["cover"] = OL_COVER % cover_i
             rec.pop("coverNote", None)
             if isbn and not rec.get("isbn"):
                 rec["isbn"] = isbn
@@ -112,7 +128,9 @@ def fill(bucket, wanted, today, label, retry):
     for k in dropped:
         del bucket[k]
     print("%-12s %d rows | fetched %d | no cover %d | settled %d | dropped %d"
-          % (label, len(wanted), len(fetched), len(failed), settled, len(dropped)))
+          " | Open Library copy of a Czech cover: %d found, %d none"
+          % (label, len(wanted), len(fetched), len(failed), settled, len(dropped),
+             len(ol_found), len(ol_none)))
     return failed
 
 
@@ -203,7 +221,9 @@ def main():
         "hand-formatted file. Blurbs say what the book IS; whether the reader would like it "
         "is book-estimates.jsonl's `why` and must not be duplicated here. A slug join is "
         "deliberately loose - editing a title in books-read.md costs a placeholder cover, "
-        "never a broken row.")
+        "never a broken row. `coverOL` is an Open Library cover for a row whose `cover` is "
+        "on obalkyknih.cz, which serves only registered library catalogues; the GitHub "
+        "Pages copy of the viewer shows it instead, and null means Open Library had none.")
     data["_null_cover"] = (
         "null with a coverNote is a SETTLED row, not a gap: the search already ran on "
         "the date in the note and Open Library had nothing, so the app draws a "

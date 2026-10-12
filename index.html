@@ -769,9 +769,14 @@ function banners() {
   return out.join('');
 }
 
+// cache.obalkyknih.cz serves only registered library catalogues by Referer: it accepts
+// localhost and refuses github.io, so off this PC the Open Library copy stands in.
+const coverSrc = m => !LOOPBACK && /obalkyknih\.cz/.test(m.cover || '') ? m.coverOL : m.cover;
+
 function cover(media, fallback) {
-  return media.cover
-    ? `<img class="cover" src="${esc(media.cover)}" alt="" loading="lazy"
+  const src = coverSrc(media);
+  return src
+    ? `<img class="cover" src="${esc(src)}" alt="" loading="lazy"
          onerror="this.outerHTML='<div class=&quot;cover-ph&quot;>${esc(fallback)}</div>'">`
     : `<div class="cover-ph">${esc(fallback)}</div>`;
 }

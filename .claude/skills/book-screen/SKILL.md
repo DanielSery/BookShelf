@@ -989,6 +989,11 @@ need a blurb. Run it after every screening pass; it refuses to guess the date.
   `limit=8` and take the first hit that actually has `cover_i`; fall back to a
   plain `q=` search for Czech-only titles. A null cover with a `coverNote` is a
   gap, not an error — the app draws a typographic placeholder.
+- **Open Library copy** — a `cover` on obalkyknih.cz (the Czech edition from
+  `fetch-library.py`) also gets `coverOL` from the same search. obalkyknih.cz
+  serves only registered library catalogues, so the GitHub Pages copy of the
+  viewer shows `coverOL` instead. `null` means Open Library had none;
+  `--retry-missing` searches again.
 - **Blurb** — one neutral sentence saying *what the book is*. Authored, not
   scraped. It must not contain the judgement of whether the reader would like it:
   that is `why` in the estimate, and duplicating it there is how two files start
