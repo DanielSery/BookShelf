@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Book shelf — screened, scored, filterable</title>
+<script>
+  try { const t = localStorage.getItem('bookshelf.theme'); if (t) document.documentElement.dataset.theme = t; } catch {}
+</script>
 <style>
   :root {
     color-scheme: light;
@@ -306,7 +309,7 @@
     <h1>Book shelf</h1>
     <span class="sub" id="stamp"></span>
     <span class="spacer"></span>
-    <button id="askbtn" title="Log, decide, screen and maintain the shelf">Actions</button>
+    <button id="askbtn" title="Log, decide, screen and maintain the shelf" hidden>Actions</button>
     <button id="theme" title="Toggle light / dark">Theme</button>
   </div>
   <div class="tabs" role="tablist">
@@ -458,6 +461,14 @@ function parseReadTable(md) {
 const state = { view: 'candidates' };
 let D = null;
 
+// serve.py binds loopback only, so on any other host (GitHub Pages) the page is a
+// read-only viewer and never probes the API.
+const LOOPBACK = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
+let LIVE = false, NO_SERVER = '';
+
+const store = (k, v) => { try { localStorage.setItem(k, v); } catch {} };
+const recall = k => { try { return localStorage.getItem(k); } catch { return null; } };
+
 /* ---------- reading shelf ----------
    The one part of the page that writes. It goes straight to serve.py, not
    through an agent: notes are typed a word at a time and must survive a browser
@@ -552,7 +563,8 @@ async function load() {
   const [cache, revsDoc, media, estText, rejText, readMd, readingDoc, readFacets, originDoc] = await Promise.all([
     get('book-cache.json'), get('book-revs.json'), get('book-media.json'),
     get('book-estimates.jsonl', 'text'), get('book-rejects.jsonl', 'text'),
-    get('books-read.md', 'text'), get('/api/reading').catch(() => ({ reading: {} })),
+    get('books-read.md', 'text'),
+    get(LIVE ? '/api/reading' : 'book-reading.json').catch(() => ({ reading: {} })),
     // Facets for read books live in their own file: books-read.md is hand-maintained
     // and its parser requires exactly five columns. Absent is survivable — the Gaps
     // panel reports the orphans rather than the filter hiding them.
@@ -624,7 +636,7 @@ async function load() {
       (reading[s].altTitle && readSlugs.has(slug(reading[s].altTitle)));
     if (done && !PENDING.has(s)) {
       delete reading[s];
-      fetch('/api/reading/' + encodeURIComponent(s), { method: 'DELETE' }).catch(() => {});
+      if (LIVE) fetch('/api/reading/' + encodeURIComponent(s), { method: 'DELETE' }).catch(() => {});
     }
   });
 
@@ -637,7 +649,7 @@ async function load() {
   stamp();
   fillSelect('rfilter', 'all filters', [...new Set(rejects.map(r => r.filter))].sort().map(f => [f, nice(f)]));
   fillSelect('rscope', 'all scopes', [...new Set(rejects.map(r => r.level))].sort().map(l => [l, l]));
-  fillAccess(); setView('candidates');
+  fillAccess();
 }
 
 // A book you have started is no longer a candidate. Entries are keyed by
@@ -674,7 +686,7 @@ function fillSelect(id, allLabel, pairs) {
 // have to be rebuilt per view — showing 239 adult candidates while looking at 48 read
 // books would be a plain lie. The selection survives the rebuild when the value still
 // exists on the new tab, which is what makes "children's + YA" carry across.
-function fillFacets(view) {
+function fillFacets(view, want = {}) {
   const rows = view === 'read' ? D.read.rows : D.books.filter(b => !b.blocked);
   const facet = (key, dict) => {
     const n = {};
@@ -689,7 +701,7 @@ function fillFacets(view) {
     ['audience', 'any audience', facet('audience', AUDIENCE).concat([['kids', "— children's + YA"]])],
     ['origin', 'any origin', facet('origin', ORIGIN)],
   ]) {
-    const keep = F(id).value;
+    const keep = want[id] ?? F(id).value;
     fillSelect(id, all, pairs);
     F(id).value = pairs.some(([v]) => v === keep) ? keep : '';
   }
@@ -704,12 +716,17 @@ function fillAccess() {
     ['en', `free EN audio (${n(x => x.hasEn)})`],
     ['none', `no route yet (${n(x => !x.hasCz && !x.hasEn)})`],
   ]);
+  F('access').value = 'cz';
   const blocked = D.books.length - live.length;
   document.getElementById('nblocked').textContent = blocked ? ` (${blocked})` : '';
 }
 
 function banners() {
   const out = [];
+  if (NO_SERVER) out.push(`<div class="banner"><span class="mark">·</span><div>
+    <b>Read-only — ${esc(NO_SERVER)}.</b> The actions and the reading notes need
+    <code>./serve.ps1</code>; reload the page once it is up.
+  </div></div>`);
   const drifted = D.books.filter(b => b.drift.length);
   if (drifted.length) out.push(`<div class="banner critical"><span class="mark">!</span><div>
     <b>${drifted.length} estimate${drifted.length > 1 ? 's' : ''} carry a stale dependency.</b>
@@ -860,7 +877,7 @@ function candidateCard(b) {
            b.origin === 'cs' ? ORIGIN.cs : null]
           .filter(Boolean).join(' · '),
     score, badges,
-    left: acts([
+    left: LIVE && acts([
       ['Start reading', 'startReading', { key: b.key, title: czt || en, alt: czt && en && czt !== en ? en : '',
                                           author: b.cache.author || '', cover: b.media.cover || '' }],
       ['Log it…', 'log', { title: czt || en, author: b.cache.author || '' }],
@@ -893,12 +910,20 @@ function readingCard(key, r) {
   const access = b
     ? `<div class="access">${accessLine(b)}</div>`
     : `<div class="access"><em>Not on the shelf, so no borrow or listen link is recorded.</em>
-       <div class="acts"><button type="button" data-act="promote" data-vals="${
-         esc(JSON.stringify({ title: r.title, author: r.author || '' }))}">Find a route</button></div></div>`;
-  return shell({
+       ${LIVE ? `<div class="acts"><button type="button" data-act="promote" data-vals="${
+         esc(JSON.stringify({ title: r.title, author: r.author || '' }))}">Find a route</button></div>` : ''}</div>`;
+  const common = {
     media, fallback: r.author || 'no cover', tone: 'bN',
     title: r.title, alt: r.altTitle && r.altTitle !== r.title ? r.altTitle : '',
     author: r.author || 'author not recorded', score, badges,
+  };
+  if (!LIVE) return shell({ ...common, body: `${access}
+    <div class="nt">
+      ${r.progress ? `<div class="leaned">Where you are: ${esc(r.progress)}</div>` : ''}
+      ${r.notes ? whyBlock(esc(r.notes)) : ''}
+    </div>` });
+  return shell({
+    ...common,
     left: `<div class="acts stack">
       <button type="button" data-rd="log" data-key="${esc(key)}">Finish &amp; log…</button>
       <button type="button" data-rd="dnf" data-key="${esc(key)}">Gave up…</button>
@@ -925,7 +950,8 @@ function readingView() {
     [r.title, r.altTitle, r.author, r.progress, r.notes].join(' ').toLowerCase().includes(q));
   if (!rows.length) return `<div class="empty">${all.length
     ? 'Nothing matches that search.'
-    : 'Nothing on the go. Open a candidate and press <b>Start reading</b>, or use Actions → Start a book.'}</div>`;
+    : LIVE ? 'Nothing on the go. Open a candidate and press <b>Start reading</b>, or use Actions → Start a book.'
+    : 'Nothing on the go.'}</div>`;
   const k = {
     started: ([, r]) => -(Date.parse(r.started) || 0),
     oldest: ([, r]) => Date.parse(r.started) || Infinity,
@@ -934,8 +960,9 @@ function readingView() {
   }[F('sort').value] || (([, r]) => (r.title || '').toLowerCase());
   rows.sort((a, b) => { const x = k(a), y = k(b); return x < y ? -1 : x > y ? 1 : 0; });
   const head = `<div class="grouphead">${rows.length} of ${all.length} on the go
-    <span>· notes save to <code>book-reading.json</code> as you type, no agent involved.
-    Finishing one hands the notes to <code>/book-log</code>, which is what writes the score.</span></div>`;
+    <span>${LIVE ? `· notes save to <code>book-reading.json</code> as you type, no agent involved.
+    Finishing one hands the notes to <code>/book-log</code>, which is what writes the score.`
+    : '· read-only here — progress and notes are edited on the PC that runs <code>serve.py</code>.'}</span></div>`;
   return head + (F('astable').checked
     ? `<table><thead><tr><th>Book</th><th>Author</th><th>Started</th><th>Where you are</th><th>Access</th><th>Notes</th>
         </tr></thead><tbody>${rows.map(([, r]) => {
@@ -963,7 +990,7 @@ function readCard(r) {
            r.origin === 'cs' ? ORIGIN.cs : null]
           .filter(Boolean).join(' · '),
     badges: dnf ? ['<span class="badge blocked">did not finish</span>'] : [],
-    left: acts([
+    left: LIVE && acts([
       ['Correct the score…', 'correct', { title: r.title }],
       ['More by this author', 'screenAuthor', { author: r.author }],
     ], 'stack'),
@@ -982,7 +1009,7 @@ function rejectCard(r) {
     score,
     badges: [`<span class="badge blocked">${esc(nice(r.filter))}</span>`,
              `<span class="badge scope">${esc(r.level)}-level</span>`],
-    left: acts([
+    left: LIVE && acts([
       ['Reconsider…', 'reconsider', { entity: r.entity }],
       ['Why was it cut?', 'explain', { title: r.entity }],
     ], 'stack'),
@@ -1118,22 +1145,46 @@ function rejectedView() {
     : `<div class="grid">${rows.map(rejectCard).join('')}</div>`);
 }
 
-function setView(v) {
+function setView(v, want = {}) {
   state.view = v;
   document.querySelectorAll('.tab').forEach(t => t.setAttribute('aria-selected', String(t.dataset.view === v)));
   document.querySelectorAll('#filters [data-for]').forEach(el => {
     el.hidden = !el.dataset.for.split(' ').includes(v);
   });
-  const sel = F('sort'), keep = sel.value;
+  const sel = F('sort'), keep = want.sort ?? sel.value;
   sel.innerHTML = SORTS[v].map(([k, l]) => `<option value="${k}">${esc(l)}</option>`).join('');
   // Set it explicitly rather than relying on the browser auto-selecting option 0:
   // sortBy() looks the key up in a map, so an empty value is a crash, not a default.
   sel.value = SORTS[v].some(([k]) => k === keep) ? keep : SORTS[v][0][0];
-  if (v === 'candidates' || v === 'read') fillFacets(v);
+  // Filled on every tab, not only the two that show them: a restore straight onto
+  // Reading would otherwise leave the facets empty and lose the saved genre.
+  fillFacets(v === 'read' ? 'read' : 'candidates', want);
   render();
+  saveView();
 }
 
 const VIEWS = { candidates, reading: readingView, read: readView, rejected: rejectedView };
+
+const PREF_SELECTS = ['access', 'genre', 'form', 'audience', 'origin', 'minscore', 'rfilter', 'rscope', 'sort'];
+const PREF_CHECKS = ['norisk', 'hideblocked', 'astable'];
+
+function captureView() {
+  const was = { view: state.view };
+  PREF_SELECTS.forEach(id => { was[id] = F(id).value; });
+  PREF_CHECKS.forEach(id => { was[id] = F(id).checked; });
+  return was;
+}
+
+function restoreView(was) {
+  PREF_SELECTS.forEach(id => {
+    if ([...F(id).options].some(o => o.value === was[id])) F(id).value = was[id];
+  });
+  PREF_CHECKS.forEach(id => { if (typeof was[id] === 'boolean') F(id).checked = was[id]; });
+  setView(VIEWS[was.view] ? was.view : 'candidates', was);
+}
+
+const saveView = () => store('bookshelf.view', JSON.stringify(captureView()));
+const savedView = () => { try { return JSON.parse(recall('bookshelf.view')) || {}; } catch { return {}; } };
 
 function render() {
   stamp();
@@ -1153,9 +1204,10 @@ document.getElementById('theme').onclick = () => {
   const cur = document.documentElement.dataset.theme;
   const dark = cur ? cur === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
   document.documentElement.dataset.theme = dark ? 'light' : 'dark';
+  store('bookshelf.theme', document.documentElement.dataset.theme);
 };
 document.querySelectorAll('.tab').forEach(t => t.onclick = () => setView(t.dataset.view));
-document.getElementById('filters').addEventListener('input', render);
+document.getElementById('filters').addEventListener('input', () => { render(); saveView(); });
 
 /* ---------- action panel ----------
    The page never writes data. Every action here composes a slash command for a
@@ -1502,19 +1554,11 @@ viewEl.addEventListener('focusout', e => {
 });
 addEventListener('beforeunload', () => PENDING.forEach((_, k) => flushReading(k)));
 
-// load() finishes with setView('candidates') and rebuilds the facet selects, so a
-// live reload has to put the view and the filter values back or the grid jumps
-// under the reader's hands every time the agent writes a file.
 let reloadTimer = null;
 function scheduleReload() {
   clearTimeout(reloadTimer);
   reloadTimer = setTimeout(async () => {
-    const ids = ['q', 'access', 'genre', 'form', 'audience', 'origin', 'minscore',
-                 'rfilter', 'rscope', 'sort'];
-    const was = { view: state.view };
-    ids.forEach(id => { was[id] = document.getElementById(id).value; });
-    const checks = ['norisk', 'hideblocked', 'astable'];
-    checks.forEach(id => { was[id] = document.getElementById(id).checked; });
+    const was = captureView();
     // An agent writing a file must not yank the caret out of a half-typed note.
     const on = document.activeElement;
     const caret = on && on.matches && on.matches('[data-nt]')
@@ -1525,12 +1569,7 @@ function scheduleReload() {
       line('fail', 'Reload failed: ' + err.message);
       return;
     }
-    ids.forEach(id => {
-      const el = document.getElementById(id);
-      if ([...el.options || []].some(o => o.value === was[id]) || el.tagName === 'INPUT') el.value = was[id];
-    });
-    checks.forEach(id => { document.getElementById(id).checked = was[id]; });
-    setView(was.view);
+    restoreView(was);
     if (caret) {
       const el = document.getElementById(caret.id);
       if (el) { el.focus(); el.setSelectionRange(caret.s, caret.e); }
@@ -1600,16 +1639,25 @@ function connect() {
     if (stateEl.className === 'gone') { stateEl.className = ''; stateEl.textContent = 'ready'; }
   };
 }
-connect();
-showList();
 
-
-load().catch(e => {
-  document.getElementById('banners').innerHTML =
-    `<div class="banner critical"><span class="mark">!</span><div><b>Could not load the data.</b>
-     ${esc(e.message)}<br>Open this page over HTTP — <code>./serve.ps1</code> — not by double-clicking it.
-     <code>fetch</code> is blocked on <code>file://</code>.</div></div>`;
-});
+async function boot() {
+  NO_SERVER = LOOPBACK ? await diagnose() || '' : '';
+  LIVE = LOOPBACK && !NO_SERVER;
+  F('askbtn').hidden = !LIVE;
+  if (LIVE) { connect(); showList(); }
+  try {
+    await load();
+  } catch (e) {
+    document.getElementById('banners').innerHTML =
+      `<div class="banner critical"><span class="mark">!</span><div><b>Could not load the data.</b>
+       ${esc(e.message)}${location.protocol === 'file:'
+         ? `<br>Open this page over HTTP — <code>./serve.ps1</code> — not by double-clicking it.
+            <code>fetch</code> is blocked on <code>file://</code>.` : ''}</div></div>`;
+    return;
+  }
+  restoreView(savedView());
+}
+boot();
 </script>
 </body>
 </html>
