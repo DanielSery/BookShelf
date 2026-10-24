@@ -5,7 +5,7 @@
 // index.html.
 
 const MAP = {
-  opts: null, seeds: [], hover: null, cam: null, built: null, pendingFocus: null,
+  opts: null, seeds: [], openBook: null, hover: null, cam: null, built: null, pendingFocus: null,
   ro: null, raf: 0, gen: 0, memo: null,
 };
 
@@ -159,14 +159,19 @@ function mapRow(p, B, r) {
   const per = r && r.per.length > 1
     ? ` title="${esc(MAP.seeds.map((s, i) => `${mapLabel(s)}: ${Math.round(r.per[i] * 100)} %`).join('\n'))}"` : '';
   const added = MAP.seeds.includes(p), sameKind = !!p.members === (MAP.opts.mode === 'authors');
-  return `<li class="prow"><button type="button" class="pick ${mapTone(p)}" data-pick="${p.ref}">
+  // A book listed under an author on the authors map opens in place; leaving for the
+  // books map is the separate "On map" button, so a glance does not lose the author.
+  const open = !sameKind && MAP.openBook === p.ref;
+  const main = sameKind ? `data-pick="${p.ref}"` : `data-detail="${p.ref}" aria-expanded="${open}"`;
+  return `<li class="prow"><button type="button" class="pick ${mapTone(p)}" ${main}>
       <span class="pl">${mapLetter(p)}</span>
       <span class="pt"><b>${esc(mapLabel(p))}</b><br><span class="ps">${esc(sub)} · ${esc(mapScoreText(p))}</span>
         ${why.length ? `<br><span class="pw">${esc(why.join(' · '))}</span>` : ''}</span>
       ${r ? `<span class="pp"${per}>${Math.round(r.sim * 100)} %<span class="pbar"><i style="width:${Math.round(r.sim * 100)}%"></i></span></span>` : ''}
     </button><span class="pacts">${sameKind ? `<button type="button" class="addseed" data-add="${p.ref}"
-      title="${added ? 'Remove from the selection' : 'Add to the selection — find titles close to all of it'}">${added ? '−' : '+'}</button>` : ''}${
-      mapRowLink(p)}</span></li>`;
+      title="${added ? 'Remove from the selection' : 'Add to the selection — find titles close to all of it'}">${added ? '−' : '+'}</button>`
+      : `<button type="button" class="rowbtn" data-pick="${p.ref}" title="Open the ${p.members ? 'authors' : 'books'} map with this selected">On map</button>`}${
+      mapRowLink(p)}</span>${open ? `<div class="rowdetail">${mapBookDetail(p, B)}</div>` : ''}</li>`;
 }
 
 const mapList = (rows, B) => `<ol class="picks">${rows.map(r => r.p ? mapRow(r.p, B, r) : mapRow(r, B, null)).join('')}</ol>`;
@@ -229,17 +234,21 @@ function mapHead(B) {
   if (sel.members) return `<div class="sidehead"><div><div class="bk-title">${esc(sel.name)}</div>
       <div class="bk-meta">${esc(mapCount(sel.members.length, 'book'))} · ${esc(mapScoreText(sel))}</div></div>${close}</div>
     <div class="badges">${mapChips(sel, B)}</div>`;
-  return `<div class="sidehead">${cover(sel.row.media || {}, sel.author)}
-      <div><div class="bk-title">${esc(sel.title)}</div>
-        ${sel.alt ? `<div class="bk-alt">${esc(sel.alt)}</div>` : ''}
-        <div class="bk-author">${sel.authorRef
-          ? `<button type="button" class="linkish" data-pick="${sel.authorRef.ref}" title="Show the author on the authors map">${esc(sel.author)}</button>`
-          : esc(sel.author)}</div>
-        <div class="scorerow ${mapTone(sel)}"><span class="bandletter small">${mapLetter(sel)}</span>
-          <span class="scorelabel">${esc(mapScoreText(sel))}</span></div></div>${close}</div>
-    ${mapWhy(sel)}
-    ${sel.kind === 'c' ? `<div class="access">${accessLine(sel.row)}</div>` : ''}
-    <div class="badges">${mapChips(sel, B)}</div>`;
+  return mapBookDetail(sel, B, close, true);
+}
+
+function mapBookDetail(p, B, close = '', authorLink = false) {
+  return `<div class="sidehead">${cover(p.row.media || {}, p.author)}
+      <div><div class="bk-title">${esc(p.title)}</div>
+        ${p.alt ? `<div class="bk-alt">${esc(p.alt)}</div>` : ''}
+        <div class="bk-author">${authorLink && p.authorRef
+          ? `<button type="button" class="linkish" data-pick="${p.authorRef.ref}" title="Show the author on the authors map">${esc(p.author)}</button>`
+          : esc(p.author)}</div>
+        <div class="scorerow ${mapTone(p)}"><span class="bandletter small">${mapLetter(p)}</span>
+          <span class="scorelabel">${esc(mapScoreText(p))}</span></div></div>${close}</div>
+    ${mapWhy(p)}
+    ${p.kind === 'c' ? `<div class="access">${accessLine(p.row)}</div>` : ''}
+    <div class="badges">${mapChips(p, B)}</div>`;
 }
 
 function mapResultsHtml(B) {
@@ -547,6 +556,7 @@ function mapFlyTo(to, animate = true) {
 
 function mapSetSeeds(seeds, focus) {
   MAP.seeds = seeds;
+  MAP.openBook = null;
   const side = F('mapside');
   if (side) { side.innerHTML = mapSide(mapBuild()); side.scrollTop = 0; }
   if (seeds.length > 1) mapFrame([...seeds, ...mapAbove(mapBuild()).slice(0, 15).map(r => r.p)]);
@@ -627,6 +637,7 @@ function mapOpen(p, mode) {
   mapOpts().mode = mode;
   mapSaveOpts();
   MAP.seeds = p ? [p] : [];
+  MAP.openBook = null;
   MAP.pendingFocus = p;
   MAP.memo = null;
   if (MAP.cam) MAP.cam.mode = null;
@@ -669,6 +680,12 @@ document.addEventListener('click', e => {
   if (unseed) { mapToggleSeed(mapByRef(B, unseed.dataset.unseed)); return; }
   const foc = e.target.closest('[data-focus]');
   if (foc) { mapFocus(mapByRef(B, foc.dataset.focus)); return; }
+  const detail = e.target.closest('[data-detail]');
+  if (detail) {
+    MAP.openBook = MAP.openBook === detail.dataset.detail ? null : detail.dataset.detail;
+    mapRefreshResults();
+    return;
+  }
   const pick = e.target.closest('[data-pick]');
   if (pick) {
     const p = mapByRef(B, pick.dataset.pick), mode = pick.dataset.pick[0] === 'a' ? 'authors' : 'books';

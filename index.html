@@ -241,6 +241,13 @@
   a.rowlink { font-size: 11px; white-space: nowrap; color: var(--ink-2); text-decoration: none; }
   a.rowlink:hover { color: var(--band-mid); text-decoration: underline; }
   .mapside .access { margin: 0 0 10px; }
+  button.rowbtn {
+    background: none; border: 0; padding: 0; font-size: 11px; white-space: nowrap;
+    color: var(--ink-2); text-decoration: underline dotted;
+  }
+  button.rowbtn:hover { color: var(--band-mid); }
+  button.pick[aria-expanded="true"] { background: var(--track); }
+  .rowdetail { grid-column: 1 / -1; padding: 4px 4px 12px 30px; }
   .pick .pl, .seeds .pl { font-weight: 700; color: var(--bandcolor); }
   .pick .ps { font-size: 11.5px; color: var(--ink-muted); }
   .pick .pw { font-size: 11.5px; color: var(--ink-2); }
