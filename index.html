@@ -542,6 +542,9 @@ let D = null;
 // read-only viewer and never probes the API.
 const LOOPBACK = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
 let LIVE = false, NO_SERVER = '';
+// The reading shelf stays on this PC: the published copy has no Reading tab and never
+// loads book-reading.json.
+const SHOW_READING = LOOPBACK;
 
 const store = (k, v) => { try { localStorage.setItem(k, v); } catch {} };
 const recall = k => { try { return localStorage.getItem(k); } catch { return null; } };
@@ -641,7 +644,7 @@ async function load() {
     get('book-cache.json'), get('book-revs.json'), get('book-media.json'),
     get('book-estimates.jsonl', 'text'), get('book-rejects.jsonl', 'text'),
     get('books-read.md', 'text'),
-    get(LIVE ? '/api/reading' : 'book-reading.json').catch(() => ({ reading: {} })),
+    SHOW_READING ? get(LIVE ? '/api/reading' : 'book-reading.json').catch(() => ({ reading: {} })) : { reading: {} },
     // Facets for read books live in their own file: books-read.md is hand-maintained
     // and its parser requires exactly five columns. Absent is survivable — the Gaps
     // panel reports the orphans rather than the filter hiding them.
@@ -750,7 +753,7 @@ function stamp() {
   const keys = shelfKeys();
   const live = D.books.filter(b => !onShelf(b, keys)).length;
   document.getElementById('stamp').textContent =
-    `${live} candidates · ${Object.keys(D.reading).length} on the go · ` +
+    `${live} candidates · ${SHOW_READING ? Object.keys(D.reading).length + ' on the go · ' : ''}` +
     `${D.read.rows.length} read · ${D.rejects.length} rejected · covers ${D.fetched || '?'}`;
 }
 
@@ -1743,6 +1746,10 @@ function connect() {
 }
 
 async function boot() {
+  if (!SHOW_READING) {
+    document.querySelector('.tab[data-view="reading"]').remove();
+    delete VIEWS.reading;
+  }
   NO_SERVER = LOOPBACK ? await diagnose() || '' : '';
   LIVE = LOOPBACK && !NO_SERVER;
   F('askbtn').hidden = !LIVE;
