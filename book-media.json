@@ -54,13 +54,6 @@
    "coverSource": "katalog",
    "coverOL": "https://covers.openlibrary.org/b/id/14564075-M.jpg"
   },
-  "shadow-of-what-was-lost": {
-   "cover": "https://cache.obalkyknih.cz/file/cover/2072885/preview510",
-   "isbn": "0316274097",
-   "blurb": "Twenty years after a rebellion stripped the magic-users of their power, a young man discovers he has abilities that were supposed to be gone.",
-   "coverSource": "katalog",
-   "coverOL": "https://covers.openlibrary.org/b/id/8471205-M.jpg"
-  },
   "night-flight-wind-sand-stars": {
    "cover": "https://covers.openlibrary.org/b/id/97157-M.jpg",
    "isbn": "5170177879",
@@ -229,13 +222,6 @@
    "coverSource": "katalog",
    "coverOL": "https://covers.openlibrary.org/b/id/524046-M.jpg"
   },
-  "ja-robot-asimov": {
-   "cover": "https://cache.obalkyknih.cz/file/cover/3079038/preview510",
-   "isbn": "9782290055953",
-   "blurb": "Linked stories in which the Three Laws of Robotics are stated once and then broken open, one logical consequence at a time.",
-   "coverSource": "katalog",
-   "coverOL": "https://covers.openlibrary.org/b/id/12385229-M.jpg"
-  },
   "martanska-kronika": {
    "cover": "https://cache.obalkyknih.cz/file/cover/477701/preview510",
    "isbn": "9780553278224",
@@ -397,20 +383,6 @@
    "blurb": "Kabul in the 1970s: a wealthy boy betrays his servant's son, and spends the next thirty years, through the Soviet and Taliban decades, trying to undo it.",
    "coverOL": "https://covers.openlibrary.org/b/id/14846827-M.jpg"
   },
-  "pocitani-hvezd": {
-   "cover": "https://cache.obalkyknih.cz/file/cover/2704156/preview510",
-   "coverSource": "katalog",
-   "isbn": "9788027700936",
-   "blurb": "A meteorite destroys Washington in 1952 and forces the space programme decades early; a wartime pilot and mathematician fights to fly it. First of Lady Astronaut.",
-   "coverOL": "https://covers.openlibrary.org/b/id/8290909-M.jpg"
-  },
-  "neuprosny-mesic": {
-   "cover": "https://cache.obalkyknih.cz/file/cover/3464307/preview510",
-   "coverSource": "katalog",
-   "isbn": "9788027700950",
-   "blurb": "Someone is sabotaging the lunar colony, and the First Lady, a pilot travelling under cover, is the only one placed to find out who. Third of Lady Astronaut.",
-   "coverOL": "https://covers.openlibrary.org/b/id/10208754-M.jpg"
-  },
   "ostre-sledovane-vlaky": {
    "cover": "https://cache.obalkyknih.cz/file/cover/2869961/preview510",
    "isbn": "0140058087",
@@ -438,13 +410,6 @@
    "isbn": "9788025719411",
    "blurb": "A monolith buried on the Moon points at Saturn, and the ship sent to follow it carries a computer that begins to lie.",
    "coverOL": "https://covers.openlibrary.org/b/id/15170836-M.jpg"
-  },
-  "ozvena-veci-budoucich": {
-   "cover": "https://cache.obalkyknih.cz/file/cover/2357054/preview510",
-   "coverSource": "katalog",
-   "isbn": "9788027500086",
-   "blurb": "The Boundary is failing and the Augurs' bargain is coming due, with Davian, Wirr and Asha scattered across a war they only half understand. Second of Licanius.",
-   "coverOL": "https://covers.openlibrary.org/b/id/9256414-M.jpg"
   },
   "pohrbeny-obr": {
    "cover": "https://cache.obalkyknih.cz/file/cover/3452837/preview510",
@@ -1445,13 +1410,6 @@
    "coverSource": "katalog",
    "isbn": "9788076178465",
    "coverOL": "https://covers.openlibrary.org/b/id/8813046-M.jpg"
-  },
-  "svetlo-veci-konecnych": {
-   "blurb": "With the Boundary sealed but monsters loose in Andarra, Wirr struggles to hold a fracturing alliance together in the capital while Davian, imprisoned in a foreign land, faces the surviving Venerate as they try to undo the sacrifice that closed the Boundary.",
-   "cover": "https://cache.obalkyknih.cz/file/cover/2660263/preview510",
-   "coverSource": "katalog",
-   "isbn": "9788027506330",
-   "coverOL": "https://covers.openlibrary.org/b/id/9248546-M.jpg"
   },
   "svobodni-bastardi": {
    "blurb": "War reaches the Lot Lands and Oats, the plainest of the three friends who lead the half-orc Bastards, fights on the front line. Freeing half-breed captives from a human fortress costs him a wound, and in the battle that follows a sorceress runs him through with a spear.",
@@ -4197,13 +4155,6 @@
    "isbn": "0007541953",
    "coverSource": "katalog",
    "coverOL": "https://covers.openlibrary.org/b/id/11246996-M.jpg"
-  },
-  "osudove-nebe": {
-   "blurb": "Astronaut Elma York, now shuttling between Earth and the Moon, is assigned to the first crewed mission to Mars, a three-year voyage that forces her to leave her husband behind as tensions rise on Earth over the cost of space colonization.",
-   "cover": "https://cache.obalkyknih.cz/file/cover/2857362/preview510",
-   "isbn": "1721364439",
-   "coverSource": "katalog",
-   "coverOL": "https://covers.openlibrary.org/b/id/10324448-M.jpg"
   },
   "ovcacka-chajda": {
    "blurb": "After finding his abusive father dead, teenage Jaxie Clackton flees into the Western Australian outback, fearing he will be blamed. Alone in the wheatbelt, he crosses paths with an exiled, morally ambiguous Irish priest hiding in a remote shepherd's hut, and an uneasy bond forms between the two outsiders.",
@@ -9451,6 +9402,1183 @@
    "coverSource": "katalog",
    "isbn": "9788088378365",
    "coverOL": null
+  },
+  "2001-vesmirna-odysea-rajske-fontany": {
+   "blurb": "In the first novel a black monolith teaches a starving man-ape to use tools, and three million years later a crew follows its signal outward with a computer that decides the mission matters more than the men. In the second, an engineer sets out to build a cable from a mountain-top monastery to geostationary orbit.",
+   "cover": "https://covers.openlibrary.org/b/id/444797-M.jpg",
+   "isbn": "9780694516223"
+  },
+  "arcizar": {
+   "blurb": "Vern, once Wyvern Lord Highfire and perhaps the last dragon alive, hides in the Louisiana swamps until a fifteen-year-old boy on the run from a murderous constable becomes his reluctant helper.",
+   "cover": "https://covers.openlibrary.org/b/id/9256250-M.jpg",
+   "isbn": "9781529402032"
+  },
+  "beh-o-zivot": {
+   "blurb": "In a totalitarian, impoverished 2025 America, unemployed Ben Richards enters the state network's most popular game show, in which a contestant is declared an enemy of the state and hunted, to earn money for his sick daughter's medicine.",
+   "cover": "https://covers.openlibrary.org/b/id/14651762-M.jpg",
+   "isbn": "9788378857648"
+  },
+  "cesta-na-okraj": {
+   "blurb": "Ensign John Grimes takes passage aboard a merchant starship on his way to his first Survey Service posting and finds himself in his first action instead.",
+   "cover": "https://covers.openlibrary.org/b/id/15053567-M.jpg"
+  },
+  "doctor-who": {
+   "blurb": "Eleven short stories by different authors, each featuring one of the eleven television incarnations of the Doctor, published for the programme's fiftieth anniversary.",
+   "cover": "https://covers.openlibrary.org/b/id/8661099-M.jpg",
+   "isbn": "148064482X"
+  },
+  "faktor-nanebevzeti": {
+   "blurb": "Twenty-five years on, the ocean world Pandora is ruled by a clone Director whose regime drives desperate settlers to revolt; the rebels' hope rests on Crista Galli, a woman who emerged from the planet's sentient kelp and whom many take for a divine child.",
+   "cover": "https://covers.openlibrary.org/b/id/6695642-M.jpg",
+   "isbn": "9781680574968"
+  },
+  "hrdinove-ceskych-zemi": {
+   "blurb": "Eleven stories set in an alternate world where a mid-nineteenth-century catastrophe drowned and erased whole countries, and the Czech-Slovak kingdom that emerged became a colonial naval power, ranging from the disaster's aftermath to wars a century later.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "jama": {
+   "blurb": "In the early Soviet Union a crew of workers digs an enormous foundation pit for a house meant to hold all the country's proletarians, joined by a dismissed factory worker looking for the meaning of existence and by an orphan girl the men adopt as the future they are digging for.",
+   "cover": "https://covers.openlibrary.org/b/id/189937-M.jpg",
+   "isbn": "0785723218"
+  },
+  "kosmicke-proudy": {
+   "blurb": "A man with no memory is found in the kyrt fields of the exploited planet Florina and slowly recovers what he once knew: a spatio-analyst's warning that Florina's sun is about to explode. Sark, Trantor and Florina's own overseers all have reasons to keep that quiet.",
+   "cover": "https://covers.openlibrary.org/b/id/14616014-M.jpg",
+   "isbn": "9780765319166"
+  },
+  "lod-na-milion-let": {
+   "blurb": "Eleven people scattered across the ancient world discover they do not age, and over five thousand years they hide, search for one another, finally gather in the modern day, reveal themselves, and leave on a starship.",
+   "cover": "https://covers.openlibrary.org/b/id/524448-M.jpg",
+   "isbn": "9780812531350"
+  },
+  "moznost-ostrova": {
+   "blurb": "A famous and deliberately offensive comedian recounts two failed love affairs and his growing involvement with a sect that promises immortality through cloning; his memoir is read and commented on by two of his own clones two thousand years later.",
+   "cover": "https://covers.openlibrary.org/b/id/1054299-M.jpg",
+   "isbn": "0753821184"
+  },
+  "na-komete": {
+   "blurb": "A comet grazes the Earth and carries off a fragment of the Mediterranean along with its air and thirty-six people, who work out where they are and survive the journey out past Saturn and back.",
+   "cover": "https://covers.openlibrary.org/b/id/763203-M.jpg",
+   "isbn": "9781419137822"
+  },
+  "nadace-a-rise": {
+   "blurb": "The Foundation faces two threats to Hari Seldon's predicted future: an Imperial general who still knows how to fight, and then a mutant warlord called the Mule who can convert the emotions of anyone he meets.",
+   "cover": "https://covers.openlibrary.org/b/id/9300695-M.jpg",
+   "isbn": "0586013555"
+  },
+  "neviditelny": {
+   "blurb": "An unemployed man in his late thirties, separated from his wife and about to lose his house, accidentally utters a phrase that makes him invisible, and sets about using it - until other people start finding out.",
+   "cover": "https://covers.openlibrary.org/b/id/8155661-M.jpg",
+   "isbn": "3843017085"
+  },
+  "otcove-prstenu": {
+   "blurb": "Short fantasy fiction published before The Hobbit, gathered by a Tolkien scholar as a survey of the writers and traditions that preceded and influenced modern fantasy.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "posledni-pan-prstenu": {
+   "blurb": "The War of the Ring retold from Mordor's side: an army medic and a scout survive the defeat and are sent on a mission to destroy the elves' seeing-artefacts and end magic in Middle-earth.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "povidky-podivnych": {
+   "blurb": "Ten fairy tales from the invented folklore of the 'peculiar' people, presented as collected and footnoted by the scholar Millard Nullings, with full-page illustrations in place of the parent series' found photographs.",
+   "cover": "https://covers.openlibrary.org/b/id/8535845-M.jpg",
+   "isbn": "9788420485744"
+  },
+  "psi-zima": {
+   "blurb": "The hexer Lota and her vampire lover Urian are punished by her guild for the pairing, and she is forced out of the School just as bands of shapeshifters begin moving on the towns through a hard winter.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "rej-stinu": {
+   "blurb": "Twenty-six writers contribute new stories written in tribute to Ray Bradbury, each followed by a short personal note about him, with an introductory essay by Bradbury himself.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "sin-slavy-mistru-fantasy": {
+   "blurb": "The first Czech volume of an anthology of classic fantasy short stories, selected by a vote of professional American science fiction and fantasy writers and edited by Robert Silverberg.",
+   "cover": "https://covers.openlibrary.org/b/id/9273477-M.jpg",
+   "isbn": "0948164719"
+  },
+  "stravaganza": {
+   "blurb": "Lucien, a London teenager weakened by cancer treatment, falls asleep holding a marbled notebook and wakes in Bellezza, a city like sixteenth-century Venice, where he becomes caught up in a plot on the Duchessa's life.",
+   "cover": "https://covers.openlibrary.org/b/id/844364-M.jpg",
+   "isbn": "0747560935"
+  },
+  "svata-valka-kterou-vedl-saddaj-s-diabolem-o-": {
+   "blurb": "The town of Mansoul, built by King Shaddai, is talked into rebellion by Diabolus and crowns him instead; Shaddai sends captains and then his son Emmanuel to besiege and retake it, after which the townsmen lapse again and must petition for help a second time.",
+   "cover": "https://covers.openlibrary.org/b/id/14981588-M.jpg"
+  },
+  "svet-na-konci-casu": {
+   "blurb": "A colony expedition arrives at a new star system only to find the star being driven across the cosmos in a war between immortal plasma intelligences; Viktor Sorricaine is frozen and revived again and again as the settlement changes over thousands of years.",
+   "cover": "https://covers.openlibrary.org/b/id/7004589-M.jpg",
+   "isbn": "9780345371973"
+  },
+  "svet-uzasny-jako-kapka-jedu": {
+   "blurb": "A representative selection of Zdenek Volny's science fiction short stories, assembled from his collections Nedele na prodej and Zlata past plna casu together with pieces previously published only in magazines.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "terra-nullius": {
+   "blurb": "An anthology of Czech science-fiction stories on transhumanism, ranging over secret services, biotechnology, dangerous archaeology, the edge of the solar system and a planned interstellar expedition, with human, alien, robot and animal protagonists.",
+   "cover": "https://covers.openlibrary.org/b/id/15131738-M.jpg",
+   "isbn": "1525260626"
+  },
+  "tolkien-a-jeho-tajemny-svet": {
+   "blurb": "A short illustrated introduction to J. R. R. Tolkien's invented world, covering his best-known books, his philological background and the languages he built, and a selection of the characters and creatures of Middle-earth.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "tri-okamziky-exploze": {
+   "blurb": "Twenty-eight stories of weird and speculative fiction, including a besieged London under a sky of floating icebergs, sunken oil rigs that rise and walk onto land, and an anatomy student who finds intricate designs carved inside a cadaver's bones.",
+   "cover": "https://covers.openlibrary.org/b/id/10080280-M.jpg",
+   "isbn": "1101884738"
+  },
+  "vampyrska-akademie": {
+   "blurb": "Marked for the undead vampires she has killed, Rose Hathaway leaves her academy and her duty to the last Dragomir princess and travels abroad to hunt the guardian she loved, who has been turned, while the princess's own troubles continue back at school.",
+   "cover": "https://covers.openlibrary.org/b/id/5779361-M.jpg",
+   "isbn": "1101138424"
+  },
+  "veda-na-zemeplose": {
+   "blurb": "A librarian who cares about the truth of words is drawn into a dispute on the Discworld, where the wizards who accidentally created our universe face legal action from a religion claiming their god-like act mocks it; chapters of the story alternate with science chapters by a mathematician and a biologist.",
+   "cover": "https://covers.openlibrary.org/b/id/14646576-M.jpg",
+   "isbn": "1407022652"
+  },
+  "vetrelci": {
+   "blurb": "Eighteen short stories about the Colonial Marines of the Alien films fighting xenomorphs in deep space, on colony worlds and inside the hive.",
+   "cover": "https://covers.openlibrary.org/b/id/8537877-M.jpg",
+   "isbn": "9781785655777"
+  },
+  "zaklinacka-lota": {
+   "blurb": "A set of linked stories tracing the hexer Lota from her conception to the events immediately preceding the novel that follows, in a pseudo-medieval world where hexers fight monsters and each other.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "zakon-genu": {
+   "blurb": "A collection of Czech science fiction short stories published for the two-hundredth anniversary of the birth of Gregor Mendel, under the patronage of Nobel laureate Paul Nurse.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "zkazky-z-planety-zeme": {
+   "blurb": "Fourteen science-fiction stories by Arthur C. Clarke, all set on or around the Earth, each with an author's note, ranging from deep-sea farming to a wall of darkness at the edge of a world.",
+   "cover": "https://covers.openlibrary.org/b/id/10184928-M.jpg",
+   "isbn": "0712634851"
+  },
+  "protovy-svety": {
+   "blurb": "Prot, a psychiatric patient who insists he comes from the planet K-PAX and is on Earth to report on it, returns to the Manhattan Psychiatric Institute, and his psychiatrist records their sessions and their effect on the other patients.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "rok-pote": {
+   "blurb": "Two years after an EMP attack destroyed American electronics, John Matherson's mountain town faces raiding bands of survivalists and a newly formed federal government that arrives with a draft and a demand for obedience.",
+   "cover": "https://covers.openlibrary.org/b/id/8289187-M.jpg",
+   "isbn": "1504632834"
+  },
+  "ze-zeme-na-mesic": {
+   "blurb": "After the Civil War a Baltimore club of artillery enthusiasts resolves to fire a projectile at the Moon, and three men decide to ride inside it. The book follows the design, funding and casting of the gun and ends with the shot fired.",
+   "cover": "https://covers.openlibrary.org/b/id/10209170-M.jpg",
+   "isbn": "9781412139472"
+  },
+  "100-chyb-pri-peci-o-lidi-s-demenci": {
+   "blurb": "A practical guide for carers of people with dementia, organised as a hundred common mistakes; each entry states an assumption the authors disagree with, then explains how to avoid it.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "101-tipu-jak-vychovat-poslusneho-a-spokojene": {
+   "blurb": "A dog-training handbook of numbered exercises covering basic obedience, house manners and common behaviour problems.",
+   "cover": "https://covers.openlibrary.org/b/id/14459734-M.jpg",
+   "isbn": "1631593102"
+  },
+  "130-h-z-a-o": {
+   "blurb": "A Czech science-fiction comic whose scenes are cut like a blockbuster film, set in a world where good fights evil and science is set against faith.",
+   "cover": "https://covers.openlibrary.org/b/id/6499459-M.jpg",
+   "isbn": "0192510401"
+  },
+  "150-terapeutickych-her-pro-dospivajici": {
+   "blurb": "A practical collection of 150 recreation-therapy games and activities for use with teenagers, aimed at building self-esteem, communication and coping skills, each with discussion prompts.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "ala-luna": {
+   "blurb": "After technological progress leaves Earth devastated and much of humanity moves to lunar colonies, Sam Frank puts to sea with the crew of a salvage freighter on the day of a chemical attack, and is carried somewhere he never expected.",
+   "cover": "https://covers.openlibrary.org/b/id/423894-M.jpg",
+   "isbn": "9780613019095"
+  },
+  "alexandr-veliky": {
+   "blurb": "A novel combining a brain-implanted artificial intelligence with the archetypal foundations of human nature, in which superhuman forces at work inside a man drive the plot to an unexpected resolution.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "apokalypsa-evropy": {
+   "blurb": "On an ordinary winter day in Prague an unknown radiation kills everyone who was not somehow shielded, leaving under five percent of the population alive across half the world. The survivors organise themselves and face light, water, food, an invasion threat and the question of what a nation is now built on.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "arabella-z-marsu": {
+   "blurb": "In an 1813 where sailing ships cross the interplanetary aether, Arabella Ashby, raised on a Mars plantation and moved to England, disguises herself as a boy to work a Mars-bound ship and reach her brother before a cousin can seize the family estate.",
+   "cover": "https://covers.openlibrary.org/b/id/14441182-M.jpg",
+   "isbn": "0765394758"
+  },
+  "arthur-a-minimojove": {
+   "blurb": "Ten-year-old Arthur finds an old travel journal and a message in his grandfather's library and crosses into the realm of the tiny Minimoys, whose help he needs to save his grandmother's house from a swindler.",
+   "cover": "https://covers.openlibrary.org/b/id/14006294-M.jpg",
+   "isbn": "2013228325"
+  },
+  "besna-zem": {
+   "blurb": "In the near future the Czech state and its structures have collapsed, and the surviving towns and communities hold out on their own while powerful corporations take over infrastructure and offer protection in exchange for loyalty. The route the story follows runs from central Bohemia to Ostrava.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "bizarni-cesko": {
+   "blurb": "A guide to over a hundred odd, surprising or bizarre places around the Czech Republic, drawn from the author's long-running travel column.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "bozi-milost": {
+   "blurb": "Calvin Cohn, a Jewish palaeontologist, survives a nuclear holocaust in a submersible and finds the earth flooded and himself the last man, with God telling him he lives only through a minuscule error. On an island he teaches a group of chimpanzees speech and human virtue, fathers a child with one of them, and is destroyed by the community he made.",
+   "cover": "https://covers.openlibrary.org/b/id/6908283-M.jpg",
+   "isbn": "9788774561361"
+  },
+  "bronzova-planeta-a-jina-reseni": {
+   "blurb": "A selection of the author's own science-fiction short stories, on themes ranging across the universe, humanity and the individual.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "byl-jednou-jeden-ul": {
+   "blurb": "An illustrated children's story about the world of a beehive, following young bees from hatching through their first exploration, a visit from the queen and an encounter with the beekeeper.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "cerna-flotila": {
+   "blurb": "In the 25th century, faster-than-light travel has given humanity hundreds of colonised worlds and centuries without war, leaving its warships obsolete. Captain Jackson Wolfe takes an aging destroyer out with a new executive officer he distrusts and a bureaucrat aboard.",
+   "cover": "https://covers.openlibrary.org/b/id/10484895-M.jpg",
+   "isbn": "1507587317"
+  },
+  "chlapec-a-jeho-robot": {
+   "blurb": "Sixth-grader Code Lightfall falls into Mekhos, a machine world built and abandoned by an ancient civilisation, and travels with a speck-sized robot and a giant atomic one in search of the Robonomicon and his missing grandfather.",
+   "cover": "https://covers.openlibrary.org/b/id/7626289-M.jpg",
+   "isbn": "9781599902807"
+  },
+  "co-te-nezabije": {
+   "blurb": "An investigative journalist trains in Wim Hof's cold-exposure and breathing method, from a sceptical start to climbing Kilimanjaro bare-chested, and reports the physiology claimed for environmental conditioning.",
+   "cover": "https://covers.openlibrary.org/b/id/10215966-M.jpg",
+   "isbn": "1623366909"
+  },
+  "dech": {
+   "blurb": "After the Switch stripped the atmosphere, survivors live in domes selling manufactured air. Quinn, a privileged Premium, and Bea, an Auxiliary, leave the pod on a camping trip and meet Alina, a rebel replanting trees outside.",
+   "cover": "https://covers.openlibrary.org/b/id/9927116-M.jpg",
+   "isbn": "9780062118691"
+  },
+  "dejiny-italie": {
+   "blurb": "A single-volume history of Italy from the tenth century to the twentieth, covering the communes, foreign domination, the Risorgimento, Fascism and the postwar republic.",
+   "cover": "https://covers.openlibrary.org/b/id/12490013-M.jpg",
+   "isbn": "8842021172"
+  },
+  "diagnostika-syndromu-tyraneho-zneuzivaneho-a": {
+   "blurb": "A Czech-Slovak professional handbook on recognising and diagnosing child abuse and neglect syndrome, drawing on medicine, therapeutic pedagogy, social work and psychology, including a chapter on diagnosis through children's drawings.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "dinotopie": {
+   "blurb": "A nineteenth-century naturalist and his young son are shipwrecked on a hidden island where humans and intelligent dinosaurs live as one society, and his illustrated journal records their travels through it.",
+   "cover": "https://covers.openlibrary.org/b/id/7000218-M.jpg",
+   "isbn": "1878685899"
+  },
+  "dite-a-prirodni-zakony": {
+   "blurb": "A French educator sets out what she takes to be the natural laws of a child's development, drawing on Montessori practice and on her own experiment in a state nursery class, and describes how a classroom and an adult's behaviour should be arranged around them.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "divky-od-svate-magdaleny": {
+   "blurb": "Dublin, 1962: sixteen-year-old Teagan is sent to a Magdalen laundry run by nuns after a young priest's confession of desire for her, and with two other girls endures forced labour and punishment while looking for a way out.",
+   "cover": "https://covers.openlibrary.org/b/id/5767820-M.jpg"
+  },
+  "do-pekla-a-zpet": {
+   "blurb": "In 2028 a government assassin known as Strasak is sent into an autonomous zone used as a prison for the worst repeat offenders, to extract a missing agent, and is drawn into a secret-services operation in which everyone is expendable.",
+   "cover": "https://covers.openlibrary.org/b/id/7079999-M.jpg"
+  },
+  "dobrodruzstvi-minecraftu": {
+   "blurb": "Josh, Andre and Suzy enter a Minecraft world built as a replica of the real one while tracking Herobrine, and stop at a walled city under siege by creepers.",
+   "cover": "https://covers.openlibrary.org/b/id/12770413-M.jpg",
+   "isbn": "9781619780156"
+  },
+  "dokonaly-par": {
+   "blurb": "In a society that assigns each seventeen-year-old a lifelong partner, Cassia is matched with her best friend Xander, then sees another boy's face flicker on the official screen.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "dokonaly-sen": {
+   "blurb": "Cassia searches the outer provinces for Ky, who was sent there among the unfit to die, and learns he escaped into wild canyons; the narration alternates between the two of them.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "dokonaly-svet": {
+   "blurb": "Cassia, Ky and Xander narrate in turn as a plague spreads through the Society and a rebellion tries to produce a cure, each of them having to give up what they most want.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "dosel-nam-cas": {
+   "blurb": "Humanity has grown used to an easy modern life when one day the lights fail for good; within days unease becomes a fight for bare survival, and the city can no longer be lived in.",
+   "cover": "https://covers.openlibrary.org/b/id/15179814-M.jpg",
+   "isbn": "9783161484100"
+  },
+  "dospele-deti-emocne-nezralych-rodicu": {
+   "blurb": "A non-fiction guide describing types of emotionally immature parents and the effects on their adult children, with strategies for recognising the pattern and setting boundaries.",
+   "cover": "https://covers.openlibrary.org/b/id/11301956-M.jpg",
+   "isbn": "162625172X"
+  },
+  "dum-zelenych-prizraku": {
+   "blurb": "A scientist becomes uncritically absorbed in his own technical invention, and the novel follows what happens when it is misused. The 1999 Czech volume prints it together with a second novel in which the author instead trusts technology to solve every human problem.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "duveruj-zitrku": {
+   "blurb": "Christine leaves home for a promising job in the city, then has to weigh the career against caring for her family after a misfortune, while deciding which of several suitors she wants.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "dvojnik": {
+   "blurb": "After his wife drowns when their car is swept off a flooded road, Dylan Moran keeps seeing himself, and a psychiatrist tells him that every choice he has made spawned a parallel world - and that one version of him is hunting the others, killing those closest to them.",
+   "cover": "https://covers.openlibrary.org/b/id/10589100-M.jpg",
+   "isbn": "1799773744"
+  },
+  "elias-mezi-lidojedy": {
+   "blurb": "The one-handed cabin boy Elias, Angelika and their friends sail after Captain Flint's dragon pearls to the Island of Dragon's Blood, where a legendary bird with flaming wings is said to live, past sirens, cannibals and a sea monster.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "epistoly-o-elitach-a-lidu": {
+   "blurb": "A collection of short essays by a Czech historian on how elites and the common people have been conceived through history and how that division looks in the present day.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "evropske-panovnicke-rody": {
+   "blurb": "A popular history of nineteenth-century European royal and imperial courts organised around their scandals: arranged marriages, secret relationships, mistreated children and the rise of the gossip press.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "financni-analyza": {
+   "blurb": "A Czech textbook on company financial analysis: reading financial statements, ratio and value-based indicators, and worked examples from real accounts.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "girgal": {
+   "blurb": "Girgal, a genetically engineered intelligent dog, escapes Earth and lands on a planet of auk-like beings whose civilisation he tries first to raise and later to save.",
+   "cover": "https://covers.openlibrary.org/b/id/5539708-M.jpg",
+   "isbn": "8071162574"
+  },
+  "h2o-a-poklad-sileneho-oka": {
+   "blurb": "Three schoolchildren armed with a shrinking device pursue a treasure through Prague's gothic underground and a robbery at the state bank, against the recurring villain professor Vulpes.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "h2o-a-zahada-zlate-slzy": {
+   "blurb": "Three friends search an ancient library for a secret chamber holding a baroque alchemist's invention, the Golden Tear, and use it to travel into space and discover a counter-Earth.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "horecka": {
+   "blurb": "Eleven months after a virus killed most of the world's population, thirteen-year-old Nico Storm and his father Willem cross a ruined South Africa and found a settlement called Amanzi; Nico narrates from decades later, opening by announcing that his father was murdered.",
+   "cover": "https://covers.openlibrary.org/b/id/13805865-M.jpg",
+   "isbn": "9780802126627"
+  },
+  "hostitel": {
+   "blurb": "Earth has been taken over by a parasitic alien species that occupies human bodies, and the soul implanted in Melanie Stryder finds that her host refuses to fade, so the two of them go looking for the people Melanie loves.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "hudba-pro-anvilany": {
+   "blurb": "Prague 2030. Years after a financial crash, EnerClad rises from the ruins of the national power company, terraforms planets and broadcasts its own space television. On Earth an apparition appears in the control room of a nuclear plant.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "hvezdny-hrad": {
+   "blurb": "Northern France, 1869: a year after Claire Dulac disappears in a balloon at the edge of space searching for aether, her husband and son are summoned to the Bavarian king's fairy-tale castle, where a secret spacecraft is being built.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "jak-draha-je-nepoctivost": {
+   "blurb": "A behavioural-economics account of everyday dishonesty, arguing from experiments that most people cheat by small amounts when conditions allow it and rationalise the result.",
+   "cover": "https://covers.openlibrary.org/b/id/12489545-M.jpg",
+   "isbn": "0062183613"
+  },
+  "jak-se-uspesne-ucit-s-adhd": {
+   "blurb": "A practical guide for parents of children with ADHD or ADD, offering methods for homework, concentration, organisation, motivation and cooperation with the school.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "jumper-griffinuv-pribeh": {
+   "blurb": "Griffin O'Connor can teleport to any place he has been, a secret his parents made him swear to keep. At nine he watches men murder them, and he spends his adolescence hunted by the people who want him dead.",
+   "cover": "https://covers.openlibrary.org/b/id/8750529-M.jpg",
+   "isbn": "0765357852"
+  },
+  "karantena": {
+   "blurb": "In 2034 an impenetrable bubble encloses the solar system. Decades later a private investigator with a headful of neural mods is hired to find a woman who walked out of a locked institution through the walls, and the trail leads to the people who worked out why the bubble is there.",
+   "cover": "https://covers.openlibrary.org/b/id/44117-M.jpg",
+   "isbn": "9781597805384"
+  },
+  "kazdy-je-na-neco-chytry": {
+   "blurb": "A guide for children aged about eight to twelve, based on Howard Gardner's theory of multiple intelligences, helping them identify which of eight kinds of intelligence are their strengths and use them to improve elsewhere.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "klid-pred-bouri": {
+   "blurb": "Henry, taken in by the Delaney family as a boy, follows his adoptive father into the Royal Canadian Mounted Police, then has to balance that posting against his feelings for a young widow and her son.",
+   "cover": "https://covers.openlibrary.org/b/id/15179814-M.jpg",
+   "isbn": "9783161484100"
+  },
+  "kognitivni-trenink-pro-treti-vek": {
+   "blurb": "A Czech handbook of cognitive and memory training exercises aimed at older adults and at those working with memory decline and dementia.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "komu-se-da-verit": {
+   "blurb": "A non-fiction account of how trust works, arguing it has shifted from personal to institutional to distributed forms mediated by technology, illustrated with platforms, blockchain, the darknet and China's social credit system.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "kostelik-ktery-se-radoval": {
+   "blurb": "In a small village church, two children, Anička and Jiřík, are introduced by the Virgin Mary to Czech and other saints, each of whom teaches them about a virtue.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "laska-prichazi-po-spickach": {
+   "blurb": "Marty arrives on the frontier newly married and pregnant; when her husband is killed she accepts a neighbouring farmer's offer of a marriage in name only, in return for shelter and the care of his two-year-old daughter.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "ledova-generace": {
+   "blurb": "In 2023 alien craft appear worldwide and give humanity thirty days to reach Antarctica, the only place it will be permitted to exist. In the settlements that follow, scientists engineer a new kind of human able to survive the cold.",
+   "cover": "https://covers.openlibrary.org/b/id/13234992-M.jpg",
+   "isbn": "9781471133107"
+  },
+  "literatura-a-politika": {
+   "blurb": "A translated collection of literary-critical essays examining the relationship between literature and politics through twelve models, mainly on Central European authors writing under and after totalitarian regimes.",
+   "cover": "https://covers.openlibrary.org/b/id/12475901-M.jpg",
+   "isbn": "3631453531"
+  },
+  "londyn": {
+   "blurb": "A Czech translation of the DK Eyewitness Top 10 guide to London: themed top-ten lists of sights, museums, parks, shops and places to eat, with maps.",
+   "cover": "https://covers.openlibrary.org/b/id/7855119-M.jpg",
+   "isbn": "0751338109"
+  },
+  "lovci": {
+   "blurb": "In Prague in 2050, senior inspector Petr Mlejnek serves in a federal unit that hunts genetically and cybernetically enhanced criminals, until an operation against a villain called Spider goes wrong.",
+   "cover": "https://covers.openlibrary.org/b/id/13920903-M.jpg",
+   "isbn": "8020000410"
+  },
+  "mag": {
+   "blurb": "Pug, taken as a slave through a rift to the world of Kelewan, spends years in captivity before the empire's Great Ones recognise his talent and train him as a master magician; he returns to Midkemia in time for the war between the two worlds to be decided.",
+   "cover": "https://covers.openlibrary.org/b/id/8770815-M.jpg",
+   "isbn": "078514059X"
+  },
+  "magicke-dite": {
+   "blurb": "A non-fiction argument that children develop through a natural sequence of stages which modern childbirth, parenting and schooling disrupt, tracing later psychological and social harm to those interruptions.",
+   "cover": "https://covers.openlibrary.org/b/id/296355-M.jpg",
+   "isbn": "9780553260762"
+  },
+  "malevil": {
+   "blurb": "A handful of people drinking wine in the cellar of a restored medieval keep in rural France survive a nuclear detonation, and the narrator records how they feed themselves, arm themselves and decide who governs them afterwards.",
+   "cover": "https://covers.openlibrary.org/b/id/967609-M.jpg",
+   "isbn": "9780671216009"
+  },
+  "malirky": {
+   "blurb": "A survey of forty-eight women painters, famous and forgotten, from the Renaissance to the present, including artists from the indigenous populations of colonised countries, presented as an introduction to art history through their lives.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "matematika-nas-bavi": {
+   "blurb": "A book of mathematical facts, puzzles and experiments for young readers, covering numbers and geometry.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "mechanicke-rybicky": {
+   "blurb": "Two mechanical fish travel the seas, and their journey reveals the ecological damage done to the planet by people and by nature itself.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "metalstory": {
+   "blurb": "An old man escapes a home for retired secret agents, is shot dead at Tiwanaku, and wakes into a conflict on the distant planet Pu-ma where thought and metal are the decisive powers.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "mihotani": {
+   "blurb": "A Polish reporter spends three months in Siorapaluk and Qaanaaq, the northernmost inhabited settlements in Greenland, describing the daily life, hunting and history of the world's most northerly Inuit under Danish rule.",
+   "cover": "https://covers.openlibrary.org/b/id/14850444-M.jpg",
+   "isbn": "8381914663"
+  },
+  "mijamoto-musasi": {
+   "blurb": "In old Japan a boy from the village of Miyamoto trains in the way of the sword, tests himself against fearsome opponents and, after his victory over Sasaki Kojiro, withdraws into the forests of Echizen to seek out a hermit and put his doubts about the meaning of his path to him.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "moje-adhd-ma-uzkosti": {
+   "blurb": "A cognitive behavioural therapy workbook for adults whose ADHD is accompanied by anxiety, with chapter exercises on worry and rumination, focus, avoidance, procrastination and rejection sensitivity.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "muj-bratr-mesias": {
+   "blurb": "In 2096, after years of drought, a boy called Eli is born in Prague during the first rain; decades later his older brother preaches Eli's message to survivors of a mass exodus, carrying the burden of a new faith.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "navrat-krale-sumavy": {
+   "blurb": "In 1948 Josef Hasil joins the Czechoslovak border guard tasked with stopping escapes to the West, and gradually begins helping people across instead.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "navrat-na-ostrov-kamelii": {
+   "blurb": "Sylvia and Mael are expecting their long-awaited child on the Breton camellia island when his mother, whom he has not spoken to in nearly thirty years, falls seriously ill and he leaves for the mainland. A storm flood then devastates the coast and the island, and Sylvia is badly injured.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "navstevnici": {
+   "blurb": "In 2484 a global council learns of a body approaching Earth and sends an expedition back to 1984 to recover the school notebooks of a boy who worked out a principle for moving continents; the scientists arrive in a small Czech town posing as geologists.",
+   "cover": "https://covers.openlibrary.org/b/id/11660498-M.jpg",
+   "isbn": "8086092488"
+  },
+  "nebezpecny-pacient": {
+   "blurb": "A veterinarian working a night shift at an isolated animal clinic is forced by masked men to operate on a badly wounded man; her daughter is then taken to keep her quiet, and she turns to the girl's father, a former dealer, for help.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "nebojte-se-zmen": {
+   "blurb": "A Czech coach and therapist writes about the fear that accompanies life changes and how to work with it rather than avoid it, drawing on her practice with burnout, self-confidence and trauma.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "nemrtvi": {
+   "blurb": "An illustration manual: materials and basic technique, then a section of thirty undead portraits with original sketches, detail studies and step-by-step workflows, plus ways of depicting stages of decay.",
+   "cover": "https://covers.openlibrary.org/b/id/2613729-M.jpg",
+   "isbn": "0764138138"
+  },
+  "neviditelni-zlodeji": {
+   "blurb": "Eight science-fiction stories by young Czech authors, set on Earth and on distant future worlds, each extrapolating how people behave under conditions remade by science and technology.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "neviditelni": {
+   "blurb": "Forty years after a Great Reset, everyone's only possession is an implanted biochip that scores their conformity and governs where they may live and work; a young graduate content with the new order meets a man who has no chip.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "neztrat-mapu-k-memu-srdci": {
+   "blurb": "Lorin needs a flatmate to cover the cost of renovating her flat and ends up sharing with Ben, a pyrotechnician colleague who has kept everyone at arm's length and has secrets of his own to trade for hers.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "nikdy-nedelej-kompromis-aneb-vyjednavej-tak-": {
+   "blurb": "A former FBI lead international kidnapping negotiator sets out the techniques he used in hostage cases - tactical empathy, labelling, mirroring, calibrated questions - and argues they apply to ordinary business and personal negotiation.",
+   "cover": "https://covers.openlibrary.org/b/id/8365942-M.jpg",
+   "isbn": "1504735064"
+  },
+  "nota-bene": {
+   "blurb": "An illustrated book for young readers explaining where well-known Latin sayings come from and what they mean.",
+   "cover": "https://covers.openlibrary.org/b/id/161828-M.jpg",
+   "isbn": "9780300046007"
+  },
+  "nova-gaia": {
+   "blurb": "A science-fiction gamebook set in 2342 in which the reader, playing a celebrated astronaut on Mars, must uncover a conspiracy and stop a larger threat approaching the planet.",
+   "cover": "https://covers.openlibrary.org/b/id/13271089-M.jpg",
+   "isbn": "9781723731976"
+  },
+  "odmaturuj-z-literatury": {
+   "blurb": "A Czech school-leaving-exam revision guide to literature: periods, movements, authors and set texts in summary form, with practice questions.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "operace-slunce": {
+   "blurb": "Humanity has settled the Solar System when a mafia-run corporation hires a former space pilot to steal a doomsday weapon the Earth government intends to dispose of by firing it into the Sun.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "pan-blesku": {
+   "blurb": "A novel about the young Nikola Tesla, from his studies and inventing in old Prague through his years around Edison and Westinghouse, with Guglielmo Marconi cast as both closest friend and rival.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "pan-tompkins-stale-v-risi-divu": {
+   "blurb": "C. G. H. Tompkins, a bank clerk, dozes through popular physics lectures and dreams himself into worlds where the speed of light is a bicycle's pace, quantum effects are visible at human scale, and the universe is born and dies.",
+   "cover": "https://covers.openlibrary.org/b/id/351265-M.jpg",
+   "isbn": "9780511581694"
+  },
+  "pekelna-dira": {
+   "blurb": "General Adolphus, exiled after a failed rebellion to a ruined planet used as a dumping ground, builds a power base among the frontier worlds while colonists discover that the planet's extinct natives survive as consciousnesses able to merge with humans.",
+   "cover": "https://covers.openlibrary.org/b/id/7539676-M.jpg",
+   "isbn": "1427211426"
+  },
+  "piseme-pribeh": {
+   "blurb": "A teacher's resource of worksheets and lessons that walks young primary-school pupils through planning and writing a short story: characters, setting, problem and ending.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "pisen-kterou-se-objasnuje-svet": {
+   "blurb": "Twenty-two horror and speculative stories in which characters lose their grip on what they are seeing - a father who has kidnapped his daughter loses her in a boarded-up house, survivors live in holes beneath a tower, doubles and sensory anomalies recur.",
+   "cover": "https://covers.openlibrary.org/b/id/8799129-M.jpg",
+   "isbn": "1566895480"
+  },
+  "pod-znamenim-pulmesice": {
+   "blurb": "Between 2049 and 2070 almost all of Europe lives under Muslim rule that is beginning to crumble from internal strain. Parallel strands follow refugees from Italy, Bohemia, the Baltics, Germany and a conquered Israel who refuse to submit and leave to found islands of a restored civilisation.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "podivne-nebe-nad-vychodnim-berlinem": {
+   "blurb": "In 1973 a mysterious craft falls near East Berlin and the Soviet army begins a secret investigation. Herring, an American agent embedded in the Stasi and long since tired of his own cover, is sent to find out what they have, and discovers it is already inside their minds.",
+   "cover": "https://covers.openlibrary.org/b/id/15152186-M.jpg",
+   "isbn": "1684155878"
+  },
+  "podraz": {
+   "blurb": "A former US federal agent's account of going undercover as a money launderer in Panama and inside the Cali cartel, as seized shipments and a blown cover identity put him in danger.",
+   "cover": "https://covers.openlibrary.org/b/id/13337032-M.jpg",
+   "isbn": "1542032954"
+  },
+  "posledni-follower": {
+   "blurb": "In a 2044 run by robots and addictive technology, ecological resisters led by three legendary YouTubers are hunted and vanish. Fourteen-year-old Max sets out to find them and becomes the last follower.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "povidky-o-vlasti": {
+   "blurb": "A collection of satirical short stories about post-Soviet Russia, some of them shaped as political thrillers, setting real against declared patriotism and power against people. The title plays ironically on the Soviet tradition of short celebratory prose.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "povstani-herobrina": {
+   "blurb": "Josh, Andre and Suzy discover superhero abilities inside the Minecraft world and must cross a dragon territory on the way to the city of Silverrock.",
+   "cover": "https://covers.openlibrary.org/b/id/6426475-M.jpg"
+  },
+  "pravidla-kterymi-se-vase-matka-neridila": {
+   "blurb": "A follow-up to The Rules, giving women thirty-one rules for dating in the age of texting, Facebook and online dating, co-written with the authors' daughters.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "pravidla-valky": {
+   "blurb": "Captain Jack Steel leads his grenadiers at Ramillies in 1706 under the Duke of Marlborough, then is sent undercover into the Low Countries to root out traitors and prepare the way to the French-held port of Ostend.",
+   "cover": "https://covers.openlibrary.org/b/id/10317076-M.jpg",
+   "isbn": "0007253567"
+  },
+  "prekonavani-traumatu": {
+   "blurb": "A workbook for trauma survivors and their therapists, explaining trauma symptoms as normal survival responses and offering diagrams and worksheets for working with them.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "prevoznik": {
+   "blurb": "On the hidden archipelago of Prospera, citizens live well until their implanted monitors fall below ten percent and they ferry to the Nursery to be renewed. Proctor Bennett, who escorts them, begins to dream, watches his own monitor fall, and hears his father say a word nobody can explain.",
+   "cover": "https://covers.openlibrary.org/b/id/13249850-M.jpg",
+   "isbn": "9780525619482"
+  },
+  "pribehy-velkych-mest": {
+   "blurb": "A multi-author survey of sixty-eight cities from Uruk and Memphis to Tokyo and Sao Paulo, each given a short illustrated essay on its people, architecture and government.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "primo-tady-mezi-vami": {
+   "blurb": "Diaries kept by members of a Collective who look and mostly behave like humans, presented together with the interrogation record of one of them, describing a technology that lets them evade death and an unstable political situation in the galaxy.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "promente-uzkost-v-nadeji-pomoci-kbt": {
+   "blurb": "A self-help workbook combining cognitive behavioural therapy with positive psychology, offering exercises intended to replace anxious and negative thinking with optimism and hope.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "promeny-kafkovy-prahy": {
+   "blurb": "An anthology of twelve stories by contemporary Czech authors, all tied to Prague and to Franz Kafka, moving between the city's past, its present and science-fictional futures.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "prvni-pomoc": {
+   "blurb": "An illustrated household first-aid manual covering injuries, poisonings and sudden illness, with step-by-step procedures and prevention advice.",
+   "cover": "https://covers.openlibrary.org/b/id/6550117-M.jpg",
+   "isbn": "0874936225"
+  },
+  "psychiatricke-minimum": {
+   "blurb": "A Czech psychiatrist explains basic psychiatric concepts and diagnoses for non-medical readers, illustrating each with cases from over thirty years of practice.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "psychologie-atkinsonove-a-hilgarda": {
+   "blurb": "A comprehensive introductory psychology textbook covering methodology, the biological basis of behaviour, cognition, emotion, personality, development, social behaviour and psychopathology.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "psychologie-reklamy": {
+   "blurb": "A Czech textbook on the psychology of advertising, covering motivation, emotion and perception in consumer response, with analyses of real campaigns.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "psychologie-rodiny": {
+   "blurb": "A Czech handbook on family psychology for teachers and helping professionals, following human development through partner choice, parenthood, trauma, abuse, post-divorce care arrangements and substitute family care.",
+   "cover": "https://covers.openlibrary.org/b/id/7079999-M.jpg"
+  },
+  "psychopedie": {
+   "blurb": "A Czech special-education textbook on intellectual-development disorders and autistic-spectrum conditions, covering the special pedagogue's role, inclusive schooling, how such pupils present at school, and diagnosis and support.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "purgatorium": {
+   "blurb": "On an irreparably devastated far-future Earth, Genesis, a girl who has lost her memory, survives alongside her friends while searching for her past, and discovers that a deadlier enemy stands behind the lethal infection threatening them.",
+   "cover": "https://covers.openlibrary.org/b/id/12967077-M.jpg",
+   "isbn": "9780312851804"
+  },
+  "puvod": {
+   "blurb": "A research team in Antarctica finds a mummified modern-looking human body dated to forty thousand years ago. The team is attacked, and the surviving scientist turns to her ex-husband, a former member of an elite government unit, to keep the discovery from being buried.",
+   "cover": "https://covers.openlibrary.org/b/id/942334-M.jpg",
+   "isbn": "9781893163089"
+  },
+  "qualityland": {
+   "blurb": "In a near-future country governed by algorithms, machine scrapper Peter Jobless cannot bring himself to destroy the defective robots sent to him, and sets out to return a product that the world's largest retailer insists he wants.",
+   "cover": "https://covers.openlibrary.org/b/id/8596360-M.jpg",
+   "isbn": "1538716798"
+  },
+  "rec-emoci": {
+   "blurb": "A popular-psychology book arguing that every emotion carries useful information; the first half teaches five empathic skills and the second works through individual emotions such as anger, fear, panic and depression as practical tools.",
+   "cover": "https://covers.openlibrary.org/b/id/13111931-M.jpg",
+   "isbn": "9781591797692"
+  },
+  "reinkarnace": {
+   "blurb": "A man regains partial consciousness in an intensive care unit not knowing who he is; on mechanical ventilation and able only to hear and smell, he recovers, when a woman's voice unlocks part of his memory, fragments of two earlier lives.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "remo": {
+   "blurb": "Prague taxi driver David Malik goes to a meeting expecting new work and is told by the International Space Agency that he has been chosen for humanity's first contact with an alien civilisation, to take place in a week at his south Bohemian cottage.",
+   "cover": "https://covers.openlibrary.org/b/id/6878245-M.jpg"
+  },
+  "rikal-jsem-mu-kravata": {
+   "blurb": "A twenty-year-old Tokyo recluse who has not spoken for two years begins sitting on a park bench, where he gradually falls into conversation with a middle-aged office worker who has been sacked and keeps dressing for work so his wife will not know.",
+   "cover": "https://covers.openlibrary.org/b/id/8983379-M.jpg",
+   "isbn": "3442746566"
+  },
+  "rodina-a-spolecnost": {
+   "blurb": "A Czech sociological study text on the family and its relationship to society, issued in an academic teaching series.",
+   "cover": "https://covers.openlibrary.org/b/id/5541785-M.jpg",
+   "isbn": "8072770225"
+  },
+  "rozvijeni-emocni-inteligence-zaku": {
+   "blurb": "A handbook on the emotional and social intelligence of school pupils: how it is assessed, how it relates to negative behaviour and dropout risk, and what school programmes can develop it.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "sanctum": {
+   "blurb": "Dan, Abby and Jordan, still haunted by their summer at a former asylum, return to New Hampshire College after anonymous photographs of an old carnival arrive, and find the carnival and the surrounding town hold a history that touches Dan directly.",
+   "cover": "https://covers.openlibrary.org/b/id/12330095-M.jpg",
+   "isbn": "9780062221001"
+  },
+  "sejdeme-se-na-piazzete": {
+   "blurb": "Frances Mayes and her husband Ed travel through thirteen regions of Italy, from Friuli to Sicily, describing small towns, food, wine and local history, with recipes between the chapters.",
+   "cover": "https://covers.openlibrary.org/b/id/10203307-M.jpg",
+   "isbn": "0451497708"
+  },
+  "slunce-na-uteku": {
+   "blurb": "A catastrophe of unprecedented scale strikes the world; Mike and Bessy survive it by chance in a shelter in the Rocky Mountains, and after two months emerge into a landscape burned beyond recognition.",
+   "cover": "https://covers.openlibrary.org/b/id/15179814-M.jpg",
+   "isbn": "9783161484100"
+  },
+  "snis-o-druhe-zemi": {
+   "blurb": "Ten astronauts leave a dying Earth for a habitable planet in a nearby system: four veterans and six teenagers trained for the mission since childhood. The voyage will take twenty-three years with no one to rely on but each other.",
+   "cover": "https://covers.openlibrary.org/b/id/9282630-M.jpg",
+   "isbn": "9781471171260"
+  },
+  "souziti-s-partnerem-po-mrtvici": {
+   "blurb": "A guide for the husbands and wives of stroke survivors, covering the medical consequences, home care, rehabilitation, and the emotional and practical changes to the relationship.",
+   "cover": "https://covers.openlibrary.org/b/id/9845196-M.jpg",
+   "isbn": "0801898862"
+  },
+  "sport-je-bolest": {
+   "blurb": "A sports physiotherapist explains why injuries happen in every sport and how to prevent them, recover faster and keep training for decades, with exercise guidance and links to video demonstrations.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "strategicky-management-lidskych-zdroju": {
+   "blurb": "A Czech monograph on strategic human-resource management, covering age management, corporate social responsibility, employer branding, talent management and sustainability, supported by survey and statistical data.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "strnaduv-efekt": {
+   "blurb": "Alien portals appear across Earth emitting lethal radiation; a warehouseman who survives one at close range gains alien technology in his body and the power to close them, and becomes the target of the creatures coming through.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "stvoritele-budoucnosti": {
+   "blurb": "An anthology of science-fiction and horror short stories by classic authors of those genres, compiled by Peter Haining.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "supervedator": {
+   "blurb": "Fourteen-year-old Cosmo Hill escapes an orphanage where boys are used to test dangerous products, and joins a gang of outcast teenagers who can see and destroy the blue creatures that feed on human life force.",
+   "cover": "https://covers.openlibrary.org/b/id/545145-M.jpg",
+   "isbn": "0141910089"
+  },
+  "svatebni-plan": {
+   "blurb": "Regency England: the bankrupt family of a dead viscount stakes its last money on presenting the prettier sister in London society, with the eldest daughter accompanying her disguised as a widowed chaperone.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "tamar": {
+   "blurb": "Given at fourteen to a cruel, idol-worshipping husband, the widowed Tamar is denied the heir her position entitles her to and takes a desperate step to claim it from her father-in-law Judah.",
+   "cover": "https://covers.openlibrary.org/b/id/11145883-M.jpg",
+   "isbn": "1529040280"
+  },
+  "tovarna-na-skorapky": {
+   "blurb": "A millionaire funds the development of a superhuman artificial intelligence called Singularita, and a group of hackers known as the Skorapky set out to stop him, with escalating violence.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "tri-socialni-svety": {
+   "blurb": "A Czech sociologist argues that contemporary society is splitting into three mutually incommensurable social worlds - the elite, the middle strata and the declassed - and examines how social science's own concepts hide that shift.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "uralske-okno": {
+   "blurb": "Essays by a Finnish writer and journalist on the Uralic and Finno-Ugric minority peoples of Russia, their situation and how they live.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "urbo-kune": {
+   "blurb": "A new librarian arrives in Urbo Kune, an invented and never-inhabited capital of a united Europe, and gradually concludes that the city has a secret life and a plan of its own for him.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "uz-je-to-tady": {
+   "blurb": "Ten loosely interlinked humorous science-fiction stories about the technologies that could take over everyday life, by a group of Czech and Slovak authors.",
+   "cover": "https://covers.openlibrary.org/b/id/15179814-M.jpg",
+   "isbn": "9783161484100"
+  },
+  "v-prazdnote": {
+   "blurb": "Pavel Prochazka wakes from cryosleep on the colonisation ship Destiny with no memory of who he is, the only living person aboard a vessel full of frozen dead, and pieces his identity together with help from the ship's artificial intelligence.",
+   "cover": "https://covers.openlibrary.org/b/id/15179814-M.jpg",
+   "isbn": "9783161484100"
+  },
+  "valku-skoncili-skrcci": {
+   "blurb": "A Czech science-fiction novel; the catalogue record gives no plot description.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "vanice": {
+   "blurb": "A district doctor and his driver set out by horse-drawn sled to deliver vaccine to a distant village during an epidemic, and spend the book lost in a blizzard among increasingly strange encounters.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "veda-v-kostce": {
+   "blurb": "An illustrated science encyclopedia for young readers, surveying physics, chemistry, biology, the natural sciences and space.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "vepsano-krvi-vlastniho-srdce": {
+   "blurb": "June 1778: the British army withdraws from Philadelphia, Jamie Fraser returns after being presumed drowned to find Claire married to his friend Lord John Grey, and the Frasers are drawn into Washington's army while a parallel twentieth-century thread follows their daughter's family.",
+   "cover": "https://covers.openlibrary.org/b/id/10864039-M.jpg",
+   "isbn": "9780606364294"
+  },
+  "vesmirni-pytlaci": {
+   "blurb": "Two children from Earth join a former space marine, a malfunctioning kitchen robot and an intelligent rocket to stop poachers who raid planets for endangered exotic animals and sell them on the black market.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "vita-humana": {
+   "blurb": "A young teacher whose life is boringly ordinary meets a mysterious being, and the encounter draws him into a search for where everything and humankind actually came from.",
+   "cover": "https://covers.openlibrary.org/b/id/5746840-M.jpg",
+   "isbn": "022658674X"
+  },
+  "vladana-a-prasopes": {
+   "blurb": "Vladana finishes school on a small planet that is a failed copy of Earth and, rather than cleaning cages, answers an advertisement for an intergalactic guardian - for which she needs the right magical animal.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "vymena": {
+   "blurb": "In the mid-twenty-first century an artificial intelligence long out of its creators' control decides to drastically reduce Earth's population, and launches a secret mission into the past to retrieve the key to human survival on another planet.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "zapisnik-alkoholicky": {
+   "blurb": "A young mother's account of her alcohol dependence, her detox and the first year of abstinence, assembled from her blog and diary, closing with her family's view of the same events.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "zena-ktera-zacala-zit": {
+   "blurb": "A woman living quietly in rural France is called back to England by her estranged father's death and inherits his coded diaries, which force her to confront her own past.",
+   "cover": "https://covers.openlibrary.org/b/id/6681685-M.jpg"
+  },
+  "adaptace": {
+   "blurb": "Epidemics and wars have decimated humanity. Zoya, who has lost everything, follows a map toward a city called Ark where the rest of humanity supposedly still lives in peace, travelling with a stranger and his young sister across the ruined land.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "literatura": {
+   "blurb": "A survey of Czech and world literature by period for Czech secondary-school students, with excerpts and a section on literary theory, aimed at maturita and university-entrance preparation.",
+   "cover": "https://covers.openlibrary.org/b/id/10832253-M.jpg",
+   "isbn": "9780670823932"
+  },
+  "poselstvi-megalitu": {
+   "blurb": "A survey of megalithic monuments from Europe and Malta to Inca fortresses in the Andes, Australia and the South Pacific, asking who built them, how the multi-ton blocks were moved, and what the builders intended.",
+   "cover": "https://covers.openlibrary.org/b/id/9151615-M.jpg",
+   "isbn": "9783776627701"
+  },
+  "stoparuv-pruvodce-galaxii-douglase-adamse": {
+   "blurb": "A continuation of the Hitchhiker's series written by Eoin Colfer at the request of Douglas Adams's estate, picking up Arthur Dent, Ford Prefect, Zaphod Beeblebrox and Marvin after the events of the fifth book.",
+   "cover": "https://covers.openlibrary.org/b/id/7143006-M.jpg",
+   "isbn": "1401310087"
+  },
+  "projekt-gilgames": {
+   "blurb": "A superintelligent computer, asked by a robopsychologist to define the meaning of human existence, answers with the story of Urshanabi, the immortal ferryman of the Gilgamesh epic, who travels through history seeking to do some good for humanity.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "7-prisernych": {
+   "blurb": "An 11-year-old boy accidentally triggers an ancient machine that extracts the seven deadly sins from his soul as small monsters, then flies to Brazil with them to find his missing sister.",
+   "cover": "https://covers.openlibrary.org/b/id/9372406-M.jpg",
+   "isbn": "9781509887644"
+  },
+  "amulet": {
+   "blurb": "Emily and her allies charter an airship in search of the lost city of Cielis, gaining an uneasy new companion in the Elf King's son while the Amulet's voice keeps pressing dangerous thoughts on her.",
+   "cover": "https://covers.openlibrary.org/b/id/6462717-M.jpg",
+   "isbn": "9780545208857"
+  },
+  "bratrstvo-krve": {
+   "blurb": "Jan Bezzemek is a member of the Svabove, vampires who broke clan rules but were spared execution; after a failed mission to kill General Gerhard, they are sent to eliminate Gudrin, a target a twenty-strong vampire special-forces unit already died trying to reach.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "cestovni-kancelar-jinosvety": {
+   "blurb": "Flick Hudson, now an official Strangeworlds Travel Agency member, is summoned by a pirate queen whose flat ocean world is collapsing at its edges, and must find her people a new home before time runs out.",
+   "cover": "https://covers.openlibrary.org/b/id/11291551-M.jpg",
+   "isbn": "1534483527"
+  },
+  "den-vosaka": {
+   "blurb": "A satirical short-story collection presenting the misadventures of the arch-villain Vosak, framed as a mock-serious 'translation' of an American pulp author complete with fake scholarly footnotes.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "divka-had-trn": {
+   "blurb": "Cursed since birth to poison anyone she touches, Persian princess Soraya strikes a bargain with a captive demon for a cure, and must choose between a human suitor and the demon who truly sees her.",
+   "cover": "https://covers.openlibrary.org/b/id/10213467-M.jpg",
+   "isbn": "1250751713"
+  },
+  "divodejove": {
+   "blurb": "Twelve-year-old Harper is recruited into the Spectaculars, a boarding-school troupe of magical stage performers, and must help save her new school from a looming threat while adjusting to a persecuted, secretive magical world.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "filix-wood": {
+   "blurb": "Filix Wood is drawn by an unexplained longing into a hidden forest village whose people believe only the strongest survive, and must decide whether to accept their world's demand for self-sacrifice or find another way.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "furyborn": {
+   "blurb": "A prophecy foretells two queens born a thousand years apart, one from blood and one from light, each wielding elemental magic that could decide the world's fate; their stories are told in alternating timelines that eventually converge.",
+   "cover": "https://covers.openlibrary.org/b/id/8808125-M.jpg",
+   "isbn": "0525638946"
+  },
+  "hlad": {
+   "blurb": "When the horseman Famine sweeps through Brazil, he finds Ana, a woman he once left for dead. Their reunion becomes a captivity that turns into an uneasy, brutal romance while the fate of humanity hangs on whether Famine chooses her over his mission.",
+   "cover": "https://covers.openlibrary.org/b/id/14349771-M.jpg",
+   "isbn": "9798695371796"
+  },
+  "hodina-dynove-kralovny": {
+   "blurb": "A year into her reign as queen of Halloween Town, Sally falls through a portal into Time Town, where she must find who tampered with the clock controlling her home before she loses it for good.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "jak-zradit-draciho-hrdinu": {
+   "blurb": "Hiccup is captured and brought before Excellinor the Witch, who takes his dragon Toothless and tortures him for the location of the human rebels' base, while the Dragon Rebellion and the fight over who will rule the Archipelago escalate around him.",
+   "cover": "https://covers.openlibrary.org/b/id/7559016-M.jpg",
+   "isbn": "9780316333733"
+  },
+  "jane-doe": {
+   "blurb": "A girl believed by her island village to be cursed crosses a portal into a labyrinthine Palace connecting many worlds to find her missing father, and runs into a crime lord who threatens every world the Palace joins.",
+   "cover": "https://covers.openlibrary.org/b/id/9167431-M.jpg",
+   "isbn": "9781760503093"
+  },
+  "kniha-m": {
+   "blurb": "A mysterious plague causes people to lose their shadows and, soon after, their memories; a husband searches for his newly shadowless wife while a woman's memory-loss diary and a besieged city's fate unfold in parallel.",
+   "cover": "https://covers.openlibrary.org/b/id/13251964-M.jpg",
+   "isbn": "9786057583710"
+  },
+  "lacrimosa": {
+   "blurb": "Sascha, raised in a convent destroyed by vampires, can possess anyone she touches; she uses the power to hunt the vampires who ruined her family until she meets Raphael, who is immune to her.",
+   "cover": "https://covers.openlibrary.org/b/id/12658403-M.jpg",
+   "isbn": "095680828X"
+  },
+  "likario": {
+   "blurb": "Likario is undergoing rapid growth, becoming a real city where humans, goblins and half-breeds alike find a place to live. But someone hidden in the old underground is quietly gathering allies, corrupting and intimidating, planning to seize power over the city on some dark night.",
+   "cover": "https://covers.openlibrary.org/b/id/6975510-M.jpg",
+   "isbn": "8074560015"
+  },
+  "marcy-a-hadanka-od-sfingy": {
+   "blurb": "A girl afraid of the dark must overcome her fears and travel to Egypt to rescue her adventurer father from the clutches of a great Sphinx guarding a magical book.",
+   "cover": "https://covers.openlibrary.org/b/id/10220312-M.jpg",
+   "isbn": "1911171194"
+  },
+  "maruska-pulnocni-a-velka-hmyzi-olympiada": {
+   "blurb": "At the insect school hidden in an old tree, Marnie and her friends compete to win the annual Great Critter Contest by any means necessary, until a classmate ends up in danger.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "mesto-knih": {
+   "blurb": "A thief forges his way into the White King's palace guard, only to be assigned to watch over a vast underground library that turns out to hold dangerous secrets.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "morska-panna": {
+   "blurb": "A mermaid takes human form to live as the wife of a Maine fisherman; after his death she is recruited by P.T. Barnum to perform as his mermaid attraction in 1840s New York.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "naslouchac": {
+   "blurb": "A Great War divided the world into a habitable half, shielded by an energy field powered by a mineral called sklenit, and a poisoned wasteland. Ilan, one of the few born without deformity and gifted with a rare ability to hear the mineral, disguises herself as a boy to avoid being taken from her family as a sklenit miner.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "nejchladnejsi-divka-ve-meste-chladu": {
+   "blurb": "In a United States ravaged by a vampire epidemic, seventeen-year-old Tana wakes from a party to find her friends slaughtered, and escapes with her infected ex-boyfriend and a chained vampire on a race to the walled quarantine city of Coldtown to save them all.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "nejlepsi-den-pro-umirani": {
+   "blurb": "Thompson, a half-elf despised by both humans and elves, has made a home in the goblin city of Likario, hiring himself out as a mercenary, exploring old temples and fighting orcs and ancient monsters, with two goals: survive and keep his family alive, and take revenge on those who hurt him.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "nejtemnejsi-cast-lesa": {
+   "blurb": "In the town of Fairfold, humans and the fae live in an uneasy truce built on tourism; when the horned boy who has slept in a glass coffin in the woods for years finally wakes, siblings Hazel and Ben are pulled into the danger the town has learned to ignore.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "neslysno": {
+   "blurb": "In a mountain village where everyone has been deaf for generations, Fei is the first in living memory to hear again; she must use her new sense to uncover why her people are also losing their sight before they starve.",
+   "cover": "https://covers.openlibrary.org/b/id/10306128-M.jpg",
+   "isbn": "1595147632"
+  },
+  "ohnivy-kvet": {
+   "blurb": "After the warlord Aric Athair's army kills her family, Caledonia Styx captains an all-female crew of survivors on the deadly Bullet seas, determined to bring him down.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "opacna-strana": {
+   "blurb": "After his best friend's death, grieving teenager Theo watches his town flip upside-down into a monstrous alternate reality that embodies his depression, and must navigate it with a sharp-tongued girl who understands the flipped world better than he does.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "opskurno": {
+   "blurb": "In the isolated, self-governing English town of Rotherweird, a new history teacher and the arrival of a sinister newcomer set off a chain of events that begins to expose the magical secret the town has hidden since its Tudor founding.",
+   "cover": "https://covers.openlibrary.org/b/id/13949159-M.jpg",
+   "isbn": "1635061547"
+  },
+  "orcigard": {
+   "blurb": "Orcigard, once the realm of the bird-headed pterrs and now a vast swamp of ruined temples, is still nominally ruled by the fading Dark Mage Alarich Touraine as rebellions and treasure-hunters close in. Sylvia Viktorina, the youngest daughter of the Duke of Barro, is swept into the swamp and must find allies among adventurers, orcs and monsters to survive.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "pan-ledove-zahrady": {
+   "blurb": "Earth commando Vuko Drakkainen is sent alone to an alien planet, Midgaard, to find a missing scientific expedition, and discovers some of its members have seized magical power and declared themselves gods amid a war that is killing the natives.",
+   "cover": "https://covers.openlibrary.org/b/id/15179814-M.jpg",
+   "isbn": "9783161484100"
+  },
+  "pisen-o-dvernikovi": {
+   "blurb": "The Doorkeeper opens and closes the gates of a sentient magical House, loving a princess, serving kings and befriending executioners while remaining the House's slave; his story is intercut with that of a boy who wants to invent doors.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "po-schodech-nahoru-dolu": {
+   "blurb": "Two ten-year-old boys, Alex and Max, discover they live in the same house in two parallel realities and begin visiting each other at night, but their friendship threatens to merge the two worlds together.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "posledni-iluze": {
+   "blurb": "Two Stockholm teenagers, Ky and Adam, discover a hole behind the wall of Ky's bedroom and strange shifts in Adam's everyday reality, and are drawn into a plot that upends what they thought was real.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "pristav-nebezpeci": {
+   "blurb": "A solo-adventure gamebook in which the reader plays a down-on-their-luck treasure hunter crossing the Allansia setting, with the choices made determining whether an old enemy's return is stopped.",
+   "cover": "https://covers.openlibrary.org/b/id/8501044-M.jpg",
+   "isbn": "1407181297"
+  },
+  "skandar-a-kostliva-kletba": {
+   "blurb": "Skandar and his friends begin their fourth year of training at the Eyrie when a terrible curse strikes the unicorns, threatening to upend everything just as training intensifies.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "skandar-a-prizracny-jezdec": {
+   "blurb": "Second-years at the Eyrie face a new threat as wild unicorns, meant to be immortal, are being savagely killed, an ancient prophecy surfaces, and storms begin to ravage the island; meanwhile Skandar's sister Kenna tries to reach the island to train alongside him.",
+   "cover": "https://covers.openlibrary.org/b/id/15063799-M.jpg",
+   "isbn": "9781398502918"
+  },
+  "skandar-a-souteze-chaosu": {
+   "blurb": "Third-years at the Eyrie must survive a set of dangerous competitions staged across the island's elemental territories, testing friendships and rider-unicorn bonds to breaking point, while Skandar's sister Kenna, now on the island but bonded to a wild unicorn, feels isolated as a discovery threatens the island's future.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "stinove-eso": {
+   "blurb": "When her mother disappears in the crime-ridden City of Sin, proper young Enne Salta must team up with con man and street lord Levi Glaisyer to find her, uncovering a conspiracy tangled in casinos, gangs and a magic system built on family lineage.",
+   "cover": "https://covers.openlibrary.org/b/id/13188977-M.jpg",
+   "isbn": "1488030472"
+  },
+  "stiny-halloweenu": {
+   "blurb": "A Horror Writers Association anthology of sixteen new stories built around Halloween and related holidays, from jack-o'-lantern origin myths to modern trick-or-treating horror.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "svetla-na-obloze": {
+   "blurb": "On a frozen island where lights in the sky foretell fortune or doom, a girl braves the wilderness to learn why the sky has turned an ominous red, while a young man tries to unite the villages against approaching danger.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "terry-pratchett": {
+   "blurb": "A biography and literary study of Terry Pratchett covering more than 40 years of his work, including an extensive bibliography and collector's guide.",
+   "cover": "https://covers.openlibrary.org/b/id/10185206-M.jpg",
+   "isbn": "9781843588955"
+  },
+  "trpytny-dvur": {
+   "blurb": "Mira, a refugee posing as a marriageable lady at the Glittering Court finishing school, partners with a shipboard spy to earn her freedom and uncovers a plot to start a war between the colonies and the native Icori.",
+   "cover": "https://covers.openlibrary.org/b/id/8661231-M.jpg",
+   "isbn": "0698406001"
+  },
+  "upiri-z-morganville": {
+   "blurb": "In the vampire-and-human town of Morganville, a power struggle between the ruling vampire Amelie and her rebellious father Bishop comes to a head as a natural disaster and a human uprising threaten the town at the same time.",
+   "cover": "https://covers.openlibrary.org/b/id/6425797-M.jpg",
+   "isbn": "1440660859"
+  },
+  "urla": {
+   "blurb": "Ilan wakes the swords and forcibly seizes the freedom the sklenari have always wanted, but in doing so takes several warriors with her underground, into places they are not welcome, and must first persuade her men to follow or at least walk beside her.",
+   "cover": "https://covers.openlibrary.org/b/id/7368301-M.jpg",
+   "isbn": "9780060010270"
+  },
+  "valecna-lest": {
+   "blurb": "A short-story collection set in the Krvave pohranici borderland world, drawing together older and newer texts linked by a recurring hero or group of heroes rather than a single continuous plot.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "valka": {
+   "blurb": "When Jerusalem falls to War and his army, Miriam Elmahdy is claimed by the horseman as his 'wife.' Drawn into his camp and his campaign of destruction, she has to decide whether love can survive - or stop - a being who is war itself.",
+   "cover": "https://covers.openlibrary.org/b/id/10453706-M.jpg",
+   "isbn": "9781083038630"
+  },
+  "ve-stinu-vlci-kralovny": {
+   "blurb": "Ysolda has always felt safe in her forest home despite the Wolf Queen's tyranny, until an earthquake shakes her village and her older sister Hari vanishes. With her sea hawk Nara, Ysolda strikes a dangerous bargain with the Wolf Queen herself to get her sister back, and is drawn into a quest for a magic more powerful than she understands.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "vypravec": {
+   "blurb": "In the fictional village of Běstviny, a legend holds that a giant worm lives beneath the garden and must be fed; when the grandfather dies, one of his grandchildren must take his place, and the story's own characters begin to resist the narrator telling it.",
+   "cover": "https://covers.openlibrary.org/b/id/1016753-M.jpg",
+   "isbn": "8071453684"
+  },
+  "zimni-drak": {
+   "blurb": "A winter dragon that carries away snow each spring injures its wing and cannot leave; a girl must help it heal so spring can finally arrive.",
+   "cover": "https://covers.openlibrary.org/b/id/8890281-M.jpg",
+   "isbn": "9783707451900"
+  },
+  "zlata-grai": {
+   "blurb": "Isarell, of the near-extinct grai race, survives two years alone in the hostile Shadowlands to earn a place under the mad wild-women queen Ymira's command, alongside her sworn-sibling bond with Bastien.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "zmije-a-vlk": {
+   "blurb": "Vaasa, sole heir to an uncontrollable dark magic that killed her mother, is married off by her power-hungry brother to a ruthless foreign ruler as a political weapon, and finds the marriage may be the only way to survive her own power.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
   }
  },
  "readMedia": {
@@ -9658,6 +10786,35 @@
   "mort-discworld-4": {
    "cover": "https://covers.openlibrary.org/b/id/14648805-M.jpg",
    "isbn": "9780061367656"
+  },
+  "ja-robot-i-robot": {
+   "cover": "https://cache.obalkyknih.cz/file/cover/3079038/preview510",
+   "isbn": "9782290055953",
+   "coverOL": "https://covers.openlibrary.org/b/id/12385229-M.jpg"
+  },
+  "stin-veci-ztracenych-the-shadow-of-what-was-lost": {
+   "cover": "https://cache.obalkyknih.cz/file/cover/2072885/preview510",
+   "isbn": "0316274097",
+   "blurb": "Twenty years after a rebellion stripped the magic-users of their power, a young man discovers he has abilities that were supposed to be gone.",
+   "coverOL": "https://covers.openlibrary.org/b/id/8471205-M.jpg"
+  },
+  "ozvena-veci-budoucich-an-echo-of-things-to-come": {
+   "cover": "https://cache.obalkyknih.cz/file/cover/2357054/preview510",
+   "isbn": "9788027500086",
+   "blurb": "The Boundary is failing and the Augurs' bargain is coming due, with Davian, Wirr and Asha scattered across a war they only half understand. Second of Licanius.",
+   "coverOL": "https://covers.openlibrary.org/b/id/9256414-M.jpg"
+  },
+  "svetlo-veci-konecnych-the-light-of-all-that-falls": {
+   "blurb": "With the Boundary sealed but monsters loose in Andarra, Wirr struggles to hold a fracturing alliance together in the capital while Davian, imprisoned in a foreign land, faces the surviving Venerate as they try to undo the sacrifice that closed the Boundary.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2660263/preview510",
+   "isbn": "9788027506330",
+   "coverOL": "https://covers.openlibrary.org/b/id/9248546-M.jpg"
+  },
+  "pocitani-hvezd-the-calculating-stars": {
+   "cover": "https://cache.obalkyknih.cz/file/cover/2704156/preview510",
+   "isbn": "9788027700936",
+   "blurb": "A meteorite destroys Washington in 1952 and forces the space programme decades early; a wartime pilot and mathematician fights to fly it. First of Lady Astronaut.",
+   "coverOL": "https://covers.openlibrary.org/b/id/8290909-M.jpg"
   }
  },
  "rejectMedia": {
@@ -10798,7 +11955,331 @@
   },
   "nasleduj-me-tise-adela-rosipalova": {
    "cover": null,
-   "coverNote": "no cover on Open Library after two passes (2026-10-12)"
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "akta-x-jonathan-maberry": {
+   "cover": "https://covers.openlibrary.org/b/id/6602995-M.jpg",
+   "isbn": "1442402326"
+  },
+  "az-do-dna-chloe-neill": {
+   "cover": "https://covers.openlibrary.org/b/id/5723254-M.jpg",
+   "isbn": "0451226259"
+  },
+  "brana-temnoty-raymond-e-feist": {
+   "cover": "https://covers.openlibrary.org/b/id/1005965-M.jpg",
+   "isbn": "9789029055505"
+  },
+  "brisingr-or-the-seven-promises-eragon-shadeslayer-and-saphir": {
+   "cover": "https://covers.openlibrary.org/b/id/13921600-M.jpg",
+   "isbn": "9783442366064"
+  },
+  "dablovo-oko-jack-mcdevitt": {
+   "cover": "https://covers.openlibrary.org/b/id/3872808-M.jpg",
+   "isbn": "0441000770"
+  },
+  "holky-nekdy-kousou-chloe-neill": {
+   "cover": "https://covers.openlibrary.org/b/id/5723254-M.jpg",
+   "isbn": "0451226259"
+  },
+  "hrozba-raymond-e-feist": {
+   "cover": "https://covers.openlibrary.org/b/id/1005965-M.jpg",
+   "isbn": "9789029055505"
+  },
+  "shannarovy-magicke-elfeiny-terry-brooks": {
+   "cover": "https://covers.openlibrary.org/b/id/908811-M.jpg",
+   "isbn": "0708813445"
+  },
+  "studna-dusi-a-bertram-chandler": {
+   "cover": "https://covers.openlibrary.org/b/id/7072254-M.jpg",
+   "isbn": "1845290968"
+  },
+  "temna-hlidka-vladimir-vasiljev": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "z-hrobu-jeaniene-frost": {
+   "cover": "https://covers.openlibrary.org/b/id/6309505-M.jpg",
+   "isbn": "9780061744822"
+  },
+  "helikonie-brian-w-aldiss": {
+   "cover": "https://covers.openlibrary.org/b/id/10952280-M.jpg",
+   "isbn": "1504010353"
+  },
+  "motylek-yu-aikawa": {
+   "cover": "https://covers.openlibrary.org/b/id/11768023-M.jpg",
+   "isbn": "9781427818522"
+  },
+  "na-paprsku-tillie-walden": {
+   "cover": "https://covers.openlibrary.org/b/id/9254455-M.jpg",
+   "isbn": "1250178134"
+  },
+  "odpovedi-z-nebe-theresa-cheungova-claire-broadova": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "palac-supinatych-kocek-jarmila-kasparova": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "porad-jsme-to-my-becky-albertalli-adam-silvera": {
+   "cover": "https://covers.openlibrary.org/b/id/9280553-M.jpg",
+   "isbn": "5604219665"
+  },
+  "projekt-babylon-andreas-wilhelm": {
+   "cover": "https://covers.openlibrary.org/b/id/5983573-M.jpg"
+  },
+  "proklety-ostrov-lauren-a-forry": {
+   "cover": "https://covers.openlibrary.org/b/id/10179170-M.jpg",
+   "isbn": "1950994309"
+  },
+  "sesterstvo-duny-brian-herbert-kevin-j-anderson": {
+   "cover": "https://covers.openlibrary.org/b/id/205510-M.jpg",
+   "isbn": "9780340823323"
+  },
+  "velka-kniha-o-cakrach-anodea-judith": {
+   "cover": "https://covers.openlibrary.org/b/id/667178-M.jpg",
+   "isbn": "1574532030"
+  },
+  "budoucnost-geografie-tim-marshall": {
+   "cover": "https://covers.openlibrary.org/b/id/8900233-M.jpg",
+   "isbn": "1501121472"
+  },
+  "c-miroslav-virius": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "deprese-odkaz-predku-sylvie-tenenbaum": {
+   "cover": "https://covers.openlibrary.org/b/id/10795551-M.jpg",
+   "isbn": "9782226153449"
+  },
+  "diagnostika-ditete-predskolniho-veku-jirina-bednarova-vlasta": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "druha-derivace-touhy-tomas-sedlacek": {
+   "cover": "https://covers.openlibrary.org/b/id/7008551-M.jpg",
+   "isbn": "9780199767205"
+  },
+  "efektivni-vzdelavani-zamestnancu-josef-vodak-alzbeta-kucharc": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "etika-umele-inteligence-mark-coeckelbergh": {
+   "cover": "https://covers.openlibrary.org/b/id/13283555-M.jpg",
+   "isbn": "9780262538190"
+  },
+  "jde-o-vase-strevo-jean-claude-alix": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "jde-o-vasi-krev-jean-claude-alix": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "jidlo-na-prvnim-miste-dallas-hartwig-melissa-hartwig": {
+   "cover": "https://covers.openlibrary.org/b/id/10836831-M.jpg",
+   "isbn": "1936608898"
+  },
+  "krizova-komunikace-a-komunikace-rizika-stepan-vymetal": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "laska-je-pribeh-robert-j-sternberg": {
+   "cover": "https://covers.openlibrary.org/b/id/9720384-M.jpg",
+   "isbn": "9781111345396"
+  },
+  "lexikon-zakazane-historie-luc-burgin": {
+   "cover": "https://covers.openlibrary.org/b/id/1025867-M.jpg",
+   "isbn": "3776670029"
+  },
+  "mediace-v-teorii-a-praxi-lenka-hola": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "nejlepsi-praxe-v-rizeni-lidskych-zdroju-martin-sikyr": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "nic-mi-neni-pomoc-nepotrebuju-xavier-amador": {
+   "cover": "https://covers.openlibrary.org/b/id/1703622-M.jpg",
+   "isbn": "9780967718903"
+  },
+  "obecne-studijni-predpoklady-jiri-horak-tomas-horky-matej-vit": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "odemceny-vesmir-stephen-a-lucy-hawkingovi": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "pedagogicky-takt-max-van-manen": {
+   "cover": "https://covers.openlibrary.org/b/id/4095981-M.jpg",
+   "isbn": "1629584169"
+  },
+  "pes-adam-miklosi-et-al": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "psychologie-osobnosti-pavel-rican": {
+   "cover": "https://covers.openlibrary.org/b/id/5439392-M.jpg",
+   "isbn": "8071782505"
+  },
+  "socialni-patologie-slavomil-fischer-jiri-skoda": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "starnuti-z-pohledu-pozitivni-psychologie-jaro-krivohlavy": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "svitici-deti-nicholas-kardaras": {
+   "cover": "https://covers.openlibrary.org/b/id/7891678-M.jpg",
+   "isbn": "9781250097996"
+  },
+  "symphony-no-6-in-b-minor-op-74-pyotr-ilyich-tchaikovsky": {
+   "cover": "https://covers.openlibrary.org/b/id/5084882-M.jpg",
+   "isbn": "9780769282992"
+  },
+  "tajna-rec-kocek-susanne-schotz": {
+   "cover": "https://covers.openlibrary.org/b/id/12110298-M.jpg",
+   "isbn": "6050601194"
+  },
+  "telo-scita-rany-bessel-van-der-kolk": {
+   "cover": "https://covers.openlibrary.org/b/id/8315367-M.jpg",
+   "isbn": "8412067193"
+  },
+  "tenis-alessandro-gennari": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "to-byl-jen-vtip-jasmina-houdek-pavel-houdek": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "uvod-do-psychologie-osobnosti-panajotis-cakirpaloglu": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "v-zajeti-geografie-tim-marshall": {
+   "cover": "https://covers.openlibrary.org/b/id/8900233-M.jpg",
+   "isbn": "1501121472"
+  },
+  "vsechno-co-opravdu-potrebuju-znat-jsem-se-naucil-v-materske-": {
+   "cover": "https://covers.openlibrary.org/b/id/291037-M.jpg",
+   "isbn": "9780586208922"
+  },
+  "vycvik-beze-slov-liane-rauchova": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "adept-adam-przechrzta": {
+   "cover": "https://covers.openlibrary.org/b/id/13949737-M.jpg",
+   "isbn": "9788379642410"
+  },
+  "alchymista-michael-scott": {
+   "cover": "https://covers.openlibrary.org/b/id/244765-M.jpg",
+   "isbn": "0385733577"
+  },
+  "baneovy-kroniky-cassandra-clare-sarah-rees-brennan-maureen-j": {
+   "cover": "https://covers.openlibrary.org/b/id/8502454-M.jpg",
+   "isbn": "9781442495999"
+  },
+  "carohvozd-skye-mckenna": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "cerna-carodejka-laurie-forest": {
+   "cover": "https://covers.openlibrary.org/b/id/13333933-M.jpg",
+   "isbn": "9781488202896"
+  },
+  "hrisnik-amanda-stevensova": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "kde-jeste-lezi-tma-a-b-poranek": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "ken-wood-jiri-w-prochazka": {
+   "cover": "https://covers.openlibrary.org/b/id/13942363-M.jpg",
+   "isbn": "9788375742800"
+  },
+  "kralovstvi-amanda-stevensova": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "navstevnice-amanda-stevensova": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "past-na-medveda-petra-neomillnerova": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "pekelne-stroje-cassandra-clare": {
+   "cover": "https://covers.openlibrary.org/b/id/10121449-M.jpg",
+   "isbn": "9781406346428"
+  },
+  "pribehy-z-akademie-lovcu-stinu-cassandra-clare-sarah-rees-br": {
+   "cover": "https://covers.openlibrary.org/b/id/8453306-M.jpg",
+   "isbn": "1481443259"
+  },
+  "probuzeni-amanda-stevensova": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "procitnuti-nora-roberts": {
+   "cover": "https://covers.openlibrary.org/b/id/3202381-M.jpg",
+   "isbn": "1593357931"
+  },
+  "proroctvi-jamie-mcguire": {
+   "cover": "https://covers.openlibrary.org/b/id/7241922-M.jpg",
+   "isbn": "1471115046"
+  },
+  "rad-vecnych-trnu-aliette-de-bodardova": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "rad-zlomenych-kridel-aliette-de-bodardova": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "ragnarok-odin-helgheim": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "septalka-hayley-hoskins": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "skola-noci-p-c-castova-kristin-castova": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "stribrna-maska-holly-blackova-cassandra-clareova": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
+  },
+  "ucednik-a-valecny-mag-taran-matharu": {
+   "cover": "https://covers.openlibrary.org/b/id/8067808-M.jpg",
+   "isbn": "9783453269941"
+  },
+  "ucednik-taran-matharu": {
+   "cover": "https://covers.openlibrary.org/b/id/8067808-M.jpg",
+   "isbn": "9783453269941"
+  },
+  "vabeni-vln-pascale-lacelle": {
+   "cover": "https://covers.openlibrary.org/b/id/14425681-M.jpg",
+   "isbn": "9781665939294"
+  },
+  "zaklinacky-potizi-p-c-cast-kristin-cast": {
+   "cover": "https://covers.openlibrary.org/b/id/181187-M.jpg",
+   "isbn": "0312360258"
+  },
+  "lady-astronaut-sequels-osudove-nebe-neuprosny-mesic-and-late": {
+   "cover": "https://cache.obalkyknih.cz/file/cover/2857362/preview510",
+   "isbn": "1721364439",
+   "coverOL": "https://covers.openlibrary.org/b/id/10324448-M.jpg"
   }
  },
  "_null_cover": "null with a coverNote is a SETTLED row, not a gap: the search already ran on the date in the note and Open Library had nothing, so the app draws a typographic placeholder and its Gaps panel does not count it - re-running this script cannot clear it, and reporting it would name a shortfall the reader can do nothing about. Later runs skip it too; --retry-missing searches again. 'names a group, not a book' means the row covers an author or a category, so there is no single cover that would be honest. null with NO coverNote is the real gap: a row nothing has looked up yet."

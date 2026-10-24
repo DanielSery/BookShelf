@@ -707,9 +707,12 @@ decide, don't silently exclude:
 - *Worldbuilding logic* — graded; see the verdict required in Phase 5.
 - *Bleakness, teen or child protagonists, length* — small pushbacks at most,
   never grounds for exclusion.
-- *Prophecy / chosen-one plots* — graded, scaled by how present and how hard
-  leaned into; "some prophecy about a saviour is ok". **Never screen out epic
-  fantasy for having one.** The axis is **reverence, not resemblance**: Aslan is
+- *Prophecy / chosen-one plots* — graded on handling, **never on how present or
+  how hard leaned into** (prominence clause withdrawn 2026-10-24: *Licanius*
+  92-96 carries the heaviest prophecy load in the log and tops it). Fate taken
+  seriously inside the world's rules earns on ideas. "Some prophecy about a
+  saviour is ok"; a messianic one at full prominence is untested. **Never screen
+  out epic fantasy for having one.** The axis is **reverence, not resemblance**: Aslan is
   the closest Christ figure there is and is explicitly fine, so don't flag a
   parallel for existing. Flag careless Jesus-resonance a book hasn't earned, or
   a treatment played for ridicule. Subverted or manufactured prophecies are

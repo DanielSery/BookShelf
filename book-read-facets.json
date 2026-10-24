@@ -259,6 +259,31 @@
    "genre": "fantasy",
    "form": "novel",
    "audience": "adult"
+  },
+  "ja-robot-i-robot": {
+   "genre": "sf",
+   "form": "stories",
+   "audience": "adult"
+  },
+  "stin-veci-ztracenych-the-shadow-of-what-was-lost": {
+   "genre": "fantasy",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "ozvena-veci-budoucich-an-echo-of-things-to-come": {
+   "genre": "fantasy",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "svetlo-veci-konecnych-the-light-of-all-that-falls": {
+   "genre": "fantasy",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "pocitani-hvezd-the-calculating-stars": {
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult"
   }
  }
 }

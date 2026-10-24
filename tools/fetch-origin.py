@@ -134,6 +134,30 @@ CS_AUTHORS = {
     "Kristýna Sněgoňová", "Marek Skřipský", "Pavel Bareš", "Pavel Fritz",
     "Pavel Hénik", "Petr Heteša", "Petr Rušeb", "Thomas Blanc", "Vladimír Šlechta",
     "Vlaďka Sacká", "editor Ondřej Jireš",
+    # The fantasy run, 2026-09-03. Mostly established Czech names plus the academic and
+    # self-published tail the `--marc none` slice pulls in. `Michael Newchop` is the only
+    # one that needed checking: an anglophone-looking pseudonym, but a West Bohemian
+    # author writing in Czech (Klika, 2022) whose pen name is also a character in the book.
+    # `Jan Křesadlo` and `Luděk Frýbort` wrote from exile IN Czech, so they are `cs`.
+    "Adriana Knápková, Drahomíra Pavelková, Karel Šteker", "Alisek", "Anna Bolavá",
+    "Anna Žídková", "Barbora Bazalova", "Barbora Haplova",
+    "Barbora Walterová Benešová", "Denisa Proskova", "Eva Hauserová a kol.",
+    "Filip Kurečka", "František Běhounek", "František Niedl",
+    "Hana Urbancova, Pavla Vrabcova", "Helena Kucerova", "Helena Mackova",
+    "Irena Zítková", "Ivo Mozny", "Jakub Pokorný", "Jakub Zeman", "Jan Keller",
+    "Jan Křesadlo", "Jana Bilkova", "Jaroslav Benda", "Jitka Horáková",
+    "Jitka Vysekalova a kolektiv", "Jiří Čechal", "Karel Naxera",
+    "Karel Osoha, Ondřej Kavalír, Vojtěch Mašek", "Karel Sládek",
+    "Kateřina Müllerová", "Kristina M. Waagnerová", "Luděk Frýbort",
+    "Martin Sichinger", "Michael Newchop", "Michaela Duffková", "Michaela Hánová",
+    "Michal Novotny", "Miloš Urban", "Ota Hofman", "Petr Opršal", "Petr Stančík",
+    "Petr Tomšů", "Petra Neomillnerová", "Petra Stehlíková",
+    "Tatana Polaskova, Dagmar Milotova, Zuzana Dvorakova",
+    "Tereza Kimplova, Leona Jochmannova, Jan Svoboda", "Tomáš Vondrovic",
+    "Vaclav Kotrman, Leos Kysa (eds.)", "Viktor Ulip", "Vladimír Medek",
+    "Vlastimil Vondruška", "Vlastimil Čech, Olga Mužíková, Pavel Slepička",
+    "Václav Kotrman, Jaroslav Kříž (eds.)", "Václav Šorel", "Zdeněk Šafář",
+    "Zlatuše Marková", "Štěpán Kučera",
 }
 
 # Only the authors the two deterministic rules never reach: a Czech record that omits
@@ -155,6 +179,8 @@ FOREIGN_AUTHORS = {
     "William Gibson", "Yann Martel",
     "Jan Hora (podle Rudyarda Kiplinga)",
     "Alice Oseman", "John Hare", "Katarína Macurová", "Kjŏng-tchak", "Tanya Stewner",
+    # The fantasy run, 2026-09-03.
+    "Arthur C. Clarke", "Bernard Malamud", "James Gurney",
 }
 
 # Only where the honest value needed something no field in the repo states.

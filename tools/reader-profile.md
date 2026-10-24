@@ -135,9 +135,15 @@ a positive case stated in its own words.
   weight. Four controlled author comparisons all agree.
 - **The protagonist must be interesting *and* worth rooting for** — two separate
   failure modes, and **this beats worldbuilding when they compete.** Not rootable:
-  a villain lead or a slow descent into evil, however well written — 22 points
-  separated two books by the same author in the same world on this alone. Not
-  interesting: flat even when likeable and competent. **A third mode, added 2026-09-02:
+  a lead acting as a villain or sliding into evil, however well written — 22 points
+  separated two books by the same author in the same world on this alone. **The
+  direction of travel decides it, not the past:** a lead who learns what he was
+  and decides not to be that man again is the arc the top-scoring series was
+  liked for, not this failure. Not interesting: flat even when likeable and
+  competent. **Ordinary is not flat** (2026-10-24, two under-predictions): never
+  dock a lead for being an everyman, generic or unremarkable. Flatness must show
+  in the text (no interiority, one note) and is never inferred from the lead's
+  type. A lead whose own past is the open question is a positive. **A third mode, added 2026-09-02:
   "Both men/women characters and mainly main characters should have flaws to overcome."**
   A lead handed no fault to work against is *not interesting* arriving from another
   direction — nothing is being overcome, so there is nothing to root for.
@@ -155,6 +161,19 @@ a positive case stated in its own words.
   make the point. **Anchor and its limit:** *Čaropisci* 67 is the only data point and a low
   one — "not that visible", "not bad, just a warning" — so the axis has a direction and a
   stated gradient but **no measured high-contrast case. Do not quote a magnitude.**
+  **A STATED CONVENTION, not a measurement (2026-09-02), so that the axis can be screened
+  at all:** `none` 0 · `mild` −2 · `moderate` −5 · `strong` −10, applied to both ends of a
+  range. It is recorded here rather than left to each agent so the numbers are auditable
+  and revisable in one place, and it will be replaced the moment a real high-contrast book
+  is read and scored. **The base rate should be low** — most books do not do this, and a
+  screen that finds it everywhere is measuring the screener.
+  **SCREENED 2026-09-02 across all 248 candidates at or above the propose line, and the base
+  rate held: 233 none, 13 mild, 2 moderate, no strong.** 6% — which is the main reason to
+  trust the pass. The two moderates are *Lekce chemie* and *Má sestra je sériový vrah*, both
+  on a near-uniformly diminished male cast. **Caveat worth knowing: 57 of the 233 `none`
+  verdicts carry no citation** — canonical titles cleared from the screener's own knowledge
+  rather than from a source, so those are "no evidence found" rather than "checked and
+  clean". Nothing below the propose line was screened at all.
 - **A same-sex romance below premise level — a heavy graded deduction**
   (`axis:same-sex-romance`; filter 7 above is the premise-level veto). Grade on prominence:
   a main character's relationship as one thread is the middle of the range, a background
@@ -232,8 +251,14 @@ a positive case stated in its own words.
   **Never discount a candidate for being long**; a long, densely plotted book
   carries no penalty.
 - **Unearned competence** — ability and status given rather than earned.
-- **Prophecy and chosen-one plots: graded, never a filter.** Some prophecy about a
-  saviour is fine. **The axis is reverence, not resemblance** — the closest Christ
+- **Prophecy, fate and chosen-one plots: graded on handling, never on prominence,
+  and never a filter.** How central the prophecy is costs nothing. The series that
+  carries the most of it, foreknowledge and a closed time loop, tops the log at
+  92-96, and fate questioned seriously inside the world's rules earns on the ideas
+  axis. A power to see the future must obey its declared rules like any other.
+  Some prophecy about a saviour is fine; a messianic prophecy at full prominence
+  is untested, so keep the reverence test there. **The axis is reverence, not
+  resemblance** — the closest Christ
   figure in fiction is explicitly *not* an objection, so never flag a parallel for
   merely existing. What costs is careless resonance a book hasn't earned, or a
   treatment played for ridicule. Subversion is judged on tone: a manufactured
@@ -243,7 +268,23 @@ a positive case stated in its own words.
   objection. A discount, not a bar. Companionship and self-sacrifice beat solo
   survival.
 - **Faith as a thread inside a story**, not as the whole of it. No theology or
-  apologetics as a subject in its own right.
+  apologetics as a subject in its own right. **And religion played as SATIRE is
+  disliked outright — anchored 2026-09-03** on *Já, robot* 55, abandoned partly on a
+  story whose robots invent a god: "it seemed quite as satire on main religions, blind
+  faith, which I did not like". **The object is religion, not satire** — political and
+  social satire costs nothing (*Animal Farm* 78) — and a *serious* treatment of belief,
+  critical or devotional, is graded on the thread-versus-subject test instead. Magnitude
+  is unmeasured: that 55 carries two other causes.
+- **A collection is read from the front and put down on its weakest early stories —
+  never averaged, and a bad story is not skipped** (`axis:collection`, 2026-09-03).
+  *Já, robot* 55 is the anchor and the log's only collection: he stopped after the third
+  story and never reached the pieces the prediction was built on. **So a range may not be
+  set by a collection's best or most canonical stories**, and "the bad story is one of
+  eight and is skippable" is not true of this reader. Least exposed: an arc or a fix-up,
+  where each piece pays for the one before and the opening does what the rest does. Most
+  exposed: a multi-author or best-of anthology, where the order is an editor's and
+  nothing earns patience. Screened over the 28 collections at or above the propose line
+  and no others.
 - **The memoir/testimony form earns nothing by itself.** What earns is examining
   what is actually true, plus insight into how another group experiences the world.
   The same form produced both the highest non-fiction score and an outright DNF.
@@ -264,7 +305,7 @@ a positive case stated in its own words.
 Open. The SF/fantasy skew in the log is a sampling artefact. Historical fiction,
 memoir and allegory have all been read and none disliked.
 
-## Two recorded prediction failures — both from leaning on the wrong axis
+## Recorded prediction failures — the axis you do not examine is the one that kills it
 
 One book was predicted 80 and scored **69** because the prediction leaned *up* on
 strong worldbuilding while the lead was visibly thin — an 11-point miss, not the
@@ -272,3 +313,12 @@ strong worldbuilding while the lead was visibly thin — an 11-point miss, not t
 revised down from 76 on 2026-08-27. Another was abandoned in its
 first chapters on premise logic the prediction had never examined. **State which
 axis carries your number, and why not another.**
+
+**The largest miss on record is 21 points and it is this file being read backwards
+(2026-09-03).** *Já, robot* was predicted in the high 70s and scored **55**. The estimate's
+case was that the Three Laws are a precisely declared rule system and every story is a
+consequence derived from them — but **rules add obligation, not bonus**, and the reader
+then found the robots' behaviour under those rules implausible. A precisely declared
+system is a *bar the author has set himself*, never a credential to spend. The short-form
+lean failed a second way: the suspension of the character rules does **not** cover
+rootability, and the protagonist risk fired on the very first story.

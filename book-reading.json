@@ -11,16 +11,27 @@
       "notes": "",
       "updated": "2026-08-26 19:13"
     },
-    "pocitani-hvezd": {
-      "key": "pocitani-hvezd",
-      "title": "Počítání hvězd",
-      "altTitle": "The Calculating Stars",
-      "author": "Mary Robinette Kowal",
-      "cover": "https://cache.obalkyknih.cz/file/cover/2704156/preview510",
+    "prestupni-stanice": {
+      "key": "prestupni-stanice",
+      "title": "Přestupní stanice",
+      "altTitle": "Way Station",
+      "author": "Clifford D. Simak",
+      "cover": "https://cache.obalkyknih.cz/file/cover/3332623/preview510",
       "started": "2026-09-03",
       "progress": "",
       "notes": "",
-      "updated": "2026-09-03 09:44"
+      "updated": "2026-09-03 22:38"
+    },
+    "451-stupnu-fahrenheita": {
+      "key": "fahrenheit-451",
+      "title": "451 stupňů Fahrenheita",
+      "altTitle": "Fahrenheit 451",
+      "author": "Ray Bradbury",
+      "cover": "https://cache.obalkyknih.cz/file/cover/1142897/preview510",
+      "started": "2026-09-03",
+      "progress": "",
+      "notes": "",
+      "updated": "2026-09-03 22:42"
     }
   }
 }

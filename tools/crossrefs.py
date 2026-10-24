@@ -110,6 +110,18 @@ STOP_TITLES = {"empire", "the joke", "the truth",
                # character called Gerta inside a book whose own title is Gerty.
                "providence", "star wars", "minecraft", "einstein", "gerta",
                "warleggan", "the atlas",
+               # 2026-09-03: `War` is the English title of one candidate and fired 60
+               # times in a single pass - on "World War II", on "the Great War", and,
+               # worst, on every legitimate citation of the read book Old Man's War,
+               # whose flattened read-title needle is the whole string and so leaves the
+               # bare word exposed. That is the "labyrint"/"raj" failure again: a needle
+               # that blocks the citation of a SCORED book is unusable, whatever it costs.
+               # The rest of the same pass, all the shapes already listed above: `After`
+               # and `Reached` are ordinary words opening a sentence, and `Arthur`,
+               # `Famine` and `Trifid` are real-world proper nouns - King Arthur, Arthur
+               # Dent, a husband called Arthur, the Irish Famine, and the Czech genre
+               # award Cena Trifid.
+               "war", "after", "reached", "arthur", "famine", "trifid",
                # 2026-09-02, the same shape again and every one a false positive: `Winter`
                # is a season and one half of a book's own declared premise, `Matilda` a
                # character in the book being estimated, `Protector` a rank in it, `The Fox`
@@ -123,7 +135,14 @@ STOP_TITLES = {"empire", "the joke", "the truth",
                # series". `Foundation` is a series name six candidates share, so exempting
                # it costs the most of any entry here; the alternative was blocking a
                # correct estimate, which is the trade this set has always made.
-               "on the road", "foundation"}
+               "on the road", "foundation",
+               # 2026-09-03: `The Passengers` refused a Verne estimate for the clause "the
+               # acceleration inside that barrel kills the passengers" - the plainest
+               # possible use of the word, in a book that is literally about passengers.
+               "the passengers",
+               # And `The Ferryman` on "the ferryman Ursanabi" - the Gilgamesh boatman, in
+               # a book about Gilgamesh.
+               "the ferryman"}
 
 # Phrasing that argues from the neighbours without naming one.
 # "the Author(s) row" is exempt: that points at the Authors table in
@@ -176,9 +195,55 @@ def titles(b):
     return out
 
 
-def find(needle, text):
-    pat = r"(?<![A-Za-z0-9])" + re.escape(needle) + r"(?![A-Za-z0-9])"
-    return re.search(pat, text, 0 if " " not in needle else re.I)
+def index_needles(entries):
+    """Word-index the needles so a row is scanned once instead of once per needle.
+
+    The scan used to be a regex search per (row, needle) pair - 1681 rows against ~3400
+    needles, and Python's pattern cache holds 512, so nearly every one of those six
+    million searches recompiled. A full pass took over ten minutes and was skipped in
+    practice, which is worse than a check that is merely imperfect.
+
+    Matching semantics are unchanged from the regex it replaces: a needle matches only
+    on whole words (the old lookarounds were `(?<![A-Za-z0-9])` / `(?![A-Za-z0-9])`, and
+    `flat()` leaves nothing but words, spaces and `|` in the text), a **single-word**
+    needle must match the text's capitalisation, and a multi-word one must not.
+
+    `entries` is (kind, owner, needle); the result maps a first word to the needles
+    that start with it.
+    """
+    idx = {}
+    for kind, owner, needle in entries:
+        words = needle.split()
+        if not words:
+            continue
+        key = words[0] if len(words) == 1 else words[0].lower()
+        idx.setdefault(key, []).append((len(words), needle, kind, owner))
+    return idx
+
+
+def scan(text, idx):
+    """Every (kind, owner, needle) the flattened why-text contains, in text order.
+
+    Splits on a single space rather than on whitespace, so that a run of spaces - what
+    blanking a read title leaves behind - is a barrier a multi-word needle cannot cross,
+    exactly as the old single-space regex could not.
+    """
+    toks = text.split(" ")
+    for i, w in enumerate(toks):
+        if not w or w == "|":
+            continue
+        for key in (w, w.lower()):
+            for n, needle, kind, owner in idx.get(key, ()):
+                if n == 1:
+                    if needle == w:
+                        yield kind, owner, needle
+                    continue
+                run = toks[i:i + n]
+                if len(run) == n and all(run) and "|" not in run and \
+                        " ".join(run).lower() == needle.lower():
+                    yield kind, owner, needle
+            if w.lower() == w:
+                break
 
 
 def read_titles():
@@ -234,6 +299,9 @@ def main():
     own_series = {b["key"]: (b.get("series") or "").split("#")[0] for b in books}
     scored = read_titles()
     bands = profile_bands()
+    idx = index_needles(
+        [("t", key, t) for key, ts in names.items() for t in ts] +
+        [("s", s, s) for s in series])
     rows = []
     for i, line in enumerate(io.open(EST, encoding="utf-8"), 1):
         if line.strip():
@@ -259,17 +327,18 @@ def main():
         ownw = set()
         for o in own + [flat(own_series.get(r["key"], ""))]:
             ownw |= {w.lower() for w in o.split() if w}
+        found = set(scan(text, idx))
         for key, ts in names.items():
             if key == r["key"]:
                 continue
             for t in ts:
                 if ownw and {w.lower() for w in t.split()} <= ownw:
                     continue
-                if find(t, text):
+                if ("t", key, t) in found:
                     print(f"{EST}:{lineno} {r['key']} -> names candidate {key} ({t})")
                     hits += 1
         for s, owners in series.items():
-            if r["key"] not in owners and find(s, text):
+            if r["key"] not in owners and ("s", s, s) in found:
                 print(f"{EST}:{lineno} {r['key']} -> names series {s} ({len(owners)} candidate(s))")
                 hits += 1
         for p in PHRASES:

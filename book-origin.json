@@ -659,10 +659,6 @@
    "orig": "foreign",
    "src": "translator"
   },
-  "ja-robot-asimov": {
-   "orig": "foreign",
-   "src": "statement"
-  },
   "jaderko": {
    "orig": "foreign",
    "src": "translator"
@@ -1280,10 +1276,6 @@
    "orig": "foreign",
    "src": "translator"
   },
-  "neuprosny-mesic": {
-   "orig": "foreign",
-   "src": "translator"
-  },
   "neuromancer": {
    "orig": "foreign",
    "src": "translator"
@@ -1461,10 +1453,6 @@
    "orig": "foreign",
    "src": "statement"
   },
-  "osudove-nebe": {
-   "orig": "foreign",
-   "src": "translator"
-  },
   "osvetimsky-orchestr": {
    "orig": "foreign",
    "src": "translator"
@@ -1474,10 +1462,6 @@
    "src": "translator"
   },
   "ovcacka-chajda": {
-   "orig": "foreign",
-   "src": "translator"
-  },
-  "ozvena-veci-budoucich": {
    "orig": "foreign",
    "src": "translator"
   },
@@ -1564,10 +1548,6 @@
   "plujici-ostrov": {
    "orig": "foreign",
    "src": "author"
-  },
-  "pocitani-hvezd": {
-   "orig": "foreign",
-   "src": "statement"
   },
   "pod-nebesy": {
    "orig": "foreign",
@@ -1933,10 +1913,6 @@
    "orig": "foreign",
    "src": "translator"
   },
-  "shadow-of-what-was-lost": {
-   "orig": "foreign",
-   "src": "translator"
-  },
   "sharpuv-regiment": {
    "orig": "foreign",
    "src": "translator"
@@ -2184,10 +2160,6 @@
   "svaty-demon": {
    "orig": "cs",
    "src": "author"
-  },
-  "svetlo-veci-konecnych": {
-   "orig": "foreign",
-   "src": "translator"
   },
   "svobodni-bastardi": {
    "orig": "foreign",
@@ -5791,6 +5763,954 @@
   "strastiplna-roboti-existence": {
    "orig": "cs",
    "src": "author"
+  },
+  "2001-vesmirna-odysea-rajske-fontany": {
+   "orig": "foreign",
+   "src": "author"
+  },
+  "arcizar": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "beh-o-zivot": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "cesta-na-okraj": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "doctor-who": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "faktor-nanebevzeti": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "hrdinove-ceskych-zemi": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "jama": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "kosmicke-proudy": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "lod-na-milion-let": {
+   "orig": "foreign",
+   "src": "statement"
+  },
+  "moznost-ostrova": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "na-komete": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "nadace-a-rise": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "neviditelny": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "otcove-prstenu": {
+   "orig": "foreign",
+   "src": "statement"
+  },
+  "posledni-pan-prstenu": {
+   "orig": "foreign",
+   "src": "statement"
+  },
+  "povidky-podivnych": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "psi-zima": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "rej-stinu": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "sin-slavy-mistru-fantasy": {
+   "orig": "foreign",
+   "src": "statement"
+  },
+  "stravaganza": {
+   "orig": "foreign",
+   "src": "statement"
+  },
+  "svata-valka-kterou-vedl-saddaj-s-diabolem-o-": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "svet-na-konci-casu": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "svet-uzasny-jako-kapka-jedu": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "terra-nullius": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "tolkien-a-jeho-tajemny-svet": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "tri-okamziky-exploze": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "vampyrska-akademie": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "veda-na-zemeplose": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "vetrelci": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "zaklinacka-lota": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "zakon-genu": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "zkazky-z-planety-zeme": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "protovy-svety": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "rok-pote": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "ze-zeme-na-mesic": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "100-chyb-pri-peci-o-lidi-s-demenci": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "101-tipu-jak-vychovat-poslusneho-a-spokojene": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "130-h-z-a-o": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "150-terapeutickych-her-pro-dospivajici": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "ala-luna": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "alexandr-veliky": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "apokalypsa-evropy": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "arabella-z-marsu": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "arthur-a-minimojove": {
+   "orig": "foreign",
+   "src": "statement"
+  },
+  "besna-zem": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "bizarni-cesko": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "bozi-milost": {
+   "orig": "foreign",
+   "src": "author"
+  },
+  "bronzova-planeta-a-jina-reseni": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "byl-jednou-jeden-ul": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "cerna-flotila": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "chlapec-a-jeho-robot": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "co-te-nezabije": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "dech": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "dejiny-italie": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "diagnostika-syndromu-tyraneho-zneuzivaneho-a": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "dinotopie": {
+   "orig": "foreign",
+   "src": "author"
+  },
+  "dite-a-prirodni-zakony": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "divky-od-svate-magdaleny": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "do-pekla-a-zpet": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "dobrodruzstvi-minecraftu": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "dokonaly-par": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "dokonaly-sen": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "dokonaly-svet": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "dosel-nam-cas": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "dospele-deti-emocne-nezralych-rodicu": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "dum-zelenych-prizraku": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "duveruj-zitrku": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "dvojnik": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "elias-mezi-lidojedy": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "epistoly-o-elitach-a-lidu": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "evropske-panovnicke-rody": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "financni-analyza": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "girgal": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "h2o-a-poklad-sileneho-oka": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "h2o-a-zahada-zlate-slzy": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "horecka": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "hostitel": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "hudba-pro-anvilany": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "hvezdny-hrad": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "jak-draha-je-nepoctivost": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "jak-se-uspesne-ucit-s-adhd": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "jumper-griffinuv-pribeh": {
+   "orig": "foreign",
+   "src": "statement"
+  },
+  "karantena": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "kazdy-je-na-neco-chytry": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "klid-pred-bouri": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "kognitivni-trenink-pro-treti-vek": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "komu-se-da-verit": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "kostelik-ktery-se-radoval": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "laska-prichazi-po-spickach": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "ledova-generace": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "literatura-a-politika": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "londyn": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "lovci": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "mag": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "magicke-dite": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "malevil": {
+   "orig": "foreign",
+   "src": "statement"
+  },
+  "malirky": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "matematika-nas-bavi": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "mechanicke-rybicky": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "metalstory": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "mihotani": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "mijamoto-musasi": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "moje-adhd-ma-uzkosti": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "muj-bratr-mesias": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "navrat-krale-sumavy": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "navrat-na-ostrov-kamelii": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "navstevnici": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "nebezpecny-pacient": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "nebojte-se-zmen": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "nemrtvi": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "neviditelni-zlodeji": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "neviditelni": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "neztrat-mapu-k-memu-srdci": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "nikdy-nedelej-kompromis-aneb-vyjednavej-tak-": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "nota-bene": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "nova-gaia": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "odmaturuj-z-literatury": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "operace-slunce": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "pan-blesku": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "pan-tompkins-stale-v-risi-divu": {
+   "orig": "foreign",
+   "src": "statement"
+  },
+  "pekelna-dira": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "piseme-pribeh": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "pisen-kterou-se-objasnuje-svet": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "pod-znamenim-pulmesice": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "podivne-nebe-nad-vychodnim-berlinem": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "podraz": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "posledni-follower": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "povidky-o-vlasti": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "povstani-herobrina": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "pravidla-kterymi-se-vase-matka-neridila": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "pravidla-valky": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "prekonavani-traumatu": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "prevoznik": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "pribehy-velkych-mest": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "primo-tady-mezi-vami": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "promente-uzkost-v-nadeji-pomoci-kbt": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "promeny-kafkovy-prahy": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "prvni-pomoc": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "psychiatricke-minimum": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "psychologie-atkinsonove-a-hilgarda": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "psychologie-reklamy": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "psychologie-rodiny": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "psychopedie": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "purgatorium": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "puvod": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "qualityland": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "rec-emoci": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "reinkarnace": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "remo": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "rikal-jsem-mu-kravata": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "rodina-a-spolecnost": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "rozvijeni-emocni-inteligence-zaku": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "sanctum": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "sejdeme-se-na-piazzete": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "slunce-na-uteku": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "snis-o-druhe-zemi": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "souziti-s-partnerem-po-mrtvici": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "sport-je-bolest": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "strategicky-management-lidskych-zdroju": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "strnaduv-efekt": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "stvoritele-budoucnosti": {
+   "orig": "foreign",
+   "src": "statement"
+  },
+  "supervedator": {
+   "orig": "foreign",
+   "src": "statement"
+  },
+  "svatebni-plan": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "tamar": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "tovarna-na-skorapky": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "tri-socialni-svety": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "uralske-okno": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "urbo-kune": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "uz-je-to-tady": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "v-prazdnote": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "valku-skoncili-skrcci": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "vanice": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "veda-v-kostce": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "vepsano-krvi-vlastniho-srdce": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "vesmirni-pytlaci": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "vita-humana": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "vladana-a-prasopes": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "vymena": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "zapisnik-alkoholicky": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "zena-ktera-zacala-zit": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "adaptace": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "literatura": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "poselstvi-megalitu": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "stoparuv-pruvodce-galaxii-douglase-adamse": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "projekt-gilgames": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "7-prisernych": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "amulet": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "bratrstvo-krve": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "cestovni-kancelar-jinosvety": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "den-vosaka": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "divka-had-trn": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "divodejove": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "filix-wood": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "furyborn": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "hlad": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "hodina-dynove-kralovny": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "jak-zradit-draciho-hrdinu": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "jane-doe": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "kniha-m": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "lacrimosa": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "likario": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "marcy-a-hadanka-od-sfingy": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "maruska-pulnocni-a-velka-hmyzi-olympiada": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "mesto-knih": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "morska-panna": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "naslouchac": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "nejchladnejsi-divka-ve-meste-chladu": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "nejlepsi-den-pro-umirani": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "nejtemnejsi-cast-lesa": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "neslysno": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "ohnivy-kvet": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "opacna-strana": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "opskurno": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "orcigard": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "pan-ledove-zahrady": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "pisen-o-dvernikovi": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "po-schodech-nahoru-dolu": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "posledni-iluze": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "pristav-nebezpeci": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "skandar-a-kostliva-kletba": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "skandar-a-prizracny-jezdec": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "skandar-a-souteze-chaosu": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "stinove-eso": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "stiny-halloweenu": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "svetla-na-obloze": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "terry-pratchett": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "trpytny-dvur": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "upiri-z-morganville": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "urla": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "valecna-lest": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "valka": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "ve-stinu-vlci-kralovny": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "vypravec": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "zimni-drak": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "zlata-grai": {
+   "orig": "cs",
+   "src": "author"
+  },
+  "zmije-a-vlk": {
+   "orig": "foreign",
+   "src": "translator"
   }
  },
  "read": {
@@ -5930,6 +6850,10 @@
    "orig": "foreign",
    "src": "author"
   },
+  "caropisci-foundryside": {
+   "orig": "foreign",
+   "src": "translator"
+  },
   "quo-vadis": {
    "orig": "foreign",
    "src": "author"
@@ -5994,9 +6918,25 @@
    "orig": "foreign",
    "src": "author"
   },
-  "caropisci-foundryside": {
+  "ja-robot-i-robot": {
+   "orig": "foreign",
+   "src": "statement"
+  },
+  "stin-veci-ztracenych-the-shadow-of-what-was-lost": {
    "orig": "foreign",
    "src": "translator"
+  },
+  "ozvena-veci-budoucich-an-echo-of-things-to-come": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "svetlo-veci-konecnych-the-light-of-all-that-falls": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "pocitani-hvezd-the-calculating-stars": {
+   "orig": "foreign",
+   "src": "statement"
   }
  }
 }

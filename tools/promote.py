@@ -30,6 +30,7 @@ it replaced, and one batch of holdout up front would have caught it.
     python tools/promote.py queue   <dir> [--n 10] [--min-score 4] [--include-unranked]
     python tools/promote.py batch   <dir> [--per 15] [--per-author 15] [--n 200]
                                           [--unknown] [--cls litfic,sf-fantasy]
+                                          [--marc fantasy,sf,none]
     python tools/promote.py absorb  <dir> [--force-low]
     python tools/promote.py score   <dir>
 
@@ -517,7 +518,7 @@ def eligible_score(A, r, unranked_ok):
 
 
 def cmd_batch(outdir, per=15, n=200, minscore=4, per_author=15, top=0, unranked_ok=False,
-              unknown=False, clsfilter=None):
+              unknown=False, clsfilter=None, marcfilter=None):
     """Group the queue so one agent covers several books and the fixed context is
     paid once instead of once per book.
 
@@ -560,19 +561,27 @@ def cmd_batch(outdir, per=15, n=200, minscore=4, per_author=15, top=0, unranked_
 
       `per_author` matches `per` at 15 because the context ceiling applies to a
       single-author group too - it is the one batch `per` cannot otherwise cap.
+
+    `marcfilter` keeps only works whose `marc_genre()` is in the set, and it exists
+    because `--cls sf-fantasy` does NOT mean what it looks like. triage.py assigns that
+    class to everything the catalogue's own `genre-sf-f` sweep returned, and that sweep
+    returns non-fiction: of the 1,035 works left in the cell, 140 are textbooks and
+    reference manuals (Masarykova univerzita x33, Grada x12, Portal x10) and 41 of them
+    reached agents in run 9 before anyone noticed. Requiring a genre heading excludes
+    them by construction. `none` selects the 382 works with no heading at all.
     """
     sys.path.insert(0, "tools")
     import ai_rank as A
     wk, store, ann = A.load_works(), A.load_store(), load_annotations()
     eds, inf = load_editions(), load_infidelity()
-    facts = load_facts() if unknown else None
+    facts = load_facts() if (unknown or marcfilter) else None
     # Belt and braces. A vetoed work is already excluded three other ways - it is never
     # sent to Haiku, `ranked()` gives it no score, and screen-headings.py has written it
     # a reject row - but the `--unknown` path reads the raw `s` and so bypasses the
     # second of those. This is the one check that cannot be bypassed.
     hdgs = A.load_headings()
     donekeys, donepairs, donetitles, doneauthors, doneseries = already_decided()
-    cand, redone, unranked, vetoed, offcls = [], 0, 0, 0, 0
+    cand, redone, unranked, vetoed, offcls, offmarc = [], 0, 0, 0, 0, 0
     for k, w in wk.items():
         r = store.get(k)
         if not r or r.get("done") or w["skip"] or "s" not in r:
@@ -585,6 +594,9 @@ def cmd_batch(outdir, per=15, n=200, minscore=4, per_author=15, top=0, unranked_
         # children's end of that spread, and returned 5 above the line.
         if clsfilter and w["cls"] not in clsfilter:
             offcls += 1
+            continue
+        if marcfilter and (marc_genre((facts or {}).get(k, {})) or "none") not in marcfilter:
+            offmarc += 1
             continue
         if A.heading_veto(hdgs.get(k, [])):
             vetoed += 1
@@ -713,6 +725,9 @@ def cmd_batch(outdir, per=15, n=200, minscore=4, per_author=15, top=0, unranked_
     if clsfilter:
         mode += (f"  triage class filter {sorted(clsfilter)}: {offcls} works excluded "
                  f"for being another class\n")
+    if marcfilter:
+        mode += (f"  MARC genre filter {sorted(marcfilter)}: {offmarc} works excluded "
+                 f"on the librarian's genre heading\n")
     print(f"{len(cand)} queued works -> {min(len(groups), n)} batches ({nb} books) in {outdir}\n"
           f"{mode}"
           f"  heading-vetoed (catalogue genre heading decides the filter): {vetoed}\n"
@@ -839,12 +854,20 @@ def _candidate_needles():
     # Cost, stated: a candidate whose est exactly equals a published band could now be
     # cited unnoticed - 4 of 1111 rows today. That is the cheaper error, the same trade
     # STOP_TITLES makes in tools/crossrefs.py: a false positive blocks correct work.
-    try:
-        prof = io.open(PROFILE, encoding="utf-8").read()
-        for m in re.finditer(r"(?<![\d-])(\d{2})\s*-\s*(\d{2})(?![\d-])", prof):
+    # PROMPT as well as PROFILE, added 2026-09-03: this file publishes the two mandated
+    # C-low bands, `[58, 68]` and `[42, 55]`, and 58-68 is also the single most common est
+    # on the shelf. An agent writing "lower band rather than the 58-68 default" is quoting
+    # its own instructions, and was refused for it. A rule the agent was told to apply can
+    # never be evidence that it read the estimates file.
+    for src in (PROFILE, PROMPT):
+        try:
+            txt = io.open(src, encoding="utf-8").read()
+        except OSError:
+            continue
+        for m in re.finditer(r"(?<![\d-])(\d{2})\s*-\s*(\d{2})(?![\d-])", txt):
             ranges.discard(f"{int(m.group(1))}-{int(m.group(2))}")
-    except OSError:
-        pass
+        for m in re.finditer(r"\[\s*(\d{2})\s*,\s*(\d{2})\s*\]", txt):
+            ranges.discard(f"{int(m.group(1))}-{int(m.group(2))}")
     return titles, ranges
 
 
@@ -977,6 +1000,15 @@ def cmd_absorb(outdir, force_low=False):
     # cite each other freely — six such references got through on 2026-08-26 because
     # the cache did not contain them yet.
     titles, ranges = _candidate_needles()
+    # The stop-list has to apply HERE TOO, and did not until 2026-09-03: it is consulted
+    # inside _candidate_needles() but this loop appends the staged batch's own titles
+    # straight past it. `The Ferryman` was staged in the same run as a Gilgamesh novel
+    # whose `why` says "the ferryman Ursanabi", and that correct file was refused.
+    try:
+        sys.path.insert(0, "tools")
+        from crossrefs import STOP_TITLES
+    except ImportError:
+        STOP_TITLES = frozenset()
     for p in files:
         try:
             s = json.load(io.open(p, encoding="utf-8"))
@@ -984,7 +1016,7 @@ def cmd_absorb(outdir, force_low=False):
             continue
         for t in (s.get("title"), s.get("czTitle")):
             t = deacc(t or "")
-            if len(t) >= NEEDLE_MIN:
+            if len(t) >= NEEDLE_MIN and t.lower() not in STOP_TITLES:
                 titles.append(t)
     needles = (titles, ranges)
     cache = json.load(io.open(CACHE, encoding="utf-8"))
@@ -1222,9 +1254,11 @@ if __name__ == "__main__":
     elif a[0] == "batch":
         cf = (set(sys.argv[sys.argv.index("--cls") + 1].split(","))
               if "--cls" in sys.argv else None)
+        mf = (set(sys.argv[sys.argv.index("--marc") + 1].split(","))
+              if "--marc" in sys.argv else None)
         cmd_batch(a[1], g("--per", 15), g("--n", 200), g("--min-score", 4),
                   g("--per-author", 15), g("--top", 0), "--include-unranked" in sys.argv,
-                  "--unknown" in sys.argv, cf)
+                  "--unknown" in sys.argv, cf, mf)
     elif a[0] == "holdout":
         cmd_holdout(a[1], g("--n", 10))
     elif a[0] == "absorb":
