@@ -192,6 +192,73 @@
   .grouphead span { color: var(--ink-muted); font-weight: 400; }
   .empty { color: var(--ink-muted); padding: 40px 0; text-align: center; }
   .err { border-left: 3px solid var(--status-critical); padding-left: 10px; }
+  .mapwrap { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 14px; align-items: start; }
+  .mapstage, .mapside {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    height: min(76vh, 820px); min-height: 420px;
+  }
+  .mapstage { position: relative; overflow: hidden; }
+  .mapstage canvas { display: block; touch-action: none; cursor: grab; }
+  .maptools { position: absolute; top: 10px; right: 10px; display: flex; gap: 4px; }
+  .maptools button { padding: 3px 9px; font-size: 12px; }
+  .mapmode { position: absolute; top: 10px; left: 10px; display: flex; }
+  .mapmode button { padding: 4px 12px; font-size: 12.5px; font-weight: 550; color: var(--ink-2); }
+  .mapmode button:first-child { border-radius: 6px 0 0 6px; }
+  .mapmode button:last-child { border-radius: 0 6px 6px 0; margin-left: -1px; }
+  .mapmode button[aria-pressed="true"] { background: var(--band-mid); border-color: var(--band-mid); color: #fff; }
+  .tagfilters { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: -2px 0 10px; font-size: 12px; color: var(--ink-muted); }
+  button.tagbtn { cursor: pointer; font: inherit; font-size: 11px; }
+  button.tagbtn:hover { border-color: var(--band-mid); color: var(--ink); }
+  button.tagbtn.on { border-left: 3px solid var(--band-mid); color: var(--ink); font-weight: 600; }
+  .maptip {
+    position: absolute; pointer-events: none; max-width: 260px; font-size: 12px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
+    padding: 6px 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+  }
+  .mapside { padding: 14px; overflow-y: auto; font-size: 12.5px; }
+  .mapside h4 { margin: 14px 0 6px; font-size: 12px; font-weight: 620; }
+  .mapside .cover, .mapside .cover-ph { width: 64px; height: 96px; flex: none; }
+  .sidehead { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 8px; }
+  .sidehead > div:not(.cover-ph) { flex: 1; min-width: 0; }
+  .sidehead .scorerow { margin: 4px 0 0; }
+  .mapnote { color: var(--ink-muted); margin: 0 0 8px; }
+  .mapopts { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+  .mapside h4 .sub { font-weight: 400; margin-left: 6px; }
+  .mapside .pitch, .mapside .blurb { margin: 0 0 10px; }
+  .mapopts label.range { display: flex; align-items: center; gap: 8px; width: 100%; font-size: 12px; color: var(--ink-2); }
+  .mapopts label.range input { flex: 1; padding: 0; border: 0; background: none; accent-color: var(--band-mid); }
+  .mapopts label.range b { font-variant-numeric: tabular-nums; min-width: 34px; }
+  ol.picks, ul.seeds { list-style: none; margin: 0; padding: 0; }
+  li.prow { display: grid; grid-template-columns: 1fr auto; align-items: stretch; border-bottom: 1px solid var(--hairline); }
+  button.pick {
+    display: grid; grid-template-columns: 20px 1fr auto; gap: 8px; width: 100%; text-align: left;
+    background: none; border: 0; border-radius: 0; padding: 6px 2px;
+  }
+  button.pick:hover { background: var(--track); }
+  .pacts { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 0 4px; }
+  button.addseed { background: none; border: 0; border-radius: 4px; padding: 0 9px; font-size: 16px; color: var(--ink-muted); }
+  button.addseed:hover { background: var(--track); color: var(--band-mid); }
+  a.rowlink { font-size: 11px; white-space: nowrap; color: var(--ink-2); text-decoration: none; }
+  a.rowlink:hover { color: var(--band-mid); text-decoration: underline; }
+  .mapside .access { margin: 0 0 10px; }
+  .pick .pl, .seeds .pl { font-weight: 700; color: var(--bandcolor); }
+  .pick .ps { font-size: 11.5px; color: var(--ink-muted); }
+  .pick .pw { font-size: 11.5px; color: var(--ink-2); }
+  .pick .pp { font-size: 11.5px; color: var(--ink-2); font-variant-numeric: tabular-nums; text-align: right; }
+  .pbar { display: block; width: 44px; height: 4px; margin-top: 4px; background: var(--track); border-radius: 2px; }
+  .pbar i { display: block; height: 4px; border-radius: 2px; background: var(--band-mid); }
+  ul.seeds li { display: grid; grid-template-columns: 20px 1fr auto; gap: 6px; align-items: center; padding: 3px 0; }
+  ul.seeds .linkish { text-align: left; }
+  button.linkish, button.unpick, button.tomap { background: none; border: 0; padding: 0; color: inherit; }
+  button.linkish { text-decoration: underline dotted; }
+  button.unpick { flex: none; font-size: 18px; line-height: 1; color: var(--ink-muted); }
+  button.tomap { margin-top: 8px; font-size: 11.5px; color: var(--ink-muted); text-align: left; text-decoration: underline dotted; }
+  button.tomap:hover, button.linkish:hover { color: var(--ink); }
+  @media (max-width: 900px) {
+    .mapwrap { grid-template-columns: 1fr; }
+    .mapstage { height: 62vh; }
+    .mapside { height: auto; min-height: 0; }
+  }
   [hidden] { display: none !important; }
 
   /* ---- reading shelf ---- */
@@ -317,17 +384,19 @@
     <button class="tab" role="tab" data-view="reading" aria-selected="false">Reading</button>
     <button class="tab" role="tab" data-view="read" aria-selected="false">Read</button>
     <button class="tab" role="tab" data-view="rejected" aria-selected="false">Rejected</button>
+    <button class="tab" role="tab" data-view="map" aria-selected="false">Map</button>
   </div>
 </header>
 
 <div class="filters" id="filters">
   <input id="q" type="search" placeholder="Search title, author, reason…" autocomplete="off">
-  <label data-for="candidates">Access <select id="access"></select></label>
-  <label data-for="candidates read">Genre <select id="genre"></select></label>
-  <label data-for="candidates read">Form <select id="form"></select></label>
-  <label data-for="candidates read">Audience <select id="audience"></select></label>
-  <label data-for="candidates read">Origin <select id="origin"></select></label>
-  <label data-for="candidates read">Min score <select id="minscore">
+  <label data-for="map">Tag <select id="maptag"></select></label>
+  <label data-for="candidates map">Access <select id="access"></select></label>
+  <label data-for="candidates read map">Genre <select id="genre"></select></label>
+  <label data-for="candidates read map">Form <select id="form"></select></label>
+  <label data-for="candidates read map">Audience <select id="audience"></select></label>
+  <label data-for="candidates read map">Origin <select id="origin"></select></label>
+  <label data-for="candidates read map">Min score <select id="minscore">
     <option value="0">any</option>
     <option value="50">50 · C and up</option>
     <option value="65" selected>65 · B and up</option>
@@ -337,8 +406,8 @@
   <label data-for="rejected">Filter <select id="rfilter"></select></label>
   <label data-for="rejected">Scope <select id="rscope"></select></label>
   <label data-for="candidates read rejected reading">Sort <select id="sort"></select></label>
-  <label class="chk" data-for="candidates"><input type="checkbox" id="norisk"> no open risks</label>
-  <label class="chk" data-for="candidates"><input type="checkbox" id="hideblocked" checked> hide blocked<span id="nblocked"></span></label>
+  <label class="chk" data-for="candidates map"><input type="checkbox" id="norisk"> no open risks</label>
+  <label class="chk" data-for="candidates map"><input type="checkbox" id="hideblocked" checked> hide blocked<span id="nblocked"></span></label>
   <label class="chk" data-for="candidates read rejected reading"><input type="checkbox" id="astable"> table view</label>
 </div>
 
@@ -371,6 +440,7 @@
   </form>
 </aside>
 
+<script src="map.js"></script>
 <script>
 const BAND = [[95,'S+'],[85,'S'],[75,'A'],[65,'B'],[50,'C'],[0,'F']];
 const band = s => BAND.find(b => s >= b[0])[1];
@@ -560,7 +630,7 @@ async function load() {
     if (!r.ok) throw new Error(p + ' → HTTP ' + r.status);
     return kind === 'text' ? r.text() : r.json();
   };
-  const [cache, revsDoc, media, estText, rejText, readMd, readingDoc, readFacets, originDoc] = await Promise.all([
+  const [cache, revsDoc, media, estText, rejText, readMd, readingDoc, readFacets, originDoc, sim] = await Promise.all([
     get('book-cache.json'), get('book-revs.json'), get('book-media.json'),
     get('book-estimates.jsonl', 'text'), get('book-rejects.jsonl', 'text'),
     get('books-read.md', 'text'),
@@ -570,6 +640,7 @@ async function load() {
     // panel reports the orphans rather than the filter hiding them.
     get('book-read-facets.json').catch(() => ({ facets: {} })),
     get('book-origin.json').catch(() => ({ books: {}, read: {} })),
+    get('book-similarity.json').catch(() => null),
   ]);
 
   const est = jsonl(estText).slice(1);
@@ -641,7 +712,7 @@ async function load() {
   });
 
   D = {
-    cache, revs, books, read, rejects, reading, fetched: media.fetched,
+    cache, revs, books, read, rejects, reading, sim, fetched: media.fetched,
     booksByKey: Object.fromEntries(books.map(b => [b.key, b])),
     booksBySlug: Object.fromEntries(books.slice().reverse()
       .map(b => [slug(b.cache.czTitle || b.cache.title || b.t || ''), b])),
@@ -803,7 +874,8 @@ function whyBlock(html) {
 
 function shell(o) {
   return `<article class="card ${o.tone || 'bN'}${o.dim ? ' dim' : ''}">
-    <div class="colside">${cover(o.media, o.fallback)}${o.left || ''}</div>
+    <div class="colside">${cover(o.media, o.fallback)}${o.left || ''}${o.mapId && mapHas(o.mapId)
+      ? `<button type="button" class="tomap" data-tomap="${esc(o.mapId)}">Similar on the map</button>` : ''}</div>
     <div>
       <div class="bk-title">${esc(o.title)}</div>
       ${o.alt ? `<div class="bk-alt">${esc(o.alt)}</div>` : ''}
@@ -870,7 +942,7 @@ function candidateCard(b) {
 
   const czt = b.cache.czTitle, en = b.cache.title;
   return shell({
-    media: b.media, fallback: b.cache.author || '', dim: !!b.blocked,
+    media: b.media, fallback: b.cache.author || '', dim: !!b.blocked, mapId: 'c:' + b.key,
     tone: b.est ? tone(b.mid) : 'bN',
     title: czt || en, alt: czt && en && czt !== en ? en : '',
     author: (b.cache.author || '') + (b.cache.series ? ' · ' + b.cache.series : ''),
@@ -988,7 +1060,7 @@ function readCard(r) {
     ${bar('read', r.score, r.score, cls(r.score), `Scored ${r.score} — ${r.tier}`)}</div>`;
   const dnf = /(^|[^A-Za-z])DNF([^A-Za-z]|$)|abandon|unfinished/i.test(r.notes);
   return shell({
-    media: r.media, fallback: r.author, title: r.title, author: r.author, score,
+    media: r.media, fallback: r.author, title: r.title, author: r.author, score, mapId: 'r:' + r.key,
     tone: tone(r.score),
     meta: [GENRE[r.genre] || r.genre, FORM[r.form] || r.form,
            r.audience && r.audience !== 'adult' ? AUDIENCE[r.audience] || r.audience : null,
@@ -1042,15 +1114,13 @@ function sortBy(rows, key) {
 
 const F = id => document.getElementById(id);
 
-function candidates() {
+// Shared by the Candidates tab and the map, which dims what this rejects.
+function candidateFilter() {
   const q = F('q').value.trim().toLowerCase(), acc = F('access').value;
-  const min = +F('minscore').value, sort = F('sort').value;
+  const min = +F('minscore').value;
   const gen = F('genre').value, frm = F('form').value, aud = F('audience').value;
   const org = F('origin').value;
-  const keys = shelfKeys();
-  const shelved = D.books.filter(b => onShelf(b, keys));
-  let rows = D.books.filter(b => {
-    if (shelved.includes(b)) return false;
+  return b => {
     if (F('hideblocked').checked && b.blocked) return false;
     if (q && !b.hay.includes(q)) return false;
     if (gen && b.genre !== gen) return false;
@@ -1066,7 +1136,17 @@ function candidates() {
     if (acc === 'either' && !(b.hasCz || b.hasEn)) return false;
     if (acc === 'none' && (b.hasCz || b.hasEn)) return false;
     return true;
-  });
+  };
+}
+
+function candidates() {
+  const sort = F('sort').value;
+  const gen = F('genre').value, frm = F('form').value, aud = F('audience').value;
+  const org = F('origin').value;
+  const keys = shelfKeys();
+  const shelved = D.books.filter(b => onShelf(b, keys));
+  const keep = candidateFilter();
+  let rows = D.books.filter(b => !shelved.includes(b) && keep(b));
   if (!rows.length) return '<div class="empty">Nothing matches those filters.</div>';
   rows = sortBy(rows, sort);
   const facetNote = [gen ? GENRE[gen] || gen : null, frm ? FORM[frm] || frm : null,
@@ -1094,11 +1174,11 @@ function candidates() {
     : `<div class="grid">${rows.map(candidateCard).join('')}</div>`);
 }
 
-function readView() {
+function readFilter() {
   const q = F('q').value.trim().toLowerCase(), min = +F('minscore').value;
   const gen = F('genre').value, frm = F('form').value, aud = F('audience').value;
   const org = F('origin').value;
-  let rows = D.read.rows.filter(r => {
+  return r => {
     if (q && !r.hay.includes(q)) return false;
     if (r.score < min) return false;
     if (gen && r.genre !== gen) return false;
@@ -1109,7 +1189,13 @@ function readView() {
                        : aud && r.audience !== aud) return false;
     if (org && r.origin !== org) return false;
     return true;
-  });
+  };
+}
+
+function readView() {
+  const gen = F('genre').value, frm = F('form').value, aud = F('audience').value;
+  const org = F('origin').value;
+  let rows = D.read.rows.filter(readFilter());
   if (!rows.length) return '<div class="empty">Nothing matches those filters.</div>';
   rows = sortBy(rows, F('sort').value);
   const facetNote = [gen ? GENRE[gen] || gen : null, frm ? FORM[frm] || frm : null,
@@ -1156,11 +1242,14 @@ function setView(v, want = {}) {
   document.querySelectorAll('#filters [data-for]').forEach(el => {
     el.hidden = !el.dataset.for.split(' ').includes(v);
   });
-  const sel = F('sort'), keep = want.sort ?? sel.value;
-  sel.innerHTML = SORTS[v].map(([k, l]) => `<option value="${k}">${esc(l)}</option>`).join('');
-  // Set it explicitly rather than relying on the browser auto-selecting option 0:
-  // sortBy() looks the key up in a map, so an empty value is a crash, not a default.
-  sel.value = SORTS[v].some(([k]) => k === keep) ? keep : SORTS[v][0][0];
+  // The map has no sort, so its tab leaves the select as the last list tab set it.
+  if (SORTS[v]) {
+    const sel = F('sort'), keep = want.sort ?? sel.value;
+    sel.innerHTML = SORTS[v].map(([k, l]) => `<option value="${k}">${esc(l)}</option>`).join('');
+    // Set it explicitly rather than relying on the browser auto-selecting option 0:
+    // sortBy() looks the key up in a map, so an empty value is a crash, not a default.
+    sel.value = SORTS[v].some(([k]) => k === keep) ? keep : SORTS[v][0][0];
+  }
   // Filled on every tab, not only the two that show them: a restore straight onto
   // Reading would otherwise leave the facets empty and lose the saved genre.
   fillFacets(v === 'read' ? 'read' : 'candidates', want);
@@ -1168,7 +1257,7 @@ function setView(v, want = {}) {
   saveView();
 }
 
-const VIEWS = { candidates, reading: readingView, read: readView, rejected: rejectedView };
+const VIEWS = { candidates, reading: readingView, read: readView, rejected: rejectedView, map: mapView };
 
 const PREF_SELECTS = ['access', 'genre', 'form', 'audience', 'origin', 'minscore', 'rfilter', 'rscope', 'sort'];
 const PREF_CHECKS = ['norisk', 'hideblocked', 'astable'];
@@ -1196,6 +1285,7 @@ function render() {
   document.getElementById('banners').innerHTML = banners();
   document.getElementById('view').innerHTML = VIEWS[state.view]();
   markClips();
+  if (state.view === 'map') mountMap();
 }
 
 function markClips() {
