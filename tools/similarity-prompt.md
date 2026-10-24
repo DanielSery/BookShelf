@@ -38,8 +38,12 @@ the output path you are given, same ids as the input. Nothing else, anywhere.
   and its lead are almost always knowable.
 - Tag what the book **is about**, not words it mentions. A blurb saying "war" in passing
   is not `war`. A love subplot that does not drive the book is `love` at 1, not `romance`.
-- `exploration` is for a book whose engine is discovering an unknown place, world or
-  phenomenon. `hidden-past` is for uncovering a buried past or lost memories. Both are
+- `exploration` is for a book whose engine is going into an unknown place. `world-reveal`
+  is for a book whose engine is understanding the world or a phenomenon: what it is, how
+  it works, what really happened in it — the characters need the answer, it stays open
+  for a long stretch, and when it comes it fits everything before it. A setting that is
+  merely described, or a twist about one character, is not `world-reveal`. `hidden-past`
+  is for uncovering a buried past or lost memories. A book can carry all three. They are
   things this shelf is often searched by — apply them carefully, neither generously nor
   stingily.
 
@@ -167,6 +171,7 @@ when it applies.
 | revenge | revenge | pomsta | revenge drives someone |
 | identity | identity | identita | who am I — doubles, false or changed identities |
 | hidden-past | uncovering the past | odhalování minulosti | uncovering a buried past, lost memories, a secret history |
+| world-reveal | uncovering the world | odhalování světa | the world, or a phenomenon in it, is the unknown: its nature, rules or history are worked out piece by piece, and the answers make sense of what came before |
 | destiny | fate & prophecy | osud a proroctví | fate, prophecy, being chosen |
 | sacrifice | sacrifice | oběť | giving oneself up for others |
 | rise-from-below | rise from below | vzestup zdola | an underdog rising |

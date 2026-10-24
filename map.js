@@ -117,6 +117,10 @@ function mapResults(B) {
 
 const mapAbove = B => mapResults(B).filter(r => r.sim >= MAP.opts.minSim);
 
+// With a selection, only it and its listed matches stay opaque and clickable.
+const mapFocusSet = B => MAP.seeds.length
+  ? new Set([...MAP.seeds, ...mapAbove(B).slice(0, MAP_SHOWN).map(r => r.p)]) : null;
+
 function sharedTags(seeds, p, B, n = 3) {
   return p.sv.filter(([f]) => f < B.NT)
     .map(([f, x]) => [x * Math.min(...seeds.map(s => s.d[f])), f]).filter(([c]) => c > 0)
@@ -262,8 +266,9 @@ function mapSide(B) {
       .filter(p => p.on).sort((a, b) => b.score - a.score).slice(0, 15);
     return `<p class="mapnote">Click a point to see what is closest to it in content: a similar world, kind,
       themes and tone. Shift+click, or <b>+</b> in a list, adds more to the selection, and the list then
-      shows titles close to <i>all</i> of them. Near on the map means similar; distance across the whole
-      map means nothing.</p>
+      shows titles close to <i>all</i> of them. While something is selected, only it and its matches
+      stay clickable; click empty space to clear. Near on the map means similar; distance across the
+      whole map means nothing.</p>
       ${anchors.length ? `<h4>Start from what you know</h4>${mapList(anchors, B)}` : ''}`;
   }
   const o = MAP.opts;
@@ -404,12 +409,15 @@ function drawMap() {
   };
   const inView = p => p.sx > -20 && p.sy > -20 && p.sx < W + 20 && p.sy < H + 20;
 
-  // Filtered-out points stay as faint grey so the map keeps its geography under any filter.
-  ctx.globalAlpha = 0.16;
-  pts.filter(p => !p.on && inView(p)).sort(mapByScore).forEach(p => mark(p, muted));
-  ctx.globalAlpha = 1;
   const lit = pts.filter(p => p.on && inView(p)).sort(mapByScore);
-  lit.forEach(p => mark(p, p.score == null ? muted : v(MAP_BAND_VAR[band(p.score)])));
+  const focus = mapFocusSet(B);
+  const colour = p => p.score == null ? muted : v(MAP_BAND_VAR[band(p.score)]);
+  if (focus) {
+    ctx.globalAlpha = 0.15;
+    lit.filter(p => !focus.has(p)).forEach(p => mark(p, colour(p)));
+    ctx.globalAlpha = 1;
+    [...focus].filter(inView).sort(mapByScore).forEach(p => mark(p, colour(p)));
+  } else lit.forEach(p => mark(p, colour(p)));
 
   if (MAP.hover && !seeds.includes(MAP.hover)) mapRing(ctx, MAP.hover, mapRadius(MAP.hover) + 4, muted);
   res.forEach(r => mapRing(ctx, r.p, mapRadius(r.p) + 3, accent));
@@ -436,8 +444,10 @@ function drawMap() {
   }
 
   const labelled = [...seeds, ...res.slice(0, 15).map(r => r.p)];
-  lit.filter(diamond).reverse().forEach(p => labelled.push(p));
-  if (k >= 2.2) lit.filter(p => !diamond(p)).reverse().forEach(p => labelled.push(p));
+  if (!focus) {
+    lit.filter(diamond).reverse().forEach(p => labelled.push(p));
+    if (k >= 2.2) lit.filter(p => !diamond(p)).reverse().forEach(p => labelled.push(p));
+  }
   mapLabels(ctx, [...new Set(labelled)].filter(inView), v('--ink-2'), surface, W, H, taken);
 }
 
@@ -468,19 +478,15 @@ function mapLabels(ctx, list, color, halo, W, H, taken) {
 }
 
 // Nearest point within 14px rather than an exact hit: small marks are packed tight.
-// A point that matches the filters wins over a faded one at the same spot.
 function mapNearest(mx, my) {
-  const pts = mapPoints(mapBuild());
-  for (const pass of [true, false]) {
-    let best = null, bd = 14 * 14;
-    for (const p of pts) {
-      if (p.on !== pass || p.sx == null) continue;
-      const d = (p.sx - mx) ** 2 + (p.sy - my) ** 2;
-      if (d < bd) { bd = d; best = p; }
-    }
-    if (best) return best;
+  const B = mapBuild(), focus = mapFocusSet(B);
+  let best = null, bd = 14 * 14;
+  for (const p of focus || mapPoints(B).filter(q => q.on)) {
+    if (p.sx == null) continue;
+    const d = (p.sx - mx) ** 2 + (p.sy - my) ** 2;
+    if (d < bd) { bd = d; best = p; }
   }
-  return null;
+  return best;
 }
 
 function mapTip(p, mx, my) {
@@ -489,7 +495,7 @@ function mapTip(p, mx, my) {
   if (!p) { tip.hidden = true; return; }
   const line = (tag, text, cls) => { const el = document.createElement(tag); el.textContent = text; if (cls) el.className = cls; return el; };
   tip.replaceChildren(
-    line('b', mapLetter(p) + ' · ' + mapScoreText(p) + (p.on ? '' : ' · filtered out')),
+    line('b', mapLetter(p) + ' · ' + mapScoreText(p)),
     line('div', mapLabel(p)));
   if (!p.members) tip.append(line('div', p.author, 'bk-meta'));
   if (MAP.seeds.length && !MAP.seeds.includes(p)) {
