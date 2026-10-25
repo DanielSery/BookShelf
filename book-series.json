@@ -1,0 +1,8106 @@
+{
+ "_readme": "Which shelf candidates belong to one series, written by tools/series.py from agents following tools/series-prompt.md. The reader reads a series whole (2026-10-25), so the viewer and /book-suggest propose a `series` as ONE entry; a `universe` (shared world, standalone novels) is not grouped. book-cache.json `series` is only the raw catalogue value and is often a publisher's line. /book-screen adds a new volume here; /book-log moves a logged volume from `members` to `read`.",
+ "schema": 1,
+ "series": {
+  "a-boy-called-christmas": {
+   "name": "Vánoce",
+   "nameEn": "A Boy Called Christmas",
+   "kind": "series",
+   "members": [
+    {
+     "key": "otec-vanoce-a-ja",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "Third book; the first two are not on the shelf"
+  },
+  "a-dogs-purpose-puppy-tales": {
+   "name": "Příběhy štěňátek",
+   "nameEn": "A Dog's Purpose Puppy Tales",
+   "kind": "series",
+   "members": [
+    {
+     "key": "pribeh-ellie",
+     "n": 1
+    },
+    {
+     "key": "pribeh-lily",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Numbers are relative; the full series has more volumes"
+  },
+  "across-realtime": {
+   "name": "Across Realtime",
+   "nameEn": "Across Realtime",
+   "kind": "series",
+   "members": [
+    {
+     "key": "the-peace-war",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": "The Peace War, Marooned in Realtime"
+  },
+  "adventures-of-arabella-ashby": {
+   "name": "Dobrodružství Arabelly Ashbyové",
+   "nameEn": "The Adventures of Arabella Ashby",
+   "kind": "series",
+   "members": [
+    {
+     "key": "arabella-z-marsu",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "agent-john-francis-kovar": {
+   "name": "Agent John Francis Kovář",
+   "nameEn": "Agent John Francis Kovář",
+   "kind": "series",
+   "members": [
+    {
+     "key": "podhoubi-smrti",
+     "n": 1
+    },
+    {
+     "key": "dlouhy-cerny-usvit",
+     "n": 2
+    },
+    {
+     "key": "neni-krve-bez-ohne",
+     "n": 3
+    },
+    {
+     "key": "stin-legendy",
+     "n": null
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "agnes": {
+   "name": "Agnes",
+   "nameEn": "Agnes",
+   "kind": "series",
+   "members": [
+    {
+     "key": "agnes-a-ostrov-stinu",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "alcatraz": {
+   "name": "Alcatraz",
+   "nameEn": "Alcatraz vs. the Evil Librarians",
+   "kind": "series",
+   "members": [
+    {
+     "key": "alcatraz-versus-dabelsti-knihovnici",
+     "n": 1
+    },
+    {
+     "key": "alcatraz-versus-legie-zakladatelovych-kosti",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 5,
+   "note": ""
+  },
+  "alex-madison": {
+   "name": "Alex Madison",
+   "nameEn": "Alex Madison",
+   "kind": "series",
+   "members": [
+    {
+     "key": "trans",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "alien-licensed-fiction": {
+   "name": "Vetřelec",
+   "nameEn": "Alien (licensed fiction)",
+   "kind": "universe",
+   "members": [
+    {
+     "key": "vetrelci",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "all-of-us-villains": {
+   "name": "My všichni neřádi",
+   "nameEn": "All of Us Villains",
+   "kind": "series",
+   "members": [
+    {
+     "key": "my-vsichni-neradi",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "amelia-fang": {
+   "name": "Amálie Zubatá",
+   "nameEn": "Amelia Fang",
+   "kind": "series",
+   "members": [
+    {
+     "key": "amalie-zubata-a-jednorozci-pani",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "book 2"
+  },
+  "amulet": {
+   "name": "Amulet",
+   "nameEn": "Amulet",
+   "kind": "series",
+   "members": [
+    {
+     "key": "amulet",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 9,
+   "note": "Czech key amulet is The Cloud Searchers, vol 3"
+  },
+  "annals-of-the-western-shore": {
+   "name": "Kroniky Západního pobřeží",
+   "nameEn": "Annals of the Western Shore",
+   "kind": "series",
+   "members": [
+    {
+     "key": "kroniky-zapadniho-pobrezi",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "Library holds Gifts, Voices, Powers as one omnibus"
+  },
+  "anne-of-green-gables": {
+   "name": "Anna ze Zeleného domu",
+   "nameEn": "Anne of Green Gables",
+   "kind": "series",
+   "members": [
+    {
+     "key": "anna-ze-zeleneho-domu",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 8,
+   "note": ""
+  },
+  "ants": {
+   "name": "Mravenci",
+   "nameEn": "Ants",
+   "kind": "series",
+   "members": [
+    {
+     "key": "mravenci",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "apprentice-adept": {
+   "name": "Apprentice Adept",
+   "nameEn": "Apprentice Adept",
+   "kind": "series",
+   "members": [
+    {
+     "key": "zacinajici-adept",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 7,
+   "note": ""
+  },
+  "arc-of-a-scythe": {
+   "name": "Kosení",
+   "nameEn": "Arc of a Scythe",
+   "kind": "series",
+   "members": [
+    {
+     "key": "koseni-scythe",
+     "n": 1
+    },
+    {
+     "key": "smrtka",
+     "n": 1
+    },
+    {
+     "key": "nimbus",
+     "n": 2
+    },
+    {
+     "key": "zvon",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "koseni-scythe and smrtka are two editions of Scythe"
+  },
+  "arcane-ascension": {
+   "name": "Arcane Ascension",
+   "nameEn": "Arcane Ascension",
+   "kind": "series",
+   "members": [
+    {
+     "key": "sufficiently-advanced-magic",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "areston": {
+   "name": "Areston",
+   "nameEn": "Areston",
+   "kind": "series",
+   "members": [
+    {
+     "key": "areston",
+     "n": 1
+    },
+    {
+     "key": "utek-z-arestonu",
+     "n": 2
+    },
+    {
+     "key": "vladce-arestonu",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Order by publication year; not verified"
+  },
+  "artemis-fowl": {
+   "name": "Artemis Fowl",
+   "nameEn": "Artemis Fowl",
+   "kind": "series",
+   "members": [
+    {
+     "key": "artemis-fowl-a-atlantsky-komplex",
+     "n": 7
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 8,
+   "note": ""
+  },
+  "arthur-minimoys": {
+   "name": "Arthur",
+   "nameEn": "Arthur and the Minimoys",
+   "kind": "series",
+   "members": [
+    {
+     "key": "arthur-a-minimojove",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": ""
+  },
+  "asian-saga": {
+   "name": "Asijská sága",
+   "nameEn": "Asian Saga",
+   "kind": "universe",
+   "members": [
+    {
+     "key": "sogun",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 6,
+   "note": ""
+  },
+  "asylum": {
+   "name": "Asylum",
+   "nameEn": "Asylum",
+   "kind": "series",
+   "members": [
+    {
+     "key": "sanctum",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "athenian": {
+   "name": "Athéňan",
+   "nameEn": "Athenian",
+   "kind": "series",
+   "members": [
+    {
+     "key": "brany-athen",
+     "n": 1
+    },
+    {
+     "key": "vojevudce",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "atlantis-donegan": {
+   "name": "Atlantida",
+   "nameEn": "Atlantis",
+   "kind": "series",
+   "members": [
+    {
+     "key": "atlantida",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Volume number unverified"
+  },
+  "atomove-selmy": {
+   "name": "Atomové šelmy",
+   "nameEn": "Atomic Beasts",
+   "kind": "series",
+   "members": [
+    {
+     "key": "atomove-selmy",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 6,
+   "note": ""
+  },
+  "bamboo-kingdom": {
+   "name": "Bambusová říše",
+   "nameEn": "Bamboo Kingdom",
+   "kind": "series",
+   "members": [
+    {
+     "key": "bambusova-rise",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "bas-lag": {
+   "name": "Bas-Lag",
+   "nameEn": "Bas-Lag",
+   "kind": "universe",
+   "members": [
+    {
+     "key": "nadrazi-perdido",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "beast-quest": {
+   "name": "Beast Quest",
+   "nameEn": "Beast Quest",
+   "kind": "series",
+   "members": [
+    {
+     "key": "ferno-ohnivy-drak",
+     "n": 1
+    },
+    {
+     "key": "sepron-morsky-plaz",
+     "n": 2
+    },
+    {
+     "key": "tagus-kentaur",
+     "n": 4
+    },
+    {
+     "key": "nanook-ledovy-netvor",
+     "n": 5
+    },
+    {
+     "key": "epos-okridleny-ohen",
+     "n": 6
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "beast-quest-space-wars": {
+   "name": "Space Wars",
+   "nameEn": "Beast Quest: Space Wars",
+   "kind": "series",
+   "members": [
+    {
+     "key": "space-wars",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "book 2"
+  },
+  "black-dagger-brotherhood": {
+   "name": "Bratrstvo černé dýky",
+   "nameEn": "Black Dagger Brotherhood",
+   "kind": "series",
+   "members": [
+    {
+     "key": "zlodej",
+     "n": 16
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "black-fleet": {
+   "name": "Černá flotila",
+   "nameEn": "Black Fleet Saga",
+   "kind": "series",
+   "members": [
+    {
+     "key": "cerna-flotila",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "blandings-castle": {
+   "name": "Blandings Castle",
+   "nameEn": "Blandings Castle",
+   "kind": "series",
+   "members": [
+    {
+     "key": "usmev-lorda-ickenhama",
+     "n": 9
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 12,
+   "note": "Publication order counting the story collection"
+  },
+  "blood-and-ash": {
+   "name": "Blood and Ash",
+   "nameEn": "Blood and Ash",
+   "kind": "universe",
+   "members": [
+    {
+     "key": "vize-tela-a-krve",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "companion to the Blood and Ash series"
+  },
+  "blood-and-tea": {
+   "name": "Blood and Tea",
+   "nameEn": "Blood and Tea",
+   "kind": "series",
+   "members": [
+    {
+     "key": "cajova-boure",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "blood-borderland": {
+   "name": "Krvavé pohraničí",
+   "nameEn": "Krvavé pohraničí",
+   "kind": "series",
+   "members": [
+    {
+     "key": "valecna-lest",
+     "n": 1
+    },
+    {
+     "key": "likario",
+     "n": 2
+    },
+    {
+     "key": "orcigard",
+     "n": 3
+    },
+    {
+     "key": "nejlepsi-den-pro-umirani",
+     "n": 4
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "order by publication year"
+  },
+  "blue-ant": {
+   "name": "Blue Ant",
+   "nameEn": "Blue Ant",
+   "kind": "series",
+   "members": [
+    {
+     "key": "rozpoznani-vzoru",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "bobiverse": {
+   "name": "Bobiverse",
+   "nameEn": "Bobiverse",
+   "kind": "series",
+   "members": [
+    {
+     "key": "we-are-legion",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "book-of-the-ancestor": {
+   "name": "Book of the Ancestor",
+   "nameEn": "Book of the Ancestor",
+   "kind": "series",
+   "members": [
+    {
+     "key": "cervena-sestra",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "book-of-the-new-sun": {
+   "name": "Kniha Nového Slunce",
+   "nameEn": "The Book of the New Sun",
+   "kind": "series",
+   "members": [
+    {
+     "key": "kniha-noveho-slunce",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": "Czech edition holds the four volumes as an omnibus"
+  },
+  "books-of-babel": {
+   "name": "Books of Babel",
+   "nameEn": "Books of Babel",
+   "kind": "series",
+   "members": [
+    {
+     "key": "cesta-do-babylonu",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": ""
+  },
+  "borderlands-of-meekhan": {
+   "name": "Příběhy z meekhanského pomezí",
+   "nameEn": "Tales of the Meekhan Borderlands",
+   "kind": "series",
+   "members": [
+    {
+     "key": "sip-a-vitr-dyka-a-more",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "boy-who-grew-dragons": {
+   "name": "Chlapec, který pěstoval draky",
+   "nameEn": "The Boy Who Grew Dragons",
+   "kind": "series",
+   "members": [
+    {
+     "key": "chlapec-ktery-letal-s-dracky",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "brangwen-family": {
+   "name": "Rodina Brangwenových",
+   "nameEn": "The Brangwen family",
+   "kind": "series",
+   "members": [
+    {
+     "key": "duha",
+     "n": 1
+    },
+    {
+     "key": "zeny-milujici",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "breathe": {
+   "name": "Dech",
+   "nameEn": "Breathe",
+   "kind": "series",
+   "members": [
+    {
+     "key": "dech",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "bristol-keats": {
+   "name": "Bristol Keats",
+   "nameEn": "Bristol Keats",
+   "kind": "series",
+   "members": [
+    {
+     "key": "dvoreni-bristol-keatsove",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "broken-earth": {
+   "name": "Zlomená země",
+   "nameEn": "The Broken Earth",
+   "kind": "series",
+   "members": [
+    {
+     "key": "pate-rocni-obdobi",
+     "n": 1
+    },
+    {
+     "key": "brana-z-obelisku",
+     "n": 2
+    },
+    {
+     "key": "kamenne-nebe",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "brownstones-mythical-collection": {
+   "name": "Brownstoneova sbírka mýtů",
+   "nameEn": "Brownstone's Mythical Collection",
+   "kind": "series",
+   "members": [
+    {
+     "key": "artur-a-zlate-lano",
+     "n": 1
+    },
+    {
+     "key": "marcy-a-hadanka-od-sfingy",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "caladan-trilogy": {
+   "name": "Caladan",
+   "nameEn": "Caladan Trilogy",
+   "kind": "series",
+   "members": [
+    {
+     "key": "duna",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "canadian-west": {
+   "name": "Kanadský západ",
+   "nameEn": "Canadian West",
+   "kind": "series",
+   "members": [
+    {
+     "key": "klid-pred-bouri",
+     "n": 5
+    },
+    {
+     "key": "duveruj-zitrku",
+     "n": 6
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 8,
+   "note": "Order from memory: When Calls the Heart is 1"
+  },
+  "canticle-for-leibowitz": {
+   "name": "Chorál pro Leibowitze",
+   "nameEn": "A Canticle for Leibowitz",
+   "kind": "series",
+   "members": [
+    {
+     "key": "svaty-leibowitz-a-vladkyne-divokych-koni",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": "Sequel completed by Terry Bisson"
+  },
+  "captain-bathory": {
+   "name": "Dobrodružství kapitána Báthoryho",
+   "nameEn": "Captain Bathory's Adventures",
+   "kind": "series",
+   "members": [
+    {
+     "key": "strazcove-varadinu",
+     "n": 1
+    },
+    {
+     "key": "zelezny-pulmesic",
+     "n": 3
+    },
+    {
+     "key": "hradba-zapadu",
+     "n": 4
+    }
+   ],
+   "read": [],
+   "rejected": [
+    "Pro hrst dukatu"
+   ],
+   "volumes": null,
+   "note": "Pro hrst dukatu assumed n2; order by year"
+  },
+  "carls": {
+   "name": "The Carls",
+   "nameEn": "The Carls",
+   "kind": "series",
+   "members": [
+    {
+     "key": "nadherne-posetila-snaha",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": "First volume An Absolutely Remarkable Thing not on this shelf batch"
+  },
+  "cassidy-blake": {
+   "name": "Cassidy Blake",
+   "nameEn": "Cassidy Blake",
+   "kind": "series",
+   "members": [
+    {
+     "key": "mesto-duchu",
+     "n": 1
+    },
+    {
+     "key": "tunel-kosti",
+     "n": 2
+    },
+    {
+     "key": "most-dusi",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "castle-in-the-stars": {
+   "name": "Hvězdný hrad",
+   "nameEn": "Le Château des étoiles",
+   "kind": "series",
+   "members": [
+    {
+     "key": "hvezdny-hrad",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "volume number assumed"
+  },
+  "cato-and-macro": {
+   "name": "Orli říše",
+   "nameEn": "Cato and Macro (Eagles of the Empire)",
+   "kind": "series",
+   "members": [
+    {
+     "key": "vitezstvi-orla",
+     "n": 2
+    },
+    {
+     "key": "orlova-korist",
+     "n": 5
+    },
+    {
+     "key": "legie",
+     "n": 10
+    },
+    {
+     "key": "pretorian",
+     "n": 11
+    },
+    {
+     "key": "krvavi-havrani",
+     "n": 12
+    },
+    {
+     "key": "bratri-ve-zbrani",
+     "n": 13
+    },
+    {
+     "key": "invictus",
+     "n": 15
+    },
+    {
+     "key": "den-cisaru",
+     "n": 16
+    },
+    {
+     "key": "rimska-krev",
+     "n": 17
+    },
+    {
+     "key": "zradcove-rima",
+     "n": 18
+    },
+    {
+     "key": "vyhnanstvi",
+     "n": 19
+    },
+    {
+     "key": "rimska-cest",
+     "n": 20
+    },
+    {
+     "key": "smrt-cisari",
+     "n": 21
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "n is publication order of the full series; numbers from memory"
+  },
+  "centralni-imperium": {
+   "name": "Centrální impérium",
+   "nameEn": "Central Empire",
+   "kind": "series",
+   "members": [
+    {
+     "key": "cisar-v-exilu",
+     "n": 1
+    },
+    {
+     "key": "hranice-imperia",
+     "n": 2
+    },
+    {
+     "key": "obranci-civilizace",
+     "n": 3
+    },
+    {
+     "key": "odkaz-protektoru",
+     "n": 4
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "centralni-imperium-omega": {
+   "name": "Centrální impérium: Omega",
+   "nameEn": "Central Empire: Omega",
+   "kind": "series",
+   "members": [
+    {
+     "key": "centralni-imperium-omega",
+     "n": 1
+    },
+    {
+     "key": "komanda-omega",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Order inferred"
+  },
+  "century-trilogy": {
+   "name": "Století",
+   "nameEn": "Century Trilogy",
+   "kind": "series",
+   "members": [
+    {
+     "key": "stoleti",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "cerulean-chronicles": {
+   "name": "Cerulean Chronicles",
+   "nameEn": "Cerulean Chronicles",
+   "kind": "series",
+   "members": [
+    {
+     "key": "dum-v-blankytne-modrem-mori",
+     "n": 1
+    },
+    {
+     "key": "the-house-in-the-cerulean-sea",
+     "n": 1
+    },
+    {
+     "key": "nekde-za-morem",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": "Two shelf rows for volume 1"
+  },
+  "ceske-zeme": {
+   "name": "České země",
+   "nameEn": "Czech Lands",
+   "kind": "series",
+   "members": [
+    {
+     "key": "nad-ceskymi-zememi-slunce-nezapada",
+     "n": 1
+    },
+    {
+     "key": "ofenziva-ceskych-zemi",
+     "n": 2
+    },
+    {
+     "key": "v-tajne-sluzbe-koruny-ceske",
+     "n": 3
+    },
+    {
+     "key": "spojenci-ceskych-zemi",
+     "n": 4
+    },
+    {
+     "key": "bitva-o-ceske-zeme",
+     "n": 5
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Alternate-history cycle in Brokilon alternativa; publication order"
+  },
+  "chaos-walking": {
+   "name": "Chaos Walking",
+   "nameEn": "Chaos Walking",
+   "kind": "series",
+   "members": [
+    {
+     "key": "naslouchej-nozi",
+     "n": 1
+    },
+    {
+     "key": "najdi-odpoved",
+     "n": 2
+    },
+    {
+     "key": "probud-monstrum",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "charlie-bucket": {
+   "name": "Karlík",
+   "nameEn": "Charlie Bucket",
+   "kind": "series",
+   "members": [
+    {
+     "key": "karlik-a-tovarna-na-cokoladu",
+     "n": 1
+    },
+    {
+     "key": "karlik-a-velky-skleneny-vytah",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "childe-cycle": {
+   "name": "Childe Cycle",
+   "nameEn": "Childe Cycle",
+   "kind": "universe",
+   "members": [
+    {
+     "key": "dorsai",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "children-of-time": {
+   "name": "Děti času",
+   "nameEn": "Children of Time",
+   "kind": "series",
+   "members": [
+    {
+     "key": "children-of-time",
+     "n": 1
+    },
+    {
+     "key": "deti-zmaru",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "chodska-trilogie": {
+   "name": "Chodská trilogie",
+   "nameEn": "Chodská trilogie",
+   "kind": "series",
+   "members": [
+    {
+     "key": "lusy",
+     "n": 2
+    },
+    {
+     "key": "pani-komisarka",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "Jan Cimbura is book 1, not on shelf"
+  },
+  "chronicle-of-the-unhewn-throne": {
+   "name": "Kronika nevytesaného trůnu",
+   "nameEn": "Chronicle of the Unhewn Throne",
+   "kind": "series",
+   "members": [
+    {
+     "key": "cisarovy-cepele",
+     "n": 1
+    },
+    {
+     "key": "prozretelnost-ohne",
+     "n": 2
+    },
+    {
+     "key": "posledni-smrtelne-pouto",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "chronicles-of-ancient-darkness": {
+   "name": "Letopisy z hlubin věků",
+   "nameEn": "Chronicles of Ancient Darkness",
+   "kind": "series",
+   "members": [
+    {
+     "key": "letopisy-z-hlubin-veku",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 6,
+   "note": "Volume number unverified"
+  },
+  "chronicles-of-narnia": {
+   "name": "Letopisy Narnie",
+   "nameEn": "The Chronicles of Narnia",
+   "kind": "series",
+   "members": [],
+   "read": [
+    "The Chronicles of Narnia"
+   ],
+   "rejected": [],
+   "volumes": null,
+   "note": "",
+   "readWhole": true
+  },
+  "chronicles-of-time-mages": {
+   "name": "Časodějové",
+   "nameEn": "Chronicles of Time Mages",
+   "kind": "series",
+   "members": [
+    {
+     "key": "casodejove",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "cicero-trilogy": {
+   "name": "Cicero",
+   "nameEn": "Cicero trilogy",
+   "kind": "series",
+   "members": [
+    {
+     "key": "diktator",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "Third volume; the first two are not on the shelf"
+  },
+  "cities-fantastic-epoch": {
+   "name": "Města",
+   "nameEn": "Cities",
+   "kind": "series",
+   "members": [
+    {
+     "key": "zeme-v-troskach",
+     "n": 1
+    },
+    {
+     "key": "svet-v-bouri",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "cities-of-the-weft": {
+   "name": "Cities of the Weft",
+   "nameEn": "Cities of the Weft",
+   "kind": "series",
+   "members": [
+    {
+     "key": "mordie",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "clash-of-empires": {
+   "name": "Clash of Empires",
+   "nameEn": "Clash of Empires",
+   "kind": "series",
+   "members": [
+    {
+     "key": "hannibal",
+     "n": 1
+    },
+    {
+     "key": "stret-imperii",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": "Order uncertain; Hannibal story across both"
+  },
+  "codex-alera": {
+   "name": "Codex Alera",
+   "nameEn": "Codex Alera",
+   "kind": "series",
+   "members": [
+    {
+     "key": "furies-of-calderon",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 6,
+   "note": ""
+  },
+  "consentiency": {
+   "name": "ConSentiency",
+   "nameEn": "ConSentiency",
+   "kind": "universe",
+   "members": [
+    {
+     "key": "experiment-dosada",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "cosmere": {
+   "name": "Cosmere",
+   "nameEn": "Cosmere",
+   "kind": "universe",
+   "members": [
+    {
+     "key": "elantris",
+     "n": 1
+    },
+    {
+     "key": "vyjednavac",
+     "n": 2
+    },
+    {
+     "key": "sluncem-ozareny",
+     "n": 3
+    },
+    {
+     "key": "lokynka-ze-smaragdoveho-more",
+     "n": 4
+    },
+    {
+     "key": "isles-of-the-emberdark",
+     "n": 5
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "courtney": {
+   "name": "Courtney",
+   "nameEn": "Courtney",
+   "kind": "series",
+   "members": [
+    {
+     "key": "ptaci-vodopady",
+     "n": 3
+    },
+    {
+     "key": "sila-mece",
+     "n": 5
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "numbers are publication order of the Courtney novels; Power of the Sword belongs to the Burning Shore sequence"
+  },
+  "covenant-of-steel": {
+   "name": "Covenant of Steel",
+   "nameEn": "Covenant of Steel",
+   "kind": "series",
+   "members": [
+    {
+     "key": "vyvrhel",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "cradle": {
+   "name": "Cradle",
+   "nameEn": "Cradle",
+   "kind": "series",
+   "members": [
+    {
+     "key": "unsouled",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 12,
+   "note": ""
+  },
+  "crystal-cycle": {
+   "name": "Květ z křišťálu",
+   "nameEn": "Crystal Cycle",
+   "kind": "series",
+   "members": [
+    {
+     "key": "krev-kristaloveho-kvetu",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "ctyrlistek": {
+   "name": "Čtyřlístek",
+   "nameEn": "Čtyřlístek",
+   "kind": "series",
+   "members": [
+    {
+     "key": "velke-dobrodruzstvi-ctyrlistku",
+     "n": null
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "culture": {
+   "name": "The Culture",
+   "nameEn": "The Culture",
+   "kind": "universe",
+   "members": [
+    {
+     "key": "vodikova-sonata",
+     "n": 10
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 10,
+   "note": "standalone novels in one setting"
+  },
+  "dagger-and-coin": {
+   "name": "Mince a dyka",
+   "nameEn": "The Dagger and the Coin",
+   "kind": "series",
+   "members": [
+    {
+     "key": "draci-cesta",
+     "n": 1
+    },
+    {
+     "key": "kralovska-krev",
+     "n": 2
+    },
+    {
+     "key": "tyranuv-zakon",
+     "n": 3
+    },
+    {
+     "key": "vdovin-dum",
+     "n": 4
+    },
+    {
+     "key": "pavouci-valka",
+     "n": 5
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 5,
+   "note": ""
+  },
+  "dalai-lamas-cat": {
+   "name": "Dalajlamova kočka",
+   "nameEn": "The Dalai Lama's Cat",
+   "kind": "series",
+   "members": [
+    {
+     "key": "dalajlamova-kocka",
+     "n": null
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "dandelion-dynasty": {
+   "name": "Dynastie pampelišek",
+   "nameEn": "The Dandelion Dynasty",
+   "kind": "series",
+   "members": [
+    {
+     "key": "dynastie-pampelisek",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": ""
+  },
+  "dark-eden": {
+   "name": "Dark Eden",
+   "nameEn": "Dark Eden",
+   "kind": "series",
+   "members": [
+    {
+     "key": "dark-eden",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "dark-inheritance": {
+   "name": "Temné dědictví",
+   "nameEn": "Dark Inheritance",
+   "kind": "series",
+   "members": [
+    {
+     "key": "zmije-a-vlk",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "dartagnan-romances": {
+   "name": "Mušketýři",
+   "nameEn": "The d'Artagnan Romances",
+   "kind": "series",
+   "members": [
+    {
+     "key": "three-musketeers",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "daughter-of-smoke-and-bone": {
+   "name": "Dcera kosti a dýmu",
+   "nameEn": "Daughter of Smoke and Bone",
+   "kind": "series",
+   "members": [
+    {
+     "key": "dcera-kosti-a-dymu",
+     "n": 1
+    },
+    {
+     "key": "dny-krve-a-hvezdneho-trpytu",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "day-the-crayons-quit": {
+   "name": "Den, kdy voskovky řekly dost",
+   "nameEn": "The Day the Crayons Quit",
+   "kind": "series",
+   "members": [
+    {
+     "key": "den-kdy-voskovky-rekly-dost",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "deathless": {
+   "name": "Deathless",
+   "nameEn": "Deathless",
+   "kind": "series",
+   "members": [
+    {
+     "key": "pozlacene",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "deathworld": {
+   "name": "Planeta smrti",
+   "nameEn": "Deathworld",
+   "kind": "series",
+   "members": [
+    {
+     "key": "prvni-planeta-smrti",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "declaration": {
+   "name": "Deklarace",
+   "nameEn": "The Declaration",
+   "kind": "series",
+   "members": [
+    {
+     "key": "deklarace-smrti",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "deed-of-paksenarrion": {
+   "name": "Deed of Paksenarrion",
+   "nameEn": "Deed of Paksenarrion",
+   "kind": "series",
+   "members": [
+    {
+     "key": "ovcakova-dcera",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "deeptown": {
+   "name": "Bludiště odrazů",
+   "nameEn": "Deeptown",
+   "kind": "series",
+   "members": [
+    {
+     "key": "bludiste-odrazu",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "delirium": {
+   "name": "Delirium",
+   "nameEn": "Delirium",
+   "kind": "series",
+   "members": [
+    {
+     "key": "delirium",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "deltora-shadowlands": {
+   "name": "Deltora Shadowlands",
+   "nameEn": "Deltora Shadowlands",
+   "kind": "series",
+   "members": [
+    {
+     "key": "ostrov-preludu",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "devet-dni": {
+   "name": "Devět dní",
+   "nameEn": "Devět dní",
+   "kind": "series",
+   "members": [
+    {
+     "key": "devet-dni",
+     "n": 1
+    },
+    {
+     "key": "devet-noci",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "dinotopia": {
+   "name": "Dinotopie",
+   "nameEn": "Dinotopia",
+   "kind": "series",
+   "members": [
+    {
+     "key": "dinotopie",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "dire-earth-cycle": {
+   "name": "Dire Earth Cycle",
+   "nameEn": "Dire Earth Cycle",
+   "kind": "series",
+   "members": [
+    {
+     "key": "darwinsky-vytah",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "discworld": {
+   "name": "Úžasná Zeměplocha",
+   "nameEn": "Discworld",
+   "kind": "universe",
+   "members": [
+    {
+     "key": "pyramidy",
+     "n": 1
+    },
+    {
+     "key": "mali-bohove",
+     "n": 2
+    },
+    {
+     "key": "pohyblive-obrazky",
+     "n": 3
+    },
+    {
+     "key": "uzasny-mauric",
+     "n": 4
+    },
+    {
+     "key": "pravda-the-truth",
+     "n": 5
+    },
+    {
+     "key": "podivny-regiment",
+     "n": 6
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 41,
+   "note": ""
+  },
+  "discworld-city-watch": {
+   "name": "Městská hlídka",
+   "nameEn": "Discworld: City Watch",
+   "kind": "series",
+   "members": [
+    {
+     "key": "hrrr-na-ne",
+     "n": 4
+    }
+   ],
+   "read": [
+    "Guards! Guards! (Discworld #8)"
+   ],
+   "rejected": [
+    "Nohy z jilu (Feet of Clay)",
+    "Muzi ve zbrani (Men at Arms)",
+    "Snupec (Snuff)",
+    "Paty elefant (The Fifth Elephant)",
+    "Buch!"
+   ],
+   "volumes": 8,
+   "note": ""
+  },
+  "discworld-death": {
+   "name": "Smrť",
+   "nameEn": "Discworld: Death",
+   "kind": "series",
+   "members": [
+    {
+     "key": "sekac",
+     "n": 2
+    },
+    {
+     "key": "tezke-melodicno",
+     "n": 3
+    },
+    {
+     "key": "otec-prasatek",
+     "n": 4
+    }
+   ],
+   "read": [
+    "Mort (Discworld #4)"
+   ],
+   "rejected": [],
+   "volumes": 5,
+   "note": ""
+  },
+  "discworld-moist-von-lipwig": {
+   "name": "Moist von Lipwig",
+   "nameEn": "Discworld: Moist von Lipwig",
+   "kind": "series",
+   "members": [
+    {
+     "key": "zaslana-posta",
+     "n": 1
+    },
+    {
+     "key": "nadelat-prachy",
+     "n": 2
+    },
+    {
+     "key": "pod-parou",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "discworld-rincewind": {
+   "name": "Rincewind",
+   "nameEn": "Discworld: Rincewind",
+   "kind": "series",
+   "members": [
+    {
+     "key": "magicky-prazdroj",
+     "n": 3
+    },
+    {
+     "key": "erik-eric",
+     "n": 4
+    },
+    {
+     "key": "zajimave-casy",
+     "n": 5
+    },
+    {
+     "key": "posledni-kontinent",
+     "n": 6
+    }
+   ],
+   "read": [
+    "The Colour of Magic (Discworld #1)"
+   ],
+   "rejected": [
+    "Lehke fantasticno (The Light Fantastic)",
+    "Erik (Eric)",
+    "Zajimave casy (Interesting Times)",
+    "Posledni kontinent (The Last Continent)"
+   ],
+   "volumes": 8,
+   "note": ""
+  },
+  "divergent": {
+   "name": "Divergence",
+   "nameEn": "Divergent",
+   "kind": "series",
+   "members": [],
+   "read": [
+    "Divergent (series)"
+   ],
+   "rejected": [],
+   "volumes": null,
+   "note": "",
+   "readWhole": true
+  },
+  "divine-cities": {
+   "name": "Divine Cities",
+   "nameEn": "The Divine Cities",
+   "kind": "series",
+   "members": [
+    {
+     "key": "divine-cities",
+     "n": 1
+    },
+    {
+     "key": "mesto-zazraku",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "City of Blades (book 2) not on shelf"
+  },
+  "doctor-who": {
+   "name": "Doctor Who",
+   "nameEn": "Doctor Who",
+   "kind": "universe",
+   "members": [
+    {
+     "key": "doctor-who",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Anthology of eleven Doctor stories"
+  },
+  "dogs-of-war": {
+   "name": "Psí vojáci",
+   "nameEn": "Dogs of War",
+   "kind": "series",
+   "members": [
+    {
+     "key": "psi-vojaci",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "doktor-proktor": {
+   "name": "Doktor Proktor",
+   "nameEn": "Doktor Proktor",
+   "kind": "series",
+   "members": [
+    {
+     "key": "doktor-proktor-a-vana-casu",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "draconis-memoria": {
+   "name": "Draconis Memoria",
+   "nameEn": "Draconis Memoria",
+   "kind": "series",
+   "members": [
+    {
+     "key": "ohen-probuzeni",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "dragon-storm": {
+   "name": "Dračí bouře",
+   "nameEn": "Dragon Storm",
+   "kind": "series",
+   "members": [
+    {
+     "key": "draci-boure",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "dragons-egg": {
+   "name": "Dračí vejce",
+   "nameEn": "Dragon's Egg",
+   "kind": "series",
+   "members": [
+    {
+     "key": "draci-vejce",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "dread-empire-s-fall": {
+   "name": "Dread Empire's Fall",
+   "nameEn": "Dread Empire's Fall",
+   "kind": "series",
+   "members": [
+    {
+     "key": "the-praxis",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "duftapotheke": {
+   "name": "Voňavá lékárna",
+   "nameEn": "The Fragrance Pharmacy (Die Duftapotheke)",
+   "kind": "series",
+   "members": [
+    {
+     "key": "vonava-lekarna",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "dune": {
+   "name": "Duna",
+   "nameEn": "Dune",
+   "kind": "series",
+   "members": [
+    {
+     "key": "duna-frank-herbert",
+     "n": 1
+    },
+    {
+     "key": "deti-duny",
+     "n": 3
+    },
+    {
+     "key": "bozsky-imperator-duny",
+     "n": 4
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 6,
+   "note": "Messiah of Dune (2) not on the shelf"
+  },
+  "dungeon-crawler-carl": {
+   "name": "Dungeon Crawler Carl",
+   "nameEn": "Dungeon Crawler Carl",
+   "kind": "series",
+   "members": [
+    {
+     "key": "dungeon-crawler-carl",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "dustlands": {
+   "name": "Dustlands",
+   "nameEn": "Dustlands",
+   "kind": "series",
+   "members": [
+    {
+     "key": "krvava-cesta",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "eagles-of-rome": {
+   "name": "Orlové Říma",
+   "nameEn": "Eagles of Rome",
+   "kind": "series",
+   "members": [
+    {
+     "key": "stvanice-na-orly",
+     "n": 2
+    },
+    {
+     "key": "orlove-v-bouri",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "Volume 1 (Eagles at War) not on shelf"
+  },
+  "edge-chronicles": {
+   "name": "Kroniky světakraje",
+   "nameEn": "The Edge Chronicles",
+   "kind": "series",
+   "members": [
+    {
+     "key": "kroniky-svetakraje",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "elias": {
+   "name": "Eliáš",
+   "nameEn": "Elias",
+   "kind": "series",
+   "members": [
+    {
+     "key": "elias-mezi-piraty",
+     "n": 1
+    },
+    {
+     "key": "elias-mezi-lidojedy",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "ember-in-the-ashes": {
+   "name": "Jiskra v popelu",
+   "nameEn": "An Ember in the Ashes",
+   "kind": "series",
+   "members": [
+    {
+     "key": "jiskra-v-popelu",
+     "n": 1
+    },
+    {
+     "key": "plamen-v-temnote",
+     "n": 2
+    },
+    {
+     "key": "smrt-pred-branami",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": ""
+  },
+  "ember-spark": {
+   "name": "Ember Spark",
+   "nameEn": "Ember Spark",
+   "kind": "series",
+   "members": [
+    {
+     "key": "ember-a-buraceni-draku",
+     "n": 1
+    },
+    {
+     "key": "ember-a-snezny-fenix",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Order of the two shelf volumes not verified"
+  },
+  "emil-a-upiri": {
+   "name": "Emil a upíři",
+   "nameEn": "Emil a upiri",
+   "kind": "series",
+   "members": [
+    {
+     "key": "neboj-se-vzdyt-mas-cesnek",
+     "n": 1
+    },
+    {
+     "key": "kdo-se-boji-nesmi-do-skoly",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Order by year"
+  },
+  "emily-wilde": {
+   "name": "Emily Wilde",
+   "nameEn": "Emily Wilde",
+   "kind": "series",
+   "members": [
+    {
+     "key": "mapa-jinozemi-emily-wildove",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "empirium": {
+   "name": "Empirium",
+   "nameEn": "Empirium",
+   "kind": "series",
+   "members": [
+    {
+     "key": "furyborn",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "ender": {
+   "name": "Ender",
+   "nameEn": "Ender",
+   "kind": "series",
+   "members": [
+    {
+     "key": "ender-ve-vyhnanstvi",
+     "n": 5
+    }
+   ],
+   "read": [
+    "Ender's Game",
+    "Speaker for the Dead (Ender #2)",
+    "Ender saga #3-5 (Xenocide onward)"
+   ],
+   "rejected": [],
+   "volumes": 5,
+   "note": "Ender in Exile is set between Ender's Game and Speaker for the Dead; numbered here by publication"
+  },
+  "enders-shadow": {
+   "name": "Enderův stín",
+   "nameEn": "Ender's Shadow",
+   "kind": "series",
+   "members": [],
+   "read": [
+    "Ender's Shadow series"
+   ],
+   "rejected": [],
+   "volumes": null,
+   "note": "",
+   "readWhole": true
+  },
+  "entram": {
+   "name": "Entram",
+   "nameEn": "Entram",
+   "kind": "series",
+   "members": [
+    {
+     "key": "nova-gaia",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "erectus-trilogy": {
+   "name": "Erectus",
+   "nameEn": "Erectus",
+   "kind": "series",
+   "members": [
+    {
+     "key": "erectus",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "escape-from-planet-alcatraz": {
+   "name": "Utek z planety Alcatraz",
+   "nameEn": "Escape from Planet Alcatraz",
+   "kind": "series",
+   "members": [
+    {
+     "key": "utek-z-planety-alcatraz",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Michael Dahl, not Roald; volume number unverified"
+  },
+  "expanse": {
+   "name": "Expanse",
+   "nameEn": "The Expanse",
+   "kind": "series",
+   "members": [
+    {
+     "key": "leviathan-wakes",
+     "n": 1
+    },
+    {
+     "key": "zastup-vzpominek",
+     "n": 10
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 9,
+   "note": "Memory's Legion is a 2022 story collection, not a main novel"
+  },
+  "expert-system": {
+   "name": "Expert System",
+   "nameEn": "Expert System",
+   "kind": "series",
+   "members": [
+    {
+     "key": "the-expert-system-s-brother",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "farseer": {
+   "name": "Farseer Trilogy",
+   "nameEn": "Farseer Trilogy",
+   "kind": "series",
+   "members": [
+    {
+     "key": "krev-a-jed",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "felix-and-zelda": {
+   "name": "Felix a Zelda",
+   "nameEn": "Felix and Zelda",
+   "kind": "series",
+   "members": [
+    {
+     "key": "kdysi-gleitzman",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "filix-wood": {
+   "name": "Filix Wood",
+   "nameEn": "Filix Wood",
+   "kind": "series",
+   "members": [
+    {
+     "key": "filix-wood",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "final-architecture": {
+   "name": "Poslední architektura",
+   "nameEn": "The Final Architecture",
+   "kind": "series",
+   "members": [
+    {
+     "key": "architekti-svetu",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "fire-and-thorns": {
+   "name": "Fire and Thorns",
+   "nameEn": "Fire and Thorns",
+   "kind": "series",
+   "members": [
+    {
+     "key": "the-girl-of-fire-and-thorns",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "first-formic-war": {
+   "name": "The First Formic War",
+   "nameEn": "The First Formic War",
+   "kind": "series",
+   "members": [
+    {
+     "key": "earth-unaware",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "first-law-trilogy": {
+   "name": "First Law",
+   "nameEn": "The First Law",
+   "kind": "series",
+   "members": [
+    {
+     "key": "the-blade-itself",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "first-law-world": {
+   "name": "First Law World",
+   "nameEn": "First Law World",
+   "kind": "universe",
+   "members": [
+    {
+     "key": "ruda-zeme",
+     "n": 1
+    },
+    {
+     "key": "hrdinove",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "standalone novels in the First Law world"
+  },
+  "flawed": {
+   "name": "Flawed",
+   "nameEn": "Flawed",
+   "kind": "series",
+   "members": [
+    {
+     "key": "dokonala",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": "Perfect is book 2; Flawed itself not on shelf"
+  },
+  "flight-and-glory": {
+   "name": "Flight & Glory",
+   "nameEn": "Flight & Glory",
+   "kind": "series",
+   "members": [
+    {
+     "key": "vsemi-smysly",
+     "n": 1
+    },
+    {
+     "key": "za-hranice-lasky",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "flusterwald": {
+   "name": "Šeptající les",
+   "nameEn": "Flüsterwald",
+   "kind": "series",
+   "members": [
+    {
+     "key": "septajici-les",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Staffel I; first book"
+  },
+  "folk-of-the-air": {
+   "name": "Folk of the Air",
+   "nameEn": "The Folk of the Air",
+   "kind": "series",
+   "members": [
+    {
+     "key": "ztracene-sestry",
+     "n": 1.5
+    },
+    {
+     "key": "jak-se-kral-zeme-vil-naucil-nenavidet-pribeh",
+     "n": 3.5
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "companion volumes; Lost Sisters sits between books 1 and 2, King of Elfhame after book 3"
+  },
+  "foreigner": {
+   "name": "Cizinec",
+   "nameEn": "Foreigner",
+   "kind": "series",
+   "members": [
+    {
+     "key": "cizinec",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "forever-war": {
+   "name": "Věčná válka",
+   "nameEn": "The Forever War",
+   "kind": "series",
+   "members": [
+    {
+     "key": "vecna-valka",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": "Forever Free is the direct sequel; Forever Peace is only thematically linked"
+  },
+  "foundation": {
+   "name": "Nadace",
+   "nameEn": "Foundation",
+   "kind": "series",
+   "members": [
+    {
+     "key": "nadace-foundation",
+     "n": 1
+    },
+    {
+     "key": "nadace-a-rise",
+     "n": 2
+    },
+    {
+     "key": "druha-nadace",
+     "n": 3
+    },
+    {
+     "key": "na-hranicich-nadace",
+     "n": 4
+    },
+    {
+     "key": "nadace-a-zeme",
+     "n": 5
+    },
+    {
+     "key": "predehra-k-nadaci",
+     "n": 6
+    },
+    {
+     "key": "a-zrodi-se-nadace",
+     "n": 7
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 7,
+   "note": "publication order; Prelude and Forward are prequels written last"
+  },
+  "four-horsemen": {
+   "name": "Čtyři jezdci",
+   "nameEn": "The Four Horsemen",
+   "kind": "series",
+   "members": [
+    {
+     "key": "valka",
+     "n": 2
+    },
+    {
+     "key": "hlad",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": ""
+  },
+  "fractalverse": {
+   "name": "Fractalverse",
+   "nameEn": "Fractalverse",
+   "kind": "series",
+   "members": [
+    {
+     "key": "fraktalni-sum",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Publication order after To Sleep in a Sea of Stars; Fractal Noise is chronologically a prequel"
+  },
+  "frontlines": {
+   "name": "První linie",
+   "nameEn": "Frontlines",
+   "kind": "series",
+   "members": [
+    {
+     "key": "smlouva-na-zivot",
+     "n": 1
+    },
+    {
+     "key": "evakuace",
+     "n": 2
+    },
+    {
+     "key": "blokada",
+     "n": 3
+    },
+    {
+     "key": "dezerce",
+     "n": 4
+    },
+    {
+     "key": "ohniva-pole",
+     "n": 5
+    },
+    {
+     "key": "protiuder",
+     "n": 6
+    },
+    {
+     "key": "bojove-rozkazy",
+     "n": 7
+    },
+    {
+     "key": "posledni-hlidka",
+     "n": 8
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 8,
+   "note": ""
+  },
+  "galactic-empire": {
+   "name": "Galactic Empire",
+   "nameEn": "Galactic Empire",
+   "kind": "universe",
+   "members": [
+    {
+     "key": "oblazek-na-obloze",
+     "n": 1
+    },
+    {
+     "key": "hvezdy-jako-prach",
+     "n": 2
+    },
+    {
+     "key": "kosmicke-proudy",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "standalone novels set in one future history"
+  },
+  "gangsta-granny": {
+   "name": "Babička drsňačka",
+   "nameEn": "Gangsta Granny",
+   "kind": "series",
+   "members": [
+    {
+     "key": "babicka-drsnacka",
+     "n": 1
+    },
+    {
+     "key": "babicka-drsnacka-znovu-v-akci",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "geomancer": {
+   "name": "Geomancer",
+   "nameEn": "Geomancer",
+   "kind": "series",
+   "members": [
+    {
+     "key": "ve-stinu-vlci-kralovny",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "george-smiley": {
+   "name": "George Smiley",
+   "nameEn": "George Smiley",
+   "kind": "series",
+   "members": [
+    {
+     "key": "spion-ktery-prisel-z-chladu",
+     "n": 3
+    },
+    {
+     "key": "dedictvi-spionu",
+     "n": 9
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 9,
+   "note": "Smiley is a secondary figure in The Spy Who Came in from the Cold"
+  },
+  "ghosthunters": {
+   "name": "Lovci strašidel",
+   "nameEn": "Ghosthunters",
+   "kind": "series",
+   "members": [
+    {
+     "key": "lovci-strasidel-na-ledove-stope",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "giver-quartet": {
+   "name": "Dárce",
+   "nameEn": "The Giver Quartet",
+   "kind": "series",
+   "members": [
+    {
+     "key": "darce-the-giver",
+     "n": 1
+    },
+    {
+     "key": "hledani-modre",
+     "n": 2
+    },
+    {
+     "key": "posel-v-temnem-lese",
+     "n": 3
+    },
+    {
+     "key": "syn-lowry",
+     "n": 4
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": ""
+  },
+  "glittering-court": {
+   "name": "Třpytný dvůr",
+   "nameEn": "The Glittering Court",
+   "kind": "series",
+   "members": [
+    {
+     "key": "trpytny-dvur",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "go-gang-odvazanych": {
+   "name": "GO! - Gang odvážných",
+   "nameEn": "GO! - Gang odvazanych",
+   "kind": "series",
+   "members": [
+    {
+     "key": "chapadla-ohne",
+     "n": 1
+    },
+    {
+     "key": "uder-tornada",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Order unverified, both 2022"
+  },
+  "good-luck-girls": {
+   "name": "Šťastné dívky",
+   "nameEn": "The Good Luck Girls",
+   "kind": "series",
+   "members": [
+    {
+     "key": "stastne-divky",
+     "n": 1
+    },
+    {
+     "key": "sestry-zuctovani",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "grail-quest": {
+   "name": "Hledání Grálu",
+   "nameEn": "The Grail Quest",
+   "kind": "series",
+   "members": [
+    {
+     "key": "inkvizitor",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "1356 is a related standalone, not a numbered volume"
+  },
+  "grandhotel-schwarzenberg": {
+   "name": "Grandhotel Schwarzenberg",
+   "nameEn": "Grandhotel Schwarzenberg",
+   "kind": "series",
+   "members": [
+    {
+     "key": "grandhotel-schwarzenberg",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "greatcoats": {
+   "name": "Greatcoats",
+   "nameEn": "Greatcoats",
+   "kind": "series",
+   "members": [
+    {
+     "key": "traitor-s-blade",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": ""
+  },
+  "green-bone-saga": {
+   "name": "Green Bone Saga",
+   "nameEn": "Green Bone Saga",
+   "kind": "series",
+   "members": [
+    {
+     "key": "nefritove-mesto",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "grisha": {
+   "name": "Griša",
+   "nameEn": "Grisha",
+   "kind": "series",
+   "members": [
+    {
+     "key": "grisa-svetlo-a-stiny",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "Original Grisha trilogy; Six of Crows is a separate duology"
+  },
+  "gun-club": {
+   "name": "Gun Club",
+   "nameEn": "Gun Club",
+   "kind": "series",
+   "members": [
+    {
+     "key": "ze-zeme-na-mesic",
+     "n": 1
+    },
+    {
+     "key": "cesta-kolem-mesice",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "h2o": {
+   "name": "H2O",
+   "nameEn": "H2O",
+   "kind": "series",
+   "members": [
+    {
+     "key": "h2o-a-poklad-sileneho-oka",
+     "n": 1
+    },
+    {
+     "key": "h2o-a-zahada-zlate-slzy",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "order by publication year, volume numbers unverified"
+  },
+  "hainish-cycle": {
+   "name": "Hainský cyklus",
+   "nameEn": "Hainish Cycle",
+   "kind": "universe",
+   "members": [
+    {
+     "key": "leva-ruka-tmy",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "harry-potter": {
+   "name": "Harry Potter",
+   "nameEn": "Harry Potter",
+   "kind": "series",
+   "members": [],
+   "read": [
+    "Harry Potter (series)"
+   ],
+   "rejected": [],
+   "volumes": null,
+   "note": "",
+   "readWhole": true
+  },
+  "heechee-saga": {
+   "name": "Heechee Saga",
+   "nameEn": "Heechee Saga",
+   "kind": "series",
+   "members": [
+    {
+     "key": "gateway",
+     "n": 1
+    },
+    {
+     "key": "za-modrym-horizontem-udalosti",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 6,
+   "note": ""
+  },
+  "hellhole": {
+   "name": "Pekelná díra",
+   "nameEn": "Hellhole",
+   "kind": "series",
+   "members": [
+    {
+     "key": "pekelna-dira",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "heroes-of-dune": {
+   "name": "Hrdinové Duny",
+   "nameEn": "Heroes of Dune",
+   "kind": "series",
+   "members": [
+    {
+     "key": "paul-z-duny",
+     "n": 1
+    },
+    {
+     "key": "vichry-duny",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "hierarchy": {
+   "name": "The Hierarchy",
+   "nameEn": "The Hierarchy",
+   "kind": "series",
+   "members": [
+    {
+     "key": "the-will-of-the-many",
+     "n": 1
+    },
+    {
+     "key": "the-strength-of-the-few",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "hitchhikers-guide": {
+   "name": "Stopařův průvodce Galaxií",
+   "nameEn": "The Hitchhiker's Guide to the Galaxy",
+   "kind": "series",
+   "members": [
+    {
+     "key": "stoparuv-pruvodce-galaxii-douglase-adamse",
+     "n": 6
+    }
+   ],
+   "read": [
+    "The Hitchhiker's Guide to the Galaxy",
+    "Hitchhiker's sequels (#2-5)"
+   ],
+   "rejected": [],
+   "volumes": 6,
+   "note": "Sixth book, written by Colfer after Adams's death"
+  },
+  "homecoming": {
+   "name": "Homecoming",
+   "nameEn": "Homecoming",
+   "kind": "series",
+   "members": [
+    {
+     "key": "vzpominky-na-zemi",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 5,
+   "note": ""
+  },
+  "honor-harrington": {
+   "name": "Honor Harrington",
+   "nameEn": "Honor Harrington",
+   "kind": "series",
+   "members": [
+    {
+     "key": "on-basilisk-station",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 14,
+   "note": ""
+  },
+  "hotzenplotz": {
+   "name": "Loupežník Zurivous",
+   "nameEn": "Der Rauber Hotzenplotz",
+   "kind": "series",
+   "members": [
+    {
+     "key": "loupeznik-zurivous",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "house-of-falconer": {
+   "name": "House of Falconer",
+   "nameEn": "House of Falconer",
+   "kind": "series",
+   "members": [
+    {
+     "key": "nastrahy-minulosti",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Number unverified"
+  },
+  "house-of-niccolo": {
+   "name": "Dům Niccolò",
+   "nameEn": "The House of Niccolò",
+   "kind": "series",
+   "members": [
+    {
+     "key": "mezi-truny-lvu",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 8,
+   "note": ""
+  },
+  "how-to-train-your-dragon": {
+   "name": "Jak vycvičit draka",
+   "nameEn": "How to Train Your Dragon",
+   "kind": "series",
+   "members": [
+    {
+     "key": "jak-prezit-draci-bouri",
+     "n": 7
+    },
+    {
+     "key": "jak-zlomit-draci-srdce",
+     "n": 8
+    },
+    {
+     "key": "jak-uchvatit-draci-klenot",
+     "n": 10
+    },
+    {
+     "key": "jak-zradit-draciho-hrdinu",
+     "n": 11
+    }
+   ],
+   "read": [],
+   "rejected": [
+    "Jak uloupit Draci mec",
+    "Jak uchvatit Draci klenot (How to Betray a Dragon's Hero)"
+   ],
+   "volumes": 12,
+   "note": ""
+  },
+  "humanx-commonwealth": {
+   "name": "Humanx Commonwealth",
+   "nameEn": "Humanx Commonwealth",
+   "kind": "universe",
+   "members": [
+    {
+     "key": "nor-crystal-tears",
+     "n": 9
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "hunger-games": {
+   "name": "Hunger Games",
+   "nameEn": "The Hunger Games",
+   "kind": "series",
+   "members": [],
+   "read": [
+    "The Hunger Games",
+    "Catching Fire (Hunger Games #2)",
+    "Mockingjay (Hunger Games #3)",
+    "The Ballad of Songbirds and Snakes",
+    "Sunrise on the Reaping"
+   ],
+   "rejected": [],
+   "volumes": 5,
+   "note": "The two prequels were written later and are listed after the trilogy."
+  },
+  "i-am-rome": {
+   "name": "Řím jsem já",
+   "nameEn": "I Am Rome",
+   "kind": "series",
+   "members": [
+    {
+     "key": "rim-jsem-ja",
+     "n": 1
+    },
+    {
+     "key": "proklaty-rim",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "ijon-tichy": {
+   "name": "Ijon Tichy",
+   "nameEn": "Ijon Tichy",
+   "kind": "series",
+   "members": [
+    {
+     "key": "futurologicky-kongres",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Stories and novels loosely linked by one lead"
+  },
+  "illuminae-files": {
+   "name": "Illuminae",
+   "nameEn": "The Illuminae Files",
+   "kind": "series",
+   "members": [
+    {
+     "key": "illuminae",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "imperial-radch": {
+   "name": "Imperial Radch",
+   "nameEn": "Imperial Radch",
+   "kind": "series",
+   "members": [
+    {
+     "key": "ve-sluzbach-spravedlnosti",
+     "n": 1
+    },
+    {
+     "key": "ve-sluzbach-milosti",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "Ancillary Sword (vol 2) not on shelf"
+  },
+  "incarceron": {
+   "name": "Inkarceron",
+   "nameEn": "Incarceron",
+   "kind": "series",
+   "members": [
+    {
+     "key": "inkarceron",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "inheritance-cycle": {
+   "name": "Odkaz Dračích jezdců",
+   "nameEn": "Inheritance Cycle",
+   "kind": "series",
+   "members": [
+    {
+     "key": "eldest-mekka-vazba",
+     "n": 2
+    },
+    {
+     "key": "inheritance-paolini",
+     "n": 4
+    }
+   ],
+   "read": [],
+   "rejected": [
+    "Eragon",
+    "Brisingr, or, The seven promises Eragon Shadeslayer and Saphira Bjartskular"
+   ],
+   "volumes": 4,
+   "note": ""
+  },
+  "inheritance-trilogy": {
+   "name": "Trilogie Dědictví",
+   "nameEn": "The Inheritance Trilogy",
+   "kind": "series",
+   "members": [
+    {
+     "key": "dedictvi",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "interworld": {
+   "name": "Mezisvět",
+   "nameEn": "InterWorld",
+   "kind": "series",
+   "members": [
+    {
+     "key": "mezisvet",
+     "n": 1
+    },
+    {
+     "key": "stribrny-sen",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "invader": {
+   "name": "Invader",
+   "nameEn": "Invader",
+   "kind": "series",
+   "members": [
+    {
+     "key": "invaze",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 5,
+   "note": "Library holds the omnibus of five novellas"
+  },
+  "iron-widow": {
+   "name": "Železná vdova",
+   "nameEn": "Iron Widow",
+   "kind": "series",
+   "members": [
+    {
+     "key": "zelezna-vdova",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "jack-reacher": {
+   "name": "Jack Reacher",
+   "nameEn": "Jack Reacher",
+   "kind": "series",
+   "members": [
+    {
+     "key": "odpocivej-v-pokoji",
+     "n": 20
+    },
+    {
+     "key": "pomsta",
+     "n": 21
+    },
+    {
+     "key": "pulnocni-linka",
+     "n": 22
+    },
+    {
+     "key": "minulost",
+     "n": 23
+    },
+    {
+     "key": "spravedlnost",
+     "n": 24
+    },
+    {
+     "key": "ochrance",
+     "n": 25
+    }
+   ],
+   "read": [],
+   "rejected": [
+    "Dokonaly plan",
+    "Lepsi byt mrtvy"
+   ],
+   "volumes": null,
+   "note": ""
+  },
+  "jack-steel": {
+   "name": "Jack Steel",
+   "nameEn": "Jack Steel",
+   "kind": "series",
+   "members": [
+    {
+     "key": "pravidla-valky",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "jackpot": {
+   "name": "Jackpot",
+   "nameEn": "Jackpot",
+   "kind": "series",
+   "members": [
+    {
+     "key": "pusobnost",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "First volume The Peripheral not on this shelf batch"
+  },
+  "jahrhundert-trilogie": {
+   "name": "Trilogie století",
+   "nameEn": "Jahrhundert-Trilogie",
+   "kind": "series",
+   "members": [
+    {
+     "key": "zacatek-nove-ery",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "jaipur-trilogy": {
+   "name": "Jaipurská trilogie",
+   "nameEn": "Jaipur Trilogy",
+   "kind": "series",
+   "members": [
+    {
+     "key": "tajemstvi-na-kuzi",
+     "n": 1
+    },
+    {
+     "key": "tichy-strazce",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "jake-ransom": {
+   "name": "Jake Ransom",
+   "nameEn": "Jake Ransom",
+   "kind": "series",
+   "members": [
+    {
+     "key": "ve-stinu-sfingy",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "jason-wander": {
+   "name": "Jason Wander",
+   "nameEn": "Jason Wander",
+   "kind": "series",
+   "members": [
+    {
+     "key": "sirotcinec",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": ""
+  },
+  "jenny-casey": {
+   "name": "Jenny Casey",
+   "nameEn": "Jenny Casey",
+   "kind": "series",
+   "members": [
+    {
+     "key": "zakalena",
+     "n": 1
+    },
+    {
+     "key": "zjizvena",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "john-grimes": {
+   "name": "John Grimes",
+   "nameEn": "John Grimes",
+   "kind": "series",
+   "members": [
+    {
+     "key": "cesta-na-okraj",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Number given in internal chronology; publication order differs"
+  },
+  "jon-shannow": {
+   "name": "Jon Shannow",
+   "nameEn": "Jon Shannow",
+   "kind": "series",
+   "members": [
+    {
+     "key": "vlk-ve-stinu",
+     "n": 1
+    },
+    {
+     "key": "posledni-strazce",
+     "n": 2
+    },
+    {
+     "key": "krvavy-kamen",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "jumper": {
+   "name": "Jumper",
+   "nameEn": "Jumper",
+   "kind": "series",
+   "members": [
+    {
+     "key": "jumper-griffinuv-pribeh",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": "Griffin's Story (2008) is a spin-off between Reflex and Impulse"
+  },
+  "jurassic-park": {
+   "name": "Jurský park",
+   "nameEn": "Jurassic Park",
+   "kind": "series",
+   "members": [
+    {
+     "key": "jurassic-park",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "k-pax": {
+   "name": "K-PAX",
+   "nameEn": "K-PAX",
+   "kind": "series",
+   "members": [
+    {
+     "key": "protovy-svety",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "kepler62": {
+   "name": "Kepler62",
+   "nameEn": "Kepler62",
+   "kind": "series",
+   "members": [
+    {
+     "key": "kepler62-sorland",
+     "n": 1
+    },
+    {
+     "key": "kepler62-parvela",
+     "n": 1
+    },
+    {
+     "key": "kepler62-sortland",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "kingkiller-chronicle": {
+   "name": "Kronika Královraha",
+   "nameEn": "Kingkiller Chronicle",
+   "kind": "series",
+   "members": [
+    {
+     "key": "jmeno-vetru",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "kingsbridge": {
+   "name": "Kingsbridge",
+   "nameEn": "Kingsbridge",
+   "kind": "series",
+   "members": [
+    {
+     "key": "pillars-of-the-earth",
+     "n": 1
+    },
+    {
+     "key": "na-veky-veku",
+     "n": 2
+    },
+    {
+     "key": "ohnivy-sloup",
+     "n": 3
+    },
+    {
+     "key": "vecer-a-jitro",
+     "n": 4
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 5,
+   "note": "The Evening and the Morning is a prequel written later; chronologically first"
+  },
+  "kithamar": {
+   "name": "Kithamar",
+   "nameEn": "Kithamar",
+   "kind": "series",
+   "members": [
+    {
+     "key": "vek-popela",
+     "n": 1
+    },
+    {
+     "key": "ostri-snu",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "klub-carodejek": {
+   "name": "Klub čarodějek",
+   "nameEn": "Klub carodejek",
+   "kind": "series",
+   "members": [
+    {
+     "key": "kouzla-zacinaji",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "known-space": {
+   "name": "Known Space",
+   "nameEn": "Known Space",
+   "kind": "universe",
+   "members": [
+    {
+     "key": "protektor",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "kolaborant": {
+   "name": "Kolaborant",
+   "nameEn": "Kolaborant",
+   "kind": "series",
+   "members": [
+    {
+     "key": "kolaborant-2-vyvrhel",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "kouzelny-atlas-puttovani-casem": {
+   "name": "Kouzelný atlas – Putování časem",
+   "nameEn": "Magic Atlas – Journey through Time",
+   "kind": "universe",
+   "members": [
+    {
+     "key": "egypt",
+     "n": 1
+    },
+    {
+     "key": "terezinske-ghetto",
+     "n": 2
+    },
+    {
+     "key": "arabie",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "standalone nonfiction volumes"
+  },
+  "krysy-apokalypsy": {
+   "name": "Krysy apokalypsy",
+   "nameEn": "Krysy apokalypsy",
+   "kind": "series",
+   "members": [
+    {
+     "key": "krysy-apokalypsy",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "land-of-others": {
+   "name": "Země těch druhých",
+   "nameEn": "The Country of Others",
+   "kind": "series",
+   "members": [
+    {
+     "key": "zeme-tech-druhych",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "language-of-dragons": {
+   "name": "Jazyk draků",
+   "nameEn": "Language of Dragons",
+   "kind": "series",
+   "members": [
+    {
+     "key": "jazyk-draku",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "last-bear": {
+   "name": "Poslední medvěd",
+   "nameEn": "The Last Bear",
+   "kind": "series",
+   "members": [
+    {
+     "key": "posledni-medved",
+     "n": 1
+    },
+    {
+     "key": "hleda-se-medved",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "last-king-of-osten-ard": {
+   "name": "Poslední král Osten Ardu",
+   "nameEn": "The Last King of Osten Ard",
+   "kind": "series",
+   "members": [
+    {
+     "key": "koruna-z-carodreva",
+     "n": 1
+    },
+    {
+     "key": "rise-trav",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "legacy-trilogy": {
+   "name": "Legacy Trilogy",
+   "nameEn": "Legacy Trilogy",
+   "kind": "series",
+   "members": [
+    {
+     "key": "odkaz-oceli",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "Matthew Ward; Legacy of Ash is volume 1"
+  },
+  "legends-of-dune": {
+   "name": "Historie Duny",
+   "nameEn": "Legends of Dune",
+   "kind": "series",
+   "members": [
+    {
+     "key": "historie-duny",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [
+    "Historie Duny: Sluzebnicky dzihad"
+   ],
+   "volumes": 3,
+   "note": "Machine Crusade is book 2"
+  },
+  "legends-of-eerie-on-sea": {
+   "name": "Legendy z Eerie-on-Sea",
+   "nameEn": "Legends of Eerie-on-Sea",
+   "kind": "series",
+   "members": [
+    {
+     "key": "malamandr",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "letter-for-the-king": {
+   "name": "Dopis pro krále",
+   "nameEn": "The Letter for the King",
+   "kind": "series",
+   "members": [
+    {
+     "key": "dopis-pro-krale",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "licanius": {
+   "name": "Licanius",
+   "nameEn": "Licanius",
+   "kind": "series",
+   "members": [],
+   "read": [
+    "Stín věcí ztracených (The Shadow of What Was Lost)",
+    "Ozvěna věcí budoucích (An Echo of Things to Come)",
+    "Světlo věcí konečných (The Light of All That Falls)"
+   ],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "lichozrouti": {
+   "name": "Lichožrouti",
+   "nameEn": "The Sock Eaters",
+   "kind": "series",
+   "members": [
+    {
+     "key": "lichozrouti-se-vraceji",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "lightfall": {
+   "name": "Lightfall",
+   "nameEn": "Lightfall",
+   "kind": "series",
+   "members": [
+    {
+     "key": "lightfall",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "liliane-susewind": {
+   "name": "Lili Větropluška",
+   "nameEn": "Liliane Susewind",
+   "kind": "series",
+   "members": [
+    {
+     "key": "lili-vetroplaska",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "volume number unverified"
+  },
+  "lineage-of-grace": {
+   "name": "Biblické ženy",
+   "nameEn": "Lineage of Grace",
+   "kind": "series",
+   "members": [
+    {
+     "key": "tamar",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 5,
+   "note": ""
+  },
+  "little-animal-rescue": {
+   "name": "Little Animal Rescue",
+   "nameEn": "Little Animal Rescue",
+   "kind": "series",
+   "members": [
+    {
+     "key": "tygrik-v-nesnazich",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Volume number unverified"
+  },
+  "little-brother": {
+   "name": "Malý bratr",
+   "nameEn": "Little Brother",
+   "kind": "series",
+   "members": [
+    {
+     "key": "maly-bratr",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "little-sod": {
+   "name": "Prevít",
+   "nameEn": "Little Sod",
+   "kind": "series",
+   "members": [
+    {
+     "key": "previtem-snadno-a-rychle",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "long-earth": {
+   "name": "Dlouhá země",
+   "nameEn": "The Long Earth",
+   "kind": "series",
+   "members": [
+    {
+     "key": "dlouha-zeme",
+     "n": 1
+    },
+    {
+     "key": "dlouha-valka",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 5,
+   "note": ""
+  },
+  "lord-of-the-ice-garden": {
+   "name": "Pán ledové zahrady",
+   "nameEn": "Lord of the Ice Garden",
+   "kind": "series",
+   "members": [
+    {
+     "key": "pan-ledove-zahrady",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": ""
+  },
+  "lord-of-the-rings": {
+   "name": "Pán prstenů",
+   "nameEn": "The Lord of the Rings",
+   "kind": "series",
+   "members": [],
+   "read": [
+    "The Lord of the Rings (series)"
+   ],
+   "rejected": [],
+   "volumes": null,
+   "note": "",
+   "readWhole": true
+  },
+  "lost-fleet": {
+   "name": "The Lost Fleet",
+   "nameEn": "The Lost Fleet",
+   "kind": "series",
+   "members": [
+    {
+     "key": "dauntless",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 6,
+   "note": "Main six-book arc; spin-off series follow"
+  },
+  "lot-lands": {
+   "name": "Lot Lands",
+   "nameEn": "The Lot Lands",
+   "kind": "series",
+   "members": [
+    {
+     "key": "sedi-bastardi",
+     "n": 1
+    },
+    {
+     "key": "pravi-bastardi",
+     "n": 2
+    },
+    {
+     "key": "svobodni-bastardi",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "love-comes-softly": {
+   "name": "Láska přichází po špičkách",
+   "nameEn": "Love Comes Softly",
+   "kind": "series",
+   "members": [
+    {
+     "key": "laska-prichazi-po-spickach",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 8,
+   "note": ""
+  },
+  "lucinka": {
+   "name": "Lucinka",
+   "nameEn": "Lucy",
+   "kind": "series",
+   "members": [
+    {
+     "key": "lucinka-a-kouzelny-oslik",
+     "n": 1
+    },
+    {
+     "key": "lucinka-a-ztracene-stenatko",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Order within the Czech series not verified"
+  },
+  "lunar-chronicles": {
+   "name": "Měsíční kroniky",
+   "nameEn": "The Lunar Chronicles",
+   "kind": "series",
+   "members": [
+    {
+     "key": "nejkrasnejsi",
+     "n": 4
+    },
+    {
+     "key": "winter",
+     "n": 5
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 5,
+   "note": "Fairest is a prequel-style side novel published between Cress and Winter"
+  },
+  "ma-to-hacek": {
+   "name": "Má to háček",
+   "nameEn": "Ma to hacek",
+   "kind": "series",
+   "members": [
+    {
+     "key": "zidle-pro-anhelinu",
+     "n": 1
+    },
+    {
+     "key": "clobrd-na-obzoru",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Order by year"
+  },
+  "magisterium": {
+   "name": "Magisterium",
+   "nameEn": "Magisterium",
+   "kind": "series",
+   "members": [
+    {
+     "key": "stribrna-maska",
+     "n": 4
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 5,
+   "note": "book 4"
+  },
+  "marnie-midnight": {
+   "name": "Maruška Půlnoční",
+   "nameEn": "Marnie Midnight",
+   "kind": "series",
+   "members": [
+    {
+     "key": "maruska-pulnocni-a-zahada-mesice",
+     "n": 1
+    },
+    {
+     "key": "maruska-pulnocni-a-velka-hmyzi-olympiada",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "order uncertain"
+  },
+  "mass-effect": {
+   "name": "Mass Effect",
+   "nameEn": "Mass Effect",
+   "kind": "universe",
+   "members": [
+    {
+     "key": "klam",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Franchise tie-in novel"
+  },
+  "matched": {
+   "name": "Matched",
+   "nameEn": "Matched",
+   "kind": "series",
+   "members": [
+    {
+     "key": "dokonaly-par",
+     "n": 1
+    },
+    {
+     "key": "dokonaly-sen",
+     "n": 2
+    },
+    {
+     "key": "dokonaly-svet",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "materia-prima": {
+   "name": "Materia Prima",
+   "nameEn": "Materia Prima",
+   "kind": "series",
+   "members": [
+    {
+     "key": "stin",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "maxmilian": {
+   "name": "Maxmilian",
+   "nameEn": "Maxmilian trilogy",
+   "kind": "series",
+   "members": [
+    {
+     "key": "maxmilian",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "maze-runner": {
+   "name": "Labyrint",
+   "nameEn": "The Maze Runner",
+   "kind": "series",
+   "members": [
+    {
+     "key": "labyrint",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 5,
+   "note": ""
+  },
+  "mccourt-memoirs": {
+   "name": "Paměti Franka McCourta",
+   "nameEn": "Frank McCourt memoirs",
+   "kind": "series",
+   "members": [
+    {
+     "key": "andelin-popel",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "mesklin": {
+   "name": "Mesklin",
+   "nameEn": "Mesklin",
+   "kind": "series",
+   "members": [
+    {
+     "key": "mission-of-gravity",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "metro": {
+   "name": "Metro",
+   "nameEn": "Metro",
+   "kind": "series",
+   "members": [
+    {
+     "key": "metro-2034",
+     "n": 2
+    },
+    {
+     "key": "metro-2035",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [
+    "Metro 2033"
+   ],
+   "volumes": 3,
+   "note": "Metro 2033 is rejected"
+  },
+  "michael-dahls-really-scary-stories": {
+   "name": "Děsivé historky",
+   "nameEn": "Michael Dahl's Really Scary Stories",
+   "kind": "series",
+   "members": [
+    {
+     "key": "desive-historky-3",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "minecraft-adventures": {
+   "name": "Dobrodružství Minecraftu",
+   "nameEn": "Minecraft Adventures",
+   "kind": "series",
+   "members": [
+    {
+     "key": "dobrodruzstvi-minecraftu",
+     "n": 1
+    },
+    {
+     "key": "povstani-herobrina",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "order by Czech title, unverified"
+  },
+  "minecraft-novels": {
+   "name": "Minecraft",
+   "nameEn": "Minecraft (official novels)",
+   "kind": "universe",
+   "members": [
+    {
+     "key": "minecraft",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "miss-peregrines-peculiar-children": {
+   "name": "Sirotčinec slečny Peregrinové",
+   "nameEn": "Miss Peregrine's Peculiar Children",
+   "kind": "series",
+   "members": [
+    {
+     "key": "sirotcinec-slecny-peregrinove",
+     "n": 1
+    },
+    {
+     "key": "povidky-podivnych",
+     "n": 7
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 7,
+   "note": "Tales of the Peculiar is a companion volume, not the seventh story"
+  },
+  "mission-earth": {
+   "name": "Mise na Zemi",
+   "nameEn": "Mission Earth",
+   "kind": "series",
+   "members": [
+    {
+     "key": "mise-na-zemi-2",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 10,
+   "note": "Second volume"
+  },
+  "mistborn": {
+   "name": "Mistborn",
+   "nameEn": "Mistborn",
+   "kind": "series",
+   "members": [
+    {
+     "key": "mistborn-final-empire",
+     "n": 1
+    },
+    {
+     "key": "pramen-povyseni",
+     "n": 2
+    },
+    {
+     "key": "hrdina-veku",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "mistborn-wax-and-wayne": {
+   "name": "Mistborn: Wax and Wayne",
+   "nameEn": "Mistborn: Wax and Wayne",
+   "kind": "series",
+   "members": [
+    {
+     "key": "poselstvi-prava",
+     "n": 1
+    },
+    {
+     "key": "ztraceny-kov",
+     "n": 4
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": "Mistborn's second era: new leads 300 years after the original trilogy."
+  },
+  "mitford-years": {
+   "name": "Mitford Years",
+   "nameEn": "Mitford Years",
+   "kind": "series",
+   "members": [
+    {
+     "key": "z-mitfordu-do-stare-vlasti",
+     "n": 11
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 14,
+   "note": ""
+  },
+  "monk-and-robot": {
+   "name": "Mnich a robot",
+   "nameEn": "Monk & Robot",
+   "kind": "series",
+   "members": [
+    {
+     "key": "zalm-pro-divostrojne",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "morganville-vampires": {
+   "name": "Upíři z Morganville",
+   "nameEn": "The Morganville Vampires",
+   "kind": "series",
+   "members": [
+    {
+     "key": "upiri-z-morganville",
+     "n": 5
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 15,
+   "note": "Lord of Misrule is book 5"
+  },
+  "morkovahti": {
+   "name": "Mörkövahti",
+   "nameEn": "Mörkövahti",
+   "kind": "series",
+   "members": [
+    {
+     "key": "strasidelna-chuva",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "mouse-guard": {
+   "name": "Myší hlídka",
+   "nameEn": "Mouse Guard",
+   "kind": "series",
+   "members": [
+    {
+     "key": "mysi-hlidka",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "murderbot-diaries": {
+   "name": "Murderbot",
+   "nameEn": "The Murderbot Diaries",
+   "kind": "series",
+   "members": [
+    {
+     "key": "murderbot-all-systems-red",
+     "n": 1
+    },
+    {
+     "key": "chybny-protokol",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 7,
+   "note": ""
+  },
+  "mycelium": {
+   "name": "Mycelium",
+   "nameEn": "Mycelium",
+   "kind": "series",
+   "members": [
+    {
+     "key": "mycelium",
+     "n": 8
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 8,
+   "note": ""
+  },
+  "mythago-cycle": {
+   "name": "Mythago",
+   "nameEn": "Mythago Cycle",
+   "kind": "series",
+   "members": [
+    {
+     "key": "les-mytag",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [
+    "Lavondyss"
+   ],
+   "volumes": null,
+   "note": ""
+  },
+  "naslouchac": {
+   "name": "Naslouchač",
+   "nameEn": "Naslouchač",
+   "kind": "series",
+   "members": [
+    {
+     "key": "naslouchac",
+     "n": 1
+    },
+    {
+     "key": "urla",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "nathaniel-darnsworn": {
+   "name": "Nathaniel Darnsworn",
+   "nameEn": "Nathaniel Darnsworn",
+   "kind": "series",
+   "members": [
+    {
+     "key": "theatre-macabre",
+     "n": 1
+    },
+    {
+     "key": "okovy-osudu",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "navola": {
+   "name": "Navola",
+   "nameEn": "Navola",
+   "kind": "series",
+   "members": [
+    {
+     "key": "navola",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "neanderthal-parallax": {
+   "name": "Neanderthal Parallax",
+   "nameEn": "Neanderthal Parallax",
+   "kind": "series",
+   "members": [
+    {
+     "key": "lide-sawyer",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "new-stories-with-a-happy-ending": {
+   "name": "Nové příběhy se šťastným koncem",
+   "nameEn": "Nove pribehy se stastnym koncem",
+   "kind": "series",
+   "members": [
+    {
+     "key": "starostliva-veverka",
+     "n": 1
+    },
+    {
+     "key": "nezbedny-myval",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Order by publication year"
+  },
+  "nibelungen-saga": {
+   "name": "Nibelungové",
+   "nameEn": "Nibelungen-Saga",
+   "kind": "series",
+   "members": [
+    {
+     "key": "prsten-nibelungu",
+     "n": 1
+    },
+    {
+     "key": "dedictvi-nibelungu",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "noumena": {
+   "name": "Noumena",
+   "nameEn": "Noumena",
+   "kind": "series",
+   "members": [
+    {
+     "key": "konec-axiomu",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "nyxia-triad": {
+   "name": "Nyxia",
+   "nameEn": "The Nyxia Triad",
+   "kind": "series",
+   "members": [
+    {
+     "key": "nyxia",
+     "n": 1
+    },
+    {
+     "key": "nyxia-nespoutana",
+     "n": 2
+    },
+    {
+     "key": "nyxia-povstava",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "odyssey-one": {
+   "name": "Odyssey One",
+   "nameEn": "Odyssey One",
+   "kind": "series",
+   "members": [
+    {
+     "key": "odyssey-one",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "old-man-s-war": {
+   "name": "Válka starého muže",
+   "nameEn": "Old Man's War",
+   "kind": "series",
+   "members": [
+    {
+     "key": "brigady-duchu",
+     "n": 2
+    },
+    {
+     "key": "posledni-kolonie",
+     "n": 3
+    }
+   ],
+   "read": [
+    "Válka starého muže (Old Man's War)"
+   ],
+   "rejected": [],
+   "volumes": 6,
+   "note": ""
+  },
+  "old-new-york": {
+   "name": "Old New York",
+   "nameEn": "Old New York",
+   "kind": "series",
+   "members": [
+    {
+     "key": "mesto-slavy",
+     "n": 3
+    },
+    {
+     "key": "mesto-rozkvetu",
+     "n": 4
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "numbers approximate"
+  },
+  "one-second-after": {
+   "name": "Jedna vteřina poté",
+   "nameEn": "One Second After",
+   "kind": "series",
+   "members": [
+    {
+     "key": "rok-pote",
+     "n": 2
+    },
+    {
+     "key": "posledni-den",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "First volume One Second After not on this shelf batch"
+  },
+  "ophelia-scale": {
+   "name": "Ofélie Scaleová",
+   "nameEn": "Ophelia Scale",
+   "kind": "series",
+   "members": [
+    {
+     "key": "ofelie-scaleova",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "origin-mystery": {
+   "name": "Tajemství původu",
+   "nameEn": "The Origin Mystery",
+   "kind": "series",
+   "members": [
+    {
+     "key": "atlantsky-gen",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "out-of-the-hitler-time": {
+   "name": "Out of the Hitler Time",
+   "nameEn": "Out of the Hitler Time",
+   "kind": "series",
+   "members": [
+    {
+     "key": "jak-hitler-ukradl-ruzoveho-kralicka",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "outlander": {
+   "name": "Cizinka",
+   "nameEn": "Outlander",
+   "kind": "series",
+   "members": [
+    {
+     "key": "pamet-kosti",
+     "n": 7
+    },
+    {
+     "key": "vepsano-krvi-vlastniho-srdce",
+     "n": 8
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 9,
+   "note": ""
+  },
+  "oxford-time-travel": {
+   "name": "Oxfordské cestování časem",
+   "nameEn": "Oxford Time Travel",
+   "kind": "series",
+   "members": [
+    {
+     "key": "o-psu-nemluve",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": "Doomsday Book is volume 1"
+  },
+  "pandava": {
+   "name": "Pandava",
+   "nameEn": "Pandava",
+   "kind": "series",
+   "members": [
+    {
+     "key": "aru-sah-a-konec-casu",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 5,
+   "note": ""
+  },
+  "pandora-sequence": {
+   "name": "Pandora",
+   "nameEn": "Pandora Sequence",
+   "kind": "series",
+   "members": [
+    {
+     "key": "vyslanci-do-prazdna",
+     "n": 1
+    },
+    {
+     "key": "faktor-nanebevzeti",
+     "n": 4
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": "Books 2 and 3 not on the shelf"
+  },
+  "parable": {
+   "name": "Podobenství",
+   "nameEn": "Parable",
+   "kind": "series",
+   "members": [
+    {
+     "key": "podobenstvi-o-rozsevaci",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "pathfinder-card": {
+   "name": "Pathfinder",
+   "nameEn": "Pathfinder",
+   "kind": "series",
+   "members": [
+    {
+     "key": "pathfinder",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "patrick-melrose": {
+   "name": "Patrick Melrose",
+   "nameEn": "Patrick Melrose",
+   "kind": "series",
+   "members": [
+    {
+     "key": "patrick-melrose",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 5,
+   "note": "omnibus of the first three of five novels"
+  },
+  "percy-jackson": {
+   "name": "Percy Jackson",
+   "nameEn": "Percy Jackson and the Olympians",
+   "kind": "series",
+   "members": [],
+   "read": [
+    "Percy Jackson (full series)"
+   ],
+   "rejected": [],
+   "volumes": null,
+   "note": "",
+   "readWhole": true
+  },
+  "pern": {
+   "name": "Pern",
+   "nameEn": "Dragonriders of Pern",
+   "kind": "series",
+   "members": [
+    {
+     "key": "draci-usvit",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "pet": {
+   "name": "Mazel",
+   "nameEn": "Pet",
+   "kind": "series",
+   "members": [
+    {
+     "key": "mazel",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": "Companion Bitter is a prequel published later"
+  },
+  "phobos": {
+   "name": "Phobos",
+   "nameEn": "Phobos",
+   "kind": "series",
+   "members": [
+    {
+     "key": "vyslani",
+     "n": 1
+    },
+    {
+     "key": "odchyleni",
+     "n": 2
+    },
+    {
+     "key": "stretnuti",
+     "n": 3
+    },
+    {
+     "key": "ohrozeni",
+     "n": 4
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": ""
+  },
+  "pirata": {
+   "name": "Pirata",
+   "nameEn": "Pirata",
+   "kind": "series",
+   "members": [
+    {
+     "key": "pirati",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 5,
+   "note": "Library holds the omnibus of five novellas"
+  },
+  "pisecnici": {
+   "name": "Písečníci",
+   "nameEn": "Písečníci",
+   "kind": "series",
+   "members": [
+    {
+     "key": "pisecnici-a-bludny-asteroid",
+     "n": 1
+    },
+    {
+     "key": "pisecnici-a-volani-tesakody",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "planetfall": {
+   "name": "Planetfall",
+   "nameEn": "Planetfall",
+   "kind": "universe",
+   "members": [
+    {
+     "key": "planetfall",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": "Standalone novels with different leads"
+  },
+  "poldark": {
+   "name": "Poldark",
+   "nameEn": "Poldark",
+   "kind": "series",
+   "members": [
+    {
+     "key": "ross-poldark",
+     "n": 1
+    },
+    {
+     "key": "jeremy-poldark",
+     "n": 3
+    },
+    {
+     "key": "warleggan",
+     "n": 4
+    },
+    {
+     "key": "besnici-priboj",
+     "n": 7
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 12,
+   "note": ""
+  },
+  "pomnenka": {
+   "name": "Pomněnka",
+   "nameEn": "Vergissmeinnicht",
+   "kind": "series",
+   "members": [
+    {
+     "key": "pomnenka",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "powder-mage": {
+   "name": "Powder Mage",
+   "nameEn": "Powder Mage",
+   "kind": "series",
+   "members": [
+    {
+     "key": "prislib-krve",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "Original trilogy; further books in the universe follow"
+  },
+  "powerless": {
+   "name": "Powerless",
+   "nameEn": "Powerless",
+   "kind": "series",
+   "members": [
+    {
+     "key": "bezradna",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Volume number from memory, unverified"
+  },
+  "prasina": {
+   "name": "Prašina",
+   "nameEn": "Prašina",
+   "kind": "series",
+   "members": [
+    {
+     "key": "prasina",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "prison-healer": {
+   "name": "Ranhojička",
+   "nameEn": "The Prison Healer",
+   "kind": "series",
+   "members": [
+    {
+     "key": "ranhojicka",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "professor-challenger": {
+   "name": "Profesor Challenger",
+   "nameEn": "Professor Challenger",
+   "kind": "series",
+   "members": [
+    {
+     "key": "ztraceny-svet",
+     "n": 1
+    },
+    {
+     "key": "dobrodruzstvi-profesora-challengera",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 5,
+   "note": "Second entry is a Czech omnibus of the remaining Challenger tales"
+  },
+  "projekt-kronos": {
+   "name": "Projekt Kronos",
+   "nameEn": "Projekt Kronos",
+   "kind": "series",
+   "members": [
+    {
+     "key": "projekt-kronos",
+     "n": 1
+    },
+    {
+     "key": "kronovy-deti",
+     "n": 2
+    },
+    {
+     "key": "kronuv-odkaz",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "propast-casu": {
+   "name": "Propast času",
+   "nameEn": "Propast casu",
+   "kind": "series",
+   "members": [
+    {
+     "key": "propast-casu",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "protectorate": {
+   "name": "Protektorát",
+   "nameEn": "The Protectorate",
+   "kind": "series",
+   "members": [
+    {
+     "key": "protektorat",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "psy-changeling": {
+   "name": "Psy-Changeling",
+   "nameEn": "Psy-Changeling",
+   "kind": "series",
+   "members": [
+    {
+     "key": "otrokyne-citu",
+     "n": 1
+    },
+    {
+     "key": "predtuchy-smyslnosti",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "pure-trilogy": {
+   "name": "Pure",
+   "nameEn": "Pure",
+   "kind": "series",
+   "members": [
+    {
+     "key": "cisty",
+     "n": 1
+    },
+    {
+     "key": "splynuti",
+     "n": 2
+    },
+    {
+     "key": "ohen",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "qualityland": {
+   "name": "QualityLand",
+   "nameEn": "QualityLand",
+   "kind": "series",
+   "members": [
+    {
+     "key": "qualityland",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "queens-of-the-white-ring": {
+   "name": "Královny bílého prstenu",
+   "nameEn": "Queens of the White Ring",
+   "kind": "series",
+   "members": [
+    {
+     "key": "kralovny-bileho-prstenu",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "radiant-emperor": {
+   "name": "Radiant Emperor",
+   "nameEn": "Radiant Emperor",
+   "kind": "series",
+   "members": [
+    {
+     "key": "jez-se-stala-sluncem",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "rangers-apprentice": {
+   "name": "Hraničářův učeň",
+   "nameEn": "Ranger's Apprentice",
+   "kind": "series",
+   "members": [],
+   "read": [
+    "Ranger's Apprentice (Hraničářův učeň, #1-14)"
+   ],
+   "rejected": [],
+   "volumes": null,
+   "note": "",
+   "readWhole": true
+  },
+  "raven-rings": {
+   "name": "Havraní prsteny",
+   "nameEn": "The Raven Rings",
+   "kind": "series",
+   "members": [
+    {
+     "key": "odinovo-dite",
+     "n": 1
+    },
+    {
+     "key": "sila",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "Síla is the third volume; the second (Hniloba) is not on the shelf"
+  },
+  "ravens-shadow": {
+   "name": "Stín krkavce",
+   "nameEn": "Raven's Shadow",
+   "kind": "series",
+   "members": [
+    {
+     "key": "pisen-krve",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "razorland": {
+   "name": "Razorland",
+   "nameEn": "Razorland",
+   "kind": "series",
+   "members": [
+    {
+     "key": "enclave",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "realm-breaker": {
+   "name": "Uchvatitelé říší",
+   "nameEn": "Realm Breaker",
+   "kind": "series",
+   "members": [
+    {
+     "key": "uchvatitele-risi",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "reckoners": {
+   "name": "Reckoners",
+   "nameEn": "The Reckoners",
+   "kind": "series",
+   "members": [
+    {
+     "key": "ocelove-srdce",
+     "n": 1
+    },
+    {
+     "key": "ohniboj",
+     "n": 2
+    },
+    {
+     "key": "kalamita",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "red-dwarf-novels": {
+   "name": "Červený trpaslík",
+   "nameEn": "Red Dwarf",
+   "kind": "series",
+   "members": [
+    {
+     "key": "cerveny-trpaslik",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": ""
+  },
+  "red-rising": {
+   "name": "Red Rising",
+   "nameEn": "Red Rising",
+   "kind": "series",
+   "members": [
+    {
+     "key": "morning-star",
+     "n": 3
+    },
+    {
+     "key": "iron-gold",
+     "n": 4
+    },
+    {
+     "key": "dark-age",
+     "n": 5
+    },
+    {
+     "key": "light-bringer",
+     "n": 6
+    }
+   ],
+   "read": [
+    "Red Rising",
+    "Golden Son (Red Rising #2)"
+   ],
+   "rejected": [],
+   "volumes": null,
+   "note": "Red Rising and Golden Son are read; the saga continues past Light Bringer"
+  },
+  "regaci": {
+   "name": "Regáči",
+   "nameEn": "Regáči",
+   "kind": "series",
+   "members": [
+    {
+     "key": "regaci",
+     "n": 1
+    },
+    {
+     "key": "regaci-a-neznami-hrdinove-odboje",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "order by year"
+  },
+  "relentless": {
+   "name": "Nezdolná",
+   "nameEn": "Relentless",
+   "kind": "series",
+   "members": [
+    {
+     "key": "nezdolna",
+     "n": 1
+    },
+    {
+     "key": "utociste",
+     "n": 2
+    },
+    {
+     "key": "samotarka",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "remade": {
+   "name": "Remade",
+   "nameEn": "Remade",
+   "kind": "series",
+   "members": [
+    {
+     "key": "remade",
+     "n": 1
+    },
+    {
+     "key": "reborn",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "remembrance-of-earths-past": {
+   "name": "Vzpomínka na Zemi",
+   "nameEn": "Remembrance of Earth's Past",
+   "kind": "series",
+   "members": [
+    {
+     "key": "problem-tri-teles",
+     "n": 1
+    },
+    {
+     "key": "temny-les",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "remembrances-of-earths-past": {
+   "name": "Vzpomínka na Zemi",
+   "nameEn": "Remembrance of Earth's Past",
+   "kind": "series",
+   "members": [
+    {
+     "key": "vzpominka-na-zemi-3",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "requiem-pour-sascha": {
+   "name": "Requiem pour Sascha",
+   "nameEn": "Requiem pour Sascha",
+   "kind": "series",
+   "members": [
+    {
+     "key": "lacrimosa",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "riftwar-saga": {
+   "name": "Sága Trhlinové války",
+   "nameEn": "Riftwar Saga",
+   "kind": "series",
+   "members": [
+    {
+     "key": "mag",
+     "n": 1
+    },
+    {
+     "key": "stribrny-trn",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "Czech Mág is Magician: Master"
+  },
+  "ringworld": {
+   "name": "Prstenec",
+   "nameEn": "Ringworld",
+   "kind": "series",
+   "members": [
+    {
+     "key": "prstenec",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 5,
+   "note": ""
+  },
+  "rithmatist": {
+   "name": "Ritmatik",
+   "nameEn": "The Rithmatist",
+   "kind": "series",
+   "members": [
+    {
+     "key": "ritmatik",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Only volume 1 published"
+  },
+  "riyria-revelations": {
+   "name": "Riyria Revelations",
+   "nameEn": "Riyria Revelations",
+   "kind": "series",
+   "members": [
+    {
+     "key": "kralovske-spiknuti",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 6,
+   "note": "Czech omnibus holds #1-2 (Theft of Swords)"
+  },
+  "roman-arena": {
+   "name": "Roman Arena",
+   "nameEn": "Roman Arena",
+   "kind": "series",
+   "members": [
+    {
+     "key": "arena",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 5,
+   "note": "Library holds the omnibus of five novellas"
+  },
+  "rondo": {
+   "name": "Rondo",
+   "nameEn": "Rondo",
+   "kind": "series",
+   "members": [
+    {
+     "key": "posledni-bitva",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "roots-of-chaos": {
+   "name": "Kořeny chaosu",
+   "nameEn": "The Roots of Chaos",
+   "kind": "series",
+   "members": [
+    {
+     "key": "prevorstvi-u-pomerancovniku",
+     "n": 1
+    },
+    {
+     "key": "den-kdy-padla-noc",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": "Day of Fallen Night is a prequel published second"
+  },
+  "rostaci-v-akci": {
+   "name": "Rošťáci v akci",
+   "nameEn": "Rošťáci v akci",
+   "kind": "series",
+   "members": [
+    {
+     "key": "rostaci-v-akci-a-tajemstvi-kouzelne-jeskyne",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "rostak-oliver": {
+   "name": "Rošťák Oliver",
+   "nameEn": "Rošťák Oliver",
+   "kind": "series",
+   "members": [
+    {
+     "key": "rostak-oliver-a-marica-carodejka",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Number unverified"
+  },
+  "rotherweird": {
+   "name": "Opskurno",
+   "nameEn": "Rotherweird",
+   "kind": "series",
+   "members": [
+    {
+     "key": "opskurno",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "rowley-jefferson": {
+   "name": "Rowley Jefferson",
+   "nameEn": "Rowley Jefferson's Journal",
+   "kind": "series",
+   "members": [
+    {
+     "key": "dobrodruzstvi-bajecnych-kamaradu",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "rulantica": {
+   "name": "Rulantika",
+   "nameEn": "Rulantica",
+   "kind": "series",
+   "members": [
+    {
+     "key": "rulantika",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Second volume"
+  },
+  "runy": {
+   "name": "Runy",
+   "nameEn": "Runes",
+   "kind": "series",
+   "members": [
+    {
+     "key": "runy",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "russian-concubine": {
+   "name": "Ruská konkubína",
+   "nameEn": "The Russian Concubine",
+   "kind": "series",
+   "members": [
+    {
+     "key": "ruska-konkubina",
+     "n": 1
+    },
+    {
+     "key": "tajemstvi-konkubiny",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "saga-of-new-earth": {
+   "name": "Epic",
+   "nameEn": "Saga of New Earth",
+   "kind": "series",
+   "members": [
+    {
+     "key": "epic",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "samuel-johnson": {
+   "name": "Samuel Johnson versus Ďábel",
+   "nameEn": "Samuel Johnson",
+   "kind": "series",
+   "members": [
+    {
+     "key": "pekelne-zvony",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "saxon-stories": {
+   "name": "Příběhy Sasů",
+   "nameEn": "The Saxon Stories",
+   "kind": "series",
+   "members": [
+    {
+     "key": "pisen-mece",
+     "n": 4
+    },
+    {
+     "key": "smrt-kralu",
+     "n": 6
+    },
+    {
+     "key": "pohansky-pan",
+     "n": 7
+    },
+    {
+     "key": "prazdny-trun",
+     "n": 8
+    },
+    {
+     "key": "valecnici-boure",
+     "n": 9
+    },
+    {
+     "key": "plamenonosic",
+     "n": 10
+    },
+    {
+     "key": "valka-vlku",
+     "n": 11
+    },
+    {
+     "key": "mec-kralu",
+     "n": 12
+    }
+   ],
+   "read": [],
+   "rejected": [
+    "Posledni kralovstvi",
+    "Bledy jezdec",
+    "Pohansky pan (The Pagan Lord)",
+    "Mec kralu (Sword of Kings)",
+    "Pisen mece (The Lords of the North / Sword Song)",
+    "Plamenonosic (The Flame Bearer)",
+    "Prazdny trun (The Empty Throne)",
+    "Smrt kralu (Death of Kings)",
+    "Valecnici boure (Warriors of the Storm)",
+    "Valka vlku (War of the Wolf)",
+    "Saxon Stories / Pribehy sasu (volumes 3 onward)"
+   ],
+   "volumes": 13,
+   "note": ""
+  },
+  "schools-of-dune": {
+   "name": "Školy Duny",
+   "nameEn": "Schools of Dune",
+   "kind": "series",
+   "members": [
+    {
+     "key": "sesterstvo-duny",
+     "n": 1
+    },
+    {
+     "key": "navigatori-duny",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "Mentats of Dune (2) not on the shelf"
+  },
+  "science-of-discworld": {
+   "name": "The Science of Discworld",
+   "nameEn": "The Science of Discworld",
+   "kind": "series",
+   "members": [
+    {
+     "key": "veda-na-zemeplose",
+     "n": 4
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": ""
+  },
+  "sea-of-rust": {
+   "name": "Sea of Rust",
+   "nameEn": "Sea of Rust",
+   "kind": "series",
+   "members": [
+    {
+     "key": "more-rzi",
+     "n": 1
+    },
+    {
+     "key": "den-nula",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": "Day Zero is a prequel written later"
+  },
+  "seafire": {
+   "name": "Seafire",
+   "nameEn": "Seafire",
+   "kind": "series",
+   "members": [
+    {
+     "key": "ohnivy-kvet",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "secrets-of-the-nile": {
+   "name": "Tajemství Nilu",
+   "nameEn": "Secrets of the Nile",
+   "kind": "series",
+   "members": [
+    {
+     "key": "o-cem-reka-vi",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "semiosis": {
+   "name": "Semiosis",
+   "nameEn": "Semiosis",
+   "kind": "series",
+   "members": [
+    {
+     "key": "semiosis",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "septimus-heap": {
+   "name": "Septimus Heap",
+   "nameEn": "Septimus Heap",
+   "kind": "series",
+   "members": [
+    {
+     "key": "syren",
+     "n": 5
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 7,
+   "note": ""
+  },
+  "seraphina": {
+   "name": "Serafína",
+   "nameEn": "Seraphina",
+   "kind": "series",
+   "members": [
+    {
+     "key": "serafina",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "sesterstvo": {
+   "name": "Sesterstvo: Bára, Míša, Ela",
+   "nameEn": "Sesterstvo",
+   "kind": "series",
+   "members": [
+    {
+     "key": "sesterstvo-a-kouzelna-kocka-fabiola",
+     "n": 1
+    },
+    {
+     "key": "sesterstvo-a-sila-moci",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "seven-sisters": {
+   "name": "Sedm sester",
+   "nameEn": "The Seven Sisters",
+   "kind": "series",
+   "members": [
+    {
+     "key": "sestra-ve-stinu",
+     "n": 3
+    },
+    {
+     "key": "sestra-s-perlou",
+     "n": 4
+    },
+    {
+     "key": "sestra-slunce",
+     "n": 6
+    },
+    {
+     "key": "ztracena-sestra",
+     "n": 7
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 8,
+   "note": ""
+  },
+  "seventh-sense": {
+   "name": "Sedmý smysl",
+   "nameEn": "Sedmý smysl",
+   "kind": "series",
+   "members": [
+    {
+     "key": "ostrov-zasveceni",
+     "n": 1
+    },
+    {
+     "key": "otrocka-krasa",
+     "n": 2
+    },
+    {
+     "key": "pruvodce-ztracenych",
+     "n": 3
+    },
+    {
+     "key": "zlodejicek-z-patych-hradeb",
+     "n": 4
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Order by publication year"
+  },
+  "shadow-game": {
+   "name": "Stínová hra",
+   "nameEn": "The Shadow Game",
+   "kind": "series",
+   "members": [
+    {
+     "key": "stinove-eso",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "shannara": {
+   "name": "Shannara",
+   "nameEn": "Shannara",
+   "kind": "series",
+   "members": [
+    {
+     "key": "shannarovy-magicke-elfeiny",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Book 2 of the original trilogy; first volume not on the shelf"
+  },
+  "sharpe": {
+   "name": "Sharpe",
+   "nameEn": "Sharpe",
+   "kind": "series",
+   "members": [
+    {
+     "key": "sharpuv-regiment",
+     "n": 18
+    },
+    {
+     "key": "sharpova-pomsta",
+     "n": 19
+    },
+    {
+     "key": "sharpovo-waterloo",
+     "n": 20
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 24,
+   "note": "Numbered in chronological order"
+  },
+  "shattered-sea": {
+   "name": "Shattered Sea",
+   "nameEn": "Shattered Sea",
+   "kind": "series",
+   "members": [
+    {
+     "key": "half-a-king",
+     "n": 1
+    },
+    {
+     "key": "pul-sveta",
+     "n": 2
+    },
+    {
+     "key": "pul-valky",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "shelter-springs": {
+   "name": "Shelter Springs",
+   "nameEn": "Shelter Springs",
+   "kind": "series",
+   "members": [
+    {
+     "key": "vanoce-v-shelter-inn",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "ship-breaker": {
+   "name": "Ship Breaker",
+   "nameEn": "Ship Breaker",
+   "kind": "series",
+   "members": [
+    {
+     "key": "potopena-mesta",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "The Drowned Cities is book 2"
+  },
+  "show-stopper": {
+   "name": "Show Stopper",
+   "nameEn": "Show Stopper",
+   "kind": "series",
+   "members": [
+    {
+     "key": "posledni-cislo",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "silo": {
+   "name": "Silo",
+   "nameEn": "Silo",
+   "kind": "series",
+   "members": [
+    {
+     "key": "silo-wool",
+     "n": 1
+    },
+    {
+     "key": "turnus",
+     "n": 2
+    },
+    {
+     "key": "prach",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "Wool is Czech 'Silo'"
+  },
+  "sing-like-no-ones-listening": {
+   "name": "Sing Like No One's Listening",
+   "nameEn": "Sing Like No One's Listening",
+   "kind": "series",
+   "members": [
+    {
+     "key": "tanci-jako-by-te-nikdo-nevidel",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Dance Like No One's Watching follows Sing Like"
+  },
+  "skandar": {
+   "name": "Skandar",
+   "nameEn": "Skandar",
+   "kind": "series",
+   "members": [
+    {
+     "key": "skandar-a-zlodej-jednorozcu",
+     "n": 1
+    },
+    {
+     "key": "skandar-a-prizracny-jezdec",
+     "n": 2
+    },
+    {
+     "key": "skandar-a-souteze-chaosu",
+     "n": 3
+    },
+    {
+     "key": "skandar-a-kostliva-kletba",
+     "n": 4
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "skritci-radostnicci": {
+   "name": "Skřítci Radostníčci",
+   "nameEn": "Skritci Radostnicci",
+   "kind": "series",
+   "members": [
+    {
+     "key": "skritci-radostnicci-a-vesele-carovani",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Number unverified"
+  },
+  "skyward": {
+   "name": "Skyward",
+   "nameEn": "Skyward",
+   "kind": "series",
+   "members": [
+    {
+     "key": "skyward",
+     "n": 1
+    },
+    {
+     "key": "vyhled-na-hvezdy",
+     "n": 2
+    },
+    {
+     "key": "cytonik",
+     "n": 3
+    },
+    {
+     "key": "vzdoroviti",
+     "n": 4
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": ""
+  },
+  "slepici-babicka": {
+   "name": "Příběhy slepičí babičky",
+   "nameEn": "Příběhy slepičí babičky",
+   "kind": "series",
+   "members": [
+    {
+     "key": "o-pande-ktera-mela-vsi",
+     "n": 1
+    },
+    {
+     "key": "o-ropuse-ktera-nechtela-vstavat",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "space-odyssey": {
+   "name": "Vesmírná odysea",
+   "nameEn": "Space Odyssey",
+   "kind": "series",
+   "members": [
+    {
+     "key": "2001-vesmirna-odysea",
+     "n": 1
+    },
+    {
+     "key": "2010-druha-vesmirna-odysea",
+     "n": 2
+    },
+    {
+     "key": "2061-treti-vesmirna-odysea",
+     "n": 3
+    },
+    {
+     "key": "3001-posledni-vesmirna-odysea",
+     "n": 4
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": "The 2001/Rajske fontany omnibus is not counted"
+  },
+  "spad": {
+   "name": "Spad",
+   "nameEn": "Spad",
+   "kind": "series",
+   "members": [
+    {
+     "key": "spad",
+     "n": 1
+    },
+    {
+     "key": "polocas-rozpadu",
+     "n": 2
+    },
+    {
+     "key": "razova-vlna",
+     "n": 3
+    },
+    {
+     "key": "retezova-reakce",
+     "n": 4
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": ""
+  },
+  "sparrow": {
+   "name": "Vrabčák",
+   "nameEn": "The Sparrow",
+   "kind": "series",
+   "members": [
+    {
+     "key": "vrabcak",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "spellshop": {
+   "name": "Krámek s kouzly",
+   "nameEn": "The Spellshop",
+   "kind": "series",
+   "members": [
+    {
+     "key": "kramek-s-kouzly",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "spiderwick-chronicles": {
+   "name": "Kronika rodu Spiderwicků",
+   "nameEn": "The Spiderwick Chronicles",
+   "kind": "series",
+   "members": [
+    {
+     "key": "kronika-rodu-spiderwicku",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 5,
+   "note": ""
+  },
+  "sprawl": {
+   "name": "Sprawl",
+   "nameEn": "Sprawl",
+   "kind": "series",
+   "members": [
+    {
+     "key": "neuromancer",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [
+    "Hrabe Nula"
+   ],
+   "volumes": 3,
+   "note": ""
+  },
+  "star-cat": {
+   "name": "Hvězdokotě",
+   "nameEn": "Star Cat",
+   "kind": "series",
+   "members": [
+    {
+     "key": "hvezdokote",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "star-trek-crucible": {
+   "name": "Star Trek: Crucible",
+   "nameEn": "Star Trek: Crucible",
+   "kind": "series",
+   "members": [
+    {
+     "key": "zkouska-ohnem",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "Kirk volume, third in publication order"
+  },
+  "star-trek-titan": {
+   "name": "Star Trek: Titan",
+   "nameEn": "Star Trek: Titan",
+   "kind": "series",
+   "members": [
+    {
+     "key": "mec-damokluv",
+     "n": 4
+    },
+    {
+     "key": "synteza",
+     "n": 5
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "numbers unverified; also appears in the thorne/swallow batches"
+  },
+  "star-trek-typhon-pact": {
+   "name": "Star Trek: Typhonský pakt",
+   "nameEn": "Star Trek: Typhon Pact",
+   "kind": "series",
+   "members": [
+    {
+     "key": "typhonsky-pakt",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 8,
+   "note": ""
+  },
+  "star-trek-voyager": {
+   "name": "Star Trek: Voyager",
+   "nameEn": "Star Trek: Voyager",
+   "kind": "universe",
+   "members": [
+    {
+     "key": "nehodni",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "franchise tie-in"
+  },
+  "starbuck-chronicles": {
+   "name": "Starbuck Chronicles",
+   "nameEn": "The Starbuck Chronicles",
+   "kind": "series",
+   "members": [
+    {
+     "key": "rebel",
+     "n": 1
+    },
+    {
+     "key": "prapor",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": ""
+  },
+  "stargirl": {
+   "name": "Stargirl",
+   "nameEn": "Stargirl",
+   "kind": "series",
+   "members": [
+    {
+     "key": "stargirl",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "sten": {
+   "name": "Sten",
+   "nameEn": "The Sten Chronicles",
+   "kind": "series",
+   "members": [
+    {
+     "key": "sten",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 8,
+   "note": "Omnibus of the first volumes (Battlecry)"
+  },
+  "stinadla": {
+   "name": "Stínadla",
+   "nameEn": "Stinadla",
+   "kind": "series",
+   "members": [
+    {
+     "key": "zahada-hlavolamu",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "stormlight-archive": {
+   "name": "Archiv bouřné záře",
+   "nameEn": "The Stormlight Archive",
+   "kind": "series",
+   "members": [
+    {
+     "key": "cesta-kralu",
+     "n": 1
+    },
+    {
+     "key": "slova-paprsku",
+     "n": 2
+    },
+    {
+     "key": "mec-prisahy",
+     "n": 3
+    },
+    {
+     "key": "rytmus-valky",
+     "n": 4
+    },
+    {
+     "key": "wind-and-truth",
+     "n": 5
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 10,
+   "note": ""
+  },
+  "stranger-things": {
+   "name": "Stranger Things",
+   "nameEn": "Stranger Things",
+   "kind": "universe",
+   "members": [
+    {
+     "key": "stranger-things-davies",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Franchise tie-in novel"
+  },
+  "strangeworlds-travel-agency": {
+   "name": "Cestovní kancelář Jinosvěty",
+   "nameEn": "The Strangeworlds Travel Agency",
+   "kind": "series",
+   "members": [
+    {
+     "key": "cestovni-kancelar-jinosvety",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "Shelf title is book 2, The Edge of the Ocean"
+  },
+  "strasidlo-z-2-b": {
+   "name": "Strašidlo z 2. B",
+   "nameEn": "Strašidlo z 2. B",
+   "kind": "series",
+   "members": [
+    {
+     "key": "strasidlo-z-2-b",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "stravaganza": {
+   "name": "Stravaganza",
+   "nameEn": "Stravaganza",
+   "kind": "series",
+   "members": [
+    {
+     "key": "stravaganza",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 6,
+   "note": ""
+  },
+  "sun-eater": {
+   "name": "Pojídač slunce",
+   "nameEn": "Sun Eater",
+   "kind": "series",
+   "members": [
+    {
+     "key": "cisarstvi-ticha",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "supernatural-investigations": {
+   "name": "Supernatural Investigations",
+   "nameEn": "Supernatural Investigations",
+   "kind": "series",
+   "members": [
+    {
+     "key": "amari-a-nocni-bratri",
+     "n": 1
+    },
+    {
+     "key": "amari-a-velka-hra",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "swallows-and-amazons": {
+   "name": "Vlaštovky a Amazonky",
+   "nameEn": "Swallows and Amazons",
+   "kind": "series",
+   "members": [
+    {
+     "key": "boj-o-ostrov",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 12,
+   "note": ""
+  },
+  "sword-of-truth": {
+   "name": "Meč pravdy",
+   "nameEn": "Sword of Truth",
+   "kind": "series",
+   "members": [
+    {
+     "key": "oddelene-duse",
+     "n": 15
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "takeshi-kovacs": {
+   "name": "Takeshi Kovacs",
+   "nameEn": "Takeshi Kovacs",
+   "kind": "series",
+   "members": [
+    {
+     "key": "zlomeni-andele",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "tamuli": {
+   "name": "Tamuli",
+   "nameEn": "The Tamuli",
+   "kind": "series",
+   "members": [
+    {
+     "key": "tamuli",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "Likely the Czech omnibus of the whole trilogy"
+  },
+  "tao": {
+   "name": "Tao",
+   "nameEn": "Tao",
+   "kind": "series",
+   "members": [
+    {
+     "key": "the-lives-of-tao",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "tearling": {
+   "name": "Tearling",
+   "nameEn": "The Queen of the Tearling",
+   "kind": "series",
+   "members": [
+    {
+     "key": "kralovna-tearlingu",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "teixcalaan": {
+   "name": "Teixcalaan",
+   "nameEn": "Teixcalaan",
+   "kind": "series",
+   "members": [
+    {
+     "key": "vzpominka-zvana-rise",
+     "n": 1
+    },
+    {
+     "key": "pustina-zvana-mir",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "the-atlas": {
+   "name": "Atlas",
+   "nameEn": "The Atlas",
+   "kind": "series",
+   "members": [
+    {
+     "key": "atlasova-sestka",
+     "n": 1
+    },
+    {
+     "key": "atlasuv-paradox",
+     "n": 2
+    },
+    {
+     "key": "atlasuv-komplex",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "the-band": {
+   "name": "Králové Wyldu",
+   "nameEn": "The Band",
+   "kind": "series",
+   "members": [
+    {
+     "key": "kralove-wyldu",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "the-divide": {
+   "name": "The Divide",
+   "nameEn": "The Divide",
+   "kind": "series",
+   "members": [
+    {
+     "key": "hlidka-na-konci-vesmiru",
+     "n": 1
+    },
+    {
+     "key": "flotila-zatracenych",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "the-faithful-and-the-fallen": {
+   "name": "Věrní a padlí",
+   "nameEn": "The Faithful and the Fallen",
+   "kind": "series",
+   "members": [
+    {
+     "key": "moc",
+     "n": 1
+    },
+    {
+     "key": "odvaha",
+     "n": 2
+    },
+    {
+     "key": "zkaza",
+     "n": 3
+    },
+    {
+     "key": "hnev",
+     "n": 4
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": ""
+  },
+  "the-fandom": {
+   "name": "Fandom",
+   "nameEn": "The Fandom",
+   "kind": "series",
+   "members": [
+    {
+     "key": "fandom",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "the-fire-sermon": {
+   "name": "Kázání ohně",
+   "nameEn": "The Fire Sermon",
+   "kind": "series",
+   "members": [
+    {
+     "key": "kazani-ohne",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "the-girl-with-all-the-gifts": {
+   "name": "Všemi dary obdarovaná",
+   "nameEn": "The Girl with All the Gifts",
+   "kind": "series",
+   "members": [
+    {
+     "key": "vsemi-dary-obdarovana",
+     "n": 1
+    },
+    {
+     "key": "chlapec-na-moste",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": "The Boy on the Bridge is a prequel written later"
+  },
+  "the-golden-age": {
+   "name": "Zlatý věk",
+   "nameEn": "The Golden Age",
+   "kind": "series",
+   "members": [
+    {
+     "key": "lev",
+     "n": 1
+    },
+    {
+     "key": "velmoc",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "the-interdependency": {
+   "name": "Interdependency",
+   "nameEn": "The Interdependency",
+   "kind": "series",
+   "members": [
+    {
+     "key": "zanik-imperia",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "the-left-hand-of-god": {
+   "name": "Levá ruka boží",
+   "nameEn": "The Left Hand of God",
+   "kind": "series",
+   "members": [
+    {
+     "key": "leva-ruka-bozi",
+     "n": 1
+    },
+    {
+     "key": "ctyri-posledni-veci",
+     "n": 2
+    },
+    {
+     "key": "tlukot-kridel-smrti",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "the-library": {
+   "name": "The Library",
+   "nameEn": "The Library",
+   "kind": "series",
+   "members": [
+    {
+     "key": "the-book-that-wouldn-t-burn",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "the-magicians": {
+   "name": "Mágové",
+   "nameEn": "The Magicians",
+   "kind": "series",
+   "members": [
+    {
+     "key": "magove",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "the-mortal-instruments": {
+   "name": "Nástroje smrti",
+   "nameEn": "The Mortal Instruments",
+   "kind": "series",
+   "members": [
+    {
+     "key": "nastroje-smrti",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 6,
+   "note": "Possibly an omnibus edition"
+  },
+  "the-passenger": {
+   "name": "Pasažér",
+   "nameEn": "The Passenger",
+   "kind": "series",
+   "members": [
+    {
+     "key": "pasazer",
+     "n": 1
+    },
+    {
+     "key": "stella-maris",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": "Companion novels published together"
+  },
+  "the-poison-wars": {
+   "name": "Jedové války",
+   "nameEn": "The Poison Wars",
+   "kind": "series",
+   "members": [
+    {
+     "key": "mesto-lzi",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "the-prey": {
+   "name": "Útěk z teritoria smrti",
+   "nameEn": "The Prey",
+   "kind": "series",
+   "members": [
+    {
+     "key": "utek-z-teritoria-smrti",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "the-red": {
+   "name": "The Red",
+   "nameEn": "The Red",
+   "kind": "series",
+   "members": [
+    {
+     "key": "the-red-first-light",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "the-sand-chronicles": {
+   "name": "The Sand Chronicles",
+   "nameEn": "The Sand Chronicles",
+   "kind": "series",
+   "members": [
+    {
+     "key": "pisek",
+     "n": 1
+    },
+    {
+     "key": "pres-pisek",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "the-testing": {
+   "name": "Zkouška",
+   "nameEn": "The Testing",
+   "kind": "series",
+   "members": [
+    {
+     "key": "zkouska",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "the-way": {
+   "name": "The Way",
+   "nameEn": "The Way",
+   "kind": "series",
+   "members": [
+    {
+     "key": "eon",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "Eon, Eternity, Legacy (Legacy is a prequel-ish third)"
+  },
+  "the-witcher": {
+   "name": "Zaklínač",
+   "nameEn": "The Witcher",
+   "kind": "series",
+   "members": [],
+   "read": [
+    "The Witcher (series)"
+   ],
+   "rejected": [],
+   "volumes": null,
+   "note": "",
+   "readWhole": true
+  },
+  "themis-files": {
+   "name": "Spící obři",
+   "nameEn": "The Themis Files",
+   "kind": "series",
+   "members": [
+    {
+     "key": "spici-obri",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "thomas-cromwell": {
+   "name": "Thomas Cromwell",
+   "nameEn": "Thomas Cromwell",
+   "kind": "series",
+   "members": [
+    {
+     "key": "wolf-hall",
+     "n": 1
+    },
+    {
+     "key": "predvedte-mrtve",
+     "n": 2
+    },
+    {
+     "key": "zrcadlo-a-svetlo",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "thrawn-ascendancy": {
+   "name": "Thrawn Ascendancy",
+   "nameEn": "Thrawn Ascendancy",
+   "kind": "series",
+   "members": [
+    {
+     "key": "star-wars-thrawn-ascendence",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "thursday-next": {
+   "name": "Thursday Next",
+   "nameEn": "Thursday Next",
+   "kind": "series",
+   "members": [
+    {
+     "key": "ztracena-v-dobre-knize",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 7,
+   "note": ""
+  },
+  "time-between-us": {
+   "name": "Čas mezi námi",
+   "nameEn": "Time Between Us",
+   "kind": "series",
+   "members": [
+    {
+     "key": "cas-mezi-nami",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "time-patrol": {
+   "name": "Time Patrol",
+   "nameEn": "Time Patrol",
+   "kind": "series",
+   "members": [
+    {
+     "key": "straz-casu",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Guardians of Time is a collection of the early stories"
+  },
+  "tokyo-ghoul-re": {
+   "name": "Tokijský ghúl:re",
+   "nameEn": "Tokyo Ghoul:re",
+   "kind": "series",
+   "members": [
+    {
+     "key": "tokijsky-ghul-re",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 16,
+   "note": "Manga, sequel to Tokyo Ghoul"
+  },
+  "tom-neave": {
+   "name": "Tom Neave",
+   "nameEn": "Tom Neave trilogy",
+   "kind": "series",
+   "members": [
+    {
+     "key": "cena-za-krale",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "Volume number unverified"
+  },
+  "tomorrow": {
+   "name": "Tomorrow",
+   "nameEn": "Tomorrow",
+   "kind": "series",
+   "members": [
+    {
+     "key": "tomorrow-when-the-war-began",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 7,
+   "note": ""
+  },
+  "torch-trilogy": {
+   "name": "Zpěvozář",
+   "nameEn": "The Torch Trilogy",
+   "kind": "series",
+   "members": [
+    {
+     "key": "zpevozar",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "toto-the-ninja-cat": {
+   "name": "Toto kočičí nindža",
+   "nameEn": "Toto the Ninja Cat",
+   "kind": "series",
+   "members": [
+    {
+     "key": "toto-kocici-nindza-a-syrova-loupez-stoleti",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "trurl-and-klapaucius": {
+   "name": "Trurl a Klapaucius",
+   "nameEn": "Trurl and Klapaucius",
+   "kind": "series",
+   "members": [
+    {
+     "key": "bajky-robotu",
+     "n": 1
+    },
+    {
+     "key": "kyberiada",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Story cycles with the same two constructors"
+  },
+  "tukoni": {
+   "name": "Tukoni",
+   "nameEn": "Tukoni",
+   "kind": "series",
+   "members": [
+    {
+     "key": "jak-tukoni-zachranili-strom",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Number unverified"
+  },
+  "two-dukes-of-wyndham": {
+   "name": "Two Dukes of Wyndham",
+   "nameEn": "Two Dukes of Wyndham",
+   "kind": "series",
+   "members": [
+    {
+     "key": "pan-cavendish-jestli-se-nemylim",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "tyringham-park": {
+   "name": "Tyringham Park",
+   "nameEn": "Tyringham Park",
+   "kind": "series",
+   "members": [
+    {
+     "key": "navrat-na-panstvi-tyringham",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "uglies": {
+   "name": "Uglies",
+   "nameEn": "Uglies",
+   "kind": "series",
+   "members": [
+    {
+     "key": "uglies",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": ""
+  },
+  "umbra-tales": {
+   "name": "The Umbra Tales",
+   "nameEn": "The Umbra Tales",
+   "kind": "series",
+   "members": [
+    {
+     "key": "mia-a-svetlovladci",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "under-the-never-sky": {
+   "name": "Nebe",
+   "nameEn": "Under the Never Sky",
+   "kind": "series",
+   "members": [
+    {
+     "key": "cesta-vecnou-noci",
+     "n": 2
+    },
+    {
+     "key": "do-poklidne-modri",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "underland-chronicles": {
+   "name": "The Underland Chronicles",
+   "nameEn": "The Underland Chronicles",
+   "kind": "series",
+   "members": [
+    {
+     "key": "gregor-a-mesto-pod-mestem",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 5,
+   "note": ""
+  },
+  "unicorn-academy": {
+   "name": "Akademie jednorožců",
+   "nameEn": "Unicorn Academy",
+   "kind": "series",
+   "members": [
+    {
+     "key": "akademie-jednorozcu",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "unmapped-chronicles": {
+   "name": "Kroniky Nezmapovaných království",
+   "nameEn": "The Unmapped Chronicles",
+   "kind": "series",
+   "members": [
+    {
+     "key": "kroniky-nezmapovanych-kralovstvi",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "Jungledrop is book 3; Rumblestar and Whisperwood precede it"
+  },
+  "unofficial-gamers-adventure": {
+   "name": "Neoficiální hráčovo dobrodružství",
+   "nameEn": "An Unofficial Gamer's Adventure",
+   "kind": "series",
+   "members": [
+    {
+     "key": "vyprava-za-diamantovym-mecem",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "unwind-dystology": {
+   "name": "Bez šance",
+   "nameEn": "Unwind Dystology",
+   "kind": "series",
+   "members": [
+    {
+     "key": "bez-sance",
+     "n": 1
+    },
+    {
+     "key": "bez-citu",
+     "n": 2
+    },
+    {
+     "key": "bez-duse",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": ""
+  },
+  "vagrant-trilogy": {
+   "name": "The Vagrant",
+   "nameEn": "The Vagrant",
+   "kind": "series",
+   "members": [
+    {
+     "key": "tulak",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "vampire-academy": {
+   "name": "Vampýrská akademie",
+   "nameEn": "Vampire Academy",
+   "kind": "series",
+   "members": [
+    {
+     "key": "vampyrska-akademie",
+     "n": 4
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 6,
+   "note": "Czech title is the series name; the book is Blood Promise"
+  },
+  "vardari": {
+   "name": "Vardari",
+   "nameEn": "Vardari",
+   "kind": "series",
+   "members": [
+    {
+     "key": "zelezny-vlk",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "vattas-war": {
+   "name": "Vatta's War",
+   "nameEn": "Vatta's War",
+   "kind": "series",
+   "members": [
+    {
+     "key": "trading-in-danger",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 5,
+   "note": ""
+  },
+  "vested-interest": {
+   "name": "Vested Interest",
+   "nameEn": "Vested Interest",
+   "kind": "series",
+   "members": [
+    {
+     "key": "aiden",
+     "n": null
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "vorkosigan-saga": {
+   "name": "Vorkosigan Saga",
+   "nameEn": "Vorkosigan Saga",
+   "kind": "series",
+   "members": [
+    {
+     "key": "ucednik-valky",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Publication order puts Shards of Honor first; Miles's story starts with The Warrior's Apprentice"
+  },
+  "voyages-extraordinaires": {
+   "name": "Podivuhodné cesty",
+   "nameEn": "Voyages Extraordinaires",
+   "kind": "universe",
+   "members": [
+    {
+     "key": "pet-nedel-v-balonu",
+     "n": 1
+    },
+    {
+     "key": "plujici-ostrov",
+     "n": 2
+    },
+    {
+     "key": "na-komete",
+     "n": 3
+    },
+    {
+     "key": "dva-roky-prazdnin",
+     "n": 4
+    },
+    {
+     "key": "novy-hrabe-monte-christo",
+     "n": 5
+    },
+    {
+     "key": "tajemstvi-wilhelma-storitze",
+     "n": 6
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 54,
+   "note": ""
+  },
+  "wakening": {
+   "name": "The Wakening",
+   "nameEn": "The Wakening",
+   "kind": "series",
+   "members": [
+    {
+     "key": "dawn-of-wonder",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "warren-the-13th": {
+   "name": "Warren XIII.",
+   "nameEn": "Warren the 13th",
+   "kind": "series",
+   "members": [
+    {
+     "key": "warren-xiii-a-septajici-les",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
+  "warrior-of-rome": {
+   "name": "Warrior of Rome",
+   "nameEn": "Warrior of Rome",
+   "kind": "series",
+   "members": [
+    {
+     "key": "posledni-hodina",
+     "n": 7
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Number from memory"
+  },
+  "wars-of-the-roses": {
+   "name": "Válka růží",
+   "nameEn": "Wars of the Roses",
+   "kind": "series",
+   "members": [
+    {
+     "key": "valka-ruzi",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": "Third volume (Dynastie); the others are not on the shelf"
+  },
+  "wayfarers": {
+   "name": "Wayfarers",
+   "nameEn": "Wayfarers",
+   "kind": "universe",
+   "members": [
+    {
+     "key": "dlouha-cesta-na-malou-rozzlobenou-planetu",
+     "n": 1
+    },
+    {
+     "key": "dve-mista-na-slunci",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": "Shared world, different leads"
+  },
+  "wess-har-wars": {
+   "name": "Wess'har Wars",
+   "nameEn": "Wess'har Wars",
+   "kind": "series",
+   "members": [
+    {
+     "key": "city-of-pearl",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 6,
+   "note": ""
+  },
+  "wheel-of-time": {
+   "name": "Kolo času",
+   "nameEn": "The Wheel of Time",
+   "kind": "series",
+   "members": [
+    {
+     "key": "oko-sveta",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 14,
+   "note": ""
+  },
+  "which-way-to-anywhere": {
+   "name": "Kudy do kamkoli",
+   "nameEn": "Which Way to Anywhere",
+   "kind": "series",
+   "members": [
+    {
+     "key": "kudy-do-kamkoli",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "whiteout": {
+   "name": "Whiteout",
+   "nameEn": "Whiteout",
+   "kind": "series",
+   "members": [
+    {
+     "key": "temna-zima",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "wicked-lovely": {
+   "name": "Nebezpečně krásný",
+   "nameEn": "Wicked Lovely",
+   "kind": "series",
+   "members": [
+    {
+     "key": "nebezpecne-krasny",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 5,
+   "note": ""
+  },
+  "william-and-meriwether": {
+   "name": "William a Meriwether",
+   "nameEn": "William and Meriwether",
+   "kind": "series",
+   "members": [
+    {
+     "key": "podivuhodna-roboti-expedice",
+     "n": 1
+    },
+    {
+     "key": "neocekavany-roboti-exodus",
+     "n": 2
+    },
+    {
+     "key": "strastiplna-roboti-existence",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "winterkill": {
+   "name": "Smrtná zima",
+   "nameEn": "Winterkill",
+   "kind": "series",
+   "members": [
+    {
+     "key": "smrtna-zima",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "world-of-the-five-gods": {
+   "name": "Svět Pěti bohů",
+   "nameEn": "World of the Five Gods",
+   "kind": "universe",
+   "members": [
+    {
+     "key": "prokleti-chalionu",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Chalion novels have different leads"
+  },
+  "wynd": {
+   "name": "Wynd",
+   "nameEn": "Wynd",
+   "kind": "series",
+   "members": [
+    {
+     "key": "wynd",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 5,
+   "note": ""
+  },
+  "young-elites": {
+   "name": "Mladí vyvolení",
+   "nameEn": "The Young Elites",
+   "kind": "series",
+   "members": [
+    {
+     "key": "mladi-vyvoleni",
+     "n": 1
+    },
+    {
+     "key": "spolecenstvi-ruze",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "zachary-ying": {
+   "name": "Zachary Jing",
+   "nameEn": "Zachary Ying",
+   "kind": "series",
+   "members": [
+    {
+     "key": "zachary-jing-a-draci-cisar",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "zaklinacka-lota": {
+   "name": "Zaklínačka Lota",
+   "nameEn": "Zaklínačka Lota",
+   "kind": "series",
+   "members": [
+    {
+     "key": "zaklinacka-lota",
+     "n": 1
+    },
+    {
+     "key": "psi-zima",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "zamonia": {
+   "name": "Zamonie",
+   "nameEn": "Zamonia",
+   "kind": "universe",
+   "members": [
+    {
+     "key": "13-a-1-2-zivota-kapitana-modreho-medveda",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "zapisnik-alkoholicky": {
+   "name": "Zápisník alkoholičky",
+   "nameEn": "Zápisník alkoholičky",
+   "kind": "series",
+   "members": [
+    {
+     "key": "zapisnik-alkoholicky",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "zones-of-thought": {
+   "name": "Zones of Thought",
+   "nameEn": "Zones of Thought",
+   "kind": "universe",
+   "members": [
+    {
+     "key": "ohen-nad-hlubinou",
+     "n": 1
+    },
+    {
+     "key": "hlubina-na-nebi",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "Standalone novels with different casts; A Deepness in the Sky is a prequel written later."
+  }
+ }
+}

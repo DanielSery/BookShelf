@@ -21,6 +21,7 @@ other things own them:
 |---|---|---|
 | `/book-log` | judgements — every `est` recomputation | a rule moving |
 | `/book-screen` | discovery, access facts, first estimates, rejects, covers | time passing |
+| `/book-deep` | sourced re-derivation of one book's estimate, and its dossier | — |
 | `index.html` | nothing — read-only viewer | — |
 | **this skill** | the Snoozed list, and nothing else | — |
 
@@ -43,6 +44,7 @@ wants to snooze something. If they ask to browse, point them at the app.
 - `book-cache.json` — access routes for the titles you shortlist.
 - `book-media.json` — the blurb, so you can say what the book *is*.
 - `books-read.md` — so nothing already read is proposed.
+- `book-series.json` — which candidates are volumes of one series (`kind: series`).
 - `book-recommendations.md` — the Snoozed section, and only that, unless the
   reader asks *why* a rule says what it says.
 
@@ -60,6 +62,13 @@ Exclude, in order:
   the identical query found a full reading four days later. If the shortlist is
   thin because of stale access data, say so and offer `/book-screen`; do not
   quietly drop the title and do not check it yourself.
+
+**A series is ONE candidate** (ruled 2026-10-25: "I do not read single titles from
+series, so the series should be proposed as a whole"). Collapse every `kind: series`
+record in `book-series.json` into one entry before ranking: its range is the mean of
+its volumes' ranges, the same number the viewer shows, and a volume that is `blocked`
+blocks the whole series, because reading it whole means reading that volume. Never
+propose volume 2 alone, and never put two volumes of one series on a shortlist.
 
 Then rank by `est` midpoint and pick. Lead with whichever candidate best matches
 the *most recently resolved* open question or preference — that is the freshest
@@ -81,10 +90,15 @@ signal about the reader, and it is the one thing the app's static sort can't do.
 Default to **three** titles, not ten: the app exists for breadth, so this skill's
 job is a short, argued shortlist. Give more if asked.
 
-Per title, quote what is recorded — never a fresh number:
+Per title, quote what is recorded — never a fresh number. **A series is presented as
+one entry and labelled as a series**: its name (Czech first, original in brackets),
+how many volumes it has and how many are on the shelf, the mean range, then one line
+per volume with its own range and access. Say plainly when a volume is not held in
+Czech print or not screened, because he reads the series whole.
 
 - **The range and its band**, e.g. "predicted 78-85, A/S border". Never collapse
-  it to one number.
+  it to one number. Say whether it is deep-dived (`depth: deep`, with sourced
+  verdicts in `book-deep.jsonl`) or screening depth.
 - **Every axis in `risks`**, stated as a condition. The range assumes none of
   them fires. *Neuromancer* is 72-80 if its opening holds and a 30 if it doesn't,
   and "76" would be a lie about both outcomes.

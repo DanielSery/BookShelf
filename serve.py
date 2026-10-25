@@ -58,7 +58,7 @@ WRITABLE = {
     "book-cache.json", "book-estimates.jsonl", "book-rejects.jsonl",
     "book-revs.json", "book-media.json", "book-recommendations.md",
     "books-read.md", "book-triage.jsonl", "book-ai-rank.jsonl",
-    "book-origin.json",
+    "book-origin.json", "book-deep.jsonl",
 }
 
 # book-reading.json is deliberately absent from WRITABLE: the page owns it and

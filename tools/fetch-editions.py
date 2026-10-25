@@ -89,12 +89,17 @@ def author_of(rec):
     return re.sub(r"^(napsal\w*|text|příběh:?|scénář:?)\s+", "", a.strip(), flags=re.I)
 
 
-def classify(name, pub, rs):
+def classify(name, pub, rs, fond=None):
     p = T.strip(pub)
     if T.pub_has(p, T.AUDIO_PUB) or AUDIO_RS.search(rs):
         return "audio"
     if T.pub_has(p, T.FOREIGN_PUB):
         return "foreign"
+    # A library e-loan (fond "eKnihy a eAudio") copies the print book's publisher, pages
+    # and ISBN, so only the fond tells it apart. Read as print, 11 e-loan-only books
+    # reached the shelf as "Czech print" before 2026-10-24.
+    if (fond or {}).get("fondType") == "eloan":
+        return "eloan"
     if T.pub_has(p, T.EBOOK_PUB):
         return "ebook"
     if ADAPT_RS.search(rs) or ADAPT_NAME.search(name):
@@ -125,12 +130,14 @@ def get(q, page):
 def resolve(eds):
     """Pick the route. Prefer a full print translation, newest first; fall back to a
     retelling only when nothing else is in Czech, because a children's retelling of an
-    adult novel is a different book and the agent must be told which it got."""
-    for kinds in (("print",), ("adapt",)):
+    adult novel is a different book and the agent must be told which it got. A library
+    e-loan comes last and gets its own state: the reader screens e-loan-only books but
+    keeps them out of the default shelf (ruled 2026-10-24)."""
+    for kinds, state in ((("print",), "verified"), (("adapt",), "verified"), (("eloan",), "eloan")):
         pool = [e for e in eds if e["kind"] in kinds]
         if pool:
             best = max(pool, key=lambda e: (e["y"] or 0, e["tr"] is not None))
-            return {"state": "verified", "publisher": best["pub"], "year": best["y"],
+            return {"state": state, "publisher": best["pub"], "year": best["y"],
                     "translator": best["tr"], "recordId": best["id"],
                     "edition": best["kind"]}
     return {"state": "none", "publisher": None, "year": None, "translator": None,
@@ -144,7 +151,7 @@ def alts(eds, route):
     others = [e for e in eds if e["id"] != route.get("recordId")]
     for kind, label in (("print", "another print edition"), ("adapt", "a retelling or comics adaptation"),
                         ("audio", "an audio edition"), ("foreign", "a foreign-language edition"),
-                        ("ebook", "an e-book edition")):
+                        ("eloan", "a library e-loan"), ("ebook", "an e-book edition")):
         g = [e for e in others if e["kind"] == kind]
         if not g:
             continue
@@ -181,7 +188,7 @@ def main(scratch, out):
                 pub = ((c.get("publishers") or [{}])[0].get("text")) or ""
                 ed = {"id": c.get("id") or "", "pub": imprint(pub),
                       "y": ((c.get("publicationStartYear") or {}).get("value")),
-                      "tr": translator(rs), "kind": classify(name, pub, rs)}
+                      "tr": translator(rs), "kind": classify(name, pub, rs, c.get("fond"))}
                 seen += 1
                 if not ed["id"]:
                     continue
@@ -210,7 +217,9 @@ def main(scratch, out):
                        "such query returned 111 kB for 200 bytes of signal.",
             "schema": 1,
             "_kinds": "print | adapt (retelling, comics, abridgement - a different book) | "
-                      "audio | foreign | ebook (e-lending declined by the reader 2026-08-26)",
+                      "audio | foreign | eloan (the library's own e-loan fond; routed as "
+                      "state `eloan` only when nothing is in print, and kept off the default "
+                      "shelf - reader 2026-10-24) | ebook (an e-book imprint outside that fond)",
             "_isnot": "A JUDGEMENT. `cz` is the mechanical pick - newest full print translation. "
                       "Choosing between two complete translations is the agent's call, and the "
                       "alternatives are listed in `alts` as facts for `flags`.",
@@ -256,7 +265,7 @@ def fill(out, minscore=4):
             if c.get("id"):
                 eds[c["id"]] = {"id": c["id"], "pub": imprint(pub),
                                 "y": ((c.get("publicationStartYear") or {}).get("value")),
-                                "tr": translator(rs), "kind": classify(name, pub, rs)}
+                                "tr": translator(rs), "kind": classify(name, pub, rs, c.get("fond"))}
         if eds:
             e = sorted(eds.values(), key=lambda x: (x["kind"] != "print", -(x["y"] or 0)))[:MAX_EDS]
             route = resolve(e)

@@ -1,5 +1,5 @@
 // The Map tab. Loaded before the main script and run against its globals (D, F, esc,
-// band, tone, cover, accessLine, LEGEND, render, setView, store, recall,
+// band, tone, cover, accessLine, LIBRARY, LEGEND, render, setView, store, recall,
 // candidateFilter, readFilter), all of which exist by the time anything here is called.
 // Names are map-prefixed because every top-level declaration shares one scope with
 // index.html.
@@ -44,9 +44,39 @@ function mapBuild() {
     bySimIdx[i] = p;
     books.push(p);
   });
+  const profiled = books.length;
+  // A series is one point (reader, 2026-10-25: he reads a series whole): its volumes'
+  // centroid and summed profile, so it is matched as the one thing he would pick up.
+  // Read volumes of one series group apart from its unread ones: a read series is a
+  // diamond scored by what he gave it, the unread rest a square scored by prediction.
+  const vols = new Map();
+  books.forEach(p => {
+    const sid = p.kind === 'c' ? D.seriesOf[p.key] : D.readSeriesOf[p.key];
+    if (sid) vols.set(p.kind + ':' + sid, [...(vols.get(p.kind + ':' + sid) || []), p]);
+  });
+  const shown = new Map(), aliases = new Map();
+  vols.forEach((ps, g) => {
+    const kind = g[0], sid = g.slice(2), read = kind === 'r';
+    const d = new Float32Array(NF);
+    ps.forEach(m => m.d.forEach((x, f) => { d[f] += x; }));
+    const norm = Math.hypot(...d) || 1;
+    const row = read ? readSeriesEntry(D.readSeries[sid]) : seriesEntry(D.series[sid]);
+    const p = {
+      id: (read ? 'rs:' : 's:') + sid, kind, isSeries: true, key: row.key, row, vols: ps,
+      x: ps.reduce((t, m) => t + m.x, 0) / ps.length, y: ps.reduce((t, m) => t + m.y, 0) / ps.length,
+      d: d.map(x => x / norm), title: row.s.name, alt: row.s.nameEn && row.s.nameEn !== row.s.name ? row.s.nameEn : '',
+      author: read ? row.author : row.cache.author, score: read ? row.score : row.est ? row.mid : null,
+    };
+    p.sv = [...p.d].map((x, f) => [f, x]).filter(([, x]) => x > 0);
+    ps.forEach(m => { shown.set(m, p); aliases.set(m.id, p); });
+    aliases.set(p.id, p);
+  });
+  const visible = books.filter(p => !shown.has(p)).concat([...new Set(shown.values())]);
+  books.length = 0;
+  visible.forEach((p, i) => { p.i = i; p.ref = 'b' + i; books.push(p); aliases.set(p.id, p); });
   const authors = [];
   sim.authors.forEach(a => {
-    const members = a.books.map(i => bySimIdx[i]).filter(Boolean);
+    const members = [...new Set(a.books.map(i => bySimIdx[i]).filter(Boolean).map(m => shown.get(m) || m))];
     if (!members.length) return;
     const d = new Float32Array(NF);
     members.forEach(m => m.d.forEach((x, f) => { d[f] += x; }));
@@ -69,9 +99,9 @@ function mapBuild() {
     regions[mode] = list.map(r => ({ x: r.x, y: r.y, label: r.tags.map(t => sim.tags[tagIndex[t]][1]).join(' · ') }));
 
   const was = MAP.seeds;
-  MAP.built = { D, NT, books, authors, regions, tagIndex, ids: new Set(books.map(b => b.id)),
+  MAP.built = { D, NT, books, authors, regions, tagIndex, ids: new Set(aliases.keys()), byId: aliases,
                 tagIds: sim.tags.map(t => t[0]), tagLabel: sim.tags.map(t => t[1]), tagGroup: sim.tags.map(t => t[3]),
-                unmapped: D.books.length + D.read.rows.length - books.length };
+                unmapped: D.books.length + D.read.rows.length - profiled };
   MAP.seeds = was.map(s => s.members ? authors.find(a => a.name === s.name) : books.find(b => b.id === s.id)).filter(Boolean);
   MAP.memo = null;
   return MAP.built;
@@ -128,6 +158,8 @@ function sharedTags(seeds, p, B, n = 3) {
 }
 
 function mapScoreText(p) {
+  if (p.isSeries && p.kind === 'r') return `read series of ${p.row.vols.length} · average ${p.score}`;
+  if (p.isSeries) return `series of ${p.row.vols.length} · ` + (p.row.est ? `predicted ${p.row.est[0]}–${p.row.est[1]}` : 'blocked');
   if (p.members) {
     if (p.score == null) return 'blocked only';
     return p.hasRead ? `read · best ${p.score}` : `best prediction ${Math.round(p.score)}`;
@@ -144,12 +176,15 @@ const mapLabel = p => p.members ? p.name : p.title;
 // The first verified route only: the full access line is in the panel head once a
 // book is selected.
 function mapRowLink(p) {
-  if (p.members || p.kind !== 'c') return '';
-  const b = p.row, part = b.hasEn && (b.en.parts || [])[0];
+  if (p.members || p.kind !== 'c' || p.isSeries) return '';
+  const b = p.row;
   if (b.hasCz && b.cz.recordUrl) return `<a class="rowlink" href="${esc(b.cz.recordUrl)}" target="_blank" rel="noreferrer"
-    title="Borrow — Czech print: open the catalogue record at Městská knihovna Valašské Meziříčí">Borrow ↗</a>`;
-  if (part) return `<a class="rowlink" href="${esc(part.url)}" target="_blank" rel="noreferrer"
-    title="Free English audio">▶ Listen</a>`;
+    title="Borrow — Czech print: open the catalogue record at ${esc(LIBRARY[b.lib])}">Borrow ↗</a>`;
+  if (b.hasEloan && b.cz.recordUrl) return `<a class="rowlink" href="${esc(b.cz.recordUrl)}" target="_blank" rel="noreferrer"
+    title="Borrow — library e-loan: open the e-loan record at Městská knihovna Valašské Meziříčí">E-loan ↗</a>`;
+  const ec = b.enGem && b.cache.enCopy;
+  if (ec) return `<a class="rowlink" href="${esc(ec.recordUrl)}" target="_blank" rel="noreferrer"
+    title="Borrow in English: open the English edition at ${esc(LIBRARY[ec.library])}">EN copy ↗</a>`;
   return '';
 }
 
@@ -199,6 +234,7 @@ function mapWhy(p) {
     const m = p.row.media || {};
     return m.pitch ? `<p class="pitch">${esc(m.pitch)}</p>` : m.blurb ? `<p class="blurb">${esc(m.blurb)}</p>` : '';
   }
+  if (p.isSeries) return '';
   return p.row.notes ? `<details class="scoring"><summary>Your notes</summary>
     <p class="why">${esc(p.row.notes)}</p></details>` : '';
 }
@@ -247,7 +283,9 @@ function mapBookDetail(p, B, close = '', authorLink = false) {
         <div class="scorerow ${mapTone(p)}"><span class="bandletter small">${mapLetter(p)}</span>
           <span class="scorelabel">${esc(mapScoreText(p))}</span></div></div>${close}</div>
     ${mapWhy(p)}
-    ${p.kind === 'c' ? `<div class="access">${accessLine(p.row)}</div>` : ''}
+    ${p.isSeries && p.kind === 'r' ? readVolumes(p.row.vols)
+      : p.isSeries ? `<ol class="vols">${p.row.s.members.map(m => `<li${m.n ? ` value="${+m.n}"` : ''}>${volumeLine(m.book)}</li>`).join('')}</ol>`
+      : p.kind === 'c' ? `<div class="access">${accessLine(p.row)}</div>` : ''}
     <div class="badges">${mapChips(p, B)}</div>`;
 }
 
@@ -310,7 +348,7 @@ function mapView() {
   const what = o.mode === 'authors' ? 'authors' : 'books';
   return `<div class="grouphead">${on} of ${pts.length} ${what} match the filters${
       B.unmapped ? ` · ${mapCount(B.unmapped, 'book')} not profiled yet, missing from the map` : ''} ${LEGEND}
-    <span>· ${o.mode === 'authors' ? '◆ an author you have read · ● candidates only' : '◆ read · ● candidate'}
+    <span>· ${o.mode === 'authors' ? '◆ an author you have read · ● candidates only' : '◆ read · ● candidate · ■ unread series · a series is one mark'}
     · colour, size and stacking follow the score, real for read books, predicted for the rest
     · a line to a match is thicker the closer it is</span></div>
     ${o.tags.length ? `<div class="tagfilters">Only ${o.mode === 'authors' ? 'authors with books' : 'titles'} tagged:
@@ -412,7 +450,8 @@ function drawMap() {
       const d = r * 1.25;
       ctx.moveTo(p.sx, p.sy - d); ctx.lineTo(p.sx + d, p.sy); ctx.lineTo(p.sx, p.sy + d); ctx.lineTo(p.sx - d, p.sy);
       ctx.closePath();
-    } else ctx.arc(p.sx, p.sy, r, 0, Math.PI * 2);
+    } else if (p.isSeries) ctx.rect(p.sx - r, p.sy - r, 2 * r, 2 * r);
+    else ctx.arc(p.sx, p.sy, r, 0, Math.PI * 2);
     ctx.fillStyle = fill; ctx.fill();
     ctx.lineWidth = 2; ctx.strokeStyle = surface; ctx.stroke();
   };
@@ -646,7 +685,7 @@ function mapOpen(p, mode) {
 document.addEventListener('click', e => {
   const to = e.target.closest('[data-tomap]');
   if (to) {
-    const p = mapBuild().books.find(b => b.id === to.dataset.tomap);
+    const p = mapBuild().byId.get(to.dataset.tomap);
     if (!p) return;
     mapOpen(p, 'books');
     setView('map');

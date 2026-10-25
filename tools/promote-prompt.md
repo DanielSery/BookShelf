@@ -37,8 +37,8 @@ calibration** — and `tools/reader-profile.md` for the rules. The short version
 - **Loves** page time on what characters *want and why* over what they do; a premise
   whose consequences are actually worked out; a protagonist who is both interesting
   *and* worth rooting for; a book that leaves an idea behind.
-- **Six hard filters you decide, and only six:** a confusing opening; real-world occult
-  *practised on the page*; detective/mystery; a book whose premise IS an affair within a
+- **Six hard filters you decide, and only six:** a confusing opening; occult drawn from
+  real practice or real gods, or a human sacrifice staged on the page; detective/mystery; a book whose premise IS an affair within a
   marriage or engagement, whatever the framing; a book whose plot is mainly sexual
   behaviour or a sexual relationship; and **a book whose premise is a same-sex romance**
   (new 2026-09-02 — same prominence-vetoes/amount-grades shape as the other two content
@@ -49,8 +49,10 @@ calibration** — and `tools/reader-profile.md` for the rules. The short version
   chapter one and then read to the end at **67** once the reader looked the premise up, so
   a book whose only objection is a no-context opening is a proposal with a
   read-the-premise-first note, not a reject. The **occult** filter grades instead of
-  vetoing when the rite is the system's *origin or elevation mechanic* rather than
-  something the story stages on the page — same book, same score, the hierofant sacrifice.
+  vetoing whenever the rite belongs to an invented system and is not a human sacrifice
+  staged on the page (re-ruled 2026-10-24: "Depends on the severity. But human sacrifice
+  is almost never acceptable"); origin or elevation lore grades even when it is a human
+  sacrifice — same book, same score, the hierofant sacrifice.
 - **Graded, with measured weights:** sexual content on three dimensions that all cost —
   volume, explicitness and crudeness (*Artemis* 69 docked for crudeness at small volume,
   *Ready Player One* 55 and *The Witcher* 53 sunk by volume); worldbuilding self-consistency; heavy
@@ -132,7 +134,9 @@ detective rejects of the last run cost 3, 3 and 4 sources. Two is the budget.
 
 **Gate 2 — infidelity.** Ruled by the reader 2026-08-27. **Scope: marriage or
 engagement only** — a betrayal between unmarried partners is ordinary relationship
-drama and does not touch this axis at all.
+drama and does not touch this axis at all. **An arranged betrothal is not an engagement**
+(ruled 2026-10-24): a lead promised by family who loves someone else is not unfaithful;
+an affair inside the marriage once it is made still counts.
 
 Your task line may carry **`infidelity`** — `{tier, premise, hit}` from
 `tools/screen-infidelity.py`, a lexicon pass over the catalogue annotation. `tier` is how
@@ -290,26 +294,30 @@ a hard filter are worth a specific search:
 - **How does it open?** How many plot lines or POVs is a reader tracking by the end of
   chapter 1? The most reliable predictor in the log — three books scored 30 on it. If
   you cannot establish it, say so in `flags`.
-- **The occult filter — two tests, and failing EITHER is a veto.** Ruled by the reader
-  2026-08-26, replacing an earlier "an invented magic system is fine however
-  elaborate", which was wrong.
-  - *Source* — a system drawn from actual occultism fails: witchcraft, spellcasting in
-    that mould, séance, divination, necromancy, sacrifice or prayer to real deities.
-    An invented system passes this test.
-  - *Depiction* — **a rite enacted on the page fails even when the system is
-    invented.** A practice mentioned as having happened is fine.
-  - **The escape is mechanism.** A system operated like technology or engineering —
-    declared rules, no invocation, no devotion, no priesthood — passes Depiction even
-    when used on the page: Sanderson's Allomancy, Bennett's Founders scriving,
-    Asimov's mentalics, salvaged "elf-magic" that is really pre-collapse tech.
-    **Resemblance still vetoes** — in the reader's words, "if it's mechanical it could
-    be plausible explanation to keep it normal, but if too similar to occult it should
-    be still vetoed". A mechanical label on something that reads like occultism does
-    not save it.
+- **The occult filter — the Source test vetoes, staged invented rites grade.** Re-ruled
+  by the reader 2026-10-24 ("Depends on the severity. But human sacrifice is almost never
+  acceptable"), replacing the 2026-08-26 ruling that failing either test vetoes.
+  - *Source* — a system drawn from actual occultism or real gods fails: witchcraft,
+    spellcasting in that mould, séance, divination in the witch-or-seer mould,
+    necromancy, demon-summoning from real grimoires, sacrifice or prayer to real
+    deities. **A veto whatever the severity.** **Resemblance counts** — in the reader's
+    words, "if it's mechanical it could be plausible explanation to keep it normal, but
+    if too similar to occult it should be still vetoed".
+  - *Depiction* — **a rite of an invented system enacted on the page is graded by
+    severity, the heroes' own working rites included.** **Staged human sacrifice vetoes.**
+    Stated convention: `light` −2 (an invented faith's ceremony, incidental or doing
+    nothing), `moderate` −5 (a rite that works, staged once or twice), `heavy` −10
+    (rites central to the plot or to how the leads' power works, performed repeatedly,
+    or raising the dead). Origin or elevation lore is `heavy` even for a human sacrifice.
+  - **The escape is mechanism, and costs nothing.** A system operated like technology
+    or engineering — declared rules, no invocation, no devotion, no priesthood:
+    Sanderson's Allomancy, Asimov's mentalics, salvaged "elf-magic" that is really
+    pre-collapse tech. Check how power is *conferred*, not only how it is used.
 
-  So the question is not "is the system invented?" but **"is a rite performed on the
-  page, and is there a genuinely mechanical account of it?"** An invented goddess with
-  a priesthood performing devotions is a veto; an invented physics is not.
+  So the questions are **"is any of it drawn from real occultism?"**, **"is a human
+  sacrifice staged?"**, and only then **"how severe is the staged rite?"** An invented
+  goddess with a priesthood performing devotions is a graded deduction; an invented
+  physics costs nothing.
 - **Is the reader's satisfaction an investigation?** A mystery-shaped subplot in an
   otherwise eligible book is a flag, not a veto — say which it is.
 - **Sexual content: how is it handled**, not how much there is.
@@ -327,6 +335,21 @@ Copy `cz` from your task line into your output verbatim, including the full 36-c
   you are researching — say so in `flags` and let it affect the estimate.
 - `cz.state: "none"` means no Czech print edition exists. **Still produce the
   estimate.** Absence of a route is a dated fact, not a verdict on the book.
+- `cz.library: "roznov"` means the print copy is at the second library (Rožnov pod
+  Radhoštěm), used only when the primary library has no print copy. Copy it like the
+  rest of `cz`; it does not affect the estimate.
+- `cz.state: "eloan"` means the library holds it only as an e-loan (eReading), with no
+  print copy. **Estimate it exactly like any other book** — the shelf keeps e-loans in
+  a separate category hidden by default, so the format costs nothing in the estimate
+  and must not be mentioned in `why`.
+- `enCheck: true` means neither library has a Czech print copy and the book is a
+  candidate to read in English. Add `"enText": {"level": "easy|moderate|hard", "why":
+  "<one line>"}` rating the English for a non-native reader at about B2: `easy` is
+  plain modern prose (*Project Hail Mary*, *The Hunger Games*), `moderate` standard
+  genre prose with some invented terms or long sentences, `hard` dense, literary,
+  archaic or dialect-heavy. Base it on the prose and on reviews that mention
+  readability. The level never moves `est`. Set `title` to the English title and
+  `czTitle` to the Czech title if a translation exists, else the English title again.
 
 `alts` on the task line lists other editions the catalogue holds. Those are facts;
 put the relevant ones in `flags`.
@@ -401,6 +424,7 @@ Path: `<staging-dir>/<key>.json`, using the `key` from your task line.
   "deps": ["axis:ideas", "axis:short-idea-driven", "axis:bleakness"],
   "why": "One premise declared precisely and the whole book is its consequences...",
   "blurb": "Charlie Gordon, a man with an IQ of 68, keeps a diary through the surgery that makes him a genius.",
+  "pitch": "You read his own progress reports as his mind opens up...",
   "flags": ["A second print translation exists (Lucie Bohemia 2011, Richard Podaný)."],
   "reject": null,
   "confidence": "high",
@@ -415,6 +439,11 @@ genre, a form or a page count you did not establish.
 Field rules:
 
 - `genre`: one of `sf fantasy litfic historical testimony allegory thriller`.
+  `tags`: optional list; the only value is `exploration` (added 2026-10-24) — the world
+  is an unknown the lead has to explore, however he came not to know it (lost memory,
+  arriving from another world or time, or never having been told). Descriptive, like
+  genre: set it when that shape is the book, whether or not `axis:discovery` lifts the
+  number, and omit the field otherwise.
   `form`: one of `novel novella stories nonfiction verse`. **`verse` carries a penalty
   of its own** — ruled 2026-08-27 on *Havran* 40, which ties the lowest score in the log
   and where the reader named the form itself as a cause. Grade it on `axis:verse`. This
@@ -424,7 +453,7 @@ Field rules:
   `absorb` fills them from `book-revs.json` and adds the six mandatory axes plus the
   author id.
 
-  **The axis vocabulary is closed. These 27 ids are the only ones that exist:**
+  **The axis vocabulary is closed. These 28 ids are the only ones that exist:**
 
   ```
   axis:bleakness                  axis:character-differentiation
@@ -440,7 +469,7 @@ Field rules:
   axis:sex-portrayal              axis:sexual-content
   axis:sexual-treatment           axis:short-idea-driven
   axis:unearned-competence        axis:verse
-  axis:worldbuilding
+  axis:worldbuilding              axis:discovery
   ```
 
   The last two were added 2026-09-02 off *Čaropisci* 67. **`axis:same-sex-romance`** is a
@@ -449,6 +478,15 @@ Field rules:
   between the sexes: men shown as dumb or incompetent while women are shown as good or
   clever, graded on how strong the contrast is. Neither is about framing, and neither is a
   count of who is competent.
+
+  **`axis:discovery`** (added 2026-10-24) is a positive axis: an unknown the lead has to
+  explore (a world the lead does not understand, possibly his own past too; lost memory,
+  arriving from another world or time, or never having been told all count, and lost
+  memory earns nothing extra), a need driving it, and the
+  outcome open until an answer arrives that fits everything before it. The conditions and
+  the size convention are in `tools/reader-profile.md`. Price it once: a lead whose own
+  past is the open question goes here, not again under `axis:protagonist`. A mystery the
+  book refuses to answer, or an unfinished series, puts it in `risks` instead.
 
   A near-miss is worse than an omission and your file will be refused: when a rule
   changes, `/book-log` bumps that id's counter and greps the estimates for it, so a
@@ -465,6 +503,12 @@ Field rules:
 - `why`: a few sentences. The positive case, then the deductions, then which axis you
   leaned on and why *not* another. De-accented ASCII, to match the file.
 - `blurb`: one or two neutral sentences of plot. No evaluation.
+- `pitch` (estimates only, added 2026-10-24): the few sentences the viewer shows the
+  reader instead of your `why` — why he might want to read it, never how it scored.
+  Write it after the `why`, from your own findings, by the rules in
+  `tools/pitch-prompt.md`: 2-4 sentences, positives only, no scores or scoring words,
+  no spoilers, comparisons only to books he has read. `absorb` refuses a file whose
+  pitch breaks the mechanical rules.
 - `flags`: facts, not judgements — other editions, reading order, an `adapt`-only
   route. This is where sibling titles are allowed to be named.
 - `reject`: `null`, or `{"filter": "axis:occult", "why": "..."}` naming exactly one

@@ -74,6 +74,23 @@ auto-dropped its entire pool. When a sweep deliberately targets an auto-dropped
 class, set the band from the sweep's own filter and record what it means; `conf`
 stays `auto` either way.
 
+**Tier-1 classes go stale, and two of them drop by SURNAME** (found 2026-10-24).
+`book-triage.jsonl` is a snapshot: its `rejected` class still carried *Kolo času* and
+*Jméno větru* months after no reject row matched them, so 37 print rows sat dropped by
+rejects that no longer existed. And `rejected_authors()` / `read_authors()` key on the
+surname alone, so one author-level row or one read author drops every namesake: a wrong
+"Anthony Ryan — access" row hid all of his Host print, and Pierce Brown, Andy Weir and
+Suzanne Collins hide every Brown, Weir and Collins on the shelf. **Before trusting a
+`rejected` or `already-read` drop, re-check it against the current files** — import
+`tools/triage.py` and call `rejected_titles()` / `rejected_authors()` on the row.
+
+**A new volume of a series goes into `book-series.json`** (2026-10-25): the reader
+reads a series whole, so the viewer and `/book-suggest` show a series as one entry,
+and a volume missing from its record shows up as a stray single title. Add it to the
+series' `members` with its `n`, or create the record (`tools/series-prompt.md` has
+the shape); then `python tools/series.py check`. The raw `series` field in
+`book-cache.json` is the catalogue's value and is often a publisher's line.
+
 **A tier-1 `drop` is not a reject.** It means *not pursued, low confidence,
 revisit on request*. Only `book-rejects.jsonl` kills a title, and only by naming
 the axis. This distinction is what lets triage be cheap: it never has to justify
@@ -800,6 +817,29 @@ distinguishes a translation, a comic adaptation and an audio edition.
   **both** ends. **The general rule: when a needle is both a whole publisher name and a
   fragment of a Czech one, it needs two boundaries, not one** — and the record's own
   `angličtina` keyword is a second signal worth checking before trusting a route.
+- **A library e-loan is its own route, and it looks exactly like print** (found
+  2026-10-24). `fond.fondType == "eloan"` (fond *eKnihy a eAudio*, eReading) carries the
+  print book's publisher, page count and ISBN, and nothing else on the record says
+  e-book. Read as print, 11 such books reached the shelf as verified. The reader screens
+  e-loan-only books but keeps them apart (ruled 2026-10-24), so such a book is
+  `cz.state: eloan` with the e-loan record as `recordId`/`recordUrl`, and the viewer hides
+  it unless *include e-loans* is ticked. Print always wins the route. Two more tells: an
+  e-loan has **no** `responsibilityStatement` (the author is only in `primaryAuthors`, so
+  every e-loan row reached `book-triage.jsonl` with an empty author — `aCat` carries the
+  recovered one), and `GET /api/exemplars?document=<id>` returns `[]` for it while a real
+  holding lists its physical copies.
+- **A second library, Rožnov pod Radhoštěm, fills the primary's gaps** (ruled 2026-10-25:
+  "pull books that are in different library if they are not at the primary one", kept a
+  filterable source). Catalogue `https://katalog.knir.cz`, the same Portaro API. A route
+  there carries `cz.library: "roznov"`, its `recordUrl` points at that catalogue, and
+  `cz.branches` lists the buildings with a borrowable copy. **Never route there when the
+  primary holds print** — check the primary first, including under an author-keyed work
+  (three e-loan works on 2026-10-25 had primary print under `title~author`). Confirm a
+  physical copy with `api/exemplars?document=<id>` and ignore the department
+  "Středisko, ztracené knihy", which is where lost copies sit. `tools/second-library.py`
+  does it: `pull` the monographs, `routes` for books with no primary print, `triage` for
+  works the primary's sweeps never returned. `tools/fetch-library.py` skips these routes,
+  because it would re-search the primary with the other library's record id.
 - **The other fields, verified against a live record 2026-08-26:**
   `publishers[0].text` (the whole "V Praze : Odeon, 2008" string), 
   `publicationStartYear.value`, `isbns[0].text`, and `id` — the record UUID, which
@@ -857,7 +897,20 @@ Three facts about it, all verified 2026-08-26 rather than guessed:
   above was written for. Diff `cz.recordId` against the edition the row claims and
   repoint by hand, stamping `cz.linkCheck` so the next `--force` run does not undo it.
 
-### Route 2 — free English audiobook
+### Route 2 — free English audiobook (RETIRED 2026-10-25)
+
+**Do not run this route.** The reader removed it ("remove the en audio source"); the
+viewer no longer shows `enAudio`, and the old values stay in `book-cache.json` only as
+history. Its replacement points the other way: an **English gem** is a book predicted
+80+ (midpoint) that neither library holds in Czech print and whose English is easy for
+a non-native reader. For such a book record `enText: {level: easy|moderate|hard, why}`
+— promotion carries it through `absorb` when the task line has `enCheck: true` — and
+the viewer lists easy and moderate ones under "English gems". An English-language copy
+at either library goes in `enCopy` and the gem line links it. Yield of the first
+screen (2026-10-25), new gems per promoted book: bibliographies of his top and
+top-predicted authors 4 of ~47, open-ended picks 4 of 31, read-alike lists by other
+authors 1 of 57. Read-alikes predict low because nothing in the log vouches for
+the author. The notes below are kept for the record.
 
 English *text* breaks immersion, but a free English **audiobook** is fine. Sources:
 LibriVox for public-domain titles, the library's own eKnihy/eAudio, and YouTube for
@@ -917,10 +970,10 @@ a route is a fact to re-check, so it belongs in the cache, not in Snoozed.
 ## Phase 5 — ESTIMATE (first computation only)
 
 Every eligible title needs a line in `book-estimates.jsonl` before it can ever
-be proposed. **This is the only skill besides `/book-log` that writes one, and
-it only writes first computations** — if a line already exists, leave it alone
-even if you disagree with it. Recomputation belongs to `/book-log`, in the turn
-where the rule that changed it was written.
+be proposed. **This skill only writes first computations** — if a line already
+exists, leave it alone even if you disagree with it. Recomputation belongs to
+`/book-log`, in the turn where the rule that changed it was written, and a
+sourced re-derivation of one book to `/book-deep`.
 
 Derive, using the current counters from `book-revs.json`:
 

@@ -7,7 +7,8 @@ guess anchored to a guess, and it fails silently in both directions - 22 of the
 2026-08-26 batch were derived that way, including one that argued from
 "451 read" when Fahrenheit 451 is itself an unread candidate.
 
-Scanned: the `why` of every line in book-estimates.jsonl. NOT scanned:
+Scanned: the `why` of every line in book-estimates.jsonl, and the axis notes of
+every dossier in book-deep.jsonl, which argue the same number. NOT scanned:
 `flags` in book-cache.json, which is the facts layer and is *supposed* to name
 sibling volumes and alternative editions - "read volume 1 first" is a fact about
 the shelf, not a borrowed judgement.
@@ -51,7 +52,7 @@ pass reported zero):
 """
 import json, io, re, sys, unicodedata
 
-CACHE, EST, READ = "book-cache.json", "book-estimates.jsonl", "books-read.md"
+CACHE, EST, DEEP, READ = "book-cache.json", "book-estimates.jsonl", "book-deep.jsonl", "books-read.md"
 PROFILE = "tools/reader-profile.md"
 MIN_LEN = 3
 
@@ -142,7 +143,28 @@ STOP_TITLES = {"empire", "the joke", "the truth",
                "the passengers",
                # And `The Ferryman` on "the ferryman Ursanabi" - the Gilgamesh boatman, in
                # a book about Gilgamesh.
-               "the ferryman"}
+               "the ferryman",
+               # 2026-10-24, the first deep-dive dossier: "a mercy killing" and "the host
+               # mechanic" of a body-sharing time-travel book.
+               "a mercy", "the host",
+               # 2026-10-25, the e-loan screen: Le Tellier's `The Anomaly` fired on four
+               # older rows using "the anomaly" for the unexplained phenomenon a book
+               # declares.
+               "the anomaly", "anomalie",
+               # 2026-10-25, the Rožnov SF screen: every hit an ordinary word - "the
+               # humans who crossed and stayed", "loses to the heroes", "Epic fantasy",
+               # "following from the declaration", Czech "lide".
+               "the humans", "lide", "the heroes", "epic", "the declaration", "the magicians",
+               # Places that are also titles (McEwan, Pamuk, Robinson), named as settings -
+               # "Gilead" is the republic of The Handmaid's Tale.
+               "amsterdam", "amsterodam", "istanbul", "gilead",
+               # 2026-10-25, the seeded English-gem screen: candidates now carry the series
+               # names `Old Man's War` and `Ender saga`, so both fired on every citation of
+               # the read books. `The Way`, `The Library` and `The Hierarchy` (series),
+               # `Line`, `Escape`, `Past Lives`, `Cytonic` and `Defiant` (Skyward's society)
+               # hit ordinary phrases.
+               "old man s war", "ender saga", "the way", "the library", "the hierarchy",
+               "line", "escape", "past lives", "cytonic", "defiant"}
 
 # Phrasing that argues from the neighbours without naming one.
 # "the Author(s) row" is exempt: that points at the Authors table in
@@ -307,10 +329,20 @@ def main():
         if line.strip():
             r = json.loads(line)
             if "key" in r:
-                rows.append((i, r))
+                rows.append((EST, i, r))
+    try:
+        deep = io.open(DEEP, encoding="utf-8").readlines()
+    except FileNotFoundError:
+        deep = []
+    for i, line in enumerate(deep, 1):
+        if line.strip():
+            d = json.loads(line)
+            if "key" in d:
+                notes = " ".join(a.get("note", "") for a in d.get("axes", {}).values())
+                rows.append((DEEP, i, {"key": d["key"], "why": notes, "est": d.get("est")}))
 
     hits = 0
-    for lineno, r in rows:
+    for path, lineno, r in rows:
         text = flat(r.get("why", ""), breaks=True)
         own = names.get(r["key"], []) + [flat(r.get("t", ""))]
         # Longest first, and read titles before own titles: "Son of Hamas" must go
@@ -335,28 +367,29 @@ def main():
                 if ownw and {w.lower() for w in t.split()} <= ownw:
                     continue
                 if ("t", key, t) in found:
-                    print(f"{EST}:{lineno} {r['key']} -> names candidate {key} ({t})")
+                    print(f"{path}:{lineno} {r['key']} -> names candidate {key} ({t})")
                     hits += 1
         for s, owners in series.items():
             if r["key"] not in owners and ("s", s, s) in found:
-                print(f"{EST}:{lineno} {r['key']} -> names series {s} ({len(owners)} candidate(s))")
+                print(f"{path}:{lineno} {r['key']} -> names series {s} ({len(owners)} candidate(s))")
                 hits += 1
         for p in PHRASES:
             m = re.search(p, r.get("why", ""))
             if m:
-                print(f"{EST}:{lineno} {r['key']} -> batch-relative or delegating: {m.group(0)!r}")
+                print(f"{path}:{lineno} {r['key']} -> batch-relative or delegating: {m.group(0)!r}")
                 hits += 1
-        # Dates are NN-NN too, so only ranges outside a YYYY-MM-DD are read as one.
+        # Dates are NN-NN too, so only ranges outside a YYYY-MM-DD are read as one, and
+        # a percentage ("the first 20-25%") is never a score.
         est = r.get("est") or []
         why = r.get("why", "")
-        for m in re.finditer(r"(?<!\d[-\d])\b(\d{2})\s*-\s*(\d{2})\b(?!-)", why):
+        for m in re.finditer(r"(?<!\d[-\d])\b(\d{2})\s*-\s*(\d{2})\b(?![-%])", why):
             pair = tuple(map(int, m.groups()))
             if pair in bands or COUNTED.search(why[max(0, m.start() - 12):m.start()]):
                 continue
             if list(pair) != list(est):
-                print(f"{EST}:{lineno} {r['key']} -> cites range {m.group(0)}, own est {est}")
+                print(f"{path}:{lineno} {r['key']} -> cites range {m.group(0)}, own est {est}")
                 hits += 1
-    print(f"{len(rows)} estimates scanned, {hits} cross-references")
+    print(f"{len(rows)} estimates and dossiers scanned, {hits} cross-references")
     return 1 if hits else 0
 
 

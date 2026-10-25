@@ -38,6 +38,7 @@ it replaced, and one batch of holdout up front would have caught it.
 selection excludes. See cmd_batch.
 """
 import json, io, os, re, sys, glob, statistics, collections, difflib, unicodedata
+import pitch as pitchcheck
 
 CACHE, EST, MEDIA = "book-cache.json", "book-estimates.jsonl", "book-media.json"
 REJECTS, REVS, READ = "book-rejects.jsonl", "book-revs.json", "books-read.md"
@@ -48,6 +49,12 @@ PROMPT = os.path.join("tools", "promote-prompt.md")
 PROFILE = os.path.join("tools", "reader-profile.md")
 TODAY = os.environ.get("BOOK_TODAY", "2026-08-26")
 URL = "https://katalog.mekvalmez.cz/records/"
+# `cz.library` absent means the primary library above; a second library is used only
+# for a book the primary does not hold in print (reader 2026-10-25).
+LIBRARY_URL = {"roznov": "https://katalog.knir.cz/records/"}
+# How hard the English original is for a non-native reader. Asked only for a book no
+# library holds in Czech print; easy and moderate make it an English gem (2026-10-25).
+EN_LEVELS = ("easy", "moderate", "hard")
 
 GENRE = {"sf", "fantasy", "litfic", "historical", "testimony", "allegory", "thriller"}
 # `verse` added 2026-08-27: Havran 40 ties the lowest score in the log and the reader
@@ -61,6 +68,7 @@ FORM = {"novel", "novella", "stories", "nonfiction", "verse"}
 # `adult` with audienceSource `default` so the viewer can always filter, which is
 # what a missing value would silently break.
 AUDIENCE = {"adult", "ya", "childrens"}
+TAGS = {"exploration"}
 # Every estimate must have examined these, or a later rule change cannot find it.
 MANDATORY = ("axis:worldbuilding", "axis:protagonist", "axis:opening",
              "axis:motives", "axis:occult", "axis:detective", "axis:infidelity",
@@ -947,13 +955,22 @@ def validate(d, needles=None):
         for f, ok in (("genre", GENRE), ("form", FORM)):
             if d.get(f) and d[f] not in ok:
                 bad.append(f"{f} {d[f]!r} not in {sorted(ok)}")
+    if not d.get("reject"):
+        bad += ["pitch: " + p for p in pitchcheck.problems(d.get("pitch"), (d.get("czTitle"), d.get("title")))]
+    tags = d.get("tags") or []
+    if not isinstance(tags, list) or not set(tags) <= TAGS:
+        bad.append(f"tags {tags!r} not a list drawn from {sorted(TAGS)}")
     cz = d.get("cz") or {}
     # `unchecked` is honest and allowed: the route is precomputed by
     # tools/fetch-editions.py and a work missing from that sweep has no route yet.
     # The agent is forbidden to fetch one, so it must be able to say so.
-    if cz.get("state") not in ("verified", "none", "unchecked"):
+    if cz.get("state") not in ("verified", "eloan", "none", "unchecked"):
         bad.append(f"cz.state {cz.get('state')!r}")
-    if cz.get("state") == "verified":
+    if cz.get("library") not in (None, *LIBRARY_URL):
+        bad.append(f"cz.library {cz.get('library')!r}")
+    if d.get("enText") and (d["enText"].get("level") not in EN_LEVELS or not d["enText"].get("why")):
+        bad.append(f"enText needs level in {EN_LEVELS} and a why")
+    if cz.get("state") in ("verified", "eloan"):
         rid = cz.get("recordId") or ""
         if len(rid) != 36:
             bad.append(f"recordId must be a full 36-char uuid, got {len(rid)} chars")
@@ -1077,8 +1094,8 @@ def cmd_absorb(outdir, force_low=False):
 
         cz = dict(d["cz"])
         cz["checked"] = TODAY
-        if cz.get("state") == "verified":
-            cz["recordUrl"] = URL + cz["recordId"]
+        if cz.get("state") in ("verified", "eloan"):
+            cz["recordUrl"] = LIBRARY_URL.get(cz.get("library"), URL) + cz["recordId"]
             cz["recordChecked"] = TODAY
             cz["publisherSource"] = "katalog"
         cz = {k: v for k, v in cz.items() if v not in (None, "")}
@@ -1093,8 +1110,12 @@ def cmd_absorb(outdir, force_low=False):
             b["czTitle"] = d["czTitle"]
         if d.get("series"):
             b["series"] = d["series"]
+        if d.get("tags"):
+            b["tags"] = sorted(set(d["tags"]))
         if d.get("flags"):
             b["flags"] = d["flags"]
+        if (d.get("enText") or {}).get("level") in EN_LEVELS:
+            b["enText"] = {"level": d["enText"]["level"], "why": d["enText"].get("why", ""), "checked": TODAY}
         cache["books"].append(b)
 
         aid = authorid(d["author"])
@@ -1120,7 +1141,7 @@ def cmd_absorb(outdir, force_low=False):
                          "leanedOn": d["leanedOn"], "risks": d.get("risks") or [],
                          "at": TODAY, "why": deacc(d["why"]),
                          "deps": dict(sorted(dep.items()))})
-        media.setdefault("media", {})[d["key"]] = {"blurb": d["blurb"]}
+        media.setdefault("media", {})[d["key"]] = {"blurb": d["blurb"], "pitch": d["pitch"]}
         added.append((d["key"], f"est {d['est']}"))
 
     json.dump(cache, io.open(CACHE, "w", encoding="utf-8", newline="\n"),

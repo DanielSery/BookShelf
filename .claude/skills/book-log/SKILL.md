@@ -131,6 +131,16 @@ revision down from 76) and *Mortal Engines* 55
 — came from leaning on the wrong axis, not from bad information, and
 `leanedOn` is what makes the third instance visible instead of anecdotal.
 
+**If the line was `depth: deep`**, also set `actual` to the real score on the
+book's line in `book-deep.jsonl`, and keep that line: it holds `pre` (the
+screening range) next to the dived `est`, so it is the only record of whether a
+dive beat the screening estimate. Say which of the two landed closer.
+
+**If the book is a series volume** (its key is a `members` entry in
+`book-series.json`), move it from `members` to that record's `read` list, as its
+`books-read.md` title. The viewer and `/book-suggest` show a series as one entry, and
+`python tools/series.py check` fails on a member that has left the shelf.
+
 **2. List the dep ids this entry actually moved.** These are already decided by
 Phase 3 — you don't re-derive them:
 
@@ -174,6 +184,13 @@ is never read here.
   book at all. Usually it does not, and the honest outcome is the same numbers
   with a fresh stamp. Do not manufacture a change to look diligent.
 
+- **The line is `depth: deep`** → do not re-derive from scratch, at either
+  depth. Its dossier in `book-deep.jsonl` already holds a sourced verdict for
+  the bumped axis: re-price that verdict under the new rule text, edit the
+  dossier's `v` and `note` only if the verdict itself changed, and keep the
+  depth. If the dossier has no verdict on the bumped axis, price it the
+  screening way and say in `why` that this axis was not part of the dive.
+
 Either way update `deps` to the new revs, set `at` to today, and rewrite `why`
 if the reasoning changed. Every matched line gets its stamp updated even when
 the number holds — an un-stamped line reads as stale forever.
@@ -211,7 +228,9 @@ filters on — so every new row in `books-read.md` needs a matching entry in
 entry you are deleting; that is the whole job when the book was a candidate, and a
 one-line judgement when it was not. Values: `genre` sf · fantasy · litfic ·
 historical · testimony · allegory · thriller; `form` novel · novella · stories ·
-nonfiction · poetry; `audience` adult · ya · childrens.
+nonfiction · poetry; `audience` adult · ya · childrens. Copy `tags` too when the
+cache entry has them (`exploration` is the only value): it is what puts a read book
+under "world exploration" in the Genre select.
 
 Miss it and nothing breaks loudly — the Gaps panel names the book and the Read
 tab's facet filters exclude it, deliberately, because an unclassified book is not
@@ -244,7 +263,8 @@ Before reporting done:
   in `books-read.md` as read.
 - `book-estimates.jsonl` still parses one object per line, the logged book's
   line is gone, and no line carries a dep rev that isn't the current one.
-- `python tools/crossrefs.py` exits 0 — no `why` argues from another candidate.
+- `python tools/crossrefs.py` exits 0 — no `why` or dossier note argues from
+  another candidate.
 - Report, briefly: what was logged, what changed in the recommendation doc,
   any contradiction you resolved, and — from Phase 4 — which revs you bumped,
   how many estimates that touched, and which predictions actually moved, with

@@ -60,7 +60,7 @@ CS_AUTHORS = {
     # unambiguously Czech-language author, so this is a lookup gap being closed,
     # not a guess about a language. The no-row default stays for genuinely unknown ones.
     "Daniel Rušar", "David Kühn", "Egon Bondy", "Helena Bernardová", "Helena Zakova", "Irena Riclova Lachoutova", "Ivana Peroutkova", "Jan Liška", "Jana Olivova", "Josef Farkas", "Josef Formanek", "Kamila Ulčová", "Ladislav Chrudina", "Lucie Hlavinkova", "Ludmila Vaňková", "Marie Rejfova", "Martina Grmolenská", "Nada Revilakova", "Nikkarin", "Nina Spitalnikova", "Nina Špitálníková", "Petr Hugo Slik", "Petra Kvasnickova", "Samuel Hornek", "Tereza Kučírková", "Tomáš Cícha", "Veronika Zacharova & Stepanka Sekaninova", "Vilém Sacher", "Vojtěch Otčenášek", "Zdeněk Volný", "Zuzana Pospisilova",
-    "Ivona Březinová", "Jana Sramkova", "Petula Bendula",
+    "Ivona Březinová", "Jana Sramkova", "Petula Bendula", "Vilma Kadlečková", "Jaroslav Němeček",
     "Alena Mornštajnová", "Alois Jirásek", "Arnošt Lustig", "Bohumil Hrabal",
     "Božena Němcová", "David Glockner", "David Senk", "Drahomíra Pithartová",
     "Edita Dufkova", "Eduard Štorch", "Ester Stará, Jiří Franta", "František Kotleta",
@@ -158,12 +158,14 @@ CS_AUTHORS = {
     "Vlastimil Vondruška", "Vlastimil Čech, Olga Mužíková, Pavel Slepička",
     "Václav Kotrman, Jaroslav Kříž (eds.)", "Václav Šorel", "Zdeněk Šafář",
     "Zlatuše Marková", "Štěpán Kučera",
+    # Backfilled 2026-10-25 for the books screened on 2026-10-24/25.
+    "Alexej Fedjarov", "František Drašner", "Hlavinková L.", "Jakub Arbes", "Jakub Jahl", "Jan Bobek", "Jan Fikáček", "Jiří Poskočil", "Josef Kuře", "Pavel Hrejsemnou", "Petr Hejna", "Rudolf Těsnohlídek", "Tomáš Kučera", "Tomáš Sedláček", "Vladimír Poklop", "Zdeněk Jarchovský",
 }
 
 # Only the authors the two deterministic rules never reach: a Czech record that omits
 # the translation note, or no Czech edition at all (the free-EN-audio route).
 FOREIGN_AUTHORS = {
-    "A. A. Milne", "Antoine de Saint-Exupéry", "Anton Pavlovič Čechov",
+    "A. A. Milne", "Antoine de Saint-Exupéry", "Anton Pavlovič Čechov", "Hermann Hesse", "Cixin Liu", "Christelle Chatel",
     "Astrid Lindgren", "Ayaan Hirsi Ali", "Blake Crouch", "Brandon Sanderson",
     "Chalíl Džibrán", "Christopher Paolini", "Clifford D. Simak", "Daniel Defoe",
     "Dennis E. Taylor", "Edgar Allan Poe", "Eduard Limonov", "Ernest Hemingway",
@@ -181,6 +183,9 @@ FOREIGN_AUTHORS = {
     "Alice Oseman", "John Hare", "Katarína Macurová", "Kjŏng-tchak", "Tanya Stewner",
     # The fantasy run, 2026-09-03.
     "Arthur C. Clarke", "Bernard Malamud", "James Gurney",
+    # Backfilled 2026-10-25 for the books screened on 2026-10-24/25.
+    "Alan Dean Foster", "Albert Camus", "Alastair Reynolds", "Aldous Huxley", "Alex Pheby", "Alexandr Solženicyn", "Alexei Panshin", "Alice Munroová", "Andrew Rowe", "Anil Ananthaswamy", "Ann Aguirre", "Anne McCaffrey", "Audre Lorde", "Bernard Werber", "Bill Mesler", "Brother Yun", "C. J. Cherryh", "Carl Sagan", "Chris Beckett", "Christopher Ruocchio", "Claire North", "Corrie ten Boom", "Dan Carlin", "Daniel Keyes", "David Herbert Lawrence", "David Weber", "Devon Price", "Elizabeth Moon", "Emma Newman", "Flannery O'Connor", "Frank Herbert", "Frans de Waal", "Fred Hoyle", "Frederik Pohl", "Gordon R. Dickson", "Graham Greene", "Greg Bear", "Guy de Maupassant", "Günter Grass", "Hal Clement", "Harry Harrison", "Hervé Le Tellier", "Hugh Howey", "Hyeonseo Lee", "Ian McEwan", "Imre Kertesz", "Ishmael Beah", "J.M. Coetzee", "Jack Campbell", "James L. Cambias", "Jennifer L. Armentroutová", "Jim Butcher", "Joan Didionová", "Joe Haldeman", "John Marsden", "John Scalzi", "John Steakley", "John Updike", "John V. Fleming", "John Wyndham", "John le Carré", "Jose Saramago", "Julian Barnes", "Kai Bird", "Karen Traviss", "Karin Boyeová", "Kazuo Ishiguro", "Kurt Vonnegut", "Kurt Vonnegut jr", "Kurt Vonnegut ml", "Larry Niven", "Linda Nagata", "Lindsay Ellis", "Lois McMaster Bujold", "Louis-Ferdinand Celine", "M. L. Wang", "Margaret Atwoodová", "Mario Vargas Llosa", "Mark Lawrence", "Martin Amis", "Mary Doria Russell", "Mary E. Pearson", "Michael Cunningham", "Michel Faber", "Nana Kwame Adjei-Brenyah", "Oliver Sacks", "Orson Scott Card", "Paolo Bacigalupi", "Philip E. Tetlock", "Philip K. Dick", "Piers Paul Read", "Rae Carson", "Robert A. Heinlein", "Robert Aickman", "Robert Buettner", "Robert Charles Wilson", "Robert Holdstock", "Robert Irwin", "Robert J. Sawyer", "Robert L. Forward", "Robin Hobb", "Rui Zink", "Saul Bellow", "Scott Westerfeld", "Sébastien de Castell", "Siddhartha Mukherjee", "Simon Jimenez", "Sofia Samatarová", "Stanislaw Lem", "Stanisław Lem", "Stefan Zweig", "Sue Burke", "Suzanne Rogerson", "Vernor Vinge", "Victoria Aveyardová", "Viktor Pelevin", "Vladimir Nabokov", "Vladimír Nabokov", "Walter Jon Williams", "Walter M. Miller, Jr", "Walter Moers", "Wesley Chu", "Will Wight", "Willa Catherová", "William Faulkner",
+    "Adrian Tchaikovsky", "Alan Paton", "Alfred Lansing", "Bilquis Sheikh", "Bruce Olson", "C. Robert Cargill", "Daniel Suarez", "Don Richardson", "Elias Chacour", "Emily Tesh", "Gracia Burnham", "Holly Ordway", "Jim Lovell, Jeffrey Kluger", "Jonathan Renshaw", "Maryam Rostampour, Marziyeh Amirizadeh", "Michael J. Sullivan", "Nik Ripken", "Steve Saint", "Trevor Noah", "William Kamkwamba, Bryan Mealer", "Brother Andrew, John Sherrill, Elizabeth Sherrill",
 }
 
 # Only where the honest value needed something no field in the repo states.

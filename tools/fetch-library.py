@@ -68,7 +68,10 @@ def search(query):
     # Diacritics in the first significant word return zero hits - a documented
     # trap in this catalogue, not a general URL-encoding issue.
     d = api("/api/search", {"q": deaccent(query), "pageSize": "30"})
-    return ((d or {}).get("result") or {}).get("content") or []
+    # An e-loan record copies the print book's title, publisher and ISBN; linking one
+    # as the print route is how 11 e-loan-only books read as "Czech print".
+    return [r for r in ((d or {}).get("result") or {}).get("content") or []
+            if (r.get("fond") or {}).get("fondType") != "eloan"]
 
 
 def pick(records, want_title, want_author):
@@ -145,7 +148,9 @@ def main():
     linked, skipped, covers = [], [], 0
     for b in cache["books"]:
         cz = b.get("cz") or {}
-        if cz.get("state") != "verified":
+        # A second-library route carries that library's record id, which this catalogue
+        # would fail to resolve and then "repair" by re-searching the primary.
+        if cz.get("state") != "verified" or cz.get("library"):
             continue
         if only and b["key"] != only:
             continue

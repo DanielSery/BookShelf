@@ -130,6 +130,10 @@ def load_works():
                                  "y": r["y"], "rank": -999, "skip": False,
                                  "cls": r["cls"], "clsAll": set()})
         w["clsAll"].add(r["cls"])
+        # Display only: `aCat` is the e-loan author recovered from the catalogue on
+        # 2026-10-24, and the key stays on `a` so the stores joined on it still match.
+        if not w["a"] and r.get("aCat"):
+            w["a"] = r["aCat"]
         w["skip"] |= r.get("next") in SKIP_NEXT
         if r.get("rank") is not None and r["rank"] > w["rank"]:
             w.update(rank=r["rank"], p=r["p"], y=r["y"], cls=r["cls"])

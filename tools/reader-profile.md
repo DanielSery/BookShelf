@@ -32,8 +32,9 @@ outcomes, not failures; only sub-65 is a thing to avoid.
 
 ## The seven hard filters — and there are only seven
 
-**One of them is conditional.** Filter 2, the opening, is absolute for a book proposed cold
-and **mitigable by reading the premise first** — see it below. The other six are absolute.
+**Two of them are conditional.** Filter 2, the opening, is absolute for a book proposed cold
+and **mitigable by reading the premise first**. Filter 3, occult, vetoes on its Source test
+and on staged human sacrifice, and grades every other staged rite. The other five are absolute.
 
 1. **No readable route.** Czech print, or a free English audiobook. English text
    breaks immersion. A promotion agent does not check this one — the Czech route
@@ -52,42 +53,38 @@ and **mitigable by reading the premise first** — see it below. The other six a
    is missing context and looking it up supplies it. So **a book whose only objection is
    shape two is proposable with a read-the-premise-first note**, and survived it costs a
    few points rather than a tier. **Shape one has no such measurement and is still a bar.**
-3. **Occult, in any setting. Two tests, and failing EITHER is a veto** (ruled
-   2026-08-26, resolving a contradiction between the *Divine Cities* drop and the
-   *Jonathan Strange* pass). *Source* — a system drawn from actual occultism fails
-   (witchcraft, spellcasting in that mould, séance, divination, necromancy,
-   sacrifice or prayer to real deities); an invented system passes this test.
-   *Depiction* — **a rite enacted on the page fails even when the system is
-   invented**; a practice mentioned as having happened is fine. **The escape is
-   mechanism**: a system operated like technology or engineering — declared rules,
-   no invocation, no devotion, no priesthood — passes Depiction even when used on
-   the page (Allomancy, Asimov's mentalics, salvaged tech
-   "elf-magic"). **Resemblance still vetoes** — "if it's mechanical it could be
-   plausible explanation to keep it normal, but if too similar to occult it should
-   be still vetoed". So the question is not whether the system is invented but
-   **whether a rite is performed on the page and whether there is a genuinely
-   mechanical account of it.**
-   **CHECK THE WHOLE SYSTEM, NOT ITS DAILY USE (2026-09-02).** Founders scriving was the
-   fourth name on that escape list and has been removed: everyday scriving is engineering,
-   but creating a hierofant "require something like human sacrifice — quite similar to some
-   ritual" and hierofants are "something like god". **Ask how power is CONFERRED in this
-   world, not only how it is used** — origin myth, ascension, apotheosis and initiation are
-   where an engineered-looking system hides its rite, and they sit late in the book, which
-   is why a blurb-level pass clears them.
-   **AND THE FILTER SPLITS THERE — the one place this bar grades instead of vetoing.** A
-   rite characters **perform on the page in the ordinary course of the story** vetoes, as
-   before. A rite that is the system's **origin or elevation mechanic — lore about how the
-   power came to exist, not an action the story stages** — is a **heavy graded deduction.**
-   *Čaropisci* 67 is the anchor and the only one: he named the hierofant sacrifice a
-   significant downside and finished the book in the B band. **The boundary is what the
-   narrative stages, not how bad the rite sounds** — put the rite on the page and that
-   volume vetoes.
+3. **Occult, in any setting — Source vetoes, staged invented rites grade** (re-ruled
+   2026-10-24). *Source* — a system drawn from actual occultism or real gods fails
+   (witchcraft, spellcasting in that mould, séance, divination in the witch-or-seer mould,
+   necromancy, demon-summoning from real grimoires, sacrifice or prayer to real deities):
+   **a veto whatever the severity**, and **resemblance counts** — "if it's mechanical it
+   could be plausible explanation to keep it normal, but if too similar to occult it should
+   be still vetoed". *Depiction* — **a rite of an invented system enacted on the page is
+   graded by severity, not vetoed**, the heroes' own working rites included: "Depends on the
+   severity. But human sacrifice is almost never acceptable." So **staged human sacrifice
+   vetoes**; every other staged invented rite grades. **Stated convention, not a
+   measurement:** `light` −2 (an invented faith's ceremony, incidental or doing nothing),
+   `moderate` −5 (a rite that works, staged once or twice), `heavy` −10 (rites central to
+   the plot or to how the leads' power works, performed repeatedly, or raising the dead),
+   on both ends of a range. **The escape is mechanism and costs nothing**: a system operated
+   like technology — declared rules, no invocation, no devotion, no priesthood (Allomancy,
+   Asimov's mentalics, salvaged tech "elf-magic").
+   **CHECK THE WHOLE SYSTEM, NOT ITS DAILY USE (2026-09-02).** Ask how power is
+   **CONFERRED** in this world, not only how it is used — origin myth, ascension,
+   apotheosis and initiation are where an engineered-looking system hides its rite, and
+   they sit late in the book, which is why a blurb-level pass clears them. Founders
+   scriving left the escape list for this: creating a hierofant "require something like
+   human sacrifice — quite similar to some ritual". **A rite that is origin or elevation
+   lore, not staged, is a heavy graded deduction even when it is a human sacrifice** —
+   *Čaropisci* 67 is the anchor. For human sacrifice the line is what the narrative stages.
 4. **Detective and mystery novels.** Also watch for investigation-shaped subplots
    in otherwise eligible books — flag those rather than dropping them.
 5. **Infidelity as the premise of the book** (ruled 2026-08-27). **Always a reject,
    whatever the framing** — condemning the affair and ruining the adulterer is no
    defence. Premise means: remove the infidelity and there is no book. Marriage or
-   engagement only. Below premise level it is graded, not vetoed — see the axis
+   engagement only, and an arranged betrothal is not an engagement (2026-10-24): loving
+   someone else while promised by others is not infidelity; an affair inside the marriage
+   once made is. Below premise level it is graded, not vetoed — see the axis
    below.
 6. **Sex as the plot** (ruled 2026-08-27, in the reader's words: "when the plot is
    severely/mainly about sexual behavior/relationship"). Not a marriage rule and not
@@ -208,6 +205,21 @@ a positive case stated in its own words.
     worldbuilding when the lead looks thin.**
 - **Wants higher things to think about** — a book should leave ideas behind, not
   just events. The most common reason a competent book stalls in the 60s.
+- **Discovery under necessity** (`axis:discovery`, 2026-10-24) — an unknown the lead
+  has to explore, with no telling what he will find. Three conditions, from the
+  reader's own sentence on a top-scoring book: the unknown is central (a world the
+  lead does not understand, possibly his own past too); there is a need to explore it
+  (survival or a task depends on understanding it); and the outcome is open, with an
+  answer that fits
+  everything before it when it comes. How the lead came not to know is irrelevant:
+  lost memory, arriving from another world or time, or never having been told all
+  count, and lost memory earns nothing extra. A missing condition prices as partial. An
+  answer withheld, or an unfinished series whose central question is still open, is
+  a risk, not a lift. Not the detective filter: the unknown is the world or the
+  lead's self, never a culprit. Priced once: a lead whose own past is the open
+  question goes here, not again under the protagonist axis. Size is a stated
+  convention: central +4 at both ends, partial +2, one step lower when the lead is
+  the open doubt.
 - **Short idea-driven work has the character and emotion rules suspended — but the
   suspension removes penalties, it never adds points.** The canonical short books
   that score well are canonical *for their ideas*; that is selection bias, not a
@@ -215,7 +227,8 @@ a positive case stated in its own words.
   other thin book. **Name the idea in a phrase — if you cannot, that is the
   finding**, and "it's short, so it's low risk" is not a case for reading it.
 - **Infidelity — premise level is a reject, below that graded on how much and how it
-  is framed** (ruled 2026-08-27). **Marriage or engagement only.** Premise level —
+  is framed** (ruled 2026-08-27). **Marriage or engagement only; an arranged betrothal
+  is not an engagement** (2026-10-24). Premise level —
   remove the infidelity and there is no book — is **always a reject, whatever the
   framing**, so *Anna Karenina*, *Madame Bovary* and *Effi Briest* are rejects rather
   than low scores; ruining the adulterer is not a defence. Below that the two

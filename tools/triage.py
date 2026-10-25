@@ -217,6 +217,9 @@ def classify(name, author, pub, src):
         return "manga", "X"
     if pub_has(p, AUDIO_PUB):
         return "edition-audio", "X"
+    # Stale since 2026-10-24: the reader now screens library e-loans (shown apart), and
+    # the e-loan rows in book-triage.jsonl were put back in the queue by hand with
+    # `eloan` / `aCat`. A fresh run would drop them again and lose their authors.
     if pub_has(p, EBOOK_PUB):
         return "edition-ebook", "X"
     # Only single-genre imprints and title evidence may set a dropping class.
