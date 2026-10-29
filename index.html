@@ -298,31 +298,35 @@
   .wpctl { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
   .wpctl button { padding: 3px 10px; font-size: 12px; }
   .wseg { display: flex; }
-  .wseg button { color: var(--ink-2); }
+  .wseg button { color: var(--ink-2); border-radius: 0; }
+  .wseg button + button { margin-left: -1px; }
   .wseg button:first-child { border-radius: 6px 0 0 6px; }
-  .wseg button:last-child { border-radius: 0 6px 6px 0; margin-left: -1px; }
+  .wseg button:last-child { border-radius: 0 6px 6px 0; }
   .wseg button[aria-pressed="true"] { background: var(--band-mid); border-color: var(--band-mid); color: #fff; }
   .wpbody { flex: 1; overflow: auto; padding: 0 14px 14px; font-size: 12px; }
   .wblocks { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 16px 22px; margin-top: 10px; }
   .wblock { border: 1px solid var(--hairline); border-radius: 8px; padding: 8px 10px 0 10px; }
-  .wbhead { margin-bottom: 2px; max-width: 520px; }
-  .wbhead .wbname { font-weight: 620; font-size: 12.5px; text-decoration: none; }
-  .wbhead .wbname:hover { text-decoration: underline; }
+  .wbhead { margin-bottom: 2px; max-width: 560px; }
   .wbhead .bk-meta { font-size: 11.5px; }
+  details.wbnotes { font-size: 11.5px; color: var(--ink-2); margin: 2px 0 0; }
+  details.wbnotes summary { cursor: pointer; color: var(--ink-muted); }
+  details.wbnotes ul.wplinks { margin-top: 4px; }
+  details.wbnotes .wbwhy { margin: 4px 0 6px; }
   .wphead .unpick { padding: 0 4px; }
   .wpgraph { position: relative; margin-top: 4px; }
   .wpgraph svg { position: absolute; left: 0; top: 0; overflow: visible; }
-  .worldpane .wsq { stroke: var(--ink-muted); stroke-width: 1.5; fill: none; }
-  .worldpane .wthen, .worldpane .wpre { stroke: var(--band-mid); stroke-width: 1.8; fill: none; }
-  .worldpane .wpre { stroke-dasharray: 2 4; stroke-linecap: round; }
-  .worldpane .wx { stroke: var(--status-serious); stroke-width: 1.6; stroke-dasharray: 6 4; fill: none; }
-  .worldpane .wxdot { fill: var(--status-serious); }
-  .worldpane .wah { fill: var(--band-mid); }
-  .worldpane .warc { stroke: var(--ink-muted); stroke-width: 1.5; fill: none; }
+  .worldpane .wnext { stroke: var(--ink-2); stroke-width: 1.6; fill: none; }
+  .worldpane .wsoft { stroke: var(--ink-muted); stroke-width: 1.4; stroke-dasharray: 5 4; fill: none; }
+  .worldpane .wah { fill: var(--ink-2); }
+  .worldpane .wah.soft { fill: var(--ink-muted); }
+  .worldpane .wah.go { fill: var(--status-good); }
+  .wstart rect { fill: var(--status-good); }
+  .wstart text { fill: #fff; font: 600 10px system-ui, -apple-system, "Segoe UI", sans-serif; text-anchor: middle; }
+  .wstart path { stroke: var(--status-good); stroke-width: 1.8; fill: none; }
+  .wstartkey { background: var(--status-good); color: #fff; font-size: 10px; font-weight: 600; border-radius: 8px; padding: 0 7px; }
   .wlane { position: absolute; line-height: 1.3; }
-  .wlane b { display: block; font-weight: 620; font-size: 12.5px; }
-  .wlane span, .warcname { color: var(--ink-muted); font-size: 11px; }
-  .warcname { position: absolute; font-style: italic; white-space: nowrap; }
+  .wlane b { display: block; font-weight: 620; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .wlane span { display: block; color: var(--ink-muted); font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .wnode {
     position: absolute; display: grid; grid-template-columns: 12px minmax(0, 1fr) auto; gap: 0 8px; align-items: center;
     padding: 2px 8px 2px 7px; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; line-height: 1.3;
@@ -766,7 +770,7 @@ function shell(o) {
   return `<article class="card ${o.tone || 'bN'}${o.dim ? ' dim' : ''}">
     <div class="colside">${cover(o.media, o.fallback)}${o.left || ''}${o.mapId && mapHas(o.mapId)
       ? `<button type="button" class="tomap" data-tomap="${esc(o.mapId)}">Similar on the map</button>` : ''}${
-      o.mapId ? mapWorldLink(o.mapId) : ''}</div>
+      o.mapId ? mapAuthorLink(o.mapId) : ''}</div>
     <div>
       <div class="bk-title">${esc(o.title)}${o.alt ? ` <span class="bk-alt">(${esc(o.alt)})</span>` : ''}</div>
       <div class="bk-author">${esc(o.author)}${o.meta ? ` <span class="bk-meta">${esc(o.meta)}</span>` : ''}</div>

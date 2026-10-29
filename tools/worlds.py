@@ -6,7 +6,7 @@ with no record here is drawn from book-series.json alone, with its missing volum
 untitled gaps.
 
     python tools/worlds.py check [file]     # dangling ids, stale shelf links, shelf volumes left out
-    python tools/worlds.py merge <files...> # add or replace the `worlds` of research output files
+    python tools/worlds.py merge <files...> # add or replace the `worlds` / `reading` of research output files
 """
 import io
 import json
@@ -25,12 +25,43 @@ CACHE, READ, REJ, SERIES, OUT = ("book-cache.json", "books-read.md", "book-rejec
 LINKS = {"then", "prequel", "crossover"}
 
 
+def reading_problems(wid, w, books):
+    r, out = w.get("reading"), []
+    if not r:
+        return out
+    edges = [(c[i], c[i + 1]) for c in r.get("chains", []) for i in range(len(c) - 1)] + [tuple(p) for p in r.get("after", [])]
+    for i in set(r.get("starts", [])) | {x for e in edges for x in e}:
+        if i not in books:
+            out.append(f"{wid}: reading order names unknown book {i!r}")
+    reached = set(r.get("starts", [])) | {b for _, b in edges}
+    out += [f"{wid}: {i} is neither a start nor reached by the reading order" for i in books if i not in reached]
+    succ = {}
+    for a, b in edges:
+        succ.setdefault(a, []).append(b)
+    state = {}
+
+    def cyclic(n):
+        state[n] = 1
+        for m in succ.get(n, []):
+            if state.get(m) == 1 or (m not in state and cyclic(m)):
+                return True
+        state[n] = 2
+        return False
+    if any(n not in state and cyclic(n) for n in list(succ)):
+        out.append(f"{wid}: the reading order has a cycle")
+    return out
+
+
 def check(path=OUT):
     keys = {b["key"] for b in json.load(io.open(CACHE, encoding="utf-8"))["books"]}
     titles = {r["title"] for r in readlog.rows(READ)}
     rejected = {json.loads(l).get("entity") for l in io.open(REJ, encoding="utf-8") if l.startswith('{"entity')}
     series = json.load(io.open(SERIES, encoding="utf-8"))["series"]
-    worlds = json.load(io.open(path, encoding="utf-8"))["worlds"]
+    data = json.load(io.open(path, encoding="utf-8"))
+    # A research file may carry only `reading` blocks for worlds already in book-worlds.json.
+    worlds = data.get("worlds") or json.load(io.open(OUT, encoding="utf-8"))["worlds"]
+    for wid, r in data.get("reading", {}).items():
+        worlds[wid] = {**worlds[wid], "reading": r}
     problems, owner = [], {}
     for wid, w in worlds.items():
         lines = {l["id"] for l in w["lines"]}
@@ -80,6 +111,7 @@ def check(path=OUT):
                          if t not in linked["read"]]
             problems += [f"{wid}: rejected {t!r} of {l} is not in the world" for t in s.get("rejected", [])
                          if t not in linked["rejected"]]
+        problems += reading_problems(wid, w, books)
     print(f"{len(worlds)} worlds, {sum(len(w['books']) for w in worlds.values())} books, {len(problems)} problems")
     for p in problems:
         print("  !", p)
@@ -89,9 +121,13 @@ def check(path=OUT):
 def merge(paths):
     doc = json.load(io.open(OUT, encoding="utf-8"))
     for path in paths:
-        for wid, w in json.load(io.open(path, encoding="utf-8"))["worlds"].items():
+        data = json.load(io.open(path, encoding="utf-8"))
+        for wid, w in data.get("worlds", {}).items():
             print(("replaced " if wid in doc["worlds"] else "added ") + wid, len(w["books"]), "books")
             doc["worlds"][wid] = w
+        for wid, r in data.get("reading", {}).items():
+            print("reading order for " + wid)
+            doc["worlds"][wid]["reading"] = r
     doc["worlds"] = dict(sorted(doc["worlds"].items()))
     io.open(OUT, "w", encoding="utf-8", newline="\n").write(json.dumps(doc, ensure_ascii=False, indent=1) + "\n")
     check()

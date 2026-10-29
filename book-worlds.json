@@ -1,5 +1,5 @@
 {
- "_readme": "The full bibliography behind a series or shared world, for the Map tab's series map: every volume, whether or not it is on the shelf, read or held by a library; how the series connect; and the story order where it differs from publication order. book-series.json says which shelf candidates form one entry; this file says what the whole world contains, and a series without a record here is drawn from book-series.json alone. A world's `lines` use book-series.json ids where one exists; a line with `standalone: true` holds standalone novels and is drawn without a next-volume link. A book reaches the shelf through `key` (book-cache.json), `read` (a books-read.md row title; a row logged as #1-4 covers four books) or `rejected` (a book-rejects.jsonl entity). `n` is the Czech edition's number, `year` the original publication. `lib` + `recordUrl` is a verified print holding; when the world has `libChecked`, a book without one is not held in print at Valašské Meziříčí (Rožnov was not checked). Link kinds: `then` (`to` happens after `from` in the story), `prequel` (`from` is set before `to` but was written after it), `crossover` (characters of the line `to` appear in `from`). `story` lists the books in story order. Validate with `python tools/worlds.py check`.",
+ "_readme": "The full bibliography behind a series or shared world, for the Map tab's author map: every volume, whether or not it is on the shelf, read or held by a library; how the series connect; and the story order where it differs from publication order. book-series.json says which shelf candidates form one entry; this file says what the whole world contains, and a series without a record here is drawn from book-series.json alone. A world's `lines` use book-series.json ids where one exists; a line with `standalone: true` holds standalone novels and is drawn without a next-volume link. A book reaches the shelf through `key` (book-cache.json), `read` (a books-read.md row title; a row logged as #1-4 covers four books) or `rejected` (a book-rejects.jsonl entity). `n` is the Czech edition's number, `year` the original publication. `lib` + `recordUrl` is a verified print holding; when the world has `libChecked`, a book without one is not held in print at Valašské Meziříčí (Rožnov was not checked). Link kinds: `then` (`to` happens after `from` in the story), `prequel` (`from` is set before `to` but was written after it), `crossover` (characters of the line `to` appear in `from`). `story` lists the books in story order. `reading` is the recommended order for a first-time reader, which the author map draws: `starts` (good places to begin), `chains` (read in this sequence), `after` (better read after), `note` and `sources`; a world without it is read series by series in volume order. Validate with `python tools/worlds.py check`.",
  "schema": 1,
  "worlds": {
   "araluen": {
@@ -440,7 +440,61 @@
     "https://www.tlbranson.com/rangers-apprentice-book-order/",
     "https://www.penguinrandomhouse.com/series/DMS/the-brotherband-chronicles/",
     "https://www.fictiondb.com/author/john-flanagan~40329.htm"
-   ]
+   ],
+   "reading": {
+    "starts": [
+     "ra1",
+     "bb1"
+    ],
+    "chains": [
+     [
+      "ra1",
+      "ra2",
+      "ra3",
+      "ra4",
+      "ra5",
+      "ra6",
+      "ra7",
+      "ra8",
+      "ra9",
+      "ra10",
+      "ra11",
+      "ra12",
+      "ra13",
+      "ra14",
+      "ra15",
+      "ra16",
+      "ra17",
+      "ra18"
+     ],
+     [
+      "bb1",
+      "bb2",
+      "bb3",
+      "bb4",
+      "bb5",
+      "bb6",
+      "bb7",
+      "bb8",
+      "bb9"
+     ],
+     [
+      "ey1",
+      "ey2"
+     ]
+    ],
+    "after": [
+     [
+      "ra11",
+      "ey1"
+     ]
+    ],
+    "note": "Start with The Ruins of Gorlan in the Czech (story-order) numbering, where Erak's Ransom sits between the original books 4 and 5 as fans slot it; the Early Years prequels are best read after the main series, not first (Readings: main series, Early Years, Royal Ranger, then Brotherband). The alternative is a fully chronological interleave beginning with the Early Years. Not sourced: Brotherband as an independent second start, and the exact placement of the Early Years after The Lost Stories (taken from the stored story link).",
+    "sources": [
+     "https://www.readings.com.au/news/a-beginners-guide-to-rangers-apprentice",
+     "https://www.mrsbooksinorder.com/series/rangers-apprentice/"
+    ]
+   }
   },
   "discworld": {
    "name": "Úžasná Zeměplocha",
@@ -1023,7 +1077,93 @@
     "https://cs.wikipedia.org/wiki/V%C4%9Bda_na_Zem%C4%9Bplo%C5%A1e",
     "https://katalog.mekvalmez.cz/",
     "https://zemeplocha.fandom.com/cs/wiki/Kategorie:Knihy"
-   ]
+   ],
+   "reading": {
+    "starts": [
+     "dw8",
+     "dw4",
+     "dw30",
+     "dw13",
+     "dw6",
+     "dw3",
+     "dw33",
+     "dw1",
+     "dw7",
+     "dw10",
+     "dw25",
+     "dw28",
+     "dw31"
+    ],
+    "chains": [
+     [
+      "dw1",
+      "dw2",
+      "dw5",
+      "dw9",
+      "dw17",
+      "dw22",
+      "dw27",
+      "dw37"
+     ],
+     [
+      "dw3",
+      "dw6",
+      "dw12",
+      "dw14",
+      "dw18",
+      "dw23"
+     ],
+     [
+      "dw4",
+      "dw11",
+      "dw16",
+      "dw20",
+      "dw26"
+     ],
+     [
+      "dw8",
+      "dw15",
+      "dw19",
+      "dw21",
+      "dw24",
+      "dw29",
+      "dw34",
+      "dw39"
+     ],
+     [
+      "dw33",
+      "dw36",
+      "dw40"
+     ],
+     [
+      "dw30",
+      "dw32",
+      "dw35",
+      "dw38",
+      "dw41"
+     ],
+     [
+      "sd1",
+      "sd2",
+      "sd3",
+      "sd4"
+     ]
+    ],
+    "after": [
+     [
+      "dw22",
+      "sd1"
+     ]
+    ],
+    "note": "Most guides say skip The Colour of Magic and begin with Guards! Guards! (City Watch); the usual alternatives are Mort (Death), Small Gods (best standalone), Wyrd Sisters, The Wee Free Men and Going Postal. Within a sub-series, publication order; the Tiffany Aching books matter most in order.",
+    "sources": [
+     "https://www.hookedtobooks.com/discworld-reading-order/",
+     "https://bookorder.org/discworld/",
+     "https://sagamap.com/discworld/where-to-start",
+     "https://fantasybookcompass.com/articles/where-to-start-with-discworld/",
+     "https://booksinorder.io/guides/discworld-reading-order"
+    ]
+   }
   },
   "divergent": {
    "name": "Divergence",
@@ -1097,7 +1237,28 @@
    "sources": [
     "https://en.wikipedia.org/wiki/Divergent_(book_series)",
     "https://katalog.mekvalmez.cz/"
-   ]
+   ],
+   "reading": {
+    "starts": [
+     "d1"
+    ],
+    "chains": [
+     [
+      "d1",
+      "d2",
+      "d3",
+      "d4",
+      "d5"
+     ]
+    ],
+    "after": [],
+    "note": "Publication order: the trilogy, then Four (written for readers who already know Tobias; one guide warns against reading it first), then We Can Be Mended only after finishing the trilogy. The alternative is chronological, with the Four stories first.",
+    "sources": [
+     "https://www.tlbranson.com/divergent-series-order-veronica-roth/",
+     "https://www.thehappybookstack.com/blogs/reading-movie-guides/divergent-books-in-order",
+     "https://en.wikipedia.org/wiki/Divergent_(novel_series)"
+    ]
+   }
   },
   "enderverse": {
    "name": "Enderova sága",
@@ -1379,7 +1540,69 @@
     "https://www.legie.info/autor/189-orson-scott-card/knihy",
     "https://www.databazeknih.cz/knihy/enderova-saga-ender-ve-vyhnanstvi-43655",
     "https://katalog.mekvalmez.cz/"
-   ]
+   ],
+   "reading": {
+    "starts": [
+     "e1",
+     "s1"
+    ],
+    "chains": [
+     [
+      "e1",
+      "e2",
+      "e3",
+      "e4"
+     ],
+     [
+      "s1",
+      "s2",
+      "s3",
+      "s4",
+      "s5",
+      "s6"
+     ],
+     [
+      "fa1",
+      "fa2",
+      "fa3",
+      "sf1",
+      "sf2"
+     ]
+    ],
+    "after": [
+     [
+      "e1",
+      "fa1"
+     ],
+     [
+      "e1",
+      "fm"
+     ],
+     [
+      "e1",
+      "wog"
+     ],
+     [
+      "e1",
+      "fl1"
+     ],
+     [
+      "s4",
+      "e5"
+     ],
+     [
+      "e4",
+      "s6"
+     ]
+    ],
+    "note": "Ender's Game first (the Formic Wars prequels are set before it but guides put them after); then either the Speaker line (Speaker, Xenocide, Children of the Mind - Xenocide must be read right before Children of the Mind) or Ender's Shadow, which stands alone. Main alternative: strict chronological order starting with Earth Unaware.",
+    "sources": [
+     "https://en.wikipedia.org/wiki/Ender%27s_Game_(novel_series)",
+     "https://wottaread.com/enders-game-series-order/",
+     "https://www.howtoread.me/enders-game-books-in-order-orson-scott-card/",
+     "https://rtbookreviews.com/enders-game-books-in-order/"
+    ]
+   }
   },
   "harry-potter": {
    "name": "Harry Potter",
@@ -1538,7 +1761,44 @@
     "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Cursed_Child",
     "https://en.wikipedia.org/wiki/Hogwarts_Library",
     "https://katalog.mekvalmez.cz"
-   ]
+   ],
+   "reading": {
+    "starts": [
+     "hp1"
+    ],
+    "chains": [
+     [
+      "hp1",
+      "hp2",
+      "hp3",
+      "hp4",
+      "hp5",
+      "hp6",
+      "hp7",
+      "cc"
+     ]
+    ],
+    "after": [
+     [
+      "hp1",
+      "fb"
+     ],
+     [
+      "hp1",
+      "qta"
+     ],
+     [
+      "hp7",
+      "beedle"
+     ]
+    ],
+    "note": "Seven novels in publication order, then The Cursed Child after book 7, and The Tales of Beedle the Bard after book 7 because of the Three Brothers tale. Guides differ on Fantastic Beasts: one says any time after book 1, another says after the series; I used after book 1, as for Quidditch Through the Ages.",
+    "sources": [
+     "https://www.tlbranson.com/harry-potter-books-in-order/",
+     "https://advancebookreaders.com/harry-potter-books-in-order/",
+     "https://fictionhorizon.com/harry-potter-books-in-order/"
+    ]
+   }
   },
   "hierarchy": {
    "name": "Hierarchie",
@@ -2087,7 +2347,34 @@
     "https://www.databazeknih.cz/knihy/pan-prstenu-kniha-ztracenych-povesti-i-31399",
     "http://www.angrenost.cz/clanek.php?akce=clanek&id=154",
     "https://katalog.mekvalmez.cz"
-   ]
+   ],
+   "reading": {
+    "starts": [
+     "hobbit"
+    ],
+    "chains": [
+     [
+      "hobbit",
+      "lotr1",
+      "lotr2",
+      "lotr3",
+      "silm",
+      "ut",
+      "lost1",
+      "hurin",
+      "beren",
+      "gondolin",
+      "numenor"
+     ]
+    ],
+    "after": [],
+    "note": "Publication order: The Hobbit, The Lord of the Rings, then The Silmarillion, Unfinished Tales, Children of Hurin, Beren and Luthien, Fall of Gondolin. The alternative is chronological, starting with The Silmarillion, which guides advise against for newcomers. Not sourced: placement of The Book of Lost Tales Part One and The Fall of Numenor, set by publication date.",
+    "sources": [
+     "https://www.tlbranson.com/lord-of-the-rings-books-in-order/",
+     "https://fictionhorizon.com/tolkiens-middle-earth-books-reading-order/",
+     "https://booksinorder.io/guides/jrr-tolkien-reading-order"
+    ]
+   }
   },
   "narnia": {
    "name": "Letopisy Narnie",
@@ -2203,7 +2490,30 @@
     "https://en.wikipedia.org/wiki/The_Chronicles_of_Narnia",
     "https://www.knihydobrovsky.cz/kniha/narnie-lev-carodejnice-a-skrin-503853014",
     "https://katalog.mekvalmez.cz"
-   ]
+   ],
+   "reading": {
+    "starts": [
+     "n2"
+    ],
+    "chains": [
+     [
+      "n2",
+      "n4",
+      "n5",
+      "n6",
+      "n3",
+      "n1",
+      "n7"
+     ]
+    ],
+    "after": [],
+    "note": "Publication order for a first read (most guides and Lewis scholars such as Schakel, since The Magician's Nephew reveals Narnia's secrets). The alternative is chronological order, which the Czech edition numbers; Lewis's 1957 letter says chronological might be easiest but that it hardly matters, so sources disagree about his preference.",
+    "sources": [
+     "https://www.cslewis.com/the-narnian-order-of-things/",
+     "https://slowdownreadmore.substack.com/p/what-order-should-you-read-narnia",
+     "https://www.tlbranson.com/chronicles-of-narnia-books-in-order/"
+    ]
+   }
   },
   "old-mans-war": {
    "name": "Válka starého muže",
@@ -2301,7 +2611,35 @@
     "https://www.legie.info/serie/993-kolonialni-valky",
     "https://www.martinus.cz/seria/valka-stareho-muze",
     "https://www.databazeknih.cz/serie-autora/john-scalzi-13272"
-   ]
+   ],
+   "reading": {
+    "starts": [
+     "o1"
+    ],
+    "chains": [
+     [
+      "o1",
+      "o2",
+      "o3",
+      "o4",
+      "o5",
+      "o6",
+      "o7"
+     ]
+    ],
+    "after": [
+     [
+      "o3",
+      "o8"
+     ]
+    ],
+    "note": "Novels in publication order. Zoe's Tale runs parallel to The Last Colony and guides say either order works (some call it optional). The Sagan Diary is a companion novella whose story slot is between The Ghost Brigades and The Last Colony (Scalzi's chronology), but no guide found recommends a reading position, so its placement after The Last Colony is by publication date and not sourced.",
+    "sources": [
+     "https://www.fantasticfiction.com/s/john-scalzi/old-mans-war/",
+     "https://whatever.scalzi.com/2008/08/19/an-omw-universe-chronology/",
+     "https://en.wikipedia.org/wiki/Zoe%27s_Tale"
+    ]
+   }
   },
   "panem": {
    "name": "Hunger Games",
@@ -2400,7 +2738,28 @@
    "sources": [
     "https://en.wikipedia.org/wiki/The_Hunger_Games_(novel_series)",
     "https://katalog.mekvalmez.cz/"
-   ]
+   ],
+   "reading": {
+    "starts": [
+     "hg1"
+    ],
+    "chains": [
+     [
+      "hg1",
+      "hg2",
+      "hg3",
+      "hg4",
+      "hg5"
+     ]
+    ],
+    "after": [],
+    "note": "Publication order for a first read, because both prequels lean on knowing the trilogy's ending; the alternative, chronological order starting with The Ballad of Songbirds and Snakes, is suggested for rereads. Reading Sunrise before Ballad is possible, but Ballad first is the smoother path.",
+    "sources": [
+     "https://bookroo.com/books/series/the-hunger-games",
+     "https://www.mrsbooksinorder.com/series/the-hunger-games/",
+     "https://bookorder.org/hunger-games/"
+    ]
+   }
   },
   "pathfinder": {
    "name": "Pathfinder",
@@ -3082,7 +3441,89 @@
     "https://www.cbdb.cz/kniha-499570-pohar-bohu-percy-jackson-and-the-chalice-of-the-gods",
     "https://cs.wikipedia.org/wiki/Bohov%C3%A9_Olympu",
     "https://katalog.mekvalmez.cz/"
-   ]
+   ],
+   "reading": {
+    "starts": [
+     "pj1",
+     "kc1",
+     "mc1"
+    ],
+    "chains": [
+     [
+      "pj1",
+      "pj2",
+      "pj3",
+      "pj4",
+      "pj5",
+      "hoo1",
+      "hoo2",
+      "hoo3",
+      "hoo4",
+      "hoo5",
+      "pj6",
+      "pj7",
+      "ta1",
+      "ta2",
+      "ta3",
+      "ta4",
+      "ta5",
+      "nd1",
+      "nd2",
+      "chb1"
+     ],
+     [
+      "kc1",
+      "kc2",
+      "kc3"
+     ],
+     [
+      "mc1",
+      "mc2",
+      "mc3",
+      "mc4"
+     ]
+    ],
+    "after": [
+     [
+      "pj5",
+      "df"
+     ],
+     [
+      "hoo5",
+      "dd"
+     ],
+     [
+      "hoo5",
+      "cjc"
+     ],
+     [
+      "pj5",
+      "singer"
+     ],
+     [
+      "pj5",
+      "gg"
+     ],
+     [
+      "gg",
+      "gh"
+     ],
+     [
+      "kc3",
+      "dm"
+     ],
+     [
+      "pj5",
+      "dm"
+     ]
+    ],
+    "note": "Percy Jackson, then Heroes of Olympus, then Trials of Apollo is one strict arc; Kane Chronicles and Magnus Chase are separate series that can be read at any time (cameos land better after the Greek books). Guides place Chalice of the Gods (pj6) either before Trials of Apollo (in-universe, used here) or last (author's publication choice).",
+    "sources": [
+     "https://righterofwords.com/2023/10/07/how-to-read-rick-riordans-books/",
+     "https://bookvine.io/blog/percy-jackson-reading-order/",
+     "https://advancebookreaders.com/percy-jackson-books-in-order/"
+    ]
+   }
   },
   "scalzi-agent-to-the-stars": {
    "name": "Agent hvězd",
@@ -3324,7 +3765,33 @@
     "https://mina86.com/2022/witcher-reading-order/",
     "https://www.knihydobrovsky.cz/kniha/zaklinac-ix-rozcesti-krkavcu-803009719",
     "https://www.tlbranson.com/witcher-books-in-order/"
-   ]
+   ],
+   "reading": {
+    "starts": [
+     "w1"
+    ],
+    "chains": [
+     [
+      "w1",
+      "w2",
+      "w3",
+      "w4",
+      "w5",
+      "w6",
+      "w7",
+      "w8",
+      "w9"
+     ]
+    ],
+    "after": [],
+    "note": "The Last Wish, Sword of Destiny, then the five-novel saga; Season of Storms and Crossroads of Ravens last since they assume the saga. Alternatives: chronological order starting with Crossroads of Ravens, or Season of Storms third (PC Gamer).",
+    "sources": [
+     "https://mina86.com/2022/witcher-reading-order/",
+     "https://www.pcgamer.com/the-witcher-books/",
+     "https://www.slashfilm.com/2069200/the-witcher-books-in-order/",
+     "https://www.tlbranson.com/witcher-books-in-order/"
+    ]
+   }
   }
  }
 }
