@@ -315,7 +315,8 @@ function mapSide(B) {
     const anchors = (MAP.opts.mode === 'authors' ? B.authors.filter(a => a.hasRead) : B.books.filter(p => p.kind === 'r'))
       .filter(p => p.on).sort((a, b) => b.score - a.score).slice(0, 15);
     return `<p class="mapnote">Click a point to see what is closest to it in content: a similar world, kind,
-      themes and tone. Shift+click, or <b>+</b> in a list, adds more to the selection, and the list then
+      themes and tone. Clicking a series, or a book of a shared world, also opens its series map: every
+      volume, read or not, and the reading order. Shift+click, or <b>+</b> in a list, adds more to the selection, and the list then
       shows titles close to <i>all</i> of them. While something is selected, only it and its matches
       stay clickable; click empty space to clear. Near on the map means similar; distance across the
       whole map means nothing.</p>
@@ -323,8 +324,8 @@ function mapSide(B) {
   }
   const o = MAP.opts, wid = MAP.seeds.length === 1 && mapWorldOf(MAP.seeds[0]), w = wid && mapWorld(wid);
   return `<div id="maphead">${mapHead(B)}</div>
-    ${w ? `<button type="button" class="tomap" data-world-open="${esc(wid)}">${
-      w.lines.length > 1 ? 'World' : 'Series'} map: every volume and the reading order</button>` : ''}
+    ${w ? `<button type="button" class="worldbtn" data-world-open="${esc(wid)}">Open the ${mapWorldWord(w)} map
+      <span>every volume, read or not, and the reading order</span></button>` : ''}
     <div class="mapopts">
       <label class="range">Min. similarity <b id="minsimval">${Math.round(o.minSim * 100)} %</b>
         <input type="range" min="10" max="90" step="5" value="${Math.round(o.minSim * 100)}" data-mapopt="minSim"></label>
@@ -553,6 +554,8 @@ function mapTip(p, mx, my) {
     line('b', mapLetter(p) + ' · ' + mapScoreText(p)),
     line('div', mapLabel(p)));
   if (!p.members) tip.append(line('div', p.author, 'bk-meta'));
+  const wid = mapWorldOf(p);
+  if (wid) tip.append(line('div', `click: ${mapWorldWord(mapWorld(wid))} map`, 'bk-meta'));
   if (MAP.seeds.length && !MAP.seeds.includes(p)) {
     const s = Math.min(...MAP.seeds.map(q => simDot(q, p)));
     tip.append(line('div', `similarity to the selection ${Math.round(s * 100)} %`, 'bk-meta'));
@@ -708,6 +711,14 @@ function mapWorldIndex() {
     rej: Object.fromEntries(D.rejects.map(r => [r.entity, r])),
   };
   return MAP.wix;
+}
+
+const mapWorldWord = w => w.lines.length > 1 || w.universe ? 'world' : 'series';
+
+function mapWorldLink(mapId) {
+  const id = mapHas(mapId) && mapWorldOf(mapBuild().byId.get(mapId));
+  return id ? `<button type="button" class="tomap" data-toworld="${esc(mapId)}">${
+    mapWorldWord(mapWorld(id)) === 'world' ? 'World' : 'Series'} map</button>` : '';
 }
 
 // A world of one known book has nothing to map, so it does not open.
@@ -976,6 +987,16 @@ document.addEventListener('click', e => {
     const p = mapBuild().byId.get(to.dataset.tomap);
     if (!p) return;
     mapOpen(p, 'books');
+    setView('map');
+    scrollTo(0, 0);
+    return;
+  }
+  const tw = e.target.closest('[data-toworld]');
+  if (tw) {
+    const p = mapBuild().byId.get(tw.dataset.toworld);
+    if (!p) return;
+    mapOpen(p, 'books');
+    MAP.world = mapWorldOf(p);
     setView('map');
     scrollTo(0, 0);
     return;
