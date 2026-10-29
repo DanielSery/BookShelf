@@ -17,7 +17,8 @@ function mapOpts() {
   if (!MAP.opts) {
     let saved = {};
     try { saved = JSON.parse(recall('bookshelf.map')) || {}; } catch {}
-    MAP.opts = { mode: 'books', view: 'map', minSim: 0.4, unread: true, sameAuthor: false, tags: [], worldOrder: 'story', ...saved };
+    // Every visit starts on the maps (reader, 2026-10-29); Similar is a switch, not a place to stay.
+    MAP.opts = { mode: 'books', minSim: 0.4, unread: true, sameAuthor: false, tags: [], worldOrder: 'story', ...saved, view: 'map' };
   }
   return MAP.opts;
 }
@@ -338,7 +339,7 @@ function mapSide(B) {
     const sel = MAP.seeds[0], own = MAP.seeds.length === 1 && sel.members
       ? `<h4>Books by this author</h4>${mapList(sel.members.slice().sort((a, b) => (b.score ?? -1) - (a.score ?? -1)), B)}` : '';
     return `<div id="maphead">${mapHead(B)}</div>${open}
-      <button type="button" class="tomap" data-mapview="similar">Find similar ${authors ? 'authors' : 'books'} instead</button>${own}`;
+      <button type="button" class="tomap" data-mapkind="${o.mode}:similar">Find similar ${authors ? 'authors' : 'books'} instead</button>${own}`;
   }
   return `<div id="maphead">${mapHead(B)}</div>
     ${open}
@@ -380,13 +381,7 @@ function mapView() {
     <div class="mapwrap">
       <div class="mapstage" id="mapstage">
         <canvas id="mapc" aria-label="Similarity map of ${what}"></canvas>
-        <div class="mapmodes">
-          <div class="wseg" role="group" aria-label="What the map shows">
-            <button type="button" data-mode="books" aria-pressed="${o.mode === 'books'}">Books</button>
-            <button type="button" data-mode="authors" aria-pressed="${o.mode === 'authors'}">Authors</button>
-          </div>
-          ${mapViewSeg()}
-        </div>
+        <div class="mapmodes">${mapViewSeg()}</div>
         <div class="maptools">
           <button type="button" data-mz="in" title="Zoom in">+</button>
           <button type="button" data-mz="out" title="Zoom out">−</button>
@@ -500,7 +495,7 @@ function drawMap() {
 
   // Region names orient the overview and fade out as you zoom in. Without a selection
   // they outrank book labels; with one they step back so its matches stay legible.
-  const taken = [[0, 0, 400, 46], [W - 140, 0, W, 46]];
+  const taken = [[0, 0, 480, 46], [W - 140, 0, W, 46]];
   const regionAlpha = Math.max(0, Math.min(0.9, 1.9 - k * 0.65)) * (seeds.length ? 0.5 : 1);
   if (regionAlpha > 0.05) {
     ctx.save();
@@ -992,13 +987,34 @@ function mapWorldGraph(w, B, laneHeads = true) {
   </div>`;
 }
 
+// One control for both choices, shown on the canvas and in every open map's header: an open
+// map covers the canvas, so a control left only there could not be reached.
+const MAP_KINDS = [
+  ['books', 'map', 'Series maps', 'A click opens the series or world: every volume and the reading order'],
+  ['authors', 'map', 'Author maps', "A click opens the author's books, grouped by series and world"],
+  ['books', 'similar', 'Similar books', 'A click lists the books closest in content'],
+  ['authors', 'similar', 'Similar authors', 'A click lists the authors closest in content'],
+];
+
 function mapViewSeg() {
-  const v = MAP.opts.view, a = MAP.opts.mode === 'authors';
-  return `<div class="wseg" role="group" aria-label="What a click shows">
-    <button type="button" data-mapview="map" aria-pressed="${v === 'map'}"
-      title="A click opens the ${a ? "author's books grouped by series and world" : 'series or world: every volume and the reading order'}">${a ? 'Author maps' : 'Series maps'}</button>
-    <button type="button" data-mapview="similar" aria-pressed="${v === 'similar'}"
-      title="A click lists what is closest in content">${a ? 'Similar authors' : 'Similar books'}</button></div>`;
+  const o = MAP.opts;
+  return `<div class="wseg" role="group" aria-label="What the map shows">${MAP_KINDS.map(([mode, view, label, tip]) =>
+    `<button type="button" data-mapkind="${mode}:${view}" aria-pressed="${o.mode === mode && o.view === view}"
+      title="${esc(tip)}">${label}</button>`).join('')}</div>`;
+}
+
+// The selection follows the switch where it can: a book becomes its author on the authors
+// side; an author has no single book to become, so the books side starts unselected.
+function mapSwitch(mode, view) {
+  const sel = MAP.seeds.length === 1 ? MAP.seeds[0] : null;
+  const p = !sel ? null : mode === 'authors' ? (sel.members ? sel : sel.authorRef || null) : sel.members ? null : sel;
+  MAP.opts.view = view;
+  if (mode !== MAP.opts.mode) mapOpen(p, mode);
+  else MAP.seeds = p ? [p] : [];
+  MAP.openBook = null;
+  MAP.world = view === 'map' && p ? mapContextOf(p) : null;
+  mapSaveOpts();
+  render();
 }
 
 function mapPaneControls(withOrder) {
@@ -1137,24 +1153,13 @@ document.addEventListener('click', e => {
     pickIn(au, true);
     return;
   }
-  const mview = e.target.closest('[data-mapview]');
-  if (mview) {
-    MAP.opts.view = mview.dataset.mapview;
-    mapSaveOpts();
-    MAP.world = !mapSimilar() && MAP.seeds.length === 1 ? mapContextOf(MAP.seeds[0]) : null;
-    render();
-    return;
-  }
+  const kind = e.target.closest('[data-mapkind]');
+  if (kind) { mapSwitch(...kind.dataset.mapkind.split(':')); return; }
   const wopen = e.target.closest('[data-world-open]');
   if (wopen) { MAP.world = wopen.dataset.worldOpen; mapWorldRender(true); return; }
   if (e.target.closest('[data-world-close]')) { MAP.world = null; mapWorldRender(); return; }
   const worder = e.target.closest('[data-worder]');
   if (worder) { MAP.opts.worldOrder = worder.dataset.worder; mapSaveOpts(); mapWorldRender(true); return; }
-  const mode = e.target.closest('[data-mode]');
-  if (mode) {
-    if (mode.dataset.mode !== MAP.opts.mode) { mapOpen(null, mode.dataset.mode); render(); }
-    return;
-  }
   const tagf = e.target.closest('[data-tagfilter]');
   if (tagf) {
     if (!MAP.opts.tags.includes(tagf.dataset.tagfilter)) MAP.opts.tags.push(tagf.dataset.tagfilter);
