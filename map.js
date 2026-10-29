@@ -858,7 +858,7 @@ function mapWorldNode(b, w, X) {
       ? `${k} more volume${k === 1 ? '' : 's'} not on the shelf`
       : `${k === 1 ? 'Volume' : 'Volumes'} ${b.n}${k > 1 ? '–' + b.n2 : ''} not on the shelf` });
   } else if (b.lib) Object.assign(n, { state: 'library', word: 'in the library' });
-  else Object.assign(n, { state: 'absent', word: !b.cz ? 'no Czech edition' : w.libChecked ? 'in neither library' : 'not on the shelf' });
+  else Object.assign(n, { state: 'absent', word: !b.cz ? 'no Czech edition' : w.libChecked ? 'not in the library' : 'not on the shelf' });
   return n;
 }
 
@@ -960,7 +960,7 @@ const MAP_W_LEGEND = `<div class="wplegend">
   <span><span class="wm read"></span>read, your score</span>
   <span><span class="wm"></span>on the shelf, predicted</span>
   <span><span class="wm library"></span>in the library, not screened yet</span>
-  <span><span class="wm absent"></span>not in a library or no Czech edition</span>
+  <span><span class="wm absent"></span>not in the library, or no Czech edition</span>
   <span><span class="wm gap"></span>volume not on the shelf, title unknown</span>
   <span><svg width="22" height="8"><path class="wsq" d="M0,4 H22"/></svg>next volume</span>
   <span><svg width="22" height="8"><path class="wthen" d="M0,4 H18"/><path class="wah" d="M16,1 L22,4 L16,7 z"/></svg>continues in</span>

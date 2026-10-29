@@ -1,5 +1,5 @@
 {
- "_readme": "The full bibliography behind a series or shared world, for the Map tab's series map: every volume, whether or not it is on the shelf, read or held by a library; how the series connect; and the story order where it differs from publication order. book-series.json says which shelf candidates form one entry; this file says what the whole world contains, and a series without a record here is drawn from book-series.json alone. A world's `lines` use book-series.json ids where one exists; a line with `standalone: true` holds standalone novels and is drawn without a next-volume link. A book reaches the shelf through `key` (book-cache.json), `read` (a books-read.md row title; a row logged as #1-4 covers four books) or `rejected` (a book-rejects.jsonl entity). `n` is the Czech edition's number, `year` the original publication. `lib` + `recordUrl` is a verified print holding; when the world has `libChecked`, a book without one is in neither library. Link kinds: `then` (`to` happens after `from` in the story), `prequel` (`from` is set before `to` but was written after it), `crossover` (characters of the line `to` appear in `from`). `story` lists the books in story order. Validate with `python tools/worlds.py check`.",
+ "_readme": "The full bibliography behind a series or shared world, for the Map tab's series map: every volume, whether or not it is on the shelf, read or held by a library; how the series connect; and the story order where it differs from publication order. book-series.json says which shelf candidates form one entry; this file says what the whole world contains, and a series without a record here is drawn from book-series.json alone. A world's `lines` use book-series.json ids where one exists; a line with `standalone: true` holds standalone novels and is drawn without a next-volume link. A book reaches the shelf through `key` (book-cache.json), `read` (a books-read.md row title; a row logged as #1-4 covers four books) or `rejected` (a book-rejects.jsonl entity). `n` is the Czech edition's number, `year` the original publication. `lib` + `recordUrl` is a verified print holding; when the world has `libChecked`, a book without one is not held in print at Valašské Meziříčí (Rožnov was not checked). Link kinds: `then` (`to` happens after `from` in the story), `prequel` (`from` is set before `to` but was written after it), `crossover` (characters of the line `to` appear in `from`). `story` lists the books in story order. Validate with `python tools/worlds.py check`.",
  "schema": 1,
  "worlds": {
   "araluen": {
@@ -440,6 +440,589 @@
     "https://www.tlbranson.com/rangers-apprentice-book-order/",
     "https://www.penguinrandomhouse.com/series/DMS/the-brotherband-chronicles/",
     "https://www.fictiondb.com/author/john-flanagan~40329.htm"
+   ]
+  },
+  "discworld": {
+   "name": "Úžasná Zeměplocha",
+   "nameEn": "Discworld",
+   "author": "Terry Pratchett",
+   "checked": "2026-10-29",
+   "libChecked": "2026-10-29",
+   "lines": [
+    {
+     "id": "discworld",
+     "name": "Zeměplocha: samostatné romány",
+     "nameEn": "Discworld: standalone novels",
+     "standalone": true,
+     "note": "Novels outside the recurring sub-series: Pyramids, Moving Pictures, Small Gods, Maurice, The Truth, Monstrous Regiment."
+    },
+    {
+     "id": "discworld-rincewind",
+     "name": "Mrakoplaš",
+     "nameEn": "Rincewind",
+     "note": "Rincewind and the wizards of Unseen University; Rincewind appears in eight novels."
+    },
+    {
+     "id": "discworld-witches",
+     "name": "Čarodějky",
+     "nameEn": "Witches",
+     "note": "Granny Weatherwax, Nanny Ogg and Magrat of Lancre; Equal Rites introduces Granny and the young Esk."
+    },
+    {
+     "id": "discworld-death",
+     "name": "Smrť",
+     "nameEn": "Death",
+     "note": "Death and his granddaughter Susan."
+    },
+    {
+     "id": "discworld-city-watch",
+     "name": "Městská hlídka",
+     "nameEn": "City Watch",
+     "note": "Sam Vimes and the Ankh-Morpork City Watch."
+    },
+    {
+     "id": "discworld-moist-von-lipwig",
+     "name": "Vlahoš von Rosret",
+     "nameEn": "Moist von Lipwig",
+     "note": "The industrial-revolution books around the con man Moist von Lipwig."
+    },
+    {
+     "id": "discworld-tiffany-aching",
+     "name": "Tonička Bolavá",
+     "nameEn": "Tiffany Aching",
+     "note": "Young-adult books about the apprentice witch Tiffany."
+    },
+    {
+     "id": "science-of-discworld",
+     "name": "Věda na Zeměploše",
+     "nameEn": "The Science of Discworld",
+     "note": "Co-written with Ian Stewart and Jack Cohen: a Discworld story alternating with popular-science chapters."
+    }
+   ],
+   "books": [
+    {
+     "id": "dw1",
+     "line": "discworld-rincewind",
+     "n": 1,
+     "cz": "Barva kouzel",
+     "en": "The Colour of Magic",
+     "year": 1983,
+     "read": "The Colour of Magic (Discworld #1)",
+     "note": "Czech omnibus record First Discworld Stories also holds The Light Fantastic.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/b975e88e-6269-4ed5-8b51-95caea168b6b"
+    },
+    {
+     "id": "dw2",
+     "line": "discworld-rincewind",
+     "n": 2,
+     "cz": "Lehké fantastično",
+     "en": "The Light Fantastic",
+     "year": 1986,
+     "rejected": "Lehke fantasticno (The Light Fantastic)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/b975e88e-6269-4ed5-8b51-95caea168b6b"
+    },
+    {
+     "id": "dw3",
+     "line": "discworld-witches",
+     "n": 3,
+     "cz": "Čaroprávnost",
+     "en": "Equal Rites",
+     "year": 1987,
+     "rejected": "Caropravnost (Equal Rites)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/78179de5-454a-4cf9-9058-377122995d33"
+    },
+    {
+     "id": "dw4",
+     "line": "discworld-death",
+     "n": 4,
+     "cz": "Mort",
+     "en": "Mort",
+     "year": 1987,
+     "read": "Mort (Discworld #4)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/3fbfa6f0-6dac-4b53-b782-5a4eb8927828"
+    },
+    {
+     "id": "dw5",
+     "line": "discworld-rincewind",
+     "n": 5,
+     "cz": "Magický prazdroj",
+     "en": "Sourcery",
+     "year": 1988,
+     "key": "magicky-prazdroj",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/b795b90e-1c3a-4228-8fcc-c9e9aaf589d4"
+    },
+    {
+     "id": "dw6",
+     "line": "discworld-witches",
+     "n": 6,
+     "cz": "Soudné sestry",
+     "en": "Wyrd Sisters",
+     "year": 1988,
+     "rejected": "Soudne sestry (Wyrd Sisters)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/289f1239-f8f1-483c-9bc1-ae84fddeed1a"
+    },
+    {
+     "id": "dw7",
+     "line": "discworld",
+     "n": 7,
+     "cz": "Pyramidy",
+     "en": "Pyramids",
+     "year": 1989,
+     "key": "pyramidy",
+     "note": "Czech omnibus record also holds Stráže! Stráže!.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/e5548634-933b-465e-a706-54c28e79ae31"
+    },
+    {
+     "id": "dw8",
+     "line": "discworld-city-watch",
+     "n": 8,
+     "cz": "Stráže! Stráže!",
+     "en": "Guards! Guards!",
+     "year": 1989,
+     "read": "Guards! Guards! (Discworld #8)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/e5548634-933b-465e-a706-54c28e79ae31"
+    },
+    {
+     "id": "dw9",
+     "line": "discworld-rincewind",
+     "n": 9,
+     "cz": "Erik",
+     "en": "Eric",
+     "year": 1990,
+     "key": "erik-eric",
+     "rejected": "Erik (Eric)",
+     "note": "Czech omnibus record also holds Pohyblivé obrázky.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/6a7a15d1-ec7e-48a3-a2b3-2d0e343253e0"
+    },
+    {
+     "id": "dw10",
+     "line": "discworld",
+     "n": 10,
+     "cz": "Pohyblivé obrázky",
+     "en": "Moving Pictures",
+     "year": 1990,
+     "key": "pohyblive-obrazky",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/6a7a15d1-ec7e-48a3-a2b3-2d0e343253e0"
+    },
+    {
+     "id": "dw11",
+     "line": "discworld-death",
+     "n": 11,
+     "cz": "Sekáč",
+     "en": "Reaper Man",
+     "year": 1991,
+     "key": "sekac",
+     "note": "Czech omnibus record also holds Čarodějky na cestách.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/8d467448-a9b5-4e2d-b40e-23e7ab8fde7d"
+    },
+    {
+     "id": "dw12",
+     "line": "discworld-witches",
+     "n": 12,
+     "cz": "Čarodějky na cestách",
+     "en": "Witches Abroad",
+     "year": 1991,
+     "rejected": "Carodejky na cestach (Witches Abroad)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/8d467448-a9b5-4e2d-b40e-23e7ab8fde7d"
+    },
+    {
+     "id": "dw13",
+     "line": "discworld",
+     "n": 13,
+     "cz": "Malí bohové",
+     "en": "Small Gods",
+     "year": 1992,
+     "key": "mali-bohove",
+     "note": "Czech omnibus record also holds Dámy a pánové.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/e5e9dac6-94be-4554-bc8c-9439ed6412e2"
+    },
+    {
+     "id": "dw14",
+     "line": "discworld-witches",
+     "n": 14,
+     "cz": "Dámy a pánové",
+     "en": "Lords and Ladies",
+     "year": 1992,
+     "rejected": "Damy a panove (Lords and Ladies)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/e5e9dac6-94be-4554-bc8c-9439ed6412e2"
+    },
+    {
+     "id": "dw15",
+     "line": "discworld-city-watch",
+     "n": 15,
+     "cz": "Muži ve zbrani",
+     "en": "Men at Arms",
+     "year": 1993,
+     "rejected": "Muzi ve zbrani (Men at Arms)",
+     "note": "Czech omnibus record also holds Těžké melodično.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/12ac2558-3ae9-4d25-aabd-b611a3182add"
+    },
+    {
+     "id": "dw16",
+     "line": "discworld-death",
+     "n": 16,
+     "cz": "Těžké melodično",
+     "en": "Soul Music",
+     "year": 1994,
+     "key": "tezke-melodicno",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/12ac2558-3ae9-4d25-aabd-b611a3182add"
+    },
+    {
+     "id": "dw17",
+     "line": "discworld-rincewind",
+     "n": 17,
+     "cz": "Zajímavé časy",
+     "en": "Interesting Times",
+     "year": 1994,
+     "key": "zajimave-casy",
+     "rejected": "Zajimave casy (Interesting Times)",
+     "note": "Czech omnibus record also holds Maškaráda.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/fd7a01c4-446c-4ce4-89b8-3d3ac79f26c0"
+    },
+    {
+     "id": "dw18",
+     "line": "discworld-witches",
+     "n": 18,
+     "cz": "Maškaráda",
+     "en": "Maskerade",
+     "year": 1995,
+     "rejected": "Maskarada (Maskerade)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/fd7a01c4-446c-4ce4-89b8-3d3ac79f26c0"
+    },
+    {
+     "id": "dw19",
+     "line": "discworld-city-watch",
+     "n": 19,
+     "cz": "Nohy z jílu",
+     "en": "Feet of Clay",
+     "year": 1996,
+     "rejected": "Nohy z jilu (Feet of Clay)",
+     "note": "The Czech edition came out after Jingo but keeps the original number 19; the Czech omnibus record also holds Otec prasátek.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/b2bded09-c091-4b7c-bcac-739f1ce2d9fc"
+    },
+    {
+     "id": "dw20",
+     "line": "discworld-death",
+     "n": 20,
+     "cz": "Otec prasátek",
+     "en": "Hogfather",
+     "year": 1996,
+     "key": "otec-prasatek",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/b2bded09-c091-4b7c-bcac-739f1ce2d9fc"
+    },
+    {
+     "id": "dw21",
+     "line": "discworld-city-watch",
+     "n": 21,
+     "cz": "Hrrr na ně!",
+     "en": "Jingo",
+     "year": 1997,
+     "key": "hrrr-na-ne",
+     "rejected": "Hrrr na ne (Jingo)",
+     "note": "Czech omnibus record also holds Poslední kontinent.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/3f9a6c69-41e3-4a15-99f5-a591ebf25fcd"
+    },
+    {
+     "id": "dw22",
+     "line": "discworld-rincewind",
+     "n": 22,
+     "cz": "Poslední kontinent",
+     "en": "The Last Continent",
+     "year": 1998,
+     "key": "posledni-kontinent",
+     "rejected": "Posledni kontinent (The Last Continent)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/3f9a6c69-41e3-4a15-99f5-a591ebf25fcd"
+    },
+    {
+     "id": "dw23",
+     "line": "discworld-witches",
+     "n": 23,
+     "cz": "Carpe jugulum",
+     "en": "Carpe Jugulum",
+     "year": 1998,
+     "rejected": "Carpe jugulum",
+     "note": "Czech omnibus record also holds Pátý elefant.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/14c82d3a-026a-4c36-bb52-c4295ba6901b"
+    },
+    {
+     "id": "dw24",
+     "line": "discworld-city-watch",
+     "n": 24,
+     "cz": "Pátý elefant",
+     "en": "The Fifth Elephant",
+     "year": 1999,
+     "rejected": "Paty elefant (The Fifth Elephant)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/14c82d3a-026a-4c36-bb52-c4295ba6901b"
+    },
+    {
+     "id": "dw25",
+     "line": "discworld",
+     "n": 25,
+     "cz": "Pravda",
+     "en": "The Truth",
+     "year": 2000,
+     "key": "pravda-the-truth",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/76ce14f9-e2cc-4d66-a199-d7a014298afe"
+    },
+    {
+     "id": "dw26",
+     "line": "discworld-death",
+     "n": 26,
+     "cz": "Zloděj času",
+     "en": "Thief of Time",
+     "year": 2001
+    },
+    {
+     "id": "dw27",
+     "line": "discworld-rincewind",
+     "n": 27,
+     "cz": "Poslední hrdina",
+     "en": "The Last Hero",
+     "year": 2001,
+     "note": "Illustrated novella with Paul Kidby."
+    },
+    {
+     "id": "dw28",
+     "line": "discworld",
+     "n": 28,
+     "cz": "Úžasný Mauric a jeho vzdělaní hlodavci",
+     "en": "The Amazing Maurice and His Educated Rodents",
+     "year": 2001,
+     "key": "uzasny-mauric",
+     "note": "Written for younger readers.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/9583d0ba-8060-41d0-95b4-8677d025a74b"
+    },
+    {
+     "id": "dw29",
+     "line": "discworld-city-watch",
+     "n": 29,
+     "cz": "Noční hlídka",
+     "en": "Night Watch",
+     "year": 2002
+    },
+    {
+     "id": "dw30",
+     "line": "discworld-tiffany-aching",
+     "n": 30,
+     "cz": "Svobodnej národ",
+     "en": "The Wee Free Men",
+     "year": 2003,
+     "rejected": "Svobodnej narod (The Wee Free Men)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/e8762b8a-e096-47fd-80d2-19d246f9f4c6"
+    },
+    {
+     "id": "dw31",
+     "line": "discworld",
+     "n": 31,
+     "cz": "Podivný regiment",
+     "en": "Monstrous Regiment",
+     "year": 2003,
+     "key": "podivny-regiment",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/24f19f98-9316-4643-85ee-8bb3ed9cf4bd"
+    },
+    {
+     "id": "dw32",
+     "line": "discworld-tiffany-aching",
+     "n": 32,
+     "cz": "Klobouk s oblohou",
+     "en": "A Hat Full of Sky",
+     "year": 2004,
+     "rejected": "Klobouk s oblohou"
+    },
+    {
+     "id": "dw33",
+     "line": "discworld-moist-von-lipwig",
+     "n": 33,
+     "cz": "Zaslaná pošta",
+     "en": "Going Postal",
+     "year": 2004,
+     "key": "zaslana-posta",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/bb242eb9-44ee-4f43-8eae-41c626935acd"
+    },
+    {
+     "id": "dw34",
+     "line": "discworld-city-watch",
+     "n": 34,
+     "cz": "Buch!",
+     "en": "Thud!",
+     "year": 2005,
+     "rejected": "Buch!"
+    },
+    {
+     "id": "dw35",
+     "line": "discworld-tiffany-aching",
+     "n": 35,
+     "cz": "Zimoděj",
+     "en": "Wintersmith",
+     "year": 2006
+    },
+    {
+     "id": "dw36",
+     "line": "discworld-moist-von-lipwig",
+     "n": 36,
+     "cz": "Nadělat prachy",
+     "en": "Making Money",
+     "year": 2007,
+     "key": "nadelat-prachy",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/39745e14-24f5-46a6-864a-3f48f9efadc9"
+    },
+    {
+     "id": "dw37",
+     "line": "discworld-rincewind",
+     "n": 37,
+     "cz": "Nevídaní akademikové",
+     "en": "Unseen Academicals",
+     "year": 2009
+    },
+    {
+     "id": "dw38",
+     "line": "discworld-tiffany-aching",
+     "n": 38,
+     "cz": "Obléknu si půlnoc",
+     "en": "I Shall Wear Midnight",
+     "year": 2010
+    },
+    {
+     "id": "dw39",
+     "line": "discworld-city-watch",
+     "n": 39,
+     "cz": "Šňupec",
+     "en": "Snuff",
+     "year": 2011,
+     "rejected": "Snupec (Snuff)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/e51c25cb-c654-4fee-852d-caf65196e0dc"
+    },
+    {
+     "id": "dw40",
+     "line": "discworld-moist-von-lipwig",
+     "n": 40,
+     "cz": "Pod parou",
+     "en": "Raising Steam",
+     "year": 2013,
+     "key": "pod-parou",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/ba35cfe8-0629-49b4-a3d8-684f72ded7bc"
+    },
+    {
+     "id": "dw41",
+     "line": "discworld-tiffany-aching",
+     "n": 41,
+     "cz": "Pastýřská koruna",
+     "en": "The Shepherd's Crown",
+     "year": 2015,
+     "note": "The last Discworld novel."
+    },
+    {
+     "id": "sd1",
+     "line": "science-of-discworld",
+     "n": 1,
+     "cz": "Věda na Zeměploše",
+     "en": "The Science of Discworld",
+     "year": 1999
+    },
+    {
+     "id": "sd2",
+     "line": "science-of-discworld",
+     "n": 2,
+     "cz": "Koule – Věda na Zeměploše",
+     "en": "The Science of Discworld II: The Globe",
+     "year": 2002
+    },
+    {
+     "id": "sd3",
+     "line": "science-of-discworld",
+     "n": 3,
+     "cz": "Darwinovy hodinky – Věda na Zeměploše",
+     "en": "The Science of Discworld III: Darwin's Watch",
+     "year": 2005
+    },
+    {
+     "id": "sd4",
+     "line": "science-of-discworld",
+     "n": 4,
+     "cz": "Soudný den – Věda na Zeměploše",
+     "en": "The Science of Discworld IV: Judgement Day",
+     "year": 2013,
+     "key": "veda-na-zemeplose",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/f7118228-df66-4ed0-b795-10b34a3f0ddd"
+    }
+   ],
+   "links": [
+    {
+     "kind": "crossover",
+     "from": "dw27",
+     "to": "discworld-city-watch",
+     "note": "English Wikipedia names Rincewind and Carrot meeting in The Last Hero."
+    },
+    {
+     "kind": "crossover",
+     "from": "dw31",
+     "to": "discworld-city-watch",
+     "note": "Czech Wikipedia lists the City Watch among the main characters of Monstrous Regiment."
+    },
+    {
+     "kind": "crossover",
+     "from": "dw32",
+     "to": "discworld-witches",
+     "note": "Czech Wikipedia: the Tiffany books bring in the witches, especially in this one."
+    },
+    {
+     "kind": "crossover",
+     "from": "dw35",
+     "to": "discworld-witches",
+     "note": "Czech Wikipedia lists the witches among the main characters."
+    },
+    {
+     "kind": "crossover",
+     "from": "dw38",
+     "to": "discworld-witches",
+     "note": "Czech Wikipedia: the Tiffany books bring in the witches, especially in this one."
+    },
+    {
+     "kind": "crossover",
+     "from": "dw41",
+     "to": "discworld-witches",
+     "note": "Czech Wikipedia: the Tiffany books bring in the witches, especially in this one."
+    }
+   ],
+   "sources": [
+    "https://cs.wikipedia.org/wiki/Zem%C4%9Bplocha",
+    "https://en.wikipedia.org/wiki/Discworld",
+    "https://cs.wikipedia.org/wiki/V%C4%9Bda_na_Zem%C4%9Bplo%C5%A1e",
+    "https://katalog.mekvalmez.cz/",
+    "https://zemeplocha.fandom.com/cs/wiki/Kategorie:Knihy"
    ]
   },
   "divergent": {
@@ -1255,6 +1838,78 @@
    "sources": [
     "https://en.wikipedia.org/wiki/James_Islington",
     "https://katalog.mekvalmez.cz"
+   ]
+  },
+  "long-earth": {
+   "name": "Dlouhá země",
+   "nameEn": "The Long Earth",
+   "author": "Terry Pratchett and Stephen Baxter",
+   "checked": "2026-10-29",
+   "libChecked": "2026-10-29",
+   "lines": [
+    {
+     "id": "long-earth",
+     "name": "Dlouhá země",
+     "nameEn": "The Long Earth",
+     "note": "Five-book science-fiction series with Stephen Baxter; unrelated to Discworld."
+    }
+   ],
+   "books": [
+    {
+     "id": "le1",
+     "line": "long-earth",
+     "n": 1,
+     "cz": "Dlouhá země",
+     "en": "The Long Earth",
+     "year": 2012,
+     "key": "dlouha-zeme",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/f1183ff1-8745-4893-8c4d-a90cb4c085d6"
+    },
+    {
+     "id": "le2",
+     "line": "long-earth",
+     "n": 2,
+     "cz": "Dlouhá válka",
+     "en": "The Long War",
+     "year": 2013,
+     "key": "dlouha-valka",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/e3392d47-86fc-4ed6-8585-760eaef46ebe"
+    },
+    {
+     "id": "le3",
+     "line": "long-earth",
+     "n": 3,
+     "cz": "Dlouhý Mars",
+     "en": "The Long Mars",
+     "year": 2014
+    },
+    {
+     "id": "le4",
+     "line": "long-earth",
+     "n": 4,
+     "cz": "Dlouhá utopie",
+     "en": "The Long Utopia",
+     "year": 2015
+    },
+    {
+     "id": "le5",
+     "line": "long-earth",
+     "n": 5,
+     "cz": "Dlouhý vesmír",
+     "en": "The Long Cosmos",
+     "year": 2016
+    }
+   ],
+   "links": [],
+   "sources": [
+    "https://en.wikipedia.org/wiki/The_Long_Earth_(series)",
+    "https://www.legie.info/serie/1525-dlouha-zeme",
+    "https://www.cbdb.cz/kniha-482465-dlouhy-vesmir-the-long-cosmos",
+    "https://www.kosmas.cz/knihy/268746/dlouhy-mars/",
+    "https://www.kosmas.cz/knihy/292717/dlouha-utopie/",
+    "https://katalog.mekvalmez.cz/"
    ]
   },
   "middle-earth": {
