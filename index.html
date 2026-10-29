@@ -225,11 +225,9 @@
   .mapstage canvas { display: block; touch-action: none; cursor: grab; }
   .maptools { position: absolute; top: 10px; right: 10px; display: flex; gap: 4px; }
   .maptools button { padding: 3px 9px; font-size: 12px; }
-  .mapmode { position: absolute; top: 10px; left: 10px; display: flex; }
-  .mapmode button { padding: 4px 12px; font-size: 12.5px; font-weight: 550; color: var(--ink-2); }
-  .mapmode button:first-child { border-radius: 6px 0 0 6px; }
-  .mapmode button:last-child { border-radius: 0 6px 6px 0; margin-left: -1px; }
-  .mapmode button[aria-pressed="true"] { background: var(--band-mid); border-color: var(--band-mid); color: #fff; }
+  .mapmodes { position: absolute; top: 10px; left: 10px; right: 150px; display: flex; flex-wrap: wrap; gap: 6px 10px; pointer-events: none; }
+  .mapmodes .wseg { pointer-events: auto; }
+  .mapmodes .wseg button { padding: 4px 12px; font-size: 12.5px; font-weight: 550; }
   .tagfilters { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: -2px 0 10px; font-size: 12px; color: var(--ink-muted); }
   button.tagbtn { cursor: pointer; font: inherit; font-size: 11px; }
   button.tagbtn:hover { border-color: var(--band-mid); color: var(--ink); }
@@ -305,6 +303,13 @@
   .wseg button:last-child { border-radius: 0 6px 6px 0; margin-left: -1px; }
   .wseg button[aria-pressed="true"] { background: var(--band-mid); border-color: var(--band-mid); color: #fff; }
   .wpbody { flex: 1; overflow: auto; padding: 0 14px 14px; font-size: 12px; }
+  .wblocks { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 16px 22px; margin-top: 10px; }
+  .wblock { border: 1px solid var(--hairline); border-radius: 8px; padding: 8px 10px 0 10px; }
+  .wbhead { margin-bottom: 2px; max-width: 520px; }
+  .wbhead .wbname { font-weight: 620; font-size: 12.5px; text-decoration: none; }
+  .wbhead .wbname:hover { text-decoration: underline; }
+  .wbhead .bk-meta { font-size: 11.5px; }
+  .wphead .unpick { padding: 0 4px; }
   .wpgraph { position: relative; margin-top: 4px; }
   .wpgraph svg { position: absolute; left: 0; top: 0; overflow: visible; }
   .worldpane .wsq { stroke: var(--ink-muted); stroke-width: 1.5; fill: none; }

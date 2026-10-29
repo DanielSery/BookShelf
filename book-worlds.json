@@ -441,6 +441,2235 @@
     "https://www.penguinrandomhouse.com/series/DMS/the-brotherband-chronicles/",
     "https://www.fictiondb.com/author/john-flanagan~40329.htm"
    ]
+  },
+  "divergent": {
+   "name": "Divergence",
+   "nameEn": "Divergent",
+   "author": "Veronica Roth",
+   "checked": "2026-10-29",
+   "libChecked": "2026-10-29",
+   "lines": [
+    {
+     "id": "divergent",
+     "name": "Divergence",
+     "nameEn": "Divergent",
+     "note": "Trilogy with the Four collection and an ebook-only epilogue novella."
+    }
+   ],
+   "books": [
+    {
+     "id": "d1",
+     "line": "divergent",
+     "n": 1,
+     "cz": "Divergence",
+     "en": "Divergent",
+     "year": 2011,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/f95030a2-4c59-4e2a-9353-97bbfffe935d",
+     "read": "Divergent (series)"
+    },
+    {
+     "id": "d2",
+     "line": "divergent",
+     "n": 2,
+     "cz": "Rezistence",
+     "en": "Insurgent",
+     "year": 2012,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/9109a611-bafd-4a47-8c13-04b932352220",
+     "read": "Divergent (series)"
+    },
+    {
+     "id": "d3",
+     "line": "divergent",
+     "n": 3,
+     "cz": "Aliance",
+     "en": "Allegiant",
+     "year": 2013,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/f5624b48-d2fe-4f44-91a2-f10d9a6b5089",
+     "read": "Divergent (series)"
+    },
+    {
+     "id": "d4",
+     "line": "divergent",
+     "n": null,
+     "cz": "Čtyřka",
+     "en": "Four: A Divergent Collection",
+     "year": 2014,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/07a0ced2-8a44-4f50-94f9-269accbcd654",
+     "note": "Short stories about Tobias, a prequel and partial retelling of Divergent."
+    },
+    {
+     "id": "d5",
+     "line": "divergent",
+     "n": null,
+     "cz": null,
+     "en": "We Can Be Mended",
+     "year": 2018,
+     "note": "Epilogue novella set five years after the trilogy; ebook only in English."
+    }
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Divergent_(book_series)",
+    "https://katalog.mekvalmez.cz/"
+   ]
+  },
+  "enderverse": {
+   "name": "Enderova sága",
+   "nameEn": "Enderverse",
+   "author": "Orson Scott Card",
+   "checked": "2026-10-29",
+   "libChecked": "2026-10-29",
+   "lines": [
+    {
+     "id": "first-formic-war",
+     "name": "The First Formic War",
+     "nameEn": "The First Formic War",
+     "note": "Prequel trilogy written long after Ender's Game; no Czech edition."
+    },
+    {
+     "id": "second-formic-war",
+     "name": "The Second Formic War",
+     "nameEn": "The Second Formic War",
+     "note": "Follows the First Formic War and precedes Ender's Game; no Czech edition."
+    },
+    {
+     "id": "ender",
+     "name": "Ender",
+     "nameEn": "Ender",
+     "note": "Ender's Game, the Speaker trilogy and companions; Legie.info numbers Ender in Exile 7th."
+    },
+    {
+     "id": "enders-shadow",
+     "name": "Enderův stín",
+     "nameEn": "Ender's Shadow",
+     "note": "Bean's parallel story; Czech editions stop at the fourth book."
+    },
+    {
+     "id": "fleet-school",
+     "name": "Fleet School",
+     "nameEn": "Fleet School",
+     "note": "Single novel so far."
+    }
+   ],
+   "books": [
+    {
+     "id": "fa1",
+     "line": "first-formic-war",
+     "n": 1,
+     "cz": null,
+     "en": "Earth Unaware",
+     "year": 2012,
+     "key": "earth-unaware",
+     "note": "Co-written with Aaron Johnston."
+    },
+    {
+     "id": "fa2",
+     "line": "first-formic-war",
+     "n": 2,
+     "cz": null,
+     "en": "Earth Afire",
+     "year": 2013,
+     "note": "Co-written with Aaron Johnston."
+    },
+    {
+     "id": "fa3",
+     "line": "first-formic-war",
+     "n": 3,
+     "cz": null,
+     "en": "Earth Awakens",
+     "year": 2014,
+     "note": "Co-written with Aaron Johnston."
+    },
+    {
+     "id": "sf1",
+     "line": "second-formic-war",
+     "n": 1,
+     "cz": null,
+     "en": "The Swarm",
+     "year": 2016,
+     "note": "Co-written with Aaron Johnston."
+    },
+    {
+     "id": "sf2",
+     "line": "second-formic-war",
+     "n": 2,
+     "cz": null,
+     "en": "The Hive",
+     "year": 2019,
+     "note": "Co-written with Aaron Johnston; the third book, The Queens, is unpublished."
+    },
+    {
+     "id": "e1",
+     "line": "ender",
+     "n": 1,
+     "cz": "Enderova hra",
+     "en": "Ender's Game",
+     "year": 1985,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/38a8ee0c-e791-40d2-997d-2bb9814cd2c3",
+     "read": "Ender's Game"
+    },
+    {
+     "id": "e2",
+     "line": "ender",
+     "n": 2,
+     "cz": "Mluvčí za mrtvé",
+     "en": "Speaker for the Dead",
+     "year": 1986,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/198b2d26-dcdb-4fbb-8364-55ece5aa23f1",
+     "read": "Speaker for the Dead (Ender #2)"
+    },
+    {
+     "id": "e3",
+     "line": "ender",
+     "n": 3,
+     "cz": "Xenocida",
+     "en": "Xenocide",
+     "year": 1991,
+     "read": "Ender saga #3-5 (Xenocide onward)"
+    },
+    {
+     "id": "e4",
+     "line": "ender",
+     "n": 4,
+     "cz": "Děti ducha",
+     "en": "Children of the Mind",
+     "year": 1996,
+     "read": "Ender saga #3-5 (Xenocide onward)"
+    },
+    {
+     "id": "e5",
+     "line": "ender",
+     "n": 5,
+     "cz": "Ender ve vyhnanství",
+     "en": "Ender in Exile",
+     "year": 2008,
+     "key": "ender-ve-vyhnanstvi",
+     "note": "Set between Ender's Game and Speaker for the Dead; numbered 5 by publication, Legie.info numbers it 7."
+    },
+    {
+     "id": "fm",
+     "line": "ender",
+     "n": null,
+     "cz": "První setkání",
+     "en": "First Meetings",
+     "year": 2002,
+     "note": "Collection of three novellas set before Ender's Game plus the original Ender's Game story."
+    },
+    {
+     "id": "wog",
+     "line": "ender",
+     "n": null,
+     "cz": "Válka o dárky",
+     "en": "A War of Gifts",
+     "year": 2007,
+     "note": "Novella set during Ender's time at Battle School."
+    },
+    {
+     "id": "s1",
+     "line": "enders-shadow",
+     "n": 1,
+     "cz": "Enderův stín",
+     "en": "Ender's Shadow",
+     "year": 1999,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/6a9db76c-2411-4c87-997e-1a2bc789a52c",
+     "read": "Ender's Shadow series",
+     "note": "Runs parallel to Ender's Game."
+    },
+    {
+     "id": "s2",
+     "line": "enders-shadow",
+     "n": 2,
+     "cz": "Hegemonův stín",
+     "en": "Shadow of the Hegemon",
+     "year": 2001,
+     "read": "Ender's Shadow series"
+    },
+    {
+     "id": "s3",
+     "line": "enders-shadow",
+     "n": 3,
+     "cz": "Stínové loutky",
+     "en": "Shadow Puppets",
+     "year": 2002,
+     "read": "Ender's Shadow series"
+    },
+    {
+     "id": "s4",
+     "line": "enders-shadow",
+     "n": 4,
+     "cz": "Obrův stín",
+     "en": "Shadow of the Giant",
+     "year": 2005,
+     "read": "Ender's Shadow series"
+    },
+    {
+     "id": "s5",
+     "line": "enders-shadow",
+     "n": 5,
+     "cz": null,
+     "en": "Shadows in Flight",
+     "year": 2012,
+     "note": "Novella; announced in Czech by Laser-books but never published."
+    },
+    {
+     "id": "s6",
+     "line": "enders-shadow",
+     "n": 6,
+     "cz": null,
+     "en": "The Last Shadow",
+     "year": 2021
+    },
+    {
+     "id": "fl1",
+     "line": "fleet-school",
+     "n": 1,
+     "cz": null,
+     "en": "Children of the Fleet",
+     "year": 2017,
+     "note": "Opening chapters overlap with Shadow of the Hegemon."
+    }
+   ],
+   "links": [
+    {
+     "from": "fa3",
+     "to": "sf1",
+     "kind": "then",
+     "note": "The Swarm follows Earth Awakens."
+    },
+    {
+     "from": "sf2",
+     "to": "e1",
+     "kind": "then",
+     "note": "The Second Formic War precedes Ender's Game."
+    },
+    {
+     "from": "fa1",
+     "to": "e1",
+     "kind": "prequel",
+     "note": "The Formic War trilogies are set about a century before Ender's Game and were written after it."
+    },
+    {
+     "from": "e5",
+     "to": "e2",
+     "kind": "prequel",
+     "note": "Ender in Exile is set before Speaker for the Dead and was written after it."
+    },
+    {
+     "from": "e4",
+     "to": "s6",
+     "kind": "then",
+     "note": "The Last Shadow comes after Children of the Mind and Shadows in Flight."
+    }
+   ],
+   "story": [
+    "fa1",
+    "fa2",
+    "fa3",
+    "sf1",
+    "sf2",
+    "fm",
+    "e1",
+    "wog",
+    "s1",
+    "s2",
+    "s3",
+    "s4",
+    "fl1",
+    "e5",
+    "s5",
+    "e2",
+    "e3",
+    "e4",
+    "s6"
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ender's_Game_(series)",
+    "https://en.wikipedia.org/wiki/Ender's_Game_(novel_series)",
+    "https://cs.wikipedia.org/wiki/Enderova_hra",
+    "https://www.legie.info/kniha/1282-orson-scott-card-deti-ducha",
+    "https://www.legie.info/autor/189-orson-scott-card/knihy",
+    "https://www.databazeknih.cz/knihy/enderova-saga-ender-ve-vyhnanstvi-43655",
+    "https://katalog.mekvalmez.cz/"
+   ]
+  },
+  "harry-potter": {
+   "name": "Harry Potter",
+   "nameEn": "Harry Potter",
+   "author": "J. K. Rowling",
+   "checked": "2026-10-29",
+   "libChecked": "2026-10-29",
+   "lines": [
+    {
+     "id": "harry-potter",
+     "name": "Harry Potter",
+     "nameEn": "Harry Potter",
+     "note": "Seven novels plus the Cursed Child play script."
+    },
+    {
+     "id": "hogwarts-library",
+     "name": "Bradavická knihovna",
+     "nameEn": "Hogwarts Library",
+     "standalone": true,
+     "note": "Short in-world books written by Rowling for charity; unnumbered."
+    }
+   ],
+   "books": [
+    {
+     "id": "hp1",
+     "line": "harry-potter",
+     "n": 1,
+     "cz": "Harry Potter a Kámen mudrců",
+     "en": "Harry Potter and the Philosopher's Stone",
+     "year": 1997,
+     "read": "Harry Potter (series)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/019ede67-376e-7da7-83b4-34b0fbb0128c"
+    },
+    {
+     "id": "hp2",
+     "line": "harry-potter",
+     "n": 2,
+     "cz": "Harry Potter a Tajemná komnata",
+     "en": "Harry Potter and the Chamber of Secrets",
+     "year": 1998,
+     "read": "Harry Potter (series)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/0f1c5d2f-123c-420a-9410-ace2c3122bc0"
+    },
+    {
+     "id": "hp3",
+     "line": "harry-potter",
+     "n": 3,
+     "cz": "Harry Potter a vězeň z Azkabanu",
+     "en": "Harry Potter and the Prisoner of Azkaban",
+     "year": 1999,
+     "read": "Harry Potter (series)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/6037d169-defd-41fe-959f-83fd13783df3"
+    },
+    {
+     "id": "hp4",
+     "line": "harry-potter",
+     "n": 4,
+     "cz": "Harry Potter a Ohnivý pohár",
+     "en": "Harry Potter and the Goblet of Fire",
+     "year": 2000,
+     "read": "Harry Potter (series)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/019ede67-5107-735d-830f-4442aa42f09f"
+    },
+    {
+     "id": "hp5",
+     "line": "harry-potter",
+     "n": 5,
+     "cz": "Harry Potter a Fénixův řád",
+     "en": "Harry Potter and the Order of the Phoenix",
+     "year": 2003,
+     "read": "Harry Potter (series)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/287c4d7f-ffb6-48ae-ad84-5165531922af"
+    },
+    {
+     "id": "hp6",
+     "line": "harry-potter",
+     "n": 6,
+     "cz": "Harry Potter a princ dvojí krve",
+     "en": "Harry Potter and the Half-Blood Prince",
+     "year": 2005,
+     "read": "Harry Potter (series)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/01a177c4-2dff-797c-b817-5f18a03b17e5"
+    },
+    {
+     "id": "hp7",
+     "line": "harry-potter",
+     "n": 7,
+     "cz": "Harry Potter a relikvie smrti",
+     "en": "Harry Potter and the Deathly Hallows",
+     "year": 2007,
+     "read": "Harry Potter (series)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/8467c3f9-4098-479d-b9ff-7a6372a61d61"
+    },
+    {
+     "id": "cc",
+     "line": "harry-potter",
+     "n": null,
+     "cz": "Harry Potter a prokleté dítě",
+     "en": "Harry Potter and the Cursed Child",
+     "year": 2016,
+     "note": "Stage play script (parts one and two) by Jack Thorne from a story by J. K. Rowling, John Tiffany and Thorne.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/1d93b39e-0071-42f9-82e2-b534bc8be1ce"
+    },
+    {
+     "id": "fb",
+     "line": "hogwarts-library",
+     "n": null,
+     "cz": "Fantastická zvířata a kde je najít",
+     "en": "Fantastic Beasts and Where to Find Them",
+     "year": 2001,
+     "note": "In-world textbook by Newt Scamander, not a novel.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/7cea9212-6454-4cd3-aee5-262e1ba5051e"
+    },
+    {
+     "id": "qta",
+     "line": "hogwarts-library",
+     "n": null,
+     "cz": "Famfrpál v průběhu věků",
+     "en": "Quidditch Through the Ages",
+     "year": 2001,
+     "note": "In-world sports history by Kennilworthy Whisp, not a novel.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/f4168e23-ab5a-4e18-8ce1-0ca1cbcd86e1"
+    },
+    {
+     "id": "beedle",
+     "line": "hogwarts-library",
+     "n": null,
+     "cz": "Bajky barda Beedleho",
+     "en": "The Tales of Beedle the Bard",
+     "year": 2008,
+     "note": "Collection of five in-world fairy tales.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/9d382a35-647a-4414-a825-8539d82538d0"
+    }
+   ],
+   "links": [
+    {
+     "from": "hp7",
+     "to": "cc",
+     "kind": "then",
+     "note": "The play opens with the epilogue of Relikvie smrti and continues 19 years later."
+    }
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Harry_Potter",
+    "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Cursed_Child",
+    "https://en.wikipedia.org/wiki/Hogwarts_Library",
+    "https://katalog.mekvalmez.cz"
+   ]
+  },
+  "hierarchy": {
+   "name": "Hierarchie",
+   "nameEn": "The Hierarchy",
+   "author": "James Islington",
+   "checked": "2026-10-29",
+   "libChecked": "2026-10-29",
+   "lines": [
+    {
+     "id": "hierarchy",
+     "name": "Hierarchie",
+     "nameEn": "The Hierarchy",
+     "note": "Separate world from Licanius; book 3, The Justice of One, is unpublished."
+    }
+   ],
+   "books": [
+    {
+     "id": "h1",
+     "line": "hierarchy",
+     "n": 1,
+     "cz": "Vůle většiny",
+     "en": "The Will of the Many",
+     "year": 2023,
+     "key": "the-will-of-the-many",
+     "note": "Czech edition by Fobos, 2025."
+    },
+    {
+     "id": "h2",
+     "line": "hierarchy",
+     "n": 2,
+     "cz": null,
+     "en": "The Strength of the Few",
+     "year": 2025,
+     "key": "the-strength-of-the-few"
+    }
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/James_Islington",
+    "https://www.knihydobrovsky.cz/kniha/vule-vetsiny-803017558",
+    "https://www.databazeknih.cz/knihy/hierarchie---the-will-of-the-many-569982",
+    "https://katalog.mekvalmez.cz"
+   ]
+  },
+  "hitchhikers": {
+   "name": "Stopařův průvodce Galaxií",
+   "nameEn": "The Hitchhiker's Guide to the Galaxy",
+   "author": "Douglas Adams",
+   "checked": "2026-10-29",
+   "libChecked": "2026-10-29",
+   "lines": [
+    {
+     "id": "hitchhikers-guide",
+     "name": "Stopařův průvodce Galaxií",
+     "nameEn": "The Hitchhiker's Guide to the Galaxy",
+     "note": "Five novels by Adams and a sixth by Eoin Colfer."
+    }
+   ],
+   "books": [
+    {
+     "id": "h1",
+     "line": "hitchhikers-guide",
+     "n": 1,
+     "cz": "Stopařův průvodce Galaxií",
+     "en": "The Hitchhiker's Guide to the Galaxy",
+     "year": 1979,
+     "read": "The Hitchhiker's Guide to the Galaxy",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/2a602897-d53b-4308-a590-9aa6829c66c3"
+    },
+    {
+     "id": "h2",
+     "line": "hitchhikers-guide",
+     "n": 2,
+     "cz": "Restaurant na konci vesmíru",
+     "en": "The Restaurant at the End of the Universe",
+     "year": 1980,
+     "read": "Hitchhiker's sequels (#2-5)",
+     "rejected": "Hitchhiker sequels (#2-5)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/a1793ae1-60d5-44f3-8f4c-7912f1060988"
+    },
+    {
+     "id": "h3",
+     "line": "hitchhikers-guide",
+     "n": 3,
+     "cz": "Život, vesmír a vůbec",
+     "en": "Life, the Universe and Everything",
+     "year": 1982,
+     "read": "Hitchhiker's sequels (#2-5)",
+     "rejected": "Hitchhiker sequels (#2-5)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/8bcf3a39-6dfa-47f4-90a3-b74906f39f78"
+    },
+    {
+     "id": "h4",
+     "line": "hitchhikers-guide",
+     "n": 4,
+     "cz": "Sbohem, a díky za ryby",
+     "en": "So Long, and Thanks for All the Fish",
+     "year": 1984,
+     "read": "Hitchhiker's sequels (#2-5)",
+     "rejected": "Hitchhiker sequels (#2-5)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/4381046f-88b8-4c20-80fc-5e7d669956f3"
+    },
+    {
+     "id": "h5",
+     "line": "hitchhikers-guide",
+     "n": 5,
+     "cz": "Převážně neškodná",
+     "en": "Mostly Harmless",
+     "year": 1992,
+     "read": "Hitchhiker's sequels (#2-5)",
+     "rejected": "Hitchhiker sequels (#2-5)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/98e1877d-1665-4a0f-9609-650037d7e668"
+    },
+    {
+     "id": "h6",
+     "line": "hitchhikers-guide",
+     "n": 6,
+     "cz": "A ještě něco…",
+     "en": "And Another Thing...",
+     "year": 2009,
+     "key": "stoparuv-pruvodce-galaxii-douglase-adamse",
+     "note": "Written by Eoin Colfer after Adams's death; the library lists it as Stopařův průvodce Galaxií (Douglase Adamse), part six.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/d5c0a9f0-7b56-4a81-aba9-3ddb138e11ec"
+    }
+   ],
+   "links": [],
+   "sources": [
+    "https://www.cbdb.cz/knizni-serie-855-stoparuv-pruvodce-galaxii",
+    "https://www.legie.info/kniha/2188-restaurant-na-konci-vesmiru",
+    "https://knihobot.cz/serie/stoparuv-pruvodce-galaxii"
+   ]
+  },
+  "homecoming": {
+   "name": "Návrat domů",
+   "nameEn": "Homecoming",
+   "author": "Orson Scott Card",
+   "checked": "2026-10-29",
+   "libChecked": "2026-10-29",
+   "lines": [
+    {
+     "id": "homecoming",
+     "name": "Návrat domů",
+     "nameEn": "Homecoming",
+     "note": "Only the first volume exists in Czech."
+    }
+   ],
+   "books": [
+    {
+     "id": "h1",
+     "line": "homecoming",
+     "n": 1,
+     "cz": "Vzpomínky na Zemi",
+     "en": "The Memory of Earth",
+     "year": 1992,
+     "key": "vzpominky-na-zemi"
+    },
+    {
+     "id": "h2",
+     "line": "homecoming",
+     "n": 2,
+     "cz": null,
+     "en": "The Call of Earth",
+     "year": 1992
+    },
+    {
+     "id": "h3",
+     "line": "homecoming",
+     "n": 3,
+     "cz": null,
+     "en": "The Ships of Earth",
+     "year": 1994
+    },
+    {
+     "id": "h4",
+     "line": "homecoming",
+     "n": 4,
+     "cz": null,
+     "en": "Earthfall",
+     "year": 1995
+    },
+    {
+     "id": "h5",
+     "line": "homecoming",
+     "n": 5,
+     "cz": null,
+     "en": "Earthborn",
+     "year": 1995
+    }
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Homecoming_Saga",
+    "https://www.legie.info/autor/189-orson-scott-card/knihy",
+    "https://katalog.mekvalmez.cz/"
+   ]
+  },
+  "interdependency": {
+   "name": "Interdependency",
+   "nameEn": "The Interdependency",
+   "author": "John Scalzi",
+   "checked": "2026-10-29",
+   "libChecked": "2026-10-29",
+   "lines": [
+    {
+     "id": "the-interdependency",
+     "name": "Interdependency",
+     "nameEn": "The Interdependency",
+     "note": "Space-opera trilogy unrelated to Old Man's War; only the first volume is in Czech."
+    }
+   ],
+   "books": [
+    {
+     "id": "i1",
+     "line": "the-interdependency",
+     "n": 1,
+     "cz": "Zánik Impéria",
+     "en": "The Collapsing Empire",
+     "year": 2017,
+     "key": "zanik-imperia"
+    },
+    {
+     "id": "i2",
+     "line": "the-interdependency",
+     "n": 2,
+     "cz": null,
+     "en": "The Consuming Fire",
+     "year": 2018
+    },
+    {
+     "id": "i3",
+     "line": "the-interdependency",
+     "n": 3,
+     "cz": null,
+     "en": "The Last Emperox",
+     "year": 2020
+    }
+   ],
+   "links": [],
+   "sources": [
+    "https://www.legie.info/autor/6632-john-scalzi/knihy",
+    "https://www.databazeknih.cz/serie-autora/john-scalzi-13272",
+    "https://torpublishinggroup.com/the-interdependency-series/?isbn=9781250344168&format=ebook"
+   ]
+  },
+  "licanius": {
+   "name": "Licanius",
+   "nameEn": "The Licanius Trilogy",
+   "author": "James Islington",
+   "checked": "2026-10-29",
+   "libChecked": "2026-10-29",
+   "lines": [
+    {
+     "id": "licanius",
+     "name": "Licanius",
+     "nameEn": "The Licanius Trilogy"
+    }
+   ],
+   "books": [
+    {
+     "id": "lic1",
+     "line": "licanius",
+     "n": 1,
+     "cz": "Stín věcí ztracených",
+     "en": "The Shadow of What Was Lost",
+     "year": 2014,
+     "read": "Stín věcí ztracených (The Shadow of What Was Lost)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/a94276a5-5601-4e88-bd80-b8ba3b48a680"
+    },
+    {
+     "id": "lic2",
+     "line": "licanius",
+     "n": 2,
+     "cz": "Ozvěna věcí budoucích",
+     "en": "An Echo of Things to Come",
+     "year": 2017,
+     "read": "Ozvěna věcí budoucích (An Echo of Things to Come)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/96e4800c-4bb9-4a9f-b92b-e11e9a063c16"
+    },
+    {
+     "id": "lic3",
+     "line": "licanius",
+     "n": 3,
+     "cz": "Světlo věcí konečných",
+     "en": "The Light of All That Falls",
+     "year": 2019,
+     "read": "Světlo věcí konečných (The Light of All That Falls)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/4b12da94-31ef-4b9b-8c9b-7a3888a98af9"
+    }
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/James_Islington",
+    "https://katalog.mekvalmez.cz"
+   ]
+  },
+  "middle-earth": {
+   "name": "Středozem",
+   "nameEn": "Tolkien's Middle-earth",
+   "author": "J. R. R. Tolkien",
+   "checked": "2026-10-29",
+   "libChecked": "2026-10-29",
+   "lines": [
+    {
+     "id": "hobbit",
+     "name": "Hobit",
+     "nameEn": "The Hobbit",
+     "standalone": true,
+     "note": "Standalone novel that Tolkien wrote first and that The Lord of the Rings continues."
+    },
+    {
+     "id": "lord-of-the-rings",
+     "name": "Pán prstenů",
+     "nameEn": "The Lord of the Rings",
+     "note": "One novel published in three volumes; the Czech edition keeps the three-volume split."
+    },
+    {
+     "id": "middle-earth-legendarium",
+     "name": "Silmarillion a pozůstalost",
+     "nameEn": "The Silmarillion and posthumous works",
+     "standalone": true,
+     "note": "Edited by Christopher Tolkien (Fall of Númenor by Brian Sibley) from Tolkien's manuscripts after 1973; unnumbered."
+    }
+   ],
+   "books": [
+    {
+     "id": "hobbit",
+     "line": "hobbit",
+     "n": null,
+     "cz": "Hobit, aneb, Cesta tam a zase zpátky",
+     "en": "The Hobbit, or There and Back Again",
+     "year": 1937,
+     "read": "The Hobbit",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/53b26aae-a0dc-42fd-b705-37ad7c73adba"
+    },
+    {
+     "id": "lotr1",
+     "line": "lord-of-the-rings",
+     "n": 1,
+     "cz": "Pán prstenů: Společenstvo Prstenu",
+     "en": "The Fellowship of the Ring",
+     "year": 1954,
+     "read": "The Lord of the Rings (series)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/0e00a9a6-2b12-4b28-8eb9-abeaca64df7d"
+    },
+    {
+     "id": "lotr2",
+     "line": "lord-of-the-rings",
+     "n": 2,
+     "cz": "Pán prstenů: Dvě věže",
+     "en": "The Two Towers",
+     "year": 1954,
+     "read": "The Lord of the Rings (series)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/50b57bc4-0d46-4429-8f8c-5522740e9215"
+    },
+    {
+     "id": "lotr3",
+     "line": "lord-of-the-rings",
+     "n": 3,
+     "cz": "Pán prstenů: Návrat krále",
+     "en": "The Return of the King",
+     "year": 1955,
+     "read": "The Lord of the Rings (series)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/ec0b524e-d1f0-4864-b325-918bd3409168"
+    },
+    {
+     "id": "silm",
+     "line": "middle-earth-legendarium",
+     "n": null,
+     "cz": "Silmarillion: mýty a legendy Středozemě",
+     "en": "The Silmarillion",
+     "year": 1977,
+     "read": "The Silmarillion",
+     "note": "Posthumous, edited by Christopher Tolkien with Guy Gavriel Kay.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/cca00495-f737-4594-92c8-25de244220ba"
+    },
+    {
+     "id": "ut",
+     "line": "middle-earth-legendarium",
+     "n": null,
+     "cz": "Nedokončené příběhy Númenoru a Středozemě",
+     "en": "Unfinished Tales of Númenor and Middle-earth",
+     "year": 1980,
+     "read": "Unfinished Tales",
+     "note": "Posthumous collection of drafts and essays, edited by Christopher Tolkien.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/e15e9224-c16b-4f5b-83d5-7abed8996b52"
+    },
+    {
+     "id": "lost1",
+     "line": "middle-earth-legendarium",
+     "n": null,
+     "cz": "Kniha ztracených pověstí, č. 1",
+     "en": "The Book of Lost Tales, Part One",
+     "year": 1983,
+     "note": "Volume 1 of The History of Middle-earth, early tale drafts edited by Christopher Tolkien; only part one is published in Czech (Winston Smith, 1995).",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/8fc4f633-ea2e-4ac9-9566-76600e9cf0d4"
+    },
+    {
+     "id": "hurin",
+     "line": "middle-earth-legendarium",
+     "n": null,
+     "cz": "Húrinovy děti",
+     "en": "The Children of Húrin",
+     "year": 2007,
+     "rejected": "Remaining posthumous volumes",
+     "note": "Posthumous, assembled by Christopher Tolkien.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/4475102d-e446-46cb-9e47-7b740f3c22f8"
+    },
+    {
+     "id": "beren",
+     "line": "middle-earth-legendarium",
+     "n": null,
+     "cz": "Beren a Lúthien",
+     "en": "Beren and Lúthien",
+     "year": 2017,
+     "rejected": "Remaining posthumous volumes",
+     "note": "Posthumous, edited by Christopher Tolkien; Czech edition Argo 2023."
+    },
+    {
+     "id": "gondolin",
+     "line": "middle-earth-legendarium",
+     "n": null,
+     "cz": "Pád Gondolinu",
+     "en": "The Fall of Gondolin",
+     "year": 2018,
+     "rejected": "Remaining posthumous volumes",
+     "note": "Posthumous, edited by Christopher Tolkien.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/b523aa52-630c-47ba-a318-b36afc5e84db"
+    },
+    {
+     "id": "numenor",
+     "line": "middle-earth-legendarium",
+     "n": null,
+     "cz": "Pád Númenoru a jiné příběhy z druhého věku Středozemě",
+     "en": "The Fall of Númenor and Other Tales from the Second Age of Middle-earth",
+     "year": 2022,
+     "rejected": "Remaining posthumous volumes",
+     "note": "Posthumous, edited by Brian Sibley; Czech edition Argo 2023."
+    }
+   ],
+   "links": [
+    {
+     "from": "hobbit",
+     "to": "lotr1",
+     "kind": "then",
+     "note": "The Lord of the Rings continues the story of the ring found in The Hobbit."
+    },
+    {
+     "from": "silm",
+     "to": "hobbit",
+     "kind": "prequel",
+     "note": "The Silmarillion covers the ages before The Hobbit but was published decades after it."
+    }
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/J._R._R._Tolkien_bibliography",
+    "https://en.wikipedia.org/wiki/The_Fall_of_N%C3%BAmenor",
+    "https://argo.cz/knihy/pad-numenoru/",
+    "https://argo.cz/tolkienovske-zne-nejen-beren-a-luthien-konecne-cesky/",
+    "https://www.databazeknih.cz/knihy/pan-prstenu-kniha-ztracenych-povesti-i-31399",
+    "http://www.angrenost.cz/clanek.php?akce=clanek&id=154",
+    "https://katalog.mekvalmez.cz"
+   ]
+  },
+  "narnia": {
+   "name": "Letopisy Narnie",
+   "nameEn": "The Chronicles of Narnia",
+   "author": "C. S. Lewis",
+   "checked": "2026-10-29",
+   "libChecked": "2026-10-29",
+   "lines": [
+    {
+     "id": "chronicles-of-narnia",
+     "name": "Letopisy Narnie",
+     "nameEn": "The Chronicles of Narnia",
+     "note": "Numbering here is the Fragment edition's (chronological, as in current English editions); the 1990s Orbis pictus edition numbered by publication order, with Čarodějův synovec as VI."
+    }
+   ],
+   "books": [
+    {
+     "id": "n1",
+     "line": "chronicles-of-narnia",
+     "n": 1,
+     "cz": "Čarodějův synovec",
+     "en": "The Magician's Nephew",
+     "year": 1955,
+     "read": "The Chronicles of Narnia",
+     "note": "Book 6 in publication order.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/e01a53af-3016-48cf-a542-1916221f650f"
+    },
+    {
+     "id": "n2",
+     "line": "chronicles-of-narnia",
+     "n": 2,
+     "cz": "Lev, čarodějnice a skříň",
+     "en": "The Lion, the Witch and the Wardrobe",
+     "year": 1950,
+     "read": "The Chronicles of Narnia",
+     "note": "Book 1 in publication order.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/c1fb9909-33a2-4afc-bbb4-115951d57e13"
+    },
+    {
+     "id": "n3",
+     "line": "chronicles-of-narnia",
+     "n": 3,
+     "cz": "Kůň a jeho chlapec",
+     "en": "The Horse and His Boy",
+     "year": 1954,
+     "read": "The Chronicles of Narnia",
+     "note": "Book 5 in publication order.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/b06d15ad-5524-4301-b96f-27f97babf5d3"
+    },
+    {
+     "id": "n4",
+     "line": "chronicles-of-narnia",
+     "n": 4,
+     "cz": "Princ Kaspian",
+     "en": "Prince Caspian",
+     "year": 1951,
+     "read": "The Chronicles of Narnia",
+     "note": "Book 2 in publication order.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/8a053db5-ebc6-42dc-ada9-83ab1cafce2a"
+    },
+    {
+     "id": "n5",
+     "line": "chronicles-of-narnia",
+     "n": 5,
+     "cz": "Plavba Jitřního poutníka",
+     "en": "The Voyage of the Dawn Treader",
+     "year": 1952,
+     "read": "The Chronicles of Narnia",
+     "note": "Book 3 in publication order.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/7ba4922b-6d60-48ef-a090-7562d38e4d1d"
+    },
+    {
+     "id": "n6",
+     "line": "chronicles-of-narnia",
+     "n": 6,
+     "cz": "Stříbrná židle",
+     "en": "The Silver Chair",
+     "year": 1953,
+     "read": "The Chronicles of Narnia",
+     "note": "Book 4 in publication order.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/b3d83c60-ff00-4166-b2a7-70fb9bf62d81"
+    },
+    {
+     "id": "n7",
+     "line": "chronicles-of-narnia",
+     "n": 7,
+     "cz": "Poslední bitva",
+     "en": "The Last Battle",
+     "year": 1956,
+     "read": "The Chronicles of Narnia",
+     "note": "Book 7 in publication order.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/2cec3c6d-9776-454f-b68e-61a69a1e0f8c"
+    }
+   ],
+   "story": [
+    "n1",
+    "n2",
+    "n3",
+    "n4",
+    "n5",
+    "n6",
+    "n7"
+   ],
+   "sources": [
+    "https://cs.wikipedia.org/wiki/Letopisy_Narnie",
+    "https://en.wikipedia.org/wiki/The_Chronicles_of_Narnia",
+    "https://www.knihydobrovsky.cz/kniha/narnie-lev-carodejnice-a-skrin-503853014",
+    "https://katalog.mekvalmez.cz"
+   ]
+  },
+  "old-mans-war": {
+   "name": "Válka starého muže",
+   "nameEn": "Old Man's War",
+   "author": "John Scalzi",
+   "checked": "2026-10-29",
+   "libChecked": "2026-10-29",
+   "lines": [
+    {
+     "id": "old-man-s-war",
+     "name": "Válka starého muže",
+     "nameEn": "Old Man's War",
+     "note": "Czech series Koloniální války, six volumes through Konec všech věcí."
+    }
+   ],
+   "books": [
+    {
+     "id": "o1",
+     "line": "old-man-s-war",
+     "n": 1,
+     "cz": "Válka starého muže",
+     "en": "Old Man's War",
+     "year": 2005,
+     "read": "Válka starého muže (Old Man's War)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/2c009853-881b-4e65-a88f-da745488c737"
+    },
+    {
+     "id": "o2",
+     "line": "old-man-s-war",
+     "n": 2,
+     "cz": "Brigády duchů",
+     "en": "The Ghost Brigades",
+     "year": 2006,
+     "key": "brigady-duchu"
+    },
+    {
+     "id": "o3",
+     "line": "old-man-s-war",
+     "n": 3,
+     "cz": "Poslední kolonie",
+     "en": "The Last Colony",
+     "year": 2007,
+     "key": "posledni-kolonie"
+    },
+    {
+     "id": "o4",
+     "line": "old-man-s-war",
+     "n": 4,
+     "cz": "Příběh Zoe",
+     "en": "Zoe's Tale",
+     "year": 2008,
+     "note": "Retells The Last Colony from Zoe's view."
+    },
+    {
+     "id": "o5",
+     "line": "old-man-s-war",
+     "n": 5,
+     "cz": "Rozkol",
+     "en": "The Human Division",
+     "year": 2013,
+     "note": "Published first as a serial."
+    },
+    {
+     "id": "o6",
+     "line": "old-man-s-war",
+     "n": 6,
+     "cz": "Konec všech věcí",
+     "en": "The End of All Things",
+     "year": 2015,
+     "note": "Four linked novellas published as one Czech volume."
+    },
+    {
+     "id": "o7",
+     "line": "old-man-s-war",
+     "n": 7,
+     "cz": null,
+     "en": "The Shattering Peace",
+     "year": 2025,
+     "note": "No Czech edition found; number is the original series number."
+    },
+    {
+     "id": "o8",
+     "line": "old-man-s-war",
+     "n": null,
+     "cz": null,
+     "en": "The Sagan Diary",
+     "year": 2007,
+     "note": "Novella, set between The Ghost Brigades and The Last Colony; no Czech edition found."
+    }
+   ],
+   "links": [],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Old_Man's_War",
+    "https://www.legie.info/serie/993-kolonialni-valky",
+    "https://www.martinus.cz/seria/valka-stareho-muze",
+    "https://www.databazeknih.cz/serie-autora/john-scalzi-13272"
+   ]
+  },
+  "panem": {
+   "name": "Hunger Games",
+   "nameEn": "The Hunger Games",
+   "author": "Suzanne Collins",
+   "checked": "2026-10-29",
+   "libChecked": "2026-10-29",
+   "lines": [
+    {
+     "id": "hunger-games",
+     "name": "Hunger Games",
+     "nameEn": "The Hunger Games",
+     "note": "Trilogy plus two prequels written in 2020 and 2025."
+    }
+   ],
+   "books": [
+    {
+     "id": "hg1",
+     "line": "hunger-games",
+     "n": 1,
+     "cz": "Aréna smrti",
+     "en": "The Hunger Games",
+     "year": 2008,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/00acc058-1cd2-48fe-aa81-0e4ee2a5eca0",
+     "read": "The Hunger Games"
+    },
+    {
+     "id": "hg2",
+     "line": "hunger-games",
+     "n": 2,
+     "cz": "Vražedná pomsta",
+     "en": "Catching Fire",
+     "year": 2009,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/0afa892b-1384-4d4b-8261-823579013e84",
+     "read": "Catching Fire (Hunger Games #2)"
+    },
+    {
+     "id": "hg3",
+     "line": "hunger-games",
+     "n": 3,
+     "cz": "Síla vzdoru",
+     "en": "Mockingjay",
+     "year": 2010,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/69c6ddf1-7388-47f2-ac71-a010a870aaac",
+     "read": "Mockingjay (Hunger Games #3)"
+    },
+    {
+     "id": "hg4",
+     "line": "hunger-games",
+     "n": 4,
+     "cz": "Balada o ptácích a hadech",
+     "en": "The Ballad of Songbirds and Snakes",
+     "year": 2020,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/0dac9d60-4bd2-4436-9c99-f8644b1c7928",
+     "read": "The Ballad of Songbirds and Snakes",
+     "note": "Set 64 years before The Hunger Games, at the 10th Games."
+    },
+    {
+     "id": "hg5",
+     "line": "hunger-games",
+     "n": 5,
+     "cz": "Úsvit sklizně",
+     "en": "Sunrise on the Reaping",
+     "year": 2025,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/b55ff645-0f1e-4aa5-964b-3379d7af3098",
+     "read": "Sunrise on the Reaping",
+     "note": "Set 24 years before The Hunger Games, at the 50th Games."
+    }
+   ],
+   "links": [
+    {
+     "from": "hg4",
+     "to": "hg1",
+     "kind": "prequel",
+     "note": "Set 64 years before The Hunger Games, written 12 years after it."
+    },
+    {
+     "from": "hg5",
+     "to": "hg1",
+     "kind": "prequel",
+     "note": "Set 24 years before The Hunger Games, written 17 years after it."
+    }
+   ],
+   "story": [
+    "hg4",
+    "hg5",
+    "hg1",
+    "hg2",
+    "hg3"
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/The_Hunger_Games_(novel_series)",
+    "https://katalog.mekvalmez.cz/"
+   ]
+  },
+  "pathfinder": {
+   "name": "Pathfinder",
+   "nameEn": "Pathfinder",
+   "author": "Orson Scott Card",
+   "checked": "2026-10-29",
+   "lines": [
+    {
+     "id": "pathfinder-card",
+     "name": "Pathfinder",
+     "nameEn": "Pathfinder",
+     "note": "No Czech edition found."
+    }
+   ],
+   "books": [
+    {
+     "id": "p1",
+     "line": "pathfinder-card",
+     "n": 1,
+     "cz": null,
+     "en": "Pathfinder",
+     "year": 2010,
+     "key": "pathfinder"
+    },
+    {
+     "id": "p2",
+     "line": "pathfinder-card",
+     "n": 2,
+     "cz": null,
+     "en": "Ruins",
+     "year": 2012
+    },
+    {
+     "id": "p3",
+     "line": "pathfinder-card",
+     "n": 3,
+     "cz": null,
+     "en": "Visitors",
+     "year": 2014
+    }
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ruins_(novel)",
+    "https://www.fantasticfiction.com/c/orson-scott-card/pathfinder/"
+   ]
+  },
+  "red-rising": {
+   "name": "Rudý úsvit",
+   "nameEn": "Red Rising Saga",
+   "author": "Pierce Brown",
+   "checked": "2026-10-29",
+   "libChecked": "2026-10-29",
+   "lines": [
+    {
+     "id": "red-rising",
+     "name": "Rudý úsvit",
+     "nameEn": "Red Rising",
+     "note": "Original trilogy (1-3) followed by the Iron Gold tetralogy (4-7), numbered continuously; Red God (7) is unpublished."
+    }
+   ],
+   "arcs": [
+    {
+     "line": "red-rising",
+     "from": 4,
+     "to": 6,
+     "name": "Iron Gold",
+     "nameEn": "Iron Gold",
+     "note": "Sequel tetralogy; its finale Red God has no release date."
+    }
+   ],
+   "books": [
+    {
+     "id": "rr1",
+     "line": "red-rising",
+     "n": 1,
+     "cz": "Rudý úsvit",
+     "en": "Red Rising",
+     "year": 2014,
+     "read": "Red Rising",
+     "note": "Czech: Triton 2016, new translation by Host 2025.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/c7cb81ec-04df-4a0d-a8c4-5b4f2e8319b4"
+    },
+    {
+     "id": "rr2",
+     "line": "red-rising",
+     "n": 2,
+     "cz": "Zlatý syn",
+     "en": "Golden Son",
+     "year": 2015,
+     "read": "Golden Son (Red Rising #2)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/019eac10-516f-7aed-851b-c10766b698df"
+    },
+    {
+     "id": "rr3",
+     "line": "red-rising",
+     "n": 3,
+     "cz": "Ranní hvězda",
+     "en": "Morning Star",
+     "year": 2016,
+     "key": "morning-star",
+     "note": "Czech edition by Host announced for 25 November 2026, not yet published."
+    },
+    {
+     "id": "rr4",
+     "line": "red-rising",
+     "n": 4,
+     "cz": null,
+     "en": "Iron Gold",
+     "year": 2018,
+     "key": "iron-gold",
+     "note": "First book of the sequel tetralogy."
+    },
+    {
+     "id": "rr5",
+     "line": "red-rising",
+     "n": 5,
+     "cz": null,
+     "en": "Dark Age",
+     "year": 2019,
+     "key": "dark-age"
+    },
+    {
+     "id": "rr6",
+     "line": "red-rising",
+     "n": 6,
+     "cz": null,
+     "en": "Light Bringer",
+     "year": 2023,
+     "key": "light-bringer"
+    }
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Red_Rising",
+    "https://www.cbdb.cz/kniha-186420-rudy-usvit-red-rising",
+    "https://www.cbdb.cz/knizni-serie-4183-rudy-usvit",
+    "https://www.kniznivesmir.cz/2026/10/ranni-hvezda/",
+    "https://www.knihydobrovsky.cz/kniha/zlaty-syn-803311821",
+    "https://booksofbrilliance.com/2026/08/07/red-god-release-date-pierce-brown/",
+    "https://katalog.mekvalmez.cz"
+   ]
+  },
+  "remembrance-of-earths-past": {
+   "name": "Vzpomínka na Zemi",
+   "nameEn": "Remembrance of Earth's Past",
+   "author": "Liou Cch'-sin",
+   "checked": "2026-10-29",
+   "libChecked": "2026-10-29",
+   "lines": [
+    {
+     "id": "remembrance-of-earths-past",
+     "name": "Vzpomínka na Zemi",
+     "nameEn": "Remembrance of Earth's Past",
+     "note": "The trilogy, also known as Three-Body."
+    }
+   ],
+   "books": [
+    {
+     "id": "rep1",
+     "line": "remembrance-of-earths-past",
+     "n": 1,
+     "cz": "Problém tří těles",
+     "en": "The Three-Body Problem",
+     "year": 2008,
+     "read": "Problém tří těles (The Three-Body Problem)",
+     "note": "Original: Santi (三体).",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/3a1a3d24-4d4b-45b3-a289-8aed69c828a6"
+    },
+    {
+     "id": "rep2",
+     "line": "remembrance-of-earths-past",
+     "n": 2,
+     "cz": "Temný les",
+     "en": "The Dark Forest",
+     "year": 2008,
+     "key": "temny-les",
+     "note": "Original: Heian senlin (黑暗森林).",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/9b878b7b-01ba-48d6-9cc7-96cd4efa1c95"
+    },
+    {
+     "id": "rep3",
+     "line": "remembrance-of-earths-past",
+     "n": 3,
+     "cz": "Vzpomínka na Zemi",
+     "en": "Death's End",
+     "year": 2010,
+     "key": "vzpominka-na-zemi-3",
+     "note": "Original: Sishen yongsheng (死神永生); the Czech edition carries the trilogy's title.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/1acfffa9-88e8-4f1c-8293-d798ff7a144b"
+    }
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Remembrance_of_Earth%27s_Past",
+    "https://katalog.mekvalmez.cz"
+   ]
+  },
+  "riordan-camp-half-blood": {
+   "name": "Percy Jackson a Bohové Olympu",
+   "nameEn": "Rick Riordan's Camp Half-Blood universe",
+   "author": "Rick Riordan",
+   "checked": "2026-10-29",
+   "libChecked": "2026-10-29",
+   "lines": [
+    {
+     "id": "percy-jackson",
+     "name": "Percy Jackson",
+     "nameEn": "Percy Jackson and the Olympians",
+     "note": "Czech numbering continues the five original novels with the two Senior Year Adventures (6 and 7)."
+    },
+    {
+     "id": "heroes-of-olympus",
+     "name": "Bohové Olympu",
+     "nameEn": "The Heroes of Olympus",
+     "note": "Starts a year after the original series ends; adds Camp Jupiter."
+    },
+    {
+     "id": "trials-of-apollo",
+     "name": "Apollónův pád",
+     "nameEn": "The Trials of Apollo",
+     "note": "Apollo, cast down as a mortal teenager."
+    },
+    {
+     "id": "nico-di-angelo",
+     "name": "Slunce a hvězda",
+     "nameEn": "The Nico di Angelo Adventures",
+     "note": "Co-written with Mark Oshiro; follows The Tower of Nero."
+    },
+    {
+     "id": "camp-half-blood",
+     "name": "Camp Half-Blood",
+     "nameEn": "Camp Half-Blood (2026 spin-off series)",
+     "note": "Four-book spin-off with a different co-author for each; Percy does not appear."
+    },
+    {
+     "id": "kane-chronicles",
+     "name": "Kronika Cartera Kanea",
+     "nameEn": "The Kane Chronicles",
+     "note": "Egyptian-mythology trilogy set in the same universe."
+    },
+    {
+     "id": "magnus-chase",
+     "name": "Magnus Chase a bohové Ásgardu",
+     "nameEn": "Magnus Chase and the Gods of Asgard",
+     "note": "Norse-mythology series; Magnus is Annabeth's cousin."
+    },
+    {
+     "id": "riordan-companions",
+     "name": "Doprovodné knihy a crossovery",
+     "nameEn": "Companion and crossover books",
+     "standalone": true,
+     "note": "Story collections, mythology retellings and the Demigods & Magicians crossover."
+    }
+   ],
+   "books": [
+    {
+     "id": "pj1",
+     "line": "percy-jackson",
+     "n": 1,
+     "cz": "Zloděj blesku",
+     "en": "The Lightning Thief",
+     "year": 2005,
+     "read": "Percy Jackson (full series)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/0ce8b3ac-a24d-4ea5-ac4d-c0e55a5e526a"
+    },
+    {
+     "id": "pj2",
+     "line": "percy-jackson",
+     "n": 2,
+     "cz": "Moře nestvůr",
+     "en": "The Sea of Monsters",
+     "year": 2006,
+     "read": "Percy Jackson (full series)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/ebb1e0cb-e0f0-4330-9c7a-040a3cc27986"
+    },
+    {
+     "id": "pj3",
+     "line": "percy-jackson",
+     "n": 3,
+     "cz": "Prokletí Titánů",
+     "en": "The Titan's Curse",
+     "year": 2007,
+     "read": "Percy Jackson (full series)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/ed092e3c-797f-4541-95fc-fb6eed80d978"
+    },
+    {
+     "id": "pj4",
+     "line": "percy-jackson",
+     "n": 4,
+     "cz": "Bitva o labyrint",
+     "en": "The Battle of the Labyrinth",
+     "year": 2008,
+     "read": "Percy Jackson (full series)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/9d2ff9a4-bedf-458d-802b-132aa5f2883a"
+    },
+    {
+     "id": "pj5",
+     "line": "percy-jackson",
+     "n": 5,
+     "cz": "Poslední z bohů",
+     "en": "The Last Olympian",
+     "year": 2009,
+     "read": "Percy Jackson (full series)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/8edfd6d6-740e-4561-b296-7b6066f868ad"
+    },
+    {
+     "id": "pj6",
+     "line": "percy-jackson",
+     "n": 6,
+     "cz": "Pohár bohů",
+     "en": "The Chalice of the Gods",
+     "year": 2023,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/42f42246-ac5a-40a4-88c9-36edf3b62f34",
+     "note": "First of the Senior Year Adventures; the Czech edition numbers it 6 in the Percy Jackson series."
+    },
+    {
+     "id": "pj7",
+     "line": "percy-jackson",
+     "n": 7,
+     "cz": "Hněv trojhlavé bohyně",
+     "en": "Wrath of the Triple Goddess",
+     "year": 2024,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/98da93cb-3ef2-4477-84ba-2a00ed3a76f6",
+     "note": "Second of the Senior Year Adventures; Czech number 7."
+    },
+    {
+     "id": "hoo1",
+     "line": "heroes-of-olympus",
+     "n": 1,
+     "cz": "Proroctví",
+     "en": "The Lost Hero",
+     "year": 2010,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/4358c5c7-3d4f-49b6-ba8d-378e879ed665"
+    },
+    {
+     "id": "hoo2",
+     "line": "heroes-of-olympus",
+     "n": 2,
+     "cz": "Neptunův syn",
+     "en": "The Son of Neptune",
+     "year": 2011,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/29dfa642-350a-4127-8db4-f357709fdd0a"
+    },
+    {
+     "id": "hoo3",
+     "line": "heroes-of-olympus",
+     "n": 3,
+     "cz": "Znamení Athény",
+     "en": "The Mark of Athena",
+     "year": 2012,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/d7088747-eee8-4883-a42a-3873e253d257"
+    },
+    {
+     "id": "hoo4",
+     "line": "heroes-of-olympus",
+     "n": 4,
+     "cz": "Hádův chrám",
+     "en": "The House of Hades",
+     "year": 2013,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/dd28dd26-d06c-4f85-b427-86c23cca9e4c"
+    },
+    {
+     "id": "hoo5",
+     "line": "heroes-of-olympus",
+     "n": 5,
+     "cz": "Krev polobohů",
+     "en": "The Blood of Olympus",
+     "year": 2014,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/e9dfd38f-0a64-4341-a61a-a11e7a228699"
+    },
+    {
+     "id": "ta1",
+     "line": "trials-of-apollo",
+     "n": 1,
+     "cz": "Utajené orákulum",
+     "en": "The Hidden Oracle",
+     "year": 2016,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/f9c5b01d-d03b-4728-8e0e-6613da8d2f40"
+    },
+    {
+     "id": "ta2",
+     "line": "trials-of-apollo",
+     "n": 2,
+     "cz": "Temné proroctví",
+     "en": "The Dark Prophecy",
+     "year": 2017,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/cef5e4a7-d0e0-4ebf-b8eb-f320b5c5753d"
+    },
+    {
+     "id": "ta3",
+     "line": "trials-of-apollo",
+     "n": 3,
+     "cz": "Zrádný labyrint",
+     "en": "The Burning Maze",
+     "year": 2018,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/bef6fbee-f5c7-4429-a1e7-17451c07b811"
+    },
+    {
+     "id": "ta4",
+     "line": "trials-of-apollo",
+     "n": 4,
+     "cz": "Hrobka nemrtvých",
+     "en": "The Tyrant's Tomb",
+     "year": 2019,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/3b6a7f7e-cd8a-47e7-a8cb-aa94a225c49e"
+    },
+    {
+     "id": "ta5",
+     "line": "trials-of-apollo",
+     "n": 5,
+     "cz": "Neronova pevnost",
+     "en": "The Tower of Nero",
+     "year": 2020,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/aa2f8696-a36c-4f59-bc5b-090eba575340"
+    },
+    {
+     "id": "nd1",
+     "line": "nico-di-angelo",
+     "n": 1,
+     "cz": "Slunce a hvězda",
+     "en": "The Sun and the Star",
+     "year": 2023,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/01a0f1b7-f14d-745e-9def-46ce1d858871",
+     "note": "Co-written with Mark Oshiro."
+    },
+    {
+     "id": "nd2",
+     "line": "nico-di-angelo",
+     "n": 2,
+     "cz": "Soud mrtvých",
+     "en": "The Court of the Dead",
+     "year": 2025,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/01a0f1b7-f3d9-7aa4-81a8-1cff18a84fd2",
+     "note": "Co-written with Mark Oshiro; Czech edition dated 10 Sep 2026 by Fragment."
+    },
+    {
+     "id": "chb1",
+     "line": "camp-half-blood",
+     "n": 1,
+     "cz": null,
+     "en": "The Wild Zone",
+     "year": 2026,
+     "note": "Co-written with Annabelle Oh; first of four spin-offs with different co-authors; no Czech edition found."
+    },
+    {
+     "id": "kc1",
+     "line": "kane-chronicles",
+     "n": 1,
+     "cz": "Rudá pyramida",
+     "en": "The Red Pyramid",
+     "year": 2010,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/8303f2e7-21d2-449e-b3f2-4b7811261585"
+    },
+    {
+     "id": "kc2",
+     "line": "kane-chronicles",
+     "n": 2,
+     "cz": "Hněv bohů",
+     "en": "The Throne of Fire",
+     "year": 2011,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/e75637c2-9e90-48bd-ab35-d4e3a677cc46"
+    },
+    {
+     "id": "kc3",
+     "line": "kane-chronicles",
+     "n": 3,
+     "cz": "Rozhodující bitva",
+     "en": "The Serpent's Shadow",
+     "year": 2012,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/8264227a-e9c0-47b0-b0cb-12a2e0706edc"
+    },
+    {
+     "id": "mc1",
+     "line": "magnus-chase",
+     "n": 1,
+     "cz": "Prastarý meč",
+     "en": "The Sword of Summer",
+     "year": 2015,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/747a3ff4-690c-49f9-84d5-399ca4a46905"
+    },
+    {
+     "id": "mc2",
+     "line": "magnus-chase",
+     "n": 2,
+     "cz": "Thorovo kladivo",
+     "en": "The Hammer of Thor",
+     "year": 2016,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/6beb62d9-87b9-47fe-bd7a-3f6ace845501"
+    },
+    {
+     "id": "mc3",
+     "line": "magnus-chase",
+     "n": 3,
+     "cz": "Loď mrtvých",
+     "en": "The Ship of the Dead",
+     "year": 2017,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/2bdf65da-d059-45e2-8a6f-4602ac40308b"
+    },
+    {
+     "id": "mc4",
+     "line": "magnus-chase",
+     "n": null,
+     "cz": "Příběhy z devíti světů",
+     "en": "9 From the Nine Worlds",
+     "year": 2018,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/c72a2b1e-0c69-4c54-a120-c37124dd4d9d",
+     "note": "Collection of nine short stories told by different characters."
+    },
+    {
+     "id": "df",
+     "line": "riordan-companions",
+     "n": null,
+     "cz": "Příručka pro polobohy",
+     "en": "The Demigod Files",
+     "year": 2009,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/72f5190a-76ab-498b-ad56-90921dc84e17",
+     "note": "Companion with short stories, interviews and extras; Czech edition 2024."
+    },
+    {
+     "id": "dd",
+     "line": "riordan-companions",
+     "n": null,
+     "cz": null,
+     "en": "The Demigod Diaries",
+     "year": 2012,
+     "note": "Short-story collection tied to the Heroes of Olympus; no Czech edition found."
+    },
+    {
+     "id": "dm",
+     "line": "riordan-companions",
+     "n": null,
+     "cz": "Percy Jackson a egyptští mágové",
+     "en": "Demigods & Magicians",
+     "year": 2016,
+     "note": "Three crossover stories (The Son of Sobek, The Staff of Serapis, The Crown of Ptolemy); the library has only an e-loan, no print."
+    },
+    {
+     "id": "singer",
+     "line": "riordan-companions",
+     "n": null,
+     "cz": null,
+     "en": "Percy Jackson and the Singer of Apollo",
+     "year": 2013,
+     "note": "Short story first published in the Guys Read: Other Worlds anthology; no Czech edition found."
+    },
+    {
+     "id": "gg",
+     "line": "riordan-companions",
+     "n": null,
+     "cz": null,
+     "en": "Percy Jackson's Greek Gods",
+     "year": 2014,
+     "note": "Percy retells the myths; not a novel; no Czech edition found."
+    },
+    {
+     "id": "gh",
+     "line": "riordan-companions",
+     "n": null,
+     "cz": null,
+     "en": "Percy Jackson's Greek Heroes",
+     "year": 2015,
+     "note": "Percy retells the hero myths; not a novel; no Czech edition found."
+    },
+    {
+     "id": "cjc",
+     "line": "riordan-companions",
+     "n": null,
+     "cz": null,
+     "en": "Camp Jupiter Classified: A Probatio's Journal",
+     "year": 2020,
+     "note": "In-world journal from the Heroes of Olympus setting; no Czech edition found."
+    }
+   ],
+   "links": [
+    {
+     "from": "pj5",
+     "to": "hoo1",
+     "kind": "then",
+     "note": "The Heroes of Olympus picks up a year after Percy Jackson ends."
+    },
+    {
+     "from": "hoo5",
+     "to": "pj6",
+     "kind": "then",
+     "note": "The Senior Year Adventures are set after the Heroes of Olympus."
+    },
+    {
+     "from": "pj7",
+     "to": "ta1",
+     "kind": "then",
+     "note": "The Senior Year Adventures are set before the Trials of Apollo."
+    },
+    {
+     "from": "ta5",
+     "to": "nd1",
+     "kind": "then",
+     "note": "The Sun and the Star is set two months after the defeat of Nero and Python."
+    },
+    {
+     "from": "pj1",
+     "to": "chb1",
+     "kind": "then",
+     "note": "The Wild Zone is set in the autumn between The Lightning Thief and The Sea of Monsters."
+    },
+    {
+     "from": "chb1",
+     "to": "pj2",
+     "kind": "then",
+     "note": "The Wild Zone is set in the autumn between The Lightning Thief and The Sea of Monsters."
+    },
+    {
+     "from": "pj4",
+     "to": "df",
+     "kind": "then",
+     "note": "The Demigod Files is set between books 4 and 5 of Percy Jackson."
+    },
+    {
+     "from": "df",
+     "to": "pj5",
+     "kind": "then",
+     "note": "The Demigod Files is set between books 4 and 5 of Percy Jackson."
+    },
+    {
+     "from": "dm",
+     "to": "percy-jackson",
+     "kind": "crossover",
+     "note": "Percy and Annabeth meet Carter and Sadie Kane in the three stories."
+    },
+    {
+     "from": "dm",
+     "to": "kane-chronicles",
+     "kind": "crossover",
+     "note": "Carter and Sadie Kane appear in all three stories."
+    }
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Camp_Half-Blood_Chronicles",
+    "https://en.wikipedia.org/wiki/Rick_Riordan",
+    "https://en.wikipedia.org/wiki/The_Kane_Chronicles",
+    "https://en.wikipedia.org/wiki/Magnus_Chase_and_the_Gods_of_Asgard",
+    "https://en.wikipedia.org/wiki/The_Sun_and_the_Star",
+    "https://en.wikipedia.org/wiki/The_Court_of_the_Dead",
+    "https://www.penguinrandomhouse.com/books/837349/camp-half-blood-from-the-world-of-percy-jackson-the-wild-zone-by-rick-riordan-and-annabelle-oh/",
+    "https://www.fragment.cz/tituly/95061842/percy-jackson-hnev-trojhlave-bohyne/",
+    "https://www.fragment.cz/tituly/90861860/percy-jackson-prirucka-pro-polobohy/",
+    "https://www.fragment.cz/tituly/100756038/soud-mrtvych/",
+    "https://www.fragment.cz/Product/Series/28928514/percy-jackson/",
+    "https://www.cbdb.cz/kniha-488145-percy-jackson-a-egyptsti-magove-demigods-magicians-percy-and-annabeth-meet-the-kanes",
+    "https://www.cbdb.cz/kniha-499570-pohar-bohu-percy-jackson-and-the-chalice-of-the-gods",
+    "https://cs.wikipedia.org/wiki/Bohov%C3%A9_Olympu",
+    "https://katalog.mekvalmez.cz/"
+   ]
+  },
+  "scalzi-agent-to-the-stars": {
+   "name": "Agent hvězd",
+   "nameEn": "Agent to the Stars",
+   "author": "John Scalzi",
+   "checked": "2026-10-29",
+   "libChecked": "2026-10-29",
+   "lines": [
+    {
+     "id": "agent-to-the-stars-standalone",
+     "name": "Agent hvězd",
+     "nameEn": "Agent to the Stars",
+     "standalone": true
+    }
+   ],
+   "books": [
+    {
+     "id": "a1",
+     "line": "agent-to-the-stars-standalone",
+     "n": null,
+     "cz": "Agent hvězd",
+     "en": "Agent to the Stars",
+     "year": 2005,
+     "key": "agent-to-the-stars",
+     "note": "Standalone first-contact comedy; written 1997, print edition 2005.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/abb2ccf5-0bbd-47a1-a5a5-8fe97da038ca"
+    }
+   ],
+   "links": [],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Agent_to_the_Stars",
+    "https://www.legie.info/autor/6632-john-scalzi/knihy"
+   ]
+  },
+  "underland": {
+   "name": "Letopisy Podzemě",
+   "nameEn": "The Underland Chronicles",
+   "author": "Suzanne Collins",
+   "checked": "2026-10-29",
+   "libChecked": "2026-10-29",
+   "lines": [
+    {
+     "id": "underland-chronicles",
+     "name": "The Underland Chronicles",
+     "nameEn": "The Underland Chronicles",
+     "note": "Fragment has published only the first two volumes in Czech."
+    }
+   ],
+   "books": [
+    {
+     "id": "u1",
+     "line": "underland-chronicles",
+     "n": 1,
+     "cz": "Gregor a město pod městem",
+     "en": "Gregor the Overlander",
+     "year": 2003,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/aa5bf599-6ee8-4a84-b578-f21122fdc59a",
+     "key": "gregor-a-mesto-pod-mestem"
+    },
+    {
+     "id": "u2",
+     "line": "underland-chronicles",
+     "n": 2,
+     "cz": "Gregor a zlověstné proroctví",
+     "en": "Gregor and the Prophecy of Bane",
+     "year": 2004,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/511f1ab2-cef0-4422-a409-b823cd478f91"
+    },
+    {
+     "id": "u3",
+     "line": "underland-chronicles",
+     "n": 3,
+     "cz": null,
+     "en": "Gregor and the Curse of the Warmbloods",
+     "year": 2005
+    },
+    {
+     "id": "u4",
+     "line": "underland-chronicles",
+     "n": 4,
+     "cz": null,
+     "en": "Gregor and the Marks of Secret",
+     "year": 2006
+    },
+    {
+     "id": "u5",
+     "line": "underland-chronicles",
+     "n": 5,
+     "cz": null,
+     "en": "Gregor and the Code of Claw",
+     "year": 2007
+    }
+   ],
+   "sources": [
+    "https://www.legie.info/kniha/18537-suzanne-collins-gregor-a-mesto-pod-mestem",
+    "https://www.knihydobrovsky.cz/knihy/serie/letopisy-podzeme-2644",
+    "https://knihobot.cz/serie/kroniky-podzemi",
+    "https://katalog.mekvalmez.cz/"
+   ]
+  },
+  "witcher": {
+   "name": "Zaklínač",
+   "nameEn": "The Witcher",
+   "author": "Andrzej Sapkowski",
+   "checked": "2026-10-29",
+   "libChecked": "2026-10-29",
+   "lines": [
+    {
+     "id": "the-witcher",
+     "name": "Zaklínač",
+     "nameEn": "The Witcher",
+     "note": "Czech numbering (Leonardo) runs I-IX: two story collections, the five-novel saga, then Season of Storms and Crossroads of Ravens."
+    }
+   ],
+   "books": [
+    {
+     "id": "w1",
+     "line": "the-witcher",
+     "n": 1,
+     "cz": "Poslední přání",
+     "en": "The Last Wish",
+     "year": 1993,
+     "read": "The Witcher (series)",
+     "note": "Story collection; Polish Ostatnie życzenie, published after Sword of Destiny in Poland.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/aec54284-334a-4764-8d8c-285c10166348"
+    },
+    {
+     "id": "w2",
+     "line": "the-witcher",
+     "n": 2,
+     "cz": "Meč osudu",
+     "en": "Sword of Destiny",
+     "year": 1992,
+     "read": "The Witcher (series)",
+     "note": "Story collection; Polish Miecz przeznaczenia, the first book published in Poland.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/ee00dedf-e5c3-41d4-8e59-9f91712018db"
+    },
+    {
+     "id": "w3",
+     "line": "the-witcher",
+     "n": 3,
+     "cz": "Krev elfů",
+     "en": "Blood of Elves",
+     "year": 1994,
+     "read": "The Witcher (series)",
+     "rejected": "Vid'mak",
+     "note": "First novel of the saga.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/38786a4f-25cf-484a-bcb7-5ebce0d89f18"
+    },
+    {
+     "id": "w4",
+     "line": "the-witcher",
+     "n": 4,
+     "cz": "Čas opovržení",
+     "en": "Time of Contempt",
+     "year": 1995,
+     "read": "The Witcher (series)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/95c85451-9e33-40f4-977a-ef800250f38c"
+    },
+    {
+     "id": "w5",
+     "line": "the-witcher",
+     "n": 5,
+     "cz": "Křest ohněm",
+     "en": "Baptism of Fire",
+     "year": 1996,
+     "read": "The Witcher (series)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/1c3455b5-908c-4f21-ba19-1eca0d84faba"
+    },
+    {
+     "id": "w6",
+     "line": "the-witcher",
+     "n": 6,
+     "cz": "Věž vlaštovky",
+     "en": "The Tower of the Swallow",
+     "year": 1997,
+     "read": "The Witcher (series)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/d8a717f1-4e4f-41bc-b901-0202a1ff9c87"
+    },
+    {
+     "id": "w7",
+     "line": "the-witcher",
+     "n": 7,
+     "cz": "Paní jezera",
+     "en": "The Lady of the Lake",
+     "year": 1999,
+     "read": "The Witcher (series)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/457e764e-5396-4556-96cd-95e277896a38"
+    },
+    {
+     "id": "w8",
+     "line": "the-witcher",
+     "n": 8,
+     "cz": "Bouřková sezóna",
+     "en": "Season of Storms",
+     "year": 2013,
+     "note": "Standalone novel set between the stories of The Last Wish; Polish Sezon burz.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/b45f5062-6277-4a43-bfbe-cb0fd297b4f1"
+    },
+    {
+     "id": "w9",
+     "line": "the-witcher",
+     "n": 9,
+     "cz": "Rozcestí krkavců",
+     "en": "Crossroads of Ravens",
+     "year": 2024,
+     "note": "Prequel about the young Geralt; Polish Rozdroże kruków.",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/9ac66bba-b2c4-48a4-8458-81e6abbbc1bc"
+    }
+   ],
+   "links": [],
+   "story": [
+    "w9",
+    "w1",
+    "w8",
+    "w2",
+    "w3",
+    "w4",
+    "w5",
+    "w6",
+    "w7"
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Crossroads_of_Ravens",
+    "https://www.imago.cz/zaklinac-poradi-knih-a-jak-cist-sagu-povidky-i-komiksy",
+    "https://cs.wikipedia.org/wiki/Bou%C5%99kov%C3%A1_sez%C3%B3na",
+    "https://mina86.com/2022/witcher-reading-order/",
+    "https://www.knihydobrovsky.cz/kniha/zaklinac-ix-rozcesti-krkavcu-803009719",
+    "https://www.tlbranson.com/witcher-books-in-order/"
+   ]
   }
  }
 }

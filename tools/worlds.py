@@ -5,7 +5,8 @@ world contains, including volumes no library holds, and how its series connect. 
 with no record here is drawn from book-series.json alone, with its missing volumes as
 untitled gaps.
 
-    python tools/worlds.py check     # dangling ids, stale shelf links, shelf volumes left out
+    python tools/worlds.py check [file]     # dangling ids, stale shelf links, shelf volumes left out
+    python tools/worlds.py merge <files...> # add or replace the `worlds` of research output files
 """
 import io
 import json
@@ -24,12 +25,12 @@ CACHE, READ, REJ, SERIES, OUT = ("book-cache.json", "books-read.md", "book-rejec
 LINKS = {"then", "prequel", "crossover"}
 
 
-def check():
+def check(path=OUT):
     keys = {b["key"] for b in json.load(io.open(CACHE, encoding="utf-8"))["books"]}
     titles = {r["title"] for r in readlog.rows(READ)}
     rejected = {json.loads(l).get("entity") for l in io.open(REJ, encoding="utf-8") if l.startswith('{"entity')}
     series = json.load(io.open(SERIES, encoding="utf-8"))["series"]
-    worlds = json.load(io.open(OUT, encoding="utf-8"))["worlds"]
+    worlds = json.load(io.open(path, encoding="utf-8"))["worlds"]
     problems, owner = [], {}
     for wid, w in worlds.items():
         lines = {l["id"] for l in w["lines"]}
@@ -52,6 +53,8 @@ def check():
                 problems.append(f"{where}: rejected {b['rejected']!r} is not a book-rejects.jsonl entity")
             if bool(b.get("lib")) != bool(b.get("recordUrl")):
                 problems.append(f"{where}: lib and recordUrl go together")
+            if not all(isinstance(b.get(f), (int, type(None))) for f in ("n", "year")):
+                problems.append(f"{where}: n and year are whole numbers or null")
         for k in w.get("links", []):
             if k["kind"] not in LINKS:
                 problems.append(f"{wid}: link kind {k['kind']!r}")
@@ -68,21 +71,37 @@ def check():
                 problems.append(f"{wid}: arc {a['name']!r} on unknown line {a['line']}")
         # A world record replaces its series' book-series.json view on the map, so a shelf
         # volume or read row it leaves out would vanish from the series map.
-        linked_keys = {b.get("key") for b in w["books"]}
-        linked_reads = {b.get("read") for b in w["books"]}
+        linked = {f: {b.get(f) for b in w["books"]} for f in ("key", "read", "rejected")}
         for l in lines & series.keys():
             s = series[l]
             problems += [f"{wid}: shelf volume {m['key']} of {l} is not in the world" for m in s["members"]
-                         if m["key"] not in linked_keys]
+                         if m["key"] not in linked["key"]]
             problems += [f"{wid}: read row {t!r} of {l} is not in the world" for t in s.get("read", [])
-                         if t not in linked_reads]
+                         if t not in linked["read"]]
+            problems += [f"{wid}: rejected {t!r} of {l} is not in the world" for t in s.get("rejected", [])
+                         if t not in linked["rejected"]]
     print(f"{len(worlds)} worlds, {sum(len(w['books']) for w in worlds.values())} books, {len(problems)} problems")
     for p in problems:
         print("  !", p)
     sys.exit(1 if problems else 0)
 
 
-if __name__ == "__main__":
-    if sys.argv[1:] != ["check"]:
-        sys.exit(__doc__)
+def merge(paths):
+    doc = json.load(io.open(OUT, encoding="utf-8"))
+    for path in paths:
+        for wid, w in json.load(io.open(path, encoding="utf-8"))["worlds"].items():
+            print(("replaced " if wid in doc["worlds"] else "added ") + wid, len(w["books"]), "books")
+            doc["worlds"][wid] = w
+    doc["worlds"] = dict(sorted(doc["worlds"].items()))
+    io.open(OUT, "w", encoding="utf-8", newline="\n").write(json.dumps(doc, ensure_ascii=False, indent=1) + "\n")
     check()
+
+
+if __name__ == "__main__":
+    cmd, args = sys.argv[1:2], sys.argv[2:]
+    if cmd == ["check"] and len(args) <= 1:
+        check(*args)
+    elif cmd == ["merge"] and args:
+        merge(args)
+    else:
+        sys.exit(__doc__)
