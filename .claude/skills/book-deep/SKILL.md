@@ -209,7 +209,7 @@ go back to Phase 2. Otherwise stop.
 
 ## Phase 6 — PRESENT
 
-Per run: the good books first, each with the range and band, what it leaned on, the
+Per run: the good books first, each with the range out of 10 in whole numbers, what it leaned on, the
 two or three verdicts that moved it most since the screening range (old → new), and
 the library route. Then every other book dived, one line each with old → new range
 and the axis that kept it out. Say plainly when a run hit its budget short of the

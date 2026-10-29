@@ -1,0 +1,88 @@
+"""The full bibliography behind a series or shared world, drawn by the Map tab's series map.
+
+book-series.json groups the shelf's own volumes; book-worlds.json lists everything the
+world contains, including volumes no library holds, and how its series connect. A series
+with no record here is drawn from book-series.json alone, with its missing volumes as
+untitled gaps.
+
+    python tools/worlds.py check     # dangling ids, stale shelf links, shelf volumes left out
+"""
+import io
+import json
+import sys
+
+import readlog
+
+for _s in (sys.stdout, sys.stderr):
+    try:
+        _s.reconfigure(encoding="utf-8")
+    except AttributeError:
+        pass
+
+CACHE, READ, REJ, SERIES, OUT = ("book-cache.json", "books-read.md", "book-rejects.jsonl",
+                                 "book-series.json", "book-worlds.json")
+LINKS = {"then", "prequel", "crossover"}
+
+
+def check():
+    keys = {b["key"] for b in json.load(io.open(CACHE, encoding="utf-8"))["books"]}
+    titles = {r["title"] for r in readlog.rows(READ)}
+    rejected = {json.loads(l).get("entity") for l in io.open(REJ, encoding="utf-8") if l.startswith('{"entity')}
+    series = json.load(io.open(SERIES, encoding="utf-8"))["series"]
+    worlds = json.load(io.open(OUT, encoding="utf-8"))["worlds"]
+    problems, owner = [], {}
+    for wid, w in worlds.items():
+        lines = {l["id"] for l in w["lines"]}
+        for l in lines:
+            if l in owner:
+                problems.append(f"{wid}: line {l} is already in {owner[l]}")
+            owner[l] = wid
+        books = {b["id"]: b for b in w["books"]}
+        if len(books) != len(w["books"]):
+            problems.append(f"{wid}: duplicate book ids")
+        for b in w["books"]:
+            where = f"{wid}/{b['id']}"
+            if b["line"] not in lines:
+                problems.append(f"{where}: line {b['line']} is not one of the world's lines")
+            if b.get("key") and b["key"] not in keys:
+                problems.append(f"{where}: key {b['key']} is not on the shelf (logged or rejected since?)")
+            if b.get("read") and b["read"] not in titles:
+                problems.append(f"{where}: read {b['read']!r} is not a books-read.md row")
+            if b.get("rejected") and b["rejected"] not in rejected:
+                problems.append(f"{where}: rejected {b['rejected']!r} is not a book-rejects.jsonl entity")
+            if bool(b.get("lib")) != bool(b.get("recordUrl")):
+                problems.append(f"{where}: lib and recordUrl go together")
+        for k in w.get("links", []):
+            if k["kind"] not in LINKS:
+                problems.append(f"{wid}: link kind {k['kind']!r}")
+            for end in (k["from"], k["to"]):
+                if end not in books and not (k["kind"] == "crossover" and end in lines):
+                    problems.append(f"{wid}: link end {end!r} is no book{' or line' if k['kind'] == 'crossover' else ''}")
+        for i in w.get("story", []):
+            if i not in books:
+                problems.append(f"{wid}: story lists unknown book {i!r}")
+        if w.get("story") and len(set(w["story"])) != len(books):
+            problems.append(f"{wid}: story order covers {len(set(w['story']))} of {len(books)} books")
+        for a in w.get("arcs", []):
+            if a["line"] not in lines:
+                problems.append(f"{wid}: arc {a['name']!r} on unknown line {a['line']}")
+        # A world record replaces its series' book-series.json view on the map, so a shelf
+        # volume or read row it leaves out would vanish from the series map.
+        linked_keys = {b.get("key") for b in w["books"]}
+        linked_reads = {b.get("read") for b in w["books"]}
+        for l in lines & series.keys():
+            s = series[l]
+            problems += [f"{wid}: shelf volume {m['key']} of {l} is not in the world" for m in s["members"]
+                         if m["key"] not in linked_keys]
+            problems += [f"{wid}: read row {t!r} of {l} is not in the world" for t in s.get("read", [])
+                         if t not in linked_reads]
+    print(f"{len(worlds)} worlds, {sum(len(w['books']) for w in worlds.values())} books, {len(problems)} problems")
+    for p in problems:
+        print("  !", p)
+    sys.exit(1 if problems else 0)
+
+
+if __name__ == "__main__":
+    if sys.argv[1:] != ["check"]:
+        sys.exit(__doc__)
+    check()

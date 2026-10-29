@@ -32,7 +32,8 @@ the book and produce a predicted-score range with the reasoning that justifies i
 ## Step 1 — read the reader
 
 Read `books-read.md` in full — **real scores from this reader, your only
-calibration** — and `tools/reader-profile.md` for the rules. The short version:
+calibration** — and `tools/reader-profile.md` for the rules. The log scores out of 10;
+everything you write uses 0-100, the log's score times ten (9.2 is 92). The short version:
 
 - **Loves** page time on what characters *want and why* over what they do; a premise
   whose consequences are actually worked out; a protagonist who is both interesting
@@ -46,7 +47,7 @@ calibration** — and `tools/reader-profile.md` for the rules. The short version
   is decided for you in `cz`.)
 - **Two of those bars have a stated bound — read them before you use them.** The
   **opening** filter is mitigable on its shape-two form: *Čaropisci* was abandoned in
-  chapter one and then read to the end at **67** once the reader looked the premise up, so
+  chapter one and then read to the end (50 since the 2026-10-29 rerank) once the reader looked the premise up, so
   a book whose only objection is a no-context opening is a proposal with a
   read-the-premise-first note, not a reject. The **occult** filter grades instead of
   vetoing whenever the rite belongs to an invented system and is not a human sacrifice
@@ -54,10 +55,10 @@ calibration** — and `tools/reader-profile.md` for the rules. The short version
   is almost never acceptable"); origin or elevation lore grades even when it is a human
   sacrifice — same book, same score, the hierofant sacrifice.
 - **Graded, with measured weights:** sexual content on three dimensions that all cost —
-  volume, explicitness and crudeness (*Artemis* 69 docked for crudeness at small volume,
-  *Ready Player One* 55 and *The Witcher* 53 sunk by volume); worldbuilding self-consistency; heavy
+  volume, explicitness and crudeness (*Artemis* 60 docked for crudeness at small volume,
+  *Ready Player One* 40 sunk by crudeness; volume has no clean anchor); worldbuilding self-consistency; heavy
   description with little story; how far toward a children's book it sits; bleakness
-  (mild); teen or child lead (small); prophecy, graded on reverence not resemblance.
+  (mid-severity since the 2026-10-29 rerank); teen or child lead (small); prophecy, graded on reverence not resemblance.
 - **Violence and swearing are not objections at all.**
 
 ## Step 1.5 — the exit ladder: STOP AS SOON AS THE ANSWER IS DECIDED
@@ -118,7 +119,7 @@ It is now split, and `axis:occult` comes after C. `axis:infidelity` was added
 belongs to the *triage* sweep that keeps the children's section out of the queue, so
 once a book is in front of you it is **graded on `axis:childrens`, never vetoed.**
 Grade it by how far toward a children's book it actually sits: *Hobbit* 84 and *The
-Little Prince* 82 cost nothing, *Ranger's Apprentice* 74 and Narnia 67 a little, a
+Little Prince* 82 cost nothing, *Hraničářův učeň* (50-70 by volume) and Narnia 60 more than a little, a
 picture book lands in the 30s or 40s. It always gets a number.
 
 **Your task line may carry `orig`, `gf`, `kw` and `series`** — the original title, the
@@ -193,9 +194,9 @@ to gate 2 alone, and that is precisely what separates the two axes:
 
 | dimension | what it costs, anchored in the log |
 |---|---|
-| **volume** | *Ready Player One* 55 and *The Witcher* 53, both sunk mainly by this |
+| **volume** | unmeasured: *The Witcher* 30 has it but is confounded with the occult filter |
 | **explicitness** | how much is enacted on the page rather than implied |
-| **crudeness** | *Artemis* 69, docked for this at small volume |
+| **crudeness** | *Ready Player One* 40, the one clean anchor; *Artemis* 60, docked for it at small volume |
 
 - **"Only occasional" mitigates volume and nothing else.** It never rescues high
   explicitness or crudeness, and is never an argument for eligibility.
@@ -366,7 +367,7 @@ books in the queue".
   `reject` instead.
 - `leanedOn` is the axis or two actually carrying the number. Both recorded prediction
   failures came from leaning on the wrong axis: *Artemis* was predicted 80 and scored
-  69 because the prediction leaned up on strong worldbuilding while the lead was
+  60 because the prediction leaned up on strong worldbuilding while the lead was
   visibly thin, and *Mortal Engines* was abandoned on premise logic the prediction had
   never examined.
 - `risks` are the axes that could collapse the estimate below its range. Always a
@@ -393,7 +394,7 @@ comparison set:
   series opener", "volume 3", "the stronger entry", "mid-series" and the like.
 
   **`axis:sequels` itself is a legitimate argument** — "a sequel, and sequels are not
-  safe bets in this log: Hitchhiker's 83 to 70" reasons from a *read* book. What is
+  safe bets in this log: Hitchhiker's 83 to 60" reasons from a *read* book. What is
   banned is the ordinal: write "a sequel", not "a volume 3".
 
 A batch may hold up to twenty books by one author. **Research the author once, then
@@ -445,7 +446,7 @@ Field rules:
   genre: set it when that shape is the book, whether or not `axis:discovery` lifts the
   number, and omit the field otherwise.
   `form`: one of `novel novella stories nonfiction verse`. **`verse` carries a penalty
-  of its own** — ruled 2026-08-27 on *Havran* 40, which ties the lowest score in the log
+  of its own** — ruled 2026-08-27 on *Havran* 10, the lowest score in the log
   and where the reader named the form itself as a cause. Grade it on `axis:verse`. This
   is NOT the short-idea-driven suspension: short prose merely fails to earn points,
   whereas verse costs.
@@ -472,7 +473,7 @@ Field rules:
   axis:worldbuilding              axis:discovery
   ```
 
-  The last two were added 2026-09-02 off *Čaropisci* 67. **`axis:same-sex-romance`** is a
+  The last two were added 2026-09-02 off *Čaropisci* (50 since the 2026-10-29 rerank). **`axis:same-sex-romance`** is a
   same-sex romance and its prominence — premise level is filter 7 and a reject, below that
   a heavy graded deduction. **`axis:sex-portrayal`** is a one-sided competence contrast
   between the sexes: men shown as dumb or incompetent while women are shown as good or

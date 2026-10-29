@@ -2408,6 +2408,25 @@
    "volumes": 3,
    "note": ""
   },
+  "fastynger-van-hauten": {
+   "name": "Fastynger van Hauten",
+   "nameEn": "Fastynger van Hauten",
+   "kind": "series",
+   "members": [
+    {
+     "key": "stoleti-pary",
+     "n": 1
+    },
+    {
+     "key": "jak-lvove",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": "Petr Schink's steampunk monster-hunter; volume 1 is linked stories, volume 2 a novel."
+  },
   "felix-and-zelda": {
    "name": "Felix a Zelda",
    "nameEn": "Felix and Zelda",
@@ -2439,7 +2458,7 @@
    "note": ""
   },
   "final-architecture": {
-   "name": "Poslední architektura",
+   "name": "Architekti světů",
    "nameEn": "The Final Architecture",
    "kind": "series",
    "members": [
@@ -5426,12 +5445,41 @@
    "kind": "series",
    "members": [],
    "read": [
-    "Ranger's Apprentice (Hraničářův učeň, #1-14)"
+    "Hraničářův učeň #1-4 (Ranger's Apprentice)",
+    "Hraničářův učeň #5",
+    "Hraničářův učeň #6",
+    "Hraničářův učeň #7-10",
+    "Hraničářův učeň #11",
+    "Hraničářův učeň #12-13"
    ],
    "rejected": [],
    "volumes": null,
    "note": "",
    "readWhole": true
+  },
+  "rangers-apprentice-early-years": {
+   "name": "Hraničářův učeň: První roky",
+   "nameEn": "Ranger's Apprentice: The Early Years",
+   "kind": "series",
+   "members": [],
+   "read": [
+    "Hraničářův učeň: První roky #1 (The Early Years)"
+   ],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
+  "brotherband": {
+   "name": "Bratrstvo",
+   "nameEn": "Brotherband Chronicles",
+   "kind": "series",
+   "members": [],
+   "read": [
+    "Bratrstvo #1-3 (Brotherband)"
+   ],
+   "rejected": [],
+   "volumes": null,
+   "note": "Flanagan's spin-off in the Ranger's Apprentice world; volumes 1-3 read."
   },
   "raven-rings": {
    "name": "Havraní prsteny",
@@ -5632,30 +5680,17 @@
    "kind": "series",
    "members": [
     {
-     "key": "problem-tri-teles",
-     "n": 1
-    },
-    {
      "key": "temny-les",
      "n": 2
-    }
-   ],
-   "read": [],
-   "rejected": [],
-   "volumes": 3,
-   "note": ""
-  },
-  "remembrances-of-earths-past": {
-   "name": "Vzpomínka na Zemi",
-   "nameEn": "Remembrance of Earth's Past",
-   "kind": "series",
-   "members": [
+    },
     {
      "key": "vzpominka-na-zemi-3",
      "n": 3
     }
    ],
-   "read": [],
+   "read": [
+    "Problém tří těles (The Three-Body Problem)"
+   ],
    "rejected": [],
    "volumes": 3,
    "note": ""

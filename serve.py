@@ -511,6 +511,17 @@ class LocalOnly(BaseHTTPMiddleware):
         return await call_next(request)
 
 
+class Revalidate(BaseHTTPMiddleware):
+    """With no Cache-Control the browser caches files heuristically, so a fresh
+    index.html can run beside a stale map.js."""
+
+    async def dispatch(self, request: Request, call_next):
+        response = await call_next(request)
+        if not request.url.path.startswith("/api/"):
+            response.headers.setdefault("Cache-Control", "no-cache")
+        return response
+
+
 ALLOWED_ORIGINS: set[str] = set()
 
 
@@ -542,7 +553,7 @@ app = Starlette(
         Route("/api/reading/{slug}", delete_reading, methods=["DELETE"]),
         Mount("/", app=StaticFiles(directory=str(REPO), html=True)),
     ],
-    middleware=[Middleware(LocalOnly)],
+    middleware=[Middleware(LocalOnly), Middleware(Revalidate)],
     lifespan=lifespan,
 )
 

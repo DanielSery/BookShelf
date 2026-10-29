@@ -337,23 +337,9 @@ def marc_genre(f):
 
 
 def read_rows():
-    """(title, author) for every row of the books-read.md table."""
-    out = []
-    try:
-        lines = io.open(READ, encoding="utf-8").readlines()
-    except OSError:
-        return out
-    hdr = [i for i, l in enumerate(lines)
-           if re.match(r"^\|\s*Book\s*\|\s*Author\s*\|\s*Score\s*\|", l, re.I)]
-    if not hdr:
-        return out
-    for l in lines[hdr[0] + 2:]:
-        if not l.strip().startswith("|"):
-            break
-        c = [x.strip() for x in l.strip().strip("|").split("|")]
-        if len(c) >= 3 and c[0]:
-            out.append((c[0], c[1]))
-    return out
+    """(title, author) for every row of both books-read.md tables, scored or not."""
+    import readlog
+    return [(r["title"], r["author"]) for r in readlog.rows(READ)]
 
 
 def read_titles():

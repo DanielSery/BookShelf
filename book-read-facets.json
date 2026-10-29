@@ -129,7 +129,42 @@
    "form": "novel",
    "audience": "adult"
   },
-  "ranger-s-apprentice-hranicaruv-ucen-1-14": {
+  "hranicaruv-ucen-1-4-ranger-s-apprentice": {
+   "genre": "fantasy",
+   "form": "novel",
+   "audience": "childrens"
+  },
+  "hranicaruv-ucen-5": {
+   "genre": "fantasy",
+   "form": "novel",
+   "audience": "childrens"
+  },
+  "hranicaruv-ucen-6": {
+   "genre": "fantasy",
+   "form": "novel",
+   "audience": "childrens"
+  },
+  "hranicaruv-ucen-7-10": {
+   "genre": "fantasy",
+   "form": "novel",
+   "audience": "childrens"
+  },
+  "hranicaruv-ucen-11": {
+   "genre": "fantasy",
+   "form": "novel",
+   "audience": "childrens"
+  },
+  "hranicaruv-ucen-12-13": {
+   "genre": "fantasy",
+   "form": "novel",
+   "audience": "childrens"
+  },
+  "hranicaruv-ucen-prvni-roky-1-the-early-years": {
+   "genre": "fantasy",
+   "form": "novel",
+   "audience": "childrens"
+  },
+  "bratrstvo-1-3-brotherband": {
    "genre": "fantasy",
    "form": "novel",
    "audience": "childrens"
@@ -297,6 +332,14 @@
    "genre": "sf",
    "form": "novel",
    "audience": "adult"
+  },
+  "problem-tri-teles-the-three-body-problem": {
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult",
+   "tags": [
+    "exploration"
+   ]
   }
  }
 }

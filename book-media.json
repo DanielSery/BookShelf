@@ -9523,14 +9523,6 @@
    "isbn": "9788073878276",
    "coverOL": "https://covers.openlibrary.org/b/id/9160121-M.jpg"
   },
-  "problem-tri-teles": {
-   "blurb": "During the Cultural Revolution a Chinese military project secretly attempts contact with extraterrestrial civilisations. Forty years later prominent scientists are dying, a nanotech researcher is drawn into the investigation, and an immersive computer game about a world with three suns holds the explanation.",
-   "cover": "https://cache.obalkyknih.cz/file/cover/3438743/preview510",
-   "coverSource": "katalog",
-   "isbn": "9788075770615",
-   "coverOL": null,
-   "pitch": "During the Cultural Revolution a physics professor is killed in front of his daughter, and her motive from that scene is the strongest character work in the book. Forty years later physics itself appears to have stopped working, prominent scientists are dying, and a nanotech researcher is drawn into the investigation. The question is why, and the explanation reorganises everything that came before."
-  },
   "projekt-kronos": {
    "blurb": "In 2052, after a nuclear war, Attiona City is one of the last outposts of civilisation, split between a recovering upper city and a Downtown still living the war's aftermath, and eaten from within by a mysterious epidemic. A young Downtowner who wants to be a hero and a recruit trained to hunt the city's most dangerous criminals are drawn into it.",
    "cover": "https://cache.obalkyknih.cz/file/cover/1669554/preview510",
@@ -14418,9 +14410,37 @@
    "cover": "https://covers.openlibrary.org/b/id/7982925-M.jpg",
    "isbn": "1414333080"
   },
-  "ranger-s-apprentice-hranicaruv-ucen-1-14": {
+  "hranicaruv-ucen-1-4-ranger-s-apprentice": {
    "cover": "https://covers.openlibrary.org/b/id/6289366-M.jpg",
    "isbn": "1101170611"
+  },
+  "hranicaruv-ucen-5": {
+   "cover": null,
+   "coverNote": "one volume group of Hraničářův učeň, logged as its own row on 2026-10-29; the series card shows the #1-4 cover"
+  },
+  "hranicaruv-ucen-6": {
+   "cover": null,
+   "coverNote": "one volume group of Hraničářův učeň, logged as its own row on 2026-10-29; the series card shows the #1-4 cover"
+  },
+  "hranicaruv-ucen-7-10": {
+   "cover": null,
+   "coverNote": "one volume group of Hraničářův učeň, logged as its own row on 2026-10-29; the series card shows the #1-4 cover"
+  },
+  "hranicaruv-ucen-11": {
+   "cover": null,
+   "coverNote": "one volume group of Hraničářův učeň, logged as its own row on 2026-10-29; the series card shows the #1-4 cover"
+  },
+  "hranicaruv-ucen-12-13": {
+   "cover": null,
+   "coverNote": "one volume group of Hraničářův učeň, logged as its own row on 2026-10-29; the series card shows the #1-4 cover"
+  },
+  "hranicaruv-ucen-prvni-roky-1-the-early-years": {
+   "cover": "https://covers.openlibrary.org/b/id/8750152-M.jpg",
+   "isbn": "9781742759302"
+  },
+  "bratrstvo-1-3-brotherband": {
+   "cover": "https://covers.openlibrary.org/b/id/7624074-M.jpg",
+   "isbn": "1484452860"
   },
   "les-miserables": {
    "cover": "https://covers.openlibrary.org/b/id/12721865-M.jpg",
@@ -14564,6 +14584,10 @@
    "isbn": "9788027700936",
    "blurb": "A meteorite destroys Washington in 1952 and forces the space programme decades early; a wartime pilot and mathematician fights to fly it. First of Lady Astronaut.",
    "coverOL": "https://covers.openlibrary.org/b/id/8290909-M.jpg"
+  },
+  "problem-tri-teles-the-three-body-problem": {
+   "cover": "https://cache.obalkyknih.cz/file/cover/3438743/preview510",
+   "isbn": "9788075770615"
   }
  },
  "rejectMedia": {

@@ -709,8 +709,8 @@ decide, don't silently exclude:
 
 - *Sexual content* — **three dimensions and all three cost: volume, explicitness,
   crudeness** (corrected 2026-08-27, overruling the 2026-08-22 "crudeness, not
-  quantity"). Crude treatment costs even in small doses (*Artemis* 69) and volume
-  sinks a book on its own (*Ready Player One* 55, *The Witcher* 53). **Do not cite
+  quantity"). Crude treatment costs even in small doses (*Artemis* 60) and the kind of sex
+  sinks a book (*Ready Player One* 40); volume has no clean anchor (*The Witcher* 30 is confounded with occult). **Do not cite
   *Red Rising* 95 as proof that volume is free** — it is low on all three dimensions,
   so it was barely docked; a book that never incurred a penalty is not evidence the
   penalty does not exist. **"Only occasional" is mitigation, never clearance**, and
@@ -983,8 +983,8 @@ Derive, using the current counters from `book-revs.json`:
   read; *Leviathan Wakes* 74-84 is wide because a whole strand of it is a
   detective case.
 - `leanedOn`: the dep that actually produces the number. Both prediction
-  failures so far — *Artemis* (predicted 80, scored 69 after its 2026-08-27
-  revision down from 76) and *Mortal Engines* 55
+  failures so far — *Artemis* (predicted 80, scored 60 after revisions down from 76 and 69) and
+  *Mortal Engines* 50
   — came from leaning on the wrong axis, so this field is the audit trail.
 - `risks`: axis ids that could collapse the estimate below its range. A risk is
   not a hedge: *Neuromancer* is 72-80 if its opening holds and a 30 if it
@@ -1125,7 +1125,7 @@ need a blurb. Run it after every screening pass; it refuses to guess the date.
 Needed in Phase 3 and Phase 5, and quoted into the estimate's `why`.
 
 **Every suggestion must carry an explicit read on whether its world holds up**
-(required 2026-08-22, after *Mortal Engines* 55 was abandoned in the first
+(required 2026-08-22, after *Mortal Engines* 50 was abandoned in the first
 chapters on this axis alone — the prediction that proposed it had never
 examined it). This is the reader's heaviest axis, so a proposal that skips it
 is incomplete however good the access route is.
@@ -1157,13 +1157,13 @@ Say it in one or two lines per title, and only where it bites:
   trait in a character → it must be shown. All the same breach.
 - **Where nothing is declared, reality binds — set by the tech level the book
   *presents*, not the date it's set in.** A far-future setting that reads
-  low-tech is still bound by real costs (*Mortal Engines* 55); one that reads
+  low-tech is still bound by real costs (*Mortal Engines* 50); one that reads
   genuinely advanced is not (*Ender's Game* 87). Presented tech, not chronology.
 - **Jurisdiction is per world; cross-world duty scales with the traffic — and
   traffic has a direction.** Each world answers to its own rules. Check each
   direction separately and ask whether the book's declared mechanism actually
-  covers *that* direction. Narnia 67 owes nothing either way — a wardrobe now
-  and then is negligible. *Harry Potter* 51 is fine outbound (secrecy is a
+  covers *that* direction. Narnia 60 owes nothing either way — a wardrobe now
+  and then is negligible. *Harry Potter* 20 is fine outbound (secrecy is a
   declared, enforced rule, and it earns magic's absence from mundane life) but
   breaches inbound: muggle-borns are admitted to the school every year and
   wizarding society absorbs nothing they bring. **A declared institution can
@@ -1172,10 +1172,10 @@ Say it in one or two lines per title, and only where it bites:
   ask what they bring.** Policy can hide a society; it cannot make its members
   un-know what they arrived with. That is where the obligation bites.
 - **The obligation scales with how precisely the thing is declared** — the
-  author sets his own bar. Vague, numinous magic owes little (Narnia 67,
+  author sets his own bar. Vague, numinous magic owes little (Narnia 60,
   Tolkien); a spelled-out system owes a lot. Rules add obligation, not bonus.
 - **Exemption is about how hard the book *leans* on the thing, not what it's
-  nominally about.** *Harry Potter* 51 is a school story and still takes a
+  nominally about.** *Harry Potter* 20 is a school story and still takes a
   worldbuilding hit, because magic is the medium of every scene. *Hunger Games*
   89 merely mentions its economics. Lean, not aboutness — so don't grant the
   exemption just because a book is character-led.
@@ -1186,7 +1186,7 @@ Say it in one or two lines per title, and only where it bites:
   magnitude together; physical and social implausibility weigh the same.
 - **It adds points too** — predict a worldbuilding-strong candidate *up*. It
   doesn't cancel other pushbacks: Tolkien's is good and still caps at 84, and a
-  thin protagonist beats it outright (*Artemis* 69).
+  thin protagonist beats it outright (*Artemis* 60).
 - **Kind and rules don't matter** — "consequences, not rules".
 - Say when you don't know. A guess about an unread book is a flag, not a
   finding, and should be labelled as one.

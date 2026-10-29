@@ -1,0 +1,446 @@
+{
+ "_readme": "The full bibliography behind a series or shared world, for the Map tab's series map: every volume, whether or not it is on the shelf, read or held by a library; how the series connect; and the story order where it differs from publication order. book-series.json says which shelf candidates form one entry; this file says what the whole world contains, and a series without a record here is drawn from book-series.json alone. A world's `lines` use book-series.json ids where one exists; a line with `standalone: true` holds standalone novels and is drawn without a next-volume link. A book reaches the shelf through `key` (book-cache.json), `read` (a books-read.md row title; a row logged as #1-4 covers four books) or `rejected` (a book-rejects.jsonl entity). `n` is the Czech edition's number, `year` the original publication. `lib` + `recordUrl` is a verified print holding; when the world has `libChecked`, a book without one is in neither library. Link kinds: `then` (`to` happens after `from` in the story), `prequel` (`from` is set before `to` but was written after it), `crossover` (characters of the line `to` appear in `from`). `story` lists the books in story order. Validate with `python tools/worlds.py check`.",
+ "schema": 1,
+ "worlds": {
+  "araluen": {
+   "name": "Araluen",
+   "nameEn": "Ranger's Apprentice world",
+   "author": "John Flanagan",
+   "checked": "2026-10-29",
+   "libChecked": "2026-10-29",
+   "lines": [
+    {
+     "id": "rangers-apprentice-early-years",
+     "name": "Hraničářův učeň: První roky",
+     "nameEn": "The Early Years",
+     "note": "Prequel to the main series, written after it."
+    },
+    {
+     "id": "rangers-apprentice",
+     "name": "Hraničářův učeň",
+     "nameEn": "Ranger's Apprentice",
+     "note": "Czech numbering, which follows story order: its 5 is the original 7, and 12-18 are the Royal Ranger sub-series."
+    },
+    {
+     "id": "brotherband",
+     "name": "Bratrstvo",
+     "nameEn": "Brotherband Chronicles",
+     "note": "Spin-off set in Skandia with new leads; Oberjarl Erak appears in both series."
+    }
+   ],
+   "arcs": [
+    {
+     "line": "rangers-apprentice",
+     "from": 12,
+     "to": 18,
+     "name": "Královská hraničářka",
+     "nameEn": "The Royal Ranger",
+     "note": "Will's apprentice Maddie, more than fifteen years after Císař Nihon-džinu."
+    }
+   ],
+   "books": [
+    {
+     "id": "ey1",
+     "line": "rangers-apprentice-early-years",
+     "n": 1,
+     "cz": "Turnaj na Gorlanu",
+     "en": "The Tournament at Gorlan",
+     "year": 2015,
+     "read": "Hraničářův učeň: První roky #1 (The Early Years)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/fe1d7ae9-ae0a-4824-8a9a-8c19279662a0"
+    },
+    {
+     "id": "ey2",
+     "line": "rangers-apprentice-early-years",
+     "n": 2,
+     "cz": "Bitva na Hackhamské pláni",
+     "en": "The Battle of Hackham Heath",
+     "year": 2016,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/35a542c8-d654-4b6b-ac16-cd4d67682c0d"
+    },
+    {
+     "id": "ra1",
+     "line": "rangers-apprentice",
+     "n": 1,
+     "cz": "Rozvaliny Gorlanu",
+     "en": "The Ruins of Gorlan",
+     "year": 2004,
+     "read": "Hraničářův učeň #1-4 (Ranger's Apprentice)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/0ac9c2b3-3abf-485a-a01d-043b5a4c7e0b"
+    },
+    {
+     "id": "ra2",
+     "line": "rangers-apprentice",
+     "n": 2,
+     "cz": "Hořící most",
+     "en": "The Burning Bridge",
+     "year": 2005,
+     "read": "Hraničářův učeň #1-4 (Ranger's Apprentice)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/911433a6-59b7-4d17-86f8-e9c87a9cb6d7"
+    },
+    {
+     "id": "ra3",
+     "line": "rangers-apprentice",
+     "n": 3,
+     "cz": "Ledová země",
+     "en": "The Icebound Land",
+     "year": 2005,
+     "read": "Hraničářův učeň #1-4 (Ranger's Apprentice)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/4657567c-1e55-4e91-91fb-5e2313e5f435"
+    },
+    {
+     "id": "ra4",
+     "line": "rangers-apprentice",
+     "n": 4,
+     "cz": "Nositelé dubového listu",
+     "en": "Oakleaf Bearers",
+     "year": 2006,
+     "read": "Hraničářův učeň #1-4 (Ranger's Apprentice)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/397f2dea-b780-4b2c-bc61-cbff4f3be018",
+     "note": "Published in the US as The Battle for Skandia."
+    },
+    {
+     "id": "ra5",
+     "line": "rangers-apprentice",
+     "n": 5,
+     "cz": "Výkupné za Eraka",
+     "en": "Erak's Ransom",
+     "year": 2007,
+     "read": "Hraničářův učeň #5",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/c9ffff88-d5e9-431a-885f-08016b6a2a76",
+     "note": "Book 7 of the original, written after The Siege of Macindaw but set before The Sorcerer in the North; the Czech edition numbers it 5, in story order."
+    },
+    {
+     "id": "ra6",
+     "line": "rangers-apprentice",
+     "n": 6,
+     "cz": "Čaroděj na severu",
+     "en": "The Sorcerer in the North",
+     "year": 2006,
+     "read": "Hraničářův učeň #6",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/825fc2a9-e2a1-451c-891e-a39de3feb6cb",
+     "note": "Book 5 of the original."
+    },
+    {
+     "id": "ra7",
+     "line": "rangers-apprentice",
+     "n": 7,
+     "cz": "Obléhání Macindawu",
+     "en": "The Siege of Macindaw",
+     "year": 2007,
+     "read": "Hraničářův učeň #7-10",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/c4319e94-4635-4626-8fd4-20d9c6228d1e",
+     "note": "Book 6 of the original."
+    },
+    {
+     "id": "ra8",
+     "line": "rangers-apprentice",
+     "n": 8,
+     "cz": "Králové Clonmelu",
+     "en": "The Kings of Clonmel",
+     "year": 2008,
+     "read": "Hraničářův učeň #7-10",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/d147b2b6-d099-47a8-8926-d5c3f950273c"
+    },
+    {
+     "id": "ra9",
+     "line": "rangers-apprentice",
+     "n": 9,
+     "cz": "Halt v nebezpečí",
+     "en": "Halt's Peril",
+     "year": 2009,
+     "read": "Hraničářův učeň #7-10",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/62b9b780-2d40-48f5-9950-ff3c00bcd689"
+    },
+    {
+     "id": "ra10",
+     "line": "rangers-apprentice",
+     "n": 10,
+     "cz": "Císař Nihon-džinu",
+     "en": "The Emperor of Nihon-Ja",
+     "year": 2010,
+     "read": "Hraničářův učeň #7-10",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/67d219e4-2645-490c-9698-1985c94600a5"
+    },
+    {
+     "id": "ra11",
+     "line": "rangers-apprentice",
+     "n": 11,
+     "cz": "Ztracené příběhy",
+     "en": "The Lost Stories",
+     "year": 2011,
+     "read": "Hraničářův učeň #11",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/157f1ffb-1f6c-46a8-9c4f-de125976397d",
+     "note": "Short stories from across the timeline, several of them before book 1."
+    },
+    {
+     "id": "ra12",
+     "line": "rangers-apprentice",
+     "n": 12,
+     "cz": "Královská hraničářka",
+     "en": "The Royal Ranger",
+     "year": 2013,
+     "read": "Hraničářův učeň #12-13",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/3975a52c-e473-403f-bd29-8566e54cf64d",
+     "note": "Set more than fifteen years after Císař Nihon-džinu."
+    },
+    {
+     "id": "ra13",
+     "line": "rangers-apprentice",
+     "n": 13,
+     "cz": "Klan Rudé lišky",
+     "en": "The Red Fox Clan",
+     "year": 2018,
+     "read": "Hraničářův učeň #12-13",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/9792772a-f03b-42c1-9fe6-b159a8a997c7"
+    },
+    {
+     "id": "ra14",
+     "line": "rangers-apprentice",
+     "n": 14,
+     "cz": "Souboj na Araluenu",
+     "en": "Duel at Araluen",
+     "year": 2019,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/1df93574-f5f4-4925-8f76-7354185c5a14"
+    },
+    {
+     "id": "ra15",
+     "line": "rangers-apprentice",
+     "n": 15,
+     "cz": "Ztracený princ",
+     "en": "The Missing Prince",
+     "year": 2020,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/da8e6e42-34ea-421f-abe9-ddbed5cfd1e3"
+    },
+    {
+     "id": "ra16",
+     "line": "rangers-apprentice",
+     "n": 16,
+     "cz": "Útěk z Falaise",
+     "en": "Escape from Falaise",
+     "year": 2021,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/9a9775d4-534e-471f-aaca-362f57a293fe"
+    },
+    {
+     "id": "ra17",
+     "line": "rangers-apprentice",
+     "n": 17,
+     "cz": "Arazanini vlci",
+     "en": "Arazan's Wolves",
+     "year": 2023,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/e480a760-90b6-4894-aa36-6f0eb95297c1"
+    },
+    {
+     "id": "ra18",
+     "line": "rangers-apprentice",
+     "n": 18,
+     "cz": "Léčka u Sorata",
+     "en": "The Ambush at Sorato",
+     "year": 2024,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/f5df1582-aafa-489b-bfd7-3bf4fa5a4db6"
+    },
+    {
+     "id": "bb1",
+     "line": "brotherband",
+     "n": 1,
+     "cz": "Vyděděnci",
+     "en": "The Outcasts",
+     "year": 2011,
+     "read": "Bratrstvo #1-3 (Brotherband)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/47678da0-3075-4127-a8b8-f98285344806"
+    },
+    {
+     "id": "bb2",
+     "line": "brotherband",
+     "n": 2,
+     "cz": "Nájezdníci",
+     "en": "The Invaders",
+     "year": 2012,
+     "read": "Bratrstvo #1-3 (Brotherband)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/df0b5c2a-e878-4395-ad6d-ef367d4521a6"
+    },
+    {
+     "id": "bb3",
+     "line": "brotherband",
+     "n": 3,
+     "cz": "Lovci",
+     "en": "The Hunters",
+     "year": 2012,
+     "read": "Bratrstvo #1-3 (Brotherband)",
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/cdbb13ab-266d-48bd-9378-a1e7040b7a77"
+    },
+    {
+     "id": "bb4",
+     "line": "brotherband",
+     "n": 4,
+     "cz": "Otroci ze Sokora",
+     "en": "Slaves of Socorro",
+     "year": 2014,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/346e110d-21e4-4291-b7fc-ac2ef7ec7a6e"
+    },
+    {
+     "id": "bb5",
+     "line": "brotherband",
+     "n": 5,
+     "cz": "Hora štírů",
+     "en": "Scorpion Mountain",
+     "year": 2014,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/1e6a5092-9604-420b-9c31-80effb0543f3"
+    },
+    {
+     "id": "bb6",
+     "line": "brotherband",
+     "n": 6,
+     "cz": "Umrlčí tváře",
+     "en": "The Ghostfaces",
+     "year": 2016,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/4aadcb8f-6b01-4337-aa37-2f0b388a6b93"
+    },
+    {
+     "id": "bb7",
+     "line": "brotherband",
+     "n": 7,
+     "cz": "Kaldera",
+     "en": "The Caldera",
+     "year": 2017,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/d26536bc-24b7-4b45-a469-0ac34abf5ba2"
+    },
+    {
+     "id": "bb8",
+     "line": "brotherband",
+     "n": 8,
+     "cz": "Návrat Temudžajů",
+     "en": "Return of the Temujai",
+     "year": 2019,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/67d467da-1d43-4dc1-bab9-6fb333757111"
+    },
+    {
+     "id": "bb9",
+     "line": "brotherband",
+     "n": 9,
+     "cz": "Pronásledování",
+     "en": "The Stern Chase",
+     "year": 2022,
+     "lib": "valmez",
+     "recordUrl": "https://katalog.mekvalmez.cz/records/38a34883-3346-4201-8ae8-748024e0fb5d"
+    }
+   ],
+   "links": [
+    {
+     "from": "ra11",
+     "to": "ey1",
+     "kind": "then",
+     "note": "Turnaj na Gorlanu follows on from the story Hiberňan in Ztracené příběhy."
+    },
+    {
+     "from": "ey2",
+     "to": "ra1",
+     "kind": "prequel",
+     "note": "První roky is set before Rozvaliny Gorlanu and was written after the main series."
+    },
+    {
+     "from": "ra9",
+     "to": "bb1",
+     "kind": "then",
+     "note": "Bratrstvo 1-3 take place between Halt v nebezpečí and Císař Nihon-džinu."
+    },
+    {
+     "from": "bb3",
+     "to": "ra10",
+     "kind": "then",
+     "note": "Bratrstvo 1-3 take place between Halt v nebezpečí and Císař Nihon-džinu."
+    },
+    {
+     "from": "bb9",
+     "to": "ra12",
+     "kind": "then",
+     "note": "Bratrstvo 4-9 take place before Královská hraničářka."
+    },
+    {
+     "from": "bb4",
+     "to": "rangers-apprentice",
+     "kind": "crossover",
+     "note": "Ranger Gilan sails with the Herons, the first book to bring the two casts together."
+    },
+    {
+     "from": "bb5",
+     "to": "rangers-apprentice",
+     "kind": "crossover",
+     "note": "Gilan again leads the mission, with Halt among the cameos."
+    }
+   ],
+   "story": [
+    "ey1",
+    "ey2",
+    "ra1",
+    "ra2",
+    "ra3",
+    "ra4",
+    "ra5",
+    "ra6",
+    "ra7",
+    "ra8",
+    "ra9",
+    "bb1",
+    "bb2",
+    "bb3",
+    "ra10",
+    "ra11",
+    "bb4",
+    "bb5",
+    "bb6",
+    "bb7",
+    "bb8",
+    "bb9",
+    "ra12",
+    "ra13",
+    "ra14",
+    "ra15",
+    "ra16",
+    "ra17",
+    "ra18"
+   ],
+   "sources": [
+    "https://cs.wikipedia.org/wiki/Hrani%C4%8D%C3%A1%C5%99%C5%AFv_u%C4%8De%C5%88",
+    "https://www.legie.info/serie/701-hranicaruv-ucen",
+    "https://www.cbdb.cz/knizni-serie-153-hranicaruv-ucen",
+    "https://www.albatrosmedia.cz/tituly/55014986/hranicaruv-ucen-kniha-pata-vykupne-za-eraka/",
+    "https://cs.wikipedia.org/wiki/Bratrstvo_(kni%C5%BEn%C3%AD_s%C3%A9rie)",
+    "https://www.legie.info/serie/1245-bratrstvo",
+    "https://en.wikipedia.org/wiki/Ranger%27s_Apprentice",
+    "https://en.wikipedia.org/wiki/Ranger%27s_Apprentice:_The_Early_Years",
+    "https://www.tlbranson.com/rangers-apprentice-book-order/",
+    "https://www.penguinrandomhouse.com/series/DMS/the-brotherband-chronicles/",
+    "https://www.fictiondb.com/author/john-flanagan~40329.htm"
+   ]
+  }
+ }
+}

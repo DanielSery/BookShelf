@@ -1,12 +1,12 @@
-// The Map tab. Loaded before the main script and run against its globals (D, F, esc,
-// band, tone, cover, accessLine, LIBRARY, LEGEND, render, setView, store, recall,
+// The Map tab. Loaded before the main script and run against its globals (D, F, esc, nice,
+// band, tone, ten, rng, cover, accessLine, LIBRARY, LEGEND, render, setView, store, recall,
 // candidateFilter, readFilter), all of which exist by the time anything here is called.
 // Names are map-prefixed because every top-level declaration shares one scope with
 // index.html.
 
 const MAP = {
   opts: null, seeds: [], openBook: null, hover: null, cam: null, built: null, pendingFocus: null,
-  ro: null, raf: 0, gen: 0, memo: null,
+  ro: null, raf: 0, gen: 0, memo: null, world: null, wix: null,
 };
 
 const MAP_BAND_VAR = { 'S+': '--b-S', S: '--b-S', A: '--b-A', B: '--b-B', C: '--b-C', F: '--b-F' };
@@ -17,7 +17,7 @@ function mapOpts() {
   if (!MAP.opts) {
     let saved = {};
     try { saved = JSON.parse(recall('bookshelf.map')) || {}; } catch {}
-    MAP.opts = { mode: 'books', minSim: 0.4, unread: true, sameAuthor: false, tags: [], ...saved };
+    MAP.opts = { mode: 'books', minSim: 0.4, unread: true, sameAuthor: false, tags: [], worldOrder: 'story', ...saved };
   }
   return MAP.opts;
 }
@@ -82,11 +82,12 @@ function mapBuild() {
     members.forEach(m => m.d.forEach((x, f) => { d[f] += x; }));
     const norm = Math.hypot(...d) || 1;
     const read = members.filter(m => m.kind === 'r');
+    const scored = read.filter(m => m.score != null);
     const live = members.filter(m => m.kind === 'c' && m.score != null);
     const au = {
-      name: a.name, x: a.x, y: a.y, members, i: authors.length, ref: 'a' + authors.length, hasRead: read.length > 0,
+      name: a.name, x: a.x, y: a.y, members, i: authors.length, ref: 'a' + authors.length, hasRead: read.length > 0, scoredRead: scored.length > 0,
       d: d.map(x => x / norm),
-      score: read.length ? Math.max(...read.map(m => m.score))
+      score: scored.length ? Math.max(...scored.map(m => m.score))
            : live.length ? Math.max(...live.map(m => m.score)) : null,
     };
     au.sv = [...au.d].map((x, f) => [f, x]).filter(([, x]) => x > 0);
@@ -158,17 +159,19 @@ function sharedTags(seeds, p, B, n = 3) {
 }
 
 function mapScoreText(p) {
-  if (p.isSeries && p.kind === 'r') return `read series of ${p.row.vols.length} · average ${p.score}`;
-  if (p.isSeries) return `series of ${p.row.vols.length} · ` + (p.row.est ? `predicted ${p.row.est[0]}–${p.row.est[1]}` : 'blocked');
+  if (p.isSeries && p.kind === 'r') return `read series of ${p.row.vols.length} · ` +
+    (p.score == null ? 'not finished' : `average ${ten(p.score)}`);
+  if (p.isSeries) return `series of ${p.row.vols.length} · ` + (p.row.est ? `predicted ${rng(p.row.est[0], p.row.est[1])}` : 'blocked');
   if (p.members) {
-    if (p.score == null) return 'blocked only';
-    return p.hasRead ? `read · best ${p.score}` : `best prediction ${Math.round(p.score)}`;
+    if (p.score == null) return p.hasRead ? 'read · not finished' : 'blocked only';
+    return p.scoredRead ? `read · best ${ten(p.score)}`
+      : `${p.hasRead ? 'read, not finished · ' : ''}best prediction ${ten(p.score)}`;
   }
-  if (p.kind === 'r') return `read · ${p.score}`;
-  return p.row.est ? `predicted ${p.row.est[0]}–${p.row.est[1]}` : 'blocked';
+  if (p.kind === 'r') return p.score == null ? 'read · not finished, no score' : `read · ${ten(p.score)}`;
+  return p.row.est ? `predicted ${rng(p.row.est[0], p.row.est[1])}` : 'blocked';
 }
 
-const mapLetter = p => p.score == null ? '—' : band(p.score);
+const mapLetter = p => p.score == null ? '—' : ten(p.score);
 const mapTone = p => p.score == null ? 'bN' : tone(p.score);
 const mapCount = (n, word) => `${n} ${word}${n === 1 ? '' : 's'}`;
 const mapLabel = p => p.members ? p.name : p.title;
@@ -318,8 +321,10 @@ function mapSide(B) {
       whole map means nothing.</p>
       ${anchors.length ? `<h4>Start from what you know</h4>${mapList(anchors, B)}` : ''}`;
   }
-  const o = MAP.opts;
+  const o = MAP.opts, wid = MAP.seeds.length === 1 && mapWorldOf(MAP.seeds[0]), w = wid && mapWorld(wid);
   return `<div id="maphead">${mapHead(B)}</div>
+    ${w ? `<button type="button" class="tomap" data-world-open="${esc(wid)}">${
+      w.lines.length > 1 ? 'World' : 'Series'} map: every volume and the reading order</button>` : ''}
     <div class="mapopts">
       <label class="range">Min. similarity <b id="minsimval">${Math.round(o.minSim * 100)} %</b>
         <input type="range" min="10" max="90" step="5" value="${Math.round(o.minSim * 100)}" data-mapopt="minSim"></label>
@@ -368,6 +373,7 @@ function mapView() {
           <button type="button" data-mz="fit">Fit</button>
         </div>
         <div class="maptip" id="maptip" hidden></div>
+        <div class="worldpane" id="worldpane" hidden></div>
       </div>
       <aside class="mapside" id="mapside">${mapSide(B)}</aside>
     </div>`;
@@ -396,6 +402,7 @@ function mountMap() {
   });
   MAP.ro.observe(stage);
   mapWire(c);
+  mapWorldRender();
 }
 
 const mapScreen = (p, W, H) => [W / 2 + (p.x - MAP.cam.cx) * MAP.cam.s0 * MAP.cam.k,
@@ -593,14 +600,18 @@ function mapFlyTo(to, animate = true) {
   requestAnimationFrame(step);
 }
 
-function mapSetSeeds(seeds, focus) {
+// Picking a series or a book of a shared world by itself opens its series map; any other
+// change of selection goes back to the similarity map.
+function mapSetSeeds(seeds, focus, openWorld = false) {
   MAP.seeds = seeds;
   MAP.openBook = null;
+  MAP.world = openWorld && seeds.length === 1 ? mapWorldOf(seeds[0]) : null;
   const side = F('mapside');
   if (side) { side.innerHTML = mapSide(mapBuild()); side.scrollTop = 0; }
   if (seeds.length > 1) mapFrame([...seeds, ...mapAbove(mapBuild()).slice(0, 15).map(r => r.p)]);
   else if (focus) mapFocus(focus);
   else mapRedraw();
+  mapWorldRender();
 }
 
 const mapToggleSeed = p => MAP.seeds.includes(p)
@@ -657,7 +668,7 @@ function mapWire(c) {
     if (drag && !drag.moved && e.type === 'pointerup') {
       const [mx, my] = at(e), p = mapNearest(mx, my);
       if (e.shiftKey || e.ctrlKey || e.metaKey) { if (p) mapToggleSeed(p); }
-      else mapSetSeeds(p ? [p] : []);
+      else mapSetSeeds(p ? [p] : [], null, true);
     }
     drag = null;
   };
@@ -672,11 +683,288 @@ function mapWire(c) {
   c.addEventListener('dblclick', e => { const [mx, my] = at(e); mapZoom(2, mx, my); });
 }
 
+// The series map: every volume of a series or shared world, one row each in reading order,
+// one lane per series. book-worlds.json holds the researched worlds; any other series is
+// drawn from book-series.json, which knows only the shelf, the read rows and a volume count.
+
+const MAP_W = { row: 46, box: 232, lane: 276, top: 44, arc: 20, h: 38 };
+
+function mapWorldIndex() {
+  if (MAP.wix && MAP.wix.D === D) return MAP.wix;
+  const ofLine = {}, ofKey = {}, ofRead = {};
+  Object.entries(D.worlds).forEach(([id, w]) => {
+    w.lines.forEach(l => { ofLine[l.id] = id; });
+    w.books.forEach(b => { if (b.key) ofKey[b.key] = id; if (b.read) ofRead[b.read] = id; });
+  });
+  Object.entries(D.seriesDoc).forEach(([sid, s]) => {
+    if (ofLine[sid]) return;
+    (s.members || []).forEach(m => { ofKey[m.key] ??= 's:' + sid; });
+    (s.read || []).forEach(t => { ofRead[t] ??= 's:' + sid; });
+  });
+  MAP.wix = {
+    D, ofLine, ofKey, ofRead, worlds: new Map(),
+    cand: Object.fromEntries(D.books.map(b => [b.key, b])),
+    read: Object.fromEntries(D.read.rows.map(r => [r.title, r])),
+    rej: Object.fromEntries(D.rejects.map(r => [r.entity, r])),
+  };
+  return MAP.wix;
+}
+
+// A world of one known book has nothing to map, so it does not open.
+function mapWorldOf(p) {
+  if (!p || p.members || !D.worlds) return null;
+  const X = mapWorldIndex();
+  let id;
+  if (p.isSeries) {
+    const sid = p.id.replace(/^r?s:/, '');
+    id = X.ofLine[sid] || (D.seriesDoc[sid] ? 's:' + sid : null);
+  } else id = p.kind === 'c' ? X.ofKey[p.key] : X.ofRead[p.row.title];
+  const w = id && mapWorld(id);
+  return w && w.nodes.length > 1 ? id : null;
+}
+
+// Read rows carry a volume number only when it follows the series' own name:
+// "Hraničářův učeň #1-4" is volumes 1-4, "Guards! Guards! (Discworld #8)" in the City
+// Watch sub-series is not volume 8 of it. Once any entry has no number, which numbers are
+// missing is unknown, so the shortfall becomes one untitled entry at the end.
+function mapWorldFromSeries(sid) {
+  const s = D.seriesDoc[sid], uni = s.kind === 'universe', books = [];
+  const own = [s.name, s.nameEn].filter(Boolean).map(t => t.toLowerCase());
+  (s.members || []).forEach(m => books.push({ id: 'k:' + m.key, line: sid, n: uni ? null : m.n, key: m.key }));
+  (s.read || []).forEach(t => {
+    const m = /^(.*?)\s*#(\d+)(?:\s*[-–]\s*(\d+))?/.exec(t);
+    if (uni || !m || !own.includes(m[1].toLowerCase())) return books.push({ id: 'r:' + t, line: sid, n: null, read: t });
+    for (let n = +m[2]; n <= +(m[3] || m[2]); n++) books.push({ id: `r${n}:${t}`, line: sid, n, read: t });
+  });
+  (s.rejected || []).forEach(t => books.push({ id: 'x:' + t, line: sid, n: null, rejectedText: t }));
+  if (!uni && books.some(b => b.n == null)) {
+    const more = (s.volumes || 0) - books.length;
+    if (more > 0) books.push({ id: 'g', line: sid, n: null, count: more, gap: true });
+  } else if (!uni) {
+    const have = new Set(books.map(b => b.n));
+    const last = Math.max(s.volumes || 0, ...have);
+    for (let n = 1; n <= last; n++) {
+      if (have.has(n)) continue;
+      let to = n;
+      while (to < last && !have.has(to + 1)) to++;
+      books.push({ id: `g:${n}`, line: sid, n, n2: to, count: to - n + 1, gap: true });
+      n = to;
+    }
+  }
+  return { name: s.name, nameEn: s.nameEn && s.nameEn !== s.name ? s.nameEn : '', note: s.note, synthetic: true,
+           universe: uni, volumes: s.volumes, lines: [{ id: sid, name: s.name, nameEn: s.nameEn, standalone: uni }],
+           books, links: [], arcs: [] };
+}
+
+function mapWorld(id) {
+  const X = mapWorldIndex();
+  if (X.worlds.has(id)) return X.worlds.get(id);
+  const raw = id.startsWith('s:') ? mapWorldFromSeries(id.slice(2)) : D.worlds[id];
+  const w = { ...raw, id, nodes: raw.books.map(b => mapWorldNode(b, raw, X)) };
+  w.author ||= (w.nodes.find(n => n.author) || {}).author || '';
+  X.worlds.set(id, w);
+  return w;
+}
+
+function mapWorldNode(b, w, X) {
+  const cand = b.key && X.cand[b.key], row = b.read && X.read[b.read];
+  const rt = b.rejected || b.rejectedText;
+  const rej = rt ? X.rej[rt] || X.rej[rt.replace(/\s*\(.*\)$/, '')] : null;
+  const n = { ...b, title: b.cz || b.en || '', alt: b.cz && b.en && b.cz !== b.en ? b.en : '', href: b.recordUrl || '' };
+  if (row) {
+    Object.assign(n, { state: 'read', score: row.score, author: row.author, ref: 'r:' + row.key,
+                       word: row.score == null ? 'read, not finished' : 'read' });
+    n.title ||= row.title;
+  } else if (cand) {
+    Object.assign(n, { state: 'shelf', score: cand.est ? cand.mid : null, est: cand.est, author: cand.cache.author, ref: 'c:' + cand.key,
+                       word: cand.blocked ? `on the shelf, blocked · ${nice(cand.blocked)}` : 'on the shelf' });
+    n.title ||= cand.cache.czTitle || cand.cache.title;
+    n.alt ||= cand.cache.czTitle && cand.cache.title !== cand.cache.czTitle ? cand.cache.title : '';
+    if (cand.hasCz && cand.cz.recordUrl) n.href = cand.cz.recordUrl;
+  } else if (rt) {
+    Object.assign(n, { state: 'rejected', word: 'rejected' + (rej ? ` · ${nice(rej.filter)}` : '') });
+    n.title ||= rt;
+  } else if (b.gap) {
+    const k = b.count;
+    Object.assign(n, { state: 'gap', word: 'title not recorded', title: b.n == null
+      ? `${k} more volume${k === 1 ? '' : 's'} not on the shelf`
+      : `${k === 1 ? 'Volume' : 'Volumes'} ${b.n}${k > 1 ? '–' + b.n2 : ''} not on the shelf` });
+  } else if (b.lib) Object.assign(n, { state: 'library', word: 'in the library' });
+  else Object.assign(n, { state: 'absent', word: !b.cz ? 'no Czech edition' : w.libChecked ? 'in neither library' : 'not on the shelf' });
+  return n;
+}
+
+// Rows follow the chosen order. Publication order keeps each series in its own numbering
+// and interleaves the series by year, so a volume the Czech edition renumbered (Výkupné za
+// Eraka, written seventh, numbered fifth) stays in its series' sequence.
+function mapWorldLayout(w, story) {
+  const lanes = w.lines.filter(l => w.nodes.some(n => n.line === l.id));
+  const laneOf = Object.fromEntries(lanes.map((l, i) => [l.id, i]));
+  const perLane = lanes.map(l => w.nodes.filter(n => n.line === l.id).sort((a, b) => (a.n ?? 1e9) - (b.n ?? 1e9)));
+  let seq;
+  if (story) {
+    const pos = Object.fromEntries(w.story.map((id, i) => [id, i]));
+    seq = w.nodes.slice().sort((a, b) => (pos[a.id] ?? 1e9) - (pos[b.id] ?? 1e9));
+  } else {
+    perLane.forEach(list => { let y = -Infinity; list.forEach(n => { y = n.year ?? y; n.sy = y; }); });
+    const heads = perLane.map(() => 0);
+    seq = [];
+    while (seq.length < w.nodes.length) {
+      let best = -1;
+      perLane.forEach((list, i) => {
+        if (heads[i] < list.length && (best < 0 || list[heads[i]].sy < perLane[best][heads[best]].sy)) best = i;
+      });
+      seq.push(perLane[best][heads[best]++]);
+    }
+  }
+  const arcStart = new Map((w.arcs || []).map(a => [perLane[laneOf[a.line]]?.find(n => n.n === a.from), a]));
+  const at = {}, captions = [];
+  let y = MAP_W.top;
+  seq.forEach(n => {
+    const a = arcStart.get(n);
+    if (a) { y += MAP_W.arc; captions.push({ a, x: laneOf[n.line] * MAP_W.lane + 4, y: y - MAP_W.arc + 2 }); }
+    at[n.id] = { x: laneOf[n.line] * MAP_W.lane, y, lane: laneOf[n.line] };
+    y += MAP_W.row;
+  });
+  return { lanes, laneOf, perLane, at, captions, W: lanes.length * MAP_W.lane + 24, H: y };
+}
+
+function mapWorldSvg(w, L) {
+  const { box, h } = MAP_W, mid = p => p.y + h / 2, mx = p => p.x + 13;
+  const ttl = t => t ? `<title>${esc(t)}</title>` : '';
+  const out = [];
+  L.perLane.forEach((list, li) => !L.lanes[li].standalone && list.slice(1).forEach((n, i) => {
+    const a = L.at[list[i].id], b = L.at[n.id];
+    out.push(`<path class="wsq" d="M${mx(a)},${mid(a)} L${mx(b)},${mid(b)}"/>`);
+  }));
+  (w.arcs || []).forEach(a => {
+    const ys = (L.perLane[L.laneOf[a.line]] || []).filter(n => n.n >= a.from && n.n <= a.to).map(n => L.at[n.id]);
+    if (!ys.length) return;
+    const x = ys[0].x + box + 6, y0 = Math.min(...ys.map(p => p.y)), y1 = Math.max(...ys.map(p => p.y)) + h;
+    out.push(`<path class="warc" d="M${x - 4},${y0} H${x} V${y1} H${x - 4}">${ttl(a.name + (a.note ? ' — ' + a.note : ''))}</path>`);
+  });
+  (w.links || []).forEach(k => {
+    const a = L.at[k.from];
+    if (!a) return;
+    if (k.kind === 'crossover') {
+      const lane = L.laneOf[k.to];
+      if (lane == null) return;
+      const tx = lane * MAP_W.lane + 13, sx = lane < a.lane ? a.x : a.x + box;
+      out.push(`<path class="wx" d="M${sx},${mid(a)} H${tx}">${ttl(k.note)}</path><circle class="wxdot" cx="${tx}" cy="${mid(a)}" r="3.5"/>`);
+      return;
+    }
+    const b = L.at[k.to];
+    if (!b) return;
+    // Leave and enter through the facing box edges, so the curve runs in the gutter between lanes.
+    let sx, ex, c1, c2;
+    if (b.lane > a.lane) { sx = a.x + box; ex = b.x + 3; c1 = sx + 34; c2 = ex - 34; }
+    else if (b.lane < a.lane) { sx = a.x; ex = b.x + box; c1 = sx - 34; c2 = ex + 34; }
+    else { sx = a.x + box; ex = b.x + box; c1 = sx + 46; c2 = ex + 46; }
+    out.push(`<path class="${k.kind === 'prequel' ? 'wpre' : 'wthen'}" marker-end="url(#wah)"
+      d="M${sx},${mid(a)} C${c1},${mid(a)} ${c2},${mid(b)} ${ex},${mid(b)}">${ttl(k.note)}</path>`);
+  });
+  return `<svg width="${L.W}" height="${L.H}" aria-hidden="true"><defs><marker id="wah" viewBox="0 0 8 8" refX="7" refY="4"
+      markerWidth="7" markerHeight="7" orient="auto"><path class="wah" d="M0,0 L8,4 L0,8 z"/></marker></defs>${out.join('')}</svg>`;
+}
+
+function mapWorldNodeHtml(n, at, B) {
+  const p = n.ref && B.byId.get(n.ref);
+  const value = n.state === 'read' ? (n.score == null ? '—' : ten(n.score))
+    : n.state === 'shelf' && n.est ? rng(n.est[0], n.est[1]) : '';
+  const tone = n.score == null ? 'bN' : mapTone(n);
+  const sub = [n.word, n.alt, n.year].filter(Boolean).join(' · ');
+  const tip = [n.title, n.alt, n.year, n.word, n.note].filter(Boolean).join('\n');
+  const link = n.href && n.state !== 'read'
+    ? `<a href="${esc(n.href)}" target="_blank" rel="noreferrer" title="Open the catalogue record">Borrow ↗</a>` : '';
+  return `<div class="wnode ${n.state} ${tone}${p && MAP.seeds.includes(p) ? ' sel' : ''}" title="${esc(tip)}"
+      style="left:${at.x}px;top:${at.y}px;width:${MAP_W.box}px;height:${MAP_W.h}px"${
+      p ? ` data-wpick="${p.ref}" tabindex="0" role="button"` : ''}>
+    <span class="wm ${n.state}"></span>
+    <span style="min-width:0"><span class="wt">${n.n != null && !n.gap ? `<i>${esc(n.n)}</i>` : ''}${esc(n.title)}</span>
+      <span class="ws">${esc(sub)}</span></span>
+    ${value ? `<span class="wv">${esc(value)}</span>` : link}</div>`;
+}
+
+const MAP_W_LEGEND = `<div class="wplegend">
+  <span><span class="wm read"></span>read, your score</span>
+  <span><span class="wm"></span>on the shelf, predicted</span>
+  <span><span class="wm library"></span>in the library, not screened yet</span>
+  <span><span class="wm absent"></span>not in a library or no Czech edition</span>
+  <span><span class="wm gap"></span>volume not on the shelf, title unknown</span>
+  <span><svg width="22" height="8"><path class="wsq" d="M0,4 H22"/></svg>next volume</span>
+  <span><svg width="22" height="8"><path class="wthen" d="M0,4 H18"/><path class="wah" d="M16,1 L22,4 L16,7 z"/></svg>continues in</span>
+  <span><svg width="22" height="8"><path class="wpre" d="M0,4 H18"/><path class="wah" d="M16,1 L22,4 L16,7 z"/></svg>prequel, written later</span>
+  <span><svg width="22" height="8"><path class="wx" d="M0,4 H22"/></svg>crossover</span></div>`;
+
+function mapWorldHtml(w, B) {
+  const story = !!(w.story && w.story.length) && MAP.opts.worldOrder !== 'pub';
+  const L = mapWorldLayout(w, story);
+  const size = n => n.count || 1;
+  const total = w.nodes.reduce((t, n) => t + size(n), 0);
+  const LABEL = { read: 'read', shelf: 'on the shelf', library: 'in the library, not screened yet', rejected: 'rejected',
+                  gap: 'not on the shelf' };
+  const tally = new Map(Object.values(LABEL).map(k => [k, 0]));
+  w.nodes.forEach(n => { const k = LABEL[n.state] || n.word; tally.set(k, (tally.get(k) || 0) + size(n)); });
+  const parts = [...tally].filter(([, k]) => k).map(([label, k]) => `${k} ${label}`);
+  const known = w.universe && w.volumes > total ? ` · ${w.volumes} books in the whole world, only these are recorded` : '';
+  const byId = Object.fromEntries(w.nodes.map(n => [n.id, n]));
+  const lineName = id => (w.lines.find(l => l.id === id) || {}).name || id;
+  const end = id => byId[id] ? `<b>${esc(byId[id].title)}</b>` : `<b>${esc(lineName(id))}</b>`;
+  const KIND = { then: 'continues in', prequel: 'prequel to', crossover: 'crossover with' };
+  const notes = [
+    ...(w.links || []).map(k => `<li><span class="wk">${KIND[k.kind] || k.kind}</span>${end(k.from)} → ${end(k.to)}${
+      k.note ? ' — ' + esc(k.note) : ''}</li>`),
+    ...w.lines.filter(l => l.note).map(l => `<li><b>${esc(l.name)}</b> — ${esc(l.note)}</li>`),
+    ...(w.arcs || []).filter(a => a.note).map(a => `<li><b>${esc(a.name)}</b> — ${esc(a.note)}</li>`),
+    ...(w.synthetic && w.note ? [`<li>${esc(w.note)}</li>`] : []),
+  ];
+  const src = (w.sources || []).map((u, i) => `<a href="${esc(u)}" target="_blank" rel="noopener">${i + 1}</a>`).join(' ');
+  return `<div class="wphead">
+      <div><div class="bk-title">${esc(w.name)}${w.nameEn ? ` <span class="bk-alt">(${esc(w.nameEn)})</span>` : ''}</div>
+        <div class="bk-meta">${esc([w.author, w.lines.length > 1 ? `${w.lines.length} series` : '',
+          `${mapCount(total, 'book')}: ${parts.join(', ')}`].filter(Boolean).join(' · '))}${esc(known)}</div></div>
+      <div class="wpctl">${w.story && w.story.length ? `<div class="wseg" role="group" aria-label="Row order">
+          <button type="button" data-worder="story" aria-pressed="${story}" title="Rows in the order the story happens">Story order</button>
+          <button type="button" data-worder="pub" aria-pressed="${!story}" title="Each series in its own numbering, the series interleaved by year written">Publication</button></div>` : ''}
+        <button type="button" data-world-close title="Back to the similarity map (Esc)">Similarity map</button></div>
+    </div>
+    <div class="wpbody">
+      <div class="wpgraph" style="width:${L.W}px;height:${L.H}px">${mapWorldSvg(w, L)}
+        ${L.lanes.map((l, i) => `<div class="wlane" style="left:${i * MAP_W.lane}px;top:6px;width:${MAP_W.box}px" title="${esc(l.note || '')}">
+          <b>${esc(l.name)}</b><span>${esc([l.nameEn && l.nameEn !== l.name ? l.nameEn : '', mapCount(L.perLane[i].reduce((t, n) => t + size(n), 0), 'book')].filter(Boolean).join(' · '))}</span></div>`).join('')}
+        ${L.captions.map(c => `<div class="warcname" style="left:${c.x}px;top:${c.y}px" title="${esc(c.a.note || '')}">${esc(c.a.name)}${
+          c.a.nameEn ? ` · ${esc(c.a.nameEn)}` : ''}</div>`).join('')}
+        ${w.nodes.map(n => mapWorldNodeHtml(n, L.at[n.id], B)).join('')}
+      </div>
+      ${MAP_W_LEGEND}
+      ${notes.length ? `<h4>How it connects</h4><ul class="wplinks">${notes.join('')}</ul>` : ''}
+      <p class="mapnote" style="margin-top:10px">${w.synthetic
+        ? 'Drawn from the shelf alone: titles of volumes that are not on the shelf, and links to other series, are not recorded yet.'
+        : `Researched ${esc(w.checked || '')}${w.libChecked ? `, library holdings checked ${esc(w.libChecked)}` : ''}${src ? ` · sources ${src}` : ''}`}</p>
+    </div>`;
+}
+
+function mapWorldRender(fresh = false) {
+  const pane = F('worldpane');
+  if (!pane) return;
+  const w = MAP.world && mapWorld(MAP.world);
+  pane.hidden = !w;
+  if (!w) { pane.innerHTML = ''; delete pane.dataset.world; return; }
+  const body = pane.querySelector('.wpbody');
+  const keep = !fresh && body && pane.dataset.world === MAP.world ? [body.scrollLeft, body.scrollTop] : null;
+  pane.innerHTML = mapWorldHtml(w, mapBuild());
+  pane.dataset.world = MAP.world;
+  const nb = pane.querySelector('.wpbody'), sel = pane.querySelector('.wnode.sel');
+  if (keep) [nb.scrollLeft, nb.scrollTop] = keep;
+  else if (sel) nb.scrollTop = Math.max(0, sel.offsetTop - nb.clientHeight / 3);
+}
+
 function mapOpen(p, mode) {
   mapOpts().mode = mode;
   mapSaveOpts();
   MAP.seeds = p ? [p] : [];
   MAP.openBook = null;
+  MAP.world = null;
   MAP.pendingFocus = p;
   MAP.memo = null;
   if (MAP.cam) MAP.cam.mode = null;
@@ -694,6 +982,14 @@ document.addEventListener('click', e => {
   }
   if (!F('mapstage')) return;
   const B = mapBuild();
+  if (e.target.closest('#worldpane a')) return;
+  const wpick = e.target.closest('[data-wpick]');
+  if (wpick) { mapSetSeeds([mapByRef(B, wpick.dataset.wpick)], null, true); return; }
+  const wopen = e.target.closest('[data-world-open]');
+  if (wopen) { MAP.world = wopen.dataset.worldOpen; mapWorldRender(); return; }
+  if (e.target.closest('[data-world-close]')) { MAP.world = null; mapWorldRender(); return; }
+  const worder = e.target.closest('[data-worder]');
+  if (worder) { MAP.opts.worldOrder = worder.dataset.worder; mapSaveOpts(); mapWorldRender(true); return; }
   const mode = e.target.closest('[data-mode]');
   if (mode) {
     if (mode.dataset.mode !== MAP.opts.mode) { mapOpen(null, mode.dataset.mode); render(); }
@@ -728,7 +1024,7 @@ document.addEventListener('click', e => {
   const pick = e.target.closest('[data-pick]');
   if (pick) {
     const p = mapByRef(B, pick.dataset.pick), mode = pick.dataset.pick[0] === 'a' ? 'authors' : 'books';
-    if (mode === MAP.opts.mode) { mapSetSeeds([p], p); return; }
+    if (mode === MAP.opts.mode) { mapSetSeeds([p], p, true); return; }
     mapOpen(p, mode);
     render();
     return;
@@ -754,6 +1050,12 @@ document.addEventListener('input', e => {
   } else o[name] = opt.checked;
   mapSaveOpts();
   mapRefreshResults();
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && MAP.world && F('worldpane')) { MAP.world = null; mapWorldRender(); return; }
+  const node = (e.key === 'Enter' || e.key === ' ') && e.target.closest && e.target.closest('[data-wpick]');
+  if (node) { e.preventDefault(); node.click(); }
 });
 
 new MutationObserver(mapRedraw).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });

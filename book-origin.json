@@ -5580,10 +5580,6 @@
    "orig": "foreign",
    "src": "translator"
   },
-  "problem-tri-teles": {
-   "orig": "foreign",
-   "src": "translator"
-  },
   "projekt-kronos": {
    "orig": "cs",
    "src": "author"
@@ -8658,7 +8654,35 @@
    "orig": "foreign",
    "src": "author"
   },
-  "ranger-s-apprentice-hranicaruv-ucen-1-14": {
+  "hranicaruv-ucen-1-4-ranger-s-apprentice": {
+   "orig": "foreign",
+   "src": "author"
+  },
+  "hranicaruv-ucen-5": {
+   "orig": "foreign",
+   "src": "author"
+  },
+  "hranicaruv-ucen-6": {
+   "orig": "foreign",
+   "src": "author"
+  },
+  "hranicaruv-ucen-7-10": {
+   "orig": "foreign",
+   "src": "author"
+  },
+  "hranicaruv-ucen-11": {
+   "orig": "foreign",
+   "src": "author"
+  },
+  "hranicaruv-ucen-12-13": {
+   "orig": "foreign",
+   "src": "author"
+  },
+  "hranicaruv-ucen-prvni-roky-1-the-early-years": {
+   "orig": "foreign",
+   "src": "author"
+  },
+  "bratrstvo-1-3-brotherband": {
    "orig": "foreign",
    "src": "author"
   },
@@ -8761,6 +8785,10 @@
   "the-gunslinger-the-dark-tower-1": {
    "orig": "foreign",
    "src": "author"
+  },
+  "problem-tri-teles-the-three-body-problem": {
+   "orig": "foreign",
+   "src": "translator"
   }
  }
 }

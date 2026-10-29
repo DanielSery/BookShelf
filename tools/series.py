@@ -19,6 +19,8 @@ import re
 import sys
 import unicodedata
 
+import readlog
+
 for _s in (sys.stdout, sys.stderr):
     try:
         _s.reconfigure(encoding="utf-8")
@@ -42,12 +44,7 @@ def surname(a):
 
 
 def read_rows():
-    out = []
-    for line in io.open(READ, encoding="utf-8"):
-        c = [x.strip() for x in line.strip().strip("|").split("|")]
-        if len(c) == 5 and c[2].isdigit():
-            out.append({"title": c[0], "author": c[1], "score": int(c[2])})
-    return out
+    return [{k: r[k] for k in ("title", "author", "score")} for r in readlog.rows(READ)]
 
 
 def batches(a):

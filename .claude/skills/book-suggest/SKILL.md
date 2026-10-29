@@ -94,10 +94,13 @@ Per title, quote what is recorded — never a fresh number. **A series is presen
 one entry and labelled as a series**: its name (Czech first, original in brackets),
 how many volumes it has and how many are on the shelf, the mean range, then one line
 per volume with its own range and access. Say plainly when a volume is not held in
-Czech print or not screened, because he reads the series whole.
+Czech print or not screened, because he reads the series whole. **A volume whose hard
+predecessor is missing** (`prereq` of kind `absent`, or `rejected` with `inherits: false`)
+is a high risk: lead with it, ahead of the range.
 
-- **The range and its band**, e.g. "predicted 78-85, A/S border". Never collapse
-  it to one number. Say whether it is deep-dived (`depth: deep`, with sourced
+- **The range, out of 10 in whole numbers**, e.g. "predicted 8-9" for a stored
+  [78, 85] (ruled 2026-10-29: proposals show no decimals and no letters). Round
+  each end to the nearest whole number. Never collapse it to one number. Say whether it is deep-dived (`depth: deep`, with sourced
   verdicts in `book-deep.jsonl`) or screening depth.
 - **Every axis in `risks`**, stated as a condition. The range assumes none of
   them fires. *Neuromancer* is 72-80 if its opening holds and a 30 if it doesn't,

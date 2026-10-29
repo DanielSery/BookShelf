@@ -136,6 +136,7 @@
     color: var(--bandcolor); flex: none;
   }
   .bandletter.small { font-size: 20px; font-weight: 700; }
+  .score.tinted { color: var(--bandcolor); }
   .scorelabel { font-size: 13px; font-weight: 450; color: var(--ink-muted); }
   .band { font-size: 11px; font-weight: 600; color: var(--ink-2); border: 1px solid var(--border); border-radius: 4px; padding: 1px 5px; white-space: nowrap; }
   .bar { position: relative; display: block; height: 10px; background: var(--track); border-radius: 5px; }
@@ -153,6 +154,7 @@
     border: 1px solid var(--border); color: var(--ink-2); background: var(--surface);
   }
   .badge.risk     { border-left: 3px solid var(--status-serious); }
+  .badge.risk.high { border-left-color: var(--status-critical); color: var(--ink); font-weight: 600; }
   .badge.blocked  { border-left: 3px solid var(--status-critical); color: var(--ink); font-weight: 600; }
   .badge.stale    { border-left: 3px solid var(--status-warning); }
   .badge.cz       { border-left: 3px solid var(--status-good); }
@@ -283,6 +285,63 @@
   button.unpick { flex: none; font-size: 18px; line-height: 1; color: var(--ink-muted); }
   button.tomap { margin-top: 8px; font-size: 11.5px; color: var(--ink-muted); text-align: left; text-decoration: underline dotted; }
   button.tomap:hover, button.linkish:hover { color: var(--ink); }
+  .worldpane { position: absolute; inset: 0; z-index: 3; display: flex; flex-direction: column; background: var(--surface); }
+  .wphead {
+    display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: flex-start; justify-content: space-between;
+    padding: 12px 14px 10px; border-bottom: 1px solid var(--hairline);
+  }
+  .wphead .bk-meta { font-size: 12px; }
+  .wpctl { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .wpctl button { padding: 3px 10px; font-size: 12px; }
+  .wseg { display: flex; }
+  .wseg button { color: var(--ink-2); }
+  .wseg button:first-child { border-radius: 6px 0 0 6px; }
+  .wseg button:last-child { border-radius: 0 6px 6px 0; margin-left: -1px; }
+  .wseg button[aria-pressed="true"] { background: var(--band-mid); border-color: var(--band-mid); color: #fff; }
+  .wpbody { flex: 1; overflow: auto; padding: 0 14px 14px; font-size: 12px; }
+  .wpgraph { position: relative; margin-top: 4px; }
+  .wpgraph svg { position: absolute; left: 0; top: 0; overflow: visible; }
+  .worldpane .wsq { stroke: var(--ink-muted); stroke-width: 1.5; fill: none; }
+  .worldpane .wthen, .worldpane .wpre { stroke: var(--band-mid); stroke-width: 1.8; fill: none; }
+  .worldpane .wpre { stroke-dasharray: 2 4; stroke-linecap: round; }
+  .worldpane .wx { stroke: var(--status-serious); stroke-width: 1.6; stroke-dasharray: 6 4; fill: none; }
+  .worldpane .wxdot { fill: var(--status-serious); }
+  .worldpane .wah { fill: var(--band-mid); }
+  .worldpane .warc { stroke: var(--ink-muted); stroke-width: 1.5; fill: none; }
+  .wlane { position: absolute; line-height: 1.3; }
+  .wlane b { display: block; font-weight: 620; font-size: 12.5px; }
+  .wlane span, .warcname { color: var(--ink-muted); font-size: 11px; }
+  .warcname { position: absolute; font-style: italic; white-space: nowrap; }
+  .wnode {
+    position: absolute; display: grid; grid-template-columns: 12px minmax(0, 1fr) auto; gap: 0 8px; align-items: center;
+    padding: 2px 8px 2px 7px; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; line-height: 1.3;
+  }
+  .wnode[data-wpick] { cursor: pointer; }
+  .wnode[data-wpick]:hover { border-color: var(--ink-muted); }
+  .wnode.sel { border-color: var(--ink); box-shadow: 0 0 0 1px var(--ink); }
+  .wnode.absent, .wnode.gap, .wnode.rejected { background: var(--plane); }
+  .wnode.absent .wt, .wnode.gap .wt, .wnode.rejected .wt { color: var(--ink-2); }
+  .wnode .wt, .wnode .ws { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .wnode .wt { font-weight: 560; }
+  .wnode .wt i { font-style: normal; color: var(--ink-muted); font-weight: 600; margin-right: 4px; }
+  .wnode .ws { color: var(--ink-muted); font-size: 11px; }
+  .wnode .wv { font-weight: 700; color: var(--bandcolor); font-variant-numeric: tabular-nums; }
+  .wnode a { font-size: 11px; color: var(--ink-2); white-space: nowrap; text-decoration: none; }
+  .wnode a:hover { color: var(--band-mid); text-decoration: underline; }
+  .wm { width: 10px; height: 10px; border-radius: 50%; background: var(--bandcolor); }
+  .wm.read { border-radius: 1px; transform: rotate(45deg) scale(0.9); }
+  .wm.library { background: none; border: 2px solid var(--band-mid); }
+  .wm.absent, .wm.rejected { background: none; border: 1.5px solid var(--ink-muted); }
+  .wm.gap { background: none; border: 1.5px dashed var(--ink-muted); }
+  .wm.rejected { border-radius: 2px; }
+  .wplegend { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; margin: 10px 0 0; color: var(--ink-2); font-size: 11.5px; }
+  .wplegend > span { display: inline-flex; align-items: center; gap: 5px; }
+  .wplegend .wm { --bandcolor: var(--ink-muted); }
+  .wplegend svg { overflow: visible; }
+  .wpbody h4 { margin: 14px 0 6px; font-size: 12px; font-weight: 620; }
+  ul.wplinks { margin: 0; padding-left: 18px; color: var(--ink-2); }
+  ul.wplinks li { margin-bottom: 4px; }
+  ul.wplinks .wk { font-size: 10.5px; font-weight: 650; text-transform: uppercase; letter-spacing: 0.03em; color: var(--ink-muted); margin-right: 4px; }
   @media (max-width: 900px) {
     .mapwrap { grid-template-columns: 1fr; }
     .mapstage { height: 62vh; }
@@ -322,10 +381,10 @@
   </select></label>
   <label data-for="candidates read map">Min score <select id="minscore">
     <option value="0">any</option>
-    <option value="50">50 · C and up</option>
-    <option value="65" selected>65 · B and up</option>
-    <option value="75">75 · A and up</option>
-    <option value="85">85 · S and up</option>
+    <option value="45">5 and up</option>
+    <option value="65" selected>7 and up</option>
+    <option value="75">8 and up</option>
+    <option value="85">9 and up</option>
   </select></label>
   <label data-for="rejected">Filter <select id="rfilter"></select></label>
   <label data-for="rejected">Scope <select id="rscope"></select></label>
@@ -353,8 +412,13 @@ const cls  = s => s >= 85 ? 'high' : s >= 65 ? 'mid' : 'low';
 // nothing is ever distinguished by hue alone.
 const TONE = { 'S+': 'bS', S: 'bS', A: 'bA', B: 'bB', C: 'bC', F: 'bF' };
 const tone = s => TONE[band(s)];
+// The reader scores out of 10 in whole numbers (2026-10-29); everything underneath stays
+// on 0-100, so this is the only place a number is turned into what he sees.
+const ten = s => Math.round(s / 10);
+const rng = (a, b) => ten(a) === ten(b) ? `${ten(a)}` : `${ten(a)}–${ten(b)}`;
 const LEGEND = '<span class="legend">' +
-  ['S', 'A', 'B', 'C', 'F'].map(l => `<i class="${TONE[l]}">${l}</i>`).join('') +
+  [['S', '9+'], ['A', '8'], ['B', '7'], ['C', '5–6'], ['F', '≤4']]
+    .map(([l, t]) => `<i class="${TONE[l]}">${t}</i>`).join('') +
   '</span>';
 
 // Two axes on purpose. Candidates never fall below 66, so a 50-100 axis spends
@@ -414,15 +478,22 @@ const SORTS = {
 
 function parseReadTable(md) {
   const lines = md.split('\n');
-  const head = lines.findIndex(l => /^\|\s*Book\s*\|\s*Author\s*\|\s*Score\s*\|/i.test(l));
-  if (head < 0) throw new Error('books-read.md: score table header not found');
+  const isHead = l => /^\|\s*Book\s*\|\s*Author\s*\|\s*Score\s*\|/i.test(l);
+  if (!lines.some(isHead)) throw new Error('books-read.md: score table header not found');
   const rows = [], bad = [];
-  for (let i = head + 2; i < lines.length; i++) {
-    const l = lines[i].trim();
-    if (!l.startsWith('|')) break;
+  let inside = false;
+  for (const raw of lines) {
+    const l = raw.trim();
+    if (isHead(l)) { inside = true; continue; }
+    if (!inside) continue;
+    if (!l.startsWith('|')) { inside = false; continue; }
+    if (/^\|[\s:|-]+\|$/.test(l)) continue;
     const c = l.replace(/^\|/, '').replace(/\|$/, '').split('|').map(s => s.trim());
-    if (c.length !== 5 || !/^\d+$/.test(c[2])) { bad.push(l); continue; }
-    rows.push({ title: c[0], author: c[1], score: +c[2], tier: c[3], notes: c[4], key: slug(c[0]) });
+    const v = c[2] ? c[2].replace(',', '.') : '';
+    const num = /^\d+(\.\d+)?$/.test(v) ? +v : null;
+    if (c.length !== 4 || (num === null && !/^[—–-]$/.test(v))) { bad.push(l); continue; }
+    rows.push({ title: c[0], author: c[1], score: num === null ? null : Math.round(num <= 10 ? num * 10 : num),
+                notes: c[3], key: slug(c[0]) });
   }
   return { rows, bad };
 }
@@ -441,7 +512,7 @@ async function load() {
     if (!r.ok) throw new Error(p + ' → HTTP ' + r.status);
     return kind === 'text' ? r.text() : r.json();
   };
-  const [cache, revsDoc, media, estText, rejText, readMd, readFacets, originDoc, deepText, sim, seriesDoc] = await Promise.all([
+  const [cache, revsDoc, media, estText, rejText, readMd, readFacets, originDoc, deepText, sim, seriesDoc, worldsDoc] = await Promise.all([
     get('book-cache.json'), get('book-revs.json'), get('book-media.json'),
     get('book-estimates.jsonl', 'text'), get('book-rejects.jsonl', 'text'),
     get('books-read.md', 'text'),
@@ -453,6 +524,7 @@ async function load() {
     get('book-deep.jsonl', 'text').catch(() => ''),
     get('book-similarity.json').catch(() => null),
     get('book-series.json').catch(() => ({ series: {} })),
+    get('book-worlds.json').catch(() => ({ worlds: {} })),
   ]);
 
   const est = jsonl(estText).slice(1);
@@ -502,7 +574,7 @@ async function load() {
     // or a renamed title silently joins the wrong bucket instead of showing as a gap.
     r.audience = f.audience || '';
     r.origin = (OR[r.key] || {}).orig || '';
-    r.hay = [r.title, r.author, r.notes, r.tier, GENRE[f.genre] || f.genre || '', ...tagLabels(r.tags),
+    r.hay = [r.title, r.author, r.notes, GENRE[f.genre] || f.genre || '', ...tagLabels(r.tags),
              FORM[f.form] || f.form || '', AUDIENCE[f.audience] || f.audience || '',
              ORIGIN[r.origin] || ''].join(' ').toLowerCase();
   });
@@ -531,7 +603,8 @@ async function load() {
     }
   });
 
-  D = { cache, revs, books, read, rejects, sim, series, seriesOf, readSeries, readSeriesOf, fetched: media.fetched };
+  D = { cache, revs, books, read, rejects, sim, series, seriesOf, readSeries, readSeriesOf, fetched: media.fetched,
+        seriesDoc: seriesDoc.series || {}, worlds: worldsDoc.worlds || {} };
   stamp();
   fillSelect('rfilter', 'all filters', [...new Set(rejects.map(r => r.filter))].sort().map(f => [f, nice(f)]));
   fillSelect('rscope', 'all scopes', [...new Set(rejects.map(r => r.level))].sort().map(l => [l, l]));
@@ -667,7 +740,7 @@ const VERDICT_ORDER = ['fires', 'costs', 'unknown', 'earns', 'clear'];
 function dossierBlock(d) {
   const axes = Object.entries(d.axes || {})
     .sort(([, a], [, b]) => VERDICT_ORDER.indexOf(a.v) - VERDICT_ORDER.indexOf(b.v));
-  const pre = d.pre && d.pre.est ? ` · before the dive ${d.pre.est[0]}–${d.pre.est[1]}` : '';
+  const pre = d.pre && d.pre.est ? ` · before the dive ${rng(d.pre.est[0], d.pre.est[1])}` : '';
   const items = axes.map(([id, a]) => {
     const src = (a.src || []).filter(u => /^https?:\/\//.test(u))
       .map((u, i) => `<a href="${esc(u)}" target="_blank" rel="noopener">${i + 1}</a>`).join(' ');
@@ -731,11 +804,19 @@ function accessLine(b) {
   return bits.join('<br>');
 }
 
+// A rejected predecessor that does not pass its exclusion on (an access reject) is still unreachable.
+const missingBefore = b => (b.cache.prereq || [])
+  .filter(p => p.need === 'hard' && (p.kind === 'absent' || (p.kind === 'rejected' && p.inherits === false)))
+  .map(p => p.kind === 'absent' ? p.ref.replace(/^\(|\)$/g, '') : `${p.ref}, rejected`);
+
 function candidateCard(b) {
   const badges = [];
   if (b.depth === 'deep') badges.push('<span class="badge deep">deep-dived</span>');
   if (b.blocked) badges.push(`<span class="badge blocked">blocked · ${esc(nice(b.blocked))}</span>`);
-  (b.risks || []).forEach(r => badges.push(`<span class="badge risk">risk · ${esc(nice(r))}</span>`));
+  const gaps = missingBefore(b);
+  gaps.forEach(g => badges.push(`<span class="badge risk high">high risk · needs ${esc(g)}</span>`));
+  (b.risks || []).filter(r => !(gaps.length && r === 'axis:sequels'))
+    .forEach(r => badges.push(`<span class="badge risk">risk · ${esc(nice(r))}</span>`));
   if (b.hasCz) badges.push(`<span class="badge cz">CZ print${b.lib === 'roznov' ? ' · Rožnov' : ''}</span>`);
   if (b.enGem) badges.push('<span class="badge en">English gem</span>');
   if (b.hasEloan) badges.push('<span class="badge eloan">e-loan</span>');
@@ -743,10 +824,9 @@ function candidateCard(b) {
 
   const score = b.est
     ? `<div class="scoreblock">
-         <div class="scorerow"><span class="bandletter">${band(b.mid)}</span>
-           <span class="score">${b.est[0]}–${b.est[1]}</span>
-           <span class="scorelabel">predicted</span></div>
-         ${bar('candidates', b.est[0], b.est[1], cls(b.mid), `Predicted ${b.est[0]}–${b.est[1]}, conditional on no risk firing`)}
+         <div class="scorerow"><span class="score tinted">${rng(b.est[0], b.est[1])}</span>
+           <span class="scorelabel">predicted, out of 10</span></div>
+         ${bar('candidates', b.est[0], b.est[1], cls(b.mid), `Predicted ${rng(b.est[0], b.est[1])} out of 10, conditional on no risk firing`)}
        </div>`
     : `<div class="scoreblock"><div class="scorerow">
          <span class="bandletter small">—</span>
@@ -813,14 +893,14 @@ function groupSeries(books) {
 
 function volumeLine(b) {
   const czt = b.cache.czTitle, en = b.cache.title;
-  const range = b.blocked ? `blocked · ${esc(nice(b.blocked))}` : b.est ? `${b.est[0]}–${b.est[1]}` : '—';
+  const range = b.blocked ? `blocked · ${esc(nice(b.blocked))}` : b.est ? rng(b.est[0], b.est[1]) : '—';
   const access = b.hasCz
     ? (b.cz.recordUrl ? `<a class="route" href="${esc(b.cz.recordUrl)}" target="_blank" rel="noreferrer">CZ print ↗</a>` : 'CZ print')
     : b.hasEloan ? 'e-loan only'
     : b.enGem ? (b.cache.enCopy ? `<a class="route" href="${esc(b.cache.enCopy.recordUrl)}" target="_blank" rel="noreferrer">English gem, EN copy ↗</a>` : 'English gem')
     : 'not in print here';
   return `${esc(czt || en)}${czt && en && czt !== en ? ` <span class="vr">(${esc(en)})</span>` : ''}
-    <span class="vr">· ${range} · ${access}</span>
+    <span class="vr">· ${range} · ${access}${missingBefore(b).map(g => ` · needs ${esc(g)}`).join('')}</span>
     <details class="scoring"><summary>Scoring notes</summary><p class="why">${esc(b.why)}</p></details>`;
 }
 
@@ -831,14 +911,16 @@ function seriesCard(e) {
   if (s.read.length) badges.push(`<span class="badge series">${s.read.length} already read</span>`);
   if (e.blocked) badges.push(`<span class="badge blocked">blocked · ${esc(nice(e.blocked))} · ${
     esc(e.blockedVol.cache.czTitle || e.blockedVol.cache.title)}</span>`);
-  e.risks.forEach(r => badges.push(`<span class="badge risk">risk · ${esc(nice(r))}</span>`));
+  const gapped = e.vols.some(b => missingBefore(b).length);
+  if (gapped) badges.push('<span class="badge risk high">high risk · earlier volumes not on the shelf</span>');
+  e.risks.filter(r => !(gapped && r === 'axis:sequels'))
+    .forEach(r => badges.push(`<span class="badge risk">risk · ${esc(nice(r))}</span>`));
   if (e.hasCz) badges.push(`<span class="badge cz">CZ print${e.allCz ? '' : ' · not every volume'}</span>`);
   if (e.hasEloan) badges.push('<span class="badge eloan">e-loan</span>');
   const score = e.est
     ? `<div class="scoreblock">
-         <div class="scorerow"><span class="bandletter">${band(e.mid)}</span>
-           <span class="score">${e.est[0]}–${e.est[1]}</span>
-           <span class="scorelabel">predicted, whole series</span></div>
+         <div class="scorerow"><span class="score tinted">${rng(e.est[0], e.est[1])}</span>
+           <span class="scorelabel">predicted, whole series, out of 10</span></div>
          ${bar('candidates', e.est[0], e.est[1], cls(e.mid), `Mean of the ${n} volumes' predicted ranges`)}
        </div>`
     : `<div class="scoreblock"><div class="scorerow">
@@ -869,13 +951,14 @@ function seriesCard(e) {
 // each volume keeps its own score and notes inside the card.
 function readSeriesEntry(s) {
   const vols = s.reads, first = vols[0];
-  const score = Math.round(vols.reduce((t, r) => t + r.score, 0) / vols.length);
+  const scored = vols.filter(r => r.score != null);
+  const score = scored.length ? Math.round(scored.reduce((t, r) => t + r.score, 0) / scored.length) : null;
   return {
-    isSeries: true, key: 'rs:' + s.id, s, vols, score, tier: band(score),
+    isSeries: true, key: 'rs:' + s.id, s, vols, score,
     title: s.name, alt: s.nameEn && s.nameEn !== s.name ? s.nameEn : '', author: first.author,
     media: first.media, genre: first.genre, tags: [...new Set(vols.flatMap(r => r.tags))], form: first.form,
     audience: first.audience, origin: first.origin,
-    notes: vols.length > 1 ? vols.map(r => `${r.title} ${r.score}`).join('; ') : first.notes,
+    notes: vols.length > 1 ? vols.map(r => `${r.title} ${r.score == null ? 'not finished' : ten(r.score)}`).join('; ') : first.notes,
     hay: [s.name, s.nameEn, 'series', ...vols.map(r => r.hay)].join(' ').toLowerCase(),
   };
 }
@@ -891,24 +974,27 @@ function groupReadSeries(rows) {
 }
 
 function readVolumes(vols) {
-  return `<ol class="vols">${vols.map(r => `<li>${esc(r.title)} <span class="vr">· ${r.score} ${esc(r.tier)}</span>
+  return `<ol class="vols">${vols.map(r => `<li>${esc(r.title)} <span class="vr">· ${r.score == null ? 'not finished, no score' : ten(r.score)}</span>
     ${r.notes ? `<details class="scoring"><summary>Your notes</summary><p class="why">${esc(r.notes)}</p></details>` : ''}</li>`).join('')}</ol>`;
 }
 
 function readSeriesCard(e) {
-  const s = e.s, n = e.vols.length, scores = e.vols.map(r => r.score);
-  const badges = [`<span class="badge series">series · ${s.readWhole ? 'read whole, logged as one entry'
+  const s = e.s, n = e.vols.length, scores = e.vols.map(r => r.score).filter(v => v != null);
+  const badges = [`<span class="badge series">series · ${s.readWhole ? (n > 1 ? `read whole, logged in ${n} parts` : 'read whole, logged as one entry')
     : `${n}${s.volumes ? ' of ' + s.volumes : ''} volume${(s.volumes || n) === 1 ? '' : 's'} read`}</span>`];
   const left = D.series[s.id] ? D.series[s.id].members.length : 0;
   if (left) badges.push(`<span class="badge series">${left} more on the Candidates tab</span>`);
-  const score = `<div class="scoreblock">
-    <div class="scorerow"><span class="bandletter">${esc(e.tier)}</span>
-      <span class="score">${e.score}</span>
-      <span class="scorelabel">${n > 1 ? `average · volumes ${Math.min(...scores)}–${Math.max(...scores)}` : 'scored'}</span></div>
-    ${bar('read', Math.min(...scores), Math.max(...scores), cls(e.score), n > 1 ? `Volumes scored ${scores.join(', ')}` : `Scored ${e.score}`)}</div>`;
+  const score = e.score == null
+    ? `<div class="scoreblock"><div class="scorerow">
+         <span class="bandletter small">—</span>
+         <span class="scorelabel">not finished, no score</span></div></div>`
+    : `<div class="scoreblock">
+    <div class="scorerow"><span class="score tinted">${ten(e.score)}</span>
+      <span class="scorelabel">${scores.length > 1 ? `out of 10, average · volumes ${rng(Math.min(...scores), Math.max(...scores))}` : 'out of 10'}</span></div>
+    ${bar('read', Math.min(...scores), Math.max(...scores), cls(e.score), scores.length > 1 ? `Volumes scored ${scores.map(ten).join(', ')}` : `Scored ${ten(e.score)}`)}</div>`;
   return shell({
     media: e.media, fallback: e.author, title: e.title, alt: e.alt, author: e.author, score, mapId: 'rs:' + s.id,
-    tone: tone(e.score),
+    tone: e.score == null ? 'bN' : tone(e.score),
     meta: [GENRE[e.genre] || e.genre, ...tagLabels(e.tags),
            e.audience && e.audience !== 'adult' ? AUDIENCE[e.audience] || e.audience : null,
            e.origin === 'cs' ? ORIGIN.cs : null].filter(Boolean).join(' · '),
@@ -918,15 +1004,19 @@ function readSeriesCard(e) {
 }
 
 function readCard(r) {
-  const score = `<div class="scoreblock">
-    <div class="scorerow"><span class="bandletter">${esc(r.tier)}</span>
-      <span class="score">${r.score}</span>
-      <span class="scorelabel">scored</span></div>
-    ${bar('read', r.score, r.score, cls(r.score), `Scored ${r.score} — ${r.tier}`)}</div>`;
-  const dnf = /(^|[^A-Za-z])DNF([^A-Za-z]|$)|abandon|unfinished/i.test(r.notes);
+  const unscored = r.score == null;
+  const score = unscored
+    ? `<div class="scoreblock"><div class="scorerow">
+         <span class="bandletter small">—</span>
+         <span class="scorelabel">not finished, no score</span></div></div>`
+    : `<div class="scoreblock">
+    <div class="scorerow"><span class="score tinted">${ten(r.score)}</span>
+      <span class="scorelabel">out of 10</span></div>
+    ${bar('read', r.score, r.score, cls(r.score), `Scored ${ten(r.score)} out of 10`)}</div>`;
+  const dnf = unscored || /(^|[^A-Za-z])DNF([^A-Za-z]|$)|abandon|unfinished/i.test(r.notes);
   return shell({
     media: r.media, fallback: r.author, title: r.title, author: r.author, score, mapId: 'r:' + r.key,
-    tone: tone(r.score),
+    tone: unscored ? 'bN' : tone(r.score),
     meta: [GENRE[r.genre] || r.genre, ...tagLabels(r.tags), FORM[r.form] || r.form,
            r.audience && r.audience !== 'adult' ? AUDIENCE[r.audience] || r.audience : null,
            r.origin === 'cs' ? ORIGIN.cs : null]
@@ -1018,9 +1108,9 @@ function candidates() {
   const head = `<div class="grouphead">${rows.length} of ${all.length}${
       nSeries ? ` (${nSeries} of them series, each shown once)` : ''}${
       facetNote ? ' · ' + esc(facetNote) : ''} ${LEGEND}
-    <span>· predicted range on a 50–100 axis; the range assumes no listed risk fires</span></div>`;
+    <span>· predicted range out of 10; the range assumes no listed risk fires</span></div>`;
   return head + (F('astable').checked
-    ? `<table><thead><tr><th>Book</th><th>Author</th><th>Genre</th><th class="num">Predicted</th><th>Band</th>
+    ? `<table><thead><tr><th>Book</th><th>Author</th><th>Genre</th><th class="num">Predicted</th>
         <th>Risks</th><th>Access</th><th>Why read it</th></tr></thead><tbody>
         ${rows.map(b => `<tr class="${b.est ? tone(b.mid) : 'bN'}"><td>${b.isSeries ? `<b>Series:</b> ` : ''}${esc(b.cache.czTitle || b.cache.title)}${
             b.cache.czTitle && b.cache.title && b.cache.czTitle !== b.cache.title ? ' (' + esc(b.cache.title) + ')' : ''}</td>
@@ -1029,8 +1119,7 @@ function candidates() {
                      b.audience !== 'adult' ? AUDIENCE[b.audience] || b.audience : null,
                      b.origin === 'cs' ? ORIGIN.cs : null]
                     .filter(Boolean).join(', '))}</td>
-          <td class="num">${b.est ? b.est[0] + '–' + b.est[1] : '—'}</td>
-          <td class="bandcell">${b.est ? band(b.mid) : 'blocked'}</td>
+          <td class="num">${b.est ? rng(b.est[0], b.est[1]) : 'blocked'}</td>
           <td>${(b.blocked ? ['blocked: ' + nice(b.blocked)] : []).concat((b.risks || []).map(nice)).map(esc).join(', ')}</td>
           <td>${b.hasCz ? 'CZ print' : b.hasEloan ? 'e-loan' : b.enGem ? 'English gem' : '—'}</td>
           <td>${esc(b.media.pitch || b.media.blurb || '')}</td></tr>`).join('')}</tbody></table>`
@@ -1044,7 +1133,7 @@ function readFilter() {
   return r => {
     if (kind === 'series' ? !r.isSeries : kind === 'single' && r.isSeries) return false;
     if (q && !r.hay.includes(q)) return false;
-    if (r.score < min) return false;
+    if (r.score != null && r.score < min) return false;
     if (!genreMatch(r, gen)) return false;
     if (frm && r.form !== frm) return false;
     // An unfaceted row has audience '' and is excluded by any audience filter,
@@ -1060,31 +1149,36 @@ function readView() {
   const gen = F('genre').value, frm = F('form').value, aud = F('audience').value;
   const org = F('origin').value;
   const all = groupReadSeries(D.read.rows);
-  let rows = all.filter(readFilter());
-  if (!rows.length) return '<div class="empty">Nothing matches those filters.</div>';
-  rows = sortBy(rows, F('sort').value);
+  const kept = all.filter(readFilter());
+  if (!kept.length) return '<div class="empty">Nothing matches those filters.</div>';
+  // Put down for lack of interest, not disliked (reader, 2026-10-29): kept apart from the
+  // scored books so they never sit among the low scores.
+  const unfinished = sortBy(kept.filter(r => r.score == null), 'title');
+  let rows = sortBy(kept.filter(r => r.score != null), F('sort').value);
   const facetNote = [gen ? GENRE[gen] || TAGS[gen] || gen : null, frm ? FORM[frm] || frm : null,
     aud ? (aud === 'kids' ? "children's + YA" : AUDIENCE[aud] || aud) : null,
     org ? ORIGIN[org] || org : null].filter(Boolean).join(' · ');
-  const mean = Math.round(rows.reduce((s, r) => s + r.score, 0) / rows.length);
+  const mean = rows.length ? ten(rows.reduce((s, r) => s + r.score, 0) / rows.length) : '—';
   const nSeries = rows.filter(r => r.isSeries).length;
   const head = `<div class="grouphead">${rows.length} of ${all.length} read${
       nSeries ? ` (${nSeries} of them series, each shown once)` : ''}${
       facetNote ? ' · ' + esc(facetNote) : ''} ${LEGEND}
-    <span>· actual scores on a 30–100 axis, wider than the candidates axis because these run down to 30.
-    This is the scale every prediction is anchored against.${
+    <span>· your scores out of 10. This is the scale every prediction is anchored against.${
       facetNote ? ` Mean of this slice: <b>${mean}</b> — a small-sample average, not a rule.` : ''}</span></div>`;
   return head + (F('astable').checked
-    ? `<table><thead><tr><th class="num">Score</th><th>Tier</th><th>Book</th><th>Author</th>
-        <th>Genre</th><th>Notes</th></tr></thead><tbody>${rows.map(r => `<tr class="${tone(r.score)}">
-        <td class="num">${r.score}</td><td class="bandcell">${esc(r.tier)}</td>
+    ? `<table><thead><tr><th class="num">Score</th><th>Book</th><th>Author</th>
+        <th>Genre</th><th>Notes</th></tr></thead><tbody>${rows.concat(unfinished).map(r => `<tr class="${r.score == null ? 'bN' : tone(r.score)}">
+        <td class="num">${r.score == null ? 'not finished' : ten(r.score)}</td>
         <td>${r.isSeries ? '<b>Series:</b> ' : ''}${esc(r.title)}</td><td>${esc(r.author)}</td>
         <td>${esc([GENRE[r.genre] || r.genre, ...tagLabels(r.tags), FORM[r.form] || r.form,
                    r.audience && r.audience !== 'adult' ? AUDIENCE[r.audience] || r.audience : null,
                    r.origin === 'cs' ? ORIGIN.cs : null]
                   .filter(Boolean).join(', '))}</td>
         <td>${esc(r.notes)}</td></tr>`).join('')}</tbody></table>`
-    : `<div class="grid">${rows.map(r => r.isSeries ? readSeriesCard(r) : readCard(r)).join('')}</div>`);
+    : `<div class="grid">${rows.map(r => r.isSeries ? readSeriesCard(r) : readCard(r)).join('')}</div>` +
+      (unfinished.length ? `<div class="grouphead">Not finished, no score · ${unfinished.length}
+        <span>· put down because they did not hold your interest, not because you disliked them</span></div>
+        <div class="grid">${unfinished.map(r => r.isSeries ? readSeriesCard(r) : readCard(r)).join('')}</div>` : ''));
 }
 
 function rejectedView() {

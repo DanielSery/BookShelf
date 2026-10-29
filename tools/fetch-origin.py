@@ -31,6 +31,8 @@ a re-run after screening in new books costs only the new titles.
 """
 import json, io, os, re, sys, time, unicodedata
 import urllib.parse, urllib.request
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import readlog
 
 # The unrowed-author report prints Czech names, and a cp1252 console kills the process
 # on the first one - after book-origin.json is already written, so the run looks like a
@@ -334,21 +336,13 @@ for b in cache["books"]:
 prev = {}
 if os.path.exists(os.path.join(REPO, "book-origin.json")):
     prev = (json.load(rd("book-origin.json")).get("read")) or {}
-L = rd("books-read.md").readlines()
-h = [i for i, l in enumerate(L)
-     if re.match(r"^\|\s*Book\s*\|\s*Author\s*\|\s*Score\s*\|", l, re.I)][0]
 read, lost = {}, []
-for l in L[h + 2:]:
-    if not l.strip().startswith("|"):
-        break
-    c = [x.strip() for x in l.strip().strip("|").split("|")]
-    if len(c) < 5:
-        continue
-    s = slug(c[0])
+for r in readlog.rows(os.path.join(REPO, "books-read.md")):
+    s = slug(r["title"])
     if s in prev:
         read[s] = prev[s]
     else:
-        lost.append(c[0])
+        lost.append(r["title"])
 
 doc = {
     "_readme":

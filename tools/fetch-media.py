@@ -36,6 +36,8 @@ import unicodedata
 import urllib.parse
 import urllib.request
 
+import readlog
+
 UA = {"User-Agent": "book-shelf/1.0 (personal reading list)"}
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CACHE = os.path.join(ROOT, "book-cache.json")
@@ -135,18 +137,7 @@ def fill(bucket, wanted, today, label, retry):
 
 
 def read_rows():
-    md = io.open(READ, encoding="utf-8").read().split("\n")
-    head = next(i for i, l in enumerate(md)
-                if re.match(r"^\|\s*Book\s*\|\s*Author\s*\|\s*Score\s*\|", l, re.I))
-    out = []
-    for l in md[head + 2:]:
-        l = l.strip()
-        if not l.startswith("|"):
-            break
-        c = [x.strip() for x in l.strip("|").split("|")]
-        if len(c) == 5 and c[2].isdigit():
-            out.append((c[0], c[1]))
-    return out
+    return [(r["title"], r["author"]) for r in readlog.rows(READ)]
 
 
 def main():

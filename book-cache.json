@@ -382,6 +382,14 @@
    "series": "Amelia Fang",
    "flags": [
     "Part of a 7-book illustrated chapter-book series (Amelia Fang) aimed at roughly ages 6-10; invented gothic-monster fantasy world (Nocturnia), not drawn from real-world occultism."
+   ],
+   "prereq": [
+    {
+     "ref": "(Amálie Zubatá #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -694,10 +702,13 @@
    },
    "genre": "sf",
    "form": "novel",
-   "czTitle": "Architekti světů",
+   "czTitle": "Střepy Země",
    "series": "The Final Architecture #1",
    "audience": "adult",
-   "audienceSource": "default"
+   "audienceSource": "default",
+   "flags": [
+    "The catalogue titles this record by the series name Architekti světů; the volume is Střepy Země. Volumes 2 (Oči prázdnoty) and 3 (Vládci nestvůrnosti) are in Czech print (Planeta9/Triton 2024) but neither library was found to hold them (2026-10-29)."
+   ]
   },
   {
    "key": "armenska-genocida",
@@ -2720,6 +2731,14 @@
    "series": "Flawed",
    "flags": [
     "Second book of a duology; the catalogue's 'King Cool' series label is a Czech publisher imprint, not the original duology name."
+   ],
+   "prereq": [
+    {
+     "ref": "(Flawed #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -3240,6 +3259,14 @@
    "flags": [
     "Second book of the Wayfarers/Poutnici series; characters from the first book do not otherwise appear.",
     "Hugo Award nominee."
+   ],
+   "prereq": [
+    {
+     "ref": "dlouha-cesta-na-malou-rozzlobenou-planetu",
+     "kind": "candidate",
+     "need": "soft",
+     "note": "Wayfarers 1; a shared universe with different leads, so readable alone."
+    }
    ]
   },
   {
@@ -4045,6 +4072,15 @@
    "flags": [
     "The catalogue also holds another print edition (Baronet 2024) and an audio edition (OneHotBook 2025).",
     "Second book of a prequel trilogy to the original Dune."
+   ],
+   "prereq": [
+    {
+     "ref": "Historie Duny: Sluzebnicky dzihad",
+     "kind": "rejected",
+     "need": "hard",
+     "inherits": false,
+     "note": "Volume 1, rejected on axis:opening. That filter is mitigable by reading the premise first, so it does not exclude this volume, but the story continues from it."
+    }
    ]
   },
   {
@@ -4420,7 +4456,15 @@
    "form": "novel",
    "series": "Inheritance Cycle #4",
    "audience": "ya",
-   "audienceSource": "hand"
+   "audienceSource": "hand",
+   "prereq": [
+    {
+     "ref": "Brisingr, or, The seven promises Eragon Shadeslayer and Saphira Bjartskular",
+     "kind": "rejected",
+     "need": "hard",
+     "note": "Volume 3, rejected on axis:occult; this volume concludes its plot."
+    }
+   ]
   },
   {
    "key": "inkvizitor",
@@ -4449,7 +4493,15 @@
     "An earlier Czech edition exists, Oldag 2004 (ISBN 80-86508-57-9), same title."
    ],
    "audience": "adult",
-   "audienceSource": "default"
+   "audienceSource": "default",
+   "prereq": [
+    {
+     "ref": "(Hledání Grálu #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
+   ]
   },
   {
    "key": "intermezzo",
@@ -4819,7 +4871,7 @@
    ],
    "prereq": [
     {
-     "ref": "Jak uloupit Draci mec (How to Steal a Dragon Sword)",
+     "ref": "Jak uloupit Draci mec",
      "kind": "rejected",
      "need": "hard",
      "note": "Earlier volume of this same series, rejected on axis:occult. Same series, same mechanism."
@@ -5773,6 +5825,14 @@
    "flags": [
     "Second book in the 'Kralove hrichu' series; the first book, 'Kolaborant', establishes the protagonist as a defector who had served an alien occupation.",
     "Retail listings are inconsistent on release status; some show it as upcoming, others as already available."
+   ],
+   "prereq": [
+    {
+     "ref": "(Kolaborant #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -6516,7 +6576,8 @@
    "author": "James S. A. Corey",
    "cz": {
     "state": "none",
-    "checked": "2026-08-22"
+    "checked": "2026-10-29",
+    "note": "The Czech edition is Leviatan se probouzí (Triton 2013). Neither library holds it in print: Valašské Meziříčí and Rožnov both list only the Slovak e-book Leviatan sa prebúdza (Lindeni 2024). No other Expanse novel is held in print either; Zástup vzpomínek is the only Corey print record."
    },
    "enAudio": {
     "state": "verified",
@@ -7004,6 +7065,14 @@
    "series": "Emily Wilde, book 2",
    "flags": [
     "Second book in the Emily Wilde series."
+   ],
+   "prereq": [
+    {
+     "ref": "(Emily Wilde #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -7091,6 +7160,14 @@
    "series": "Star Trek: Titan",
    "flags": [
     "Fifth Czech-numbered entry in the seven-book Titan sub-series (fourth in original US numbering, as Sword of Damocles); ending is left open for a later crossover arc."
+   ],
+   "prereq": [
+    {
+     "ref": "(Star Trek: Titan #1-3, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -7553,6 +7630,14 @@
    "series": "Jack Reacher",
    "flags": [
     "Part of the long-running Jack Reacher franchise; the reader has no prior scored entries in this genre in books-read.md."
+   ],
+   "prereq": [
+    {
+     "ref": "(Jack Reacher #3-19, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -8650,6 +8735,14 @@
    "series": "House of Falconer",
    "flags": [
     "2nd book of the House of Falconer trilogy - a sequel to Master of His Fate."
+   ],
+   "prereq": [
+    {
+     "ref": "(House of Falconer #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -8708,6 +8801,14 @@
    "series": "Tyringham Park",
    "flags": [
     "Direct sequel to Tyringham Park (2012); multiple reviews say the book assumes familiarity with that earlier novel and that a new reader may get lost without it."
+   ],
+   "prereq": [
+    {
+     "ref": "(Tyringham Park #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -9614,6 +9715,14 @@
    "series": "Jack Reacher",
    "flags": [
     "Co-written with Andrew Child; part of the long-running Jack Reacher franchise."
+   ],
+   "prereq": [
+    {
+     "ref": "(Jack Reacher #3-19, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -9700,6 +9809,14 @@
    "series": "Legacy Trilogy",
    "flags": [
     "Second book of a three-volume trilogy (Legacy of Ash / Legacy of Steel / Legacy of Light)."
+   ],
+   "prereq": [
+    {
+     "ref": "(Legacy Trilogy #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -9754,6 +9871,14 @@
    "series": "Jack Reacher",
    "flags": [
     "Part of the long-running Jack Reacher franchise."
+   ],
+   "prereq": [
+    {
+     "ref": "(Jack Reacher #3-19, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -10088,7 +10213,15 @@
     "Opening structure not sourced - only the campaign frame from the catalogue annotation and series reception."
    ],
    "audience": "adult",
-   "audienceSource": "default"
+   "audienceSource": "default",
+   "prereq": [
+    {
+     "ref": "(Orlové Říma #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
+   ]
   },
   {
    "key": "ortel-kafka",
@@ -10250,7 +10383,15 @@
     "Illustrated by Chris Mould; the illustrations are a substantial part of the book."
    ],
    "audience": "adult",
-   "audienceSource": "default"
+   "audienceSource": "default",
+   "prereq": [
+    {
+     "ref": "(Vánoce #1-2, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
+   ]
   },
   {
    "key": "ovcacka-chajda",
@@ -11073,6 +11214,14 @@
    "series": "Jack Reacher",
    "flags": [
     "Part of the long-running Jack Reacher franchise."
+   ],
+   "prereq": [
+    {
+     "ref": "(Jack Reacher #3-19, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -11878,6 +12027,14 @@
     "Second book of Simon Brett's 'Little Sod' trilogy (baby-diary satire); the first and third books may have separate Czech editions worth checking.",
     "Another print edition exists: Argo 2006, same translator.",
     "The catalogue files this trilogy under the bare series title with the volume in MARC 245 $n/$p, so all three volumes share one work row; the borrow link resolves to Kniha treti (Dalsi previt? Jen to ne!) while the estimate is argued about the second volume. Checked by hand 2026-08-27."
+   ],
+   "prereq": [
+    {
+     "ref": "(Prevít #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -12252,6 +12409,14 @@
    "flags": [
     "Third book of O'Keefe's Protectorate trilogy (Velocity Weapon, Chaos Vector, Catalyst Gate).",
     "The catalogue also holds an earlier print edition (Host 2023, same translator)."
+   ],
+   "prereq": [
+    {
+     "ref": "(Protektorát #1-2, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -12538,6 +12703,14 @@
    "series": "Jack Reacher",
    "flags": [
     "Part of the long-running Jack Reacher franchise."
+   ],
+   "prereq": [
+    {
+     "ref": "(Jack Reacher #3-19, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -12569,7 +12742,15 @@
     "The Czech translator differs from the preceding book's."
    ],
    "audience": "adult",
-   "audienceSource": "default"
+   "audienceSource": "default",
+   "prereq": [
+    {
+     "ref": "(Jackpot #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
+   ]
   },
   {
    "key": "pycha-a-premlouvani",
@@ -13300,6 +13481,14 @@
    "series": "The Seven Sisters",
    "flags": [
     "Fourth of the seven-book Seven Sisters series."
+   ],
+   "prereq": [
+    {
+     "ref": "(Sedm sester #1-2, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -13329,6 +13518,14 @@
    "series": "The Seven Sisters",
    "flags": [
     "Sixth of the seven-book Seven Sisters series; the finale volume Atlas resolves the search for the seventh sister."
+   ],
+   "prereq": [
+    {
+     "ref": "(Sedm sester #1-2, #5, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -13358,6 +13555,14 @@
    "series": "The Seven Sisters",
    "flags": [
     "Third of the seven-book Seven Sisters series; signals field flagged 'romance', consistent with the series' relationship-driven plots rather than any hard filter."
+   ],
+   "prereq": [
+    {
+     "ref": "(Sedm sester #1-2, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -13417,7 +13622,15 @@
     "Series numbering: 18th by internal chronology (1813), 17th published (1986). The series field carries the chronology number only - it was written as a whole sentence until 2026-09-01, which made the row fail to match its own series name in tools/crossrefs.py and hid it from the app's series grouping."
    ],
    "audience": "adult",
-   "audienceSource": "default"
+   "audienceSource": "default",
+   "prereq": [
+    {
+     "ref": "(Sharpe #1-17, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
+   ]
   },
   {
    "key": "shledani",
@@ -13524,6 +13737,14 @@
    "flags": [
     "Book 5 of the wider Courtney saga / 2nd of the Burning Shore sequence - a sequel.",
     "Critical reception is notably split (strong opening vs. melodramatic soap-opera middle per multiple reader reviews)."
+   ],
+   "prereq": [
+    {
+     "ref": "(Courtney #1-2, #4, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -13666,6 +13887,14 @@
    "series": "Opowieści z meekhańskiego pogranicza, book 2",
    "flags": [
     "Second book in a series that began as two linked short-story collections before expanding into full novels."
+   ],
+   "prereq": [
+    {
+     "ref": "(Příběhy z meekhanského pomezí #1, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -14505,6 +14734,14 @@
    "series": "Jack Reacher",
    "flags": [
     "Part of the long-running Jack Reacher franchise."
+   ],
+   "prereq": [
+    {
+     "ref": "(Jack Reacher #3-19, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -14671,6 +14908,14 @@
    "flags": [
     "Third and final volume of the Materia Prima trilogy; volumes 1-2 (Adept, Namiestnik) are not part of this batch, so this is being judged as a stand-alone read.",
     "Magic system is a declared 'words of power' mechanism with alchemy rather than devotional ritual, which is worth checking against the mechanism escape if this axis is ever examined."
+   ],
+   "prereq": [
+    {
+     "ref": "(Materia Prima #1-2, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -14978,7 +15223,15 @@
     "Reviews confirm the mutiny opening and the alternating Roman/German viewpoints but do not attribute the first chapter precisely."
    ],
    "audience": "adult",
-   "audienceSource": "default"
+   "audienceSource": "default",
+   "prereq": [
+    {
+     "ref": "(Orlové Říma #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
+   ]
   },
   {
    "key": "styskani-po-mame",
@@ -15231,6 +15484,14 @@
    "series": "Septimus Heap, book 5",
    "flags": [
     "Fifth book in the Septimus Heap series."
+   ],
+   "prereq": [
+    {
+     "ref": "(Septimus Heap #1-4, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -15477,6 +15738,14 @@
    "series": "Sing Like No One's Listening",
    "flags": [
     "Sequel to Sing Like No One's Listening; the catalogue's 'King Cool' series label is a Czech publisher imprint grouping unrelated YA titles, not the original book series."
+   ],
+   "prereq": [
+    {
+     "ref": "(Sing Like No One's Listening #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -16652,7 +16921,15 @@
     "Czech print route is Vysehrad 2011, translated by Ivan Vavra."
    ],
    "audience": "adult",
-   "audienceSource": "default"
+   "audienceSource": "default",
+   "prereq": [
+    {
+     "ref": "(Blandings Castle #1-8, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
+   ]
   },
   {
    "key": "ustrickova-smutna-smrt-a-jine-pribehy",
@@ -16841,7 +17118,15 @@
     "Medieval Christian setting; no source reports occult practice. The spymaster Derry Brewer is the one invented principal and reviewers divide on how convincing he is."
    ],
    "audience": "adult",
-   "audienceSource": "default"
+   "audienceSource": "default",
+   "prereq": [
+    {
+     "ref": "(Válka růží #1-2, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
+   ]
   },
   {
    "key": "valka-svetu",
@@ -17813,6 +18098,14 @@
    "flags": [
     "Fourth novel in Graham's twelve-book Poldark saga; the central confrontation has long been read by some critics as non-consensual, a reading Graham's own son called consistent with the text but never explicitly confirmed on the page.",
     "The catalogue also holds Ross Poldark (#1) as a separate entry in this batch."
+   ],
+   "prereq": [
+    {
+     "ref": "(Poldark #2, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -17908,6 +18201,14 @@
    "flags": [
     "Eleventh book in the Mitford Years series.",
     "The Czech catalog credits the author under the feminized form 'Jan Karonová.'"
+   ],
+   "prereq": [
+    {
+     "ref": "(Mitford Years #1-10, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -18242,7 +18543,15 @@
     "The Czech edition is the complete collection, published by Triton 2023, translated by Vladimír Nový."
    ],
    "audience": "adult",
-   "audienceSource": "default"
+   "audienceSource": "default",
+   "prereq": [
+    {
+     "ref": "(Expanse #2-9, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
+   ]
   },
   {
    "key": "zazrak-v-andach",
@@ -18824,6 +19133,14 @@
    "series": "The Seven Sisters",
    "flags": [
     "Sixth of the seven-book Seven Sisters series (by internal chronology this is the seventh released, following the finale-adjacent search); the actual finale, Atlas, resolves the seventh sister's identity in a separate volume."
+   ],
+   "prereq": [
+    {
+     "ref": "(Sedm sester #1-2, #5, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -18853,6 +19170,14 @@
    "series": "Thursday Next, #2",
    "flags": [
     "Second in the Thursday Next series; presumes events and the husband's status from book one, The Eyre Affair."
+   ],
+   "prereq": [
+    {
+     "ref": "(Thursday Next #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -19322,6 +19647,14 @@
    "series": "Cicero trilogy",
    "flags": [
     "Third of the Cicero trilogy (Imperium, Conspirata/Lustrum, Dictator); some fan aggregation rates the later two books below the first."
+   ],
+   "prereq": [
+    {
+     "ref": "(Cicero #1-2, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -19433,6 +19766,14 @@
    "series": "Beast Quest",
    "flags": [
     "Part of the original 6-book Beast Quest 'Series 1' (this batch covers 5 of the 6: Ferno, Sepron, Tagus, Epos, Nanook - missing only Arcta the Mountain Giant); all five translated by Olga Turečková, Albatos."
+   ],
+   "prereq": [
+    {
+     "ref": "(Beast Quest #3, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -19574,6 +19915,14 @@
    "flags": [
     "Loosely continues Věk přízraků but reviewers describe it as working as a standalone novel.",
     "Marketed under the YA čtu (young-adult) imprint despite an adult female teacher protagonist."
+   ],
+   "prereq": [
+    {
+     "ref": "(Vek prizraku, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Loose continuation; reviewers say it works as a standalone."
+    }
    ]
   },
   {
@@ -19913,6 +20262,14 @@
    "series": "Beast Quest",
    "flags": [
     "Part of the original 6-book Beast Quest 'Series 1' (this batch covers 5 of the 6: Ferno, Sepron, Tagus, Epos, Nanook - missing only Arcta the Mountain Giant); all five translated by Olga Turečková, Albatos."
+   ],
+   "prereq": [
+    {
+     "ref": "(Beast Quest #3, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -20112,6 +20469,14 @@
    "series": "Two Dukes of Wyndham",
    "flags": [
     "Companion novel to The Lost Duke of Wyndham (Two Dukes of Wyndham #1); both books cover the same events from different characters' points of view."
+   ],
+   "prereq": [
+    {
+     "ref": "(Two Dukes of Wyndham #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -20400,6 +20765,14 @@
    "series": "Beast Quest",
    "flags": [
     "Part of the original 6-book Beast Quest 'Series 1' (this batch covers 5 of the 6: Ferno, Sepron, Tagus, Epos, Nanook - missing only Arcta the Mountain Giant); all five translated by Olga Turečková, Albatos."
+   ],
+   "prereq": [
+    {
+     "ref": "(Beast Quest #3, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -20873,6 +21246,14 @@
    "flags": [
     "Book 16 of a long-running series; no earlier volume is in this batch or in books-read.md.",
     "In-universe cosmology (Scribe Virgin/Omega) is invented for the series, not drawn from real-world occult practice."
+   ],
+   "prereq": [
+    {
+     "ref": "(Bratrstvo černé dýky #1-15, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -20982,6 +21363,14 @@
    "series": "Poldark",
    "flags": [
     "Seventh of twelve novels in the Poldark saga; a major character death occurs in this volume. The opening scene (a coach travelling into Cornwall) mirrors the first Poldark novel's opening."
+   ],
+   "prereq": [
+    {
+     "ref": "(Poldark #2, #5-6, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -21183,6 +21572,14 @@
    "series": "Poldark",
    "flags": [
     "Third of twelve novels in the Poldark saga."
+   ],
+   "prereq": [
+    {
+     "ref": "(Poldark #2, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -21242,6 +21639,14 @@
    "flags": [
     "This is book 2 of the Unmapped Chronicles, not book 1 ('Kaspar a pulnocove' / Casper Tock and the Everdark Wings, not in this batch).",
     "The catalogue also lists an earlier print edition (Euromedia Group 2023, same translator)."
+   ],
+   "prereq": [
+    {
+     "ref": "(Kroniky Nezmapovaných království #1-2, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -21389,6 +21794,14 @@
    "flags": [
     "Book 7 of the Outlander/Cizinka series; the next Czech volume is Vepsano krvi vlastniho srdce.",
     "The series as a whole is known for extensive, explicit sexual content; this specific volume's volume/explicitness was not established from sources."
+   ],
+   "prereq": [
+    {
+     "ref": "(Cizinka #1-6, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -21418,6 +21831,14 @@
    "series": "Samuel Johnson versus Ďábel",
    "flags": [
     "Second book of the 'Samuel Johnson vs the Devil' trilogy, following Brána do pekla (The Gates)."
+   ],
+   "prereq": [
+    {
+     "ref": "(Samuel Johnson versus Ďábel #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -21527,6 +21948,14 @@
    "flags": [
     "Alpress catalogs this under its 'Klokan' series line; the book itself is the third of Smith's Sean Courtney / Courtney family saga.",
     "Banned in South Africa for explicit content from the late 1970s until the ban was lifted in 1981."
+   ],
+   "prereq": [
+    {
+     "ref": "(Courtney #1-2, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -21643,6 +22072,14 @@
    "series": "Voňavá lékárna",
    "flags": [
     "Second book of the German 'Die Duftapotheke' series; task-line signals flagged 'occult' from the perfume/magic vocabulary."
+   ],
+   "prereq": [
+    {
+     "ref": "(Voňavá lékárna #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -21794,6 +22231,14 @@
    "flags": [
     "Third book of the 'One Second After' trilogy; books 1-2 are not in this batch or in books-read.md.",
     "A fourth book, 'Five Years After', was later published in 2023 despite this volume's title."
+   ],
+   "prereq": [
+    {
+     "ref": "(Jedna vteřina poté #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -21983,6 +22428,14 @@
    "series": "Cato and Macro / Eagles of the Empire",
    "flags": [
     "Part of a long-running historical military series (24+ entries as of 2025); this record is well into the sequence, not the opener."
+   ],
+   "prereq": [
+    {
+     "ref": "(Orli říše #1, #3-4, #6-9, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -22202,6 +22655,14 @@
    "series": "Cato and Macro / Eagles of the Empire",
    "flags": [
     "Part of a long-running historical military series (24+ entries as of 2025); this record is well into the sequence, not the opener."
+   ],
+   "prereq": [
+    {
+     "ref": "(Orli říše #1, #3-4, #6-9, #14, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -22442,6 +22903,14 @@
    "series": "Cato and Macro / Eagles of the Empire",
    "flags": [
     "Part of a long-running historical military series (24+ entries as of 2025); this record is well into the sequence, not the opener."
+   ],
+   "prereq": [
+    {
+     "ref": "(Orli říše #1, #3-4, #6-9, #14, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -22648,6 +23117,14 @@
    "series": "Cato and Macro / Eagles of the Empire",
    "flags": [
     "Part of a long-running historical military series (24+ entries as of 2025); this record is well into the sequence, not the opener."
+   ],
+   "prereq": [
+    {
+     "ref": "(Orli říše #1, #3-4, #6-9, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -22702,6 +23179,14 @@
    "series": "Cato and Macro / Eagles of the Empire",
    "flags": [
     "Part of a long-running historical military series (24+ entries as of 2025); this record is well into the sequence, not the opener."
+   ],
+   "prereq": [
+    {
+     "ref": "(Orli říše #1, #3-4, #6-9, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -23047,6 +23532,14 @@
    "series": "Cato and Macro / Eagles of the Empire",
    "flags": [
     "Part of a long-running historical military series (24+ entries as of 2025); this record is well into the sequence, not the opener."
+   ],
+   "prereq": [
+    {
+     "ref": "(Orli říše #1, #3-4, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -23194,13 +23687,13 @@
    ],
    "prereq": [
     {
-     "ref": "Posledni kralovstvi (The Last Kingdom)",
+     "ref": "Posledni kralovstvi",
      "kind": "rejected",
      "need": "hard",
      "note": "Volume 1 of this same series, rejected on axis:occult - a sword-consecration blood sacrifice narrated as it happens. The sequence is one continuous first-person narration, so no later volume is reachable without it."
     },
     {
-     "ref": "Bledy jezdec (The Pale Horseman)",
+     "ref": "Bledy jezdec",
      "kind": "rejected",
      "need": "hard",
      "note": "Volume 2, rejected on axis:occult - a seer performing a divination on the page."
@@ -23266,6 +23759,14 @@
    "series": "Warrior of Rome",
    "flags": [
     "Seventh book in the Warrior of Rome series, though reviewed as working as a standalone."
+   ],
+   "prereq": [
+    {
+     "ref": "(Warrior of Rome #1-6, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -23323,6 +23824,14 @@
    "series": "Cato and Macro / Eagles of the Empire",
    "flags": [
     "Part of a long-running historical military series (24+ entries as of 2025); this record is well into the sequence, not the opener."
+   ],
+   "prereq": [
+    {
+     "ref": "(Orli říše #1, #3-4, #6-9, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -23549,6 +24058,14 @@
    "series": "Cato and Macro / Eagles of the Empire",
    "flags": [
     "Part of a long-running historical military series (24+ entries as of 2025); this record is well into the sequence, not the opener."
+   ],
+   "prereq": [
+    {
+     "ref": "(Orli říše #1, #3-4, #6-9, #14, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -23578,6 +24095,14 @@
    "series": "Cato and Macro / Eagles of the Empire",
    "flags": [
     "Part of a long-running historical military series (24+ entries as of 2025); this record is well into the sequence, not the opener."
+   ],
+   "prereq": [
+    {
+     "ref": "(Orli říše #1, #3-4, #6-9, #14, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -23628,6 +24153,14 @@
    "series": "Robin",
    "flags": [
     "Direct sequel to Frýbová's earlier bestseller Robin, whose title dog has since died; reviewers note no knowledge of the first book is required."
+   ],
+   "prereq": [
+    {
+     "ref": "(Robin, Frybova, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Reviewers say no knowledge of the first book is needed."
+    }
    ]
   },
   {
@@ -23718,6 +24251,14 @@
    "series": "Sharpe",
    "flags": [
     "Sharpe #19 of a long-running series; this record's annotation also bundles a short story, Sharpe's Christmas."
+   ],
+   "prereq": [
+    {
+     "ref": "(Sharpe #1-17, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -23797,6 +24338,14 @@
    "series": "Cato and Macro / Eagles of the Empire",
    "flags": [
     "Part of a long-running historical military series (24+ entries as of 2025); this record is well into the sequence, not the opener."
+   ],
+   "prereq": [
+    {
+     "ref": "(Orli říše #1, #3-4, #6-9, #14, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -24154,6 +24703,14 @@
    "flags": [
     "Part of a long-running historical military series (24+ entries as of 2025); this record is well into the sequence, not the opener.",
     "The infidelity involves Emperor Nero and a freed-slave lover, not either lead's own marriage."
+   ],
+   "prereq": [
+    {
+     "ref": "(Orli říše #1, #3-4, #6-9, #14, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -24345,6 +24902,14 @@
    "series": "Cato and Macro / Eagles of the Empire",
    "flags": [
     "Part of a long-running historical military series (24+ entries as of 2025); this record is well into the sequence, not the opener."
+   ],
+   "prereq": [
+    {
+     "ref": "(Orli říše #1, #3-4, #6-9, #14, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -24405,13 +24970,13 @@
    ],
    "prereq": [
     {
-     "ref": "Posledni kralovstvi (The Last Kingdom)",
+     "ref": "Posledni kralovstvi",
      "kind": "rejected",
      "need": "hard",
      "note": "Volume 1 of this same series, rejected on axis:occult - a sword-consecration blood sacrifice narrated as it happens. The sequence is one continuous first-person narration, so no later volume is reachable without it."
     },
     {
-     "ref": "Bledy jezdec (The Pale Horseman)",
+     "ref": "Bledy jezdec",
      "kind": "rejected",
      "need": "hard",
      "note": "Volume 2, rejected on axis:occult - a seer performing a divination on the page."
@@ -24476,13 +25041,13 @@
    ],
    "prereq": [
     {
-     "ref": "Posledni kralovstvi (The Last Kingdom)",
+     "ref": "Posledni kralovstvi",
      "kind": "rejected",
      "need": "hard",
      "note": "Volume 1 of this same series, rejected on axis:occult - a sword-consecration blood sacrifice narrated as it happens. The sequence is one continuous first-person narration, so no later volume is reachable without it."
     },
     {
-     "ref": "Bledy jezdec (The Pale Horseman)",
+     "ref": "Bledy jezdec",
      "kind": "rejected",
      "need": "hard",
      "note": "Volume 2, rejected on axis:occult - a seer performing a divination on the page."
@@ -24519,13 +25084,13 @@
    ],
    "prereq": [
     {
-     "ref": "Posledni kralovstvi (The Last Kingdom)",
+     "ref": "Posledni kralovstvi",
      "kind": "rejected",
      "need": "hard",
      "note": "Volume 1 of this same series, rejected on axis:occult - a sword-consecration blood sacrifice narrated as it happens. The sequence is one continuous first-person narration, so no later volume is reachable without it."
     },
     {
-     "ref": "Bledy jezdec (The Pale Horseman)",
+     "ref": "Bledy jezdec",
      "kind": "rejected",
      "need": "hard",
      "note": "Volume 2, rejected on axis:occult - a seer performing a divination on the page."
@@ -24562,13 +25127,13 @@
    ],
    "prereq": [
     {
-     "ref": "Posledni kralovstvi (The Last Kingdom)",
+     "ref": "Posledni kralovstvi",
      "kind": "rejected",
      "need": "hard",
      "note": "Volume 1 of this same series, rejected on axis:occult - a sword-consecration blood sacrifice narrated as it happens. The sequence is one continuous first-person narration, so no later volume is reachable without it."
     },
     {
-     "ref": "Bledy jezdec (The Pale Horseman)",
+     "ref": "Bledy jezdec",
      "kind": "rejected",
      "need": "hard",
      "note": "Volume 2, rejected on axis:occult - a seer performing a divination on the page."
@@ -24602,6 +25167,14 @@
    "series": "Sharpe",
    "flags": [
     "Sharpe #20, immediately following Sharpe's Revenge in the series."
+   ],
+   "prereq": [
+    {
+     "ref": "(Sharpe #1-17, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -24634,13 +25207,13 @@
    ],
    "prereq": [
     {
-     "ref": "Posledni kralovstvi (The Last Kingdom)",
+     "ref": "Posledni kralovstvi",
      "kind": "rejected",
      "need": "hard",
      "note": "Volume 1 of this same series, rejected on axis:occult - a sword-consecration blood sacrifice narrated as it happens. The sequence is one continuous first-person narration, so no later volume is reachable without it."
     },
     {
-     "ref": "Bledy jezdec (The Pale Horseman)",
+     "ref": "Bledy jezdec",
      "kind": "rejected",
      "need": "hard",
      "note": "Volume 2, rejected on axis:occult - a seer performing a divination on the page."
@@ -24730,13 +25303,13 @@
    ],
    "prereq": [
     {
-     "ref": "Posledni kralovstvi (The Last Kingdom)",
+     "ref": "Posledni kralovstvi",
      "kind": "rejected",
      "need": "hard",
      "note": "Volume 1 of this same series, rejected on axis:occult - a sword-consecration blood sacrifice narrated as it happens. The sequence is one continuous first-person narration, so no later volume is reachable without it."
     },
     {
-     "ref": "Bledy jezdec (The Pale Horseman)",
+     "ref": "Bledy jezdec",
      "kind": "rejected",
      "need": "hard",
      "note": "Volume 2, rejected on axis:occult - a seer performing a divination on the page."
@@ -24773,13 +25346,13 @@
    ],
    "prereq": [
     {
-     "ref": "Posledni kralovstvi (The Last Kingdom)",
+     "ref": "Posledni kralovstvi",
      "kind": "rejected",
      "need": "hard",
      "note": "Volume 1 of this same series, rejected on axis:occult - a sword-consecration blood sacrifice narrated as it happens. The sequence is one continuous first-person narration, so no later volume is reachable without it."
     },
     {
-     "ref": "Bledy jezdec (The Pale Horseman)",
+     "ref": "Bledy jezdec",
      "kind": "rejected",
      "need": "hard",
      "note": "Volume 2, rejected on axis:occult - a seer performing a divination on the page."
@@ -26717,6 +27290,14 @@
    "flags": [
     "Fourth in Swerling's Old New York sequence, after City of Dreams, City of Glory and City of God; readers disagree on whether it stands alone.",
     "Original title City of Promise: A Novel of New York's Gilded Age (2011); Czech edition BB/art 2012, transl. Gerik Cisar."
+   ],
+   "prereq": [
+    {
+     "ref": "(Old New York #1-2, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -27267,6 +27848,14 @@
     "Third of four volumes in the Starbuck Chronicles; the preceding volumes set up the Starbuck-Faulconer feud that drives this one.",
     "The author's Saxon Stories sequence is excluded on the occult filter; that is a different series and this book does not depend on it.",
     "Readers report a pronounced Confederate sympathy in the portrayal, with Northern characters and commanders drawn flatter."
+   ],
+   "prereq": [
+    {
+     "ref": "(Starbuck Chronicles #2, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -28145,6 +28734,14 @@
     "Second book of the Jake Ransom series; it continues directly from Jake Ransom and the Skull King's Shadow, where Calypsos, the Skull King and the parents' disappearance are established, so it does not stand alone.",
     "The series was left unfinished and this book ends on a cliffhanger that was never resolved.",
     "Reviewed as grades 5-9 / ages 8-12."
+   ],
+   "prereq": [
+    {
+     "ref": "(Jake Ransom #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -28414,6 +29011,14 @@
     "Sixth of eight in Dorothy Dunnett's House of Niccolo; original title To Lie with Lions (1995). Not a standalone entry point.",
     "Czech edition BB/art 2012, transl. Lucie Johnova.",
     "Only publisher copy and reader reviews were available; no professional criticism surfaced."
+   ],
+   "prereq": [
+    {
+     "ref": "(Dům Niccolò #1-2, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -28478,6 +29083,14 @@
     "Second book of the Eagles of the Empire series; it opens immediately after the events of Under the Eagle and assumes both leads are already known.",
     "The series runs to more than twenty volumes.",
     "Czech translation BB/art 2010, prel. Ludmila Havlikova a Tomas Havlik."
+   ],
+   "prereq": [
+    {
+     "ref": "(Orli říše #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -28663,6 +29276,14 @@
     "Publisher's recommended age 15+; 576 pages.",
     "Original English title is Fearless (Simon Teen, 2025); the Czech titles do not track the English ones word for word.",
     "Czech route is unchecked - Euromedia Group 2025 is a catalogue holding, not a verified print edition."
+   ],
+   "prereq": [
+    {
+     "ref": "(Powerless #1-2, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -28883,6 +29504,14 @@
     "Third book of Andy Shepherd's The Boy Who Grew Dragons series (Piccadilly Press / Templar, 2019, 256 pp), illustrated by Sara Ogilvie; the promise to grandad is set up in the earlier books.",
     "The series opener was shortlisted for the Waterstones Children's Book Prize.",
     "Czech route is unchecked - Euromedia Group 2020 imprint only, no verified record id."
+   ],
+   "prereq": [
+    {
+     "ref": "(Chlapec, který pěstoval draky #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -29687,6 +30316,14 @@
     "Baar was a Catholic priest and a figure of the Katolická moderna, so axis:faith is live.",
     "Occult status unexamined - this exit precedes that gate; axis:occult stays in deps.",
     "The 1965 SNKLU holding is a collected edition of the trilogy, so the earlier volumes come with it."
+   ],
+   "prereq": [
+    {
+     "ref": "(Chodská trilogie #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -30310,6 +30947,14 @@
     "Baar was a Catholic priest and a figure of the Katolická moderna, so axis:faith is live.",
     "Occult status unexamined - this exit precedes that gate; axis:occult stays in deps.",
     "The 1965 SNKLU holding is a collected edition of the trilogy."
+   ],
+   "prereq": [
+    {
+     "ref": "(Chodská trilogie #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -30542,6 +31187,14 @@
     "Publisher's stated reading age 8-10; first published in Australia in 2009.",
     "Reviewers report the English-language edition was hard to find in print in some markets, audio only.",
     "Czech route is unchecked - Fragment 2010 is a catalogue holding, not a verified print edition."
+   ],
+   "prereq": [
+    {
+     "ref": "(Rondo #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -30771,6 +31424,14 @@
     "A franchise tie-in: Rulantica is the water world of Europa-Park in Rust, Germany.",
     "The gods named are Norse - Odin's son Wali awakens the serpent - so the pantheon is a real-world one, not invented.",
     "Czech route is unchecked - Euromedia Group 2023 imprint only, no verified record id."
+   ],
+   "prereq": [
+    {
+     "ref": "(Rulantika #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -30982,6 +31643,14 @@
     "Direct sequel: it opens from the defeat of the previous creature and continues the Vellis plot, so it does not restart.",
     "The English text gives Harry and Ava as joint leads; the Czech blurbs foreground only Harry.",
     "Czech route arrived as state 'unchecked' - publisher and year only, no catalogue record id, so the print route is unverified."
+   ],
+   "prereq": [
+    {
+     "ref": "(Space Wars #1, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -31511,6 +32180,14 @@
     "Illustrated and designed by Will Staehle; Quirk Books 2017, ages 8-12. Some pages are printed white on black.",
     "Riddles are part of the plot; I did not establish whether the reader is asked to solve anything, so axis:detective is flagged rather than fired.",
     "Czech route is unchecked - Paseka 2018 is a catalogue holding, not a verified print edition."
+   ],
+   "prereq": [
+    {
+     "ref": "(Warren XIII. #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -31947,6 +32624,14 @@
    "flags": [
     "Set in the same universe as To Sleep in a Sea of Stars (Ceka nas hvezdny prach), earlier in the timeline, and reads as a standalone.",
     "The author's afterword reportedly notes the book was originally longer and bleaker."
+   ],
+   "prereq": [
+    {
+     "ref": "(Fractalverse #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -32361,6 +33046,14 @@
     "The Czech catalogue also holds Winter, the series finale (Egmont Publishing 2016).",
     "Lunar glamour is described in the sources as a bioelectric ability rather than magic; axis:occult was not examined at this exit.",
     "Contains an assassination attempt on a small child and graphic violence, per a content-focused review."
+   ],
+   "prereq": [
+    {
+     "ref": "(Měsíční kroniky #1-3, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -32448,6 +33141,14 @@
     "Continues directly from Cavern of the Fear and is followed by The Shadowlands; tenth book of the wider Deltora Quest franchise.",
     "Scholastic Australia paperback, 132 pp., 2002; known as Deltora Quest 2 outside North America.",
     "No publisher-stated age range found; shelved as children's / middle-grade fantasy."
+   ],
+   "prereq": [
+    {
+     "ref": "(Deltora Shadowlands #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -32686,6 +33387,14 @@
     "Series finale (Lunar Chronicles #4), 823 pages in English; it continues the plot of Cinder, Scarlet and Cress and assumes them.",
     "The Czech catalogue also holds Nejkrasnejsi (Fairest), the villain's backstory book, published between Cress and this one.",
     "Reviewers report the title couple occupies roughly 100 of the 800 pages; one raises concerns about the handling of Winter's mental illness."
+   ],
+   "prereq": [
+    {
+     "ref": "(Měsíční kroniky #1-3, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -32717,6 +33426,14 @@
     "Third book of the Flight & Glory series; reviewers describe it as readable standalone but tied to Full Measures (Vsemi smysly) and Eyes Turned Skyward.",
     "Samantha is the best friend of the heroine of Full Measures, and Grayson shares a flat with that book's hero.",
     "By the author of Fourth Wing; this is her earlier military-romance work and is reported as less explicit than that."
+   ],
+   "prereq": [
+    {
+     "ref": "(Flight & Glory #2, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -33169,6 +33886,14 @@
     "Second in the Doktor Proktor series, after Doktor Proktor a prdicí prášek; the inventor and the two child leads are introduced there. Illustrated by Mike Lowery.",
     "Five Czech volumes are listed; sources disagree on the full series length.",
     "The MF Dnes reviewer thought this one funnier than the first."
+   ],
+   "prereq": [
+    {
+     "ref": "(Doktor Proktor #1, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -33333,6 +34058,14 @@
     "Book 8 of How to Train Your Dragon (2009); ages 8-12, 272-299 pages depending on edition, illustrated throughout by the author.",
     "Reading order matters: reviewers describe this as the point where the series arc turns (book 7 ends the beginning), and the Lost Throne and prophecy material assumes the earlier books.",
     "The books are only loosely related to the DreamWorks films of the same name."
+   ],
+   "prereq": [
+    {
+     "ref": "(Jak vycvičit draka #1-6, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -33726,6 +34459,14 @@
     "A sequel to City of Dreams, set about thirty-five years later, and part of Swerling's Old New York sequence with Shadowbrook, City of God and City of Promise.",
     "Real historical figures appear, including John Jacob Astor.",
     "The English subtitle is A Novel of War and Desire in Old Manhattan."
+   ],
+   "prereq": [
+    {
+     "ref": "(Old New York #1-2, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -35280,6 +36021,14 @@
     "Third of three Czech volumes (Desive historky 2018, Desive historky 2 2019, Desive historky 3 2020); the volumes are described as readable in any order and independently of each other.",
     "The English-to-Czech volume mapping is uncertain: the Czech first volume is catalogued from 'Frightmares 2: More Scary Stories for the Fearless Reader' (2016).",
     "Illustrated by Xavier Bonet, translated by Eva Brozova; ages 9+, around 224 pages per volume. A Czech audiobook of the first volume exists (read by Sasa Rasilov, 3 h 39 min)."
+   ],
+   "prereq": [
+    {
+     "ref": "(Děsivé historky #1-2, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -35374,6 +36123,14 @@
     "Original: 'Rowley Jefferson's Awesome Friendly Adventure' (Aug 2020), 224 pp, interest age 7+, a spin-off strand of Diary of a Wimpy Kid; the first Rowley book is 'Diary of an Awesome Friendly Kid'.",
     "The villain is the White Warlock, not the White Witch; the Czech annotation's 'Čarodějnice' appears to be a translation slip.",
     "Czech route not verified against the catalogue record (cz.state unchecked)."
+   ],
+   "prereq": [
+    {
+     "ref": "(Rowley Jefferson #1, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -35729,6 +36486,14 @@
     "Book 7 of the 12-book How to Train Your Dragon series (English original 2008, Hodder); it continues an ongoing plot and cast, and reviewers note the series turns more serious from this point via the Slavemark thread.",
     "288 pages; Lexile 1040L, AR MG 6.9; retailer age ranges span 7-11.",
     "An English audiobook read by David Tennant exists; English-audio access was not checked (out of scope)."
+   ],
+   "prereq": [
+    {
+     "ref": "(Jak vycvičit draka #1-6, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -35764,6 +36529,14 @@
     "Numbered 3.5 in The Folk of the Air (Little, Brown Books for Young Readers, 24 Nov 2020), illustrated by Rovina Cai, under 200 pp with many full-page illustrations.",
     "Reviewers treat it as a companion for readers of The Cruel Prince, The Wicked King and The Queen of Nothing rather than an entry point; it assumes Cardan and Jude's relationship.",
     "Czech route unverified - cz.state is 'unchecked': publisher and year known, catalogue record not confirmed."
+   ],
+   "prereq": [
+    {
+     "ref": "(Folk of the Air #2, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -36339,6 +37112,14 @@
     "The preceding volume won the Magnesia Litera book of the year; reading order matters, since this one continues its plot and cast.",
     "Page count could not be confirmed from retailer records.",
     "Czech route not verified against the catalogue record (cz.state unchecked)."
+   ],
+   "prereq": [
+    {
+     "ref": "(Lichožrouti #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -37364,6 +38145,14 @@
     "This is The Gilded Cage, the second of the three Prison Healer books; it picks up about six weeks after The Prison Healer and assumes its escape, its trials and its reveals rather than re-establishing them, so it should not be read first. It ends on a cliffhanger into The Blood Traitor.",
     "English original 2021, HMH, 448 pages, YA.",
     "Content notes from reviewers: low profanity, moderate non-gory violence, drug use and a recovering addict character; the romance is slow-building rather than explicit."
+   ],
+   "prereq": [
+    {
+     "ref": "(Ranhojička #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -38485,6 +39274,14 @@
     "Catalogued as publikace pro mladez / americke romany.",
     "Czech edition Knizni klub 2013, translated by Michaela Skultety.",
     "Two novellas exist in the series (Roar and Liv; Brooke), apparently not published in Czech."
+   ],
+   "prereq": [
+    {
+     "ref": "(Nebe #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -38666,6 +39463,14 @@
     "Third and final part of the trilogy: Pod nekonecnou oblohou, Cesta vecnou noci, Do poklidne modri; it follows on directly and is not an entry point.",
     "Catalogued as publikace pro mladez / americke romany / vedecko-fantasticke romany.",
     "Czech edition Knizni klub 2014, translated by Michaela Skultety."
+   ],
+   "prereq": [
+    {
+     "ref": "(Nebe #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -39578,6 +40383,14 @@
    "flags": [
     "Continues An Absolutely Remarkable Thing (Czech: Naprosto pozoruhodna vec) and assumes its ending; the lead of that book is absent for much of this one.",
     "Narrated in first person by several alternating characters rather than by the previous single narrator."
+   ],
+   "prereq": [
+    {
+     "ref": "(The Carls #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -39608,6 +40421,14 @@
    "flags": [
     "Written by Brian Herbert and Kevin J. Anderson, not Frank Herbert; original Navigators of Dune (2016).",
     "Concludes the Schools of Dune trilogy after Sisterhood of Dune and Mentats of Dune, and depends on them; those two are not in the catalogue record given here."
+   ],
+   "prereq": [
+    {
+     "ref": "(Školy Duny #2, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -40303,40 +41124,6 @@
    ]
   },
   {
-   "key": "problem-tri-teles",
-   "title": "The Three-Body Problem",
-   "author": "Liou Cch'-sin",
-   "cz": {
-    "state": "verified",
-    "publisher": "Host - vydavatelství, s.r.o",
-    "year": 2017,
-    "translator": "Ales Drobek",
-    "recordId": "3a1a3d24-4d4b-45b3-a289-8aed69c828a6",
-    "edition": "print",
-    "checked": "2026-09-02",
-    "recordUrl": "https://katalog.mekvalmez.cz/records/3a1a3d24-4d4b-45b3-a289-8aed69c828a6",
-    "recordChecked": "2026-09-02",
-    "publisherSource": "katalog"
-   },
-   "enAudio": {
-    "state": "unchecked"
-   },
-   "genre": "sf",
-   "form": "novel",
-   "audience": "adult",
-   "audienceSource": "default",
-   "czTitle": "Problem tri teles",
-   "series": "Vzpominka na Zemi (Remembrance of Earth's Past)",
-   "flags": [
-    "Published in Czech as Liou Cch'-sin; English editions use Liu Cixin. Czech translation by Ales Drobek for Host.",
-    "First of the Vzpominka na Zemi trilogy; the Czech run continues with Temny les.",
-    "Hugo Award for Best Novel, 2015."
-   ],
-   "tags": [
-    "exploration"
-   ]
-  },
-  {
    "key": "projekt-kronos",
    "title": "Projekt Kronos",
    "author": "Pavel Bares",
@@ -40965,6 +41752,14 @@
    "flags": [
     "Sixth novel in the Star Trek: Titan line and the first in it by James Swallow; set after the Star Trek: Destiny trilogy, whose aftermath the crew is still dealing with.",
     "Czech edition Euromedia 2019, translated by Jakub Marek."
+   ],
+   "prereq": [
+    {
+     "ref": "(Star Trek: Titan #1-3, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -40995,7 +41790,8 @@
    "flags": [
     "Published in Czech as Liou Cch'-sin; English editions use Liu Cixin. Czech translation by Ales Drobek for Host.",
     "Continues Problem tri teles - read that first; the trilogy closes with Death's End, not covered here.",
-    "The English edition is by a different translator than the first book, and reviewers report a drop in prose quality there; the Czech run keeps one translator throughout."
+    "The English edition is by a different translator than the first book, and reviewers report a drop in prose quality there; the Czech run keeps one translator throughout.",
+    "Volume 1, Problem tri teles, was read to p. 200 and dropped (2026-10-29, scored 62): this volume cannot be read without it."
    ]
   },
   {
@@ -41618,6 +42414,14 @@
    "flags": [
     "Third of three Crucible novels (McCoy, Spock, Kirk), each built around the episode 'The City on the Edge of Forever'; reviewers rank McCoy highest.",
     "Assumes the events of the film Star Trek: Generations."
+   ],
+   "prereq": [
+    {
+     "ref": "(Star Trek: Crucible #1-2, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -41649,6 +42453,14 @@
     "Fourth Mass Effect novel, after Revelation, Ascension and Retribution by Drew Karpyshyn; the plot continues Gillian Grayson's story from Retribution and assumes it rather than re-establishing it.",
     "Widely treated as outside Mass Effect continuity. BioWare and Del Rey issued a public apology for the errors and the promised corrected edition never appeared.",
     "Czech edition Fantom Print 2012, translated by Jakub Marik."
+   ],
+   "prereq": [
+    {
+     "ref": "(Mass Effect: Revelation, Ascension and Retribution, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "The plot continues the earlier Mass Effect novels."
+    }
    ]
   },
   {
@@ -41863,6 +42675,14 @@
     "Fourth and final book of the Pandora sequence, after Destination: Void, The Jesus Incident and The Lazarus Effect; set about twenty-five years after The Lazarus Effect and continuing its characters and situation.",
     "Published 1988, after Frank Herbert's death.",
     "None of the preceding volumes is excluded on a taste filter, so nothing is inherited; this is a dependency note only."
+   ],
+   "prereq": [
+    {
+     "ref": "(Pandora #2-3, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -42199,6 +43019,14 @@
    "flags": [
     "Companion volume to Riggs's Miss Peregrine's Home for Peculiar Children sequence; reviewers say it reads standalone, and compare its function to The Tales of Beedle the Bard.",
     "About 160 pages, illustrated by Andrew Davidson."
+   ],
+   "prereq": [
+    {
+     "ref": "(Sirotčinec slečny Peregrinové #2-6, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -42523,6 +43351,14 @@
     "The catalogue also holds other print editions: Domino 2014 (Katrin Mekki), Domino 2011 and Domino 2010 (both Katrin Chýlová).",
     "Ends on a cliffhanger; preceded by Shadow Kiss and followed by Spirit Bound.",
     "The Alchemists, a faction later central to a spin-off series, are introduced here."
+   ],
+   "prereq": [
+    {
+     "ref": "(Vampýrská akademie #1-3, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -42553,6 +43389,14 @@
    "flags": [
     "Fourth in the Science of Discworld sequence, after The Science of Discworld, The Globe and Darwin's Watch.",
     "Published 2013; the science chapters are by Ian Stewart and Jack Cohen, the story chapters by Pratchett."
+   ],
+   "prereq": [
+    {
+     "ref": "(The Science of Discworld #1-3, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -42702,6 +43546,14 @@
     "Third book of Brewer's K-PAX series, following K-PAX and K-PAX II: On a Beam of Light, both of which the Czech annotation refers to by their Czech titles Svet podle Prota and Na svetelnem paprsku.",
     "Two further volumes follow (K-PAX IV and V).",
     "The first book was filmed in 2001; this volume was not."
+   ],
+   "prereq": [
+    {
+     "ref": "(K-PAX #1-2, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -42733,6 +43585,14 @@
     "A sequel; reviewers state the preceding novel (Jeden den poté / One Second After) must be read first, as this book assumes its cast and events.",
     "A third volume, The Final Day, closes the trilogy.",
     "Sources disagree on the elapsed time - the title says one year, the text is cited as 730 days."
+   ],
+   "prereq": [
+    {
+     "ref": "(Jedna vteřina poté #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -42852,6 +43712,14 @@
     "H.Z.A.O. stands for Hodní, zlí a oškliví.",
     "Part of a trilogy; 130: Odysea (2009) comes before it and its plot continues here.",
     "This is a comic, not prose."
+   ],
+   "prereq": [
+    {
+     "ref": "(130: Odysea, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "The previous volume of the trilogy; its plot continues here."
+    }
    ]
   },
   {
@@ -43726,6 +44594,14 @@
    "flags": [
     "Part of the Canadian West cycle and later than Klid před bouří, which follows her brother; the parents' history is assumed rather than re-established.",
     "Series identification rests on the annotation's plot (Wynn and Elizabeth's daughter Christine) rather than on a title match."
+   ],
+   "prereq": [
+    {
+     "ref": "(Kanadský západ #1-4, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -44185,6 +45061,14 @@
     "Continuity-independent of the author's own novels Jumper, Reflex, Impulse and Exo, so it can be read without them; the catalogue annotation's claim that it follows Jumper is about the film's universe, not those books.",
     "Czech print via Baronet 2008; no translator recorded.",
     "A video game of the same title exists and search results conflate the two."
+   ],
+   "prereq": [
+    {
+     "ref": "(Jumper #1-2, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -44277,6 +45161,14 @@
     "Part of the Canadian West cycle, later than its opening volume When Calls the Heart; the leads are the next generation and the earlier family history is assumed rather than re-established.",
     "Důvěřuj zítřku, also Triton 2024, follows the sister Christine from the same family.",
     "Series identification rests on the annotation's plot rather than on a title match - the Czech title is a loose rendering."
+   ],
+   "prereq": [
+    {
+     "ref": "(Kanadský západ #1-4, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -45671,6 +46563,14 @@
     "Czech translation Jana Simonova, Talpress 2012.",
     "An undercover traitor-hunt is a substantial strand, but the satisfaction is not whodunnit - it is a soldier's mission behind the lines - so the detective bar was examined and not applied. Flagged, not vetoed.",
     "The publisher pitches it explicitly at Bernard Cornwell and Patrick O'Brian readers; reader reviews split on whether the prose carries it."
+   ],
+   "prereq": [
+    {
+     "ref": "(Jack Steel #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -46330,6 +47230,14 @@
     "Second book of Madeleine Roux's Asylum series; the trio's trauma and Dan's link to warden Crawford are established in Asylum and assumed rather than re-established here, so it does not stand alone.",
     "Illustrated with found vintage photographs, as the series is throughout.",
     "Czech edition is shelved in Jota's youth-fiction line; the catalogue annotation itself states it is the second part of the series."
+   ],
+   "prereq": [
+    {
+     "ref": "(Asylum #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -46962,6 +47870,14 @@
     "Around 800-900 pages, with several point-of-view strands including a twentieth-century one.",
     "Lord John Grey, a central figure here, is written throughout the series as homosexual and in love with Jamie Fraser; the prominence of that thread in this particular volume was not established at this exit.",
     "Gabaldon's Lord John Grey books form a parallel sub-series."
+   ],
+   "prereq": [
+    {
+     "ref": "(Cizinka #1-6, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -47345,6 +48261,14 @@
    "flags": [
     "Book 3 of a long-running graphic novel series (9 volumes as of 2024); depends on books 1-2 for the setup.",
     "No graphic-novel form exists in the closed form vocabulary, so 'novel' is used as the closest fit - flagging the mismatch since this is an illustrated comic, not prose."
+   ],
+   "prereq": [
+    {
+     "ref": "(Amulet #1-2, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -47398,6 +48322,14 @@
    "series": "Strangeworlds Travel Agency",
    "flags": [
     "Second book in the Strangeworlds Travel Agency series; the opener is not in this task."
+   ],
+   "prereq": [
+    {
+     "ref": "(Cestovní kancelář Jinosvěty #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -47563,6 +48495,14 @@
    "flags": [
     "Book 3 of a four-book series; book 1 (Pestilence) is not part of this batch and its Czech availability was not checked.",
     "Marketed and reviewed consistently as adult 'dark romance'/romantasy despite fantasy shelving."
+   ],
+   "prereq": [
+    {
+     "ref": "(Čtyři jezdci #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -47592,6 +48532,14 @@
    "series": "Disney. Ukradené Vánoce Tima Burtona",
    "flags": [
     "Second book of a continuing trilogy; directly follows Long Live the Pumpkin Queen and assumes that book's setup (Sally married to Jack, her role as queen). The catalogue's orig field contains the translator's name rather than the original title."
+   ],
+   "prereq": [
+    {
+     "ref": "(Long Live the Pumpkin Queen, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Directly follows it and assumes its setup."
+    }
    ]
   },
   {
@@ -47622,6 +48570,20 @@
    "flags": [
     "Book 11 of 12; directly continues plot threads (the Slavemark, the Dragon Rebellion, Alvin's kingship) established across books 9-10, not re-explained for a reader starting here.",
     "Marketed for ages 9-12 (publikace pro deti)."
+   ],
+   "prereq": [
+    {
+     "ref": "Jak uloupit Draci mec",
+     "kind": "rejected",
+     "need": "hard",
+     "note": "Volume 9, rejected on axis:occult; the last volumes are one continuous arc."
+    },
+    {
+     "ref": "Jak uchvatit Draci klenot (How to Betray a Dragon's Hero)",
+     "kind": "rejected",
+     "need": "hard",
+     "note": "Volume 10 (the reject row carries volume 11's English title), rejected on axis:occult."
+    }
    ]
   },
   {
@@ -48449,6 +49411,14 @@
    "flags": [
     "Catalogue also holds another print edition: Domino 2016, same translator Jan Netolička.",
     "Book 2 of the Glittering Court trilogy, but each volume is self-standing with a different narrator - not a dependent sequel."
+   ],
+   "prereq": [
+    {
+     "ref": "(Třpytný dvůr #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -48477,6 +49447,14 @@
    "czTitle": "Upíři z Morganville",
    "flags": [
     "Fifth book in an ongoing series; reviewers recommend having read at least book four first. Catalogue also holds three further print editions of the same translation (2013-2015)."
+   ],
+   "prereq": [
+    {
+     "ref": "(Upíři z Morganville #1-4, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -48560,6 +49538,14 @@
    "series": "The Four Horsemen",
    "flags": [
     "Book 2 of a four-book series; book 1 (Pestilence) is not part of this batch."
+   ],
+   "prereq": [
+    {
+     "ref": "(Čtyři jezdci #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -48725,6 +49711,14 @@
     "Artemis Fowl #7 of 8 (Eoin Colfer, 2011); read from Artemis Fowl #1 in order; The Time Paradox (#6) comes immediately before and The Last Guardian (#8) follows.",
     "Works poorly as an entry point; relationships established earlier carry its emotional weight.",
     "Prior occult reject cited control runes and a curse enacted on the page; graded here under the revised rule."
+   ],
+   "prereq": [
+    {
+     "ref": "(Artemis Fowl #1-6, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -49022,6 +50016,14 @@
     "Divine Cities #3, the last of the trilogy (Robert Jackson Bennett, 2017). City of Stairs must be read first; it also continues City of Blades, which is rejected on occult, so dependency on that volume is partial and unverified.",
     "Sigrud and Shara are introduced earlier and assumed here, so a cold start would be unclear.",
     "Investigation-shaped plot: a hunt for the assassins, with an angry young god and the last mysteries of the first city."
+   ],
+   "prereq": [
+    {
+     "ref": "(Divine Cities #2, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -49052,6 +50054,14 @@
     "Readers report the first book confusing at the start (terms unexplained); a glossary is in the newer edition and the audiobook is said to be easier.",
     "If the recorded human-sacrifice rite is staged on the page in any book it is a veto (axis:occult); that was not confirmed here.",
     "Annotation matches Program apokalypsy (volume 8); Argo May 2022."
+   ],
+   "prereq": [
+    {
+     "ref": "(Mycelium #1-7, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -49081,6 +50091,14 @@
     "Late book of the long Sword of Truth series (Czech Classic 2015); the earlier books of that series must be read first.",
     "Task orig is empty; identified from the Czech blurb as Severed Souls.",
     "Undead army is invented-system raising of the dead, not real-world-style necromancy, graded heavy; sexual content in the series not examined."
+   ],
+   "prereq": [
+    {
+     "ref": "(Meč pravdy #1-14, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -49321,6 +50339,14 @@
     "Shannara cycle; reads as a standalone, the earlier book being only background.",
     "The Bloodfire rebirth of Amberle as the Ellcrys is the staged rite; if the reader counts it as a human sacrifice the book is a reject on axis:occult.",
     "Alt Czech edition: And Classic, 1997 (recordId be2fa85b-9ebd-42e0-ad8d-7fd05fc8689e)."
+   ],
+   "prereq": [
+    {
+     "ref": "(Shannara #1, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -49351,6 +50377,14 @@
     "Czech blurb matches the English blurb of the final book (The Might) but Goodreads files Sila as #2 and reviewers call it Rata (The Rot): which book this is was not settled. Either way Odinovo dite must be read first.",
     "Czech translation by Jitka Jindriskova, Host 2017.",
     "Reviewers note a third viewpoint among the Nabyrn."
+   ],
+   "prereq": [
+    {
+     "ref": "(Havraní prsteny #2, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -49381,6 +50415,14 @@
     "Magisterium #4 of 5 (Czech Euromedia 2017, translator Pavlina Zagolova); the three earlier books must be read first, and cold the opening is only legible with them.",
     "Raising the dead is by transfer of the lead's soul in an invented system, not drawn from real necromancy; no human sacrifice found in sources.",
     "Co-written with Cassandra Clare; a minor Call/Tamara kiss is reported by fan sources."
+   ],
+   "prereq": [
+    {
+     "ref": "(Magisterium #1-3, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -49587,6 +50629,14 @@
     "Later volume of the Dune series: the two earlier novels of the series must be read first; the lead and the religion are assumed, not re-established.",
     "Opening is shape two without that context; read the premise first.",
     "Czech edition Baronet 2014, translator Veronika Volhejnova."
+   ],
+   "prereq": [
+    {
+     "ref": "(Duna #2, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -49644,6 +50694,14 @@
     "Fifth of the Dobrodruzstvi kapitana Bathoryho series; Brana Irkally and Dablova pevnost are rejected on occult at the same pass.",
     "Reviewers put the lead on the page for a small share of the book.",
     "Assumes the series premise from the opening volumes."
+   ],
+   "prereq": [
+    {
+     "ref": "Pro hrst dukatu",
+     "kind": "rejected",
+     "need": "soft",
+     "note": "Assumed volume 2, rejected on axis:detective; how far the adventures depend on each other is unverified."
+    }
    ]
   },
   {
@@ -49762,6 +50820,14 @@
     "Part of the Oxford Time Travel series but stands alone with its own lead and premise.",
     "Quest for a missing object is mystery-shaped; the pleasure is farce and romance, not whodunnit.",
     "Opening: first chapters deliberately disorienting (time-lag), settling once the narrator reaches the Victorian period (reviews)."
+   ],
+   "prereq": [
+    {
+     "ref": "(Oxfordské cestování časem #1, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -49820,7 +50886,8 @@
    "flags": [
     "The record is titled only with the series name; the annotation shows it is the third and last novel (Death's End). Volumes 1 and 2 of the trilogy must be read first; the lead and the dark-forest premise are assumed.",
     "Opening is shape two without that context; read the premise first.",
-    "Czech edition Host 2018; translator not recorded in the catalogue."
+    "Czech edition Host 2018; translator not recorded in the catalogue.",
+    "Volume 1, Problem tri teles, was read to p. 200 and dropped (2026-10-29, scored 62): this volume cannot be read without it."
    ]
   },
   {
@@ -49850,6 +50917,14 @@
     "Fourth of the Dobrodruzstvi kapitana Bathoryho series (Strazcove Varadinu, Brana Irkally, Dablova pevnost, Zelezny pulmesic, Hradba zapadu).",
     "Brana Irkally and Dablova pevnost are rejected on occult at the same pass; reviewers call this volume's magic minimal.",
     "Mid-series opening with a returning cast; read the series premise first."
+   ],
+   "prereq": [
+    {
+     "ref": "Pro hrst dukatu",
+     "kind": "rejected",
+     "need": "soft",
+     "note": "Assumed volume 2, rejected on axis:detective; how far the adventures depend on each other is unverified."
+    }
    ]
   },
   {
@@ -49908,6 +50983,14 @@
     "Second novel of a ten-volume series (Mission Earth); the earlier novel must be read first.",
     "The catalogue holds a second 1998 Navrat record for the same title (recordId b6a348a0-4553-4fc0-a9ca-81dec8e4855f).",
     "Series is by the founder of Scientology; no occult content established, not examined."
+   ],
+   "prereq": [
+    {
+     "ref": "(Mise na Zemi #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -50165,6 +51248,14 @@
    "flags": [
     "Part of a series of novellas that continues from earlier ones (All Systems Red, Artificial Condition); best read in order.",
     "Another Murderbot title in the queue, Fugitive Telemetry, is a murder mystery and is a separate book."
+   ],
+   "prereq": [
+    {
+     "ref": "(Murderbot #2, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -50362,6 +51453,14 @@
    "flags": [
     "Second book of the tetralogy; depends on the first book, Eragon, which is not logged.",
     "Knucklebones fortune-telling is in Eragon, not confirmed in Eldest."
+   ],
+   "prereq": [
+    {
+     "ref": "Eragon",
+     "kind": "rejected",
+     "need": "hard",
+     "note": "Volume 1 of the Inheritance Cycle, rejected on axis:occult; this volume continues its plot."
+    }
    ]
   },
   {
@@ -51877,6 +52976,14 @@
    "series": "Dune",
    "flags": [
     "Fourth Dune novel; depends on the earlier books for its characters and history, so a cold reader lacks context."
+   ],
+   "prereq": [
+    {
+     "ref": "(Duna #2, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -52641,6 +53748,14 @@
    "flags": [
     "ConSentiency #2 by publication, standalone plot.",
     "Czech print only (Ivo Zelezny 1999)."
+   ],
+   "prereq": [
+    {
+     "ref": "(Whipping Star, ConSentiency 1, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Standalone plot in the same universe."
+    }
    ]
   },
   {
@@ -52704,6 +53819,14 @@
    "flags": [
     "Part of the Ijon Tichy cycle but reads on its own.",
     "Reviewers disagree on how much of the story is hallucinated."
+   ],
+   "prereq": [
+    {
+     "ref": "(Ijon Tichy #1, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -54393,6 +55516,14 @@
    "flags": [
     "Written by Walter Miller and completed by Terry Bisson, published 1997; set about eighty years after the second part of A Canticle for Leibowitz (Chvalozpev na Leibowitze).",
     "Reviewers rate it mixed (about 3.1 average on StoryGraph); described as working better as a standalone story in the same world. Czech print: Laser 2005."
+   ],
+   "prereq": [
+    {
+     "ref": "(Chorál pro Leibowitze #1, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -54575,6 +55706,14 @@
    "series": "Imperial Radch",
    "flags": [
     "Concluding volume of the Radch trilogy (Ancillary Mercy); the second volume (Ancillary Sword) comes first and the lead and plot are not re-established here. Czech Plus 2018, Petr Kotrle."
+   ],
+   "prereq": [
+    {
+     "ref": "(Imperial Radch #2, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -54977,6 +56116,14 @@
    "flags": [
     "Second Kovacs novel; reviewers say it reads standalone and is a war story, unlike the detective-style first.",
     "Triton 2006 Czech print, translator Eva Brozova."
+   ],
+   "prereq": [
+    {
+     "ref": "(Takeshi Kovacs #1, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -55011,6 +56158,14 @@
     "Sequel: lead and premise are introduced in the first Neanderthal Parallax book (Czech Hominidi); this book depends on it. Concluded by Hybridi.",
     "Triton 2007 Czech print.",
     "Same-sex bonded pairs in the Neanderthal society are from memory of the earlier book, not sourced."
+   ],
+   "prereq": [
+    {
+     "ref": "(Neanderthal Parallax #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -55076,6 +56231,14 @@
    "czTitle": "Potopená města",
    "flags": [
     "Companion to Ship Breaker by the same author; a reviewer describes it as the sequel to that book. Czech print: Plus 2014, translator Richard Podany."
+   ],
+   "prereq": [
+    {
+     "ref": "(Ship Breaker #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -55564,6 +56727,14 @@
    "flags": [
     "Depends on The Spy Who Came in from the Cold and refers to Tinker Tailor Soldier Spy; reading order: Spy first.",
     "Czech 2018 (Mladá fronta, tr. Veronika Volhejnova)."
+   ],
+   "prereq": [
+    {
+     "ref": "(George Smiley #1-2, #4-8, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -57557,6 +58728,14 @@
     "The first chapter mentions a married woman's affair with an agent as backstory; incidental.",
     "A late investigation/interrogation section is flagged, not a veto.",
     "Part of the Smiley universe but stands alone."
+   ],
+   "prereq": [
+    {
+     "ref": "(George Smiley #1-2, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
    ]
   },
   {
@@ -59629,7 +60808,15 @@
     "level": "moderate",
     "why": "Plain modern prose, but heavy invented Cosmere jargon and two threads to track.",
     "checked": "2026-10-25"
-   }
+   },
+   "prereq": [
+    {
+     "ref": "(Sixth of the Dusk, novella, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Set five years after the novella; marketed as standalone."
+    }
+   ]
   },
   {
    "key": "kalamita",
@@ -61133,7 +62320,15 @@
     "level": "moderate",
     "why": "Clear, witty modern prose; some invented military and planetary terms.",
     "checked": "2026-10-25"
-   }
+   },
+   "prereq": [
+    {
+     "ref": "(Vorkosigan Saga #1, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
+   ]
   },
   {
    "key": "uglies",
@@ -61581,7 +62776,15 @@
     "level": "moderate",
     "why": "Plain prose; heavy slang from a main supporting character and the cosmic-level setting add some load.",
     "checked": "2026-10-25"
-   }
+   },
+   "prereq": [
+    {
+     "ref": "(Mistborn: Wax and Wayne #2-3, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+    }
+   ]
   },
   {
    "key": "blood-brothers",
@@ -61781,7 +62984,15 @@
     "level": "moderate",
     "why": "Plain narrative prose with Waodani names and terms and shifts between times.",
     "checked": "2026-10-25"
-   }
+   },
+   "prereq": [
+    {
+     "ref": "(Through Gates of Splendor, Elisabeth Elliot, not on the shelf)",
+     "kind": "absent",
+     "need": "soft",
+     "note": "Continues the same events from the other side; readable alone."
+    }
+   ]
   },
   {
    "key": "endurance-neuveritelne-putovani-shackletonov",
@@ -63272,5 +64483,5 @@
  "_tags": "Themes orthogonal to genre, so one book can be fantasy and world exploration at once; the viewer offers them in the Genre select. Only value so far: exploration (2026-10-24) - the world is an unknown the lead has to explore, however he came not to know it (lost memory, arrival from another world or time, or never having been told). Descriptive like genre: set when the shape is there, whether or not axis:discovery lifted the estimate. Set by /book-screen; carried into book-read-facets.json by /book-log.",
  "_aliases": "czTitleAliases: other Czech titles the same WORK is catalogued under. The promoted-title join in tools/triage.py reads these, so a second edition published under a different name stops coming back as an unscreened find. Jota titled the whole Chaos Walking trilogy 'Chaos' where Slovart used per-volume titles, and that is how it re-entered the queue as a score-5 novelty.",
  "_audience": "Who the EDITION was published for, and a fact like genre and form - not a verdict on whether an adult should read it, which is axis:childrens in book-estimates.jsonl. adult | ya | childrens. `audienceSource` says how it was got: katalog = the library's own zanr/forma index term (publikace pro deti / pro mladez / literatura young adult), hand = assigned from the edition and imprint because that record carries no term, default = nothing known and adult is the assumption, NOT a finding. Added 2026-08-27 so the children's shelf is filterable in the viewer without collapsing genre.",
- "_prereq": "Reading-order links, added 2026-08-31 because they existed only as prose and nothing could join on them. A list of {ref, kind, need, note}. `ref` is a book-cache key, a books-read.md slug, a book-rejects.jsonl entity, or a parenthesised description when the predecessor is not held at all. `kind` = candidate | read | rejected | absent. `need` = hard when the book cannot be read without it (plot continues, or the lead or premise is introduced there and assumed rather than re-established) | soft when it merely helps. THE INHERITANCE RULE KEYS ON THIS FIELD: a hard prereq that is excluded excludes this book too; a soft one does not. The unit is dependency, never the series - Mort 83 is volume four of a series whose volume one was abandoned at 30, and it is the best Pratchett result in the log. `inherits: false` marks a hard prereq that is excluded but does NOT propagate - the only case so far is a predecessor rejected on `access`. Recorded as a field rather than as prose so a consistency check can see the exception instead of reporting it forever."
+ "_prereq": "Reading-order links, added 2026-08-31 because they existed only as prose and nothing could join on them. A list of {ref, kind, need, note}. `ref` is a book-cache key, a books-read.md slug, a book-rejects.jsonl entity, or a parenthesised description when the predecessor is not held at all. `kind` = candidate | read | rejected | absent. `need` = hard when the book cannot be read without it (plot continues, or the lead or premise is introduced there and assumed rather than re-established) | soft when it merely helps. THE INHERITANCE RULE KEYS ON THIS FIELD: a hard prereq that is excluded excludes this book too; a soft one does not. The unit is dependency, never the series - Mort 83 is volume four of a series whose volume one was abandoned at 30, and it is the best Pratchett result in the log. `inherits: false` marks a hard prereq that is excluded but does NOT propagate - the only case so far is a predecessor rejected on `access`. Recorded as a field rather than as prose so a consistency check can see the exception instead of reporting it forever. A hard predecessor the reader cannot reach (kind absent, or a rejected one with inherits false) is a HIGH RISK, not an exclusion: the estimate line carries the sequels axis in `risks` and the viewer badges it (audit 2026-10-29, when 101 series volumes got an absent link from book-series.json's numbering)."
 }

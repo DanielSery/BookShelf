@@ -22,13 +22,19 @@ decides a score.
 
 ## Scoring
 
-Score out of 100. **95-100** almost perfect · **85-95** enjoyed very much ·
-**75-85** a nice read · **65-75** ok · **50-65** disliked · **<50** actively
-disliked. On a boundary the higher band wins.
+**`books-read.md` scores out of 10** (the reader's scale since 2026-10-29: 9.2, 8, 6.2).
+**Everything you write is on 0-100, his score times ten**: a logged 9.2 is 92, and every
+`est`, `why` and citation uses that form ("Golden Son 92"). **95-100** almost perfect ·
+**85-95** enjoyed very much · **75-85** a nice read · **65-75** ok · **50-65** disliked ·
+**<50** actively disliked.
 
 A score is **peak minus pushbacks, not an average** — a modest book with no
-downsides ties an ambitious one with several. A and B bands are acceptable
+downsides ties an ambitious one with several. 75-85 and 65-75 are acceptable
 outcomes, not failures; only sub-65 is a thing to avoid.
+
+**The log's second table, "Not finished — no score", holds books he put down for lack of
+interest, not dislike.** Use why he stopped as evidence about what loses him, but never
+cite one as a score or as a dislike.
 
 ## The seven hard filters — and there are only seven
 
@@ -46,10 +52,11 @@ and on staged human sacrifice, and grades every other staged rite. The other fiv
    established. Wants one concrete starting situation **he has the context to read**, and
    to be invested immediately. Difficult but legible is fine.
    **SHAPE TWO IS MITIGABLE (2026-09-02), and this is the only measurement of the cost.**
-   *Čaropisci* was abandoned in chapter one, then read to the end and scored **67**, with
+   *Čaropisci* was abandoned in chapter one, then read to the end (scored **67**, **50** since
+   the 2026-10-29 rerank), with
    the reader pricing the opening himself: "if only this it would be still around 80,
-   because I would read about it online." Same book, same opening: a DNF cold, a low-80s
-   read with a plot summary in hand — which follows from the diagnosis, since the failure
+   because I would read about it online." Same book, same opening: a DNF cold, only a few
+   points off with a plot summary in hand — which follows from the diagnosis, since the failure
    is missing context and looking it up supplies it. So **a book whose only objection is
    shape two is proposable with a read-the-premise-first note**, and survived it costs a
    few points rather than a tier. **Shape one has no such measurement and is still a bar.**
@@ -76,7 +83,7 @@ and on staged human sacrifice, and grades every other staged rite. The other fiv
    scriving left the escape list for this: creating a hierofant "require something like
    human sacrifice — quite similar to some ritual". **A rite that is origin or elevation
    lore, not staged, is a heavy graded deduction even when it is a human sacrifice** —
-   *Čaropisci* 67 is the anchor. For human sacrifice the line is what the narrative stages.
+   *Čaropisci* 50 is the anchor. For human sacrifice the line is what the narrative stages.
 4. **Detective and mystery novels.** Also watch for investigation-shaped subplots
    in otherwise eligible books — flag those rather than dropping them.
 5. **Infidelity as the premise of the book** (ruled 2026-08-27). **Always a reject,
@@ -94,12 +101,12 @@ and on staged human sacrifice, and grades every other staged rite. The other fiv
    stays graded, and so does a book whose *theme* is desire or sexuality while its plot
    is about something else. Below premise level the axis is graded on all three of
    volume, explicitness and crudeness — see the axis below.
-7. **A same-sex romance as the premise of the book** (ruled 2026-09-02, on *Čaropisci* 67:
+7. **A same-sex romance as the premise of the book** (ruled 2026-09-02, on *Čaropisci* 50:
    "there is same sex relationship of the main character — which is quite a filter for
    me"). **Same shape as filters 5 and 6: prominence vetoes, amount grades.** Premise means
    remove the romance and there is no book. **Framing never enters the test**, as with
    infidelity. **The veto has a bound the evidence sets:** the relationship in *Čaropisci*
-   is the **protagonist's own** and he read it to the end and scored it in the B band, so a
+   is the **protagonist's own** and he read it to the end and scored it 67, so a
    main character's relationship running as one thread among others is **not** premise level
    and **not** a reject — it is the middle of the graded range. Below premise, grade on
    prominence: a main character's thread in the middle, a background couple or a backstory
@@ -132,8 +139,8 @@ a positive case stated in its own words.
   weight. Four controlled author comparisons all agree.
 - **The protagonist must be interesting *and* worth rooting for** — two separate
   failure modes, and **this beats worldbuilding when they compete.** Not rootable:
-  a lead acting as a villain or sliding into evil, however well written — 22 points
-  separated two books by the same author in the same world on this alone. **The
+  a lead acting as a villain or sliding into evil, however well written — 37 points
+  (22 before the 2026-10-29 rerank) separated two books by the same author in the same world on this alone. **The
   direction of travel decides it, not the past:** a lead who learns what he was
   and decides not to be that man again is the arc the top-scoring series was
   liked for, not this failure. Not interesting: flat even when likeable and
@@ -155,7 +162,7 @@ a positive case stated in its own words.
   without big strength — this is fine in the Čaropisci". Costs: intellectual ability is
   equal in reality, so all the cleverest characters being women with no reason given is the
   undeclared-reality case breached, and it costs more the more the men are diminished to
-  make the point. **Anchor and its limit:** *Čaropisci* 67 is the only data point and a low
+  make the point. **Anchor and its limit:** *Čaropisci* 50 is the only data point and a low
   one — "not that visible", "not bad, just a warning" — so the axis has a direction and a
   stated gradient but **no measured high-contrast case. Do not quote a magnitude.**
   **A STATED CONVENTION, not a measurement (2026-09-02), so that the axis can be screened
@@ -175,8 +182,8 @@ a positive case stated in its own words.
   (`axis:same-sex-romance`; filter 7 above is the premise-level veto). Grade on prominence:
   a main character's relationship as one thread is the middle of the range, a background
   couple or a backstory mention the light end. **Magnitude is not separable from the one
-  data point** — *Čaropisci* lost about thirteen points to this, the hierofant rite and the
-  portrayal warning together, off the ~80 the reader put on it with only the opening
+  data point** — *Čaropisci* lost about thirty points to this, the hierofant rite and the
+  portrayal warning together (about thirteen before the 2026-10-29 rerank), off the ~80 the reader put on it with only the opening
   against it. **Use the operative criterion, not the label:** a same-sex romance and its
   prominence are checkable; "woke" is not.
 - **Does it hold up under thought — the author must follow the rules he lays
@@ -245,8 +252,9 @@ a positive case stated in its own words.
   **Do not use *Red Rising* 95 as evidence that volume is free.** That was the previous
   wording's error: Red Rising is low on all three dimensions, so it was barely docked at
   all — it is not a book with a lot of explicit content that escaped a penalty. The
-  correct reading of the log is *Artemis* 69 docked for crudeness at small volume,
-  *Ready Player One* 55 and *The Witcher* 53 sunk by volume, and Red Rising unaffected
+  correct reading of the log is *Artemis* 60 docked for crudeness at small volume,
+  *Ready Player One* 40 sunk by the kind of sex rather than the amount, *The Witcher* 30
+  confounded with the occult filter so it anchors nothing, and Red Rising unaffected
   because there was little to affect it.
   **"Only occasional" is mitigation, not clearance.** Low volume genuinely reduces the
   deduction — that is what makes volume a dimension — but it never rescues high
@@ -255,8 +263,8 @@ a positive case stated in its own words.
   references specifically.
   **Above all three sits filter 6:** if the plot is mainly sexual behaviour or a sexual
   relationship, prominence vetoes and no amount of tasteful handling saves it.
-- **Verse does not work, whatever it is about** (2026-08-27). *Havran* 40 ties the
-  lowest completed score and the reader named the form itself as a cause, alongside
+- **Verse does not work, whatever it is about** (2026-08-27). *Havran* 10 is the
+  lowest score in the log and the reader named the form itself as a cause, alongside
   occult. Distinct from the short-idea-driven suspension: short prose merely fails to
   earn points, verse carries a penalty. Graded on `axis:verse`, and `form` is `verse`.
 - **Story density is the penalty term, not length.** What costs is a thin story
@@ -277,20 +285,22 @@ a positive case stated in its own words.
   treatment played for ridicule. Subversion is judged on tone: a manufactured
   saviour played straight is fine, played for cynicism is not. **Do not screen out
   epic fantasy for having a prophecy.**
-- **Sustained bleakness — disliked, but mildly.** The least severe recorded
-  objection. A discount, not a bar. Companionship and self-sacrifice beat solo
+- **Sustained bleakness — disliked, and no longer mildly** (2026-10-29 rerank). *1984*,
+  whose whole note is "Too depressing", is 50, level with the incoherent-premise and
+  unrootable-lead books, so price it as a mid-severity objection. A discount, not a bar,
+  and it is the mood, not the subject: *Animal Farm* 78 is bleak and distanced. Companionship and self-sacrifice beat solo
   survival.
 - **Faith as a thread inside a story**, not as the whole of it. No theology or
   apologetics as a subject in its own right. **And religion played as SATIRE is
-  disliked outright — anchored 2026-09-03** on *Já, robot* 55, abandoned partly on a
+  disliked outright — anchored 2026-09-03** on *Já, robot* 50, abandoned partly on a
   story whose robots invent a god: "it seemed quite as satire on main religions, blind
   faith, which I did not like". **The object is religion, not satire** — political and
   social satire costs nothing (*Animal Farm* 78) — and a *serious* treatment of belief,
   critical or devotional, is graded on the thread-versus-subject test instead. Magnitude
-  is unmeasured: that 55 carries two other causes.
+  is unmeasured: that 50 carries two other causes.
 - **A collection is read from the front and put down on its weakest early stories —
   never averaged, and a bad story is not skipped** (`axis:collection`, 2026-09-03).
-  *Já, robot* 55 is the anchor and the log's only collection: he stopped after the third
+  *Já, robot* 50 is the anchor and the log's only collection: he stopped after the third
   story and never reached the pieces the prediction was built on. **So a range may not be
   set by a collection's best or most canonical stories**, and "the bad story is one of
   eight and is skippable" is not true of this reader. Least exposed: an arc or a fix-up,
@@ -304,8 +314,8 @@ a positive case stated in its own words.
 - **How much of a children's book it is — graded, never a filter** (ruled
   2026-08-26). The children's exclusion belongs to the catalogue sweep, which keeps
   that section out of the queue; a book already under consideration gets a number.
-  *Hobbit* 84 and *The Little Prince* 82 pay nothing, *Ranger's Apprentice* 74 and
-  Narnia 67 pay a little, a picture book lands in the 30s or 40s. Distinct from
+  *Hobbit* 84 and *The Little Prince* 82 pay nothing, *Hraničářův učeň* (50-70 by
+  volume) and Narnia 60 pay more than a little, though both also lack ideas, a picture book lands in the 30s or 40s. Distinct from
   life-phase below: this is the book's register and audience, not the lead's age.
 - **Protagonist life-phase proximity — a small pushback only** (reader is 28).
   Worth a couple of points, never a tier, never a reason to reject. What counts is
@@ -315,8 +325,11 @@ a positive case stated in its own words.
 
 ## Genre
 
-Open. The SF/fantasy skew in the log is a sampling artefact. Historical fiction,
-memoir and allegory have all been read and none disliked.
+Open. The SF/fantasy skew in the log is a sampling artefact, and allegory and memoir are
+proven. **But historical fiction has never scored above 7** (2026-10-29 rerank):
+*Les Misérables* 71, then *The Count of Monte Cristo*, *Exodus* and *Quo Vadis* at 60,
+reasons not captured. A prior, not a filter: a historical novel needs its own positive
+case, and memoir as a form earns nothing either (*Son of Hamas* 60).
 
 ## Recorded prediction failures — the axis you do not examine is the one that kills it
 
@@ -327,8 +340,8 @@ revised down from 76 on 2026-08-27. Another was abandoned in its
 first chapters on premise logic the prediction had never examined. **State which
 axis carries your number, and why not another.**
 
-**The largest miss on record is 21 points and it is this file being read backwards
-(2026-09-03).** *Já, robot* was predicted in the high 70s and scored **55**. The estimate's
+**A 26-point miss, and it is this file being read backwards (2026-09-03).** *Já, robot* was
+predicted in the high 70s and scored **50** (55 before the 2026-10-29 rerank). The estimate's
 case was that the Three Laws are a precisely declared rule system and every story is a
 consequence derived from them — but **rules add obligation, not bonus**, and the reader
 then found the robots' behaviour under those rules implausible. A precisely declared

@@ -1,6 +1,6 @@
 ---
 name: book-log
-description: "Log a finished/DNF'd book with a tier rating and consolidate what it implies into book-recommendations.md. Use when the user reports having read, finished, or given up on a book, gives it a score out of 100 or a letter tier (F/C/B/A/S/S+), or asks to correct/update an existing rating. Also use for '/book-log'."
+description: "Log a finished/DNF'd book with a score out of 10 and consolidate what it implies into book-recommendations.md. Use when the user reports having read, finished, or given up on a book, gives it a score out of 10 (or an old 0-100 score or letter tier), or asks to correct/update an existing rating. Also use for '/book-log'."
 allowed-tools:
   - Read
   - Write
@@ -10,7 +10,7 @@ allowed-tools:
 
 # Book log — record a read book and consolidate findings
 
-Two files live at the repo root: `books-read.md` (flat tier log) and
+Two files live at the repo root: `books-read.md` (flat score log) and
 `book-recommendations.md` (living analysis: reader profile, author rankings,
 open questions, snooze list). This skill keeps the second one honest against
 the first, the same way `/dream` consolidates transcripts into memory —
@@ -30,15 +30,23 @@ CAPTURE -> LOG -> CONSOLIDATE -> PROPAGATE -> VERIFY
 From the user's message, extract:
 - Book title and author (infer the author if the user only names the book and
   you're confident; say so if guessing).
-- Score: **0-100**, with the letter tier as the derived band (95-100 S+,
-  85-95 S, 75-85 A, 65-75 B, 50-65 C, <50 F; on a boundary the higher band
-  wins). Record both. If the user gives only a letter, place it mid-band and
-  say so. If the user gives stars or a vague sentiment
-  instead of a tier, convert it and say what you mapped it to.
+- Score: **out of 10, a whole number** as the reader gives it (ruled 2026-10-29;
+  the letter tiers are gone). Record it in `books-read.md` exactly as given. Old
+  rows keep the decimal they were converted with (9.2); never add one to a new
+  row, and never show one to the reader. Rules, estimates and `why` texts stay on
+  0-100: a 9 is 90 there, and `tools/readlog.py` is the only converter. If the
+  user gives stars or a vague sentiment, convert it and say what you mapped it to.
+- **A DNF does not have to be scored** (ruled 2026-10-29: "some of the books are
+  still quite good and not finished because I was not interested, but I do not
+  want to have them with the books I did not like"). Ask which it is when he
+  does not say. Unscored, it goes in the "Not finished — no score" table with
+  `—`: it counts as read and is never proposed again, its reason is a
+  lost-interest signal for the rules, and it is never cited as a score or as a
+  dislike.
 
   **Elicit by comparison, not by number.** The reader finds it much easier to
   say what he liked better than to name a figure, so when a score is uncertain
-  — a new book, a hesitant number, or a crowded band — don't ask "what score?".
+  — a new book, a hesitant number, or a crowded score — don't ask "what score?".
   Pull 3-6 already-scored books from the neighbouring range, list them with
   their scores, and ask him to slot the new one in or to order the group.
   Then derive the number from where it lands and say what you derived.
@@ -64,8 +72,8 @@ From the user's message, extract:
 Read `books-read.md`. If the book is already a row, **update it in place**
 (score, notes) rather than adding a duplicate — note in your reply what
 changed from the old value. Otherwise add a new row in the existing table
-format (`Book | Author | Score | Tier | Notes`), keeping the table sorted by
-score, descending. **Where the new score equals an existing one, insert
+format (`Book | Author | Score | Notes`), keeping the table sorted by
+score, descending; an unscored DNF goes in the "Not finished — no score" table. **Where the new score equals an existing one, insert
 adjacent to it and don't agonise over which side** — order within an equal
 score is arbitrary and carries no meaning, so don't reorder tied rows or read a
 preference out of their sequence.
@@ -98,7 +106,7 @@ Read the whole file before editing it. For this one data point, work out:
    new data undercuts a prior resolution.
 
 Keep edits surgical — this is a single new fact, not a rewrite of the file.
-Every bullet/row should be traceable to a specific book+tier; if you can't
+Every bullet/row should be traceable to a specific book+score; if you can't
 point to one, it doesn't belong in the file.
 
 **The doc must not grow with the log.** The log is heading past 100 books
@@ -126,8 +134,8 @@ but first record the calibration point, because a prediction that missed is
 worth more than one that hit. If the actual score falls outside the cached
 `est` range, add or sharpen one bullet under Open questions in
 `book-recommendations.md` naming **which `leanedOn` dep was wrong**. Both
-failures so far — *Artemis* (predicted 80, scored 69 after its 2026-08-27
-revision down from 76) and *Mortal Engines* 55
+failures so far — *Artemis* (predicted 80, scored 60 after revisions down from 76 and 69) and
+*Mortal Engines* 50
 — came from leaning on the wrong axis, not from bad information, and
 `leanedOn` is what makes the third instance visible instead of anecdotal.
 
@@ -139,7 +147,19 @@ dive beat the screening estimate. Say which of the two landed closer.
 **If the book is a series volume** (its key is a `members` entry in
 `book-series.json`), move it from `members` to that record's `read` list, as its
 `books-read.md` title. The viewer and `/book-suggest` show a series as one entry, and
-`python tools/series.py check` fails on a member that has left the shelf.
+`python tools/series.py check` fails on a member that has left the shelf. If the series
+is a line of a world in `book-worlds.json`, set `read` to that title on every world book
+the row covers (a row logged as `#4-6` covers three); `python tools/worlds.py check`
+fails on a series read row the world does not link.
+
+**1b. A changed score moves the ranges set against it** (added 2026-10-29). When an
+existing row's score changes, every `why` that cites the old number is out of date, and
+the dep ids cannot find them: they track rules and authors, not read books. Each line's
+`anchors` records which cited scores its range was set against (`level`) and which are
+only examples (`contrast`). `python tools/anchors.py rescore --dry` reports what would
+move; a citation it lists as unresolved has no role yet, so run `todo <out.jsonl>`, have
+a cheap agent classify only those sentences, record them with `roles`, then `rescore`.
+Add a new read book's citation form to `ALIASES` in that tool when you log it.
 
 **2. List the dep ids this entry actually moved.** These are already decided by
 Phase 3 — you don't re-derive them:
@@ -254,10 +274,9 @@ Before reporting done:
 - `book-read-facets.json` has exactly one entry per row of `books-read.md` — no
   missing key and no orphan:
   ```
-  python -c "import json,io,re,unicodedata;s=lambda x:re.sub(r'[^a-z0-9]+','-',''.join(c for c in unicodedata.normalize('NFKD',x) if not unicodedata.combining(c)).lower()).strip('-')[:60];f=set(json.load(io.open('book-read-facets.json',encoding='utf-8'))['facets']);L=io.open('books-read.md',encoding='utf-8').readlines();h=[i for i,l in enumerate(L) if re.match(r'^\|\s*Book\s*\|\s*Author\s*\|\s*Score\s*\|',l,re.I)][0];r=set();
-  [r.add(s(c[0])) for c in ([x.strip() for x in l.strip().strip('|').split('|')] for l in L[h+2:] if l.strip().startswith('|')) if len(c)==5 and c[2].isdigit()];print('missing:',r-f);print('orphan:',f-r)"
+  python -c "import sys,json,io,re,unicodedata;sys.path.insert(0,'tools');import readlog;s=lambda x:re.sub(r'[^a-z0-9]+','-',''.join(c for c in unicodedata.normalize('NFKD',x) if not unicodedata.combining(c)).lower()).strip('-')[:60];f=set(json.load(io.open('book-read-facets.json',encoding='utf-8'))['facets']);r={s(x['title']) for x in readlog.rows()};print('missing:',r-f);print('orphan:',f-r)"
   ```
-- Every bullet/row added or changed traces to a specific tier/note you just
+- Every bullet/row added or changed traces to a specific score/note you just
   logged, not to a hunch.
 - No book appears in both the Authors/Candidate-books tables as "unread" and
   in `books-read.md` as read.

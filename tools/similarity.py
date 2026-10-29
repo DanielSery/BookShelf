@@ -27,6 +27,8 @@ import unicodedata
 
 import numpy as np
 
+import readlog
+
 for _s in (sys.stdout, sys.stderr):
     try:
         _s.reconfigure(encoding="utf-8")
@@ -79,18 +81,7 @@ def vocabulary():
 
 
 def read_rows():
-    md = io.open(READ, encoding="utf-8").read().split("\n")
-    head = next(i for i, l in enumerate(md)
-                if re.match(r"^\|\s*Book\s*\|\s*Author\s*\|\s*Score\s*\|", l, re.I))
-    out = []
-    for l in md[head + 2:]:
-        l = l.strip()
-        if not l.startswith("|"):
-            break
-        c = [x.strip() for x in l.strip("|").split("|")]
-        if len(c) == 5 and c[2].isdigit():
-            out.append({"title": c[0], "author": c[1], "notes": c[4]})
-    return out
+    return [{k: r[k] for k in ("title", "author", "notes")} for r in readlog.rows(READ)]
 
 
 def shelf():
