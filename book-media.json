@@ -404,14 +404,6 @@
    "coverOL": "https://covers.openlibrary.org/b/id/2385598-M.jpg",
    "pitch": "A tourist dust-cruiser sinks beneath the Moon's Sea of Thirst with its passengers alive inside, and the rest is engineering against the clock. The dust is dry and fine and flows like water, and everything that follows obeys that: heat, air and a second cave-in. It is problem-solving with a whole group trapped together, and Pat Harris is a likeable lead."
   },
-  "architekti-svetu": {
-   "cover": "https://cache.obalkyknih.cz/file/cover/2978719/preview510",
-   "coverSource": "katalog",
-   "isbn": "9788088321965",
-   "blurb": "Fifty years after moon-sized Architects reshaped inhabited planets into sculpture, a salvage crew finds evidence they have come back. First of The Final Architecture.",
-   "coverOL": "https://covers.openlibrary.org/b/id/11093784-M.jpg",
-   "pitch": "Fifty years after moon-sized Architects reshaped inhabited planets into sculpture, a salvage crew finds evidence they have come back. Unspace has firm rules, and the plot runs on them. Idris, an Intermediary who keeps paying a real price for what he wants, anchors the story, and the crew's viewpoints weave in around him."
-  },
   "muz-ktery-si-pletl-manzelku": {
    "cover": "https://cache.obalkyknih.cz/file/cover/3114673/preview510",
    "coverSource": "katalog",
@@ -4467,14 +4459,6 @@
    "coverOL": "https://covers.openlibrary.org/b/id/10115183-M.jpg",
    "pitch": "Jaxie Clackton runs into the Western Australian outback with one clear aim: stay free and stay safe. The whole book is his voice, rough, damaged and still sympathetic, working through what he wants and who he can trust. Then he meets an exiled priest hiding in a shepherd's hut, and an uneasy bond between two outsiders begins."
   },
-  "permafrost": {
-   "blurb": "In 2080, with an ecosystem-collapsing pathogen pushing humanity toward extinction, a retired teacher named Valentina has her consciousness sent back through time into a young woman's body in 2028 to retrieve genetic material that might save the future.",
-   "cover": "https://cache.obalkyknih.cz/file/cover/3201752/preview510",
-   "isbn": "9781250303554",
-   "coverSource": "katalog",
-   "coverOL": "https://covers.openlibrary.org/b/id/8440294-M.jpg",
-   "pitch": "In 2080 a pathogen is pushing humanity toward extinction, and Valentina, a retired teacher in her seventies, has her mind sent back to 2028 into a young woman's body. She cannot command her host, only persuade her. Time here works by firm rules, with paradox settling into a single history, and readers say the book plays fair with them."
-  },
   "pomsta-mlokum": {
    "blurb": "Four astronauts crew a nearly autonomous AI warship in humanity's war against a hostile, learning alien species, only to discover the ship's own intelligence is not what it appears.",
    "cover": "https://cache.obalkyknih.cz/file/cover/2708807/preview510",
@@ -6413,14 +6397,6 @@
    "isbn": "9780451096333",
    "coverSource": "katalog",
    "coverOL": "https://covers.openlibrary.org/b/id/6955511-M.jpg"
-  },
-  "zaslana-posta": {
-   "cover": "https://cache.obalkyknih.cz/file/cover/914407/preview510",
-   "isbn": "3442464226",
-   "blurb": "A condemned confidence trickster is spared the gallows on condition that he reopen Ankh-Morpork's collapsed postal service, against the semaphore company that replaced it.",
-   "coverSource": "katalog",
-   "coverOL": "https://covers.openlibrary.org/b/id/14646992-M.jpg",
-   "pitch": "Moist von Lipwig, a condemned confidence man, is offered a choice by Vetinari: reopen Ankh-Morpork's dead Post Office or step through a door with no floor. What follows is a race against a semaphore monopoly whose clacks are priced, owned and run for profit, with the plot following what a semaphore can and cannot carry. The same comic voice you liked in Mort, with an institution to rebuild."
   },
   "mali-bohove": {
    "cover": "https://cache.obalkyknih.cz/file/cover/2857569/preview510",
@@ -14588,6 +14564,27 @@
   "problem-tri-teles-the-three-body-problem": {
    "cover": "https://cache.obalkyknih.cz/file/cover/3438743/preview510",
    "isbn": "9788075770615"
+  },
+  "permafrost": {
+   "cover": "https://cache.obalkyknih.cz/file/cover/3201752/preview510",
+   "coverOL": "https://covers.openlibrary.org/b/id/8440294-M.jpg",
+   "coverSource": "katalog",
+   "isbn": "9781250303554",
+   "blurb": "In 2080, with an ecosystem-collapsing pathogen pushing humanity toward extinction, a retired teacher named Valentina has her consciousness sent back through time into a young woman's body in 2028 to retrieve genetic material that might save the future."
+  },
+  "strepy-zeme-shards-of-earth": {
+   "cover": "https://cache.obalkyknih.cz/file/cover/2978719/preview510",
+   "coverOL": "https://covers.openlibrary.org/b/id/11093784-M.jpg",
+   "coverSource": "katalog",
+   "isbn": "9788088321965",
+   "blurb": "Fifty years after moon-sized Architects reshaped inhabited planets into sculpture, a salvage crew finds evidence they have come back. First of The Final Architecture."
+  },
+  "zaslana-posta-going-postal": {
+   "cover": "https://cache.obalkyknih.cz/file/cover/914407/preview510",
+   "coverOL": "https://covers.openlibrary.org/b/id/14646992-M.jpg",
+   "coverSource": "katalog",
+   "isbn": "3442464226",
+   "blurb": "A condemned confidence trickster is spared the gallows on condition that he reopen Ankh-Morpork's collapsed postal service, against the semaphore company that replaced it."
   }
  },
  "rejectMedia": {

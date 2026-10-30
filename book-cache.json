@@ -682,35 +682,6 @@
    ]
   },
   {
-   "key": "architekti-svetu",
-   "title": "Shards of Earth",
-   "author": "Adrian Tchaikovsky",
-   "cz": {
-    "state": "verified",
-    "checked": "2026-08-26",
-    "publisher": "Planeta9",
-    "year": 2022,
-    "translator": "Milan Pohl",
-    "recordId": "dacaa780-6fc4-491a-af7a-47211c76c505",
-    "recordUrl": "https://katalog.mekvalmez.cz/records/dacaa780-6fc4-491a-af7a-47211c76c505",
-    "recordChecked": "2026-08-26",
-    "publisherSource": "katalog",
-    "isbn": "978-80-88321-96-5"
-   },
-   "enAudio": {
-    "state": "unchecked"
-   },
-   "genre": "sf",
-   "form": "novel",
-   "czTitle": "Střepy Země",
-   "series": "The Final Architecture #1",
-   "audience": "adult",
-   "audienceSource": "default",
-   "flags": [
-    "The catalogue titles this record by the series name Architekti světů; the volume is Střepy Země. Volumes 2 (Oči prázdnoty) and 3 (Vládci nestvůrnosti) are in Czech print (Planeta9/Triton 2024) but neither library was found to hold them (2026-10-29)."
-   ]
-  },
-  {
    "key": "armenska-genocida",
    "title": "Armenska genocida: priciny, prubeh a osobni svedectvi udalosti z let 1915-1922",
    "author": "Marek Jandak",
@@ -10743,34 +10714,6 @@
    ],
    "audience": "adult",
    "audienceSource": "default"
-  },
-  {
-   "key": "permafrost",
-   "title": "Permafrost",
-   "author": "Alastair Reynolds",
-   "cz": {
-    "state": "verified",
-    "publisher": "Stanislav Juhaňák - Triton",
-    "year": 2024,
-    "translator": "Tereza Schloglova",
-    "recordId": "3d0bf900-cf26-46a4-b7ca-16313c659202",
-    "edition": "print",
-    "checked": "2026-08-28",
-    "recordUrl": "https://katalog.mekvalmez.cz/records/3d0bf900-cf26-46a4-b7ca-16313c659202",
-    "recordChecked": "2026-09-01",
-    "publisherSource": "katalog"
-   },
-   "enAudio": {
-    "state": "unchecked"
-   },
-   "genre": "sf",
-   "form": "novella",
-   "audience": "adult",
-   "audienceSource": "default",
-   "flags": [
-    "Novella length, under 180 pages.",
-    "2019 Locus Award finalist."
-   ]
   },
   {
    "key": "pet-cinanu-obesenych-v-idahu",
@@ -25385,37 +25328,6 @@
    "flags": [
     "A companion volume of deleted material and production notes for Arthur C. Clarke's 2001: A Space Odyssey, including the original short story 'The Sentinel' it grew from - a book this reader has not read."
    ]
-  },
-  {
-   "key": "zaslana-posta",
-   "title": "Going Postal",
-   "czTitle": "Zaslaná pošta",
-   "author": "Terry Pratchett",
-   "series": "Úžasná Zeměplocha ; 30",
-   "cz": {
-    "state": "verified",
-    "checked": "2026-08-31",
-    "publisher": "Talpress",
-    "year": 2005,
-    "translator": "Jan Kantůrek",
-    "recordId": "bb242eb9-44ee-4f43-8eae-41c626935acd",
-    "recordUrl": "https://katalog.mekvalmez.cz/records/bb242eb9-44ee-4f43-8eae-41c626935acd",
-    "recordChecked": "2026-09-01",
-    "publisherSource": "katalog"
-   },
-   "enAudio": {
-    "state": "verified",
-    "checked": "2026-08-31",
-    "url": "https://www.youtube.com/watch?v=7kfpNWdUkfU",
-    "minutes": 663,
-    "note": "Unofficial upload of an in-copyright book, 96 percent of published runtime."
-   },
-   "genre": "fantasy",
-   "form": "novel",
-   "audience": "adult",
-   "audienceSource": "default",
-   "flags": "Own single-volume print edition, 521 s. SEQUENCE — none required, and that is part of why it heads the screen: a deliberate restart with a new lead and a new institution, assuming no earlier volume.",
-   "prereq": []
   },
   {
    "key": "mali-bohove",

@@ -99,10 +99,6 @@
    "orig": "foreign",
    "src": "statement"
   },
-  "architekti-svetu": {
-   "orig": "foreign",
-   "src": "translator"
-  },
   "armenska-genocida": {
    "orig": "cs",
    "src": "author"
@@ -1512,10 +1508,6 @@
   "perlicka-na-dne": {
    "orig": "cs",
    "src": "author"
-  },
-  "permafrost": {
-   "orig": "foreign",
-   "src": "translator"
   },
   "pet-cinanu-obesenych-v-idahu": {
    "orig": "foreign",
@@ -3533,10 +3525,6 @@
   "ztracene-svety-2001": {
    "orig": "foreign",
    "src": "statement"
-  },
-  "zaslana-posta": {
-   "orig": "foreign",
-   "src": "translator"
   },
   "mali-bohove": {
    "orig": "foreign",
@@ -8787,6 +8775,18 @@
    "src": "author"
   },
   "problem-tri-teles-the-three-body-problem": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "permafrost": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "strepy-zeme-shards-of-earth": {
+   "orig": "foreign",
+   "src": "translator"
+  },
+  "zaslana-posta-going-postal": {
    "orig": "foreign",
    "src": "translator"
   }

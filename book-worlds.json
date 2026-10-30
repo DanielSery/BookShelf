@@ -918,9 +918,9 @@
      "cz": "Zaslaná pošta",
      "en": "Going Postal",
      "year": 2004,
-     "key": "zaslana-posta",
      "lib": "valmez",
-     "recordUrl": "https://katalog.mekvalmez.cz/records/bb242eb9-44ee-4f43-8eae-41c626935acd"
+     "recordUrl": "https://katalog.mekvalmez.cz/records/bb242eb9-44ee-4f43-8eae-41c626935acd",
+     "read": "Zaslaná pošta (Going Postal)"
     },
     {
      "id": "dw34",

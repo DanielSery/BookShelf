@@ -1882,10 +1882,6 @@
    "kind": "series",
    "members": [
     {
-     "key": "zaslana-posta",
-     "n": 1
-    },
-    {
      "key": "nadelat-prachy",
      "n": 2
     },
@@ -1894,7 +1890,9 @@
      "n": 3
     }
    ],
-   "read": [],
+   "read": [
+    "Zaslaná pošta (Going Postal)"
+   ],
    "rejected": [],
    "volumes": 3,
    "note": ""
@@ -2461,13 +2459,10 @@
    "name": "Architekti světů",
    "nameEn": "The Final Architecture",
    "kind": "series",
-   "members": [
-    {
-     "key": "architekti-svetu",
-     "n": 1
-    }
+   "members": [],
+   "read": [
+    "Střepy Země (Shards of Earth)"
    ],
-   "read": [],
    "rejected": [],
    "volumes": 3,
    "note": ""

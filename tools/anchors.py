@@ -63,6 +63,7 @@ ALIASES = [
     ("Catching Fire (Hunger Games #2)", r"Catching Fire"),
     ("The Hitchhiker's Guide to the Galaxy", r"(?:The )?Hitchhiker'?s(?: Guide(?: to the Galaxy)?)?"),
     ("Mort (Discworld #4)", r"Mort|Smr[ťt]"),
+    ("Zaslaná pošta (Going Postal)", r"Zaslan[áa] po[šs]ta|Going Postal"),
     ("The Martian", r"(?:The )?Martian|Mar[ťt]an"),
     ("The Little Prince", r"(?:The )?Little Prince|Mal[ýy] princ"),
     ("Ender saga #3-5 (Xenocide onward)", r"(?:Ender )?saga #3-5|Xenocide"),

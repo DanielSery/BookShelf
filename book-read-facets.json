@@ -340,6 +340,21 @@
    "tags": [
     "exploration"
    ]
+  },
+  "permafrost": {
+   "genre": "sf",
+   "form": "novella",
+   "audience": "adult"
+  },
+  "strepy-zeme-shards-of-earth": {
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult"
+  },
+  "zaslana-posta-going-postal": {
+   "genre": "fantasy",
+   "form": "novel",
+   "audience": "adult"
   }
  }
 }
