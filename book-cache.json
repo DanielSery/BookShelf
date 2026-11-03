@@ -16068,36 +16068,6 @@
    "czTitle": "The Stepford wives"
   },
   {
-   "key": "the-will-of-the-many",
-   "title": "The Will of the Many",
-   "author": "James Islington",
-   "cz": {
-    "state": "none",
-    "checked": "2026-08-22"
-   },
-   "enAudio": {
-    "state": "none",
-    "checked": "2026-08-22",
-    "note": "All six hits 1-minute stubs vs 1500 min published."
-   },
-   "genre": "fantasy",
-   "form": "novel",
-   "audience": "adult",
-   "audienceSource": "default",
-   "enText": {
-    "level": "moderate",
-    "why": "Clear first-person prose; Latin-flavoured terminology; long.",
-    "checked": "2026-10-25"
-   },
-   "enCopy": {
-    "library": "roznov",
-    "recordId": "a4ebbf9b-51b2-411a-9b5f-2846e0bae214",
-    "recordUrl": "https://katalog.knir.cz/records/a4ebbf9b-51b2-411a-9b5f-2846e0bae214",
-    "year": 2025,
-    "checked": "2026-10-25"
-   }
-  },
-  {
    "key": "three-musketeers",
    "title": "The Three Musketeers",
    "czTitle": "Tři mušketýři",

@@ -823,7 +823,7 @@ distinguishes a translation, a comic adaptation and an audio edition.
   e-book. Read as print, 11 such books reached the shelf as verified. The reader screens
   e-loan-only books but keeps them apart (ruled 2026-10-24), so such a book is
   `cz.state: eloan` with the e-loan record as `recordId`/`recordUrl`, and the viewer hides
-  it unless *include e-loans* is ticked. Print always wins the route. Two more tells: an
+  it unless the Access filter names e-loans. Print always wins the route. Two more tells: an
   e-loan has **no** `responsibilityStatement` (the author is only in `primaryAuthors`, so
   every e-loan row reached `book-triage.jsonl` with an empty author — `aCat` carries the
   recovered one), and `GET /api/exemplars?document=<id>` returns `[]` for it while a real
@@ -989,6 +989,11 @@ Derive, using the current counters from `book-revs.json`:
 - `risks`: axis ids that could collapse the estimate below its range. A risk is
   not a hedge: *Neuromancer* is 72-80 if its opening holds and a 30 if it
   doesn't, and averaging that to 55 would say nothing.
+- `radar`: the seven spokes defined under "The radar" in
+  `book-recommendations.md`, all seven keys, whole numbers 0-10, `null` for any
+  spoke the screening evidence does not settle or whose axis is in `risks`, plus
+  `safetyIssue` when safety is below 10. Derived from the same evidence as `est`, never computed from it. No
+  `radar` on a `blocked` line.
 - `deps`: the mandatory minimum — `axis:opening`, `axis:occult`,
   `axis:detective`, `axis:worldbuilding`, `axis:protagonist`, `axis:motives`,
   `author:<x>` — plus every axis you actually engaged, each stamped with its
@@ -1113,6 +1118,8 @@ need a blurb. Run it after every screening pass; it refuses to guess the date.
 - All three invariant commands above come back clean — the last one,
   `tools/crossrefs.py`, exits 1 if any `why` you wrote names another candidate.
 - Every new estimate's `deps` revs match `book-revs.json`.
+- Every new unblocked estimate has a `radar`, and `python tools/radar.py check`
+  exits 0.
 - Every new cache entry has today's `checked` date on any route you actually
   checked, and no route is marked `verified` on an unverified guess.
 - Report: how many titles screened, how many eligible, how many rejected and on

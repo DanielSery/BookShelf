@@ -2253,10 +2253,6 @@
    "orig": "foreign",
    "src": "author"
   },
-  "the-will-of-the-many": {
-   "orig": "foreign",
-   "src": "author"
-  },
   "three-musketeers": {
    "orig": "foreign",
    "src": "statement"
@@ -8789,6 +8785,10 @@
   "zaslana-posta-going-postal": {
    "orig": "foreign",
    "src": "translator"
+  },
+  "vule-vetsiny-the-will-of-the-many": {
+   "orig": "foreign",
+   "src": "author"
   }
  }
 }

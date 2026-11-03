@@ -107,6 +107,9 @@ is a high risk: lead with it, ahead of the range.
   and "76" would be a lie about both outcomes.
 - **`leanedOn`** — what the prediction rests on. If the reader disagrees with
   *that*, the number is wrong and it is worth knowing which axis to argue.
+- **The radar's low and unknown spokes**, when the line has a `radar`: each spoke at
+  5 or below by name ("Heart 4", with `safetyIssue` for Safety), and each `null` one
+  as not yet known. They say where the range's pushbacks sit.
 - **The blurb** (what it is) and **`why`** (why they'd like it) — in that order.
   They are different fields on purpose.
 - **The access route**, Czech title first for print, and every part linked for a

@@ -39,6 +39,7 @@ selection excludes. See cmd_batch.
 """
 import json, io, os, re, sys, glob, statistics, collections, difflib, unicodedata
 import pitch as pitchcheck
+import radar
 
 CACHE, EST, MEDIA = "book-cache.json", "book-estimates.jsonl", "book-media.json"
 REJECTS, REVS, READ = "book-rejects.jsonl", "book-revs.json", "books-read.md"
@@ -970,6 +971,9 @@ def validate(d, needles=None):
             bad.append(f"est {est} out of order or out of range")
         if not d.get("leanedOn"):
             bad.append("leanedOn is empty")
+        bad += ["radar: " + p for p in radar.problems(d.get("radar"), risks=d.get("risks"))]
+    elif d.get("radar") is not None:
+        bad.append("reject set but radar is not null — a book a hard filter excludes has no radar")
     if rej and not (rej.get("filter") or "").startswith("axis:"):
         bad.append("reject.filter must be an axis: id")
     if not d.get("sources"):
@@ -1123,7 +1127,7 @@ def cmd_absorb(outdir, force_low=False):
         label = deacc(d.get("czTitle") or d["title"])
         if d.get("title") and d.get("czTitle") and d["title"] != d["czTitle"]:
             label += f" ({deacc(d['title'])})"
-        est_rows.append({"key": d["key"], "t": label, "est": d["est"],
+        est_rows.append({"key": d["key"], "t": label, "est": d["est"], "radar": d["radar"],
                          "leanedOn": d["leanedOn"], "risks": d.get("risks") or [],
                          "at": TODAY, "why": deacc(d["why"]),
                          "deps": dict(sorted(dep.items()))})

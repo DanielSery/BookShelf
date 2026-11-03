@@ -3116,15 +3116,13 @@
    "kind": "series",
    "members": [
     {
-     "key": "the-will-of-the-many",
-     "n": 1
-    },
-    {
      "key": "the-strength-of-the-few",
      "n": 2
     }
    ],
-   "read": [],
+   "read": [
+    "Vůle většiny (The Will of the Many)"
+   ],
    "rejected": [],
    "volumes": null,
    "note": ""

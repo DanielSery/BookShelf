@@ -372,6 +372,11 @@ books in the queue".
   never examined.
 - `risks` are the axes that could collapse the estimate below its range. Always a
   subset of `deps`.
+- `radar` is the seven spokes from "The radar" in the profile, all seven keys present:
+  whole numbers 0-10, 10 the best (safety 10 = clean), `null` for a spoke your sources
+  did not establish or whose axis you put in `risks`, and `safetyIssue` (a few words)
+  when safety is below 10. Violence, swearing and a bleak ending never lower safety. Derive it
+  from the same evidence as `est`, not from `est`.
 - **A low estimate is a valid, wanted outcome.** A book that fails on a graded axis
   gets recorded in the 50s or 60s, not rejected — that is how the same canonical name
   stops resurfacing forever. Reserve `reject` for a *named hard filter*.
@@ -422,6 +427,8 @@ Path: `<staging-dir>/<key>.json`, using the `key` from your task line.
   "est": [84, 92],
   "leanedOn": ["axis:ideas", "axis:protagonist"],
   "risks": ["axis:bleakness"],
+  "radar": {"world": 6, "coherence": 8, "pull": 8, "characters": 9, "heart": null,
+            "ideas": 10, "safety": 8, "safetyIssue": "sexual content, brief"},
   "deps": ["axis:ideas", "axis:short-idea-driven", "axis:bleakness"],
   "why": "One premise declared precisely and the whole book is its consequences...",
   "blurb": "Charlie Gordon, a man with an IQ of 68, keeps a diary through the surgery that makes him a genius.",

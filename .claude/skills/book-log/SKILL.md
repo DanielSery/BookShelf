@@ -57,6 +57,14 @@ From the user's message, extract:
   offer to break one, never nudge a score by a point to avoid one, and use the
   comparison technique only to place a *new* book, never to re-litigate
   existing ones. A tie is a finding: two books liked the same amount.
+- **The radar** (added 2026-11-02): his seven spokes, World · Coherence · Pull ·
+  Characters · Heart · Ideas · Safety, each a whole number 0-10 with 10 the best
+  (Safety 10 = clean); the definitions are under "The radar" in
+  `book-recommendations.md`. Ask for them with the score, in that order, and accept
+  some or none: a spoke he does not give stays `null`. **Never fill or nudge one from
+  his notes or from the prediction.** He may also send spokes for a book logged
+  earlier, or say he filled the spreadsheet (`python tools/radar.py import`); either
+  is an edit of `book-read-radar.json` alone, and nothing propagates.
 - The *why*: what specifically worked or didn't (pacing, a confusing/unclear
   opening, content objections, ending, POV structure, DNF point). Capture it
   whenever it's offered — it's what Phase 3 runs on.
@@ -77,6 +85,10 @@ score, descending; an unscored DNF goes in the "Not finished — no score" table
 adjacent to it and don't agonise over which side** — order within an equal
 score is arbitrary and carries no meaning, so don't reorder tied rows or read a
 preference out of their sequence.
+
+Then run `python tools/radar.py sync`, which gives a new row an all-null line in
+`book-read-radar.json`, and write the spokes he gave into that line. A renamed title
+shows up there as an orphan: move its spokes to the new key and delete the old one.
 
 ## Phase 3 — CONSOLIDATE
 
@@ -138,6 +150,11 @@ failures so far — *Artemis* (predicted 80, scored 60 after revisions down from
 *Mortal Engines* 50
 — came from leaning on the wrong axis, not from bad information, and
 `leanedOn` is what makes the third instance visible instead of anecdotal.
+
+**If the line carries a `radar`**, copy it to `predicted` on the book's row in
+`book-read-radar.json` before deleting the line. It is the only record of which
+spoke a prediction got wrong, and the viewer draws it over his own spokes. Where both
+exist, say in the report which spokes missed by 3 or more.
 
 **If the line was `depth: deep`**, also set `actual` to the real score on the
 book's line in `book-deep.jsonl`, and keep that line: it holds `pre` (the
@@ -212,7 +229,9 @@ is never read here.
   screening way and say in `why` that this axis was not part of the dive.
 
 Either way update `deps` to the new revs, set `at` to today, and rewrite `why`
-if the reasoning changed. Every matched line gets its stamp updated even when
+if the reasoning changed. A re-derived range re-derives the spokes the bumped axis
+rolls up into (see "The radar"); a line that only gets a fresh stamp keeps its
+`radar`. A line that becomes `blocked` loses its `radar`. Every matched line gets its stamp updated even when
 the number holds — an un-stamped line reads as stale forever.
 
 Three guards on the numbers themselves:
@@ -255,7 +274,7 @@ under "world exploration" in the Genre select.
 Miss it and nothing breaks loudly — the Gaps panel names the book and the Read
 tab's facet filters exclude it, deliberately, because an unclassified book is not
 evidence of being an adult one. **Delete the facet row when you delete a read row**,
-or it shows up as an orphan key.
+or it shows up as an orphan key. The same goes for its row in `book-read-radar.json`.
 
 The same applies to **`book-origin.json`** (added 2026-08-28), on the same
 `slug(title)` key: move the `books` entry of the book you are deleting into `read`.
@@ -284,6 +303,8 @@ Before reporting done:
   line is gone, and no line carries a dep rev that isn't the current one.
 - `python tools/crossrefs.py` exits 0 — no `why` or dossier note argues from
   another candidate.
+- `python tools/radar.py check` exits 0 — one radar row per read book, every spoke
+  a whole number 0-10 or null.
 - Report, briefly: what was logged, what changed in the recommendation doc,
   any contradiction you resolved, and — from Phase 4 — which revs you bumped,
   how many estimates that touched, and which predictions actually moved, with

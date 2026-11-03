@@ -14,6 +14,8 @@ disk: a checkout with core.autocrlf rewrites them as CRLF.
 """
 import argparse, datetime, io, json, sys
 
+import radar
+
 EST, DEEP, CACHE, REVS, MEDIA = ("book-estimates.jsonl", "book-deep.jsonl", "book-cache.json",
                                  "book-revs.json", "book-media.json")
 MANDATORY = ["axis:opening", "axis:occult", "axis:detective", "axis:worldbuilding",
@@ -123,6 +125,11 @@ def problems(d, revs, est_keys, dived):
     out += [f"risk {r} is not an unknown verdict" for r in d.get("risks", [])
             if axes.get(r, {}).get("v") != "unknown"]
     out += [f"leanedOn {ax} has no verdict" for ax in d.get("leanedOn", []) if ax not in axes]
+    if d.get("blocked"):
+        if d.get("radar") is not None:
+            out.append("blocked but radar set")
+    else:
+        out += ["radar: " + p for p in radar.problems(d.get("radar"), risks=d.get("risks"))]
     if not 400 <= len(d.get("why", "")) <= 1800:
         out.append(f"why length {len(d.get('why', ''))}")
     if d.get("key") not in est_keys:
@@ -158,6 +165,8 @@ def record(a):
         line = {"key": old["key"], "t": old["t"], "est": d.get("est")}
         if d.get("blocked"):
             line["blocked"] = d["blocked"]
+        else:
+            line["radar"] = d["radar"]
         line.update({"leanedOn": d["leanedOn"], "risks": d["risks"], "at": today, "why": d["why"],
                      "deps": deps, "depth": "deep"})
         lines[i] = json.dumps(line, ensure_ascii=False)

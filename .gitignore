@@ -4,3 +4,7 @@ __pycache__/
 # Scratch and personal strays that must never reach history
 resume*.pdf
 *.bak.pdf
+
+# The radar rating form; book-read-radar.json is the record (tools/radar.py import)
+book-read-radar.xlsx
+~$*.xlsx

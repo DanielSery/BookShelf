@@ -38,7 +38,7 @@ third writer of `book-estimates.jsonl`. It owns:
 | File | Writes |
 |---|---|
 | `book-deep.jsonl` | one dossier line per dived book — the per-axis evidence |
-| `book-estimates.jsonl` | the dived book's line: `est`, `leanedOn`, `risks`, `why`, `deps`, `at`, `depth` |
+| `book-estimates.jsonl` | the dived book's line: `est`, `radar`, `leanedOn`, `risks`, `why`, `deps`, `at`, `depth` |
 
 It never touches the rules, the revs, the cache, rejects or Snoozed. A hard filter
 that fires becomes `blocked` on the estimate line; writing the reject row is
@@ -153,6 +153,13 @@ dive replaces that number rather than adjusting it. Rules for the range:
 - Name the reading-order situation: standalone, volume 1, or which volume it needs
   first.
 
+**Set the radar** from the same verdicts: the seven spokes under "The radar" in
+`book-recommendations.md`, each a whole number 0-10 from the verdicts on the axes it
+rolls up, 10 the best (safety 10 = clean, set by the worst content verdict and named in
+`safetyIssue`). A spoke is `null`, never a 5, when its roll-up axes are all `unknown` or
+any of them is in `risks` (`tools/deep.py` refuses the second). No radar when a hard
+filter fires.
+
 **Write the `why`** (600-1400 characters) in the shelf's register: it argues from
 read books with their scores and from the axes, in its own words. It names no other
 candidate, no series other than its own, no other book's predicted range, and
@@ -164,6 +171,8 @@ both files and fails on any of those.
 ```json
 {"key": "...", "est": [80, 86], "blocked": null, "leanedOn": ["axis:..."],
  "risks": [], "why": "...", "readingOrder": "standalone",
+ "radar": {"world": 8, "coherence": 9, "pull": 7, "characters": 8, "heart": 9, "ideas": 8,
+           "safety": 9, "safetyIssue": "..."},
  "axes": {"axis:opening": {"v": "clear", "note": "...", "src": ["https://..."]}}}
 ```
 
@@ -175,7 +184,8 @@ each returned dossier:
 
 1. **Sanity-check it before writing.** Every axis id exists in `book-revs.json`; the
    six mandatory axes are present; no `fires` without `blocked`; `risks` lists only
-   `unknown` axes; the width is at least 6; the `why` cites read books. Send it back
+   `unknown` axes; the width is at least 6; the `why` cites read books; an unblocked
+   dossier has all seven radar spokes and a blocked one has none. Send it back
    to the subagent (SendMessage) rather than patch a judgement yourself. **Read the
    `fires` and the hard-filter `costs` verdicts yourself**: two subagents can draw
    one boundary differently, and a rule question is the reader's to settle, so
@@ -186,7 +196,7 @@ each returned dossier:
    measurable: when the book is read, `/book-log` compares both against the real
    score.
 3. **`book-estimates.jsonl`**: rewrite that one line in place. `est`/`blocked`,
-   `leanedOn`, `risks`, `why` from the dossier; `deps` = the line's `author:` and
+   `radar`, `leanedOn`, `risks`, `why` from the dossier; `deps` = the line's `author:` and
    `series:` ids plus every axis in `axes`, each stamped with its current rev; `at`
    = today; `"depth": "deep"`. Keep the file's format: one
    `json.dumps(ensure_ascii=False)` object per line, in whatever newline the
@@ -202,7 +212,7 @@ go back to Phase 2. Otherwise stop.
 - Both files parse one object per line; every `depth: deep` line has exactly one
   dossier line and vice versa (read books' dossiers stay, with `actual`).
 - No dep rev on a touched line differs from `book-revs.json`.
-- `python tools/crossrefs.py` exits 0.
+- `python tools/crossrefs.py` and `python tools/radar.py check` exit 0.
 - **Liveness-check the library record** of every good book before presenting it —
   the catalogue API with the title's diacritics stripped (see Access-checking
   methods in `book-recommendations.md`).

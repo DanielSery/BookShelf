@@ -36,6 +36,29 @@ outcomes, not failures; only sub-65 is a thing to avoid.
 interest, not dislike.** Use why he stopped as evidence about what loses him, but never
 cite one as a score or as a dislike.
 
+## The radar — seven spokes beside the range
+
+Every estimate also carries `radar`: seven spokes, each a whole number 0-10, **10 the best
+on every spoke** (Safety 10 = clean), `null` where your evidence does not settle it.
+
+| Spoke | 10 means | Rolls up |
+|---|---|---|
+| `world` | a fresh setting with new ideas, an unknown worth exploring; real-world: an interesting place or group seen from inside | worldbuilding (interest), discovery |
+| `coherence` | world **and plot** hold up: rules kept, twists fit, nobody rescued by luck; real-world: true to how things are | worldbuilding (holds up), prophecy, unearned-competence |
+| `pull` | clear and gripping from page one, never drags | opening, momentum, density, multi-pov, collection, verse |
+| `characters` | inner life and motives on the page, flaws to overcome, a cast who think differently | protagonist (interesting), motives, character-differentiation, life-phase, childrens |
+| `heart` | someone to root for, something good to hold on to: friendship, self-sacrifice, hope | protagonist (rootable), bleakness |
+| `ideas` | something to think about and grow from, not forced or mocking | ideas, short-idea-driven, memoir-form, faith |
+| `safety` | clean of the graded content objections; the **worst** one sets it, `safetyIssue` names it | occult, sexual-content, sexual-treatment, sex-portrayal, infidelity, same-sex-romance, content |
+
+- **The range is not computed from the spokes**: it stays peak minus pushbacks. Derive both
+  from the same evidence; the spokes show where the peak and the pushbacks sit.
+- **`null`, never a guessed 5.** A spoke you did not examine is unknown, and that is exactly
+  the axis every recorded miss came from. A spoke whose axis you put in `risks` is `null` too.
+- **Safety never drops for violence, swearing, drugs, a bleak ending or a non-sexual romance.**
+  Below 10, `safetyIssue` names what lowered it.
+- **No radar on a reject**: a hard filter keeps a book off it, so Safety is the graded part only.
+
 ## The seven hard filters — and there are only seven
 
 **Two of them are conditional.** Filter 2, the opening, is absolute for a book proposed cold

@@ -1,11 +1,11 @@
 // The Map tab. Loaded before the main script and run against its globals (D, F, esc, nice,
-// band, tone, ten, rng, cover, accessLine, LIBRARY, LEGEND, render, setView, store, recall,
-// candidateFilter, readFilter), all of which exist by the time anything here is called.
-// Names are map-prefixed because every top-level declaration shares one scope with
-// index.html.
+// plural, band, tone, ten, rng, LIBRARY, candidateCard, seriesCard, readCard, readSeriesCard,
+// markClips, render, setView, setCount, store, recall, candidateFilter, readFilter), all of
+// which exist by the time anything here is called. Names are map-prefixed because every
+// top-level declaration shares one scope with index.html.
 
 const MAP = {
-  opts: null, seeds: [], openBook: null, hover: null, cam: null, built: null, pendingFocus: null,
+  opts: null, seeds: [], hover: null, cam: null, built: null, pendingFocus: null,
   ro: null, raf: 0, gen: 0, memo: null, world: null, wix: null, hl: null,
 };
 
@@ -161,22 +161,19 @@ function sharedTags(seeds, p, B, n = 3) {
     .sort((a, b) => b[0] - a[0]).slice(0, n).map(([, f]) => B.tagLabel[f]);
 }
 
-function mapScoreText(p) {
-  if (p.isSeries && p.kind === 'r') return `read series of ${p.row.vols.length} · ` +
-    (p.score == null ? 'not finished' : `average ${ten(p.score)}`);
-  if (p.isSeries) return `series of ${p.row.vols.length} · ` + (p.row.est ? `predicted ${rng(p.row.est[0], p.row.est[1])}` : 'blocked');
-  if (p.members) {
-    if (p.score == null) return p.hasRead ? 'read · not finished' : 'blocked only';
-    return p.scoredRead ? `read · best ${ten(p.score)}`
-      : `${p.hasRead ? 'read, not finished · ' : ''}best prediction ${ten(p.score)}`;
-  }
-  if (p.kind === 'r') return p.score == null ? 'read · not finished, no score' : `read · ${ten(p.score)}`;
-  return p.row.est ? `predicted ${rng(p.row.est[0], p.row.est[1])}` : 'blocked';
+// An author's number is their best read score, or their best prediction if nothing is read.
+const mapValue = p => p.kind === 'c' && p.row.est ? rng(p.row.est[0], p.row.est[1]) : p.score == null ? '—' : ten(p.score);
+
+// What the number is, in words; the number itself is always shown beside it.
+function mapKind(p) {
+  if (p.members) return [plural(p.members.length, 'book'), p.hasRead && (p.scoredRead ? 'read' : 'read, not finished')]
+    .filter(Boolean).join(' · ');
+  const what = p.isSeries ? `${p.kind === 'r' ? 'read ' : ''}series of ${p.row.vols.length}` : p.kind === 'r' ? 'read' : '';
+  const why = p.kind === 'r' ? (p.score == null ? 'not finished' : '') : p.row.est ? '' : 'blocked';
+  return [what, why].filter(Boolean).join(' · ');
 }
 
-const mapLetter = p => p.score == null ? '—' : ten(p.score);
 const mapTone = p => p.score == null ? 'bN' : tone(p.score);
-const mapCount = (n, word) => `${n} ${word}${n === 1 ? '' : 's'}`;
 const mapLabel = p => p.members ? p.name : p.title;
 
 // The first verified route only: the full access line is in the panel head once a
@@ -195,30 +192,28 @@ function mapRowLink(p) {
 }
 
 function mapRow(p, B, r) {
-  const sub = p.members ? mapCount(p.members.length, 'book') : p.author;
+  const sub = [p.members ? '' : p.author, mapKind(p)].filter(Boolean).join(' · ');
   const why = r ? sharedTags(MAP.seeds, p, B) : [];
   const per = r && r.per.length > 1
     ? ` title="${esc(MAP.seeds.map((s, i) => `${mapLabel(s)}: ${Math.round(r.per[i] * 100)} %`).join('\n'))}"` : '';
   const added = MAP.seeds.includes(p), sameKind = !!p.members === (MAP.opts.mode === 'authors');
-  // A book listed under an author on the authors map opens in place; leaving for the
-  // books map is the separate "On map" button, so a glance does not lose the author.
-  const open = !sameKind && MAP.openBook === p.ref;
-  const main = sameKind ? `data-pick="${p.ref}"` : `data-detail="${p.ref}" aria-expanded="${open}"`;
+  // A book listed under an author is marked, so its card opens beside the author instead of
+  // leaving for the books map.
+  const main = sameKind ? `data-pick="${p.ref}"` : `data-mark="${p.ref}" aria-pressed="${MAP.hl === p.ref}"`;
   return `<li class="prow"><button type="button" class="pick ${mapTone(p)}" ${main}>
-      <span class="pl">${mapLetter(p)}</span>
-      <span class="pt"><b>${esc(mapLabel(p))}</b><br><span class="ps">${esc(sub)} · ${esc(mapScoreText(p))}</span>
+      <span class="pl">${mapValue(p)}</span>
+      <span class="pt"><b>${esc(mapLabel(p))}</b><br><span class="ps">${esc(sub)}</span>
         ${why.length ? `<br><span class="pw">${esc(why.join(' · '))}</span>` : ''}</span>
       ${r ? `<span class="pp"${per}>${Math.round(r.sim * 100)} %<span class="pbar"><i style="width:${Math.round(r.sim * 100)}%"></i></span></span>` : ''}
     </button><span class="pacts">${sameKind ? `<button type="button" class="addseed" data-add="${p.ref}"
-      title="${added ? 'Remove from the selection' : 'Add to the selection — find titles close to all of it'}">${added ? '−' : '+'}</button>`
-      : `<button type="button" class="rowbtn" data-pick="${p.ref}" title="Open the ${p.members ? 'authors' : 'books'} map with this selected">On map</button>`}${
-      mapRowLink(p)}</span>${open ? `<div class="rowdetail">${mapBookDetail(p, B)}</div>` : ''}</li>`;
+      title="${added ? 'Remove from the selection' : 'Add to the selection'}">${added ? '−' : '+'}</button>` : ''}${
+      mapRowLink(p)}</span></li>`;
 }
 
 const mapList = (rows, B) => `<ol class="picks">${rows.map(r => r.p ? mapRow(r.p, B, r) : mapRow(r, B, null)).join('')}</ol>`;
 
 const mapTagBtn = (f, B) => `<button type="button" class="badge tagbtn" data-tagfilter="${esc(B.tagIds[f])}"
-  title="Show only titles with this tag on the map">${esc(B.tagLabel[f])}</button>`;
+  title="Show only titles with this tag">${esc(B.tagLabel[f])}</button>`;
 
 function mapChips(p, B, n = 10) {
   return p.sv.filter(([f]) => f < B.NT).sort((a, b) => b[1] - a[1]).slice(0, n).map(([f]) => mapTagBtn(f, B)).join('');
@@ -233,17 +228,9 @@ function mapCommonChips(seeds, B, n = 8) {
   return common.sort((a, b) => b[0] - a[0]).slice(0, n).map(([, f]) => mapTagBtn(f, B)).join('');
 }
 
-// Candidates carry the reader-facing pitch (blurb where none was written); a read book
-// has only the reader's own notes, which are long, so they fold away.
-function mapWhy(p) {
-  if (p.kind === 'c') {
-    const m = p.row.media || {};
-    return m.pitch ? `<p class="pitch">${esc(m.pitch)}</p>` : m.blurb ? `<p class="blurb">${esc(m.blurb)}</p>` : '';
-  }
-  if (p.isSeries) return '';
-  return p.row.notes ? `<details class="scoring"><summary>Your notes</summary>
-    <p class="why">${esc(p.row.notes)}</p></details>` : '';
-}
+// The same card the Candidates and Read tabs draw, so a book looks the same wherever it is opened.
+const mapCard = p => p.kind === 'c' ? (p.isSeries ? seriesCard : candidateCard)(p.row)
+  : (p.isSeries ? readSeriesCard : readCard)(p.row);
 
 const MAP_GROUPS = [['Kind', 'Kind'], ['Setting', 'Setting'], ['Theme', 'Theme'], ['Tone', 'Tone'],
                     ['Audience', 'Audience'], ['Lead', 'Lead character'], ['Telling', 'Telling']];
@@ -253,59 +240,51 @@ function mapFillTags(B) {
   if (!sel || sel.dataset.built === String(B.books.length)) return;
   const n = new Array(B.NT).fill(0);
   B.books.forEach(p => p.sv.forEach(([f]) => { if (f < B.NT) n[f]++; }));
-  sel.innerHTML = '<option value="">add a tag…</option>' + MAP_GROUPS.map(([g, label]) =>
+  sel.innerHTML = '<option value="">Add tag…</option>' + MAP_GROUPS.map(([g, label]) =>
     `<optgroup label="${esc(label)}">${B.tagIds.map((t, f) => [t, f]).filter(([, f]) => B.tagGroup[f] === g && n[f])
       .sort((a, b) => B.tagLabel[a[1]].localeCompare(B.tagLabel[b[1]]))
       .map(([t, f]) => `<option value="${esc(t)}">${esc(B.tagLabel[f])} (${n[f]})</option>`).join('')}</optgroup>`).join('');
   sel.dataset.built = String(B.books.length);
 }
 
+const mapScore = p => `<div class="score sm ${mapTone(p)}">${mapValue(p)}</div>`;
+
 function mapHead(B) {
   const seeds = MAP.seeds, close = '<button type="button" class="unpick" data-unpick title="Clear the selection">×</button>';
   if (seeds.length > 1) {
     const common = mapCommonChips(seeds, B);
-    return `<div class="sidehead"><div><div class="bk-title">Selection: ${mapCount(seeds.length, seeds[0].members ? 'author' : 'title')}</div>
-        <div class="bk-meta">showing what is close to all of them at once</div></div>${close}</div>
-      <ul class="seeds">${seeds.map(s => `<li class="${mapTone(s)}"><span class="pl">${mapLetter(s)}</span>
+    return `<div class="sidehead"><div class="bk-title">${plural(seeds.length, seeds[0].members ? 'author' : 'title')}</div>${close}</div>
+      <ul class="seeds">${seeds.map(s => `<li class="${mapTone(s)}"><span class="pl">${mapValue(s)}</span>
         <button type="button" class="linkish" data-focus="${s.ref}">${esc(mapLabel(s))}</button>
         <button type="button" class="unpick" data-unseed="${s.ref}" title="Remove from the selection">×</button></li>`).join('')}</ul>
-      ${common ? `<div class="mapnote">Shared:</div><div class="badges">${common}</div>`
-               : '<p class="mapnote">The selection shares no tag, so nothing can be close to all of it.</p>'}`;
+      ${common ? `<h4>Shared</h4><div class="badges">${common}</div>` : '<p class="mapnote">No shared tags</p>'}`;
   }
   const sel = seeds[0];
   if (sel.members) return `<div class="sidehead"><div><div class="bk-title">${esc(sel.name)}</div>
-      <div class="bk-meta">${esc(mapCount(sel.members.length, 'book'))} · ${esc(mapScoreText(sel))}</div></div>${close}</div>
+      <div class="bk-meta">${esc(mapKind(sel))}</div>${mapScore(sel)}</div>${close}</div>
     <div class="badges">${mapChips(sel, B)}</div>`;
-  return mapBookDetail(sel, B, close, true);
+  return `<div class="sidehead"><h4>Selected</h4>${close}</div>${mapCard(sel)}
+    <div class="badges">${mapChips(sel, B)}</div>`;
 }
 
-function mapBookDetail(p, B, close = '', authorLink = false) {
-  return `<div class="sidehead">${cover(p.row.media || {}, p.author)}
-      <div><div class="bk-title">${esc(p.title)}</div>
-        ${p.alt ? `<div class="bk-alt">${esc(p.alt)}</div>` : ''}
-        <div class="bk-author">${authorLink && p.authorRef
-          ? `<button type="button" class="linkish" data-pick="${p.authorRef.ref}" title="Show the author on the authors map">${esc(p.author)}</button>`
-          : esc(p.author)}</div>
-        <div class="scorerow ${mapTone(p)}"><span class="bandletter small">${mapLetter(p)}</span>
-          <span class="scorelabel">${esc(mapScoreText(p))}</span></div></div>${close}</div>
-    ${mapWhy(p)}
-    ${p.isSeries && p.kind === 'r' ? readVolumes(p.row.vols)
-      : p.isSeries ? `<ol class="vols">${p.row.s.members.map(m => `<li${m.n ? ` value="${+m.n}"` : ''}>${volumeLine(m.book)}</li>`).join('')}</ol>`
-      : p.kind === 'c' ? `<div class="access">${accessLine(p.row)}</div>` : ''}
-    <div class="badges">${mapChips(p, B)}</div>`;
+// A book marked in an author's map or list, shown under that author.
+function mapMarked(B) {
+  const p = MAP.hl && mapByRef(B, MAP.hl);
+  return p ? `<div class="marked"><div class="sidehead"><h4>Marked</h4>
+    <button type="button" class="unpick" data-mark="${p.ref}" title="Unmark">×</button></div>${mapCard(p)}</div>` : '';
 }
+
+const mapBestFirst = (a, b) => (b.score ?? -1) - (a.score ?? -1);
 
 function mapResultsHtml(B) {
   const above = mapAbove(B), seeds = MAP.seeds;
-  const what = MAP.opts.mode === 'authors' ? 'authors' : 'titles';
   let out = above.length
-    ? `<h4>${seeds.length > 1 ? 'Close to all selected' : 'Most similar'}
-         <span class="sub">${above.length} ${what} above the threshold${above.length > MAP_SHOWN ? `, showing ${MAP_SHOWN}` : ''}</span></h4>
+    ? `<h4>${seeds.length > 1 ? 'Close to all' : 'Most similar'}<span class="sub">${
+        above.length > MAP_SHOWN ? `${MAP_SHOWN} of ${above.length}` : above.length}</span></h4>
        ${mapList(above.slice(0, MAP_SHOWN), B)}`
-    : `<p class="mapnote">Nothing is above ${Math.round(MAP.opts.minSim * 100)} %. Lower the threshold or loosen the filters above.</p>`;
+    : `<p class="mapnote">Nothing above ${Math.round(MAP.opts.minSim * 100)} %</p>`;
   if (seeds.length === 1 && seeds[0].members) {
-    const own = seeds[0].members.slice().sort((a, b) => (b.score ?? -1) - (a.score ?? -1));
-    out = `<h4>Books by this author</h4>${mapList(own, B)}` + out;
+    out = `<h4>Books by this author</h4>${mapList(seeds[0].members.slice().sort(mapBestFirst), B)}` + out;
   } else if (seeds.length === 1 && seeds[0].authorRef) {
     const same = seeds[0].authorRef.members.filter(p => p !== seeds[0]);
     if (same.length) out += `<h4>By the same author</h4>${mapList(same, B)}`;
@@ -318,45 +297,29 @@ function mapSide(B) {
   if (!MAP.seeds.length) {
     const anchors = (authors ? B.authors.filter(a => a.hasRead) : B.books.filter(p => p.kind === 'r'))
       .filter(p => p.on).sort((a, b) => b.score - a.score).slice(0, 15);
-    const how = similar
-      ? `Click a point to see what is closest to it in content: a similar world, kind, themes and tone.
-        Shift+click, or <b>+</b> in a list, adds more to the selection, and the list then shows titles close
-        to <i>all</i> of them. While something is selected, only it and its matches stay clickable; click empty
-        space to clear. Near on the map means similar; distance across the whole map means nothing.`
-      : `Click an author to open their author map: every book, read or not, one box per series or shared
-        world, with arrows for the best reading order and where to start. Switch to <b>Similar books</b> or
-        <b>Similar authors</b> above the map to find what is close in content.`;
-    return `<p class="mapnote">${how}</p>${anchors.length ? `<h4>Start from what you know</h4>${mapList(anchors, B)}` : ''}`;
+    return anchors.length ? `<h4>${authors ? 'Authors you have read' : 'Books you have read'}</h4>${mapList(anchors, B)}` : '';
   }
   const one = MAP.seeds.length === 1 ? MAP.seeds[0] : null;
   if (!similar) {
-    const hl = MAP.hl && mapByRef(B, MAP.hl);
-    const own = one && one.members
-      ? `<h4>Books by this author</h4>${mapList(one.members.slice().sort((a, b) => (b.score ?? -1) - (a.score ?? -1)), B)}` : '';
-    return `<div id="maphead">${mapHead(B)}</div>
-      ${one ? `<button type="button" class="worldbtn" data-world-open="${esc(mapContextOf(one))}">Open the author map
-        <span>every book, the best reading order and where to start</span></button>` : ''}
-      ${hl ? `<h4>Marked in the map</h4>${mapBookDetail(hl, B)}
-        <button type="button" class="tomap" data-mapkind="books:similar">Find books similar to it</button>` : ''}
-      <button type="button" class="tomap" data-mapkind="authors:similar">Find similar authors</button>${own}`;
+    return `<div id="maphead">${mapHead(B)}</div>${mapMarked(B)}
+      ${one && one.members ? `<h4>Books by this author</h4>${mapList(one.members.slice().sort(mapBestFirst), B)}` : ''}`;
   }
-  const open = one ? `<button type="button" class="worldbtn" data-mapkind="authors:map">Open the author map
-    <span>every book, the best reading order and where to start</span></button>` : '';
-  return `<div id="maphead">${mapHead(B)}</div>
-    ${open}
+  return `<div id="maphead">${mapHead(B)}</div>${mapMarked(B)}
     <div class="mapopts">
       <label class="range">Min. similarity <b id="minsimval">${Math.round(o.minSim * 100)} %</b>
         <input type="range" min="10" max="90" step="5" value="${Math.round(o.minSim * 100)}" data-mapopt="minSim"></label>
       ${o.mode === 'books' ? `
-      <label class="chk"><input type="checkbox" data-mapopt="unread"${o.unread ? ' checked' : ''}> unread only</label>
-      <label class="chk"><input type="checkbox" data-mapopt="sameAuthor"${o.sameAuthor ? ' checked' : ''}> include same author</label>` : ''}
+      <label class="chk"><input type="checkbox" data-mapopt="unread"${o.unread ? ' checked' : ''}> Unread only</label>
+      <label class="chk"><input type="checkbox" data-mapopt="sameAuthor"${o.sameAuthor ? ' checked' : ''}> Same author too</label>` : ''}
     </div>
     <div id="mapres">${mapResultsHtml(B)}</div>`;
 }
 
 function mapView() {
-  if (!D.sim) return `<div class="empty">The map has no data yet. Build it with <code>python tools/similarity.py</code>:
-    <code>batches</code> → an agent following <code>tools/similarity-prompt.md</code> → <code>merge</code> → <code>build</code>.</div>`;
+  if (!D.sim) {
+    setCount('');
+    return '<div class="empty">No map data yet: build it with <code>python tools/similarity.py</code></div>';
+  }
   const o = mapOpts(), B = mapBuild();
   mapFillTags(B);
   // The select only adds: what is active lives in opts.tags and shows as chips.
@@ -368,20 +331,14 @@ function mapView() {
   }
   o.tags = o.tags.filter(t => t in B.tagIndex);
   mapMatches(B);
-  const pts = mapPoints(B), on = pts.filter(p => p.on).length;
-  const what = o.mode === 'authors' ? 'authors' : 'books';
-  return `<div class="grouphead">${on} of ${pts.length} ${what} match the filters${
-      B.unmapped ? ` · ${mapCount(B.unmapped, 'book')} not profiled yet, missing from the map` : ''} ${LEGEND}
-    <span>· ${o.mode === 'authors' ? '◆ an author you have read · ● candidates only' : '◆ read · ● candidate · ■ unread series · a series is one mark'}
-    · colour, size and stacking follow the score, real for read books, predicted for the rest
-    · a line to a match is thicker the closer it is</span></div>
-    ${o.tags.length ? `<div class="tagfilters">Only ${o.mode === 'authors' ? 'authors with books' : 'titles'} tagged:
-      ${o.tags.map(t => `<button type="button" class="badge tagbtn on" data-untag="${esc(t)}" title="Remove this tag">${
-        esc(B.tagLabel[B.tagIndex[t]])} ×</button>`).join('')}
-      <button type="button" class="linkish" data-untag="*">clear all</button></div>` : ''}
+  const what = o.mode === 'authors' ? 'author' : 'book';
+  setCount(plural(mapPoints(B).filter(p => p.on).length, what));
+  return `${o.tags.length ? `<div class="tagfilters">${o.tags.map(t => `<button type="button" class="badge tagbtn on"
+        data-untag="${esc(t)}" title="Remove this tag">${esc(B.tagLabel[B.tagIndex[t]])} ×</button>`).join('')}
+      <button type="button" class="linkish" data-untag="*">Clear</button></div>` : ''}
     <div class="mapwrap">
       <div class="mapstage" id="mapstage">
-        <canvas id="mapc" aria-label="Similarity map of ${what}"></canvas>
+        <canvas id="mapc" aria-label="Similarity map of ${what}s"></canvas>
         <div class="mapmodes">${mapViewSeg()}</div>
         <div class="maptools">
           <button type="button" data-mz="in" title="Zoom in">+</button>
@@ -443,7 +400,7 @@ function drawMap() {
   const dpr = devicePixelRatio || 1, W = c.width / dpr, H = c.height / dpr;
   const ctx = c.getContext('2d');
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  const surface = v('--surface'), muted = v('--ink-muted'), accent = v('--band-mid');
+  const surface = v('--surface'), muted = v('--ink-muted'), accent = v('--accent');
   ctx.fillStyle = surface;
   ctx.fillRect(0, 0, W, H);
   const k = MAP.cam.k;
@@ -565,15 +522,12 @@ function mapTip(p, mx, my) {
   if (!tip) return;
   if (!p) { tip.hidden = true; return; }
   const line = (tag, text, cls) => { const el = document.createElement(tag); el.textContent = text; if (cls) el.className = cls; return el; };
-  tip.replaceChildren(
-    line('b', mapLetter(p) + ' · ' + mapScoreText(p)),
-    line('div', mapLabel(p)));
-  if (!p.members) tip.append(line('div', p.author, 'bk-meta'));
-  const ctx = !mapSimilar() && mapContextOf(p);
-  if (ctx) tip.append(line('div', 'click: author map', 'bk-meta'));
+  const sub = [p.members ? '' : p.author, mapKind(p)].filter(Boolean).join(' · ');
+  tip.replaceChildren(line('b', `${mapValue(p)} · ${mapLabel(p)}`));
+  if (sub) tip.append(line('div', sub, 'bk-meta'));
   if (mapSimilar() && MAP.seeds.length && !MAP.seeds.includes(p)) {
     const s = Math.min(...MAP.seeds.map(q => simDot(q, p)));
-    tip.append(line('div', `similarity to the selection ${Math.round(s * 100)} %`, 'bk-meta'));
+    tip.append(line('div', `${Math.round(s * 100)} % similar`, 'bk-meta'));
   }
   tip.hidden = false;
   const stage = F('mapstage');
@@ -622,15 +576,22 @@ function mapFlyTo(to, animate = true) {
 // selection shows the canvas.
 function mapSetSeeds(seeds, focus, openWorld = false) {
   MAP.seeds = seeds;
-  MAP.openBook = null;
   MAP.hl = null;
   MAP.world = openWorld && seeds.length === 1 ? mapContextOf(seeds[0]) : null;
-  const side = F('mapside');
-  if (side) { side.innerHTML = mapSide(mapBuild()); side.scrollTop = 0; }
+  mapSideRender(true);
   if (seeds.length > 1) mapFrame([...seeds, ...(mapSimilar() ? mapAbove(mapBuild()).slice(0, 15).map(r => r.p) : [])]);
   else if (focus) mapFocus(focus);
   else mapRedraw();
   mapWorldRender();
+}
+
+// markClips() sizes the "Show more" toggles of the cards just drawn.
+function mapSideRender(toTop = false) {
+  const side = F('mapside');
+  if (!side) return;
+  side.innerHTML = mapSide(mapBuild());
+  if (toTop) side.scrollTop = 0;
+  markClips();
 }
 
 const mapToggleSeed = p => MAP.seeds.includes(p)
@@ -939,7 +900,7 @@ function mapWorldNodeHtml(n, at, B) {
     ? `<a href="${esc(n.href)}" target="_blank" rel="noreferrer" title="Open the catalogue record">Borrow ↗</a>` : '';
   return `<div class="wnode ${n.state} ${tone}${p && p === hl ? ' sel' : ''}" title="${esc(tip)}"
       style="left:${at.x}px;top:${at.y}px;width:${MAP_G.box}px;height:${MAP_G.h}px"${
-      p ? ` data-wpick="${p.ref}" tabindex="0" role="button"` : ''}>
+      p ? ` data-mark="${p.ref}" tabindex="0" role="button"` : ''}>
     <span class="wm ${n.state}"></span>
     <span style="min-width:0"><span class="wt">${n.n != null && !n.gap ? `<i>${esc(n.n)}</i>` : ''}${esc(n.title)}</span>
       <span class="ws">${esc(sub)}</span></span>
@@ -950,23 +911,13 @@ const MAP_W_DEFS = `<svg width="0" height="0" style="position:absolute" aria-hid
   [['wahn', 'wah'], ['wahs', 'wah soft'], ['wahg', 'wah go']].map(([id, cls]) => `<marker id="${id}" viewBox="0 0 8 8" refX="7" refY="4"
     markerWidth="7" markerHeight="7" orient="auto"><path class="${cls}" d="M0,0 L8,4 L0,8 z"/></marker>`).join('')}</defs></svg>`;
 
-const MAP_W_LEGEND = `<div class="wplegend">
-  <span><span class="wm read"></span>read, your score</span>
-  <span><span class="wm"></span>on the shelf, predicted</span>
-  <span><span class="wm library"></span>in the library, not screened yet</span>
-  <span><span class="wm absent"></span>not in the library, or no Czech edition</span>
-  <span><span class="wm gap"></span>volume not on the shelf, title unknown</span>
-  <span><svg width="24" height="10"><path class="wnext" d="M0,5 H18"/><path class="wah" d="M17,2 L23,5 L17,8 z"/></svg>read next</span>
-  <span><svg width="24" height="10"><path class="wsoft" d="M0,5 H18"/><path class="wah soft" d="M17,2 L23,5 L17,8 z"/></svg>better after</span>
-  <span class="wstartkey">start</span><span>a good place to begin</span></div>`;
-
 function mapTally(nodes) {
-  const LABEL = { read: 'read', shelf: 'on the shelf', library: 'in the library, not screened yet', rejected: 'rejected',
+  const LABEL = { read: 'read', shelf: 'on the shelf', library: 'in the library', rejected: 'rejected',
                   gap: 'not on the shelf' };
   const tally = new Map(Object.values(LABEL).map(k => [k, 0]));
   nodes.forEach(n => { const k = LABEL[n.state] || n.word; tally.set(k, (tally.get(k) || 0) + mapNodeSize(n)); });
   const total = nodes.reduce((t, n) => t + mapNodeSize(n), 0);
-  return `${mapCount(total, 'book')}: ${[...tally].filter(([, k]) => k).map(([label, k]) => `${k} ${label}`).join(', ')}`;
+  return `${plural(total, 'book')} · ${[...tally].filter(([, k]) => k).map(([label, k]) => `${k} ${label}`).join(', ')}`;
 }
 
 // Why the boxes are ordered as they are, and what links the series, folded under each box.
@@ -982,13 +933,12 @@ function mapWorldNotes(w) {
   ];
   const src = [...new Set([...(w.reading && w.reading.sources || []), ...(w.sources || [])])]
     .map((u, i) => `<a href="${esc(u)}" target="_blank" rel="noopener">${i + 1}</a>`).join(' ');
-  const order = w.reading ? 'Why this order'
-    : w.synthetic ? 'Only what the shelf knows: titles of missing volumes and links to other series are not recorded.'
-    : w.solo ? 'Each is read on its own.' : 'Each series in its own volume order.';
-  return `<details class="wbnotes"><summary>${esc(order)}</summary>
-    ${w.reading && w.reading.note ? `<p class="wbwhy">${esc(w.reading.note)}</p>` : ''}
+  const why = w.reading && w.reading.note;
+  if (!why && !items.length && !w.checked) return '';
+  return `<details class="wbnotes"><summary>${w.reading ? 'Why this order' : 'Notes'}</summary>
+    ${why ? `<p class="wbwhy">${esc(why)}</p>` : ''}
     ${items.length ? `<ul class="wplinks">${items.join('')}</ul>` : ''}
-    ${w.checked ? `<p class="mapnote">Researched ${esc(w.checked)}${w.libChecked ? `, library holdings checked ${esc(w.libChecked)}` : ''}${
+    ${w.checked ? `<p class="mapnote">Researched ${esc(w.checked)}${w.libChecked ? `, library checked ${esc(w.libChecked)}` : ''}${
       src ? ` · sources ${src}` : ''}</p>` : ''}</details>`;
 }
 
@@ -1004,11 +954,7 @@ function mapGraph(w, B) {
 
 // One control, shown on the canvas and in the open map's header: the open map covers the
 // canvas, so a control left only there could not be reached.
-const MAP_KINDS = [
-  ['authors', 'map', 'Author maps', "A click on an author opens all their books as a reading graph"],
-  ['books', 'similar', 'Similar books', 'A click lists the books closest in content'],
-  ['authors', 'similar', 'Similar authors', 'A click lists the authors closest in content'],
-];
+const MAP_KINDS = [['authors', 'map', 'Author maps'], ['books', 'similar', 'Similar books'], ['authors', 'similar', 'Similar authors']];
 
 // The selection follows the switch: a book becomes its author (and stays marked in the
 // author map); an author on the books side becomes the book last marked in its map, if any.
@@ -1019,7 +965,6 @@ function mapSwitch(mode, view) {
   MAP.opts.view = view;
   if (mode !== MAP.opts.mode) mapOpen(p, mode);
   else MAP.seeds = p ? [p] : [];
-  MAP.openBook = null;
   MAP.hl = mode === 'authors' && book ? book.ref : null;
   MAP.world = view === 'map' && p ? mapContextOf(p) : null;
   mapSaveOpts();
@@ -1028,36 +973,24 @@ function mapSwitch(mode, view) {
 
 function mapViewSeg() {
   const o = MAP.opts;
-  return `<div class="wseg" role="group" aria-label="What the map shows">${MAP_KINDS.map(([mode, view, label, tip]) =>
-    `<button type="button" data-mapkind="${mode}:${view}" aria-pressed="${o.mode === mode && o.view === view}"
-      title="${esc(tip)}">${label}</button>`).join('')}</div>`;
+  return `<div class="wseg" role="group" aria-label="What the map shows">${MAP_KINDS.map(([mode, view, label]) =>
+    `<button type="button" data-mapkind="${mode}:${view}" aria-pressed="${o.mode === mode && o.view === view}">${label}</button>`).join('')}</div>`;
 }
 
 function mapAuthorHtml(m, B) {
-  const worlds = m.blocks.filter(w => !w.solo), solo = m.blocks.find(w => w.solo);
-  const lines = worlds.reduce((t, w) => t + w.lines.length, 0);
-  const shape = [worlds.length ? `${lines} series in ${mapCount(worlds.length, 'world')}` : '',
-                 solo ? `${solo.nodes.length} standalone` : ''].filter(Boolean).join(' · ');
   const head = w => w.solo ? '<b>Standalone books</b>'
     : `<b>${esc(w.name)}</b>${w.nameEn ? ` <span class="bk-alt">${esc(w.nameEn)}</span>` : ''}`;
-  const shapeOf = w => w.solo ? 'not part of any series' : w.lines.length > 1 ? `${w.lines.length} series, connected`
-    : w.universe || w.lines[0].standalone ? 'standalone novels in one world' : 'one series';
+  const many = m.blocks.length > 1;
   return `<div class="wphead">
       <div><div class="bk-title">${esc(m.name)}</div>
-        <div class="bk-meta">${esc(mapTally(m.blocks.flatMap(w => w.nodes)))}${shape ? ' · ' + esc(shape) : ''}</div></div>
+        <div class="bk-meta">${esc(mapTally(m.blocks.flatMap(w => w.nodes)))}</div></div>
       <div class="wpctl">${mapViewSeg()}
         <button type="button" class="unpick" data-world-close title="Close (Esc)">×</button></div>
     </div>
     <div class="wpbody">${MAP_W_DEFS}
-      <p class="mapnote" style="margin:10px 0 0">${m.blocks.length > 1
-        ? 'Each box is one series or shared world; the boxes do not connect to each other.'
-        : 'Everything here belongs to one box.'} Arrows give the best reading order; <b>start</b> marks where a new reader can begin.</p>
       <div class="wblocks">${m.blocks.map(w => `<section class="wblock"><div class="wbhead">${head(w)}
-          <div class="bk-meta">${esc(shapeOf(w))} · ${esc(mapTally(w.nodes))}</div>${mapWorldNotes(w)}</div>
+          ${many ? `<div class="bk-meta">${esc(mapTally(w.nodes))}</div>` : ''}${mapWorldNotes(w)}</div>
         ${mapGraph(w, B)}</section>`).join('')}</div>
-      ${MAP_W_LEGEND}
-      <p class="mapnote" style="margin-top:10px">Series without a researched bibliography show only what the shelf knows;
-        books by this author that are on no list here are not recorded.</p>
     </div>`;
 }
 
@@ -1083,7 +1016,6 @@ function mapOpen(p, mode) {
   mapOpts().mode = mode;
   mapSaveOpts();
   MAP.seeds = p ? [p] : [];
-  MAP.openBook = null;
   MAP.world = null;
   MAP.hl = null;
   MAP.pendingFocus = p;
@@ -1108,17 +1040,15 @@ document.addEventListener('click', e => {
   if (!F('mapstage')) return;
   const B = mapBuild();
   if (e.target.closest('#worldpane a')) return;
-  const wpick = e.target.closest('[data-wpick]');
-  if (wpick) {
-    MAP.hl = MAP.hl === wpick.dataset.wpick ? null : wpick.dataset.wpick;
-    F('mapside').innerHTML = mapSide(B);
+  const mark = e.target.closest('[data-mark]');
+  if (mark) {
+    MAP.hl = MAP.hl === mark.dataset.mark ? null : mark.dataset.mark;
+    mapSideRender();
     mapWorldRender();
     return;
   }
   const kind = e.target.closest('[data-mapkind]');
   if (kind) { mapSwitch(...kind.dataset.mapkind.split(':')); return; }
-  const wopen = e.target.closest('[data-world-open]');
-  if (wopen) { MAP.world = wopen.dataset.worldOpen; mapWorldRender(true); return; }
   if (e.target.closest('[data-world-close]')) { MAP.world = null; mapWorldRender(); return; }
   const tagf = e.target.closest('[data-tagfilter]');
   if (tagf) {
@@ -1140,12 +1070,6 @@ document.addEventListener('click', e => {
   if (unseed) { mapToggleSeed(mapByRef(B, unseed.dataset.unseed)); return; }
   const foc = e.target.closest('[data-focus]');
   if (foc) { mapFocus(mapByRef(B, foc.dataset.focus)); return; }
-  const detail = e.target.closest('[data-detail]');
-  if (detail) {
-    MAP.openBook = MAP.openBook === detail.dataset.detail ? null : detail.dataset.detail;
-    mapRefreshResults();
-    return;
-  }
   const pick = e.target.closest('[data-pick]');
   if (pick) {
     const p = mapByRef(B, pick.dataset.pick), mode = pick.dataset.pick[0] === 'a' ? 'authors' : 'books';
@@ -1182,7 +1106,7 @@ document.addEventListener('input', e => {
 
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && MAP.world && F('worldpane')) { MAP.world = null; mapWorldRender(); return; }
-  const node = (e.key === 'Enter' || e.key === ' ') && e.target.closest && e.target.closest('[data-wpick]');
+  const node = (e.key === 'Enter' || e.key === ' ') && e.target.closest && e.target.closest('.wnode[data-mark]');
   if (node) { e.preventDefault(); node.click(); }
 });
 

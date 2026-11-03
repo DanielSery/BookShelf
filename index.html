@@ -1,177 +1,223 @@
 <!DOCTYPE html>
-<html lang="en" data-palette="#86b6ef,#2a78d6,#0d366b">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Book shelf — screened, scored, filterable</title>
+<title>Book shelf</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..600&display=swap">
 <script>
   try { const t = localStorage.getItem('bookshelf.theme'); if (t) document.documentElement.dataset.theme = t; } catch {}
 </script>
 <style>
   :root {
     color-scheme: light;
-    --plane:        #f9f9f7;
-    --surface:      #fcfcfb;
-    --ink:          #0b0b0b;
-    --ink-2:        #52514e;
-    --ink-muted:    #898781;
-    --hairline:     #e1e0d9;
-    --border:       rgba(11,11,11,0.10);
-    --track:        #eeede8;
-    --band-low:     #86b6ef;
-    --band-mid:     #2a78d6;
-    --band-high:    #0d366b;
-    /* Band letter colours. Documented categorical slots, except B: slot-4
-       yellow #eda100 measures 2.11:1 on this surface, unreadable as a glyph, so
-       it is darkened to 82% toward ink -> 3.03:1, measured not guessed. */
+    --serif: "Literata", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+    --plane:     #f5f0e6;
+    --surface:   #fffdf8;
+    --ink:       #2a2420;
+    --ink-2:     #5c5249;
+    --ink-muted: #8a7f73;
+    --hairline:  #e7dece;
+    --rule:      #cfc2ab;
+    --border:    rgba(70,45,20,0.12);
+    --track:     #efe7d8;
+    --accent:    #8a3324;
+    /* B is the categorical #eda100 darkened toward ink: as a glyph it measured 2.11:1 here. */
     --b-S: #2a78d6; --b-A: #008300; --b-B: #c48602; --b-C: #eb6834; --b-F: #e34948;
     --status-good:     #0ca30c;
-    --status-warning:  #fab219;
+    --status-warning:  #e0a000;
     --status-serious:  #ec835a;
     --status-critical: #d03b3b;
   }
   @media (prefers-color-scheme: dark) {
     :root:where(:not([data-theme="light"])) {
       color-scheme: dark;
-      --plane: #0d0d0d; --surface: #1a1a19;
-      --ink: #ffffff; --ink-2: #c3c2b7; --ink-muted: #898781;
-      --hairline: #2c2c2a; --border: rgba(255,255,255,0.10); --track: #26261f;
-      --band-low: #184f95; --band-mid: #3987e5; --band-high: #b7d3f6;
-      --b-S: #3987e5; --b-A: #008300; --b-B: #c98500; --b-C: #d95926; --b-F: #e66767;
+      --plane: #171411; --surface: #211d19;
+      --ink: #f0e9dd; --ink-2: #c9bfb0; --ink-muted: #968b7d;
+      --hairline: #342e28; --rule: #4a4138; --border: rgba(255,240,220,0.10); --track: #2c2722;
+      --accent: #e2917d;
+      --b-S: #3987e5; --b-A: #1f9e1f; --b-B: #c98500; --b-C: #d95926; --b-F: #e66767;
     }
   }
   :root[data-theme="dark"] {
     color-scheme: dark;
-    --plane: #0d0d0d; --surface: #1a1a19;
-    --ink: #ffffff; --ink-2: #c3c2b7; --ink-muted: #898781;
-    --hairline: #2c2c2a; --border: rgba(255,255,255,0.10); --track: #26261f;
-    --band-low: #184f95; --band-mid: #3987e5; --band-high: #b7d3f6;
-    --b-S: #3987e5; --b-A: #008300; --b-B: #c98500; --b-C: #d95926; --b-F: #e66767;
+    --plane: #171411; --surface: #211d19;
+    --ink: #f0e9dd; --ink-2: #c9bfb0; --ink-muted: #968b7d;
+    --hairline: #342e28; --rule: #4a4138; --border: rgba(255,240,220,0.10); --track: #2c2722;
+    --accent: #e2917d;
+    --b-S: #3987e5; --b-A: #1f9e1f; --b-B: #c98500; --b-C: #d95926; --b-F: #e66767;
   }
 
   * { box-sizing: border-box; }
   body {
     margin: 0; background: var(--plane); color: var(--ink);
-    font: 14px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+    font: 14px/1.5 var(--sans);
   }
   a { color: inherit; }
-  header.top {
-    position: sticky; top: 0; z-index: 20; background: var(--plane);
-    border-bottom: 1px solid var(--hairline); padding: 14px 20px 0;
-  }
-  .titlerow { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
-  h1 { font-size: 17px; font-weight: 650; margin: 0; letter-spacing: -0.01em; }
-  .sub { color: var(--ink-muted); font-size: 12px; }
-  .spacer { flex: 1; }
-  button, select, input {
-    font: inherit; color: var(--ink); background: var(--surface);
-    border: 1px solid var(--border); border-radius: 6px; padding: 5px 8px;
-  }
+  button, select, input { font: inherit; color: var(--ink); }
   button { cursor: pointer; }
-  button:hover, select:hover { border-color: var(--ink-muted); }
+  [hidden] { display: none !important; }
+  .spacer { flex: 1; }
 
-
-  .tabs { display: flex; gap: 2px; margin: 10px 0 0; }
+  header.top {
+    position: sticky; top: 0; z-index: 20;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px;
+    padding: 10px 20px; background: var(--plane); border-bottom: 3px double var(--rule);
+  }
+  h1 { font: italic 600 22px/1.2 var(--serif); margin: 0; letter-spacing: -0.01em; }
+  .tabs { display: flex; gap: 4px; }
   .tab {
-    background: none; border: none; border-bottom: 2px solid transparent;
-    border-radius: 0; padding: 7px 12px; color: var(--ink-2); font-weight: 500;
+    border: 0; border-bottom: 2px solid transparent; background: none; padding: 5px 9px 3px;
+    color: var(--ink-2); font: 500 15px var(--serif);
   }
-  .tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--band-mid); }
-
-  .filters {
-    display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
-    padding: 12px 20px; border-bottom: 1px solid var(--hairline); background: var(--surface);
+  .tab:hover { color: var(--ink); }
+  .tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); font-weight: 650; }
+  .icon {
+    display: inline-grid; place-items: center; height: 30px; min-width: 30px; padding: 0 8px;
+    border: 0; border-radius: 7px; background: none; color: var(--ink-2); font-size: 13px;
   }
-  .filters label { font-size: 12px; color: var(--ink-muted); }
-  #q { min-width: 220px; }
-  .chk { display: flex; align-items: center; gap: 5px; font-size: 12px; color: var(--ink-2); }
+  .icon:hover { background: var(--track); color: var(--ink); }
 
-  main { padding: 18px 20px 60px; }
+  .filters { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 14px 20px; }
+  .filters select, .filters input[type="search"], .pop > summary.field, .toggle {
+    height: 30px; border: 1px solid var(--border); border-radius: 7px; background-color: var(--surface);
+    font-size: 13px; color: var(--ink);
+  }
+  .filters select, .poppanel select {
+    appearance: none; padding: 0 26px 0 10px; cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%238c8a84' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 9px center;
+  }
+  .filters select:hover, .pop > summary.field:hover, .toggle:hover { border-color: var(--ink-muted); }
+  #q { width: 240px; padding: 0 10px; }
+  .count { color: var(--ink-muted); font-size: 13px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .toggle { position: relative; display: inline-grid; place-items: center; width: 30px; color: var(--ink-2); cursor: pointer; }
+  .toggle input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .toggle:has(input:checked) { background: var(--track); color: var(--ink); border-color: var(--ink-muted); }
+  .toggle:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+  details.pop { position: relative; }
+  .pop > summary { list-style: none; cursor: pointer; user-select: none; }
+  .pop > summary::-webkit-details-marker { display: none; }
+  .pop > summary.field { display: inline-flex; align-items: center; padding: 0 10px; }
+  .pop[open] > summary.field { border-color: var(--ink-muted); }
+  .pop > summary.field.set { color: var(--accent); border-color: var(--accent); }
+  .poppanel {
+    position: absolute; left: 0; top: calc(100% + 6px); z-index: 30;
+    display: grid; gap: 8px; min-width: 240px; padding: 12px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.14);
+  }
+  .poppanel.right { left: auto; right: 0; width: min(520px, calc(100vw - 32px)); max-height: 70vh; overflow-y: auto; }
+  .poppanel select { height: 30px; width: 100%; border: 1px solid var(--border); border-radius: 7px; background-color: var(--surface); font-size: 13px; }
+  .chk { display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--ink-2); cursor: pointer; }
+  .chk input { margin: 0; accent-color: var(--accent); }
+  #notices.critical { color: var(--status-critical); font-weight: 600; }
+
+  main { padding: 0 20px 64px; }
   .banner {
-    display: flex; gap: 10px; align-items: flex-start; margin-bottom: 16px;
-    padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border);
-    background: var(--surface); font-size: 13px;
+    display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; font-size: 13px;
+    border-radius: 8px; border: 1px solid var(--border); background: var(--surface);
   }
-  .banner .mark { flex: none; font-weight: 700; }
+  .banner code { font-size: 12px; }
+  .banner .mark { flex: none; font-weight: 700; color: var(--ink-muted); }
   .banner.critical { border-left: 3px solid var(--status-critical); }
   .banner.critical .mark { color: var(--status-critical); }
-
-  .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
-  .card {
-    display: grid; grid-template-columns: 108px 1fr; gap: 14px;
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: 10px; padding: 14px;
-  }
-  .card.dim { opacity: 0.62; }
+  .leaned { font-size: 11.5px; color: var(--ink-muted); margin-top: 4px; }
+  .err { border-left: 3px solid var(--status-critical); padding-left: 10px; }
 
   .bS { --bandcolor: var(--b-S); } .bA { --bandcolor: var(--b-A); }
   .bB { --bandcolor: var(--b-B); } .bC { --bandcolor: var(--b-C); }
   .bF { --bandcolor: var(--b-F); } .bN { --bandcolor: var(--ink-muted); }
 
-  .legend { display: inline-flex; align-items: center; gap: 9px; font-weight: 400; color: var(--ink-muted); }
-  .legend i { font-style: normal; font-weight: 700; color: var(--bandcolor); }
-  .colside { display: flex; flex-direction: column; }
+  .grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
+  .card {
+    display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 18px; align-content: start;
+    background: var(--surface); border: 1px solid var(--border); border-top: 3px solid var(--bandcolor);
+    border-radius: 4px; padding: 18px;
+  }
+  .card.dim { opacity: 0.6; }
+  .colside { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
   .cover, .cover-ph {
-    width: 108px; height: 162px; border-radius: 4px; border: 1px solid var(--border);
-    object-fit: cover; background: var(--track);
+    width: 96px; height: 144px; border-radius: 1px 3px 3px 1px; object-fit: cover; background: var(--track);
+    box-shadow: inset 3px 0 4px -2px rgba(0,0,0,0.25), 0 1px 2px rgba(40,25,10,0.18), 0 8px 16px -6px rgba(40,25,10,0.35);
   }
   .cover-ph {
     display: flex; align-items: center; justify-content: center; text-align: center;
-    color: var(--ink-muted); font-size: 11px; padding: 6px; line-height: 1.3;
+    color: var(--ink-muted); font: italic 11px/1.3 var(--serif); padding: 6px;
   }
-  .bk-title { font-weight: 620; letter-spacing: -0.01em; }
-  .bk-alt, .bk-author { color: var(--ink-2); font-size: 12.5px; }
+  .bk-title { font: 620 18px/1.3 var(--serif); letter-spacing: -0.01em; }
+  .bk-alt { font-weight: 400; font-style: italic; font-size: 15px; color: var(--ink-muted); }
+  .bk-author { color: var(--ink-2); font: italic 14px var(--serif); margin-top: 3px; }
   .bk-meta { color: var(--ink-muted); }
-  .bk-author { margin-bottom: 8px; }
-
-  .scoreblock { margin: 6px 0 10px; }
-  .scorerow { display: flex; align-items: baseline; gap: 9px; margin-bottom: 6px; }
   .score {
-    font-size: 30px; font-weight: 660; line-height: 1.05;
-    letter-spacing: -0.03em; font-variant-numeric: tabular-nums;
+    margin: 8px 0; font: 600 30px/1.05 var(--serif); letter-spacing: -0.02em;
+    color: var(--bandcolor); font-variant-numeric: lining-nums tabular-nums;
   }
-  .score.none { font-size: 22px; color: var(--ink-muted); }
-  .bandletter {
-    font-size: 34px; font-weight: 750; line-height: 1; letter-spacing: -0.03em;
-    color: var(--bandcolor); flex: none;
-  }
-  .bandletter.small { font-size: 20px; font-weight: 700; }
-  .score.tinted { color: var(--bandcolor); }
-  .scorelabel { font-size: 13px; font-weight: 450; color: var(--ink-muted); }
-  .band { font-size: 11px; font-weight: 600; color: var(--ink-2); border: 1px solid var(--border); border-radius: 4px; padding: 1px 5px; white-space: nowrap; }
-  .bar { position: relative; display: block; height: 10px; background: var(--track); border-radius: 5px; }
-  .bar > i {
-    position: absolute; top: 0; height: 10px; border-radius: 5px; display: block;
-    box-shadow: 0 0 0 2px var(--surface);
-  }
-  .bar.low  > i { background: var(--band-low); }
-  .bar.mid  > i { background: var(--band-mid); }
-  .bar.high > i { background: var(--band-high); }
+  .score.sm { margin: 4px 0 0; font-size: 20px; }
+  .rating { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 4px 18px; margin: 10px 0 12px; }
+  .rating .score { margin: 0; min-width: 44px; }
+  .rating .radarbox { flex: 1 1 190px; max-width: 232px; margin: 0; }
 
-  .badges { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px; }
+  .badges { display: flex; flex-wrap: wrap; gap: 4px 6px; margin: 0 0 10px; }
+  .bk-author + .badges, .bk-title + .badges { margin-top: 10px; }
   .badge {
-    font-size: 11px; border-radius: 4px; padding: 1px 6px;
-    border: 1px solid var(--border); color: var(--ink-2); background: var(--surface);
+    display: inline-flex; align-items: center; gap: 5px; padding: 0 8px; border-radius: 9px;
+    font-size: 11.5px; line-height: 18px; white-space: nowrap;
+    color: var(--ink-2); background: var(--surface); border: 1px solid var(--border);
   }
-  .badge.risk     { border-left: 3px solid var(--status-serious); }
-  .badge.risk.high { border-left-color: var(--status-critical); color: var(--ink); font-weight: 600; }
-  .badge.blocked  { border-left: 3px solid var(--status-critical); color: var(--ink); font-weight: 600; }
-  .badge.stale    { border-left: 3px solid var(--status-warning); }
-  .badge.cz       { border-left: 3px solid var(--status-good); }
-  .badge.en       { border-left: 3px solid var(--band-mid); }
-  .badge.eloan    { border-left: 3px solid var(--ink-muted); }
-  .badge.tier     { border-left: 3px solid var(--band-mid); font-weight: 600; color: var(--ink); }
-  .badge.scope    { border-left: 3px solid var(--ink-muted); }
-  .badge.deep     { border-left: 3px solid var(--status-good); font-weight: 600; color: var(--ink); }
-  .badge.series   { border-left: 3px solid var(--band-mid); font-weight: 600; color: var(--ink); }
-  ol.vols { margin: 0 0 8px; padding-left: 20px; font-size: 12.5px; }
-  ol.vols li { margin-bottom: 5px; }
-  ol.vols .vr { color: var(--ink-muted); }
-  ol.vols details.scoring { margin: 2px 0 0; }
-  .vols-done { font-size: 12px; color: var(--ink-muted); margin: 0 0 6px; }
+  .badge.risk, .badge.blocked, .badge.stale, .badge.deep, .badge.series { --dot: var(--status-serious); }
+  .badge.risk::before, .badge.blocked::before, .badge.stale::before, .badge.deep::before, .badge.series::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--dot);
+  }
+  .badge.risk.high, .badge.blocked { --dot: var(--status-critical); color: var(--ink); }
+  .badge.stale  { --dot: var(--status-warning); }
+  .badge.deep   { --dot: var(--status-good); }
+  .badge.series { --dot: var(--accent); color: var(--ink); }
 
-  details.dossier { font-size: 12px; margin: 0 0 8px; }
-  details.dossier summary { cursor: pointer; color: var(--ink-muted); }
+  .radarbox { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; margin: 0 0 10px; }
+  .radar { display: block; max-width: 100%; height: auto; overflow: visible; }
+  .radar .rgrid { fill: none; stroke: var(--hairline); stroke-width: 1; }
+  .radarbox .area { fill: var(--accent); fill-opacity: 0.16; }
+  .radarbox .area.pred { fill-opacity: 0.09; }
+  .radarbox .edge { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+  .radarbox .edge.overlay { stroke: var(--ink-2); stroke-width: 1.5; stroke-dasharray: 4 3; }
+  .radar .dot { fill: var(--accent); stroke: var(--surface); stroke-width: 1.5; }
+  .radar text { font-size: 10.5px; fill: var(--ink-2); }
+  .radar text .rv { font-weight: 650; fill: var(--ink); }
+  .radar text.unk, .radar text.unk .rv { fill: var(--ink-muted); }
+  .radar .hit { fill: transparent; }
+  .radarcap { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 12px; font-size: 11.5px; color: var(--ink-muted); }
+  .radarcap svg { vertical-align: middle; margin-right: 4px; }
+
+  .pitch, .blurb {
+    margin: 0 0 12px; padding-left: 12px; border-left: 2px solid var(--rule);
+    font: 14.5px/1.6 var(--serif);
+  }
+  .blurb { color: var(--ink-2); font-size: 14px; font-style: italic; }
+  .howto { margin: 0 0 12px; font: 13.5px/1.55 var(--serif); color: var(--ink-2); }
+  .howto + .howto { margin-top: -4px; }
+  .howto b {
+    display: block; margin-bottom: 1px; font: 600 11px/1.4 var(--sans);
+    letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent);
+  }
+  .why { font: 14px/1.6 var(--serif); margin: 0 0 6px; }
+  .why.clip { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 5; overflow: hidden; }
+  .why.clip.open { display: block; -webkit-line-clamp: unset; }
+  button.more {
+    font-size: 12px; padding: 0; margin: 0 0 6px;
+    background: none; border: 0; color: var(--ink-muted);
+  }
+  button.more:hover { color: var(--ink); }
+  details.scoring { font-size: 12.5px; margin: 8px 0 0; }
+  details.scoring > summary { cursor: pointer; color: var(--ink-muted); width: fit-content; }
+  details.scoring > summary:hover { color: var(--ink); }
+  details.scoring .why { margin-top: 6px; color: var(--ink-2); }
+  details.dossier { margin: 6px 0 0; }
+  details.dossier > summary { cursor: pointer; color: var(--ink-muted); width: fit-content; }
   details.dossier ul { margin: 6px 0 0; padding-left: 18px; }
   details.dossier li { margin-bottom: 4px; color: var(--ink-2); }
   details.dossier .v { font-weight: 600; color: var(--ink); }
@@ -179,140 +225,128 @@
   details.dossier .v.unknown { color: var(--status-warning); }
   details.dossier .src { font-size: 11px; margin-left: 4px; }
 
-  .blurb { color: var(--ink-2); font-size: 12.5px; margin: 0 0 8px; }
-  .pitch { font-size: 13px; margin: 0 0 8px; }
-  details.scoring { font-size: 12px; margin: 0 0 8px; }
-  details.scoring summary { cursor: pointer; color: var(--ink-muted); }
-  details.scoring .why { margin-top: 6px; color: var(--ink-2); }
-  .why { font-size: 12.5px; margin: 0 0 8px; }
-  .why b { font-weight: 600; }
-  .why.clip {
-    display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 5; overflow: hidden;
+  .access { font-size: 12.5px; color: var(--ink-muted); line-height: 1.9; }
+  .access b { color: var(--ink-2); font-weight: 600; }
+  .access em { font-style: normal; }
+  a.route {
+    display: inline-block; font-weight: 600; text-decoration: none; line-height: 1.5;
+    color: var(--ink); background: var(--track); border-radius: 6px; padding: 1px 9px;
   }
-  .why.clip.open { display: block; -webkit-line-clamp: unset; }
-  button.more {
-    font: inherit; font-size: 11.5px; padding: 0; margin: -4px 0 8px;
-    background: none; border: 0; color: var(--ink-muted); cursor: pointer;
-  }
-  button.more:hover { color: var(--ink); }
-  .access { font-size: 12px; color: var(--ink-2); }
-  .access em { font-style: normal; color: var(--ink-muted); }
-  .access a.route {
-    display: inline-block; font-size: 12px; font-weight: 600; text-decoration: none;
-    color: var(--ink); background: var(--track); border: 1px solid var(--border);
-    border-radius: 5px; padding: 2px 8px; margin-right: 2px;
-  }
-  .access a.route:hover { border-color: var(--band-mid); color: var(--band-mid); }
-  .leaned { font-size: 11px; color: var(--ink-muted); }
+  a.route:hover { background: var(--accent); color: #fff; }
+  ol.vols { margin: 0 0 8px; padding-left: 20px; font-size: 13px; }
+  ol.vols li { margin-bottom: 6px; }
+  ol.vols .vr { color: var(--ink-muted); }
+  ol.vols a.route { font-size: 12px; padding: 0 7px; }
+  ol.vols details.scoring { margin: 2px 0 0; }
+  .vols-done { font-size: 12.5px; color: var(--ink-muted); margin: 0 0 6px; }
 
-  table { border-collapse: collapse; width: 100%; font-size: 13px; background: var(--surface); }
-  th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
-  th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-muted); font-weight: 600; white-space: nowrap; }
+  button.tomap {
+    padding: 0; border: 0; background: none; font-size: 12px; text-align: left;
+    color: var(--ink-muted); text-decoration: underline dotted; text-underline-offset: 2px;
+  }
+  button.tomap:hover { color: var(--ink); }
+
+  .tablewrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+  tbody tr:last-child td { border-bottom: 0; }
+  th { font-size: 11.5px; color: var(--ink-muted); font-weight: 600; white-space: nowrap; }
   td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
-  td.bandcell { color: var(--bandcolor); font-weight: 700; }
-  .grouphead { margin: 22px 0 8px; font-size: 13px; font-weight: 620; }
-  .grouphead:first-child { margin-top: 0; }
-  .grouphead span { color: var(--ink-muted); font-weight: 400; }
-  .empty { color: var(--ink-muted); padding: 40px 0; text-align: center; }
-  .err { border-left: 3px solid var(--status-critical); padding-left: 10px; }
+  .grouphead {
+    margin: 36px 0 14px; padding-bottom: 6px; border-bottom: 1px solid var(--rule);
+    font: italic 600 19px var(--serif); color: var(--ink);
+  }
+  .grouphead span { margin-left: 8px; font: 400 13px var(--sans); color: var(--ink-muted); }
+  .empty { color: var(--ink-muted); padding: 48px 0; text-align: center; }
 
-  .mapwrap { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 14px; align-items: start; }
+  .mapwrap { display: grid; grid-template-columns: minmax(0, 1fr) 400px; gap: 16px; align-items: start; }
   .mapstage, .mapside {
-    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
-    height: min(76vh, 820px); min-height: 420px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    height: min(78vh, 840px); min-height: 420px;
   }
   .mapstage { position: relative; overflow: hidden; }
   .mapstage canvas { display: block; touch-action: none; cursor: grab; }
   .maptools { position: absolute; top: 10px; right: 10px; display: flex; gap: 4px; }
-  .maptools button { padding: 3px 9px; font-size: 12px; }
+  .maptools button, .wpctl button {
+    height: 28px; padding: 0 10px; font-size: 12.5px; color: var(--ink-2);
+    background: var(--surface); border: 1px solid var(--border); border-radius: 7px;
+  }
+  .maptools button:hover, .wpctl button:hover { border-color: var(--ink-muted); color: var(--ink); }
   .mapmodes { position: absolute; top: 10px; left: 10px; right: 150px; display: flex; flex-wrap: wrap; gap: 6px 10px; pointer-events: none; }
   .mapmodes .wseg { pointer-events: auto; }
-  .mapmodes .wseg button { padding: 4px 12px; font-size: 12.5px; font-weight: 550; }
-  .tagfilters { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: -2px 0 10px; font-size: 12px; color: var(--ink-muted); }
-  button.tagbtn { cursor: pointer; font: inherit; font-size: 11px; }
-  button.tagbtn:hover { border-color: var(--band-mid); color: var(--ink); }
-  button.tagbtn.on { border-left: 3px solid var(--band-mid); color: var(--ink); font-weight: 600; }
+  .tagfilters { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0 0 12px; font-size: 12px; }
+  button.tagbtn { cursor: pointer; font: inherit; font-size: 11.5px; }
+  button.tagbtn:hover { border-color: var(--accent); color: var(--ink); }
+  button.tagbtn.on { border-color: var(--accent); color: var(--accent); font-weight: 600; }
   .maptip {
     position: absolute; pointer-events: none; max-width: 260px; font-size: 12px;
-    background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
-    padding: 6px 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+    background: var(--surface); border: 1px solid var(--border); border-radius: 7px;
+    padding: 6px 8px; box-shadow: 0 4px 14px rgba(0,0,0,0.12);
   }
-  .mapside { padding: 14px; overflow-y: auto; font-size: 12.5px; }
-  .mapside h4 { margin: 14px 0 6px; font-size: 12px; font-weight: 620; }
-  .mapside .cover, .mapside .cover-ph { width: 64px; height: 96px; flex: none; }
-  .sidehead { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 8px; }
-  .sidehead > div:not(.cover-ph) { flex: 1; min-width: 0; }
-  .sidehead .scorerow { margin: 4px 0 0; }
+  .mapside { padding: 16px; overflow-y: auto; font-size: 13px; }
+  .mapside h4 { margin: 18px 0 6px; font-size: 11px; font-weight: 650; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); }
+  .mapside h4 .sub { font-weight: 400; margin-left: 6px; color: var(--ink-muted); }
+  .mapside > h4:first-child { margin-top: 0; }
+  .mapside .card { grid-template-columns: 72px minmax(0, 1fr); gap: 12px; padding: 14px; margin-bottom: 10px; }
+  .mapside .card .cover, .mapside .card .cover-ph { width: 72px; height: 108px; }
+  .sidehead { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+  .sidehead > div { flex: 1; min-width: 0; }
+  .mapside .sidehead h4 { flex: 1; margin: 2px 0 0; }
+  .marked { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--hairline); }
   .mapnote { color: var(--ink-muted); margin: 0 0 8px; }
-  .mapopts { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
-  .mapside h4 .sub { font-weight: 400; margin-left: 6px; }
-  .mapside .pitch, .mapside .blurb { margin: 0 0 10px; }
-  .mapopts label.range { display: flex; align-items: center; gap: 8px; width: 100%; font-size: 12px; color: var(--ink-2); }
-  .mapopts label.range input { flex: 1; padding: 0; border: 0; background: none; accent-color: var(--band-mid); }
-  .mapopts label.range b { font-variant-numeric: tabular-nums; min-width: 34px; }
+  .mapopts { display: flex; gap: 12px; flex-wrap: wrap; margin: 4px 0 6px; }
+  .mapopts label.range { display: flex; align-items: center; gap: 8px; width: 100%; font-size: 12.5px; color: var(--ink-2); }
+  .mapopts label.range input { flex: 1; padding: 0; border: 0; background: none; accent-color: var(--accent); }
+  .mapopts label.range b { font-variant-numeric: tabular-nums; min-width: 38px; }
   ol.picks, ul.seeds { list-style: none; margin: 0; padding: 0; }
   li.prow { display: grid; grid-template-columns: 1fr auto; align-items: stretch; border-bottom: 1px solid var(--hairline); }
   button.pick {
-    display: grid; grid-template-columns: 20px 1fr auto; gap: 8px; width: 100%; text-align: left;
-    background: none; border: 0; border-radius: 0; padding: 6px 2px;
+    display: grid; grid-template-columns: 30px 1fr auto; gap: 8px; width: 100%; text-align: left;
+    background: none; border: 0; border-radius: 6px; padding: 7px 4px;
   }
-  button.pick:hover { background: var(--track); }
+  button.pick:hover, button.pick[aria-pressed="true"] { background: var(--track); }
   .pacts { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 0 4px; }
-  button.addseed { background: none; border: 0; border-radius: 4px; padding: 0 9px; font-size: 16px; color: var(--ink-muted); }
-  button.addseed:hover { background: var(--track); color: var(--band-mid); }
-  a.rowlink { font-size: 11px; white-space: nowrap; color: var(--ink-2); text-decoration: none; }
-  a.rowlink:hover { color: var(--band-mid); text-decoration: underline; }
-  .mapside .access { margin: 0 0 10px; }
-  button.rowbtn {
-    background: none; border: 0; padding: 0; font-size: 11px; white-space: nowrap;
-    color: var(--ink-2); text-decoration: underline dotted;
-  }
-  button.rowbtn:hover { color: var(--band-mid); }
-  button.pick[aria-expanded="true"] { background: var(--track); }
-  .rowdetail { grid-column: 1 / -1; padding: 4px 4px 12px 30px; }
-  .pick .pl, .seeds .pl { font-weight: 700; color: var(--bandcolor); }
-  .pick .ps { font-size: 11.5px; color: var(--ink-muted); }
-  .pick .pw { font-size: 11.5px; color: var(--ink-2); }
-  .pick .pp { font-size: 11.5px; color: var(--ink-2); font-variant-numeric: tabular-nums; text-align: right; }
+  button.addseed { background: none; border: 0; border-radius: 6px; padding: 0 9px; font-size: 16px; color: var(--ink-muted); }
+  button.addseed:hover { background: var(--track); color: var(--accent); }
+  a.rowlink { font-size: 11.5px; white-space: nowrap; color: var(--ink-2); text-decoration: none; }
+  a.rowlink:hover { color: var(--accent); text-decoration: underline; }
+  .pick .pl, .seeds .pl { font-weight: 700; color: var(--bandcolor); font-variant-numeric: tabular-nums; }
+  .pick .ps { font-size: 12px; color: var(--ink-muted); }
+  .pick .pw { font-size: 12px; color: var(--ink-2); }
+  .pick .pp { font-size: 12px; color: var(--ink-2); font-variant-numeric: tabular-nums; text-align: right; }
   .pbar { display: block; width: 44px; height: 4px; margin-top: 4px; background: var(--track); border-radius: 2px; }
-  .pbar i { display: block; height: 4px; border-radius: 2px; background: var(--band-mid); }
-  ul.seeds li { display: grid; grid-template-columns: 20px 1fr auto; gap: 6px; align-items: center; padding: 3px 0; }
+  .pbar i { display: block; height: 4px; border-radius: 2px; background: var(--accent); }
+  ul.seeds li { display: grid; grid-template-columns: 30px 1fr auto; gap: 6px; align-items: center; padding: 3px 0; }
   ul.seeds .linkish { text-align: left; }
-  button.linkish, button.unpick, button.tomap { background: none; border: 0; padding: 0; color: inherit; }
-  button.linkish { text-decoration: underline dotted; }
+  button.linkish, button.unpick { background: none; border: 0; padding: 0; color: inherit; }
+  button.linkish { text-decoration: underline dotted; text-underline-offset: 2px; }
+  button.linkish:hover { color: var(--accent); }
   button.unpick { flex: none; font-size: 18px; line-height: 1; color: var(--ink-muted); }
-  button.tomap { margin-top: 8px; font-size: 11.5px; color: var(--ink-muted); text-align: left; text-decoration: underline dotted; }
-  button.tomap:hover, button.linkish:hover { color: var(--ink); }
-  button.worldbtn {
-    display: block; width: 100%; margin: 2px 0 12px; padding: 6px 10px; text-align: left;
-    font-size: 12.5px; font-weight: 600; border-left: 3px solid var(--band-mid);
-  }
-  button.worldbtn span { display: block; font-weight: 400; font-size: 11.5px; color: var(--ink-muted); }
-  button.worldbtn:hover { border-color: var(--band-mid); }
+  button.unpick:hover { color: var(--ink); }
   .worldpane { position: absolute; inset: 0; z-index: 3; display: flex; flex-direction: column; background: var(--surface); }
   .wphead {
     display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: flex-start; justify-content: space-between;
     padding: 12px 14px 10px; border-bottom: 1px solid var(--hairline);
   }
-  .wphead .bk-meta { font-size: 12px; }
+  .wphead .bk-meta { font-size: 12.5px; }
+  .wphead .unpick { padding: 0 4px; }
   .wpctl { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
-  .wpctl button { padding: 3px 10px; font-size: 12px; }
-  .wseg { display: flex; }
-  .wseg button { color: var(--ink-2); border-radius: 0; }
-  .wseg button + button { margin-left: -1px; }
-  .wseg button:first-child { border-radius: 6px 0 0 6px; }
-  .wseg button:last-child { border-radius: 0 6px 6px 0; }
-  .wseg button[aria-pressed="true"] { background: var(--band-mid); border-color: var(--band-mid); color: #fff; }
+  .wseg { display: flex; padding: 2px; background: var(--track); border-radius: 8px; }
+  .wseg button {
+    height: 26px; padding: 0 11px; white-space: nowrap; font-size: 12.5px; font-weight: 500;
+    color: var(--ink-2); background: none; border: 0; border-radius: 6px;
+  }
+  .wseg button:hover { color: var(--ink); }
+  .wseg button[aria-pressed="true"] { background: var(--surface); color: var(--ink); font-weight: 600; box-shadow: 0 1px 2px rgba(0,0,0,0.12); }
   .wpbody { flex: 1; overflow: auto; padding: 0 14px 14px; font-size: 12px; }
-  .wblocks { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 16px 22px; margin-top: 10px; }
-  .wblock { border: 1px solid var(--hairline); border-radius: 8px; padding: 8px 10px 0 10px; }
+  .wblocks { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 16px 22px; margin-top: 14px; }
+  .wblock { border: 1px solid var(--hairline); border-radius: 10px; padding: 10px 10px 0; }
   .wbhead { margin-bottom: 2px; max-width: 560px; }
-  .wbhead .bk-meta { font-size: 11.5px; }
-  details.wbnotes { font-size: 11.5px; color: var(--ink-2); margin: 2px 0 0; }
-  details.wbnotes summary { cursor: pointer; color: var(--ink-muted); }
+  .wbhead .bk-meta { font-size: 12px; }
+  details.wbnotes { font-size: 12px; color: var(--ink-2); margin: 2px 0 0; }
+  details.wbnotes summary { cursor: pointer; color: var(--ink-muted); width: fit-content; }
   details.wbnotes ul.wplinks { margin-top: 4px; }
   details.wbnotes .wbwhy { margin: 4px 0 6px; }
-  .wphead .unpick { padding: 0 4px; }
   .wpgraph { position: relative; margin-top: 4px; }
   .wpgraph svg { position: absolute; left: 0; top: 0; overflow: visible; }
   .worldpane .wnext { stroke: var(--ink-2); stroke-width: 1.6; fill: none; }
@@ -321,15 +355,14 @@
   .worldpane .wah.soft { fill: var(--ink-muted); }
   .worldpane .wah.go { fill: var(--status-good); }
   .wstart rect { fill: var(--status-good); }
-  .wstart text { fill: #fff; font: 600 10px system-ui, -apple-system, "Segoe UI", sans-serif; text-anchor: middle; }
+  .wstart text { fill: #fff; font: 600 10px var(--sans); text-anchor: middle; }
   .wstart path { stroke: var(--status-good); stroke-width: 1.8; fill: none; }
-  .wstartkey { background: var(--status-good); color: #fff; font-size: 10px; font-weight: 600; border-radius: 8px; padding: 0 7px; }
   .wlane { position: absolute; line-height: 1.3; }
   .wlane b { display: block; font-weight: 620; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .wlane span { display: block; color: var(--ink-muted); font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .wnode {
     position: absolute; display: grid; grid-template-columns: 12px minmax(0, 1fr) auto; gap: 0 8px; align-items: center;
-    padding: 2px 8px 2px 7px; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; line-height: 1.3;
+    padding: 2px 8px 2px 7px; background: var(--surface); border: 1px solid var(--border); border-radius: 7px; line-height: 1.3;
   }
   .wnode[data-wpick] { cursor: pointer; }
   .wnode[data-wpick]:hover { border-color: var(--ink-muted); }
@@ -342,73 +375,93 @@
   .wnode .ws { color: var(--ink-muted); font-size: 11px; }
   .wnode .wv { font-weight: 700; color: var(--bandcolor); font-variant-numeric: tabular-nums; }
   .wnode a { font-size: 11px; color: var(--ink-2); white-space: nowrap; text-decoration: none; }
-  .wnode a:hover { color: var(--band-mid); text-decoration: underline; }
+  .wnode a:hover { color: var(--accent); text-decoration: underline; }
   .wm { width: 10px; height: 10px; border-radius: 50%; background: var(--bandcolor); }
   .wm.read { border-radius: 1px; transform: rotate(45deg) scale(0.9); }
-  .wm.library { background: none; border: 2px solid var(--band-mid); }
+  .wm.library { background: none; border: 2px solid var(--accent); }
   .wm.absent, .wm.rejected { background: none; border: 1.5px solid var(--ink-muted); }
   .wm.gap { background: none; border: 1.5px dashed var(--ink-muted); }
   .wm.rejected { border-radius: 2px; }
-  .wplegend { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; margin: 10px 0 0; color: var(--ink-2); font-size: 11.5px; }
-  .wplegend > span { display: inline-flex; align-items: center; gap: 5px; }
-  .wplegend .wm { --bandcolor: var(--ink-muted); }
-  .wplegend svg { overflow: visible; }
-  .wpbody h4 { margin: 14px 0 6px; font-size: 12px; font-weight: 620; }
   ul.wplinks { margin: 0; padding-left: 18px; color: var(--ink-2); }
   ul.wplinks li { margin-bottom: 4px; }
   ul.wplinks .wk { font-size: 10.5px; font-weight: 650; text-transform: uppercase; letter-spacing: 0.03em; color: var(--ink-muted); margin-right: 4px; }
+
   @media (max-width: 900px) {
     .mapwrap { grid-template-columns: 1fr; }
     .mapstage { height: 62vh; }
     .mapside { height: auto; min-height: 0; }
   }
-  [hidden] { display: none !important; }
+  @media (max-width: 640px) {
+    header.top { padding: 8px 16px; }
+    .tabs { order: 9; width: 100%; margin: 0 -11px; }
+    .filters { padding: 12px 16px; }
+    #q { flex: 1 1 100%; }
+    .filters select { flex: 1 1 140px; }
+    .mapmodes { right: 10px; }
+    .maptools { top: auto; bottom: 10px; }
+    main { padding: 0 16px 48px; }
+    .grid { grid-template-columns: minmax(0, 1fr); }
+    .card { grid-template-columns: 72px minmax(0, 1fr); gap: 12px; padding: 14px; }
+    .card .cover, .card .cover-ph { width: 72px; height: 108px; }
+  }
 </style>
 </head>
 <body>
 <header class="top">
-  <div class="titlerow">
-    <h1>Book shelf</h1>
-    <span class="sub" id="stamp"></span>
-    <span class="spacer"></span>
-    <button id="theme" title="Toggle light / dark">Theme</button>
-  </div>
-  <div class="tabs" role="tablist">
+  <h1>Book shelf</h1>
+  <nav class="tabs" role="tablist">
     <button class="tab" role="tab" data-view="candidates" aria-selected="true">Candidates</button>
     <button class="tab" role="tab" data-view="read" aria-selected="false">Read</button>
     <button class="tab" role="tab" data-view="rejected" aria-selected="false">Rejected</button>
     <button class="tab" role="tab" data-view="map" aria-selected="false">Map</button>
-  </div>
+  </nav>
+  <span class="spacer"></span>
+  <details class="pop" id="noticebox" hidden>
+    <summary class="icon" id="notices"></summary>
+    <div class="poppanel right" id="noticelist" role="region" aria-label="Notices"></div>
+  </details>
+  <button id="theme" class="icon" type="button" title="Theme" aria-label="Toggle light or dark theme">
+    <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1.75a6.25 6.25 0 0 1 0 12.5z" fill="currentColor"/></svg>
+  </button>
 </header>
 
 <div class="filters" id="filters">
-  <input id="q" type="search" placeholder="Search title, author, reason…" autocomplete="off">
-  <label data-for="map">Tag <select id="maptag"></select></label>
-  <label data-for="candidates map">Access <select id="access"></select></label>
-  <label data-for="candidates read map">Genre <select id="genre"></select></label>
-  <label data-for="candidates read map">Form <select id="form"></select></label>
-  <label data-for="candidates read map">Audience <select id="audience"></select></label>
-  <label data-for="candidates read map">Origin <select id="origin"></select></label>
-  <label data-for="candidates read map">Show <select id="kind">
-    <option value="">series and single titles</option>
-    <option value="series">series only</option>
-    <option value="single">single titles only</option>
-  </select></label>
-  <label data-for="candidates read map">Min score <select id="minscore">
-    <option value="0">any</option>
-    <option value="45">5 and up</option>
-    <option value="65" selected>7 and up</option>
-    <option value="75">8 and up</option>
-    <option value="85">9 and up</option>
-  </select></label>
-  <label data-for="rejected">Filter <select id="rfilter"></select></label>
-  <label data-for="rejected">Scope <select id="rscope"></select></label>
-  <label data-for="candidates read rejected">Sort <select id="sort"></select></label>
-  <label class="chk" data-for="candidates map"><input type="checkbox" id="norisk"> no open risks</label>
-  <label class="chk" data-for="candidates map"><input type="checkbox" id="deeponly"> deep-dived only</label>
-  <label class="chk" data-for="candidates map"><input type="checkbox" id="hideblocked" checked> hide blocked<span id="nblocked"></span></label>
-  <label class="chk" data-for="candidates map" title="Books the library holds only as an e-loan (eReading), with no print copy"><input type="checkbox" id="eloans"> include e-loans<span id="neloans"></span></label>
-  <label class="chk" data-for="candidates read rejected"><input type="checkbox" id="astable"> table view</label>
+  <input id="q" type="search" placeholder="Search" aria-label="Search" autocomplete="off">
+  <select id="maptag" data-for="map" aria-label="Tag"></select>
+  <select id="access" data-for="candidates map" aria-label="Access"></select>
+  <select id="genre" data-for="candidates read map" aria-label="Genre"></select>
+  <select id="minscore" data-for="candidates read map" aria-label="Minimum score">
+    <option value="0">Any score</option>
+    <option value="45">Score 5+</option>
+    <option value="65" selected>Score 7+</option>
+    <option value="75">Score 8+</option>
+    <option value="85">Score 9+</option>
+  </select>
+  <select id="rfilter" data-for="rejected" aria-label="Filter"></select>
+  <select id="rscope" data-for="rejected" aria-label="Scope"></select>
+  <details class="pop" id="more" data-for="candidates read map">
+    <summary class="field">More</summary>
+    <div class="poppanel">
+      <select id="form" aria-label="Form"></select>
+      <select id="audience" aria-label="Audience"></select>
+      <select id="origin" aria-label="Origin"></select>
+      <select id="kind" aria-label="Series">
+        <option value="">Series and singles</option>
+        <option value="series">Series only</option>
+        <option value="single">Singles only</option>
+      </select>
+      <label class="chk" data-for="candidates map"><input type="checkbox" id="norisk"> No open risks</label>
+      <label class="chk" data-for="candidates map"><input type="checkbox" id="deeponly"> Deep-dived only</label>
+      <label class="chk" data-for="candidates map"><input type="checkbox" id="showblocked"> Show blocked<span id="nblocked" class="bk-meta"></span></label>
+    </div>
+  </details>
+  <span class="spacer"></span>
+  <span class="count" id="count"></span>
+  <select id="sort" data-for="candidates read rejected" aria-label="Sort"></select>
+  <label class="toggle" data-for="candidates read rejected" title="Table">
+    <input type="checkbox" id="astable" aria-label="Table view">
+    <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1 2.5h12M1 7h12M1 11.5h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </label>
 </div>
 
 <main>
@@ -420,30 +473,15 @@
 <script>
 const BAND = [[95,'S+'],[85,'S'],[75,'A'],[65,'B'],[50,'C'],[0,'F']];
 const band = s => BAND.find(b => s >= b[0])[1];
-const cls  = s => s >= 85 ? 'high' : s >= 65 ? 'mid' : 'low';
 
-// The letter IS the encoding; colour is a redundant cue on top of it, which is
-// why C-orange and F-red sitting close in colour space is acceptable here —
-// nothing is ever distinguished by hue alone.
+// Colour only ever repeats the number printed beside it, so C-orange and F-red sitting
+// close in colour space is acceptable: nothing is distinguished by hue alone.
 const TONE = { 'S+': 'bS', S: 'bS', A: 'bA', B: 'bB', C: 'bC', F: 'bF' };
 const tone = s => TONE[band(s)];
 // The reader scores out of 10 in whole numbers (2026-10-29); everything underneath stays
 // on 0-100, so this is the only place a number is turned into what he sees.
 const ten = s => Math.round(s / 10);
 const rng = (a, b) => ten(a) === ten(b) ? `${ten(a)}` : `${ten(a)}–${ten(b)}`;
-const LEGEND = '<span class="legend">' +
-  [['S', '9+'], ['A', '8'], ['B', '7'], ['C', '5–6'], ['F', '≤4']]
-    .map(([l, t]) => `<i class="${TONE[l]}">${t}</i>`).join('') +
-  '</span>';
-
-// Two axes on purpose. Candidates never fall below 66, so a 50-100 axis spends
-// its width where the differences are; read books run down to 30 and need the
-// room. The tabs are never on screen together, and each header says its range.
-const AXIS = { candidates: [50, 100], read: [30, 100] };
-const pctIn = (v, view) => {
-  const [lo, hi] = AXIS[view] || AXIS.candidates;
-  return Math.max(0, Math.min(100, (v - lo) / (hi - lo) * 100));
-};
 
 // A bulk exclusion written from the catalogue's own genre heading by
 // tools/screen-headings.py — ~1,200 rows, none of which anybody read. fetch-media.py
@@ -483,12 +521,36 @@ const ORIGIN = { cs: 'Czech original', foreign: 'translation' };
 const TAGS = { exploration: 'world exploration' };
 const tagLabels = tags => tags.map(t => TAGS[t] || t);
 const genreMatch = (x, gen) => !gen || (gen in TAGS ? x.tags.includes(gen) : x.genre === gen);
+// 'adult' and 'translation' are the overwhelming defaults, so only the exceptions are named.
+const facetText = x => [GENRE[x.genre] || x.genre, ...tagLabels(x.tags), FORM[x.form] || x.form,
+  x.audience && x.audience !== 'adult' ? AUDIENCE[x.audience] || x.audience : null,
+  x.origin === 'cs' ? ORIGIN.cs : null].filter(Boolean).join(', ');
+
+// Order is the drawing order, clockwise from the top. Must match SPOKES in tools/radar.py.
+const SPOKES = [['world', 'World'], ['coherence', 'Coherence'], ['pull', 'Pull'],
+                ['characters', 'Characters'], ['heart', 'Heart'], ['ideas', 'Ideas'], ['safety', 'Safety']];
+const hasRadar = r => !!r && SPOKES.some(([k]) => r[k] != null);
+
+// A series is one entry, so its radar is the per-spoke mean of the volumes that have that
+// spoke, the same way its score is the mean of theirs.
+function meanRadar(list) {
+  const rs = list.filter(hasRadar);
+  if (!rs.length) return null;
+  const out = {};
+  SPOKES.forEach(([k]) => {
+    const v = rs.map(r => r[k]).filter(x => x != null);
+    out[k] = v.length ? Math.round(v.reduce((s, x) => s + x, 0) / v.length) : null;
+  });
+  const worst = rs.filter(r => r.safety != null && r.safetyIssue).sort((a, b) => a.safety - b.safety)[0];
+  if (worst) out.safetyIssue = worst.safetyIssue;
+  return out;
+}
 
 const SORTS = {
-  candidates: [['mid','predicted score'],['high','best case'],['low','safest floor'],
-               ['title','title'],['author','author']],
-  read:       [['score','score'],['title','title'],['author','author']],
-  rejected:   [['filter','filter'],['entity','name'],['author','author'],['level','scope']],
+  candidates: [['mid','By prediction'],['high','By best case'],['low','By safest floor'],
+               ['title','By title'],['author','By author']],
+  read:       [['score','By score'],['title','By title'],['author','By author']],
+  rejected:   [['filter','By filter'],['entity','By name'],['author','By author'],['level','By scope']],
 };
 
 function parseReadTable(md) {
@@ -527,26 +589,26 @@ async function load() {
     if (!r.ok) throw new Error(p + ' → HTTP ' + r.status);
     return kind === 'text' ? r.text() : r.json();
   };
-  const [cache, revsDoc, media, estText, rejText, readMd, readFacets, originDoc, deepText, sim, seriesDoc, worldsDoc] = await Promise.all([
+  const [cache, revsDoc, media, estText, rejText, readMd, readFacets, originDoc, deepText, sim, seriesDoc, worldsDoc, radarDoc] = await Promise.all([
     get('book-cache.json'), get('book-revs.json'), get('book-media.json'),
     get('book-estimates.jsonl', 'text'), get('book-rejects.jsonl', 'text'),
     get('books-read.md', 'text'),
-    // Facets for read books live in their own file: books-read.md is hand-maintained
-    // and its parser requires exactly five columns. Absent is survivable — the Gaps
-    // panel reports the orphans rather than the filter hiding them.
+    // Read-book facets live apart because books-read.md is hand-maintained and parsed
+    // as exactly four columns. A missing file is survivable: the notices list the orphans.
     get('book-read-facets.json').catch(() => ({ facets: {} })),
     get('book-origin.json').catch(() => ({ books: {}, read: {} })),
     get('book-deep.jsonl', 'text').catch(() => ''),
     get('book-similarity.json').catch(() => null),
     get('book-series.json').catch(() => ({ series: {} })),
     get('book-worlds.json').catch(() => ({ worlds: {} })),
+    get('book-read-radar.json').catch(() => ({ radar: {} })),
   ]);
 
   const est = jsonl(estText).slice(1);
   const revs = revsDoc.revs;
   const byKey = Object.fromEntries(cache.books.map(b => [b.key, b]));
   const ttl = cache._ttlDays || {};
-  const M = media.media || {}, RM = media.readMedia || {}, JM = media.rejectMedia || {};
+  const M = media.media || {}, RM = media.readMedia || {}, JM = media.rejectMedia || {}, SM = media.seriesMedia || {};
   const OB = originDoc.books || {}, OR = originDoc.read || {};
   const DEEP = Object.fromEntries(jsonl(deepText).filter(d => d.key).map(d => [d.key, d]));
 
@@ -563,6 +625,7 @@ async function load() {
     return {
       ...e, cache: b, cz, media: m, stale, drift,
       dossier: e.depth === 'deep' ? DEEP[e.key] || null : null,
+      radarPred: e.radar || null,
       mid: e.est ? (e.est[0] + e.est[1]) / 2 : -1,
       hasCz: cz.state === 'verified', hasEloan: cz.state === 'eloan',
       // A gem is a book worth hunting down in English (reader, 2026-10-25): neither
@@ -580,9 +643,11 @@ async function load() {
   });
 
   const read = parseReadTable(readMd);
-  const RF = readFacets.facets || {};
+  const RF = readFacets.facets || {}, RR = radarDoc.radar || {};
   read.rows.forEach(r => {
     r.media = RM[r.key] || {};
+    r.radarMine = RR[r.key] || null;
+    r.radarPred = (RR[r.key] || {}).predicted || null;
     const f = RF[r.key] || {};
     r.genre = f.genre || ''; r.tags = f.tags || []; r.form = f.form || '';
     // '' rather than 'adult': an unfaceted read row must not masquerade as adult,
@@ -595,6 +660,7 @@ async function load() {
   });
   read.unfaceted = read.rows.filter(r => !r.genre || !r.form || !r.audience);
   read.unorigined = read.rows.filter(r => !r.origin);
+  read.unrated = read.rows.filter(r => !hasRadar(r.radarMine));
 
   const rejects = jsonl(rejText).slice(1).map(r => ({
     ...r, author: r.author || '', media: JM[slug(r.entity + '-' + (r.author || ''))] || {},
@@ -618,18 +684,11 @@ async function load() {
     }
   });
 
-  D = { cache, revs, books, read, rejects, sim, series, seriesOf, readSeries, readSeriesOf, fetched: media.fetched,
+  D = { cache, revs, books, read, rejects, sim, series, seriesOf, readSeries, readSeriesOf, seriesMedia: SM,
         seriesDoc: seriesDoc.series || {}, worlds: worldsDoc.worlds || {} };
-  stamp();
-  fillSelect('rfilter', 'all filters', [...new Set(rejects.map(r => r.filter))].sort().map(f => [f, nice(f)]));
-  fillSelect('rscope', 'all scopes', [...new Set(rejects.map(r => r.level))].sort().map(l => [l, l]));
+  fillSelect('rfilter', 'All filters', [...new Set(rejects.map(r => r.filter))].sort().map(f => [f, nice(f)]));
+  fillSelect('rscope', 'All scopes', [...new Set(rejects.map(r => r.level))].sort().map(l => [l, l]));
   fillAccess();
-}
-
-function stamp() {
-  document.getElementById('stamp').textContent =
-    `${D.books.length} candidates · ` +
-    `${D.read.rows.length} read · ${D.rejects.length} rejected · covers ${D.fetched || '?'}`;
 }
 
 function fillSelect(id, allLabel, pairs) {
@@ -638,10 +697,11 @@ function fillSelect(id, allLabel, pairs) {
     pairs.map(([v, l]) => `<option value="${esc(v)}">${esc(l)}</option>`).join('');
 }
 
+const plural = (n, word) => `${n} ${word}${n === 1 ? '' : 's'}`;
+
 // Genre / form / audience are shared by the Candidates and Read tabs, so the counts
-// have to be rebuilt per view — showing 239 adult candidates while looking at 48 read
-// books would be a plain lie. The selection survives the rebuild when the value still
-// exists on the new tab, which is what makes "children's + YA" carry across.
+// are rebuilt per view: 239 adult candidates shown beside 48 read books would be a lie.
+// A selection survives the rebuild when its value exists on the new tab.
 function fillFacets(view, want = {}) {
   const rows = view === 'read' ? D.read.rows : D.books.filter(b => !b.blocked);
   const facet = (key, dict) => {
@@ -650,14 +710,13 @@ function fillFacets(view, want = {}) {
     return Object.keys(n).sort((a, c) => n[c] - n[a]).map(v => [v, `${dict[v] || v} (${n[v]})`]);
   };
   for (const [id, all, pairs] of [
-    ['genre', 'all genres', facet('genre', GENRE).concat(Object.keys(TAGS)
+    ['genre', 'All genres', facet('genre', GENRE).concat(Object.keys(TAGS)
       .map(t => [t, rows.filter(b => b.tags.includes(t)).length]).filter(([, n]) => n)
       .map(([t, n]) => [t, `— ${TAGS[t]} (${n})`]))],
-    ['form', 'any form', facet('form', FORM)],
-    // 'kids' is a convenience union, not a stored value: the question actually asked
-    // is "show me the children's shelf", which is ya + childrens together.
-    ['audience', 'any audience', facet('audience', AUDIENCE).concat([['kids', "— children's + YA"]])],
-    ['origin', 'any origin', facet('origin', ORIGIN)],
+    ['form', 'Any form', facet('form', FORM)],
+    // 'kids' is a convenience union, not a stored value: ya + childrens together.
+    ['audience', 'Any audience', facet('audience', AUDIENCE).concat([['kids', "— children's + YA"]])],
+    ['origin', 'Any origin', facet('origin', ORIGIN)],
   ]) {
     const keep = want[id] ?? F(id).value;
     fillSelect(id, all, pairs);
@@ -665,65 +724,67 @@ function fillFacets(view, want = {}) {
   }
 }
 
+// E-loans are a route the reader keeps apart (2026-10-24): only the options that name
+// them include them, and the default is print.
+const ACCESS = [
+  ['cz', 'CZ print', b => b.hasCz],
+  ['czv', 'Valašské Meziříčí', b => b.lib === 'valmez'],
+  ['czr', 'Rožnov', b => b.lib === 'roznov'],
+  ['cze', 'CZ print or e-loan', b => b.hasCz || b.hasEloan],
+  ['eloan', 'E-loan only', b => b.hasEloan],
+  ['engem', 'English gems', b => b.enGem],
+  ['none', 'No route yet', b => !b.hasCz && !b.hasEloan],
+];
+
 function fillAccess() {
   const live = D.books.filter(x => !x.blocked);
-  const n = f => live.filter(f).length;
-  fillSelect('access', 'any', [
-    ['cz', `CZ print (${n(x => x.hasCz)})`],
-    ['czv', `CZ print — Valašské Meziříčí (${n(x => x.lib === 'valmez')})`],
-    ['czr', `CZ print — Rožnov (${n(x => x.lib === 'roznov')})`],
-    ['eloan', `library e-loan only (${n(x => x.hasEloan)})`],
-    ['engem', `English gems, not in either library (${n(x => x.enGem)})`],
-    ['none', `no route yet (${n(x => !x.hasCz && !x.hasEloan)})`],
-  ]);
+  fillSelect('access', 'Any access', ACCESS.map(([v, label, f]) => [v, `${label} (${live.filter(f).length})`]));
   F('access').value = 'cz';
-  const blocked = D.books.length - live.length, eloans = n(x => x.hasEloan);
-  document.getElementById('nblocked').textContent = blocked ? ` (${blocked})` : '';
-  document.getElementById('neloans').textContent = eloans ? ` (${eloans})` : '';
+  const blocked = D.books.length - live.length;
+  F('nblocked').textContent = blocked ? ` ${blocked}` : '';
 }
 
-function banners() {
+// Off this PC only the critical ones show: the rest are data gaps fixed by running a tool.
+function notices() {
   const out = [];
+  const add = (crit, html, list = [], cls = '') => out.push({ crit, html: `<div class="banner${crit ? ' critical' : ''}">
+    <span class="mark">${crit ? '!' : '·'}</span><div>${html}${
+      list.length ? `<div class="leaned ${cls}">${list.map(esc).join('<br>')}</div>` : ''}</div></div>` });
   const drifted = D.books.filter(b => b.drift.length);
-  if (drifted.length) out.push(`<div class="banner critical"><span class="mark">!</span><div>
-    <b>${drifted.length} estimate${drifted.length > 1 ? 's' : ''} carry a stale dependency.</b>
-    That can only mean a <code>/book-log</code> run did not finish its PROPAGATE phase, or the
-    profile was edited by hand. These numbers were derived under a rule that has since changed —
-    run <code>/book-log</code> before trusting them.
-    <div class="leaned">${drifted.map(b => esc(b.key) + ' — ' + esc(b.drift.join(', '))).join('<br>')}</div>
-  </div></div>`);
-  if (D.read.bad.length) out.push(`<div class="banner critical"><span class="mark">!</span><div>
-    <b>${D.read.bad.length} unparsable row${D.read.bad.length > 1 ? 's' : ''} in books-read.md.</b>
-    Shown rather than dropped, so the read list is never silently short:
-    <div class="leaned err">${D.read.bad.map(esc).join('<br>')}</div>
-  </div></div>`);
-  if (D.read.unfaceted.length) out.push(`<div class="banner"><span class="mark">·</span><div>
-    <b>${D.read.unfaceted.length} read book${D.read.unfaceted.length === 1 ? '' : 's'} without genre, form or audience.</b>
-    The Read tab's facet filters exclude ${D.read.unfaceted.length === 1 ? 'it' : 'them'} rather than guessing —
-    an unclassified book is not evidence of being adult. Add a row to
-    <code>book-read-facets.json</code>, keyed on the title slug:
-    <div class="leaned">${D.read.unfaceted.map(r => esc(r.key) + ' — ' + esc(r.title)).join('<br>')}</div>
-  </div></div>`);
-  const noOrigin = D.books.filter(b => !b.origin).map(b => b.key)
-    .concat(D.read.unorigined.map(r => r.key));
-  if (noOrigin.length) out.push(`<div class="banner"><span class="mark">·</span><div>
-    <b>${noOrigin.length} book${noOrigin.length === 1 ? '' : 's'} with no origin recorded.</b>
-    The Origin filter excludes ${noOrigin.length === 1 ? 'it' : 'them'} under either value rather
-    than assuming a translation. Add a row to <code>book-origin.json</code> —
-    <code>books</code> keyed on the cache key, <code>read</code> on the title slug —
-    or re-run <code>python tools/fetch-origin.py</code>.
-    <div class="leaned">${noOrigin.map(esc).join('<br>')}</div>
-  </div></div>`);
+  if (drifted.length) add(true, `<b>${plural(drifted.length, 'estimate')} carry a stale dependency</b> — a
+    <code>/book-log</code> PROPAGATE did not finish, or the profile was edited by hand. Run
+    <code>/book-log</code> before trusting them.`, drifted.map(b => b.key + ' — ' + b.drift.join(', ')));
+  if (D.read.bad.length) add(true, `<b>${plural(D.read.bad.length, 'unparsable row')} in books-read.md</b>`,
+    D.read.bad, 'err');
+  if (D.read.unfaceted.length) add(false, `<b>${plural(D.read.unfaceted.length, 'read book')} without genre,
+    form or audience</b> — invisible to the facet filters. Add them to <code>book-read-facets.json</code> by title slug.`,
+    D.read.unfaceted.map(r => r.key + ' — ' + r.title));
+  const nr = D.read.unrated.length;
+  if (state.view === 'read' && nr) add(false, `<b>${nr} of ${plural(D.read.rows.length, 'read book')} have no
+    radar</b> — rate them in the sheet <code>python tools/radar.py xlsx</code> writes, then
+    <code>python tools/radar.py import</code>.`);
+  const noOrigin = D.books.filter(b => !b.origin).map(b => b.key).concat(D.read.unorigined.map(r => r.key));
+  if (noOrigin.length) add(false, `<b>${plural(noOrigin.length, 'book')} with no origin</b> — invisible to the
+    Origin filter. Add them to <code>book-origin.json</code> or run <code>python tools/fetch-origin.py</code>.`, noOrigin);
   const nc = D.books.filter(b => NO_COVER(b.media)).length
            + D.read.rows.filter(r => NO_COVER(r.media)).length
            + D.rejects.filter(r => NO_COVER(r.media) && !HEADING_VETO(r)).length;
   const nb = D.books.filter(b => !b.media.blurb).length;
-  if (nc || nb) out.push(`<div class="banner"><span class="mark">·</span><div>
-    ${nc} row${nc === 1 ? '' : 's'} without a cover${nb ? ` and ${nb} candidate${nb === 1 ? '' : 's'} without a blurb` : ''} —
-    a gap in <code>book-media.json</code>, not an error.
-    Run <code>python tools/fetch-media.py &lt;today&gt;</code> to refill.
-  </div></div>`);
-  return out.join('');
+  if (nc || nb) add(false, `<b>${[nc && plural(nc, 'row') + ' without a cover', nb && plural(nb, 'candidate') +
+    ' without a blurb'].filter(Boolean).join(', ')}</b> — run <code>python tools/fetch-media.py &lt;today&gt;</code>.`);
+  const unmapped = D.sim ? mapBuild().unmapped : 0;
+  if (unmapped) add(false, `<b>${plural(unmapped, 'book')} not on the map</b> — profile them with
+    <code>python tools/similarity.py</code>.`);
+  return LOOPBACK ? out : out.filter(n => n.crit);
+}
+
+function renderNotices() {
+  const list = notices(), box = F('noticebox'), btn = F('notices');
+  box.hidden = !list.length;
+  if (!list.length) box.open = false;
+  btn.classList.toggle('critical', list.some(n => n.crit));
+  btn.textContent = (list.some(n => n.crit) ? '! ' : '') + plural(list.length, 'notice');
+  F('noticelist').innerHTML = list.map(n => n.html).join('');
 }
 
 // cache.obalkyknih.cz serves only registered library catalogues by Referer: it accepts
@@ -738,11 +799,6 @@ function cover(media, fallback) {
     : `<div class="cover-ph">${esc(fallback)}</div>`;
 }
 
-function bar(view, lo, hi, tone, label) {
-  const l = pctIn(lo, view), w = Math.max(3, pctIn(hi, view) - l);
-  return `<span class="bar ${tone}" title="${esc(label)}"><i style="left:${l}%;width:${w}%"></i></span>`;
-}
-
 // Takes already-escaped html. The toggle stays hidden until markClips() has
 // measured the paragraph, so cards with a short reason never grow a dead button.
 function whyBlock(html) {
@@ -755,27 +811,98 @@ const VERDICT_ORDER = ['fires', 'costs', 'unknown', 'earns', 'clear'];
 function dossierBlock(d) {
   const axes = Object.entries(d.axes || {})
     .sort(([, a], [, b]) => VERDICT_ORDER.indexOf(a.v) - VERDICT_ORDER.indexOf(b.v));
-  const pre = d.pre && d.pre.est ? ` · before the dive ${rng(d.pre.est[0], d.pre.est[1])}` : '';
+  const pre = d.pre && d.pre.est ? `, was ${rng(d.pre.est[0], d.pre.est[1])}` : '';
   const items = axes.map(([id, a]) => {
     const src = (a.src || []).filter(u => /^https?:\/\//.test(u))
       .map((u, i) => `<a href="${esc(u)}" target="_blank" rel="noopener">${i + 1}</a>`).join(' ');
     return `<li><span class="v ${esc(a.v)}">${esc(a.v)}</span> · ${esc(nice(id))} — ${esc(a.note || '')}` +
       (src ? `<span class="src">[${src}]</span>` : '') + '</li>';
   }).join('');
-  return `<details class="dossier"><summary>Deep-dive evidence, ${axes.length} axes, ${esc(d.at || '')}${pre}</summary>
+  return `<details class="dossier"><summary>Deep dive ${esc(d.at || '')}${pre}</summary>
     <ul>${items}</ul></details>`;
 }
 
+// The labels reach further right ("Coherence 10") than left, hence cx left of centre.
+const RADAR = { w: 232, h: 144, cx: 112, cy: 74, r: 50, pad: 8, dyLow: 9 };
+
+function radarAt(i, v) {
+  const g = RADAR, a = (i / SPOKES.length - 0.25) * 2 * Math.PI, d = g.r * v / 10;
+  return [g.cx + Math.cos(a) * d, g.cy + Math.sin(a) * d];
+}
+const radarPt = p => p.map(x => x.toFixed(1)).join(' ');
+
+// Only neighbours that are both known are joined, so an unknown spoke leaves an empty
+// sector. Closing the polygon through it would draw the unknown as a zero.
+function radarShape(r) {
+  let area = '', edge = '';
+  SPOKES.forEach(([k], i) => {
+    const j = (i + 1) % SPOKES.length, k2 = SPOKES[j][0];
+    if (r[k] == null || r[k2] == null) return;
+    const a = radarPt(radarAt(i, r[k])), b = radarPt(radarAt(j, r[k2]));
+    area += `M${RADAR.cx} ${RADAR.cy}L${a}L${b}Z`;
+    edge += `M${a}L${b}`;
+  });
+  return { area, edge };
+}
+
+function radarChart(mine, pred) {
+  const g = RADAR, own = hasRadar(mine), main = own ? mine : pred;
+  if (!hasRadar(main)) return '';
+  const over = own && hasRadar(pred) ? pred : null;
+  const said = (r, k, none) => r[k] == null ? none : String(r[k]);
+  const ring = v => `<path class="rgrid" d="M${SPOKES.map((_, i) => radarPt(radarAt(i, v))).join('L')}Z"/>`;
+  const spokes = `<path class="rgrid" d="${SPOKES.map((_, i) => `M${g.cx} ${g.cy}L${radarPt(radarAt(i, 10))}`).join('')}"/>`;
+  const m = radarShape(main), o = over ? radarShape(over) : null, tone = own ? '' : ' pred';
+  const dots = SPOKES.map(([k], i) => {
+    if (main[k] == null) return '';
+    const [x, y] = radarAt(i, main[k]);
+    return `<circle class="dot" r="2.5" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}"/>`;
+  }).join('');
+  const labels = SPOKES.map(([k, name], i) => {
+    const a = (i / SPOKES.length - 0.25) * 2 * Math.PI, [x, y] = radarAt(i, 10 + g.pad * 10 / g.r), c = Math.cos(a), s = Math.sin(a);
+    const anchor = c > 0.2 ? 'start' : c < -0.2 ? 'end' : 'middle';
+    const dy = s < -0.9 ? -2 : s > 0.5 ? g.dyLow : 3.5;
+    return `<text x="${x.toFixed(1)}" y="${(y + dy).toFixed(1)}" text-anchor="${anchor}"${main[k] == null ? ' class="unk"' : ''}>${
+      name} <tspan class="rv">${said(main, k, '?')}</tspan></text>`;
+  }).join('');
+  const tip = (k, name) => (own
+    ? `${name}: you ${said(mine, k, 'not rated yet')}` + (over ? `, predicted ${said(over, k, 'not settled')}` : '')
+    : `${name}: predicted ${said(pred, k, 'not settled by the evidence')}`) +
+    (k === 'safety' && main.safetyIssue ? ` (${main.safetyIssue})` : '');
+  const hits = SPOKES.map(([k, name], i) =>
+    `<path class="hit" d="M${g.cx} ${g.cy}L${radarPt(radarAt(i - 0.5, 12.5))}L${radarPt(radarAt(i + 0.5, 12.5))}Z"><title>${esc(tip(k, name))}</title></path>`).join('');
+  const aria = (own ? 'Your rating: ' : 'Predicted: ') + SPOKES.map(([k, name]) => `${name} ${said(main, k, 'unknown')}`).join(', ');
+  const key = cls => `<svg width="18" height="6" aria-hidden="true"><path class="edge${cls}" d="M1 3H17"/></svg>`;
+  const cap = (over ? `<span>${key('')}you</span><span>${key(' overlay')}predicted</span>` : '') +
+    (main.safetyIssue ? `<span>Safety: ${esc(main.safetyIssue)}</span>` : '');
+  return `<div class="radarbox">
+    <svg class="radar" viewBox="0 0 ${g.w} ${g.h}" style="width:${g.w}px" role="img" aria-label="${esc(aria)}">${ring(5)}${ring(10)}${spokes}
+      <path class="area${tone}" d="${m.area}"/><path class="edge${tone}" d="${m.edge}"/>${
+      o ? `<path class="edge overlay" d="${o.edge}"/>` : ''}${dots}${labels}${hits}</svg>
+    ${cap ? `<div class="radarcap">${cap}</div>` : ''}
+  </div>`;
+}
+
+const radarFor = row => radarChart(row.radarMine, row.radarPred);
+const radarHead = () => SPOKES.map(([, name]) => `<th class="num">${name}</th>`).join('');
+const radarCells = r => SPOKES.map(([k]) => `<td class="num">${r && r[k] != null ? r[k] : ''}</td>`).join('');
+
+const badge = (cls, text, title = '') =>
+  `<span class="badge ${cls}"${title ? ` title="${esc(title)}"` : ''}>${esc(text)}</span>`;
+const pitchOf = m => m.pitch ? `<p class="pitch">${esc(m.pitch)}</p>` : m.blurb ? `<p class="blurb">${esc(m.blurb)}</p>` : '';
+const tipsOf = (m = {}) => [['The treasure', m.treasure], ['How to read it', m.howto]]
+  .map(([label, text]) => text ? `<p class="howto"><b>${label}</b>${esc(text)}</p>` : '').join('');
+const seriesTips = id => tipsOf(D.seriesMedia[id]);
+
 function shell(o) {
-  return `<article class="card ${o.tone || 'bN'}${o.dim ? ' dim' : ''}">
-    <div class="colside">${cover(o.media, o.fallback)}${o.left || ''}${o.mapId && mapHas(o.mapId)
-      ? `<button type="button" class="tomap" data-tomap="${esc(o.mapId)}">Similar on the map</button>` : ''}${
-      o.mapId ? mapAuthorLink(o.mapId) : ''}</div>
+  return `<article class="card ${o.tone || 'bN'}${o.dim ? ' dim' : ''}" data-key="${esc(o.key)}">
+    <div class="colside">${cover(o.media, o.fallback)}${o.mapId && mapHas(o.mapId)
+      ? `<button type="button" class="tomap" data-tomap="${esc(o.mapId)}">Similar books</button>${mapAuthorLink(o.mapId)}` : ''}</div>
     <div>
       <div class="bk-title">${esc(o.title)}${o.alt ? ` <span class="bk-alt">(${esc(o.alt)})</span>` : ''}</div>
-      <div class="bk-author">${esc(o.author)}${o.meta ? ` <span class="bk-meta">${esc(o.meta)}</span>` : ''}</div>
-      ${o.score || ''}
-      ${o.badges && o.badges.length ? `<div class="badges">${o.badges.join('')}</div>` : ''}
+      ${o.author ? `<div class="bk-author">${esc(o.author)}</div>` : ''}
+      ${o.score != null ? `<div class="rating"><div class="score">${o.score}</div>${o.radar || ''}</div>` : ''}
+      ${o.badges.length ? `<div class="badges">${o.badges.join('')}</div>` : ''}
       ${o.body || ''}
     </div>
   </article>`;
@@ -785,39 +912,26 @@ const LIBRARY = { valmez: 'Městská knihovna Valašské Meziříčí', roznov: 
 const EN_LEVEL = { easy: 'easy English', moderate: 'moderate English' };
 const GEM_LEVELS = Object.keys(EN_LEVEL);
 
+const routeLink = (href, label, title = '') => href
+  ? `<a class="route" href="${esc(href)}" target="_blank" rel="noreferrer"${title ? ` title="${esc(title)}"` : ''}>${esc(label)} ↗</a>`
+  : `<b>${esc(label)}</b>`;
+
 function accessLine(b) {
   const bits = [];
   if (b.cz.state === 'verified') {
-    const d = b.cz.year ? String(b.cz.year) : '';
     const br = b.cz.branches || [];
-    const label = 'Borrow — Czech print' + (b.lib !== 'roznov' ? '' : ', Rožnov library' +
-      (br.length && !br.includes('Rožnov') ? ` (${br.join(', ')} branch)` : ''));
-    const head = b.cz.recordUrl
-      ? `<a class="route" href="${esc(b.cz.recordUrl)}" target="_blank" rel="noreferrer"
-           title="Open the catalogue record at ${LIBRARY[b.lib]}">${label} ↗</a>`
-      : `<b>${label}</b>`;
-    bits.push(head + (d ? ' <em>' + esc(d) : ' <em>') +
-      (b.cz.translator ? (d ? ', ' : '') + 'přel. ' + esc(b.cz.translator) : '') + '</em>' +
-      (b.cz.recordUrl ? '' : ' <span class="leaned">no catalogue link recorded</span>'));
+    const where = b.lib === 'roznov' ? ' · Rožnov' + (br.length && !br.includes('Rožnov') ? ` (${br.join(', ')})` : '') : '';
+    const edition = [b.cz.year, b.cz.translator && 'přel. ' + b.cz.translator].filter(Boolean).join(', ');
+    bits.push(routeLink(b.cz.recordUrl, 'Borrow' + where, LIBRARY[b.lib]) + (edition ? ` <em>${esc(edition)}</em>` : ''));
   }
-  if (b.cz.state === 'eloan') {
-    const d = b.cz.year ? String(b.cz.year) : '';
-    const label = 'Borrow — library e-loan';
-    bits.push((b.cz.recordUrl
-      ? `<a class="route" href="${esc(b.cz.recordUrl)}" target="_blank" rel="noreferrer"
-           title="Open the e-loan record at Městská knihovna Valašské Meziříčí">${label} ↗</a>`
-      : `<b>${label}</b>`) + ` <em>${d ? esc(d) + ', ' : ''}e-book only, no print copy</em>`);
-  }
+  if (b.cz.state === 'eloan')
+    bits.push(routeLink(b.cz.recordUrl, 'E-loan', LIBRARY.valmez) + (b.cz.year ? ` <em>${esc(b.cz.year)}</em>` : ''));
   if (b.enGem) {
-    const ec = b.cache.enCopy;
-    const label = ec ? `Borrow in English — ${ec.library === 'roznov' ? 'Rožnov library' : 'library'}` : 'Read it in English';
-    bits.push((ec ? `<a class="route" href="${esc(ec.recordUrl)}" target="_blank" rel="noreferrer"
-           title="Open the English edition at ${esc(LIBRARY[ec.library])}">${label} ↗</a>` : `<b>${label}</b>`) +
-      ` <em>${esc(EN_LEVEL[b.cache.enText.level])}` + (b.cache.enText.why ? ' — ' + esc(b.cache.enText.why) : '') + '</em>');
+    const ec = b.cache.enCopy, et = b.cache.enText;
+    bits.push((ec ? routeLink(ec.recordUrl, 'Borrow in English' + (ec.library === 'roznov' ? ' · Rožnov' : ''), LIBRARY[ec.library])
+      : routeLink('', 'Read in English')) + ` <em title="${esc(et.why || '')}">${esc(EN_LEVEL[et.level])}</em>`);
   }
-  if (!bits.length) bits.push('<span style="color:var(--ink-muted)">No route verified yet' +
-    (b.cz.state === 'none' ? ' — the catalogue was checked and has no print copy; re-check rather than trusting it' : '') + '</span>');
-  return bits.join('<br>');
+  return bits.join('<br>') || '<em>No route yet</em>';
 }
 
 // A rejected predecessor that does not pass its exclusion on (an access reject) is still unreachable.
@@ -825,51 +939,32 @@ const missingBefore = b => (b.cache.prereq || [])
   .filter(p => p.need === 'hard' && (p.kind === 'absent' || (p.kind === 'rejected' && p.inherits === false)))
   .map(p => p.kind === 'absent' ? p.ref.replace(/^\(|\)$/g, '') : `${p.ref}, rejected`);
 
+// A missing predecessor already says what axis:sequels would.
+const riskBadges = (risks, gapped) => (risks || []).filter(r => !(gapped && r === 'axis:sequels'))
+  .map(r => badge('risk', nice(r), 'Risk'));
+
 function candidateCard(b) {
-  const badges = [];
-  if (b.depth === 'deep') badges.push('<span class="badge deep">deep-dived</span>');
-  if (b.blocked) badges.push(`<span class="badge blocked">blocked · ${esc(nice(b.blocked))}</span>`);
-  const gaps = missingBefore(b);
-  gaps.forEach(g => badges.push(`<span class="badge risk high">high risk · needs ${esc(g)}</span>`));
-  (b.risks || []).filter(r => !(gaps.length && r === 'axis:sequels'))
-    .forEach(r => badges.push(`<span class="badge risk">risk · ${esc(nice(r))}</span>`));
-  if (b.hasCz) badges.push(`<span class="badge cz">CZ print${b.lib === 'roznov' ? ' · Rožnov' : ''}</span>`);
-  if (b.enGem) badges.push('<span class="badge en">English gem</span>');
-  if (b.hasEloan) badges.push('<span class="badge eloan">e-loan</span>');
-  b.stale.forEach(s => badges.push(`<span class="badge stale">re-verify · ${esc(s)}</span>`));
-
-  const score = b.est
-    ? `<div class="scoreblock">
-         <div class="scorerow"><span class="score tinted">${rng(b.est[0], b.est[1])}</span>
-           <span class="scorelabel">predicted, out of 10</span></div>
-         ${bar('candidates', b.est[0], b.est[1], cls(b.mid), `Predicted ${rng(b.est[0], b.est[1])} out of 10, conditional on no risk firing`)}
-       </div>`
-    : `<div class="scoreblock"><div class="scorerow">
-         <span class="bandletter small">—</span>
-         <span class="scorelabel">excluded, fails a hard filter</span></div></div>`;
-
-  const czt = b.cache.czTitle, en = b.cache.title;
+  const gaps = missingBefore(b), czt = b.cache.czTitle, en = b.cache.title;
   return shell({
-    media: b.media, fallback: b.cache.author || '', dim: !!b.blocked, mapId: 'c:' + b.key,
-    tone: b.est ? tone(b.mid) : 'bN',
+    key: b.key, media: b.media, fallback: b.cache.author || '', dim: !!b.blocked, mapId: 'c:' + b.key,
+    tone: b.est ? tone(b.mid) : 'bN', score: b.est ? rng(b.est[0], b.est[1]) : '—',
     title: czt || en, alt: czt && en && czt !== en ? en : '',
     author: (b.cache.author || '') + (b.cache.series ? ' · ' + b.cache.series : ''),
-    // 'adult' is the overwhelming default and stating it on 239 of 296 cards is noise.
-    // Same for 'translation', which is 88% of the shelf — only the Czech original is
-    // worth a word.
-    meta: [GENRE[b.genre] || b.genre, ...tagLabels(b.tags), FORM[b.form] || b.form,
-           b.audience !== 'adult' ? AUDIENCE[b.audience] || b.audience : null,
-           b.origin === 'cs' ? ORIGIN.cs : null]
-          .filter(Boolean).join(' · '),
-    score, badges,
-    body: `${b.media.pitch ? `<p class="pitch">${esc(b.media.pitch)}</p>`
-        : b.media.blurb ? `<p class="blurb">${esc(b.media.blurb)}</p>` : ''}
-      <details class="scoring"><summary>Scoring notes</summary>
+    badges: [
+      b.depth === 'deep' && badge('deep', 'deep-dived'),
+      b.blocked && badge('blocked', 'blocked · ' + nice(b.blocked)),
+      ...gaps.map(g => badge('risk high', 'needs ' + g, 'High risk')),
+      ...riskBadges(b.risks, gaps.length),
+      ...b.stale.map(s => badge('stale', 're-verify · ' + s)),
+    ].filter(Boolean),
+    radar: radarFor(b),
+    body: `${pitchOf(b.media)}${tipsOf(b.media)}
+      <div class="access">${accessLine(b)}</div>
+      <details class="scoring"><summary>Why</summary>
         <p class="why">${esc(b.why)}</p>
         ${b.dossier ? dossierBlock(b.dossier) : ''}
-        ${(b.leanedOn || []).length ? `<div class="leaned">Prediction rests on: ${b.leanedOn.map(x => esc(nice(x))).join(', ')}</div>` : ''}
-      </details>
-      <div class="access" style="margin-top:8px">${accessLine(b)}</div>`,
+        ${(b.leanedOn || []).length ? `<div class="leaned">Rests on ${b.leanedOn.map(x => esc(nice(x))).join(', ')}</div>` : ''}
+      </details>`,
   });
 }
 
@@ -886,11 +981,12 @@ function seriesEntry(s) {
     isSeries: true, key: 'series:' + s.id, s, vols, est, mid: est ? (est[0] + est[1]) / 2 : -1,
     blocked: stop ? stop.blocked : null, blockedVol: stop || null,
     risks: [...new Set(vols.flatMap(b => b.risks || []))],
+    radarPred: stop ? null : meanRadar(vols.map(b => b.radarPred)),
     depth: vols.some(b => b.depth === 'deep') ? 'deep' : '',
     cache: { czTitle: s.name, title: s.nameEn || '', author: first.cache.author || '' },
     media: first.media, genre: first.genre, tags: [...new Set(vols.flatMap(b => b.tags))],
     form: first.form, audience: first.audience, origin: first.origin,
-    hasCz: vols.some(b => b.hasCz), allCz: vols.every(b => b.hasCz),
+    hasCz: vols.some(b => b.hasCz),
     hasEloan: !vols.some(b => b.hasCz) && vols.some(b => b.hasEloan),
     enGem: vols.some(b => b.enGem), lib: first.lib,
     hay: [s.name, s.nameEn, 'series', ...vols.map(b => b.hay)].join(' ').toLowerCase(),
@@ -910,55 +1006,37 @@ function groupSeries(books) {
 function volumeLine(b) {
   const czt = b.cache.czTitle, en = b.cache.title;
   const range = b.blocked ? `blocked · ${esc(nice(b.blocked))}` : b.est ? rng(b.est[0], b.est[1]) : '—';
-  const access = b.hasCz
-    ? (b.cz.recordUrl ? `<a class="route" href="${esc(b.cz.recordUrl)}" target="_blank" rel="noreferrer">CZ print ↗</a>` : 'CZ print')
+  const access = b.hasCz ? (b.cz.recordUrl ? routeLink(b.cz.recordUrl, 'Borrow') : 'CZ print')
     : b.hasEloan ? 'e-loan only'
-    : b.enGem ? (b.cache.enCopy ? `<a class="route" href="${esc(b.cache.enCopy.recordUrl)}" target="_blank" rel="noreferrer">English gem, EN copy ↗</a>` : 'English gem')
+    : b.enGem ? (b.cache.enCopy ? routeLink(b.cache.enCopy.recordUrl, 'Borrow in English') : 'English gem')
     : 'not in print here';
   return `${esc(czt || en)}${czt && en && czt !== en ? ` <span class="vr">(${esc(en)})</span>` : ''}
     <span class="vr">· ${range} · ${access}${missingBefore(b).map(g => ` · needs ${esc(g)}`).join('')}</span>
-    <details class="scoring"><summary>Scoring notes</summary><p class="why">${esc(b.why)}</p></details>`;
+    <details class="scoring"><summary>Why</summary><p class="why">${esc(b.why)}</p></details>`;
 }
 
+const volumeList = s => `<ol class="vols">${s.members.map(m =>
+  `<li${m.n ? ` value="${+m.n}"` : ''}>${volumeLine(m.book)}</li>`).join('')}</ol>`;
+
 function seriesCard(e) {
-  const s = e.s, n = e.vols.length;
-  const badges = [`<span class="badge series">series · ${n}${s.volumes ? ' of ' + s.volumes : ''} volume${
-    (s.volumes || n) === 1 ? '' : 's'} on the shelf</span>`];
-  if (s.read.length) badges.push(`<span class="badge series">${s.read.length} already read</span>`);
-  if (e.blocked) badges.push(`<span class="badge blocked">blocked · ${esc(nice(e.blocked))} · ${
-    esc(e.blockedVol.cache.czTitle || e.blockedVol.cache.title)}</span>`);
-  const gapped = e.vols.some(b => missingBefore(b).length);
-  if (gapped) badges.push('<span class="badge risk high">high risk · earlier volumes not on the shelf</span>');
-  e.risks.filter(r => !(gapped && r === 'axis:sequels'))
-    .forEach(r => badges.push(`<span class="badge risk">risk · ${esc(nice(r))}</span>`));
-  if (e.hasCz) badges.push(`<span class="badge cz">CZ print${e.allCz ? '' : ' · not every volume'}</span>`);
-  if (e.hasEloan) badges.push('<span class="badge eloan">e-loan</span>');
-  const score = e.est
-    ? `<div class="scoreblock">
-         <div class="scorerow"><span class="score tinted">${rng(e.est[0], e.est[1])}</span>
-           <span class="scorelabel">predicted, whole series, out of 10</span></div>
-         ${bar('candidates', e.est[0], e.est[1], cls(e.mid), `Mean of the ${n} volumes' predicted ranges`)}
-       </div>`
-    : `<div class="scoreblock"><div class="scorerow">
-         <span class="bandletter small">—</span>
-         <span class="scorelabel">excluded, a volume fails a hard filter</span></div></div>`;
-  const first = e.vols[0];
+  const s = e.s, gapped = e.vols.some(b => missingBefore(b).length);
   const done = [...s.read.map(t => 'read: ' + t), ...s.rejected.map(t => 'rejected: ' + t)];
-  const missing = s.volumes ? s.volumes - n - s.read.length - s.rejected.length : 0;
-  if (missing > 0) done.push(`${missing} more volume${missing === 1 ? '' : 's'} not on the shelf — not held in Czech print, or not screened yet`);
+  const missing = s.volumes ? s.volumes - e.vols.length - s.read.length - s.rejected.length : 0;
+  if (missing > 0) done.push(`${missing} more not on the shelf`);
   return shell({
-    media: e.media, fallback: e.cache.author, dim: !!e.blocked, mapId: 's:' + s.id,
-    tone: e.est ? tone(e.mid) : 'bN',
-    title: s.name, alt: s.nameEn && s.nameEn !== s.name ? s.nameEn : '',
-    author: e.cache.author,
-    meta: [GENRE[e.genre] || e.genre, ...tagLabels(e.tags),
-           e.audience !== 'adult' ? AUDIENCE[e.audience] || e.audience : null,
-           e.origin === 'cs' ? ORIGIN.cs : null].filter(Boolean).join(' · '),
-    score, badges,
-    body: `${first.media.pitch ? `<p class="pitch">${esc(first.media.pitch)}</p>`
-        : first.media.blurb ? `<p class="blurb">${esc(first.media.blurb)}</p>` : ''}
+    key: e.key, media: e.media, fallback: e.cache.author, dim: !!e.blocked, mapId: 's:' + s.id,
+    tone: e.est ? tone(e.mid) : 'bN', score: e.est ? rng(e.est[0], e.est[1]) : '—',
+    title: s.name, alt: s.nameEn && s.nameEn !== s.name ? s.nameEn : '', author: e.cache.author,
+    badges: [
+      badge('series', 'Series' + (s.volumes ? ' · ' + plural(s.volumes, 'volume') : '')),
+      e.blocked && badge('blocked', `blocked · ${nice(e.blocked)} · ${e.blockedVol.cache.czTitle || e.blockedVol.cache.title}`),
+      gapped && badge('risk high', 'needs earlier volumes', 'High risk'),
+      ...riskBadges(e.risks, gapped),
+    ].filter(Boolean),
+    radar: radarFor(e),
+    body: `${pitchOf(e.media)}${seriesTips(s.id)}
       ${done.length ? `<div class="vols-done">${done.map(esc).join(' · ')}</div>` : ''}
-      <ol class="vols">${s.members.map(m => `<li${m.n ? ` value="${+m.n}"` : ''}>${volumeLine(m.book)}</li>`).join('')}</ol>
+      ${volumeList(s)}
       ${s.note ? `<div class="leaned">${esc(s.note)}</div>` : ''}`,
   });
 }
@@ -971,6 +1049,7 @@ function readSeriesEntry(s) {
   const score = scored.length ? Math.round(scored.reduce((t, r) => t + r.score, 0) / scored.length) : null;
   return {
     isSeries: true, key: 'rs:' + s.id, s, vols, score,
+    radarMine: meanRadar(vols.map(r => r.radarMine)), radarPred: meanRadar(vols.map(r => r.radarPred)),
     title: s.name, alt: s.nameEn && s.nameEn !== s.name ? s.nameEn : '', author: first.author,
     media: first.media, genre: first.genre, tags: [...new Set(vols.flatMap(r => r.tags))], form: first.form,
     audience: first.audience, origin: first.origin,
@@ -990,71 +1069,44 @@ function groupReadSeries(rows) {
 }
 
 function readVolumes(vols) {
-  return `<ol class="vols">${vols.map(r => `<li>${esc(r.title)} <span class="vr">· ${r.score == null ? 'not finished, no score' : ten(r.score)}</span>
-    ${r.notes ? `<details class="scoring"><summary>Your notes</summary><p class="why">${esc(r.notes)}</p></details>` : ''}</li>`).join('')}</ol>`;
+  return `<ol class="vols">${vols.map(r => `<li>${esc(r.title)} <span class="vr">· ${r.score == null ? 'not finished' : ten(r.score)}</span>
+    ${r.notes ? `<details class="scoring"><summary>Notes</summary><p class="why">${esc(r.notes)}</p></details>` : ''}</li>`).join('')}</ol>`;
 }
 
+const readScore = x => x.score == null ? '—' : ten(x.score);
+
 function readSeriesCard(e) {
-  const s = e.s, n = e.vols.length, scores = e.vols.map(r => r.score).filter(v => v != null);
-  const badges = [`<span class="badge series">series · ${s.readWhole ? (n > 1 ? `read whole, logged in ${n} parts` : 'read whole, logged as one entry')
-    : `${n}${s.volumes ? ' of ' + s.volumes : ''} volume${(s.volumes || n) === 1 ? '' : 's'} read`}</span>`];
-  const left = D.series[s.id] ? D.series[s.id].members.length : 0;
-  if (left) badges.push(`<span class="badge series">${left} more on the Candidates tab</span>`);
-  const score = e.score == null
-    ? `<div class="scoreblock"><div class="scorerow">
-         <span class="bandletter small">—</span>
-         <span class="scorelabel">not finished, no score</span></div></div>`
-    : `<div class="scoreblock">
-    <div class="scorerow"><span class="score tinted">${ten(e.score)}</span>
-      <span class="scorelabel">${scores.length > 1 ? `out of 10, average · volumes ${rng(Math.min(...scores), Math.max(...scores))}` : 'out of 10'}</span></div>
-    ${bar('read', Math.min(...scores), Math.max(...scores), cls(e.score), scores.length > 1 ? `Volumes scored ${scores.map(ten).join(', ')}` : `Scored ${ten(e.score)}`)}</div>`;
+  const s = e.s, n = e.vols.length, left = D.series[s.id] ? D.series[s.id].members.length : 0;
   return shell({
-    media: e.media, fallback: e.author, title: e.title, alt: e.alt, author: e.author, score, mapId: 'rs:' + s.id,
-    tone: e.score == null ? 'bN' : tone(e.score),
-    meta: [GENRE[e.genre] || e.genre, ...tagLabels(e.tags),
-           e.audience && e.audience !== 'adult' ? AUDIENCE[e.audience] || e.audience : null,
-           e.origin === 'cs' ? ORIGIN.cs : null].filter(Boolean).join(' · '),
-    badges,
-    body: n > 1 ? readVolumes(e.vols) : e.notes ? whyBlock(esc(e.notes)) : '',
+    key: e.key, media: e.media, fallback: e.author, title: e.title, alt: e.alt, author: e.author, mapId: 'rs:' + s.id,
+    tone: e.score == null ? 'bN' : tone(e.score), score: readScore(e),
+    badges: [
+      badge('series', 'Series · ' + (s.readWhole ? 'read whole' : `${n}${s.volumes ? ' of ' + s.volumes : ''} read`)),
+      left && badge('', `${left} more to read`),
+    ].filter(Boolean),
+    radar: radarFor(e),
+    body: seriesTips(s.id) + (n > 1 ? readVolumes(e.vols) : e.notes ? whyBlock(esc(e.notes)) : ''),
   });
 }
 
+// Unscored books already sit under their own "Not finished" heading.
 function readCard(r) {
-  const unscored = r.score == null;
-  const score = unscored
-    ? `<div class="scoreblock"><div class="scorerow">
-         <span class="bandletter small">—</span>
-         <span class="scorelabel">not finished, no score</span></div></div>`
-    : `<div class="scoreblock">
-    <div class="scorerow"><span class="score tinted">${ten(r.score)}</span>
-      <span class="scorelabel">out of 10</span></div>
-    ${bar('read', r.score, r.score, cls(r.score), `Scored ${ten(r.score)} out of 10`)}</div>`;
-  const dnf = unscored || /(^|[^A-Za-z])DNF([^A-Za-z]|$)|abandon|unfinished/i.test(r.notes);
+  const dnf = r.score != null && /(^|[^A-Za-z])DNF([^A-Za-z]|$)|abandon|unfinished/i.test(r.notes);
   return shell({
-    media: r.media, fallback: r.author, title: r.title, author: r.author, score, mapId: 'r:' + r.key,
-    tone: unscored ? 'bN' : tone(r.score),
-    meta: [GENRE[r.genre] || r.genre, ...tagLabels(r.tags), FORM[r.form] || r.form,
-           r.audience && r.audience !== 'adult' ? AUDIENCE[r.audience] || r.audience : null,
-           r.origin === 'cs' ? ORIGIN.cs : null]
-          .filter(Boolean).join(' · '),
-    badges: dnf ? ['<span class="badge blocked">did not finish</span>'] : [],
-    body: r.notes ? whyBlock(esc(r.notes)) : '',
+    key: r.key, media: r.media, fallback: r.author, title: r.title, author: r.author, mapId: 'r:' + r.key,
+    tone: r.score == null ? 'bN' : tone(r.score), score: readScore(r),
+    badges: dnf ? [badge('', 'did not finish')] : [],
+    radar: radarFor(r),
+    body: tipsOf(r.media) + (r.notes ? whyBlock(esc(r.notes)) : ''),
   });
 }
 
 function rejectCard(r) {
-  const score = `<div class="scoreblock"><div class="scorerow">
-    <span class="bandletter small">—</span>
-    <span class="scorelabel">excluded, ${esc(nice(r.filter))}</span></div></div>`;
   return shell({
-    media: r.media, fallback: r.level === 'category' ? 'category' : r.author,
-    dim: true, tone: 'bN', title: r.entity,
-    author: r.author || (r.level === 'category' ? 'whole category' : 'author not recorded'),
-    score,
-    badges: [`<span class="badge blocked">${esc(nice(r.filter))}</span>`,
-             `<span class="badge scope">${esc(r.level)}-level</span>`],
-    body: `${whyBlock(esc(r.why))}
-      <div class="leaned">Recorded ${esc(r.at)} · ${esc(r.source)}</div>`,
+    key: r.entity, media: r.media, fallback: r.level === 'category' ? '' : r.author,
+    title: r.entity, author: r.author,
+    badges: [badge('blocked', nice(r.filter)), r.level !== 'title' && badge('', 'whole ' + r.level)].filter(Boolean),
+    body: whyBlock(esc(r.why)),
   });
 }
 
@@ -1078,13 +1130,14 @@ const F = id => document.getElementById(id);
 
 // Shared by the Candidates tab and the map, which dims what this rejects.
 function candidateFilter() {
-  const q = F('q').value.trim().toLowerCase(), acc = F('access').value;
-  const min = +F('minscore').value;
+  const q = F('q').value.trim().toLowerCase(), min = +F('minscore').value;
   const gen = F('genre').value, frm = F('form').value, aud = F('audience').value;
-  const org = F('origin').value, eloans = F('eloans').checked, kind = F('kind').value;
+  const org = F('origin').value, kind = F('kind').value;
+  const norisk = F('norisk').checked, deep = F('deeponly').checked, blocked = F('showblocked').checked;
+  const route = (ACCESS.find(([v]) => v === F('access').value) || [])[2] || (() => true);
   return b => {
     if (kind === 'series' ? !b.isSeries : kind === 'single' && b.isSeries) return false;
-    if (F('hideblocked').checked && b.blocked) return false;
+    if (!blocked && b.blocked) return false;
     if (q && !b.hay.includes(q)) return false;
     if (!genreMatch(b, gen)) return false;
     if (frm && b.form !== frm) return false;
@@ -1092,54 +1145,33 @@ function candidateFilter() {
     // A book with no origin row is excluded by either value rather than defaulting to
     // 'translation', for the same reason an unfaceted read row is not adult by default.
     if (org && b.origin !== org) return false;
-    if (F('norisk').checked && ((b.risks || []).length || b.blocked)) return false;
-    if (F('deeponly').checked && b.depth !== 'deep') return false;
+    if (norisk && ((b.risks || []).length || b.blocked)) return false;
+    if (deep && b.depth !== 'deep') return false;
     if (min && !(b.est && b.est[0] >= min)) return false;
-    // E-loans are a route the reader keeps apart (2026-10-24): hidden until asked for,
-    // and then counted as a Czech route.
-    const cz = b.hasCz || (eloans && b.hasEloan);
-    if (acc === 'eloan') return b.hasEloan;
-    if (acc === 'engem') return b.enGem;
-    if (!eloans && b.hasEloan) return false;
-    if (acc === 'cz' && !cz) return false;
-    if (acc === 'czv' && b.lib !== 'valmez') return false;
-    if (acc === 'czr' && b.lib !== 'roznov') return false;
-    if (acc === 'none' && (b.hasCz || b.hasEloan)) return false;
-    return true;
+    return route(b);
   };
 }
 
+const EMPTY = '<div class="empty">No matches</div>';
+const grid = cards => `<div class="grid">${cards.join('')}</div>`;
+const table = (head, rows) =>
+  `<div class="tablewrap"><table><thead><tr>${head}</tr></thead><tbody>${rows.join('')}</tbody></table></div>`;
+const setCount = text => { F('count').textContent = text; };
+
 function candidates() {
-  const sort = F('sort').value;
-  const gen = F('genre').value, frm = F('form').value, aud = F('audience').value;
-  const org = F('origin').value;
-  const all = groupSeries(D.books);
-  let rows = all.filter(candidateFilter());
-  if (!rows.length) return '<div class="empty">Nothing matches those filters.</div>';
-  rows = sortBy(rows, sort);
-  const facetNote = [gen ? GENRE[gen] || TAGS[gen] || gen : null, frm ? FORM[frm] || frm : null,
-    aud ? (aud === 'kids' ? "children's + YA" : AUDIENCE[aud] || aud) : null,
-    org ? ORIGIN[org] || org : null].filter(Boolean).join(' · ');
-  const nSeries = rows.filter(b => b.isSeries).length;
-  const head = `<div class="grouphead">${rows.length} of ${all.length}${
-      nSeries ? ` (${nSeries} of them series, each shown once)` : ''}${
-      facetNote ? ' · ' + esc(facetNote) : ''} ${LEGEND}
-    <span>· predicted range out of 10; the range assumes no listed risk fires</span></div>`;
-  return head + (F('astable').checked
-    ? `<table><thead><tr><th>Book</th><th>Author</th><th>Genre</th><th class="num">Predicted</th>
-        <th>Risks</th><th>Access</th><th>Why read it</th></tr></thead><tbody>
-        ${rows.map(b => `<tr class="${b.est ? tone(b.mid) : 'bN'}"><td>${b.isSeries ? `<b>Series:</b> ` : ''}${esc(b.cache.czTitle || b.cache.title)}${
-            b.cache.czTitle && b.cache.title && b.cache.czTitle !== b.cache.title ? ' (' + esc(b.cache.title) + ')' : ''}</td>
-          <td>${esc(b.cache.author || '')}</td>
-          <td>${esc([GENRE[b.genre] || b.genre, ...tagLabels(b.tags), FORM[b.form] || b.form,
-                     b.audience !== 'adult' ? AUDIENCE[b.audience] || b.audience : null,
-                     b.origin === 'cs' ? ORIGIN.cs : null]
-                    .filter(Boolean).join(', '))}</td>
-          <td class="num">${b.est ? rng(b.est[0], b.est[1]) : 'blocked'}</td>
-          <td>${(b.blocked ? ['blocked: ' + nice(b.blocked)] : []).concat((b.risks || []).map(nice)).map(esc).join(', ')}</td>
-          <td>${b.hasCz ? 'CZ print' : b.hasEloan ? 'e-loan' : b.enGem ? 'English gem' : '—'}</td>
-          <td>${esc(b.media.pitch || b.media.blurb || '')}</td></tr>`).join('')}</tbody></table>`
-    : `<div class="grid">${rows.map(b => b.isSeries ? seriesCard(b) : candidateCard(b)).join('')}</div>`);
+  const rows = sortBy(groupSeries(D.books).filter(candidateFilter()), F('sort').value);
+  setCount(plural(rows.length, 'book'));
+  if (!rows.length) return EMPTY;
+  if (!F('astable').checked) return grid(rows.map(b => b.isSeries ? seriesCard(b) : candidateCard(b)));
+  return table(`<th>Book</th><th>Author</th><th>Genre</th><th class="num">Predicted</th>${radarHead()}
+      <th>Risks</th><th>Access</th><th>Pitch</th>`,
+    rows.map(b => `<tr class="${b.est ? tone(b.mid) : 'bN'}"><td>${b.isSeries ? '<b>Series:</b> ' : ''}${esc(b.cache.czTitle || b.cache.title)}${
+        b.cache.czTitle && b.cache.title && b.cache.czTitle !== b.cache.title ? ' (' + esc(b.cache.title) + ')' : ''}</td>
+      <td>${esc(b.cache.author || '')}</td><td>${esc(facetText(b))}</td>
+      <td class="num">${b.est ? rng(b.est[0], b.est[1]) : 'blocked'}</td>${radarCells(b.radarPred)}
+      <td>${(b.blocked ? ['blocked: ' + nice(b.blocked)] : []).concat((b.risks || []).map(nice)).map(esc).join(', ')}</td>
+      <td>${b.hasCz ? 'CZ print' : b.hasEloan ? 'e-loan' : b.enGem ? 'English gem' : '—'}</td>
+      <td>${esc(b.media.pitch || b.media.blurb || '')}</td></tr>`));
 }
 
 function readFilter() {
@@ -1161,60 +1193,43 @@ function readFilter() {
   };
 }
 
+const readEntryCard = r => r.isSeries ? readSeriesCard(r) : readCard(r);
+
 function readView() {
-  const gen = F('genre').value, frm = F('form').value, aud = F('audience').value;
-  const org = F('origin').value;
-  const all = groupReadSeries(D.read.rows);
-  const kept = all.filter(readFilter());
-  if (!kept.length) return '<div class="empty">Nothing matches those filters.</div>';
+  const kept = groupReadSeries(D.read.rows).filter(readFilter());
   // Put down for lack of interest, not disliked (reader, 2026-10-29): kept apart from the
   // scored books so they never sit among the low scores.
   const unfinished = sortBy(kept.filter(r => r.score == null), 'title');
-  let rows = sortBy(kept.filter(r => r.score != null), F('sort').value);
-  const facetNote = [gen ? GENRE[gen] || TAGS[gen] || gen : null, frm ? FORM[frm] || frm : null,
-    aud ? (aud === 'kids' ? "children's + YA" : AUDIENCE[aud] || aud) : null,
-    org ? ORIGIN[org] || org : null].filter(Boolean).join(' · ');
-  const mean = rows.length ? ten(rows.reduce((s, r) => s + r.score, 0) / rows.length) : '—';
-  const nSeries = rows.filter(r => r.isSeries).length;
-  const head = `<div class="grouphead">${rows.length} of ${all.length} read${
-      nSeries ? ` (${nSeries} of them series, each shown once)` : ''}${
-      facetNote ? ' · ' + esc(facetNote) : ''} ${LEGEND}
-    <span>· your scores out of 10. This is the scale every prediction is anchored against.${
-      facetNote ? ` Mean of this slice: <b>${mean}</b> — a small-sample average, not a rule.` : ''}</span></div>`;
-  return head + (F('astable').checked
-    ? `<table><thead><tr><th class="num">Score</th><th>Book</th><th>Author</th>
-        <th>Genre</th><th>Notes</th></tr></thead><tbody>${rows.concat(unfinished).map(r => `<tr class="${r.score == null ? 'bN' : tone(r.score)}">
-        <td class="num">${r.score == null ? 'not finished' : ten(r.score)}</td>
-        <td>${r.isSeries ? '<b>Series:</b> ' : ''}${esc(r.title)}</td><td>${esc(r.author)}</td>
-        <td>${esc([GENRE[r.genre] || r.genre, ...tagLabels(r.tags), FORM[r.form] || r.form,
-                   r.audience && r.audience !== 'adult' ? AUDIENCE[r.audience] || r.audience : null,
-                   r.origin === 'cs' ? ORIGIN.cs : null]
-                  .filter(Boolean).join(', '))}</td>
-        <td>${esc(r.notes)}</td></tr>`).join('')}</tbody></table>`
-    : `<div class="grid">${rows.map(r => r.isSeries ? readSeriesCard(r) : readCard(r)).join('')}</div>` +
-      (unfinished.length ? `<div class="grouphead">Not finished, no score · ${unfinished.length}
-        <span>· put down because they did not hold your interest, not because you disliked them</span></div>
-        <div class="grid">${unfinished.map(r => r.isSeries ? readSeriesCard(r) : readCard(r)).join('')}</div>` : ''));
+  const rows = sortBy(kept.filter(r => r.score != null), F('sort').value);
+  const sliced = ['genre', 'form', 'audience', 'origin'].some(id => F(id).value);
+  setCount(plural(kept.length, 'book') +
+    (sliced && rows.length ? ` · mean ${ten(rows.reduce((s, r) => s + r.score, 0) / rows.length)}` : ''));
+  if (!kept.length) return EMPTY;
+  if (F('astable').checked) return table(`<th class="num">Score</th>${radarHead()}<th>Book</th><th>Author</th>
+      <th>Genre</th><th>Notes</th>`,
+    rows.concat(unfinished).map(r => `<tr class="${r.score == null ? 'bN' : tone(r.score)}">
+      <td class="num">${r.score == null ? 'not finished' : ten(r.score)}</td>${radarCells(r.radarMine)}
+      <td>${r.isSeries ? '<b>Series:</b> ' : ''}${esc(r.title)}</td><td>${esc(r.author)}</td>
+      <td>${esc(facetText(r))}</td><td>${esc(r.notes)}</td></tr>`));
+  return grid(rows.map(readEntryCard)) + (unfinished.length
+    ? `<h2 class="grouphead">Not finished<span>${unfinished.length}</span></h2>${grid(unfinished.map(readEntryCard))}` : '');
 }
 
 function rejectedView() {
   const q = F('q').value.trim().toLowerCase(), f = F('rfilter').value, sc = F('rscope').value;
-  let rows = D.rejects.filter(r => (!q || r.hay.includes(q)) &&
-    (!f || r.filter === f) && (!sc || r.level === sc));
-  if (!rows.length) return '<div class="empty">Nothing matches those filters.</div>';
-  rows = sortBy(rows, F('sort').value);
-  const head = `<div class="grouphead">${rows.length} of ${D.rejects.length} excluded without being read
-    <span>· read-and-disliked books are in the Read tab with a real score, not here.
-    Scope matters: an Earthsea objection must not sink Le Guin.</span></div>`;
-  return head + (F('astable').checked
-    ? `<table><thead><tr><th>Entity</th><th>Author</th><th>Filter</th><th>Scope</th><th>Why</th>
-        </tr></thead><tbody>${rows.map(r => `<tr><td>${esc(r.entity)}</td><td>${esc(r.author)}</td>
-        <td>${esc(nice(r.filter))}</td><td>${esc(r.level)}</td><td>${esc(r.why)}</td></tr>`).join('')}</tbody></table>`
-    : `<div class="grid">${rows.map(rejectCard).join('')}</div>`);
+  const rows = sortBy(D.rejects.filter(r => (!q || r.hay.includes(q)) &&
+    (!f || r.filter === f) && (!sc || r.level === sc)), F('sort').value);
+  setCount(`${rows.length} rejected`);
+  if (!rows.length) return EMPTY;
+  if (!F('astable').checked) return grid(rows.map(rejectCard));
+  return table('<th>Name</th><th>Author</th><th>Filter</th><th>Scope</th><th>Why</th><th>Recorded</th>',
+    rows.map(r => `<tr><td>${esc(r.entity)}</td><td>${esc(r.author)}</td><td>${esc(nice(r.filter))}</td>
+      <td>${esc(r.level)}</td><td>${esc(r.why)}</td><td>${esc([r.at, r.source].filter(Boolean).join(' · '))}</td></tr>`));
 }
 
 function setView(v, want = {}) {
   state.view = v;
+  history.replaceState(null, '', '#' + v);
   document.querySelectorAll('.tab').forEach(t => t.setAttribute('aria-selected', String(t.dataset.view === v)));
   document.querySelectorAll('#filters [data-for]').forEach(el => {
     el.hidden = !el.dataset.for.split(' ').includes(v);
@@ -1223,12 +1238,10 @@ function setView(v, want = {}) {
   if (SORTS[v]) {
     const sel = F('sort'), keep = want.sort ?? sel.value;
     sel.innerHTML = SORTS[v].map(([k, l]) => `<option value="${k}">${esc(l)}</option>`).join('');
-    // Set it explicitly rather than relying on the browser auto-selecting option 0:
-    // sortBy() looks the key up in a map, so an empty value is a crash, not a default.
+    // Explicit, not the browser's option 0: sortBy() looks the key up, so '' would crash.
     sel.value = SORTS[v].some(([k]) => k === keep) ? keep : SORTS[v][0][0];
   }
-  // Filled on every tab, not only the two that show them: a restore straight onto
-  // Rejected would otherwise leave the facets empty and lose the saved genre.
+  // Filled on every tab: a restore straight onto Rejected would otherwise lose the saved genre.
   fillFacets(v === 'read' ? 'read' : 'candidates', want);
   render();
   saveView();
@@ -1237,7 +1250,7 @@ function setView(v, want = {}) {
 const VIEWS = { candidates, read: readView, rejected: rejectedView, map: mapView };
 
 const PREF_SELECTS = ['access', 'genre', 'form', 'audience', 'origin', 'kind', 'minscore', 'rfilter', 'rscope', 'sort'];
-const PREF_CHECKS = ['norisk', 'deeponly', 'hideblocked', 'eloans', 'astable'];
+const PREF_CHECKS = ['norisk', 'deeponly', 'showblocked', 'astable'];
 
 function captureView() {
   const was = { view: state.view };
@@ -1258,10 +1271,10 @@ const saveView = () => store('bookshelf.view', JSON.stringify(captureView()));
 const savedView = () => { try { return JSON.parse(recall('bookshelf.view')) || {}; } catch { return {}; } };
 
 function render() {
-  stamp();
-  document.getElementById('banners').innerHTML = banners();
-  document.getElementById('view').innerHTML = VIEWS[state.view]();
+  renderNotices();
+  F('view').innerHTML = VIEWS[state.view]();
   markClips();
+  markMore();
   if (state.view === 'map') mountMap();
 }
 
@@ -1272,34 +1285,51 @@ function markClips() {
   });
 }
 
-document.getElementById('theme').onclick = () => {
+// The folded filters still narrow the list, so their summary says how many are set.
+function markMore() {
+  const on = [...F('more').querySelectorAll('select, input')]
+    .filter(el => !el.closest('[hidden]') && (el.type === 'checkbox' ? el.checked : el.value)).length;
+  const summary = F('more').querySelector('summary');
+  summary.textContent = on ? `More · ${on}` : 'More';
+  summary.classList.toggle('set', on > 0);
+}
+
+F('theme').onclick = () => {
   const cur = document.documentElement.dataset.theme;
   const dark = cur ? cur === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
   document.documentElement.dataset.theme = dark ? 'light' : 'dark';
   store('bookshelf.theme', document.documentElement.dataset.theme);
 };
 document.querySelectorAll('.tab').forEach(t => t.onclick = () => setView(t.dataset.view));
-document.getElementById('filters').addEventListener('input', () => { render(); saveView(); });
+F('filters').addEventListener('input', () => { render(); saveView(); });
+addEventListener('hashchange', () => {
+  const v = location.hash.slice(1);
+  if (VIEWS[v] && v !== state.view) setView(v);
+});
 
+const closePops = keep => document.querySelectorAll('details.pop[open]').forEach(d => {
+  if (!d.contains(keep)) d.open = false;
+});
 document.addEventListener('click', e => {
+  closePops(e.target);
   const more = e.target.closest('button[data-more]');
   if (!more) return;
   const p = more.previousElementSibling;
   more.textContent = p.classList.toggle('open') ? 'Show less' : 'Show more';
 });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closePops(null); });
 
 async function boot() {
   try {
     await load();
   } catch (e) {
-    document.getElementById('banners').innerHTML =
-      `<div class="banner critical"><span class="mark">!</span><div><b>Could not load the data.</b>
-       ${esc(e.message)}${location.protocol === 'file:'
-         ? `<br>Open this page over HTTP — <code>./serve.ps1</code> — not by double-clicking it.
-            <code>fetch</code> is blocked on <code>file://</code>.` : ''}</div></div>`;
+    F('banners').innerHTML = `<div class="banner critical"><span class="mark">!</span><div>
+      <b>Could not load the data.</b> ${esc(e.message)}${location.protocol === 'file:'
+        ? '<br>Open the page over HTTP with <code>./serve.ps1</code>: <code>fetch</code> is blocked on <code>file://</code>.' : ''}</div></div>`;
     return;
   }
-  restoreView(savedView());
+  const was = savedView(), linked = location.hash.slice(1);
+  restoreView(VIEWS[linked] ? { ...was, view: linked } : was);
 }
 boot();
 </script>
