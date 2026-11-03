@@ -1,28 +1,27 @@
-// The Map tab. Loaded before the main script and run against its globals (D, F, esc, nice,
-// plural, band, tone, ten, rng, LIBRARY, candidateCard, seriesCard, readCard, readSeriesCard,
-// markClips, render, setView, setCount, store, recall, candidateFilter, readFilter), all of
-// which exist by the time anything here is called. Names are map-prefixed because every
-// top-level declaration shares one scope with index.html.
+// Similar books and authors, and the author map. Loaded before the main script and run against
+// its globals (D, F, esc, plural, tone, ten, rng, grid, EMPTY, state, candidateCard, seriesCard,
+// readCard, readSeriesCard, markClips, render, setView, setCount, store, recall, candidateFilter,
+// readFilter), all of which exist by the time anything here is called. Names are map-prefixed
+// because every top-level declaration shares one scope with index.html.
 
+// seeds: what the similar list is close to, in the current mode; bookSeeds keeps the books
+// so that switching Authors -> Books returns to them. from: the tab and scroll to go back to.
 const MAP = {
-  opts: null, seeds: [], hover: null, cam: null, built: null, pendingFocus: null,
-  ro: null, raf: 0, gen: 0, memo: null, world: null, wix: null, hl: null,
+  opts: null, seeds: [], bookSeeds: [], from: null, built: null, memo: null, gen: 0,
+  wix: null, world: null, hl: null,
 };
 
-const MAP_BAND_VAR = { 'S+': '--b-S', S: '--b-S', A: '--b-A', B: '--b-B', C: '--b-C', F: '--b-F' };
-const MAP_PAD = 28;
 const MAP_SHOWN = 40;
 
 function mapOpts() {
   if (!MAP.opts) {
     let saved = {};
-    try { saved = JSON.parse(recall('bookshelf.map')) || {}; } catch {}
-    // Every visit starts on the author maps (reader, 2026-10-29); Similar is a switch, not a place to stay.
-    MAP.opts = { minSim: 0.4, unread: true, sameAuthor: false, tags: [], ...saved, mode: 'authors', view: 'map' };
+    try { saved = JSON.parse(recall('bookshelf.similar')) || {}; } catch {}
+    MAP.opts = { minSim: 0.4, unread: true, sameAuthor: false, mode: 'books', ...saved };
   }
   return MAP.opts;
 }
-const mapSaveOpts = () => store('bookshelf.map', JSON.stringify(MAP.opts));
+const mapSaveOpts = () => store('bookshelf.similar', JSON.stringify(MAP.opts));
 
 function mapBuild() {
   if (MAP.built && MAP.built.D === D) return MAP.built;
@@ -36,7 +35,7 @@ function mapBuild() {
     const row = kind === 'c' ? byKey[key] : readByKey[key];
     if (!row) return;
     const p = {
-      id: s.id, kind, key, row, x: s.x, y: s.y, sv: s.v, d: dense(s.v), i: books.length, ref: 'b' + books.length,
+      id: s.id, kind, key, row, sv: s.v, d: dense(s.v), i: books.length, ref: 'b' + books.length,
       title: kind === 'c' ? row.cache.czTitle || row.cache.title : row.title,
       alt: kind === 'c' && row.cache.czTitle && row.cache.title !== row.cache.czTitle ? row.cache.title : '',
       author: kind === 'c' ? row.cache.author || '' : row.author,
@@ -46,10 +45,9 @@ function mapBuild() {
     books.push(p);
   });
   const profiled = books.length;
-  // A series is one point (reader, 2026-10-25: he reads a series whole): its volumes'
-  // centroid and summed profile, so it is matched as the one thing he would pick up.
-  // Read volumes of one series group apart from its unread ones: a read series is a
-  // diamond scored by what he gave it, the unread rest a square scored by prediction.
+  // A series is one entry (reader, 2026-10-25: he reads a series whole) with its volumes'
+  // summed profile, so it is matched as the one thing he would pick up. Read volumes of a
+  // series group apart from its unread ones, scored by what he gave them.
   const vols = new Map();
   books.forEach(p => {
     const sid = p.kind === 'c' ? D.seriesOf[p.key] : D.readSeriesOf[p.key];
@@ -64,7 +62,6 @@ function mapBuild() {
     const row = read ? readSeriesEntry(D.readSeries[sid]) : seriesEntry(D.series[sid]);
     const p = {
       id: (read ? 'rs:' : 's:') + sid, kind, isSeries: true, key: row.key, row, vols: ps,
-      x: ps.reduce((t, m) => t + m.x, 0) / ps.length, y: ps.reduce((t, m) => t + m.y, 0) / ps.length,
       d: d.map(x => x / norm), title: row.s.name, alt: row.s.nameEn && row.s.nameEn !== row.s.name ? row.s.nameEn : '',
       author: read ? row.author : row.cache.author, score: read ? row.score : row.est ? row.mid : null,
     };
@@ -82,41 +79,28 @@ function mapBuild() {
     const d = new Float32Array(NF);
     members.forEach(m => m.d.forEach((x, f) => { d[f] += x; }));
     const norm = Math.hypot(...d) || 1;
-    const read = members.filter(m => m.kind === 'r');
-    const scored = read.filter(m => m.score != null);
-    const live = members.filter(m => m.kind === 'c' && m.score != null);
-    const au = {
-      name: a.name, x: a.x, y: a.y, members, i: authors.length, ref: 'a' + authors.length, hasRead: read.length > 0, scoredRead: scored.length > 0,
-      d: d.map(x => x / norm),
-      score: scored.length ? Math.max(...scored.map(m => m.score))
-           : live.length ? Math.max(...live.map(m => m.score)) : null,
-    };
+    const au = { name: a.name, members, i: authors.length, ref: 'a' + authors.length, d: d.map(x => x / norm) };
     au.sv = [...au.d].map((x, f) => [f, x]).filter(([, x]) => x > 0);
     members.forEach(m => { m.authorRef = au; });
     authors.push(au);
   });
   const tagIndex = Object.fromEntries(sim.tags.map(([id], i) => [id, i]));
-  const regions = {};
-  for (const [mode, list] of Object.entries(sim.regions || {}))
-    regions[mode] = list.map(r => ({ x: r.x, y: r.y, label: r.tags.map(t => sim.tags[tagIndex[t]][1]).join(' · ') }));
-
-  const was = MAP.seeds;
-  MAP.built = { D, NT, books, authors, regions, tagIndex, ids: new Set(aliases.keys()), byId: aliases,
+  MAP.built = { D, NT, books, authors, tagIndex, ids: new Set(aliases.keys()), byId: aliases,
                 tagIds: sim.tags.map(t => t[0]), tagLabel: sim.tags.map(t => t[1]), tagGroup: sim.tags.map(t => t[3]),
                 unmapped: D.books.length + D.read.rows.length - profiled };
-  MAP.seeds = was.map(s => s.members ? authors.find(a => a.name === s.name) : books.find(b => b.id === s.id)).filter(Boolean);
+  const again = list => list.map(s => s.members ? authors.find(a => a.name === s.name) : books.find(b => b.id === s.id)).filter(Boolean);
+  MAP.seeds = again(MAP.seeds);
+  MAP.bookSeeds = again(MAP.bookSeeds);
   MAP.memo = null;
   return MAP.built;
 }
 
 const mapHas = id => !!(D && D.sim && mapBuild().ids.has(id));
-const mapPoints = B => MAP.opts.mode === 'authors' ? B.authors : B.books;
 const mapByRef = (B, ref) => ref[0] === 'a' ? B.authors[+ref.slice(1)] : B.books[+ref.slice(1)];
 
 function mapMatches(B) {
   const cf = candidateFilter(), rf = readFilter();
-  const need = MAP.opts.tags.map(t => B.tagIndex[t]).filter(f => f != null);
-  B.books.forEach(p => { p.on = (p.kind === 'c' ? cf(p.row) : rf(p.row)) && need.every(f => p.d[f] > 0); });
+  B.books.forEach(p => { p.on = p.kind === 'c' ? cf(p.row) : rf(p.row); });
   B.authors.forEach(a => { a.on = a.members.some(m => m.on); });
   MAP.gen++;
 }
@@ -149,84 +133,14 @@ function mapResults(B) {
 
 const mapAbove = B => mapResults(B).filter(r => r.sim >= MAP.opts.minSim);
 
-const mapSimilar = () => MAP.opts.view === 'similar';
-
-// With a selection, only it and its listed matches stay opaque and clickable.
-const mapFocusSet = B => MAP.seeds.length && mapSimilar()
-  ? new Set([...MAP.seeds, ...mapAbove(B).slice(0, MAP_SHOWN).map(r => r.p)]) : null;
-
 function sharedTags(seeds, p, B, n = 3) {
   return p.sv.filter(([f]) => f < B.NT)
     .map(([f, x]) => [x * Math.min(...seeds.map(s => s.d[f])), f]).filter(([c]) => c > 0)
     .sort((a, b) => b[0] - a[0]).slice(0, n).map(([, f]) => B.tagLabel[f]);
 }
 
-// An author's number is their best read score, or their best prediction if nothing is read.
-const mapValue = p => p.kind === 'c' && p.row.est ? rng(p.row.est[0], p.row.est[1]) : p.score == null ? '—' : ten(p.score);
-
-// What the number is, in words; the number itself is always shown beside it.
-function mapKind(p) {
-  if (p.members) return [plural(p.members.length, 'book'), p.hasRead && (p.scoredRead ? 'read' : 'read, not finished')]
-    .filter(Boolean).join(' · ');
-  const what = p.isSeries ? `${p.kind === 'r' ? 'read ' : ''}series of ${p.row.vols.length}` : p.kind === 'r' ? 'read' : '';
-  const why = p.kind === 'r' ? (p.score == null ? 'not finished' : '') : p.row.est ? '' : 'blocked';
-  return [what, why].filter(Boolean).join(' · ');
-}
-
 const mapTone = p => p.score == null ? 'bN' : tone(p.score);
 const mapLabel = p => p.members ? p.name : p.title;
-
-// The first verified route only: the full access line is in the panel head once a
-// book is selected.
-function mapRowLink(p) {
-  if (p.members || p.kind !== 'c' || p.isSeries) return '';
-  const b = p.row;
-  if (b.hasCz && b.cz.recordUrl) return `<a class="rowlink" href="${esc(b.cz.recordUrl)}" target="_blank" rel="noreferrer"
-    title="Borrow — Czech print: open the catalogue record at ${esc(LIBRARY[b.lib])}">Borrow ↗</a>`;
-  if (b.hasEloan && b.cz.recordUrl) return `<a class="rowlink" href="${esc(b.cz.recordUrl)}" target="_blank" rel="noreferrer"
-    title="Borrow — library e-loan: open the e-loan record at Městská knihovna Valašské Meziříčí">E-loan ↗</a>`;
-  const ec = b.enGem && b.cache.enCopy;
-  if (ec) return `<a class="rowlink" href="${esc(ec.recordUrl)}" target="_blank" rel="noreferrer"
-    title="Borrow in English: open the English edition at ${esc(LIBRARY[ec.library])}">EN copy ↗</a>`;
-  return '';
-}
-
-function mapRow(p, B, r) {
-  const sub = [p.members ? '' : p.author, mapKind(p)].filter(Boolean).join(' · ');
-  const why = r ? sharedTags(MAP.seeds, p, B) : [];
-  const per = r && r.per.length > 1
-    ? ` title="${esc(MAP.seeds.map((s, i) => `${mapLabel(s)}: ${Math.round(r.per[i] * 100)} %`).join('\n'))}"` : '';
-  const added = MAP.seeds.includes(p), sameKind = !!p.members === (MAP.opts.mode === 'authors');
-  // A book listed under an author is marked, so its card opens beside the author instead of
-  // leaving for the books map.
-  const main = sameKind ? `data-pick="${p.ref}"` : `data-mark="${p.ref}" aria-pressed="${MAP.hl === p.ref}"`;
-  return `<li class="prow"><button type="button" class="pick ${mapTone(p)}" ${main}>
-      <span class="pl">${mapValue(p)}</span>
-      <span class="pt"><b>${esc(mapLabel(p))}</b><br><span class="ps">${esc(sub)}</span>
-        ${why.length ? `<br><span class="pw">${esc(why.join(' · '))}</span>` : ''}</span>
-      ${r ? `<span class="pp"${per}>${Math.round(r.sim * 100)} %<span class="pbar"><i style="width:${Math.round(r.sim * 100)}%"></i></span></span>` : ''}
-    </button><span class="pacts">${sameKind ? `<button type="button" class="addseed" data-add="${p.ref}"
-      title="${added ? 'Remove from the selection' : 'Add to the selection'}">${added ? '−' : '+'}</button>` : ''}${
-      mapRowLink(p)}</span></li>`;
-}
-
-const mapList = (rows, B) => `<ol class="picks">${rows.map(r => r.p ? mapRow(r.p, B, r) : mapRow(r, B, null)).join('')}</ol>`;
-
-const mapTagBtn = (f, B) => `<button type="button" class="badge tagbtn" data-tagfilter="${esc(B.tagIds[f])}"
-  title="Show only titles with this tag">${esc(B.tagLabel[f])}</button>`;
-
-function mapChips(p, B, n = 10) {
-  return p.sv.filter(([f]) => f < B.NT).sort((a, b) => b[1] - a[1]).slice(0, n).map(([f]) => mapTagBtn(f, B)).join('');
-}
-
-function mapCommonChips(seeds, B, n = 8) {
-  const common = [];
-  for (let f = 0; f < B.NT; f++) {
-    const m = Math.min(...seeds.map(s => s.d[f]));
-    if (m > 0) common.push([m, f]);
-  }
-  return common.sort((a, b) => b[0] - a[0]).slice(0, n).map(([, f]) => mapTagBtn(f, B)).join('');
-}
 
 // The same card the Candidates and Read tabs draw, so a book looks the same wherever it is opened.
 const mapCard = p => p.kind === 'c' ? (p.isSeries ? seriesCard : candidateCard)(p.row)
@@ -235,432 +149,123 @@ const mapCard = p => p.kind === 'c' ? (p.isSeries ? seriesCard : candidateCard)(
 const MAP_GROUPS = [['Kind', 'Kind'], ['Setting', 'Setting'], ['Theme', 'Theme'], ['Tone', 'Tone'],
                     ['Audience', 'Audience'], ['Lead', 'Lead character'], ['Telling', 'Telling']];
 
-function mapFillTags(B) {
+const mapBestFirst = (a, b) => (b.score ?? -1) - (a.score ?? -1);
+
+// The profile tags behind Similar, offered as one more filter on the lists.
+function mapFillTags() {
   const sel = F('maptag');
-  if (!sel || sel.dataset.built === String(B.books.length)) return;
-  const n = new Array(B.NT).fill(0);
+  if (!sel || !D.sim) return;
+  const B = mapBuild(), n = new Array(B.NT).fill(0);
   B.books.forEach(p => p.sv.forEach(([f]) => { if (f < B.NT) n[f]++; }));
-  sel.innerHTML = '<option value="">Add tag…</option>' + MAP_GROUPS.map(([g, label]) =>
+  sel.innerHTML = '<option value="">Any tag</option>' + MAP_GROUPS.map(([g, label]) =>
     `<optgroup label="${esc(label)}">${B.tagIds.map((t, f) => [t, f]).filter(([, f]) => B.tagGroup[f] === g && n[f])
       .sort((a, b) => B.tagLabel[a[1]].localeCompare(B.tagLabel[b[1]]))
       .map(([t, f]) => `<option value="${esc(t)}">${esc(B.tagLabel[f])} (${n[f]})</option>`).join('')}</optgroup>`).join('');
-  sel.dataset.built = String(B.books.length);
 }
 
-const mapScore = p => `<div class="score sm ${mapTone(p)}">${mapValue(p)}</div>`;
-
-function mapHead(B) {
-  const seeds = MAP.seeds, close = '<button type="button" class="unpick" data-unpick title="Clear the selection">×</button>';
-  if (seeds.length > 1) {
-    const common = mapCommonChips(seeds, B);
-    return `<div class="sidehead"><div class="bk-title">${plural(seeds.length, seeds[0].members ? 'author' : 'title')}</div>${close}</div>
-      <ul class="seeds">${seeds.map(s => `<li class="${mapTone(s)}"><span class="pl">${mapValue(s)}</span>
-        <button type="button" class="linkish" data-focus="${s.ref}">${esc(mapLabel(s))}</button>
-        <button type="button" class="unpick" data-unseed="${s.ref}" title="Remove from the selection">×</button></li>`).join('')}</ul>
-      ${common ? `<h4>Shared</h4><div class="badges">${common}</div>` : '<p class="mapnote">No shared tags</p>'}`;
-  }
-  const sel = seeds[0];
-  if (sel.members) return `<div class="sidehead"><div><div class="bk-title">${esc(sel.name)}</div>
-      <div class="bk-meta">${esc(mapKind(sel))}</div>${mapScore(sel)}</div>${close}</div>
-    <div class="badges">${mapChips(sel, B)}</div>`;
-  return `<div class="sidehead"><h4>Selected</h4>${close}</div>${mapCard(sel)}
-    <div class="badges">${mapChips(sel, B)}</div>`;
+// A book with no profile has no tags, so any tag excludes it.
+function mapTagged(mapId, tag) {
+  if (!D.sim) return false;
+  const B = mapBuild(), p = B.byId.get(mapId), f = B.tagIndex[tag];
+  return !!p && f != null && p.d[f] > 0;
 }
 
-// A book marked in an author's map or list, shown under that author.
-function mapMarked(B) {
-  const p = MAP.hl && mapByRef(B, MAP.hl);
-  return p ? `<div class="marked"><div class="sidehead"><h4>Marked</h4>
-    <button type="button" class="unpick" data-mark="${p.ref}" title="Unmark">×</button></div>${mapCard(p)}</div>` : '';
+function mapCardLinks(mapId) {
+  const au = mapAuthorOf(mapBuild().byId.get(mapId));
+  return `<button type="button" class="tomap" data-similar="books:${esc(mapId)}">Similar books</button>${
+    au ? `<button type="button" class="tomap" data-similar="authors:${esc(mapId)}">Similar authors</button>` : ''}${
+    mapAuthorLink(mapId)}`;
 }
 
-const mapBestFirst = (a, b) => (b.score ?? -1) - (a.score ?? -1);
-
-function mapResultsHtml(B) {
-  const above = mapAbove(B), seeds = MAP.seeds;
-  let out = above.length
-    ? `<h4>${seeds.length > 1 ? 'Close to all' : 'Most similar'}<span class="sub">${
-        above.length > MAP_SHOWN ? `${MAP_SHOWN} of ${above.length}` : above.length}</span></h4>
-       ${mapList(above.slice(0, MAP_SHOWN), B)}`
-    : `<p class="mapnote">Nothing above ${Math.round(MAP.opts.minSim * 100)} %</p>`;
-  if (seeds.length === 1 && seeds[0].members) {
-    out = `<h4>Books by this author</h4>${mapList(seeds[0].members.slice().sort(mapBestFirst), B)}` + out;
-  } else if (seeds.length === 1 && seeds[0].authorRef) {
-    const same = seeds[0].authorRef.members.filter(p => p !== seeds[0]);
-    if (same.length) out += `<h4>By the same author</h4>${mapList(same, B)}`;
-  }
-  return out;
+function mapStart(mode, mapId) {
+  const p = mapBuild().byId.get(mapId);
+  if (!p) return;
+  mapOpts().mode = mode;
+  mapSaveOpts();
+  MAP.bookSeeds = [p];
+  MAP.seeds = mode === 'authors' ? [mapAuthorOf(p)].filter(Boolean) : [p];
+  if (state.view !== 'similar') MAP.from = { view: state.view, y: scrollY };
+  mapCloseAuthor();
+  setView('similar');
+  scrollTo(0, 0);
 }
 
-function mapSide(B) {
-  const o = MAP.opts, authors = o.mode === 'authors', similar = o.view === 'similar';
-  if (!MAP.seeds.length) {
-    const anchors = (authors ? B.authors.filter(a => a.hasRead) : B.books.filter(p => p.kind === 'r'))
-      .filter(p => p.on).sort((a, b) => b.score - a.score).slice(0, 15);
-    return anchors.length ? `<h4>${authors ? 'Authors you have read' : 'Books you have read'}</h4>${mapList(anchors, B)}` : '';
-  }
-  const one = MAP.seeds.length === 1 ? MAP.seeds[0] : null;
-  if (!similar) {
-    return `<div id="maphead">${mapHead(B)}</div>${mapMarked(B)}
-      ${one && one.members ? `<h4>Books by this author</h4>${mapList(one.members.slice().sort(mapBestFirst), B)}` : ''}`;
-  }
-  return `<div id="maphead">${mapHead(B)}</div>${mapMarked(B)}
-    <div class="mapopts">
-      <label class="range">Min. similarity <b id="minsimval">${Math.round(o.minSim * 100)} %</b>
-        <input type="range" min="10" max="90" step="5" value="${Math.round(o.minSim * 100)}" data-mapopt="minSim"></label>
-      ${o.mode === 'books' ? `
-      <label class="chk"><input type="checkbox" data-mapopt="unread"${o.unread ? ' checked' : ''}> Unread only</label>
-      <label class="chk"><input type="checkbox" data-mapopt="sameAuthor"${o.sameAuthor ? ' checked' : ''}> Same author too</label>` : ''}
-    </div>
-    <div id="mapres">${mapResultsHtml(B)}</div>`;
+function mapLeave() {
+  const from = MAP.from || { view: 'candidates', y: 0 };
+  MAP.seeds = [];
+  MAP.bookSeeds = [];
+  MAP.from = null;
+  setView(from.view);
+  scrollTo(0, from.y);
 }
 
-function mapView() {
-  if (!D.sim) {
-    setCount('');
-    return '<div class="empty">No map data yet: build it with <code>python tools/similarity.py</code></div>';
-  }
-  const o = mapOpts(), B = mapBuild();
-  mapFillTags(B);
-  // The select only adds: what is active lives in opts.tags and shows as chips.
-  const picked = F('maptag') && F('maptag').value;
-  if (picked) {
-    if (!o.tags.includes(picked)) o.tags.push(picked);
-    F('maptag').value = '';
-    mapSaveOpts();
-  }
-  o.tags = o.tags.filter(t => t in B.tagIndex);
-  mapMatches(B);
-  const what = o.mode === 'authors' ? 'author' : 'book';
-  setCount(plural(mapPoints(B).filter(p => p.on).length, what));
-  return `${o.tags.length ? `<div class="tagfilters">${o.tags.map(t => `<button type="button" class="badge tagbtn on"
-        data-untag="${esc(t)}" title="Remove this tag">${esc(B.tagLabel[B.tagIndex[t]])} ×</button>`).join('')}
-      <button type="button" class="linkish" data-untag="*">Clear</button></div>` : ''}
-    <div class="mapwrap">
-      <div class="mapstage" id="mapstage">
-        <canvas id="mapc" aria-label="Similarity map of ${what}s"></canvas>
-        <div class="mapmodes">${mapViewSeg()}</div>
-        <div class="maptools">
-          <button type="button" data-mz="in" title="Zoom in">+</button>
-          <button type="button" data-mz="out" title="Zoom out">−</button>
-          <button type="button" data-mz="fit">Fit</button>
-        </div>
-        <div class="maptip" id="maptip" hidden></div>
-        <div class="worldpane" id="worldpane" hidden></div>
-      </div>
-      <aside class="mapside" id="mapside">${mapSide(B)}</aside>
-    </div>`;
+function mapSetMode(mode) {
+  const o = mapOpts();
+  if (o.mode === mode) return;
+  o.mode = mode;
+  mapSaveOpts();
+  MAP.seeds = mode === 'authors' ? [...new Set(MAP.bookSeeds.map(mapAuthorOf).filter(Boolean))] : MAP.bookSeeds.slice();
+  if (!MAP.seeds.length) { mapLeave(); return; }
+  render();
 }
 
-function mapFit(pts, W, H) {
-  const xs = pts.map(p => p.x), ys = pts.map(p => p.y);
-  const x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
-  const s0 = Math.min((W - 2 * MAP_PAD) / (x1 - x0 || 1), (H - 2 * MAP_PAD) / (y1 - y0 || 1));
-  return { cx: (x0 + x1) / 2, cy: (y0 + y1) / 2, k: 1, s0, mode: MAP.opts.mode };
-}
-
-function mountMap() {
-  const c = F('mapc');
-  if (!c) return;
-  const stage = F('mapstage');
-  if (MAP.ro) MAP.ro.disconnect();
-  MAP.ro = new ResizeObserver(() => {
-    const W = stage.clientWidth, H = stage.clientHeight, dpr = devicePixelRatio || 1;
-    c.width = W * dpr; c.height = H * dpr; c.style.width = W + 'px'; c.style.height = H + 'px';
-    const fit = mapFit(mapPoints(mapBuild()), W, H);
-    if (!MAP.cam || MAP.cam.mode !== MAP.opts.mode) MAP.cam = fit;
-    else MAP.cam.s0 = fit.s0;
-    if (MAP.pendingFocus) { mapFocus(MAP.pendingFocus, 3, false); MAP.pendingFocus = null; }
-    drawMap();
-  });
-  MAP.ro.observe(stage);
-  mapWire(c);
-  mapWorldRender();
-}
-
-const mapScreen = (p, W, H) => [W / 2 + (p.x - MAP.cam.cx) * MAP.cam.s0 * MAP.cam.k,
-                                H / 2 + (p.y - MAP.cam.cy) * MAP.cam.s0 * MAP.cam.k];
-
-// Size and stacking both follow the score - the predicted midpoint for a candidate, the
-// real one for a read book, the best of their books for an author - so the strongest
-// titles are the biggest marks and are never buried under weaker neighbours.
-const mapRadius = p => p.score == null ? 2.5 : 2.5 + Math.max(0, p.score - 50) * 0.11;
-const mapByScore = (a, b) => (a.score ?? 0) - (b.score ?? 0);
-
-function mapRedraw() {
-  if (MAP.raf) return;
-  MAP.raf = requestAnimationFrame(() => { MAP.raf = 0; drawMap(); });
-}
-
-function drawMap() {
-  const c = F('mapc');
-  if (!c || !MAP.cam) return;
-  const B = mapBuild(), pts = mapPoints(B), seeds = MAP.seeds;
-  const css = getComputedStyle(document.documentElement), v = n => css.getPropertyValue(n).trim();
-  const dpr = devicePixelRatio || 1, W = c.width / dpr, H = c.height / dpr;
-  const ctx = c.getContext('2d');
-  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  const surface = v('--surface'), muted = v('--ink-muted'), accent = v('--accent');
-  ctx.fillStyle = surface;
-  ctx.fillRect(0, 0, W, H);
-  const k = MAP.cam.k;
-  pts.forEach(p => { [p.sx, p.sy] = mapScreen(p, W, H); });
-
-  // Line weight and opacity carry the similarity, scaled across the band above the
-  // threshold so that a low threshold still shows its loosest matches as hairlines.
-  const res = seeds.length && mapSimilar() ? mapAbove(B).slice(0, MAP_SHOWN) : [];
-  if (res.length) {
-    const lo = MAP.opts.minSim;
-    ctx.save();
-    ctx.strokeStyle = accent;
-    res.slice().reverse().forEach(r => seeds.forEach((s, i) => {
-      const t = Math.max(0, Math.min(1, (r.per[i] - lo) / (1 - lo)));
-      ctx.globalAlpha = 0.2 + 0.55 * t;
-      ctx.lineWidth = 0.6 + 3.4 * t;
-      ctx.beginPath(); ctx.moveTo(s.sx, s.sy); ctx.lineTo(r.p.sx, r.p.sy); ctx.stroke();
-    }));
-    ctx.restore();
-  }
-
-  const diamond = p => p.members ? p.hasRead : p.kind === 'r';
-  const mark = (p, fill) => {
-    const r = mapRadius(p);
-    ctx.beginPath();
-    if (diamond(p)) {
-      const d = r * 1.25;
-      ctx.moveTo(p.sx, p.sy - d); ctx.lineTo(p.sx + d, p.sy); ctx.lineTo(p.sx, p.sy + d); ctx.lineTo(p.sx - d, p.sy);
-      ctx.closePath();
-    } else if (p.isSeries) ctx.rect(p.sx - r, p.sy - r, 2 * r, 2 * r);
-    else ctx.arc(p.sx, p.sy, r, 0, Math.PI * 2);
-    ctx.fillStyle = fill; ctx.fill();
-    ctx.lineWidth = 2; ctx.strokeStyle = surface; ctx.stroke();
-  };
-  const inView = p => p.sx > -20 && p.sy > -20 && p.sx < W + 20 && p.sy < H + 20;
-
-  const lit = pts.filter(p => p.on && inView(p)).sort(mapByScore);
-  const focus = mapFocusSet(B);
-  const colour = p => p.score == null ? muted : v(MAP_BAND_VAR[band(p.score)]);
-  if (focus) {
-    ctx.globalAlpha = 0.15;
-    lit.filter(p => !focus.has(p)).forEach(p => mark(p, colour(p)));
-    ctx.globalAlpha = 1;
-    [...focus].filter(inView).sort(mapByScore).forEach(p => mark(p, colour(p)));
-  } else lit.forEach(p => mark(p, colour(p)));
-
-  if (MAP.hover && !seeds.includes(MAP.hover)) mapRing(ctx, MAP.hover, mapRadius(MAP.hover) + 4, muted);
-  res.forEach(r => mapRing(ctx, r.p, mapRadius(r.p) + 3, accent));
-  seeds.forEach(s => mapRing(ctx, s, mapRadius(s) + 5, v('--ink')));
-
-  // Region names orient the overview and fade out as you zoom in. Without a selection
-  // they outrank book labels; with one they step back so its matches stay legible.
-  const taken = [[0, 0, 480, 46], [W - 140, 0, W, 46]];
-  const regionAlpha = Math.max(0, Math.min(0.9, 1.9 - k * 0.65)) * (seeds.length ? 0.5 : 1);
-  if (regionAlpha > 0.05) {
-    ctx.save();
-    ctx.globalAlpha = regionAlpha;
-    ctx.font = '600 12.5px system-ui, -apple-system, "Segoe UI", sans-serif';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.lineJoin = 'round';
-    (B.regions[MAP.opts.mode] || []).forEach(r => {
-      const [x, y] = mapScreen(r, W, H), w = ctx.measureText(r.label).width;
-      ctx.lineWidth = 4; ctx.strokeStyle = surface; ctx.strokeText(r.label, x, y);
-      ctx.fillStyle = muted; ctx.fillText(r.label, x, y);
-      if (!seeds.length) taken.push([x - w / 2 - 3, y - 9, x + w / 2 + 3, y + 9]);
-    });
-    ctx.restore();
-  }
-
-  const labelled = [...seeds, ...res.slice(0, 15).map(r => r.p)];
-  if (!focus) {
-    lit.filter(diamond).reverse().forEach(p => labelled.push(p));
-    if (k >= 2.2) lit.filter(p => !diamond(p)).reverse().forEach(p => labelled.push(p));
-  }
-  mapLabels(ctx, [...new Set(labelled)].filter(inView), v('--ink-2'), surface, W, H, taken);
-}
-
-function mapRing(ctx, p, r, color) {
-  ctx.beginPath();
-  ctx.arc(p.sx, p.sy, r, 0, Math.PI * 2);
-  ctx.lineWidth = 2; ctx.strokeStyle = color; ctx.stroke();
-}
-
-function mapLabels(ctx, list, color, halo, W, H, taken) {
-  ctx.font = '500 11.5px system-ui, -apple-system, "Segoe UI", sans-serif';
-  ctx.textBaseline = 'middle';
-  ctx.textAlign = 'left';
-  ctx.lineJoin = 'round';
-  const boxes = taken.slice();
-  for (const p of list) {
-    if (boxes.length - taken.length >= 70) break;
-    let t = mapLabel(p);
-    if (t.length > 30) t = t.slice(0, 28) + '…';
-    const w = ctx.measureText(t).width, x = p.sx + mapRadius(p) + 5, y = p.sy;
-    const box = [x - 2, y - 8, x + w + 2, y + 8];
-    if (box[2] > W || box[1] < 0 || box[3] > H) continue;
-    if (boxes.some(b => box[0] < b[2] && box[2] > b[0] && box[1] < b[3] && box[3] > b[1])) continue;
-    boxes.push(box);
-    ctx.lineWidth = 3; ctx.strokeStyle = halo; ctx.strokeText(t, x, y);
-    ctx.fillStyle = color; ctx.fillText(t, x, y);
-  }
-}
-
-// Nearest point within 14px rather than an exact hit: small marks are packed tight.
-function mapNearest(mx, my) {
-  const B = mapBuild(), focus = mapFocusSet(B);
-  let best = null, bd = 14 * 14;
-  for (const p of focus || mapPoints(B).filter(q => q.on)) {
-    if (p.sx == null) continue;
-    const d = (p.sx - mx) ** 2 + (p.sy - my) ** 2;
-    if (d < bd) { bd = d; best = p; }
-  }
-  return best;
-}
-
-function mapTip(p, mx, my) {
-  const tip = F('maptip');
-  if (!tip) return;
-  if (!p) { tip.hidden = true; return; }
-  const line = (tag, text, cls) => { const el = document.createElement(tag); el.textContent = text; if (cls) el.className = cls; return el; };
-  const sub = [p.members ? '' : p.author, mapKind(p)].filter(Boolean).join(' · ');
-  tip.replaceChildren(line('b', `${mapValue(p)} · ${mapLabel(p)}`));
-  if (sub) tip.append(line('div', sub, 'bk-meta'));
-  if (mapSimilar() && MAP.seeds.length && !MAP.seeds.includes(p)) {
-    const s = Math.min(...MAP.seeds.map(q => simDot(q, p)));
-    tip.append(line('div', `${Math.round(s * 100)} % similar`, 'bk-meta'));
-  }
-  tip.hidden = false;
-  const stage = F('mapstage');
-  tip.style.left = Math.max(6, Math.min(mx + 14, stage.clientWidth - tip.offsetWidth - 6)) + 'px';
-  tip.style.top = Math.max(6, my - tip.offsetHeight - 10) + 'px';
-}
-
-function mapZoom(f, mx, my) {
-  const c = F('mapc'), W = c.clientWidth, H = c.clientHeight, cam = MAP.cam;
-  const k2 = Math.max(0.7, Math.min(40, cam.k * f));
-  const s1 = cam.s0 * cam.k, s2 = cam.s0 * k2;
-  cam.cx += (mx - W / 2) / s1 - (mx - W / 2) / s2;
-  cam.cy += (my - H / 2) / s1 - (my - H / 2) / s2;
-  cam.k = k2;
-  mapRedraw();
-}
-
-function mapFocus(p, minK = 2.5, animate = true) {
-  if (!MAP.cam) { MAP.pendingFocus = p; return; }
-  mapFlyTo({ cx: p.x, cy: p.y, k: Math.max(MAP.cam.k, minK) }, animate);
-}
-
-function mapFrame(pts) {
-  const c = F('mapc');
-  if (!c || !MAP.cam) return;
-  const fit = mapFit(pts, c.clientWidth, c.clientHeight);
-  mapFlyTo({ cx: fit.cx, cy: fit.cy, k: Math.max(0.7, Math.min(8, fit.s0 / MAP.cam.s0 * 0.85)) });
-}
-
-function mapFlyTo(to, animate = true) {
-  const cam = MAP.cam, from = { cx: cam.cx, cy: cam.cy, k: cam.k };
-  if (!animate) { Object.assign(cam, to); return; }
-  const t0 = performance.now();
-  const step = now => {
-    const t = Math.min(1, (now - t0) / 320), e = 1 - (1 - t) ** 3;
-    cam.cx = from.cx + (to.cx - from.cx) * e;
-    cam.cy = from.cy + (to.cy - from.cy) * e;
-    cam.k = from.k + (to.k - from.k) * e;
-    drawMap();
-    if (t < 1) requestAnimationFrame(step);
-  };
-  requestAnimationFrame(step);
-}
-
-// In map view a single pick opens its series, world or author map; any other change of
-// selection shows the canvas.
-function mapSetSeeds(seeds, focus, openWorld = false) {
+function mapSetSeeds(seeds) {
   MAP.seeds = seeds;
-  MAP.hl = null;
-  MAP.world = openWorld && seeds.length === 1 ? mapContextOf(seeds[0]) : null;
-  mapSideRender(true);
-  if (seeds.length > 1) mapFrame([...seeds, ...(mapSimilar() ? mapAbove(mapBuild()).slice(0, 15).map(r => r.p) : [])]);
-  else if (focus) mapFocus(focus);
-  else mapRedraw();
-  mapWorldRender();
+  if (mapOpts().mode === 'books') MAP.bookSeeds = seeds.slice();
+  if (!seeds.length) { mapLeave(); return; }
+  render();
+  scrollTo(0, 0);
 }
 
-// markClips() sizes the "Show more" toggles of the cards just drawn.
-function mapSideRender(toTop = false) {
-  const side = F('mapside');
-  if (!side) return;
-  side.innerHTML = mapSide(mapBuild());
-  if (toTop) side.scrollTop = 0;
-  markClips();
+function mapBar() {
+  const o = mapOpts();
+  const seg = [['books', 'Books'], ['authors', 'Authors']].map(([m, label]) =>
+    `<button type="button" data-simmode="${m}" aria-pressed="${o.mode === m}">${label}</button>`).join('');
+  return `<div class="simbar">
+    <span class="simlabel">Similar to</span>
+    ${MAP.seeds.map(s => `<span class="badge seed">${esc(mapLabel(s))}<button type="button" data-simdrop="${s.ref}"
+      aria-label="Remove ${esc(mapLabel(s))}">×</button></span>`).join('')}
+    <div class="wseg" role="group" aria-label="Show">${seg}</div>
+    <label class="range">Min. <b id="minsimval">${Math.round(o.minSim * 100)} %</b>
+      <input type="range" min="10" max="90" step="5" value="${Math.round(o.minSim * 100)}" data-mapopt="minSim" aria-label="Minimum similarity"></label>
+    <label class="chk"><input type="checkbox" data-mapopt="unread"${o.unread ? ' checked' : ''}> Unread only</label>
+    ${o.mode === 'books' ? `<label class="chk"><input type="checkbox" data-mapopt="sameAuthor"${o.sameAuthor ? ' checked' : ''}> Same author too</label>` : ''}
+    <button type="button" class="unpick" data-simclose title="Back to the list" aria-label="Back to the list">×</button>
+  </div>`;
 }
 
-const mapToggleSeed = p => MAP.seeds.includes(p)
-  ? mapSetSeeds(MAP.seeds.filter(s => s !== p))
-  : mapSetSeeds([...MAP.seeds, p]);
+const mapAuthorBooks = a => a.members.filter(m => m.on && !(MAP.opts.unread && m.kind === 'r')).sort(mapBestFirst);
 
-function mapRefreshResults() {
-  const res = F('mapres');
-  if (res) res.innerHTML = mapResultsHtml(mapBuild());
-  mapRedraw();
+function mapSimLine(r, B) {
+  const shared = sharedTags(MAP.seeds, r.p, B);
+  return `<div class="simline"><b>${Math.round(r.sim * 100)} %</b>${shared.length ? `<span>${esc(shared.join(' · '))}</span>` : ''}
+    <button type="button" class="linkish" data-simadd="${r.p.ref}" title="Find what is close to this too">+ also like this</button></div>`;
 }
 
-function mapWire(c) {
-  const ptrs = new Map();
-  let drag = null, pinch = null;
-  const at = e => { const r = c.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; };
-  c.addEventListener('pointerdown', e => {
-    c.setPointerCapture(e.pointerId);
-    ptrs.set(e.pointerId, at(e));
-    if (ptrs.size === 2) {
-      const [a, b] = [...ptrs.values()];
-      pinch = { d: Math.hypot(a[0] - b[0], a[1] - b[1]), k: MAP.cam.k };
-      drag = null;
-    } else drag = { start: at(e), last: at(e), moved: false };
-  });
-  c.addEventListener('pointermove', e => {
-    const [mx, my] = at(e);
-    if (ptrs.has(e.pointerId)) ptrs.set(e.pointerId, [mx, my]);
-    if (pinch && ptrs.size === 2) {
-      const [a, b] = [...ptrs.values()];
-      mapZoom(Math.hypot(a[0] - b[0], a[1] - b[1]) / pinch.d * pinch.k / MAP.cam.k, (a[0] + b[0]) / 2, (a[1] + b[1]) / 2);
-      return;
-    }
-    if (drag) {
-      if (!drag.moved && Math.hypot(mx - drag.start[0], my - drag.start[1]) > 4) drag.moved = true;
-      if (drag.moved) {
-        const s = MAP.cam.s0 * MAP.cam.k;
-        MAP.cam.cx -= (mx - drag.last[0]) / s;
-        MAP.cam.cy -= (my - drag.last[1]) / s;
-        drag.last = [mx, my];
-        mapTip(null);
-        mapRedraw();
-        return;
-      }
-    }
-    const p = mapNearest(mx, my);
-    c.style.cursor = p ? 'pointer' : 'grab';
-    if (p !== MAP.hover) { MAP.hover = p; mapRedraw(); }
-    mapTip(p, mx, my);
-  });
-  const end = e => {
-    ptrs.delete(e.pointerId);
-    if (ptrs.size < 2) pinch = null;
-    if (drag && !drag.moved && e.type === 'pointerup') {
-      const [mx, my] = at(e), p = mapNearest(mx, my);
-      if (e.shiftKey || e.ctrlKey || e.metaKey) { if (p) mapToggleSeed(p); }
-      else mapSetSeeds(p ? [p] : [], null, !mapSimilar());
-    }
-    drag = null;
-  };
-  c.addEventListener('pointerup', end);
-  c.addEventListener('pointercancel', end);
-  c.addEventListener('pointerleave', () => { MAP.hover = null; mapTip(null); mapRedraw(); });
-  c.addEventListener('wheel', e => {
-    e.preventDefault();
-    const [mx, my] = at(e);
-    mapZoom(Math.exp(-e.deltaY * 0.0015), mx, my);
-  }, { passive: false });
-  c.addEventListener('dblclick', e => { const [mx, my] = at(e); mapZoom(2, mx, my); });
+const mapBookRow = (r, B) => `<div class="simitem">${mapSimLine(r, B)}${mapCard(r.p)}</div>`;
+
+// One tile per author, so authors wrap in the grid like books do: the best book as a card,
+// the rest as names that open the author map at that book.
+function mapAuthorRow(r, B) {
+  const a = r.p, [best, ...rest] = r.books;
+  const also = rest.slice(0, 4).map(m => `<button type="button" class="linkish" data-toauthor="${esc(m.id)}">${esc(m.title)}</button>`);
+  if (rest.length > 4) also.push(`${rest.length - 4} more`);
+  return `<div class="simitem simauthor"><div class="simhead"><span class="simname">${esc(a.name)}</span>${
+      mapAuthorMap(a.name).size > 1 ? `<button type="button" class="tomap" data-toauthor="a:${esc(a.name)}">Author map</button>` : ''}</div>
+    ${mapSimLine(r, B)}${mapCard(best)}${also.length ? `<p class="mapnote">Also ${also.join(', ')}</p>` : ''}</div>`;
+}
+
+function similarView() {
+  if (!D.sim || !MAP.seeds.length) return EMPTY;
+  const B = mapBuild(), o = mapOpts();
+  mapMatches(B);
+  const authors = o.mode === 'authors';
+  const rows = authors ? mapAbove(B).map(r => ({ ...r, books: mapAuthorBooks(r.p) })).filter(r => r.books.length) : mapAbove(B);
+  setCount(plural(rows.length, authors ? 'author' : 'book'));
+  if (!rows.length) return `<div class="empty">Nothing above ${Math.round(o.minSim * 100)} % with these filters</div>`;
+  const shown = rows.slice(0, MAP_SHOWN);
+  return grid(shown.map(r => (authors ? mapAuthorRow : mapBookRow)(r, B))) +
+    (rows.length > shown.length ? `<p class="mapnote">The closest ${MAP_SHOWN} of ${rows.length}</p>` : '');
 }
 
 // The author map: every book of an author as a reading graph, one box per series or shared
@@ -702,7 +307,6 @@ function mapWorldIdOf(p) {
 }
 
 const mapAuthorOf = p => p ? (p.members ? p : p.authorRef || null) : null;
-const mapContextOf = p => { const au = mapAuthorOf(p); return au ? 'a:' + au.name : null; };
 
 function mapAuthorLink(mapId) {
   const au = mapHas(mapId) && mapAuthorOf(mapBuild().byId.get(mapId));
@@ -952,31 +556,6 @@ function mapGraph(w, B) {
   </div>`;
 }
 
-// One control, shown on the canvas and in the open map's header: the open map covers the
-// canvas, so a control left only there could not be reached.
-const MAP_KINDS = [['authors', 'map', 'Author maps'], ['books', 'similar', 'Similar books'], ['authors', 'similar', 'Similar authors']];
-
-// The selection follows the switch: a book becomes its author (and stays marked in the
-// author map); an author on the books side becomes the book last marked in its map, if any.
-function mapSwitch(mode, view) {
-  const B = mapBuild(), sel = MAP.seeds.length === 1 ? MAP.seeds[0] : null;
-  const book = sel && !sel.members ? sel : MAP.hl ? mapByRef(B, MAP.hl) : null;
-  const p = mode === 'authors' ? (sel && sel.members ? sel : mapAuthorOf(book)) : book;
-  MAP.opts.view = view;
-  if (mode !== MAP.opts.mode) mapOpen(p, mode);
-  else MAP.seeds = p ? [p] : [];
-  MAP.hl = mode === 'authors' && book ? book.ref : null;
-  MAP.world = view === 'map' && p ? mapContextOf(p) : null;
-  mapSaveOpts();
-  render();
-}
-
-function mapViewSeg() {
-  const o = MAP.opts;
-  return `<div class="wseg" role="group" aria-label="What the map shows">${MAP_KINDS.map(([mode, view, label]) =>
-    `<button type="button" data-mapkind="${mode}:${view}" aria-pressed="${o.mode === mode && o.view === view}">${label}</button>`).join('')}</div>`;
-}
-
 function mapAuthorHtml(m, B) {
   const head = w => w.solo ? '<b>Standalone books</b>'
     : `<b>${esc(w.name)}</b>${w.nameEn ? ` <span class="bk-alt">${esc(w.nameEn)}</span>` : ''}`;
@@ -984,8 +563,7 @@ function mapAuthorHtml(m, B) {
   return `<div class="wphead">
       <div><div class="bk-title">${esc(m.name)}</div>
         <div class="bk-meta">${esc(mapTally(m.blocks.flatMap(w => w.nodes)))}</div></div>
-      <div class="wpctl">${mapViewSeg()}
-        <button type="button" class="unpick" data-world-close title="Close (Esc)">×</button></div>
+      <button type="button" class="unpick" data-world-close title="Close (Esc)" aria-label="Close">×</button>
     </div>
     <div class="wpbody">${MAP_W_DEFS}
       <div class="wblocks">${m.blocks.map(w => `<section class="wblock"><div class="wbhead">${head(w)}
@@ -994,104 +572,72 @@ function mapAuthorHtml(m, B) {
     </div>`;
 }
 
-function mapWorldRender(fresh = false) {
-  const pane = F('worldpane');
-  if (!pane) return;
+// v is a book's map id, which also marks that book, or 'a:' + an author's name.
+function mapOpenAuthor(v) {
+  const B = mapBuild(), p = v.startsWith('a:') ? null : B.byId.get(v);
+  const au = p ? mapAuthorOf(p) : B.authors.find(a => a.name === v.slice(2));
+  if (!au) return;
+  MAP.world = 'a:' + au.name;
+  MAP.hl = p ? p.ref : null;
+  mapSheetRender(true);
+}
+
+function mapCloseAuthor() {
+  MAP.world = null;
+  MAP.hl = null;
+  mapSheetRender();
+}
+
+function mapSheetRender(fresh = false) {
+  const el = F('authorsheet');
+  if (!el) return;
   const id = MAP.world, m = id && mapAuthorMap(id.slice(2));
-  pane.hidden = !m;
-  if (!m) { pane.innerHTML = ''; delete pane.dataset.world; return; }
-  const body = pane.querySelector('.wpbody');
-  const keep = !fresh && body && pane.dataset.world === id ? [body.scrollLeft, body.scrollTop] : null;
-  pane.innerHTML = mapAuthorHtml(m, mapBuild());
-  pane.dataset.world = id;
-  const nb = pane.querySelector('.wpbody'), sel = pane.querySelector('.wnode.sel');
+  el.hidden = !m;
+  document.body.classList.toggle('sheet-open', !!m);
+  if (!m) { el.innerHTML = ''; delete el.dataset.world; return; }
+  const B = mapBuild(), body = el.querySelector('.wpbody');
+  const keep = !fresh && body && el.dataset.world === id ? [body.scrollLeft, body.scrollTop] : null;
+  const hl = MAP.hl && mapByRef(B, MAP.hl);
+  el.innerHTML = `<div class="sheetpanel" role="dialog" aria-modal="true" aria-label="${esc('Author map: ' + m.name)}">
+    ${mapAuthorHtml(m, B)}
+    <aside class="sheetside">${hl ? mapCard(hl) : '<p class="mapnote">Click a book to see its card.</p>'}</aside></div>`;
+  el.dataset.world = id;
+  const nb = el.querySelector('.wpbody'), sel = el.querySelector('.wnode.sel');
   if (keep) [nb.scrollLeft, nb.scrollTop] = keep;
   else if (sel) {
     nb.scrollTop = Math.max(0, sel.offsetTop + sel.closest('.wblock').offsetTop - nb.clientHeight / 3);
     nb.scrollLeft = Math.max(0, sel.offsetLeft + sel.closest('.wblock').offsetLeft - nb.clientWidth / 3);
   }
-}
-
-function mapOpen(p, mode) {
-  mapOpts().mode = mode;
-  mapSaveOpts();
-  MAP.seeds = p ? [p] : [];
-  MAP.world = null;
-  MAP.hl = null;
-  MAP.pendingFocus = p;
-  MAP.memo = null;
-  if (MAP.cam) MAP.cam.mode = null;
+  markClips();
 }
 
 document.addEventListener('click', e => {
-  const to = e.target.closest('[data-tomap], [data-toauthor]');
-  if (to) {
-    const p = mapBuild().byId.get(to.dataset.tomap || to.dataset.toauthor), au = to.dataset.toauthor && mapAuthorOf(p);
-    if (!p || (to.dataset.toauthor && !au)) return;
-    mapOpen(au || p, au ? 'authors' : 'books');
-    MAP.opts.view = au ? 'map' : 'similar';
-    mapSaveOpts();
-    MAP.hl = au ? p.ref : null;
-    MAP.world = au ? mapContextOf(au) : null;
-    setView('map');
-    scrollTo(0, 0);
+  const sim = e.target.closest('[data-similar]');
+  if (sim) {
+    const v = sim.dataset.similar, at = v.indexOf(':');
+    mapStart(v.slice(0, at), v.slice(at + 1));
     return;
   }
-  if (!F('mapstage')) return;
+  const to = e.target.closest('[data-toauthor]');
+  if (to) { mapOpenAuthor(to.dataset.toauthor); return; }
+  const sheet = F('authorsheet');
+  if (sheet && !sheet.hidden) {
+    if (e.target === sheet || e.target.closest('[data-world-close]')) { mapCloseAuthor(); return; }
+    const mark = !e.target.closest('#authorsheet a') && e.target.closest('[data-mark]');
+    if (mark) { MAP.hl = MAP.hl === mark.dataset.mark ? null : mark.dataset.mark; mapSheetRender(); return; }
+  }
+  if (state.view !== 'similar') return;
   const B = mapBuild();
-  if (e.target.closest('#worldpane a')) return;
-  const mark = e.target.closest('[data-mark]');
-  if (mark) {
-    MAP.hl = MAP.hl === mark.dataset.mark ? null : mark.dataset.mark;
-    mapSideRender();
-    mapWorldRender();
-    return;
-  }
-  const kind = e.target.closest('[data-mapkind]');
-  if (kind) { mapSwitch(...kind.dataset.mapkind.split(':')); return; }
-  if (e.target.closest('[data-world-close]')) { MAP.world = null; mapWorldRender(); return; }
-  const tagf = e.target.closest('[data-tagfilter]');
-  if (tagf) {
-    if (!MAP.opts.tags.includes(tagf.dataset.tagfilter)) MAP.opts.tags.push(tagf.dataset.tagfilter);
-    mapSaveOpts();
-    render();
-    return;
-  }
-  const untag = e.target.closest('[data-untag]');
-  if (untag) {
-    MAP.opts.tags = untag.dataset.untag === '*' ? [] : MAP.opts.tags.filter(t => t !== untag.dataset.untag);
-    mapSaveOpts();
-    render();
-    return;
-  }
-  const add = e.target.closest('[data-add]');
-  if (add) { mapToggleSeed(mapByRef(B, add.dataset.add)); return; }
-  const unseed = e.target.closest('[data-unseed]');
-  if (unseed) { mapToggleSeed(mapByRef(B, unseed.dataset.unseed)); return; }
-  const foc = e.target.closest('[data-focus]');
-  if (foc) { mapFocus(mapByRef(B, foc.dataset.focus)); return; }
-  const pick = e.target.closest('[data-pick]');
-  if (pick) {
-    const p = mapByRef(B, pick.dataset.pick), mode = pick.dataset.pick[0] === 'a' ? 'authors' : 'books';
-    if (mode === MAP.opts.mode) { mapSetSeeds([p], p, !mapSimilar()); return; }
-    // The books side has no map view: a book shown on it is shown among similar books.
-    if (mode === 'books') MAP.opts.view = 'similar';
-    mapOpen(p, mode);
-    if (!mapSimilar()) MAP.world = mapContextOf(p);
-    render();
-    return;
-  }
-  if (e.target.closest('[data-unpick]')) { mapSetSeeds([]); return; }
-  const z = e.target.closest('[data-mz]');
-  if (z && MAP.cam) {
-    const c = F('mapc');
-    if (z.dataset.mz === 'fit') { MAP.cam = mapFit(mapPoints(B), c.clientWidth, c.clientHeight); mapRedraw(); }
-    else mapZoom(z.dataset.mz === 'in' ? 1.6 : 1 / 1.6, c.clientWidth / 2, c.clientHeight / 2);
-  }
+  const mode = e.target.closest('[data-simmode]');
+  if (mode) { mapSetMode(mode.dataset.simmode); return; }
+  if (e.target.closest('[data-simclose]')) { mapLeave(); return; }
+  const add = e.target.closest('[data-simadd]'), p = add && mapByRef(B, add.dataset.simadd);
+  if (p) { if (!MAP.seeds.includes(p)) mapSetSeeds([...MAP.seeds, p]); return; }
+  const drop = e.target.closest('[data-simdrop]');
+  if (drop) mapSetSeeds(MAP.seeds.filter(s => s.ref !== drop.dataset.simdrop));
 });
 
-// The slider re-renders only the result list: replacing the panel would destroy the
-// slider under the pointer mid-drag.
+// The slider redraws only the list: redrawing the bar would replace the slider mid-drag.
 document.addEventListener('input', e => {
   const opt = e.target.closest('[data-mapopt]');
   if (!opt) return;
@@ -1101,14 +647,12 @@ document.addEventListener('input', e => {
     F('minsimval').textContent = opt.value + ' %';
   } else o[name] = opt.checked;
   mapSaveOpts();
-  mapRefreshResults();
+  F('view').innerHTML = similarView();
+  markClips();
 });
 
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape' && MAP.world && F('worldpane')) { MAP.world = null; mapWorldRender(); return; }
+  if (e.key === 'Escape' && MAP.world) { mapCloseAuthor(); return; }
   const node = (e.key === 'Enter' || e.key === ' ') && e.target.closest && e.target.closest('.wnode[data-mark]');
   if (node) { e.preventDefault(); node.click(); }
 });
-
-new MutationObserver(mapRedraw).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-matchMedia('(prefers-color-scheme: dark)').addEventListener('change', mapRedraw);
