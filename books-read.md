@@ -1,33 +1,39 @@
 # Books Already Read — Score Log
 
-Fill in as you finish (or remember) books. The rating is a **score out of 10**, given as a
-whole number. Older scores keep the decimal they were converted with on 2026-10-29 (an
-old 92 is 9.2): that precision stays here, but the viewer and every proposal show whole
-numbers only.
+Fill in as you finish (or remember) books. The rating is **one of five words** (since
+2026-11-09). Older rows keep the number they were logged with, out of 10 and sometimes with
+the decimal converted on 2026-10-29 (an old 92 is 9.2): that precision stays here as
+calibration, but the viewer and every proposal show the word.
 
-| Score | Meaning |
-|---|---|
-| 10 | Almost a perfect book |
-| 9 | Enjoyed it very much |
-| 8 | A nice read |
-| 7 | Ok to read |
-| 5-6 | Did not like it very much |
-| 4 and below | Did not like reading it |
+| Score | Meaning | Band (0-100) | Counts as |
+|---|---|---|---|
+| Endorse | Enjoyed it very much, up to almost a perfect book | 85 and up | 92 |
+| Recommend | A nice read, or at least ok to read | 65 to 84 | 75 |
+| Neutral | "Not liked much but not disliked much" | 55 to 64 | 60 |
+| Discourage | Did not like it very much | 45 to 54 | 50 |
+| Oppose | Did not like reading it | below 45 | 30 |
 
-**7 and 8 are not failures** — 8 is good and 7 is fine, and reading outside the comfort zone to expand horizons is worth an occasional 7. Only **6 and below** are negative signal.
+**The bands are the reader's own**, drawn in his rerank of 2026-11-09: every book on an
+old 7 or 8 went to Recommend, and the old 5s and 6s split between Neutral and Discourage
+on his judgement, not on their numbers. The rows whose number disagreed with his word now
+carry the word.
+
+**Recommend is not a failure even at its low end** — reading outside the comfort zone to expand horizons is worth an occasional old-7 Recommend. Neutral is not a dislike, but it is not a book to suggest either. Only **Discourage and Oppose** are dislikes.
 
 **Scores are reader-set** (revised by hand 2026-08-19), not derived. Treat the
-exact numbers as meaningful, including small gaps.
+exact numbers on older rows as meaningful, including small gaps.
 
 **The score is an absolute rating, not a rank — any number of books may share one**
-(confirmed 2026-08-22). Two books on 8 are two books the reader liked the same amount;
-that is a result, not a collision to resolve. The table is sorted by score descending,
-but **order within an equal score is arbitrary and carries no meaning** — never infer a
-preference from which tied row sits higher, and never reorder tied rows to imply one.
+(confirmed 2026-08-22). Two books on Recommend are two books the reader liked the same
+amount; that is a result, not a collision to resolve. The table is sorted by score
+descending, a word sitting at the number it counts as, but **order within an equal score
+is arbitrary and carries no meaning** — never infer a preference from which tied row sits
+higher, and never reorder tied rows to imply one.
 
-**Tools and predictions work on 0-100**, which is this score times ten; `tools/readlog.py`
-is the one place that converts. Numbers quoted *inside* the notes below (predicted ranges,
-how far over or under) are still on that 0-100 scale.
+**Tools and predictions work on 0-100**: a word is the number in "Counts as", an older
+score is its number times ten. `tools/readlog.py` is the one place that converts. Numbers
+quoted *inside* the notes below (predicted ranges, how far over or under) are still on
+that 0-100 scale.
 
 Notes should capture *why* it worked or didn't — pacing, POV, protagonist
 focus, ending, content, etc. — so [book-recommendations.md](book-recommendations.md) can be tuned against real data.
@@ -67,28 +73,29 @@ conclusion. Ties in the score column are likewise fine, not unfinished work.
 | The Silmarillion | J. R. R. Tolkien | 7 | Reason not yet captured. Notable as the one book that still scores an ok 7 despite no single protagonist, no continuous plot and dense mythic prose — the opposite of the usual profile. |
 | Saturnin | Zdeněk Jirotka | 7 | Comic Czech classic; scores 7 on voice and character rather than on any idea worked out, so the humour register carries no penalty here. |
 | Pýcha a předsudek (Pride and Prejudice) | Jane Austen | 7 | Romance as the central subject costs nothing - motives and what characters want are the entire book, which is the axis that tops the log. |
-| Hraničářův učeň #1-4 (Ranger's Apprentice) | John Flanagan | 7 | The series note. Scored per volume in the 2026-10-29 rerank, which replaced one row for #1-14 at 7.4: #1-4 7, #5 6, #6 7, #7-10 6, #11 5, #12-13 7. Easy to read, but not much to think about. Marked down for lazy historical stereotypes stated as fact — e.g. Japanese steel being better than European, which isn't true — and there were many such. |
+| Hraničářův učeň #1-4 (Ranger's Apprentice) | John Flanagan | 7 | The series note. Scored per volume in the 2026-10-29 rerank, which replaced one row for #1-14 at 7.4: #1-4 7, #5 6, #6 7, #7-10 6, #11 5, #12-13 7. In the 2026-11-09 rerank #1-4, #6 and #12-13 went to Recommend and #5, #7-10 and #11 to Discourage. Easy to read, but not much to think about. Marked down for lazy historical stereotypes stated as fact — e.g. Japanese steel being better than European, which isn't true — and there were many such. |
 | Hraničářův učeň #6 | John Flanagan | 7 | Hraničářův učeň (Ranger's Apprentice); the series note is on #1-4. |
 | Hraničářův učeň #12-13 | John Flanagan | 7 | Hraničářův učeň (Ranger's Apprentice); the series note is on #1-4. |
 | Hraničářův učeň: První roky #1 (The Early Years) | John Flanagan | 7 | Flanagan's prequel series to Ranger's Apprentice, scored in the 2026-10-29 rerank. Reason not yet captured. |
 | Labyrint světa a ráj srdce | Jan Amos Komenský | 7 | Predicted [66, 76] and landed inside it - a hit for `axis:ideas` + `axis:short-idea-driven` on an allegory with a nameable idea, and the `axis:faith` risk did not fire. |
 | The Count of Monte Cristo | Alexandre Dumas | 6 | Classic revenge/adventure epic — long, but plot momentum held up. |
 | Son of Hamas | Mosab Hassan Yousef | 6 | Non-fiction memoir. Reason not yet captured. |
-| Hraničářův učeň #5 | John Flanagan | 6 | Hraničářův učeň (Ranger's Apprentice); the series note is on #1-4. |
-| Hraničářův učeň #7-10 | John Flanagan | 6 | Hraničářův učeň (Ranger's Apprentice); the series note is on #1-4. |
 | Bratrstvo #1-3 (Brotherband) | John Flanagan | 6 | Flanagan's spin-off series in the Ranger's Apprentice world, scored in the 2026-10-29 rerank. Reason not yet captured. |
-| Hitchhiker's sequels (#2-5) | Douglas Adams | 6 | Reason not yet captured. A 23-point fall from book 1 — the steepest series decline in the log. |
-| Unfinished Tales | J. R. R. Tolkien | 6 | Fragmented and not aligned — the pieces aren't logically connected to each other. Lowest Tolkien by a clear margin, 10 under The Silmarillion. |
-| Artemis | Andy Weir | 6 | Revised down from 76 on 2026-08-27, same reasons: the protagonist wasn't interesting, and the crude sexual treatment cost. Worldbuilding was consistent and rescued nothing. Lowered again to 60 in the 2026-10-29 rerank, a full 40 points below *Project Hail Mary* 100 by the same author - the strongest single case in the log that a thin lead outranks strong worldbuilding. |
 | Exodus | Leon Uris | 6 | Historical novel. Reason not yet captured. |
 | The Chronicles of Narnia | C. S. Lewis | 6 | Not bad, but children as the main characters, and it lacks higher things to think about. |
 | Quo Vadis | Henryk Sienkiewicz | 6 | Historical novel. Reason not yet captured. |
-| Percy Jackson (full series) | Rick Riordan | 5.7 | Low because of the occult — the Greek pantheon counts, not just witchcraft. |
-| Zaslaná pošta (Going Postal) | Terry Pratchett | 5 | **DNF, scored anyway** (2026-10-30): "not liked much but not disliked much". Not his cup of tea: Pratchett's chaotic storytelling, often going off topic, quite some descriptive scenes; the jokes land only sometimes. Predicted 8-9 after a deep dive. |
+| Zaslaná pošta (Going Postal) | Terry Pratchett | Neutral | **DNF, scored anyway** (2026-10-30): "not liked much but not disliked much". Not his cup of tea: Pratchett's chaotic storytelling, often going off topic, quite some descriptive scenes; the jokes land only sometimes. Predicted [80, 87] after a deep dive. Neutral since the 2026-11-09 rerank, up from 50. |
+| 1984 | George Orwell | Neutral | Too depressing. Neutral since the 2026-11-09 rerank, up from 50. |
+| Výdech (Exhalation) | Ted Chiang | Neutral | **DNF after four of nine pieces** (2026-11-09), scored Neutral as a book. Story by story: the first, *The Merchant and the Alchemist's Gate*, Endorse; the title story *Exhalation* not liked much; the short determinism piece ok; then the long digient novella, *The Lifecycle of Software Objects*, was too long: "it was a short book, not just an interesting story, and I had the mindset for stories". Stopped there. Predicted [78, 86] after a deep dive: **18 under the low end**. The dive had flagged that novella as the commonest complaint and priced it as a small pushback, and it leaned on the title story. |
+| Hraničářův učeň #5 | John Flanagan | Discourage | Hraničářův učeň (Ranger's Apprentice); the series note is on #1-4. |
+| Hraničářův učeň #7-10 | John Flanagan | Discourage | Hraničářův učeň (Ranger's Apprentice); the series note is on #1-4. |
+| Hitchhiker's sequels (#2-5) | Douglas Adams | Discourage | Reason not yet captured. A 33-point fall from book 1 since the 2026-11-09 rerank lowered it from 60 — the steepest series decline in the log. |
+| Unfinished Tales | J. R. R. Tolkien | Discourage | Fragmented and not aligned — the pieces aren't logically connected to each other. Lowest Tolkien by a clear margin, 20 under The Silmarillion since the 2026-11-09 rerank lowered it from 60. |
+| Artemis | Andy Weir | Discourage | Revised down from 76 on 2026-08-27, same reasons: the protagonist wasn't interesting, and the crude sexual treatment cost. Worldbuilding was consistent and rescued nothing. Lowered again to 60 in the 2026-10-29 rerank, and to Discourage (50) in the 2026-11-09 rerank, a full 50 points below *Project Hail Mary* 100 by the same author - the strongest single case in the log that a thin lead outranks strong worldbuilding. |
+| Percy Jackson (full series) | Rick Riordan | Discourage | Low because of the occult — the Greek pantheon counts, not just witchcraft. Discourage since the 2026-11-09 rerank, down from 57. |
 | Hraničářův učeň #11 | John Flanagan | 5 | Hraničářův učeň (Ranger's Apprentice); the series note is on #1-4. The lowest volume of the series. |
 | Čaropisci (Foundryside) | Robert Jackson Bennett | 5 | **Read to the end 2026-09-02 after a chapter-one DNF, and this score supersedes the 30 recorded 2026-08-28.** Lowered from 67 to 50 in the 2026-10-29 rerank. That 30 was an accurate record of the experience and was never a verdict on the book. Positive: the worldbuilding is good, the scriving of reality is the thing he singled out as liking, and he "quite liked most of the main characters". Three deductions and one warning. **The opening — and this row is the log's only measurement of what that filter actually costs when it is survived:** "if only this it would be still around 80, because I would read about it online." So shape two of the opening filter is worth a few points off an ~84 when the premise is looked up first, and is fatal only when it is not. **Occult, and it demotes a canonical example:** creating a hierofant "require something like human sacrifice — quite similar to some ritual", and hierofants are "something like god". Scriving's everyday operation is mechanical; the system's *elevation* mechanic is a rite, and the old notes cleared this book on the first without checking the second. **A same-sex relationship of the main character** — his words, "quite a filter for me". It costs real points and it is not a DNF cause, because he finished. **A warning rather than a deduction here:** the best scriver, the cleverest character and the clan leader are all women, which he calls "not bad" in this book but names as the trend he dislikes — see the worldbuilding and protagonist bullets. Book 1 of Záhutí (Host 2020, přel. Milan Pohl, 567 s.). Predicted [76, 84]: **26 under** at the reranked 50. |
 | The Ballad of Songbirds and Snakes | Suzanne Collins | 5 | The only Collins book that didn't land. Disliked having Coriolanus Snow as the main character, slowly descending into evil — no one to root for. Controlled against Sunrise on the Reaping 87: same author, same world, same prequel form, 37 points apart on the protagonist alone. |
-| 1984 | George Orwell | 5 | Too depressing. |
 | Divergent (series) | Veronica Roth | 5 | Judged as a whole series. Premise collapses under thought: a society engineered to produce Divergents that neither lets factions mix nor tolerates the Divergents it hunts. Reads as ideas borrowed from other books and assembled without cohering. Erudite are never written as actually intelligent — the opposite of Ender's Game / Weir / Red Rising. Mary Sue protagonist. Dystopian setting itself was fine. |
 | Oliver Twist | Charles Dickens | 5 | Predicted [58, 68]: 8 under since the 2026-10-29 rerank lowered it from 57 (one under before), an over-prediction. `axis:protagonist` was the lean and it was the right axis: Oliver is acted upon rather than wanting anything. |
 | Já, robot (I, Robot) | Isaac Asimov | 5 | **DNF after the third story**, and three causes, the last of them new to the log. **Nobody to root for in the opening story** — the *Ballad* 50 objection, arriving in a collection. **The robots' behaviour in the third story is not plausible**: they begin believing in a God entity, and the declared Three Laws are precisely what the prediction had leaned on, so the rule system he was promised is the thing that broke. **And it read as satire on the main religions and on blind faith, which he did not like** — the log's first anchor for a treatment of religion played for ridicule, previously asserted only inside the prophecy bullet and never priced. Predicted [76, 84]: **26 under**. Also the log's first *collection*, and it establishes how one is experienced: read from the front and abandoned on its weakest early stories, not averaged and not skipped past. |
@@ -125,7 +132,7 @@ Kept here so they aren't proposed as new; **not usable as evidence** in [book-re
 **Absence is not proof of an unread book** — confirm with the reader before treating a title or author as new. Don't try to reconstruct earlier reading history; log what comes up naturally.
 
 ## How to add an entry
-Add a row with: Book, Author, Score (a whole number out of 10), and a short note on what
+Add a row with: Book, Author, Score (one of the five words), and a short note on what
 worked/didn't (pacing, POV structure, ending, content, how far you got if you DNF'd it).
 Keep the table sorted by score, descending. A book put down without a score goes in the
 "Not finished — no score" table with `—` as its score.
@@ -133,5 +140,5 @@ Keep the table sorted by score, descending. A book put down without a score goes
 ## Instructions for updating the recommendation doc
 Whenever new scores are added here, re-check [book-recommendations.md](book-recommendations.md):
 - Promote authors/styles that scored high here.
-- Demote or flag only what scored **6 or below**, with the reason (confusing opening, incoherent premise, objectionable content, etc.). 7 and 8 are not a demerit — don't record them as one.
+- Demote or flag only what scored **Neutral or lower** (6 or below on older rows), with the reason (confusing opening, incoherent premise, objectionable content, etc.): Neutral as a weak signal on the trait that held it back, Discourage and Oppose as dislikes. Recommend is never a demerit — don't record it as one.
 - A scored DNF is strong negative signal on the specific trait that caused the drop-off. An unscored DNF is a lost-interest signal: what stopped him matters, but it is not a dislike.

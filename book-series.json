@@ -8,6 +8,14 @@
    "kind": "series",
    "members": [
     {
+     "key": "kluk-jmenem-vanoce",
+     "n": 1
+    },
+    {
+     "key": "holka-ktera-zachranila-vanoce",
+     "n": 2
+    },
+    {
      "key": "otec-vanoce-a-ja",
      "n": 3
     }
@@ -65,6 +73,21 @@
    "rejected": [],
    "volumes": null,
    "note": ""
+  },
+  "age-of-madness": {
+   "name": "Věk šílenství",
+   "nameEn": "The Age of Madness",
+   "kind": "series",
+   "members": [
+    {
+     "key": "trocha-zle-krve",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "Sequel trilogy set in the First Law world a generation later"
   },
   "agent-john-francis-kovar": {
    "name": "Agent John Francis Kovář",
@@ -791,6 +814,18 @@
    "volumes": 3,
    "note": ""
   },
+  "brotherband": {
+   "name": "Bratrstvo",
+   "nameEn": "Brotherband Chronicles",
+   "kind": "series",
+   "members": [],
+   "read": [
+    "Bratrstvo #1-3 (Brotherband)"
+   ],
+   "rejected": [],
+   "volumes": null,
+   "note": "Flanagan's spin-off in the Ranger's Apprentice world; volumes 1-3 read."
+  },
   "brownstones-mythical-collection": {
    "name": "Brownstoneova sbírka mýtů",
    "nameEn": "Brownstone's Mythical Collection",
@@ -883,6 +918,25 @@
    ],
    "volumes": null,
    "note": "Pro hrst dukatu assumed n2; order by year"
+  },
+  "captives-war": {
+   "name": "The Captive's War",
+   "nameEn": "The Captive's War",
+   "kind": "series",
+   "members": [
+    {
+     "key": "the-mercy-of-gods",
+     "n": 1
+    },
+    {
+     "key": "livesuit",
+     "n": 1.5
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "Unfinished trilogy; The Faith of Beasts (n2, 2026) staged but held at low confidence; Livesuit is a 2024 novella"
   },
   "carls": {
    "name": "The Carls",
@@ -1114,6 +1168,21 @@
    "rejected": [],
    "volumes": null,
    "note": "Alternate-history cycle in Brokilon alternativa; publication order"
+  },
+  "chanur": {
+   "name": "Chanur",
+   "nameEn": "Chanur",
+   "kind": "series",
+   "members": [
+    {
+     "key": "chanurina-pycha",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 5,
+   "note": ""
   },
   "chaos-walking": {
    "name": "Chaos Walking",
@@ -1498,6 +1567,21 @@
    "rejected": [],
    "volumes": 10,
    "note": "standalone novels in one setting"
+  },
+  "cyteen": {
+   "name": "Cyteen",
+   "nameEn": "Cyteen",
+   "kind": "series",
+   "members": [
+    {
+     "key": "zrada-cherryh",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "The Czech edition splits the single novel Cyteen into three volumes"
   },
   "dagger-and-coin": {
    "name": "Mince a dyka",
@@ -2068,6 +2152,21 @@
    "volumes": 3,
    "note": ""
   },
+  "dreamblood": {
+   "name": "Snová krev",
+   "nameEn": "Dreamblood",
+   "kind": "series",
+   "members": [
+    {
+     "key": "smrtici-luna",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": ""
+  },
   "duftapotheke": {
    "name": "Voňavá lékárna",
    "nameEn": "The Fragrance Pharmacy (Die Duftapotheke)",
@@ -2367,14 +2466,44 @@
      "n": 1
     },
     {
+     "key": "kalibanova-valka",
+     "n": 2
+    },
+    {
+     "key": "o-poklad-ciboly",
+     "n": 4
+    },
+    {
+     "key": "hry-nemesis",
+     "n": 5
+    },
+    {
+     "key": "popel-babylonu",
+     "n": 6
+    },
+    {
+     "key": "vzestup-persepole",
+     "n": 7
+    },
+    {
+     "key": "tiamatin-hnev",
+     "n": 8
+    },
+    {
+     "key": "leviatanova-zhouba",
+     "n": 9
+    },
+    {
      "key": "zastup-vzpominek",
      "n": 10
     }
    ],
    "read": [],
-   "rejected": [],
+   "rejected": [
+    "Abaddonova brána (Abaddon's Gate)"
+   ],
    "volumes": 9,
-   "note": "Memory's Legion is a 2022 story collection, not a main novel"
+   "note": "Memory's Legion is a 2022 story collection, not a main novel; Abaddon's Gate (n3) rejected 2026-11-09 on filter 7, so the nine-novel run cannot be read whole"
   },
   "expert-system": {
    "name": "Expert System",
@@ -2399,6 +2528,14 @@
     {
      "key": "krev-a-jed",
      "n": 1
+    },
+    {
+     "key": "vahadlo-osudu",
+     "n": 2
+    },
+    {
+     "key": "stara-krev",
+     "n": 3
     }
    ],
    "read": [],
@@ -2433,6 +2570,22 @@
     {
      "key": "kdysi-gleitzman",
      "n": 1
+    },
+    {
+     "key": "potom",
+     "n": 2
+    },
+    {
+     "key": "kdyz",
+     "n": 3
+    },
+    {
+     "key": "brzy",
+     "n": 4
+    },
+    {
+     "key": "mozna",
+     "n": 5
     }
    ],
    "read": [],
@@ -2505,6 +2658,14 @@
     {
      "key": "the-blade-itself",
      "n": 1
+    },
+    {
+     "key": "prvni-zakon-kniha-druha-az-budou-viset",
+     "n": 2
+    },
+    {
+     "key": "prvni-zakon-kniha-treti-posledni-argument-kr",
+     "n": 3
     }
    ],
    "read": [],
@@ -2530,6 +2691,29 @@
    "rejected": [],
    "volumes": null,
    "note": "standalone novels in the First Law world"
+  },
+  "fitz-and-the-fool": {
+   "name": "Fitz and the Fool",
+   "nameEn": "Fitz and the Fool",
+   "kind": "series",
+   "members": [
+    {
+     "key": "fool-s-assassin",
+     "n": 1
+    },
+    {
+     "key": "fool-s-quest",
+     "n": 2
+    },
+    {
+     "key": "assassin-s-fate",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "Continues The Tawny Man; no Czech translation"
   },
   "flawed": {
    "name": "Flawed",
@@ -2946,6 +3130,21 @@
    "volumes": null,
    "note": ""
   },
+  "great-library": {
+   "name": "Velká knihovna",
+   "nameEn": "The Great Library",
+   "kind": "series",
+   "members": [
+    {
+     "key": "z-kosti-a-inkoustu",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 5,
+   "note": ""
+  },
   "greatcoats": {
    "name": "Greatcoats",
    "nameEn": "Greatcoats",
@@ -3037,6 +3236,10 @@
     {
      "key": "leva-ruka-tmy",
      "n": 1
+    },
+    {
+     "key": "nespoutani",
+     "n": null
     }
    ],
    "read": [],
@@ -3280,6 +3483,21 @@
    "rejected": [],
    "volumes": 5,
    "note": "The two prequels were written later and are listed after the trilogy."
+  },
+  "hyperion-cantos": {
+   "name": "Kantos Hyperionu",
+   "nameEn": "Hyperion Cantos",
+   "kind": "series",
+   "members": [
+    {
+     "key": "hyperion",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": ""
   },
   "i-am-rome": {
    "name": "Řím jsem já",
@@ -3974,6 +4192,10 @@
     {
      "key": "dopis-pro-krale",
      "n": 1
+    },
+    {
+     "key": "tajemstvi-divokeho-hvozdu",
+     "n": 2
     }
    ],
    "read": [],
@@ -4093,6 +4315,29 @@
     {
      "key": "previtem-snadno-a-rychle",
      "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "liveship-traders": {
+   "name": "Živé lodě",
+   "nameEn": "The Liveship Traders",
+   "kind": "series",
+   "members": [
+    {
+     "key": "magicka-lod",
+     "n": 1
+    },
+    {
+     "key": "silena-lod",
+     "n": 2
+    },
+    {
+     "key": "lod-osudu",
+     "n": 3
     }
    ],
    "read": [],
@@ -4257,6 +4502,36 @@
    "volumes": null,
    "note": "Order by year"
   },
+  "machineries-of-empire": {
+   "name": "Mašinérie říše",
+   "nameEn": "Machineries of Empire",
+   "kind": "series",
+   "members": [
+    {
+     "key": "lisci-gambit",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
+  "maddaddam": {
+   "name": "MaddAddam",
+   "nameEn": "MaddAddam",
+   "kind": "series",
+   "members": [
+    {
+     "key": "preziva-nejsmutnejsi",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "Přežívá nejsmutnější is the Czech title of Oryx and Crake"
+  },
   "magisterium": {
    "name": "Magisterium",
    "nameEn": "Magisterium",
@@ -4271,6 +4546,21 @@
    "rejected": [],
    "volumes": 5,
    "note": "book 4"
+  },
+  "manifest-delusions": {
+   "name": "Manifest bludu",
+   "nameEn": "Manifest Delusions",
+   "kind": "series",
+   "members": [
+    {
+     "key": "nespasitelni",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
   },
   "marnie-midnight": {
    "name": "Maruška Půlnoční",
@@ -4290,6 +4580,21 @@
    "rejected": [],
    "volumes": null,
    "note": "order uncertain"
+  },
+  "mars-trilogy": {
+   "name": "Mars",
+   "nameEn": "Mars Trilogy",
+   "kind": "series",
+   "members": [
+    {
+     "key": "rudy-mars",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
   },
   "mass-effect": {
    "name": "Mass Effect",
@@ -4737,6 +5042,10 @@
     {
      "key": "lide-sawyer",
      "n": 2
+    },
+    {
+     "key": "hominide",
+     "n": 1
     }
    ],
    "read": [],
@@ -5402,6 +5711,25 @@
    "volumes": 2,
    "note": ""
   },
+  "quantum-logic": {
+   "name": "Quantum Logic",
+   "nameEn": "Quantum Logic",
+   "kind": "universe",
+   "members": [
+    {
+     "key": "kralovna-andelu",
+     "n": 1
+    },
+    {
+     "key": "martanska-cesta",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": ""
+  },
   "queens-of-the-white-ring": {
    "name": "Královny bílého prstenu",
    "nameEn": "Queens of the White Ring",
@@ -5432,6 +5760,48 @@
    "volumes": 2,
    "note": ""
   },
+  "rain-wild-chronicles": {
+   "name": "Kroniky Deštné divočiny",
+   "nameEn": "The Rain Wild Chronicles",
+   "kind": "series",
+   "members": [
+    {
+     "key": "draci-strazce",
+     "n": 1
+    },
+    {
+     "key": "draci-domov",
+     "n": 2
+    },
+    {
+     "key": "draci-mesto-hobb",
+     "n": 3
+    },
+    {
+     "key": "draci-krev",
+     "n": 4
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": "Picks up where The Liveship Traders ends, with new leads"
+  },
+  "rama": {
+   "name": "Ráma",
+   "nameEn": "Rama",
+   "kind": "series",
+   "members": [
+    {
+     "key": "setkani-s-ramou",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": "The three sequels were co-written with Gentry Lee"
+  },
   "rangers-apprentice": {
    "name": "Hraničářův učeň",
    "nameEn": "Ranger's Apprentice",
@@ -5461,18 +5831,6 @@
    "rejected": [],
    "volumes": null,
    "note": ""
-  },
-  "brotherband": {
-   "name": "Bratrstvo",
-   "nameEn": "Brotherband Chronicles",
-   "kind": "series",
-   "members": [],
-   "read": [
-    "Bratrstvo #1-3 (Brotherband)"
-   ],
-   "rejected": [],
-   "volumes": null,
-   "note": "Flanagan's spin-off in the Ranger's Apprentice world; volumes 1-3 read."
   },
   "raven-rings": {
    "name": "Havraní prsteny",
@@ -5537,6 +5895,21 @@
    "rejected": [],
    "volumes": null,
    "note": ""
+  },
+  "realm-of-the-elderlings": {
+   "name": "Realm of the Elderlings",
+   "nameEn": "Realm of the Elderlings",
+   "kind": "universe",
+   "members": [
+    {
+     "key": "the-willful-princess-and-the-piebald-prince",
+     "n": null
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
+   "note": "Shared world of Farseer, Liveship, Tawny Man, Rain Wild and Fitz and the Fool"
   },
   "reckoners": {
    "name": "Reckoners",
@@ -5751,6 +6124,21 @@
    "rejected": [],
    "volumes": null,
    "note": "Only volume 1 published"
+  },
+  "riverworld": {
+   "name": "Svět Řeky",
+   "nameEn": "Riverworld",
+   "kind": "series",
+   "members": [
+    {
+     "key": "reka-zmrtvychvstani",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 5,
+   "note": ""
   },
   "riyria-revelations": {
    "name": "Riyria Revelations",
@@ -6458,6 +6846,35 @@
    "volumes": null,
    "note": ""
   },
+  "soldier-son": {
+   "name": "Soldier Son",
+   "nameEn": "The Soldier Son",
+   "kind": "series",
+   "members": [],
+   "read": [],
+   "rejected": [
+    "Forest Mage",
+    "Renegade's Magic",
+    "Shaman's Crossing"
+   ],
+   "volumes": 3,
+   "note": "No Czech translation"
+  },
+  "southern-reach": {
+   "name": "Jižní Zóna",
+   "nameEn": "Southern Reach",
+   "kind": "series",
+   "members": [
+    {
+     "key": "anihilace",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 4,
+   "note": ""
+  },
   "space-odyssey": {
    "name": "Vesmírná odysea",
    "nameEn": "Space Odyssey",
@@ -6917,6 +7334,29 @@
    "volumes": 3,
    "note": ""
   },
+  "tawny-man": {
+   "name": "Snědý muž",
+   "nameEn": "The Tawny Man",
+   "kind": "series",
+   "members": [
+    {
+     "key": "cas-zmen",
+     "n": 1
+    },
+    {
+     "key": "tajemny-ucen",
+     "n": 2
+    },
+    {
+     "key": "zlovestne-sny",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "Continues Farseer's lead fifteen years on; Czech translation stops partway into book 3"
+  },
   "tearling": {
    "name": "Tearling",
    "nameEn": "The Queen of the Tearling",
@@ -6987,6 +7427,21 @@
    "read": [],
    "rejected": [],
    "volumes": 3,
+   "note": ""
+  },
+  "the-devils": {
+   "name": "Ďábli",
+   "nameEn": "The Devils",
+   "kind": "series",
+   "members": [
+    {
+     "key": "dabli",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": null,
    "note": ""
   },
   "the-divide": {
@@ -7395,6 +7850,29 @@
    "volumes": 2,
    "note": ""
   },
+  "time-odyssey": {
+   "name": "Vesmírná odysea času",
+   "nameEn": "A Time Odyssey",
+   "kind": "series",
+   "members": [
+    {
+     "key": "oko-casu",
+     "n": 1
+    },
+    {
+     "key": "slunecni-boure",
+     "n": 2
+    },
+    {
+     "key": "prvorozeni",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "Arthur C. Clarke with Stephen Baxter"
+  },
   "time-patrol": {
    "name": "Time Patrol",
    "nameEn": "Time Patrol",
@@ -7681,6 +8159,21 @@
    "volumes": 4,
    "note": ""
   },
+  "uplift-storm": {
+   "name": "Pozvedání II",
+   "nameEn": "Uplift Storm",
+   "kind": "series",
+   "members": [
+    {
+     "key": "utes-nadeje",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "Second Uplift trilogy; the first trilogy opens with Sluneční poutník, rejected on axis:detective"
+  },
   "vagrant-trilogy": {
    "name": "The Vagrant",
    "nameEn": "The Vagrant",
@@ -7764,6 +8257,10 @@
     {
      "key": "ucednik-valky",
      "n": 2
+    },
+    {
+     "key": "cary-cti",
+     "n": 1
     }
    ],
    "read": [],
@@ -7885,6 +8382,29 @@
    "volumes": 4,
    "note": "Shared world, different leads"
   },
+  "wayward-pines": {
+   "name": "Městečko Pines",
+   "nameEn": "Wayward Pines",
+   "kind": "series",
+   "members": [
+    {
+     "key": "mestecko-pines",
+     "n": 1
+    },
+    {
+     "key": "mestecko-pines-2",
+     "n": 2
+    },
+    {
+     "key": "mestecko-pines-3",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": ""
+  },
   "wess-har-wars": {
    "name": "Wess'har Wars",
    "nameEn": "Wess'har Wars",
@@ -7997,6 +8517,29 @@
    "rejected": [],
    "volumes": 3,
    "note": ""
+  },
+  "wolfe-brothers": {
+   "name": "Bratři Wolfové",
+   "nameEn": "Wolfe Brothers",
+   "kind": "series",
+   "members": [
+    {
+     "key": "roky-pod-psa",
+     "n": 1
+    },
+    {
+     "key": "smecka-rvacu",
+     "n": 2
+    },
+    {
+     "key": "kdyz-psi-placou",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "The Underdog, Fighting Ruben Wolfe, When Dogs Cry"
   },
   "world-of-the-five-gods": {
    "name": "Svět Pěti bohů",

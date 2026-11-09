@@ -6,73 +6,636 @@
  "_safetyIssue": "optional short text naming what pulled safety down, e.g. \"sex, one chapter\".",
  "_predicted": "written by /book-log when a candidate is logged: the radar its prediction carried, so a miss shows which spoke it came from. Never edited by hand.",
  "radar": {
-  "ozvena-veci-budoucich-an-echo-of-things-to-come": {"world": 10, "coherence": 10, "pull": 9, "characters": 8, "heart": 10, "ideas": 9, "safety": 8},
-  "project-hail-mary": {"world": 10, "coherence": 10, "pull": 9, "characters": 9, "heart": 9, "ideas": 10, "safety": 10},
-  "seeking-allah-finding-jesus": {"world": 10, "coherence": 10, "pull": 9, "characters": 10, "heart": 9, "ideas": 10, "safety": 10},
-  "svetlo-veci-konecnych-the-light-of-all-that-falls": {"world": 10, "coherence": 10, "pull": 10, "characters": 8, "heart": 10, "ideas": 9, "safety": 8},
-  "red-rising": {"world": 10, "coherence": 10, "pull": 10, "characters": 10, "heart": 8, "ideas": 8, "safety": 8},
-  "stin-veci-ztracenych-the-shadow-of-what-was-lost": {"world": 10, "coherence": 10, "pull": 8, "characters": 8, "heart": 10, "ideas": 9, "safety": 8},
-  "golden-son-red-rising-2": {"world": 10, "coherence": 10, "pull": 9, "characters": 10, "heart": 8, "ideas": 8, "safety": 8},
-  "mockingjay-hunger-games-3": {"world": 9, "coherence": 10, "pull": 10, "characters": 9, "heart": 9, "ideas": 10, "safety": 10},
-  "speaker-for-the-dead-ender-2": {"world": 10, "coherence": 10, "pull": 9, "characters": 10, "heart": 9, "ideas": 10, "safety": 9},
-  "the-hunger-games": {"world": 9, "coherence": 10, "pull": 10, "characters": 9, "heart": 9, "ideas": 9, "safety": 10},
-  "sunrise-on-the-reaping": {"world": 9, "coherence": 10, "pull": 10, "characters": 9, "heart": 8, "ideas": 9, "safety": 10},
-  "valka-stareho-muze-old-man-s-war": {"world": 10, "coherence": 10, "pull": 10, "characters": 10, "heart": 10, "ideas": 8, "safety": 8},
-  "ender-s-game": {"world": 9, "coherence": 9, "pull": 9, "characters": 10, "heart": 9, "ideas": 9, "safety": 10},
-  "the-hobbit": {"world": 9, "coherence": 10, "pull": 9, "characters": 9, "heart": 10, "ideas": 7, "safety": 10},
-  "the-lord-of-the-rings-series": {"world": 9, "coherence": 10, "pull": 7, "characters": 9, "heart": 10, "ideas": 8, "safety": 10},
-  "catching-fire-hunger-games-2": {"world": 8, "coherence": 10, "pull": 9, "characters": 9, "heart": 9, "ideas": 9, "safety": 10},
-  "the-hitchhiker-s-guide-to-the-galaxy": {"world": 8, "coherence": 6, "pull": 7, "characters": 6, "heart": 8, "ideas": 7, "safety": 10},
-  "mort-discworld-4": {"world": 7, "coherence": 10, "pull": 7, "characters": 8, "heart": 8, "ideas": 8, "safety": 9},
-  "the-martian": {"world": 8, "coherence": 10, "pull": 8, "characters": 9, "heart": 9, "ideas": 8, "safety": 10},
-  "the-little-prince": {"world": 8, "coherence": 9, "pull": 8, "characters": 9, "heart": 10, "ideas": 10, "safety": 10},
-  "ender-saga-3-5-xenocide-onward": {"world": 9, "coherence": 10, "pull": 8, "characters": 9, "heart": 9, "ideas": 9, "safety": 10},
-  "pocitani-hvezd-the-calculating-stars": {"world": 7, "coherence": 10, "pull": 7, "characters": 8, "heart": 9, "ideas": 9, "safety": 10},
-  "vule-vetsiny-the-will-of-the-many": {"world": 9, "coherence": 10, "pull": 8, "characters": 9, "heart": 8, "ideas": 9, "safety": 10},
-  "ender-s-shadow-series": {"world": 8, "coherence": 9, "pull": 8, "characters": 8, "heart": 9, "ideas": 8, "safety": 10},
-  "male-zeny-little-women": {"world": 7, "coherence": 10, "pull": 8, "characters": 9, "heart": 10, "ideas": 8, "safety": 10},
-  "animal-farm": {"world": 8, "coherence": 9, "pull": 9, "characters": 7, "heart": 8, "ideas": 10, "safety": 10},
-  "les-miserables": {"world": 7, "coherence": 10, "pull": 6, "characters": 8, "heart": 10, "ideas": 9, "safety": 9},
-  "the-silmarillion": {"world": 7, "coherence": 10, "pull": 7, "characters": 6, "heart": 8, "ideas": 8, "safety": 10},
-  "saturnin": {"world": 6, "coherence": 7, "pull": 8, "characters": 9, "heart": 9, "ideas": 8, "safety": 10},
-  "pycha-a-predsudek-pride-and-prejudice": {"world": 6, "coherence": 9, "pull": 7, "characters": 8, "heart": 10, "ideas": 9, "safety": 10},
-  "hranicaruv-ucen-1-4-ranger-s-apprentice": {"world": 7, "coherence": 8, "pull": 8, "characters": 8, "heart": 9, "ideas": 7, "safety": 10},
-  "hranicaruv-ucen-6": {"world": 7, "coherence": 7, "pull": 8, "characters": 8, "heart": 9, "ideas": 7, "safety": 10},
-  "hranicaruv-ucen-12-13": {"world": 7, "coherence": 8, "pull": 8, "characters": 8, "heart": 9, "ideas": 7, "safety": 10},
-  "hranicaruv-ucen-prvni-roky-1-the-early-years": {"world": 7, "coherence": 7, "pull": 7, "characters": 8, "heart": 9, "ideas": 7, "safety": 10},
-  "labyrint-sveta-a-raj-srdce": {"world": 7, "coherence": 9, "pull": 7, "characters": 6, "heart": 8, "ideas": 10, "safety": 10},
-  "the-count-of-monte-cristo": {"world": 8, "coherence": 9, "pull": 8, "characters": 9, "heart": 8, "ideas": 9, "safety": 10},
-  "son-of-hamas": {"world": 8, "coherence": 10, "pull": 7, "characters": 8, "heart": 8, "ideas": 9, "safety": 10},
-  "hranicaruv-ucen-5": {"world": 7, "coherence": 7, "pull": 8, "characters": 8, "heart": 9, "ideas": 7, "safety": 10},
-  "hranicaruv-ucen-7-10": {"world": 7, "coherence": 7, "pull": 8, "characters": 8, "heart": 9, "ideas": 7, "safety": 10},
-  "bratrstvo-1-3-brotherband": {"world": 6, "coherence": 7, "pull": 7, "characters": 8, "heart": 9, "ideas": 7, "safety": 10},
-  "hitchhiker-s-sequels-2-5": {"world": 6, "coherence": 6, "pull": 7, "characters": 7, "heart": 8, "ideas": 7, "safety": 10},
-  "unfinished-tales": {"world": 7, "coherence": 9, "pull": 6, "characters": 5, "heart": 8, "ideas": 7, "safety": 9},
-  "artemis": {"world": 7, "coherence": 8, "pull": 7, "characters": 7, "heart": 7, "ideas": 7, "safety": 8},
-  "exodus": {"world": 7, "coherence": 8, "pull": 6, "characters": 7, "heart": 8, "ideas": 7, "safety": 10},
-  "the-chronicles-of-narnia": {"world": 6, "coherence": 7, "pull": 7, "characters": 7, "heart": 9, "ideas": 8, "safety": 10},
-  "quo-vadis": {"world": 6, "coherence": 8, "pull": 7, "characters": 7, "heart": 8, "ideas": 8, "safety": 10},
-  "percy-jackson-full-series": {"world": 9, "coherence": 9, "pull": 9, "characters": 8, "heart": 9, "ideas": 7, "safety": 5},
-  "zaslana-posta-going-postal": {"world": 7, "coherence": 8, "pull": 6, "characters": 7, "heart": 7, "ideas": 8, "safety": 9},
-  "hranicaruv-ucen-11": {"world": 7, "coherence": 7, "pull": 7, "characters": 8, "heart": 8, "ideas": 7, "safety": 10},
-  "caropisci-foundryside": {"world": 9, "coherence": 9, "pull": 6, "characters": 8, "heart": 7, "ideas": 8, "safety": 7},
-  "the-ballad-of-songbirds-and-snakes": {"world": 8, "coherence": 9, "pull": 7, "characters": 6, "heart": 5, "ideas": 8, "safety": 9},
-  "1984": {"world": 8, "coherence": 10, "pull": 8, "characters": 7, "heart": 5, "ideas": 10, "safety": 8},
-  "divergent-series": {"world": 8, "coherence": 5, "pull": 8, "characters": 7, "heart": 7, "ideas": 7, "safety": 10},
-  "oliver-twist": {"world": 7, "coherence": 10, "pull": 6, "characters": 7, "heart": 8, "ideas": 8, "safety": 10},
-  "ja-robot-i-robot": {"world": 7, "coherence": 7, "pull": 6, "characters": 6, "heart": 6, "ideas": 8, "safety": 10},
-  "mortal-engines-smrtelne-stroje": {"world": 9, "coherence": 5, "pull": 9, "characters": 7, "heart": 7, "ideas": 7, "safety": 9},
-  "promena-the-metamorphosis": {"world": 5, "coherence": 5, "pull": 6, "characters": 5, "heart": 6, "ideas": 7, "safety": 10},
-  "ready-player-one": {"world": 7, "coherence": 7, "pull": 7, "characters": 6, "heart": 6, "ideas": 6, "safety": 7},
-  "the-witcher-series": {"world": 9, "coherence": 9, "pull": 8, "characters": 8, "heart": 6, "ideas": 7, "safety": 5},
-  "harry-potter-series": {"world": 7, "coherence": 6, "pull": 8, "characters": 7, "heart": 7, "ideas": 6, "safety": 5},
-  "havran-the-raven": {"world": null, "coherence": null, "pull": null, "characters": null, "heart": null, "ideas": null, "safety": null},
-  "permafrost": {"world": null, "coherence": null, "pull": null, "characters": null, "heart": null, "ideas": null, "safety": null},
-  "strepy-zeme-shards-of-earth": {"world": null, "coherence": null, "pull": null, "characters": null, "heart": null, "ideas": null, "safety": null},
-  "problem-tri-teles-the-three-body-problem": {"world": null, "coherence": null, "pull": null, "characters": null, "heart": null, "ideas": null, "safety": null},
-  "the-diary-of-a-young-girl": {"world": null, "coherence": null, "pull": null, "characters": null, "heart": null, "ideas": null, "safety": null},
-  "guards-guards-discworld-8": {"world": null, "coherence": null, "pull": null, "characters": null, "heart": null, "ideas": null, "safety": null},
-  "the-colour-of-magic-discworld-1": {"world": null, "coherence": null, "pull": null, "characters": null, "heart": null, "ideas": null, "safety": null},
-  "the-gunslinger-the-dark-tower-1": {"world": null, "coherence": null, "pull": null, "characters": null, "heart": null, "ideas": null, "safety": null}
+  "ozvena-veci-budoucich-an-echo-of-things-to-come": {
+   "world": 10,
+   "coherence": 10,
+   "pull": 9,
+   "characters": 8,
+   "heart": 10,
+   "ideas": 9,
+   "safety": 8
+  },
+  "project-hail-mary": {
+   "world": 10,
+   "coherence": 10,
+   "pull": 9,
+   "characters": 9,
+   "heart": 9,
+   "ideas": 10,
+   "safety": 10
+  },
+  "seeking-allah-finding-jesus": {
+   "world": 10,
+   "coherence": 10,
+   "pull": 9,
+   "characters": 10,
+   "heart": 9,
+   "ideas": 10,
+   "safety": 10
+  },
+  "svetlo-veci-konecnych-the-light-of-all-that-falls": {
+   "world": 10,
+   "coherence": 10,
+   "pull": 10,
+   "characters": 8,
+   "heart": 10,
+   "ideas": 9,
+   "safety": 8
+  },
+  "red-rising": {
+   "world": 10,
+   "coherence": 10,
+   "pull": 10,
+   "characters": 10,
+   "heart": 8,
+   "ideas": 8,
+   "safety": 8
+  },
+  "stin-veci-ztracenych-the-shadow-of-what-was-lost": {
+   "world": 10,
+   "coherence": 10,
+   "pull": 8,
+   "characters": 8,
+   "heart": 10,
+   "ideas": 9,
+   "safety": 8
+  },
+  "golden-son-red-rising-2": {
+   "world": 10,
+   "coherence": 10,
+   "pull": 9,
+   "characters": 10,
+   "heart": 8,
+   "ideas": 8,
+   "safety": 8
+  },
+  "mockingjay-hunger-games-3": {
+   "world": 9,
+   "coherence": 10,
+   "pull": 10,
+   "characters": 9,
+   "heart": 9,
+   "ideas": 10,
+   "safety": 10
+  },
+  "speaker-for-the-dead-ender-2": {
+   "world": 10,
+   "coherence": 10,
+   "pull": 9,
+   "characters": 10,
+   "heart": 9,
+   "ideas": 10,
+   "safety": 9
+  },
+  "the-hunger-games": {
+   "world": 9,
+   "coherence": 10,
+   "pull": 10,
+   "characters": 9,
+   "heart": 9,
+   "ideas": 9,
+   "safety": 10
+  },
+  "sunrise-on-the-reaping": {
+   "world": 9,
+   "coherence": 10,
+   "pull": 10,
+   "characters": 9,
+   "heart": 8,
+   "ideas": 9,
+   "safety": 10
+  },
+  "valka-stareho-muze-old-man-s-war": {
+   "world": 10,
+   "coherence": 10,
+   "pull": 10,
+   "characters": 10,
+   "heart": 10,
+   "ideas": 8,
+   "safety": 8
+  },
+  "ender-s-game": {
+   "world": 9,
+   "coherence": 9,
+   "pull": 9,
+   "characters": 10,
+   "heart": 9,
+   "ideas": 9,
+   "safety": 10
+  },
+  "the-hobbit": {
+   "world": 9,
+   "coherence": 10,
+   "pull": 9,
+   "characters": 9,
+   "heart": 10,
+   "ideas": 7,
+   "safety": 10
+  },
+  "the-lord-of-the-rings-series": {
+   "world": 9,
+   "coherence": 10,
+   "pull": 7,
+   "characters": 9,
+   "heart": 10,
+   "ideas": 8,
+   "safety": 10
+  },
+  "catching-fire-hunger-games-2": {
+   "world": 8,
+   "coherence": 10,
+   "pull": 9,
+   "characters": 9,
+   "heart": 9,
+   "ideas": 9,
+   "safety": 10
+  },
+  "the-hitchhiker-s-guide-to-the-galaxy": {
+   "world": 8,
+   "coherence": 6,
+   "pull": 7,
+   "characters": 6,
+   "heart": 8,
+   "ideas": 7,
+   "safety": 10
+  },
+  "mort-discworld-4": {
+   "world": 7,
+   "coherence": 10,
+   "pull": 7,
+   "characters": 8,
+   "heart": 8,
+   "ideas": 8,
+   "safety": 9
+  },
+  "the-martian": {
+   "world": 8,
+   "coherence": 10,
+   "pull": 8,
+   "characters": 9,
+   "heart": 9,
+   "ideas": 8,
+   "safety": 10
+  },
+  "the-little-prince": {
+   "world": 8,
+   "coherence": 9,
+   "pull": 8,
+   "characters": 9,
+   "heart": 10,
+   "ideas": 10,
+   "safety": 10
+  },
+  "ender-saga-3-5-xenocide-onward": {
+   "world": 9,
+   "coherence": 10,
+   "pull": 8,
+   "characters": 9,
+   "heart": 9,
+   "ideas": 9,
+   "safety": 10
+  },
+  "pocitani-hvezd-the-calculating-stars": {
+   "world": 7,
+   "coherence": 10,
+   "pull": 7,
+   "characters": 8,
+   "heart": 9,
+   "ideas": 9,
+   "safety": 10
+  },
+  "vule-vetsiny-the-will-of-the-many": {
+   "world": 9,
+   "coherence": 10,
+   "pull": 8,
+   "characters": 9,
+   "heart": 8,
+   "ideas": 9,
+   "safety": 10
+  },
+  "ender-s-shadow-series": {
+   "world": 8,
+   "coherence": 9,
+   "pull": 8,
+   "characters": 8,
+   "heart": 9,
+   "ideas": 8,
+   "safety": 10
+  },
+  "male-zeny-little-women": {
+   "world": 7,
+   "coherence": 10,
+   "pull": 8,
+   "characters": 9,
+   "heart": 10,
+   "ideas": 8,
+   "safety": 10
+  },
+  "animal-farm": {
+   "world": 8,
+   "coherence": 9,
+   "pull": 9,
+   "characters": 7,
+   "heart": 8,
+   "ideas": 10,
+   "safety": 10
+  },
+  "les-miserables": {
+   "world": 7,
+   "coherence": 10,
+   "pull": 6,
+   "characters": 8,
+   "heart": 10,
+   "ideas": 9,
+   "safety": 9
+  },
+  "the-silmarillion": {
+   "world": 7,
+   "coherence": 10,
+   "pull": 7,
+   "characters": 6,
+   "heart": 8,
+   "ideas": 8,
+   "safety": 10
+  },
+  "saturnin": {
+   "world": 6,
+   "coherence": 7,
+   "pull": 8,
+   "characters": 9,
+   "heart": 9,
+   "ideas": 8,
+   "safety": 10
+  },
+  "pycha-a-predsudek-pride-and-prejudice": {
+   "world": 6,
+   "coherence": 9,
+   "pull": 7,
+   "characters": 8,
+   "heart": 10,
+   "ideas": 9,
+   "safety": 10
+  },
+  "hranicaruv-ucen-1-4-ranger-s-apprentice": {
+   "world": 7,
+   "coherence": 8,
+   "pull": 8,
+   "characters": 8,
+   "heart": 9,
+   "ideas": 7,
+   "safety": 10
+  },
+  "hranicaruv-ucen-6": {
+   "world": 7,
+   "coherence": 7,
+   "pull": 8,
+   "characters": 8,
+   "heart": 9,
+   "ideas": 7,
+   "safety": 10
+  },
+  "hranicaruv-ucen-12-13": {
+   "world": 7,
+   "coherence": 8,
+   "pull": 8,
+   "characters": 8,
+   "heart": 9,
+   "ideas": 7,
+   "safety": 10
+  },
+  "hranicaruv-ucen-prvni-roky-1-the-early-years": {
+   "world": 7,
+   "coherence": 7,
+   "pull": 7,
+   "characters": 8,
+   "heart": 9,
+   "ideas": 7,
+   "safety": 10
+  },
+  "labyrint-sveta-a-raj-srdce": {
+   "world": 7,
+   "coherence": 9,
+   "pull": 7,
+   "characters": 6,
+   "heart": 8,
+   "ideas": 10,
+   "safety": 10
+  },
+  "the-count-of-monte-cristo": {
+   "world": 8,
+   "coherence": 9,
+   "pull": 8,
+   "characters": 9,
+   "heart": 8,
+   "ideas": 9,
+   "safety": 10
+  },
+  "son-of-hamas": {
+   "world": 8,
+   "coherence": 10,
+   "pull": 7,
+   "characters": 8,
+   "heart": 8,
+   "ideas": 9,
+   "safety": 10
+  },
+  "bratrstvo-1-3-brotherband": {
+   "world": 6,
+   "coherence": 7,
+   "pull": 7,
+   "characters": 8,
+   "heart": 9,
+   "ideas": 7,
+   "safety": 10
+  },
+  "exodus": {
+   "world": 7,
+   "coherence": 8,
+   "pull": 6,
+   "characters": 7,
+   "heart": 8,
+   "ideas": 7,
+   "safety": 10
+  },
+  "the-chronicles-of-narnia": {
+   "world": 6,
+   "coherence": 7,
+   "pull": 7,
+   "characters": 7,
+   "heart": 9,
+   "ideas": 8,
+   "safety": 10
+  },
+  "quo-vadis": {
+   "world": 6,
+   "coherence": 8,
+   "pull": 7,
+   "characters": 7,
+   "heart": 8,
+   "ideas": 8,
+   "safety": 10
+  },
+  "zaslana-posta-going-postal": {
+   "world": 7,
+   "coherence": 8,
+   "pull": 6,
+   "characters": 7,
+   "heart": 7,
+   "ideas": 8,
+   "safety": 9
+  },
+  "1984": {
+   "world": 8,
+   "coherence": 10,
+   "pull": 8,
+   "characters": 7,
+   "heart": 5,
+   "ideas": 10,
+   "safety": 8
+  },
+  "vydech-exhalation": {
+   "world": null,
+   "coherence": null,
+   "pull": null,
+   "characters": null,
+   "heart": null,
+   "ideas": null,
+   "safety": null,
+   "predicted": {
+    "world": 9,
+    "coherence": 9,
+    "pull": 7,
+    "characters": 7,
+    "heart": 8,
+    "ideas": 10,
+    "safety": 8,
+    "safetyIssue": "infidelity framing, brief seduction"
+   }
+  },
+  "hranicaruv-ucen-5": {
+   "world": 7,
+   "coherence": 7,
+   "pull": 8,
+   "characters": 8,
+   "heart": 9,
+   "ideas": 7,
+   "safety": 10
+  },
+  "hranicaruv-ucen-7-10": {
+   "world": 7,
+   "coherence": 7,
+   "pull": 8,
+   "characters": 8,
+   "heart": 9,
+   "ideas": 7,
+   "safety": 10
+  },
+  "hitchhiker-s-sequels-2-5": {
+   "world": 6,
+   "coherence": 6,
+   "pull": 7,
+   "characters": 7,
+   "heart": 8,
+   "ideas": 7,
+   "safety": 10
+  },
+  "unfinished-tales": {
+   "world": 7,
+   "coherence": 9,
+   "pull": 6,
+   "characters": 5,
+   "heart": 8,
+   "ideas": 7,
+   "safety": 9
+  },
+  "artemis": {
+   "world": 7,
+   "coherence": 8,
+   "pull": 7,
+   "characters": 7,
+   "heart": 7,
+   "ideas": 7,
+   "safety": 8
+  },
+  "percy-jackson-full-series": {
+   "world": 9,
+   "coherence": 9,
+   "pull": 9,
+   "characters": 8,
+   "heart": 9,
+   "ideas": 7,
+   "safety": 5
+  },
+  "hranicaruv-ucen-11": {
+   "world": 7,
+   "coherence": 7,
+   "pull": 7,
+   "characters": 8,
+   "heart": 8,
+   "ideas": 7,
+   "safety": 10
+  },
+  "caropisci-foundryside": {
+   "world": 9,
+   "coherence": 9,
+   "pull": 6,
+   "characters": 8,
+   "heart": 7,
+   "ideas": 8,
+   "safety": 7
+  },
+  "the-ballad-of-songbirds-and-snakes": {
+   "world": 8,
+   "coherence": 9,
+   "pull": 7,
+   "characters": 6,
+   "heart": 5,
+   "ideas": 8,
+   "safety": 9
+  },
+  "divergent-series": {
+   "world": 8,
+   "coherence": 5,
+   "pull": 8,
+   "characters": 7,
+   "heart": 7,
+   "ideas": 7,
+   "safety": 10
+  },
+  "oliver-twist": {
+   "world": 7,
+   "coherence": 10,
+   "pull": 6,
+   "characters": 7,
+   "heart": 8,
+   "ideas": 8,
+   "safety": 10
+  },
+  "ja-robot-i-robot": {
+   "world": 7,
+   "coherence": 7,
+   "pull": 6,
+   "characters": 6,
+   "heart": 6,
+   "ideas": 8,
+   "safety": 10
+  },
+  "mortal-engines-smrtelne-stroje": {
+   "world": 9,
+   "coherence": 5,
+   "pull": 9,
+   "characters": 7,
+   "heart": 7,
+   "ideas": 7,
+   "safety": 9
+  },
+  "promena-the-metamorphosis": {
+   "world": 5,
+   "coherence": 5,
+   "pull": 6,
+   "characters": 5,
+   "heart": 6,
+   "ideas": 7,
+   "safety": 10
+  },
+  "ready-player-one": {
+   "world": 7,
+   "coherence": 7,
+   "pull": 7,
+   "characters": 6,
+   "heart": 6,
+   "ideas": 6,
+   "safety": 7
+  },
+  "the-witcher-series": {
+   "world": 9,
+   "coherence": 9,
+   "pull": 8,
+   "characters": 8,
+   "heart": 6,
+   "ideas": 7,
+   "safety": 5
+  },
+  "harry-potter-series": {
+   "world": 7,
+   "coherence": 6,
+   "pull": 8,
+   "characters": 7,
+   "heart": 7,
+   "ideas": 6,
+   "safety": 5
+  },
+  "havran-the-raven": {
+   "world": null,
+   "coherence": null,
+   "pull": null,
+   "characters": null,
+   "heart": null,
+   "ideas": null,
+   "safety": null
+  },
+  "permafrost": {
+   "world": null,
+   "coherence": null,
+   "pull": null,
+   "characters": null,
+   "heart": null,
+   "ideas": null,
+   "safety": null
+  },
+  "strepy-zeme-shards-of-earth": {
+   "world": null,
+   "coherence": null,
+   "pull": null,
+   "characters": null,
+   "heart": null,
+   "ideas": null,
+   "safety": null
+  },
+  "problem-tri-teles-the-three-body-problem": {
+   "world": null,
+   "coherence": null,
+   "pull": null,
+   "characters": null,
+   "heart": null,
+   "ideas": null,
+   "safety": null
+  },
+  "the-diary-of-a-young-girl": {
+   "world": null,
+   "coherence": null,
+   "pull": null,
+   "characters": null,
+   "heart": null,
+   "ideas": null,
+   "safety": null
+  },
+  "guards-guards-discworld-8": {
+   "world": null,
+   "coherence": null,
+   "pull": null,
+   "characters": null,
+   "heart": null,
+   "ideas": null,
+   "safety": null
+  },
+  "the-colour-of-magic-discworld-1": {
+   "world": null,
+   "coherence": null,
+   "pull": null,
+   "characters": null,
+   "heart": null,
+   "ideas": null,
+   "safety": null
+  },
+  "the-gunslinger-the-dark-tower-1": {
+   "world": null,
+   "coherence": null,
+   "pull": null,
+   "characters": null,
+   "heart": null,
+   "ideas": null,
+   "safety": null
+  }
  }
 }

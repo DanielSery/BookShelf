@@ -99,6 +99,7 @@ ALIASES = [
     ("Harry Potter (series)", r"Harry Potter"),
     ("Havran (The Raven)", r"Havran|The Raven"),
     ("Vůle většiny (The Will of the Many)", r"V[ůu]le v[ěe]t[šs]iny|(?:The )?Will of the Many"),
+    ("Výdech (Exhalation)", r"V[ýy]dech|Exhalation"),
 ]
 # "Narnia 67", "Narnia (67)", "Narnia at 67", "held Narnia to 67". A number that opens a
 # span ("83 to 70", "92-96") is not one book's score.

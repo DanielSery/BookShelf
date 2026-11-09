@@ -2209,10 +2209,6 @@
    "orig": "foreign",
    "src": "statement"
   },
-  "ted-chiang-vydech": {
-   "orig": "foreign",
-   "src": "statement"
-  },
   "tehdy-jsme-zili-v-letni-zemi": {
    "orig": "foreign",
    "src": "translator"
@@ -8789,6 +8785,10 @@
   "vule-vetsiny-the-will-of-the-many": {
    "orig": "foreign",
    "src": "author"
+  },
+  "vydech-exhalation": {
+   "orig": "foreign",
+   "src": "statement"
   }
  }
 }

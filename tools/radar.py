@@ -160,7 +160,7 @@ def xlsx(path):
     for r in rows:
         k = slug(r["title"])
         v = radar.get(k) or {}
-        score = round(r["score"] / 10) if r["score"] is not None else "not finished"
+        score = readlog.word(r["score"]) if r["score"] is not None else "not finished"
         ws.append([r["title"], r["author"], score] + [v.get(s) for s in SPOKES]
                   + [v.get("safetyIssue"), r["notes"], k])
 

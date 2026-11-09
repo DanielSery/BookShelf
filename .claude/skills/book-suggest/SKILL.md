@@ -98,9 +98,11 @@ Czech print or not screened, because he reads the series whole. **A volume whose
 predecessor is missing** (`prereq` of kind `absent`, or `rejected` with `inherits: false`)
 is a high risk: lead with it, ahead of the range.
 
-- **The range, out of 10 in whole numbers**, e.g. "predicted 8-9" for a stored
-  [78, 85] (ruled 2026-10-29: proposals show no decimals and no letters). Round
-  each end to the nearest whole number. Never collapse it to one number. Say whether it is deep-dived (`depth: deep`, with sourced
+- **The range in the reader's five words**, e.g. "predicted Recommend–Endorse" for a
+  stored [78, 85] (ruled 2026-11-09: proposals show no numbers). Each end becomes the
+  word whose floor it reaches: Endorse 85, Recommend 65, Neutral 55, Discourage 45,
+  Oppose below. One word when both ends share it; never collapse a range that spans
+  two. Say whether it is deep-dived (`depth: deep`, with sourced
   verdicts in `book-deep.jsonl`) or screening depth.
 - **Every axis in `risks`**, stated as a condition. The range assumes none of
   them fires. *Neuromancer* is 72-80 if its opening holds and a 30 if it doesn't,

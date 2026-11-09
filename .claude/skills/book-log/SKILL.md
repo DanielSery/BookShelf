@@ -1,6 +1,6 @@
 ---
 name: book-log
-description: "Log a finished/DNF'd book with a score out of 10 and consolidate what it implies into book-recommendations.md. Use when the user reports having read, finished, or given up on a book, gives it a score out of 10 (or an old 0-100 score or letter tier), or asks to correct/update an existing rating. Also use for '/book-log'."
+description: "Log a finished/DNF'd book with a score (Oppose, Discourage, Neutral, Recommend or Endorse) and consolidate what it implies into book-recommendations.md. Use when the user reports having read, finished, or given up on a book, gives it one of those words (or an old score out of 10 or 100), or asks to correct/update an existing rating. Also use for '/book-log'."
 allowed-tools:
   - Read
   - Write
@@ -30,12 +30,14 @@ CAPTURE -> LOG -> CONSOLIDATE -> PROPAGATE -> VERIFY
 From the user's message, extract:
 - Book title and author (infer the author if the user only names the book and
   you're confident; say so if guessing).
-- Score: **out of 10, a whole number** as the reader gives it (ruled 2026-10-29;
-  the letter tiers are gone). Record it in `books-read.md` exactly as given. Old
-  rows keep the decimal they were converted with (9.2); never add one to a new
-  row, and never show one to the reader. Rules, estimates and `why` texts stay on
-  0-100: a 9 is 90 there, and `tools/readlog.py` is the only converter. If the
-  user gives stars or a vague sentiment, convert it and say what you mapped it to.
+- Score: **one of five words — Oppose, Discourage, Neutral, Recommend, Endorse**
+  (ruled 2026-11-09; the 0-10 numbers are gone). Record the word in `books-read.md`
+  exactly as given. Old rows keep their number (9.2, 8); never add one to a new row,
+  and never show one to the reader. Rules, estimates and `why` texts stay on 0-100:
+  a word counts as the number in the table at the top of `books-read.md`
+  (Recommend is 75), and `tools/readlog.py` is the only converter. If the user gives
+  a number, stars or a vague sentiment, convert it to a word through that table and
+  say what you mapped it to.
 - **A DNF does not have to be scored** (ruled 2026-10-29: "some of the books are
   still quite good and not finished because I was not interested, but I do not
   want to have them with the books I did not like"). Ask which it is when he
@@ -44,17 +46,16 @@ From the user's message, extract:
   lost-interest signal for the rules, and it is never cited as a score or as a
   dislike.
 
-  **Elicit by comparison, not by number.** The reader finds it much easier to
-  say what he liked better than to name a figure, so when a score is uncertain
-  — a new book, a hesitant number, or a crowded score — don't ask "what score?".
-  Pull 3-6 already-scored books from the neighbouring range, list them with
-  their scores, and ask him to slot the new one in or to order the group.
-  Then derive the number from where it lands and say what you derived.
+  **Elicit by comparison.** The reader finds it much easier to say what he liked
+  better than to pick a label, so when he hesitates between two words, don't ask
+  "which word?". Pull 3-6 already-scored books from both, list them with their
+  words, and ask which group the new one sits with. Then record that group's
+  word and say what you derived.
 
   **The scale is absolute, not a ranking — any number of books may share a
-  score, and ties are never a defect** (confirmed 2026-08-22). The log is
-  heading past 100 entries, so collisions are inevitable and expected. Never
-  offer to break one, never nudge a score by a point to avoid one, and use the
+  score, and ties are never a defect** (confirmed 2026-08-22). With five words
+  most new rows tie with something. Never offer to break one, never nudge a
+  word to avoid one, and use the
   comparison technique only to place a *new* book, never to re-litigate
   existing ones. A tie is a finding: two books liked the same amount.
 - **The radar** (added 2026-11-02): his seven spokes, World · Coherence · Pull ·
@@ -81,7 +82,7 @@ Read `books-read.md`. If the book is already a row, **update it in place**
 (score, notes) rather than adding a duplicate — note in your reply what
 changed from the old value. Otherwise add a new row in the existing table
 format (`Book | Author | Score | Notes`), keeping the table sorted by
-score, descending; an unscored DNF goes in the "Not finished — no score" table. **Where the new score equals an existing one, insert
+score, descending, with a word placed at the number it counts as; an unscored DNF goes in the "Not finished — no score" table. **Where the new score equals an existing one, insert
 adjacent to it and don't agonise over which side** — order within an equal
 score is arbitrary and carries no meaning, so don't reorder tied rows or read a
 preference out of their sequence.
@@ -146,7 +147,7 @@ but first record the calibration point, because a prediction that missed is
 worth more than one that hit. If the actual score falls outside the cached
 `est` range, add or sharpen one bullet under Open questions in
 `book-recommendations.md` naming **which `leanedOn` dep was wrong**. Both
-failures so far — *Artemis* (predicted 80, scored 60 after revisions down from 76 and 69) and
+failures so far — *Artemis* (predicted 80, scored 50 after revisions down from 76, 69 and 60) and
 *Mortal Engines* 50
 — came from leaning on the wrong axis, not from bad information, and
 `leanedOn` is what makes the third instance visible instead of anecdotal.

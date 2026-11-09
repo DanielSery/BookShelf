@@ -1,5 +1,5 @@
 // Similar books and authors, and the author map. Loaded before the main script and run against
-// its globals (D, F, esc, plural, tone, ten, rng, grid, EMPTY, state, candidateCard, seriesCard,
+// its globals (D, F, esc, plural, tone, band, rng, grid, EMPTY, state, candidateCard, seriesCard,
 // readCard, readSeriesCard, markClips, render, setView, setCount, store, recall, candidateFilter,
 // readFilter), all of which exist by the time anything here is called. Names are map-prefixed
 // because every top-level declaration shares one scope with index.html.
@@ -273,7 +273,7 @@ function similarView() {
 // any other series is drawn from book-series.json, which knows only the shelf, the read rows
 // and a volume count.
 
-const MAP_G = { box: 200, lane: 236, h: 40, row: 72, top: 30, head: 36, wrap: 6 };
+const MAP_G = { box: 220, lane: 256, h: 40, row: 72, top: 30, head: 36, wrap: 6 };
 
 function mapWorldIndex() {
   if (MAP.wix && MAP.wix.D === D) return MAP.wix;
@@ -495,11 +495,14 @@ function mapGraphSvg(L, R) {
 
 function mapWorldNodeHtml(n, at, B) {
   const p = n.ref && B.byId.get(n.ref), hl = MAP.hl && mapByRef(B, MAP.hl);
-  const value = n.state === 'read' ? (n.score == null ? '—' : ten(n.score))
-    : n.state === 'shelf' && n.est ? rng(n.est[0], n.est[1]) : '';
+  // A two-word range does not fit the box, so a shelf book shows its midpoint's word and the
+  // tooltip carries the range.
+  const value = n.state === 'read' ? (n.score == null ? '—' : band(n.score))
+    : n.state === 'shelf' && n.est ? band(n.score) : '';
+  const range = n.state === 'shelf' && n.est && 'predicted ' + rng(n.est[0], n.est[1]);
   const tone = n.score == null ? 'bN' : mapTone(n);
   const sub = [n.word, n.alt, n.year].filter(Boolean).join(' · ');
-  const tip = [n.title, n.alt, n.year, n.word, n.note].filter(Boolean).join('\n');
+  const tip = [n.title, n.alt, n.year, n.word, range, n.note].filter(Boolean).join('\n');
   const link = n.href && n.state !== 'read'
     ? `<a href="${esc(n.href)}" target="_blank" rel="noreferrer" title="Open the catalogue record">Borrow ↗</a>` : '';
   return `<div class="wnode ${n.state} ${tone}${p && p === hl ? ' sel' : ''}" title="${esc(tip)}"

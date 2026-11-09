@@ -43,7 +43,7 @@
 {"k": "clovek-bez-osudu~imre-kertesz", "s": 5, "w": "fate and camp normality, Nobel", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "clovek-bez-osudu"}
 {"k": "daleko-od-hluciciho-davu~thomas-hardy", "s": 5, "w": "Canonical Hardy", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 1, "done": "daleko-od-hluciciho-davu"}
 {"k": "dedicka-ohne~sarah-j-maasova", "s": 5, "w": "inheritance fate destiny", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 1, "dissent": 1, "s1": 3}
-{"k": "dedicove~william-golding", "s": 5, "w": "what makes us human, canonical", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
+{"k": "dedicove~william-golding", "s": 5, "w": "what makes us human, canonical", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "dedicove"}
 {"k": "demian~hermann-hesse", "s": 5, "w": "self-discovery, duality, canonical", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "demian"}
 {"k": "demon-copperhead~barbara-kingsolver", "s": 5, "w": "poverty and class, Copperfield retelling", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "demon-copperhead"}
 {"k": "denik-nalezeny-ve-vane~stanislaw-lem", "s": 5, "w": "paper's loss ruins civilisation, Lem", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "denik-nalezeny-ve-vane"}
@@ -70,7 +70,7 @@
 {"k": "filuta~terry-pratchett", "s": 5, "w": "Pratchett, ideas and humor", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-26"}
 {"k": "flaubertuv-papousek~julian-barnes", "s": 5, "w": "reading, memory, and truth", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "flaubertuv-papousek"}
 {"k": "frankenstein-aneb-novodoby-prometheus~mary-shelleyova", "s": 5, "w": "gothic classic", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 1, "s1": 4, "done": "frankenstein-aneb-novodoby-prometheus"}
-{"k": "frankenstein~", "s": 5, "w": "creator's responsibility; canonical idea-driven", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-24", "rec": 1}
+{"k": "frankenstein~", "s": 5, "w": "creator's responsibility; canonical idea-driven", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-24", "rec": 1, "done": "frankenstein"}
 {"k": "futurologicky-kongres~stanislaw-lem", "s": 5, "w": "Satirical futurology; drugs as control", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "futurologicky-kongres"}
 {"k": "germinal~", "s": 5, "w": "class war and collective action", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-24", "rec": 1}
 {"k": "gilead~marilynne-robinsonova", "s": 5, "w": "grace, forgiveness, letters of a dying father", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "gilead"}
@@ -214,7 +214,7 @@
 {"k": "pes-moko-a-jeho-oko~abelova-mirka", "s": 5, "w": "developed: courage", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "s1": 4, "done": "pes-moko-a-jeho-oko"}
 {"k": "pet-nedel-v-balonu~neff-ondrej", "s": 5, "w": "developed: courage", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "s1": 4, "done": "pet-nedel-v-balonu"}
 {"k": "pi-a-jeho-zivot~yann-martel", "s": 5, "w": "belief and storytelling, Martel", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "pi-a-jeho-zivot"}
-{"k": "piranesi~susanna-clarkova", "s": 5, "w": "solitary man, house, knowledge, canonical", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
+{"k": "piranesi~susanna-clarkova", "s": 5, "w": "solitary man, house, knowledge, canonical", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "piranesi"}
 {"k": "pisecnici~g-r-r-martin", "s": 5, "w": "ASOIAF, complex storytelling", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-26"}
 {"k": "pod-koly~hermann-hesse", "s": 5, "w": "school crushes a boy's individuality", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "pod-koly"}
 {"k": "pod-nebesy~guy-gavriel-kay", "s": 5, "w": "Canonical fantasy", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 1, "done": "pod-nebesy"}
@@ -262,7 +262,7 @@
 {"k": "ruze-pro-algernon~daniel-keyes", "s": 5, "w": "Known high-value", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 1, "done": "ruze-pro-algernon"}
 {"k": "rytir-sedmi-kralovstvi~george-r-r-martin", "s": 5, "w": "ASOIAF, complex characters", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-26"}
 {"k": "sekac~terry-pratchett", "s": 5, "w": "Pratchett, ideas-driven comedy", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-26", "done": "sekac"}
-{"k": "setkani-s-ramou~arthur-c-clarke", "s": 5, "w": "Alien artifact; incomprehensible intent", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
+{"k": "setkani-s-ramou~arthur-c-clarke", "s": 5, "w": "Alien artifact; incomprehensible intent", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "setkani-s-ramou"}
 {"k": "silmarillion~john-roland-reuel-tolkien", "s": 5, "w": "tolkien, idea-driven mythology", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-26"}
 {"k": "silmarillion~john-ronald-reuel-tolkien", "s": 5, "w": "tolkien, idea-driven mythology", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-26"}
 {"k": "sipka-a-koumes~laguna-carolina", "s": 5, "w": "developed: rescue/stakes", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "s1": 4, "done": "sipka-a-koumes"}
@@ -888,7 +888,7 @@
 {"k": "doupe~brian-evenson", "s": 4, "w": "Nespolehlivost vnímání, hranice reality", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "dozivoti-a-jak-na-to~tomas-hanak", "s": 4, "w": "Artist memoir, cultural insight", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "dozivoti-a-jak-na-to"}
 {"k": "dr-krvemsta-aneb-jak-se-nam-vedlo-po-bombe~philip-k-dick", "s": 4, "w": "Post-nuclear community survival; Dick idea", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "dr-krvemsta-aneb-jak-se-nam-vedlo-po-bombe"}
-{"k": "draci-mesto~petra-machova", "s": 4, "w": "dragon society, magical romance", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 1, "done": "draci-mesto"}
+{"k": "draci-mesto~petra-machova", "s": 4, "w": "dragon society, magical romance", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 1, "done": "draci-mesto-hobb"}
 {"k": "draci-oci~kristina-hlavackova", "s": 4, "w": "fantasy developed", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "draci-republika~", "s": 4, "w": "Kuang: war guilt, shamanic power, Rin", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-24", "rec": 1}
 {"k": "draci-srdce~ana-galanova", "s": 4, "w": "adventure quest", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
@@ -940,7 +940,7 @@
 {"k": "effi-briestova~theodor-fontane", "s": 4, "w": "social convention wrecks a marriage", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
 {"k": "egonek-na-uteku~ivan-binar", "s": 4, "w": "absurd bureaucratic trap, nameable satire", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "egypt~valkova-veronika", "s": 4, "w": "idea: emotion", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "s1": 4, "done": "egypt"}
-{"k": "eifelheim~michael-flynn", "s": 4, "w": "Village vanishes; first contact and faith", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
+{"k": "eifelheim~michael-flynn", "s": 4, "w": "Village vanishes; first contact and faith", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0, "done": "eifelheim"}
 {"k": "einstein~kuhlmann-torben", "s": 4, "w": "children's book, real idea", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3, "done": "einstein"}
 {"k": "ekonomie-dobra-a-zla~", "s": 4, "w": "economics rooted in ethics and myth", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-24", "rec": 1, "done": "ekonomie-dobra-a-zla"}
 {"k": "ela-a-nocni-svetylka~fleming-lucy", "s": 4, "w": "Idea driven", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
@@ -1023,8 +1023,8 @@
 {"k": "frajer~marek-toman", "s": 4, "w": "two half-brothers on opposite sides of 1989", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "fraktalni-sum~christopher-paolini", "s": 4, "w": "hard sci-fi artifact mystery", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 1, "s1": 4, "done": "fraktalni-sum"}
 {"k": "frankenstein-and-other-stories~", "s": 4, "w": "Frankenstein plus mortal-immortal curse", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-24", "rec": 1}
-{"k": "frankenstein~barder-gemma", "s": 4, "w": "emotional", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
-{"k": "frankenstein~mary-shelleyova", "s": 4, "w": "fantasy character", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
+{"k": "frankenstein~barder-gemma", "s": 4, "w": "emotional", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3, "done": "frankenstein"}
+{"k": "frankenstein~mary-shelleyova", "s": 4, "w": "fantasy character", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3, "done": "frankenstein"}
 {"k": "frantiska~valja-styblova", "s": 4, "w": "suicidal boy and girl; nameable question", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "franz-kafka-a-panenka-cestovatelka~jordi-sierra-i-fabra-prelozila-h", "s": 4, "w": "letters from doll; letting go, grief", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
 {"k": "frigiel-a-fluffy~frigiel", "s": 4, "w": "Idea driven", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "s1": 4}
@@ -1255,7 +1255,7 @@
 {"k": "jane-eyrova~charlotte-bronte", "s": 4, "w": "Known high-value", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 1, "done": "jana-eyrova"}
 {"k": "jane-eyrova~charlotte-bronteova", "s": 4, "w": "Known high-value", "m": "haiku-4.5", "pd": "980ab648a74f", "at": "2026-08-27", "rec": 1, "done": "jana-eyrova"}
 {"k": "jantarovy-dalekohled~philip-pullman", "s": 4, "w": "dark materials, character-driven", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-26"}
-{"k": "january-a-deset-tisic-dveri~alix-e-harrowova", "s": 4, "w": "book of secret doors", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
+{"k": "january-a-deset-tisic-dveri~alix-e-harrowova", "s": 4, "w": "book of secret doors", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0, "done": "january-a-deset-tisic-dveri"}
 {"k": "jazyk-draku~s-f-williamsonova", "s": 4, "w": "political magic rebellion", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "jazyk-draku"}
 {"k": "je-matka-mrtva~vigdis-hjorth", "s": 4, "w": "Mother reunion art painting", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 1, "done": "je-matka-mrtva"}
 {"k": "je-to-jenom-sranda~blanka-luxova", "s": 4, "w": "character-driven", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "s1": 4, "done": "je-to-jenom-sranda"}
@@ -1401,13 +1401,13 @@
 {"k": "klofaci~kratochvil-milos", "s": 4, "w": "substantial", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "s1": 4, "done": "klofaci"}
 {"k": "klub-amazonek~holanova-pavla", "s": 4, "w": "adventure", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "s1": 4, "done": "klub-amazonek"}
 {"k": "klub-klikaru~matejka-vit-martin", "s": 4, "w": "substantial", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
-{"k": "klub-mrtvych-otcu~matt-haig", "s": 4, "w": "Grief and guilt; Hamlet echo", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
+{"k": "klub-mrtvych-otcu~matt-haig", "s": 4, "w": "Grief and guilt; Hamlet echo", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0, "done": "klub-mrtvych-otcu"}
 {"k": "kluci-z-glasgow~margaret-mcdonaldova", "s": 4, "w": "Foster care young men struggle", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "kluci-z-glasgow"}
 {"k": "kluci-z-glasgow~mcdonald-margaret", "s": 4, "w": "substantial", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3, "done": "kluci-z-glasgow"}
 {"k": "kluci-ze-hrbitova~", "s": 4, "w": "Trans paranormal ghost romance", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 1}
 {"k": "kluci-ze-hrbitova~aiden-thomas", "s": 4, "w": "Trans brujo paranormal", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "kluk-co-se-koupal-s-piranami~david-almond", "s": 4, "w": "almond magical", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
-{"k": "kluk-jmenem-vanoce~haig-matt", "s": 4, "w": "identity", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 1}
+{"k": "kluk-jmenem-vanoce~haig-matt", "s": 4, "w": "identity", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 1, "done": "kluk-jmenem-vanoce"}
 {"k": "kluk-spolkne-vesmir~trent-dalton", "s": 4, "w": "love surviving chaos", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
 {"k": "kluk-v-ohni~mikova-marka", "s": 4, "w": "emotional", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "knezka~michael-scott", "s": 4, "w": "idea-driven narrative", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
@@ -1527,7 +1527,7 @@
 {"k": "krev-kristaloveho-kvetu~", "s": 4, "w": "idea-driven narrative", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "krev-kristaloveho-kvetu"}
 {"k": "krev-nebe~piotr-rawicz", "s": 4, "w": "svědectví a fikce o holokaustu", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
 {"k": "kridla-snu~george-r-r-martin-lisa-tuttle", "s": 4, "w": "breaking tradition, unforeseen consequences", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "vetrny-pristav"}
-{"k": "kridlocky~ursula-k-le-guinova", "s": 4, "w": "le guin, character-driven", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-26"}
+{"k": "kridlocky~ursula-k-le-guinova", "s": 4, "w": "le guin, character-driven", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-26", "done": "kridlocky"}
 {"k": "kriplici~milena-strafeldova", "s": 4, "w": "Normalization trauma", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "kristova-epizoda~frank-herbert-bill-ransom", "s": 4, "w": "AI ship believes it is God", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "krokodyl~fjodor-michajlovic-dostojevskij", "s": 4, "w": "dostojevskij", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 1, "done": "krokodyl"}
@@ -2140,7 +2140,7 @@
 {"k": "ohnivy-sloup~ken-follett", "s": 4, "w": "Tudor England religion politics", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 1, "done": "ohnivy-sloup"}
 {"k": "ohnostroj-marnosti~thomas-wolfe", "s": 4, "w": "Wolfe satire on wealth and race", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
 {"k": "ohromni-optimisti~rebecca-makkaiova", "s": 4, "w": "AIDS crisis friendship love loss", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 1, "done": "ohromni-optimisti"}
-{"k": "oko-casu~arthur-c-clarke-stephen-baxter", "s": 4, "w": "Known authors, sf", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 1}
+{"k": "oko-casu~arthur-c-clarke-stephen-baxter", "s": 4, "w": "Known authors, sf", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 1, "done": "oko-casu"}
 {"k": "oko-zraloka~marek-toman", "s": 4, "w": "backbone vs betrayal under interrogation", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "okouzlena-duse~romain-rolland", "s": 4, "w": "artist's soul vs society", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
 {"k": "okovy-osudu~jakub-hoza", "s": 4, "w": "Philosophical premise", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "okovy-osudu"}
@@ -2333,7 +2333,7 @@
 {"k": "pohadky-s-malym-andelem~ludmila-jancikova", "s": 4, "w": "exiled angel bonds with outcast shepherd", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "pohadky-z-celeho-sveta~papadopulosova-nike", "s": 4, "w": "plausible premise", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "pohadky-z-sipkoveho-kere~ellen-key", "s": 4, "w": "five symbolic tales on meaningful growth", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
-{"k": "pohadky~oscar-wilde", "s": 4, "w": "Wilde tales: sacrifice, beauty", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
+{"k": "pohadky~oscar-wilde", "s": 4, "w": "Wilde tales: sacrifice, beauty", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "pohadky"}
 {"k": "pohansky-pan~bernard-cornwell", "s": 4, "w": "Saxon Britain pagan culture", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "pohansky-pan"}
 {"k": "pohlednice-z-hollywoodu~carrie-fisher", "s": 4, "w": "addiction, fame and mother-daughter", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
 {"k": "pohlednice~anne-berest", "s": 4, "w": "Holocaust postcard family", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "pohlednice"}
@@ -2592,7 +2592,7 @@
 {"k": "rec-kvetu~vanessa-diffenbaughova", "s": 4, "w": "flowers language, foster child", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
 {"k": "regaci-a-neznami-hrdinove-odboje~helena-berankova-libor-adam-jan-", "s": 4, "w": "Resistance WWII memoir", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "regaci-a-neznami-hrdinove-odboje"}
 {"k": "regaci~berankova-helena", "s": 4, "w": "adventure", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "s1": 4, "done": "regaci"}
-{"k": "reka-zmrtvychvstani~philip-jose-farmer", "s": 4, "w": "Resurrection; existence of God", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
+{"k": "reka-zmrtvychvstani~philip-jose-farmer", "s": 4, "w": "Resurrection; existence of God", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "reka-zmrtvychvstani"}
 {"k": "reka~rosa-liksom", "s": 4, "w": "refugee girl, border life-death", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "rekvalifikacni-kurz~ondrej-neff", "s": 4, "w": "satire on capital punishment via EU", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "rekviem-za-vychod~andrei-makine", "s": 4, "w": "three generations, collapse of Soviet certaintie", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
@@ -2819,7 +2819,7 @@
 {"k": "smrt-vcel~lisa-o-donnellova", "s": 4, "w": "children hiding parents' death, dark idea", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
 {"k": "smrtelne-stroje~philip-reeve", "s": 4, "w": "Reeve's character-driven SF adventure", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-26"}
 {"k": "smrtelni-bohove~", "s": 4, "w": "Mythological beings", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "smrtelni-bohove"}
-{"k": "smrtici-luna~n-k-jemisinova", "s": 4, "w": "dream-harvested magic; cost of peace", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
+{"k": "smrtici-luna~n-k-jemisinova", "s": 4, "w": "dream-harvested magic; cost of peace", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0, "done": "smrtici-luna"}
 {"k": "smrtka~neal-shusterman", "s": 4, "w": "shusterman", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 1, "done": "smrtka"}
 {"k": "smrtka~shusterman-neal", "s": 4, "w": "substantial story", "m": "haiku-4.5", "pd": "504e0a295128", "pv": "crossover-v1", "at": "2026-08-27", "rec": 0, "idea": 1, "done": "smrtka"}
 {"k": "smrtna-zima~kate-a-boormanova", "s": 4, "w": "Fantasy mystery darkness", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "smrtna-zima"}
@@ -2949,7 +2949,7 @@
 {"k": "stripky-vzpominek~danielle-steel", "s": 4, "w": "Character-driven", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "stripky-vzpominek"}
 {"k": "stroje-jako-ja-a-lide-jako-vy~ian-mcewan", "s": 4, "w": "AI that cannot lie; love", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "stroje-jako-ja-a-lide-jako-vy"}
 {"k": "strom-lzi~frances-hardinge", "s": 4, "w": "Known high-value", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 1, "done": "strom-lzi"}
-{"k": "strom-stul-kniha~lowry-lois", "s": 4, "w": "substantial", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
+{"k": "strom-stul-kniha~lowry-lois", "s": 4, "w": "substantial", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3, "done": "strom-stul-kniha"}
 {"k": "stropy~zuzana-brabcova", "s": 4, "w": "freedom and reality blurred, experimental", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "strucna-historie-vecneho-zivota~jaroslav-kalfar", "s": 4, "w": "Immortality/reunion", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 1, "done": "strucna-historie-vecneho-zivota"}
 {"k": "strucna-teorie-cestovani-a-poust~cristian-crusat", "s": 4, "w": "Cesty jako vnitřní pohyb", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
@@ -2980,7 +2980,7 @@
 {"k": "svetatvurci~robert-jackson-bennett", "s": 4, "w": "fantasy, character-driven worldbuilding", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-26"}
 {"k": "svetla-severu~philip-pullman", "s": 4, "w": "northern lights, character-driven", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-26"}
 {"k": "svetlo-po-valce~anita-abriel", "s": 4, "w": "Jewish sisters WWII", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "svetlo-po-valce"}
-{"k": "svetlonosi~rosemary-sutcliffova", "s": 4, "w": "duty versus revenge, historical", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
+{"k": "svetlonosi~rosemary-sutcliffova", "s": 4, "w": "duty versus revenge, historical", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "svetlonosi"}
 {"k": "svetova-velkomesta~tallarico-catriel", "s": 4, "w": "plausible premise", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "svetylko~antonio-moresco", "s": 4, "w": "longing to escape world vs mystery", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "svevole~lena-anderssonova", "s": 4, "w": "self-deceit in love", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
@@ -3005,7 +3005,7 @@
 {"k": "tajemni-zachranci~paula-harrisonova", "s": 4, "w": "fantasy developed", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "tajemny-andel~l-j-smith", "s": 4, "w": "fantasy developed", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "tajemny-rytir~george-r-r-martin", "s": 4, "w": "asoiaf novella, character-driven", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-26"}
-{"k": "tajemstvi-divokeho-hvozdu~dragt-tonke", "s": 4, "w": "plausible premise", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
+{"k": "tajemstvi-divokeho-hvozdu~dragt-tonke", "s": 4, "w": "plausible premise", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3, "done": "tajemstvi-divokeho-hvozdu"}
 {"k": "tajemstvi-domu-thornu~margaret-rogersonova", "s": 4, "w": "idea-driven from annotation", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "tajemstvi-domu-thornu~rogerson-margaret", "s": 4, "w": "magic with cost", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "tajemstvi-havraniho-hradu~bulin-jiri", "s": 4, "w": "substantial", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "s1": 4, "done": "tajemstvi-havraniho-hradu"}
@@ -3217,7 +3217,7 @@
 {"k": "umina-verze~emil-hakl", "s": 4, "w": "artificial man, what makes human", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "under-the-whispering-door~tj-klune", "s": 4, "w": "character-driven fantasy", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "underground~frantisek-kotleta", "s": 4, "w": "idea-driven narrative", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "underground"}
-{"k": "upgrade~blake-crouch", "s": 4, "w": "human evolution, costs of upgrade", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
+{"k": "upgrade~blake-crouch", "s": 4, "w": "human evolution, costs of upgrade", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0, "done": "upgrade"}
 {"k": "uprchlik~alan-gratz", "s": 4, "w": "refugee timespans", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 1, "dissent": 1, "s1": 3}
 {"k": "ustrickova-smutna-smrt-a-jine-pribehy~tim-burton", "s": 4, "w": "Burton imaginative dark", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 1, "done": "ustrickova-smutna-smrt-a-jine-pribehy"}
 {"k": "ustvit-onyxu~kate-golden", "s": 4, "w": "fantasy relational", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
@@ -3336,7 +3336,7 @@
 {"k": "vinarova-zena~kristin-harmel", "s": 4, "w": "known work", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "vinlandska-saga~yukimura-makoto", "s": 4, "w": "emotional", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "virtualni-divka~amy-thomsonova", "s": 4, "w": "Made woman gaining conscience; sentience idea", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
-{"k": "virus-stesti~neal-shusterman", "s": 4, "w": "happiness as disease; negative emotion value", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
+{"k": "virus-stesti~neal-shusterman", "s": 4, "w": "happiness as disease; negative emotion value", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0, "done": "virus-stesti"}
 {"k": "viry~anna-beata-hablova", "s": 4, "w": "faith vs survival compromise", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "vitejte-v-opicarne~kurt-vonnegut-jr", "s": 4, "w": "satire of technology and society", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
 {"k": "vitek-krupadlo-a-kostizrout~petula-bendula", "s": 4, "w": "Adventure journey", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "vitek-krupadlo-a-kostizrout"}
@@ -3393,7 +3393,7 @@
 {"k": "vseobecne-spiknuti~egon-hostovsky", "s": 4, "w": "industrial dehumanisation, conspiracy", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "vsichni-jsme-hledeli-vzhuru~tommy-wallach", "s": 4, "w": "two months to reinvent oneself", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "vsichni-jsme-utkani-z-hvezd~rowan-coleman", "s": 4, "w": "Character-driven", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "vsichni-jsme-utkani-z-hvezd"}
-{"k": "vsichni-jsme-z-toho-uplne-na-vetvi~karen-joy-fowlerova", "s": 4, "w": "rodinné mlčení a paměť", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
+{"k": "vsichni-jsme-z-toho-uplne-na-vetvi~karen-joy-fowlerova", "s": 4, "w": "rodinné mlčení a paměť", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0, "done": "vsichni-jsme-z-toho-uplne-na-vetvi"}
 {"k": "vsichni-ptaci-na-nebi~", "s": 4, "w": "Science magic duality romance", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 1}
 {"k": "vsichni-ptaci-na-nebi~charlie-jane-andersova", "s": 4, "w": "Time travel friendship", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "vterinu-pote~william-r-forstchen", "s": 4, "w": "grid collapse, fragile civilisation", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
@@ -3780,7 +3780,7 @@
 {"k": "a-mas-me-rad~jan-pelc", "s": 3, "w": "contemporary stories, no idea", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "a-na-hlavu-se-snaseji-dejiny-aneb-privatni-udalo~inna-rottova", "s": 3, "w": "insufficient metadata", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "a-nad-tim-vsim-je-slunce~kamil-pestak", "s": 3, "w": "Kazakh highlanders, sacrifice", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
-{"k": "a-ocean-byl-nasi-oblohou~patrick-ness", "s": 3, "w": "incomplete data", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4}
+{"k": "a-ocean-byl-nasi-oblohou~patrick-ness", "s": 3, "w": "incomplete data", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4, "done": "a-ocean-byl-nasi-oblohou"}
 {"k": "a-pak-ho-spolknul-eskalator~klara-mayerova", "s": 3, "w": "children's otherness and belonging", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "a-pak-na-me-mrkla~komara", "s": 3, "w": "metadata insufficient", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "a-pak-na-me-mrkla~komarkova-ilona", "s": 3, "w": "topic-level", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4}
@@ -4089,7 +4089,7 @@
 {"k": "anna-z-ostrova~montgomery-lucy-maud", "s": 3, "w": "known children book", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 1, "dissent": 1, "s1": 3}
 {"k": "anna-ze-summerside~lucy-maud-montgomeryova", "s": 3, "w": "anne-teacher", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 1, "dissent": 1, "s1": 3}
 {"k": "anna-ze-summerside~montgomery-lucy-maud", "s": 3, "w": "Unknown", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
-{"k": "anna~gaarder-jostein", "s": 3, "w": "topic-level", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4}
+{"k": "anna~gaarder-jostein", "s": 3, "w": "topic-level", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4, "done": "anna"}
 {"k": "annie-berlepsove~vendula-boruvkova", "s": 3, "w": "teen trip, intruder premise", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "annin-vysneny-domov~lucy-maud-montgomeryova", "s": 3, "w": "anne-marriage", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 1, "dissent": 1, "s1": 3}
 {"k": "ano-muj-pane~frantisek-niedl", "s": 3, "w": "No strong signal", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
@@ -4813,7 +4813,7 @@
 {"k": "brunuv-koktejl~martina-koprivova", "s": 3, "w": "steroids and youth masculinity", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "brusinky~barbara-nesvadbova", "s": 3, "w": "minimal annotation", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "brzy-rano~schimel-lawrence", "s": 3, "w": "story premise", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
-{"k": "brzy~morris-gleitzman", "s": 3, "w": "default", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
+{"k": "brzy~morris-gleitzman", "s": 3, "w": "default", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "brzy"}
 {"k": "bubacek-a-kloboukova-vila~daniela-krolupperova", "s": 3, "w": "insufficient", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "bubacek-a-mysoslap~daniela-krolupperova", "s": 3, "w": "Unknown book metadata", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "bubacek-a-mysoslap~krolupperova-daniela", "s": 3, "w": "friendship", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
@@ -4981,7 +4981,7 @@
 {"k": "cas-ruze~", "s": 3, "w": "Time travel Naples romance", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "cas-tikajici-bomba~", "s": 3, "w": "Ticking bomb time, insufficient detail", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-26"}
 {"k": "cas-zit-cas-zabijet~miroslav-zamboch", "s": 3, "w": "Killer who saved many; anti-hero", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
-{"k": "cas-zmen~danielle-steel", "s": 3, "w": "", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
+{"k": "cas-zmen~danielle-steel", "s": 3, "w": "", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "cas-zmen"}
 {"k": "casny-podzim~louis-bromfield", "s": 3, "w": "woman facing age, too late", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "casobeznik~ryan-graudinova", "s": 3, "w": "time travel, history variable", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "casobrani-aneb-muj-zivot-v-sedmi-republikach~d-z-bor", "s": 3, "w": "Soviet-era emigre memoir, idea unclear", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
@@ -5414,7 +5414,7 @@
 {"k": "civavy-z-ostravy~pilatova-marketa", "s": 3, "w": "topic-level", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4}
 {"k": "cizi-deti~jaromira-kolarova", "s": 3, "w": "daughters from broken marriages", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "cizi-tvar-v-mem-zrcadle~ilona-borska", "s": 3, "w": "amnesia identity search", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
-{"k": "cizinci-ve-meste~ian-mac-ewan", "s": 3, "w": "Sexuální obsese, zločin", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
+{"k": "cizinci-ve-meste~ian-mac-ewan", "s": 3, "w": "Sexuální obsese, zločin", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "cizinci-ve-meste"}
 {"k": "cizinci~", "s": 3, "w": "Austrian emigrant stories, idea unclear", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-24", "rec": 0}
 {"k": "cizinec-v-nasi-posteli~samantha-lee-howe", "s": 3, "w": "insufficient metadata", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "cizinec-z-cornwallu~liz-fenwick", "s": 3, "w": "", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
@@ -5950,7 +5950,7 @@
 {"k": "desatero-radkina-honzaka~radkin-honzak-jan-drazan", "s": 3, "w": "Can't tell", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "desatero~jan-opatril", "s": 3, "w": "Can't tell from metadata", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "veto": "axis:detective"}
 {"k": "desaty-pokus~", "s": 3, "w": "Dark paranormal", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
-{"k": "desaty-stupen~arthur-c-clarke", "s": 3, "w": "catastrophe, human response", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
+{"k": "desaty-stupen~arthur-c-clarke", "s": 3, "w": "catastrophe, human response", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0, "done": "desaty-stupen"}
 {"k": "desdemonin-dum~lion-feuchtwanger", "s": 3, "w": "Nazi-era stories, topic only", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "deset-cinskych-demonu~frederic-lenormand", "s": 3, "w": "Mystery stories", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "deset-deka-dekameronu~", "s": 3, "w": "Decameron retold, storytelling", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-24", "rec": 0}
@@ -6140,7 +6140,7 @@
 {"k": "divka-s-havranimi-kridly~tereza-kramerova", "s": 3, "w": "Annotation provided", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "divka-s-jahodami~lisa-stromme", "s": 3, "w": "", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "divka-s-jizvou~arnost-lustig", "s": 3, "w": "default", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
-{"k": "divka-s-pomeranci~gaarder-jostein", "s": 3, "w": "standard", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
+{"k": "divka-s-pomeranci~gaarder-jostein", "s": 3, "w": "standard", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3, "done": "divka-s-pomeranci"}
 {"k": "divka-s-vasni-pro-indigo~natasha-boydova", "s": 3, "w": "Can't tell from metadata", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "divka-v-medvedi-kuzi~sophie-andersonova", "s": 3, "w": "default", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "divka-v-medvedi-kuzi"}
 {"k": "divka-v-modrem~pelham-grenville-wodehouse", "s": 3, "w": "default", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
@@ -6514,7 +6514,7 @@
 {"k": "draci-dcera~flanagan-liz", "s": 3, "w": "insufficient data", "m": "haiku-4.5", "pd": "093b433445f0", "pv": "crossover-v1", "at": "2026-08-27", "rec": 0, "idea": 0}
 {"k": "draci-kralovna~william-andrews", "s": 3, "w": "Historical fiction", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "draci-kral~z-vietnamstiny-prelozila-petra-m", "s": 3, "w": "Vietnamese folklore collection", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
-{"k": "draci-krev~ales-cesal-jan-geisler", "s": 3, "w": "No strong signal", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
+{"k": "draci-krev~ales-cesal-jan-geisler", "s": 3, "w": "No strong signal", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "draci-krev"}
 {"k": "draci-kronika~ilustrace-garry-walton", "s": 3, "w": "dragon-hunt diary, thin", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "draci-mesto~", "s": 3, "w": "Hidden dragon city fantasy", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "draci-nezbedove-jdou-do-skoly~natalie-jane-priorova", "s": 3, "w": "annotation present", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
@@ -7215,8 +7215,8 @@
 {"k": "francouzska-revoluce~veronika-valkova", "s": 3, "w": "insufficient", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "francouzsky-cop~anne-tylerova", "s": 3, "w": "", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "francouzsky-manzel~klara-janeckova", "s": 3, "w": "No strong signal", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
-{"k": "frankenstein~mary-wollstonecraft-shelleyova", "s": 3, "w": "Can't tell", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
-{"k": "frankenstein~retold-by-john-grant", "s": 3, "w": "gothic-story", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 1, "dissent": 1, "s1": 3}
+{"k": "frankenstein~mary-wollstonecraft-shelleyova", "s": 3, "w": "Can't tell", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "frankenstein"}
+{"k": "frankenstein~retold-by-john-grant", "s": 3, "w": "gothic-story", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 1, "dissent": 1, "s1": 3, "done": "frankenstein"}
 {"k": "frankieho-otazky-pred-spanim~kate-de-goldi", "s": 3, "w": "Can't tell", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "frankie~jochen-gutsch-maxim-leo", "s": 3, "w": "cat rescues suicidal man", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "franklin-a-luna-leti-na-mesic~jen-campbellova", "s": 3, "w": "dragon adventure", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4}
@@ -7579,8 +7579,8 @@
 {"k": "holcicka-kterou-tam-nechali~roxanne-veletzos", "s": 3, "w": "adoption family saga, real-inspired", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "holcicka-ze-znamky~marketa-pilatova", "s": 3, "w": "incomplete data", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "holka-do-nepohody~zadinova-radka", "s": 3, "w": "story premise", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
-{"k": "holka-ktera-zachranila-vanoce~haig-matt", "s": 3, "w": "friendship", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4}
-{"k": "holka-ktera-zachranila-vanoce~matt-haig", "s": 3, "w": "Christmas girl helps", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 1, "dissent": 1, "s1": 4}
+{"k": "holka-ktera-zachranila-vanoce~haig-matt", "s": 3, "w": "friendship", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4, "done": "holka-ktera-zachranila-vanoce"}
+{"k": "holka-ktera-zachranila-vanoce~matt-haig", "s": 3, "w": "Christmas girl helps", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 1, "dissent": 1, "s1": 4, "done": "holka-ktera-zachranila-vanoce"}
 {"k": "holka-mych-snu~rachael-lippincottova-alyson-der", "s": 3, "w": "score", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "holka-na-hlidani~jacqueline-wilsonova", "s": 3, "w": "child looks after ill mother", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "holka-na-uteku~barbora-robosova", "s": 3, "w": "abusive stepfather, realistic issue novel", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
@@ -9056,7 +9056,7 @@
 {"k": "kdyz-potrebuje-zachranit-vrtulnik~iva-honkova", "s": 3, "w": "helicopter-museum", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "kdyz-prislo-zlo~ivar-leon-menger", "s": 3, "w": "Metadata insufficient", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "veto": "axis:detective"}
 {"k": "kdyz-prsi-jehlici~ales-dostal", "s": 3, "w": "Unknown author", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
-{"k": "kdyz-psi-placou~markus-zusak", "s": 3, "w": "brothers coming-of-age, vague premise", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
+{"k": "kdyz-psi-placou~markus-zusak", "s": 3, "w": "brothers coming-of-age, vague premise", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0, "done": "kdyz-psi-placou"}
 {"k": "kdyz-ptacka-lapaji-manzele-mu-zpivaji~alena-jakoubkova", "s": 3, "w": "insufficient metadata", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "kdyz-se-klicovou-dirkou-rozlije-tma~david-kostak", "s": 3, "w": "Unknown book metadata", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "kdyz-se-klicovou-dirkou-rozlije-tma~kostak-david", "s": 3, "w": "no idea", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
@@ -9095,7 +9095,7 @@
 {"k": "kdyz-zmizela~alex-dahl", "s": 3, "w": "insufficient metadata", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "kdyz-zpivaji-labute~roman-cilek", "s": 3, "w": "cannot tell", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "veto": "axis:detective"}
 {"k": "kdyz-zpivat-tak-vesele~jiri-stedron", "s": 3, "w": "Unknown author", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
-{"k": "kdyz~morris-gleitzman", "s": 3, "w": "default", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
+{"k": "kdyz~morris-gleitzman", "s": 3, "w": "default", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "kdyz"}
 {"k": "ke-dnu~anna-bolava", "s": 3, "w": "default", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "ke-hvezdam-a-jeste-dal~marilyse-trecourt", "s": 3, "w": "přání a splnění", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "ke-startu-pripravit~liput-przemys-aw", "s": 3, "w": "unread, no clear idea", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
@@ -9224,7 +9224,7 @@
 {"k": "kluk-a-pes~ivona-brezinova", "s": 3, "w": "insufficient", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "kluk-a-velryba~faas-linde", "s": 3, "w": "adventure story", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "kluk-jako-z-pohadky~cara-stout", "s": 3, "w": "incomplete data", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
-{"k": "kluk-jmenem-vanoce~matt-haig", "s": 3, "w": "Unknown book metadata", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4}
+{"k": "kluk-jmenem-vanoce~matt-haig", "s": 3, "w": "Unknown book metadata", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4, "done": "kluk-jmenem-vanoce"}
 {"k": "kluk-ktery-dela-milion-chyb~brenda-li", "s": 3, "w": "failure and trying again", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "kluk-napravo~kate-stewart", "s": 3, "w": "incomplete data", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "kluk-odvedle~kasie-westova", "s": 3, "w": "tomboy love", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 1, "dissent": 1, "s1": 3}
@@ -9784,7 +9784,7 @@
 {"k": "kridak~c-j-tudor", "s": 3, "w": "Uncertain", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "kridla-ve-vetru~sue-monk-kidd", "s": 3, "w": "", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "kridla-z-vody~dana-sianska", "s": 3, "w": "fear of water; overcoming trauma", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
-{"k": "kridlocky~le-guin-ursula-k", "s": 3, "w": "Cannot determine", "m": "haiku-4.5", "pd": "093b433445f0", "pv": "crossover-v1", "at": "2026-08-27", "rec": 0, "idea": 0}
+{"k": "kridlocky~le-guin-ursula-k", "s": 3, "w": "Cannot determine", "m": "haiku-4.5", "pd": "093b433445f0", "pv": "crossover-v1", "at": "2026-08-27", "rec": 0, "idea": 0, "done": "kridlocky"}
 {"k": "krik-dorka~vladimir-kostiha", "s": 3, "w": "sequel, grotesque Ramiská civilisation", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "krik-straky~dana-beranova", "s": 3, "w": "czech author, unknown", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-26"}
 {"k": "kristalove-kralovstvi~amanda-hockingova", "s": 3, "w": "annotation present", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 1}
@@ -10014,8 +10014,8 @@
 {"k": "labuti-dum~daniela-krolupperova", "s": 3, "w": "insufficient metadata", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "labuti-dum~krolupperova-daniela", "s": 3, "w": "friendship", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "labyrint-bestie~emily-roddaova", "s": 3, "w": "incomplete data", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
-{"k": "labyrint-nedokoncenych-setkani~frantisek-tichy", "s": 3, "w": "insufficient", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
-{"k": "labyrint-nedokoncenych-setkani~tichy-frantisek", "s": 3, "w": "adventure story", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
+{"k": "labyrint-nedokoncenych-setkani~frantisek-tichy", "s": 3, "w": "insufficient", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3, "done": "labyrint-nedokoncenych-setkani"}
+{"k": "labyrint-nedokoncenych-setkani~tichy-frantisek", "s": 3, "w": "adventure story", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3, "done": "labyrint-nedokoncenych-setkani"}
 {"k": "labyrint-tajnosti~linda-castillo", "s": 3, "w": "", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "veto": "axis:detective"}
 {"k": "labyrint~", "s": 3, "w": "Underground Prague fantasy thriller", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "labyrint~pavel-rencin", "s": 3, "w": "prague underground fantasy thriller", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 1, "done": "labyrint"}
@@ -11062,7 +11062,7 @@
 {"k": "mestecko-kde-se-zastavil-cas~bohumil-hrabal", "s": 3, "w": "town stuck in time, idea thin", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
 {"k": "mestecko-kostokrupy~john-robertson", "s": 3, "w": "Boy siblings gang escape unclear", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 1}
 {"k": "mestecko-kostokrupy~robertson-john", "s": 3, "w": "unclear", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4}
-{"k": "mestecko-pines~blake-crouch", "s": 3, "w": "control versus freedom thriller", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
+{"k": "mestecko-pines~blake-crouch", "s": 3, "w": "control versus freedom thriller", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "mestecko-pines"}
 {"k": "mestecko-resolution~robert-b-parker", "s": 3, "w": "western, idea modest", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "mestecko-riverbend-gap~denise-hunterova", "s": 3, "w": "Annotation provided", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "mestecko-splnenych-prani~chivers-khoo-rachel", "s": 3, "w": "Unknown", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4}
@@ -11217,7 +11217,7 @@
 {"k": "milost-pro-zlobivou-sestru~alena-jakoubkova", "s": 3, "w": "Metadata insufficient", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "veto": "axis:detective"}
 {"k": "milostna-afera~s-j-hooks", "s": 3, "w": "insufficient metadata", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "veto": "axis:sexual-content"}
 {"k": "milostna-schuzka-a-jine-povidky~guy-de-maupassant", "s": 3, "w": "minimal metadata", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
-{"k": "milostne-povidky~hermann-hesse", "s": 3, "w": "chronological love stories", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
+{"k": "milostne-povidky~hermann-hesse", "s": 3, "w": "chronological love stories", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0, "done": "milostne-povidky"}
 {"k": "milostne-rosady~autor-roald-dahl", "s": 3, "w": "Some merit", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "milostne-rosady"}
 {"k": "milostne-rosady~roald-dahl", "s": 3, "w": "No annotation", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "milostne-rosady"}
 {"k": "milostny-dopis-klinovym-pismem~tomas-zmeskal", "s": 3, "w": "Incomplete entry insufficient", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
@@ -11648,8 +11648,8 @@
 {"k": "mozna-tentokrat~kasie-westova", "s": 3, "w": "broken heart", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 1, "dissent": 1, "s1": 3}
 {"k": "mozna-uz-zitra~sarka-hiekova", "s": 3, "w": "No strong signal", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "mozna-ze-odchazime~jan-balaban", "s": 3, "w": "default", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
-{"k": "mozna~gleitzman-morris", "s": 3, "w": "YA relationship", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
-{"k": "mozna~morris-gleitzman", "s": 3, "w": "default", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
+{"k": "mozna~gleitzman-morris", "s": 3, "w": "YA relationship", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3, "done": "mozna"}
+{"k": "mozna~morris-gleitzman", "s": 3, "w": "default", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "mozna"}
 {"k": "moznost-ostrova~michel-houellebecq", "s": 3, "w": "houellebecq", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 1, "done": "moznost-ostrova"}
 {"k": "mracna-nad-evropou~robert-troska", "s": 3, "w": "radicalisation and refugees, topic", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "mraky-posledního-ledu~", "s": 3, "w": "Dark paranormal", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
@@ -12589,7 +12589,7 @@
 {"k": "nespoutana-aljaska~k-a-tucker", "s": 3, "w": "insufficient metadata", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "nespoutana-magie~tamora-pierce", "s": 3, "w": "animal telepathy, quest", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "nespoutane-dalky~tamara-mckinley", "s": 3, "w": "Can't tell", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
-{"k": "nespoutani~sophie-jordanova", "s": 3, "w": "Genetic fate vs choice; YA", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
+{"k": "nespoutani~sophie-jordanova", "s": 3, "w": "Genetic fate vs choice; YA", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0, "done": "nespoutani"}
 {"k": "nestalo-se-castecne-nic-aneb-jak-je-to-u-nas-a-k~radka-kvackova", "s": 3, "w": "Almost nothing happened", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "nestesti-byvalo-mym-bohem~bruce-duffy", "s": 3, "w": "Uncertain", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "nestoudny-markyz-hartley~hannah-howell", "s": 3, "w": "Annotation provided", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
@@ -12879,7 +12879,7 @@
 {"k": "nova-dobrodruzstvi-prasatka-peppy~", "s": 3, "w": "Story present", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "nova-gaia~samuel-isaacson", "s": 3, "w": "Can't tell", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "nova-gaia"}
 {"k": "nova-holka-tajnosti-v-divci-skole~carmen-reid", "s": 3, "w": "Annotation provided", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
-{"k": "nova-zprava-o-treti-planete~arthur-c-clarke", "s": 3, "w": "Clarke nonfiction forecasts; no story", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
+{"k": "nova-zprava-o-treti-planete~arthur-c-clarke", "s": 3, "w": "Clarke nonfiction forecasts; no story", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "nova-zprava-o-treti-planete"}
 {"k": "nova~rebecca-yarros", "s": 3, "w": "", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "nove-5-minutove-pohadky~z-anglickeho-originalu-prelozila", "s": 3, "w": "Unclear", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4}
 {"k": "nove-5minutove-marvel-pribehy~z-anglickeho-originalu-prelozil-", "s": 3, "w": "Needs info", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 2}
@@ -13483,7 +13483,7 @@
 {"k": "ostre-sledovane-vlaky~bohumil-hrabal", "s": 3, "w": "No annotation", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "ostre-sledovane-vlaky"}
 {"k": "ostri-mece~iveta-svobodova", "s": 3, "w": "Edge of sword", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "veto": "axis:detective"}
 {"k": "ostrov-boure-a-ticha~charlotte-mcconaghy", "s": 3, "w": "score", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
-{"k": "ostrov-delfinu~arthur-c-clarke", "s": 3, "w": "boy stranded in past, adventure", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
+{"k": "ostrov-delfinu~arthur-c-clarke", "s": 3, "w": "boy stranded in past, adventure", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "ostrov-delfinu"}
 {"k": "ostrov-desivych-goril~brezina-thomas", "s": 3, "w": "standard", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4}
 {"k": "ostrov-duchu~", "s": 3, "w": "Czech literary ghost stories", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "ostrov-duchu~klara-wang-tylova", "s": 3, "w": "czech ghost story island", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
@@ -13739,8 +13739,8 @@
 {"k": "panorama-ceske-literatury~lubomir-machala-ed", "s": 3, "w": "metadata insufficient", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "panorama-snu~lubomir-doruzka", "s": 3, "w": "unannotated; cannot judge", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "panove-prominou-damy-jsou-zvykle~martin-stropnicky", "s": 3, "w": "male psychology, light humour", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
-{"k": "pansky-dum~anne-jacobsova", "s": 3, "w": "unknown", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
-{"k": "pansky-dum~hermann-hesse", "s": 3, "w": "Hesse výbor", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
+{"k": "pansky-dum~anne-jacobsova", "s": 3, "w": "unknown", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "pansky-dum"}
+{"k": "pansky-dum~hermann-hesse", "s": 3, "w": "Hesse výbor", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "pansky-dum"}
 {"k": "pansky-klub~erica-katz", "s": 3, "w": "unknown", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "panstvi-farleigh~rhys-bowen", "s": 3, "w": "", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "panstvi-greifenau~hanna-caspian", "s": 3, "w": "unknown", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
@@ -14315,14 +14315,14 @@
 {"k": "pohadky-ze-skladky~baros-marek", "s": 3, "w": "identity", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "pohadky-ze-skladky~marek-baros", "s": 3, "w": "Unknown book metadata", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "pohadky-ze-vsech-koutu-sveta~zacek-jiri", "s": 3, "w": "unread, no clear idea", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
-{"k": "pohadky~aleksandr-sergejevic-puskin", "s": 3, "w": "Pushkin tales, collection, canon", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
-{"k": "pohadky~andersen-hans-christian", "s": 3, "w": "topic-level", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4}
-{"k": "pohadky~ionesco-eugene", "s": 3, "w": "Can't tell from metadata", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
-{"k": "pohadky~jacob-a-wilhelm-grimmove", "s": 3, "w": "Grimm tales, classic", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
-{"k": "pohadky~macourek-milos", "s": 3, "w": "children: story", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4}
-{"k": "pohadky~milos-macourek", "s": 3, "w": "Unknown book metadata", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
-{"k": "pohadky~rudyard-kipling", "s": 3, "w": "Just So stories; known; mild idea", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
-{"k": "pohadky~z-polskeho-originalu-prelozily-e", "s": 3, "w": "topic-level", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4}
+{"k": "pohadky~aleksandr-sergejevic-puskin", "s": 3, "w": "Pushkin tales, collection, canon", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0, "done": "pohadky"}
+{"k": "pohadky~andersen-hans-christian", "s": 3, "w": "topic-level", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4, "done": "pohadky"}
+{"k": "pohadky~ionesco-eugene", "s": 3, "w": "Can't tell from metadata", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "pohadky"}
+{"k": "pohadky~jacob-a-wilhelm-grimmove", "s": 3, "w": "Grimm tales, classic", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "pohadky"}
+{"k": "pohadky~macourek-milos", "s": 3, "w": "children: story", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4, "done": "pohadky"}
+{"k": "pohadky~milos-macourek", "s": 3, "w": "Unknown book metadata", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3, "done": "pohadky"}
+{"k": "pohadky~rudyard-kipling", "s": 3, "w": "Just So stories; known; mild idea", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "pohadky"}
+{"k": "pohadky~z-polskeho-originalu-prelozily-e", "s": 3, "w": "topic-level", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4, "done": "pohadky"}
 {"k": "pohadnicek~roznovska-lenka", "s": 3, "w": "courage", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "pohadnicek~vypravi-lenka-roznovska", "s": 3, "w": "Unknown book metadata", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "pohansky-kral~edison-marshall", "s": 3, "w": "unknown", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
@@ -14365,7 +14365,7 @@
 {"k": "pojidacka-hrischu~megan-campisiova", "s": 3, "w": "Literary women unknown", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-26"}
 {"k": "pojistka-smrti~robin-cook", "s": 3, "w": "cannot tell", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "pojizdny-kramek-snu~jenny-colganova", "s": 3, "w": "default", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
-{"k": "pokani~marketa-harasimova", "s": 3, "w": "Can't tell from metadata", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
+{"k": "pokani~marketa-harasimova", "s": 3, "w": "Can't tell from metadata", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "pokani"}
 {"k": "pokemon~kusaka-hidenori", "s": 3, "w": "YA relationship", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "poklad-cerneho-zraloka~brezina-thomas", "s": 3, "w": "unread, no clear idea", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "poklad-dobrodruznych-pribehu~portrety-autoru-napsal-ondrej-ne", "s": 3, "w": "adventure classics in comics", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
@@ -14686,7 +14686,7 @@
 {"k": "potme-aneb-co-se-deje-v-noci~utnik-struga-a-monika", "s": 3, "w": "no annotation", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "potmesila-smrt~stanislav-ceska", "s": 3, "w": "insufficient metadata", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "veto": "axis:detective"}
 {"k": "potomci-mlceni~sabine-dittrichova", "s": 3, "w": "inherited silence, genealogy quest", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
-{"k": "potom~gleitzman-morris", "s": 3, "w": "unread, no clear idea", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
+{"k": "potom~gleitzman-morris", "s": 3, "w": "unread, no clear idea", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3, "done": "potom"}
 {"k": "potopa~stephen-baxter", "s": 3, "w": "Climate change speculative London", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "potouchle-povidky~jan-picek", "s": 3, "w": "Unknown regional stories", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "potrestena-dany~vera-rehackova", "s": 3, "w": "Can't tell from metadata", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
@@ -15385,7 +15385,7 @@
 {"k": "proklety-modigliani~jiri-zak", "s": 3, "w": "No strong signal", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "proklety-ostrov~lauren-a-forry", "s": 3, "w": "score", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "proklety-puvod~klara-janeckova", "s": 3, "w": "No strong signal", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
-{"k": "proklety-rok~kim-liggettova", "s": 3, "w": "children's story idea", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4}
+{"k": "proklety-rok~kim-liggettova", "s": 3, "w": "children's story idea", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4, "done": "proklety-rok"}
 {"k": "prolhane-mestecko~diane-chamberlainova", "s": 3, "w": "unknown", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "promarnene-lasky~", "s": 3, "w": "satirical stories on past regime", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-24", "rec": 0}
 {"k": "promena~david-verny", "s": 3, "w": "pilot", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-26", "done": "promena-kafka"}
@@ -15494,7 +15494,7 @@
 {"k": "prvni-kroky-s-pocitacem-pro-uplne-zacatecniky~jiri-lapacek", "s": 3, "w": "Metadata insufficient", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "prvni-kroky-v-podnikani~", "s": 3, "w": "Uncertain", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "prvni-laska-elisky-premyslovny~melita-denkova", "s": 3, "w": "No strong signal", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
-{"k": "prvni-laska-posledni-pomazani~ian-mcewan", "s": 3, "w": "taboo topics, idea not named", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
+{"k": "prvni-laska-posledni-pomazani~ian-mcewan", "s": 3, "w": "taboo topics, idea not named", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "prvni-laska-posledni-pomazani"}
 {"k": "prvni-laska~jacqueline-wilsonova", "s": 3, "w": "Unknown book metadata", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "prvni-laska~richard-sacher", "s": 3, "w": "unclear premise", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "prvni-linie~marko-kloos", "s": 3, "w": "military SF, war", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
@@ -15521,7 +15521,7 @@
 {"k": "prvni-zprava-z-prahy~josef-nesvadba", "s": 3, "w": "Czech sci-fi, unknown", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "prvnich-100~morgan-kass", "s": 3, "w": "standard", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "prvok-sampon-tecka-a-karel~patrik-hartl", "s": 3, "w": "Uncertain", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
-{"k": "prvorozeni~arthur-c-clarke-stephen-baxter", "s": 3, "w": "alliance strains under alien bombardment", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
+{"k": "prvorozeni~arthur-c-clarke-stephen-baxter", "s": 3, "w": "alliance strains under alien bombardment", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "prvorozeni"}
 {"k": "prvorozeny~tor-seidler-z-anglickeho-origina", "s": 3, "w": "wolf and magpie, idea thin", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "prvotridni-blazni-maj-potize-s-kazni~pavlasek-lukas", "s": 3, "w": "unclear", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4}
 {"k": "prvouka~jandova-dagmar", "s": 3, "w": "No metadata", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
@@ -16278,7 +16278,7 @@
 {"k": "sarlota-a-jiskra~sykes-julie", "s": 3, "w": "Needs info", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "sasanky-a-hnusokrysy~kroon-oskar", "s": 3, "w": "Unclear", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4}
 {"k": "sasek-a-vevodkyne~celia-reesova", "s": 3, "w": "score", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
-{"k": "satanarcheolegenialkohrozny-punc-prani~ende-michael", "s": 3, "w": "friendship", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4}
+{"k": "satanarcheolegenialkohrozny-punc-prani~ende-michael", "s": 3, "w": "friendship", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4, "done": "satanarcheolegenialkohrozny-punc-prani"}
 {"k": "satanovi-kone~zdenek-posival", "s": 3, "w": "Literary fiction", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "veto": "axis:detective"}
 {"k": "satek-a-jine-povidky~smuel-josef-agnon", "s": 3, "w": "Hebrew stories, no premise", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "satna-a-klaster~petr-motyl", "s": 3, "w": "No annotation", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
@@ -16862,7 +16862,7 @@
 {"k": "slunconos~hannah-kaner", "s": 3, "w": "Can't tell", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "slunecna-paseka~m-jahn", "s": 3, "w": "1947, no annotation", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "slunecna~rene-decastelo", "s": 3, "w": "family", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
-{"k": "slunecni-boure~arthur-c-clarke-stephen-baxter", "s": 3, "w": "Race against solar storm; thriller", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
+{"k": "slunecni-boure~arthur-c-clarke-stephen-baxter", "s": 3, "w": "Race against solar storm; thriller", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0, "done": "slunecni-boure"}
 {"k": "slunecni-hodiny~", "s": 3, "w": "Czech poet nature poetry", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 1}
 {"k": "slunecni-hodiny~eda-kriseova", "s": 3, "w": "linked stories, no named idea", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "slunecni-hodiny~karel-toman", "s": 3, "w": "czech poetry nature harmony", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 1}
@@ -16887,7 +16887,7 @@
 {"k": "slzy-jsou-jen-pro-holky~zverova-lucie", "s": 3, "w": "YA relationship", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "slzy-katovy-schovanky~sabine-martin", "s": 3, "w": "unknown czech", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-26"}
 {"k": "slzy-v-temnote~michael-norman-elizabeth-m-norma", "s": 3, "w": "Bataan survival, war novel", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
-{"k": "smecka-rvacu~markus-zusak", "s": 3, "w": "Bratři, nelegální rvačky", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
+{"k": "smecka-rvacu~markus-zusak", "s": 3, "w": "Bratři, nelegální rvačky", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0, "done": "smecka-rvacu"}
 {"k": "smecka~do-knizni-podoby-prevedla-irena-", "s": 3, "w": "metadata insufficient", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "smecka~sestavil-jiri-sivok", "s": 3, "w": "Can't tell", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "smejici-se-bestie~vilem-koubek", "s": 3, "w": "debts and second chance", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
@@ -17044,7 +17044,7 @@
 {"k": "sokyne-z-versailles~sally-christie", "s": 3, "w": "Historical court", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-26"}
 {"k": "solanin~asano-inio", "s": 3, "w": "standard", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "solarni-baroni~alena-vitaskova", "s": 3, "w": "satire on subsidy corruption", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
-{"k": "solar~ian-mcewan", "s": 3, "w": "default", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
+{"k": "solar~ian-mcewan", "s": 3, "w": "default", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "solar"}
 {"k": "solitaire~alice-osemanova", "s": 3, "w": "children's story", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "solitaire~oseman-alice", "s": 3, "w": "no idea", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "solo~rana-dasgupta", "s": 3, "w": "score", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
@@ -17413,7 +17413,7 @@
 {"k": "stolni-spolecnost~petr-ritter", "s": 3, "w": "Unknown author", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "stolz-und-vorurteil~podle-pribehu-jane-austenove", "s": 3, "w": "austen-classic", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 1, "dissent": 1, "s1": 3}
 {"k": "stopa-rysa~roman-voosen-a-kerstin-signe-dan", "s": 3, "w": "No strong signal", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "veto": "axis:detective"}
-{"k": "stopa-ze-snu~hermann-hesse", "s": 3, "w": "hesse", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 1}
+{"k": "stopa-ze-snu~hermann-hesse", "s": 3, "w": "hesse", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 1, "done": "stopa-ze-snu"}
 {"k": "stoparuv-pruvodce-galaxii-douglase-adamse~eoin-colfer", "s": 3, "w": "historical fiction", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "stoparuv-pruvodce-galaxii-douglase-adamse"}
 {"k": "stopka-spol~rudyard-kipling", "s": 3, "w": "school stories, nostalgia", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
 {"k": "stoprocentni-riziko~jean-michel-guenassia", "s": 3, "w": "gambler boredom, idea thin", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
@@ -17544,7 +17544,7 @@
 {"k": "stribrna-hladina~elizabeth-lowell", "s": 3, "w": "unknown", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "stribrna-maska~holly-blackova-cassandra-clareov", "s": 3, "w": "substantial plot unknown", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "stribrna-maska"}
 {"k": "stribrna-parta~miroslav-adamec", "s": 3, "w": "Metadata insufficient", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
-{"k": "stribrna-vetev~rosemary-sutcliffova", "s": 3, "w": "Roman Britain historical, children's", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
+{"k": "stribrna-vetev~rosemary-sutcliffova", "s": 3, "w": "Roman Britain historical, children's", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0, "done": "stribrna-vetev"}
 {"k": "stribrna-zatoka~jojo-moyesova", "s": 3, "w": "Can't tell", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "stribrne-dobrodruzstvi~eduard-petiska", "s": 3, "w": "metadata insufficient", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "stribrne-dobrodruzstvi~petiska-eduard", "s": 3, "w": "topic-level", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4}
@@ -17570,7 +17570,7 @@
 {"k": "strom-carodejnic~elena-collins", "s": 3, "w": "Contemporary drama", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-26"}
 {"k": "strom-duchu~barbara-erskinova", "s": 3, "w": "score", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "strom-od-jara-do-zimy~colas-des-francs-nicole", "s": 3, "w": "Educational", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 2}
-{"k": "strom-stul-kniha~lois-lowryova", "s": 3, "w": "lowryova", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
+{"k": "strom-stul-kniha~lois-lowryova", "s": 3, "w": "lowryova", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "strom-stul-kniha"}
 {"k": "strom-vecnosti~marie-luova", "s": 3, "w": "incomplete data", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "strom-viselcu~ben-aaronovitch", "s": 3, "w": "Unknown work", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-26"}
 {"k": "strom-ztracenych-vzpominek~sahar-delijani", "s": 3, "w": "post-revolution Iran, premise", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
@@ -17610,8 +17610,8 @@
 {"k": "stuj-pri-mne~lena-valenova", "s": 3, "w": "insufficient metadata", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "stul-pro-dva~casey-mcquiston", "s": 3, "w": "Fantasy: unclear", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "stul-pro-dva"}
 {"k": "stupne-viny~hs-chandler", "s": 3, "w": "insufficient metadata", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
-{"k": "stupne~christian-morgenstern", "s": 3, "w": "Incomplete entry insufficient", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
-{"k": "stupne~hermann-hesse", "s": 3, "w": "anthology, no single idea", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
+{"k": "stupne~christian-morgenstern", "s": 3, "w": "Incomplete entry insufficient", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "stupne"}
+{"k": "stupne~hermann-hesse", "s": 3, "w": "anthology, no single idea", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0, "done": "stupne"}
 {"k": "stvanice-na-orly~ben-kane", "s": 3, "w": "Some merit", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "stvanice-na-orly"}
 {"k": "stvanice~", "s": 3, "w": "Overpopulated future detective", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "stvanice~frantisek-niedl", "s": 3, "w": "Metadata insufficient", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
@@ -17883,7 +17883,7 @@
 {"k": "tajemstvi-cokoladovny~paula-brackston", "s": 3, "w": "Can't tell", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "tajemstvi-dablovy-bible~arnost-vasicek", "s": 3, "w": "Can't tell", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "tajemstvi-dedeckova-deniku~martina-bouckova", "s": 3, "w": "grandfather's diary, mild adventure", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
-{"k": "tajemstvi-divokeho-hvozdu~tonke-dragtova", "s": 3, "w": "adventure forest Czech", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
+{"k": "tajemstvi-divokeho-hvozdu~tonke-dragtova", "s": 3, "w": "adventure forest Czech", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3, "done": "tajemstvi-divokeho-hvozdu"}
 {"k": "tajemstvi-doktora-honigbergera~mircea-eliade", "s": 3, "w": "Eliade tajuplné povídky", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
 {"k": "tajemstvi-domu-v-l~sarka-andrlova", "s": 3, "w": "No strong signal", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "tajemstvi-duchu~mary-k-pershallova", "s": 3, "w": "children's story idea", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
@@ -18024,7 +18024,7 @@
 {"k": "tajuplne-mesto~patrice-chaplin", "s": 3, "w": "Catalan mystery, quest female", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "tajuplny-pevec~susanne-kraus", "s": 3, "w": "No strong signal", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "tajuplny-svet-viru-a-bakterii~brensing-karsten", "s": 3, "w": "No metadata", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
-{"k": "tak-akorat~jostein-gaarder", "s": 3, "w": "Muž sám v chatě před smrtí", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
+{"k": "tak-akorat~jostein-gaarder", "s": 3, "w": "Muž sám v chatě před smrtí", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0, "done": "tak-akorat"}
 {"k": "tak-blizko~sylvia-day", "s": 3, "w": "Uncertain", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "veto": "axis:sexual-content"}
 {"k": "tak-daleko~sylvia-day", "s": 3, "w": "Uncertain", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "veto": "axis:sexual-content"}
 {"k": "tak-hodne-stesti~kristan-higginsova", "s": 3, "w": "", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
@@ -18344,7 +18344,7 @@
 {"k": "titanic~wilkinson-philip", "s": 3, "w": "no annotation", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "titanik-a-jine-povidky~", "s": 3, "w": "Czech literary short stories", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "titanik-a-jine-povidky~hana-belohradska", "s": 3, "w": "czech short stories mixed", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
-{"k": "titan~john-varley", "s": 3, "w": "Saturn moon, generic", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
+{"k": "titan~john-varley", "s": 3, "w": "Saturn moon, generic", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "titan"}
 {"k": "tkanicky~domenico-starnone", "s": 3, "w": "No annotation", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "tlapka-hleda-domov~chapman-linda", "s": 3, "w": "topic-level", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4}
 {"k": "tlapka-hleda-domov~linda-chapmanova", "s": 3, "w": "Unknown book metadata", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
@@ -19526,7 +19526,7 @@
 {"k": "vetesnik~", "s": 3, "w": "Elderly hoarder eccentric caretaker", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "vetesnik~jess-kiddova", "s": 3, "w": "Senior home mystery", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "veto": "axis:detective"}
 {"k": "vetev-dobra~donat-sajner", "s": 3, "w": "no annotation, unknown", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
-{"k": "vetrelci-z-hlubin~john-wyndham", "s": 3, "w": "alien invasion from sea; classic", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
+{"k": "vetrelci-z-hlubin~john-wyndham", "s": 3, "w": "alien invasion from sea; classic", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "vetrelci-z-hlubin"}
 {"k": "vetrelci~jonathan-maberry", "s": 3, "w": "Alien horror anthology series", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 1, "done": "vetrelci"}
 {"k": "vetrelec~autor-knihy-alan-dean-foster", "s": 3, "w": "Sci-fi thriller", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "vetrelec~kristyna-trpkova", "s": 3, "w": "metadata insufficient", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "veto": "axis:detective"}
@@ -19552,7 +19552,7 @@
 {"k": "vez-z-ebenu~john-fowles", "s": 3, "w": "Pět povídek o umění a společnosti", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
 {"k": "veze-asperfellu~thomas-jamie", "s": 3, "w": "unclear", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4}
 {"k": "vezeni-na-svobode~ivan-landsmann", "s": 3, "w": "emigrant emptiness, bleak", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
-{"k": "vezeni-svobody~michael-ende", "s": 3, "w": "Ende stories, inner adventures", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
+{"k": "vezeni-svobody~michael-ende", "s": 3, "w": "Ende stories, inner adventures", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0, "done": "vezeni-svobody"}
 {"k": "vezenkyne~b-a-paris", "s": 3, "w": "insufficient metadata", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "veze~jiri-boudnik", "s": 3, "w": "9/11 rescuer testimony, meaning unclear", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "vezmi-me-domu~jesus-carrasco", "s": 3, "w": "No annotation available", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
@@ -19717,7 +19717,7 @@
 {"k": "vlny-zmitane-smrti~ryan-carrie", "s": 3, "w": "No clear adult layer", "m": "haiku-4.5", "pd": "093b433445f0", "pv": "crossover-v1", "at": "2026-08-27", "rec": 0, "idea": 0}
 {"k": "vne-hranic~sestavil-ales-kozar", "s": 3, "w": "Slovene short prose selection", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "vnejsi-tma~cormac-mccarthy", "s": 3, "w": "substantial plot unknown", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
-{"k": "vnitrni-zalezitosti~connie-willisova", "s": 3, "w": "SF humour", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
+{"k": "vnitrni-zalezitosti~connie-willisova", "s": 3, "w": "SF humour", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "vnitrni-zalezitosti"}
 {"k": "vnucka-carodeje-modromira~", "s": 3, "w": "unknown", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "vnucka-carodeje-modromira~kucera-martin", "s": 3, "w": "Story present", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "voda-ho-vzala~suchy-tomas", "s": 3, "w": "topic-level", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4}
@@ -20388,7 +20388,7 @@
 {"k": "zaludnosti-tela~klarova-barbora", "s": 3, "w": "no annotation", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "zaludny-svet-povidek-malostranskych~dagmar-mocna", "s": 3, "w": "prague stories collection", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "zaludny-svet~", "s": 3, "w": "Czech narrative literary analysis", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 1}
-{"k": "zaludny-vesmir-johna-wyndhama~john-wyndham", "s": 3, "w": "Sci-fi sbírka, anotace bez ideje", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
+{"k": "zaludny-vesmir-johna-wyndhama~john-wyndham", "s": 3, "w": "Sci-fi sbírka, anotace bez ideje", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1, "done": "zaludny-vesmir-johna-wyndhama"}
 {"k": "zamecek~barbora-majchrakova", "s": 3, "w": "minimal metadata", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "zamecky-pan-aneb-antikuro~jan-kresadlo", "s": 3, "w": "no annotation, unknown", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "zamek-hrichu~tiffany-reiszova", "s": 3, "w": "Uncertain", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "veto": "axis:sexual-content"}
@@ -20987,7 +20987,7 @@
 {"k": "zpoved~helene-gremillon", "s": 3, "w": "letters reveal family past", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "zprava-o-mem-muzi~josefa-slanska", "s": 3, "w": "Political memoir", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "zprava-o-mistech~petr-kral", "s": 3, "w": "no annotation, unknown", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
-{"k": "zprava-o-treti-planete~arthur-charles-clarke", "s": 3, "w": "essays, no fiction premise", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
+{"k": "zprava-o-treti-planete~arthur-charles-clarke", "s": 3, "w": "essays, no fiction premise", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0, "done": "zprava-o-treti-planete"}
 {"k": "zprava-z-hadu~", "s": 3, "w": "Space colonization comet threat", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "zpravy-o-tobe~catherine-o-flynnova", "s": 3, "w": "local TV newsroom, comedic drama", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "zpretrhana-pouta~linda-castillo", "s": 3, "w": "", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
@@ -20997,10 +20997,10 @@
 {"k": "zrada-mezi-radky~dandy-smith", "s": 3, "w": "", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "veto": "axis:detective"}
 {"k": "zrada-v-andelskem-dvore~richard-sobotka", "s": 3, "w": "insufficient metadata", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "zrada-v-zime~daniel-abraham", "s": 3, "w": "Intrigue in city-state; competent", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
-{"k": "zrada~danielle-steel", "s": 3, "w": "unknown", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
-{"k": "zrada~david-gilman", "s": 3, "w": "metadata insufficient", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
-{"k": "zrada~klara-janeckova", "s": 3, "w": "No strong signal", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "veto": "axis:detective"}
-{"k": "zrada~martina-cole", "s": 3, "w": "Can't tell", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
+{"k": "zrada~danielle-steel", "s": 3, "w": "unknown", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "zrada-cherryh"}
+{"k": "zrada~david-gilman", "s": 3, "w": "metadata insufficient", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "zrada-cherryh"}
+{"k": "zrada~klara-janeckova", "s": 3, "w": "No strong signal", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "veto": "axis:detective", "done": "zrada-cherryh"}
+{"k": "zrada~martina-cole", "s": 3, "w": "Can't tell", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "zrada-cherryh"}
 {"k": "zradce-mezi-nami~", "s": 3, "w": "Dark paranormal", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "zradce-trunu~alwyn-hamiltonova", "s": 3, "w": "rebellion, familiar YA template", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "zradce~", "s": 3, "w": "loyalty versus conscience, series finale", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-24", "rec": 0}
@@ -24914,7 +24914,7 @@
 {"k": "mistecka~renner-jana", "s": 2, "w": "topic-driven", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4}
 {"k": "misto-na-slunci~lisa-kleypas", "s": 2, "w": "romance", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "misto-odkud-neni-navratu~", "s": 2, "w": "Non-fiction Uighur oppression", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
-{"k": "misto-odkud-neni-navratu~mihrigul-tursunova-andrea-c-hoff", "s": 2, "w": "uighur persecution testimony", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
+{"k": "misto-odkud-neni-navratu~mihrigul-tursunova-andrea-c-hoff", "s": 2, "w": "uighur persecution testimony", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "misto-odkud-neni-navratu"}
 {"k": "misto-pro-lasku~brigitte-blobelova", "s": 2, "w": "young romance", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "misto-pro-princeznu~meg-cabotova", "s": 2, "w": "princess diary sequel", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "misto-splnenych-prani~jude-deveraux", "s": 2, "w": "friendship romance", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
@@ -26470,10 +26470,10 @@
 {"k": "pohadky-ze-stribrne-tune~jana-pechova", "s": 2, "w": "poetic fairy tales, light", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "pohadky-ze-zeme-draka~vypravuje-jan-vladislav", "s": 2, "w": "Chinese tales anthology", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "pohadky-ze-zvireciho-sveta~bajky-ezopa-a-la-fontaina-prepra", "s": 2, "w": "fables picture book", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
-{"k": "pohadky~jindrich-simon-baar", "s": 2, "w": "folk tales", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
-{"k": "pohadky~ludvik-askenazy", "s": 2, "w": "Czech classic tales", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
-{"k": "pohadky~vic-parker", "s": 2, "w": "children's fairytale collection", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
-{"k": "pohadky~vypravuje-eduard-petiska", "s": 2, "w": "classic tales anthology", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
+{"k": "pohadky~jindrich-simon-baar", "s": 2, "w": "folk tales", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0, "done": "pohadky"}
+{"k": "pohadky~ludvik-askenazy", "s": 2, "w": "Czech classic tales", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0, "done": "pohadky"}
+{"k": "pohadky~vic-parker", "s": 2, "w": "children's fairytale collection", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0, "done": "pohadky"}
+{"k": "pohadky~vypravuje-eduard-petiska", "s": 2, "w": "classic tales anthology", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0, "done": "pohadky"}
 {"k": "pohansko-u-breclavi~", "s": 2, "w": "archaeological osteology monograph", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-24", "rec": 0}
 {"k": "pohlavni-styky~ondrej-horak", "s": 2, "w": "Explicit content central", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "pohlavni-zivoty-siamskych-dvojcat~irvine-welsh", "s": 2, "w": "crude sexual, thin", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
@@ -26582,7 +26582,7 @@
 {"k": "posledni-sbohem~gabi-adam", "s": 2, "w": "shelter story", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "posledni-tango-v-havane~frantisek-kotleta", "s": 2, "w": "Paranormal/noir", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "posledni-tygr~horacek-petr", "s": 2, "w": "topic-driven", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
-{"k": "posledni-upir~christopher-pike", "s": 2, "w": "vampire YA", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
+{"k": "posledni-upir~christopher-pike", "s": 2, "w": "vampire YA", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0, "done": "posledni-upir"}
 {"k": "posledni-uzel~", "s": 2, "w": "multi-author anthology on one theme", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-24", "rec": 0}
 {"k": "posledni-z-bohu~rick-riordan", "s": 2, "w": "paranormal, riordan mythology with young protag", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-26"}
 {"k": "posledni-z-taboru-smrti~michal-chocholaty", "s": 2, "w": "death camp testimony", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
@@ -27107,7 +27107,7 @@
 {"k": "putovani-za-pohadkou~jaromir-sypal", "s": 2, "w": "fairy tale journey, no idea", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "putovani-za-svetlem~suzanne-francisova", "s": 2, "w": "Frozen tie-in", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "putovani-za-vanocnim-kouzlem~hau-kerstin", "s": 2, "w": "cross-cultural appreciation Christmas", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
-{"k": "putovani~pavla-soletka-kratka", "s": 2, "w": "Christmas calendar", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
+{"k": "putovani~pavla-soletka-kratka", "s": 2, "w": "Christmas calendar", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0, "done": "putovani"}
 {"k": "pyrofobie~jack-lance", "s": 2, "w": "Phobia thriller stalking plot", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "pysna-princezna~potuznikova-ema", "s": 2, "w": "picture book", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 4}
 {"k": "pysny-dum~vlasta-javoricka", "s": 2, "w": "Pět povídek", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
@@ -28085,7 +28085,7 @@
 {"k": "svetlo-me-samoty~lubomir-muller", "s": 2, "w": "trauma memoir", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "svetlo-mezi-nami~laura-lynne-jacksonova", "s": 2, "w": "spirit contact memoir", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "svetlo-uvnitr-temnoty~", "s": 2, "w": "supernatural mystery stories, topic only", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-24", "rec": 0}
-{"k": "svetlonosi~sestavila-marcela-slizkova", "s": 2, "w": "Valassko student stories", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
+{"k": "svetlonosi~sestavila-marcela-slizkova", "s": 2, "w": "Valassko student stories", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0, "done": "svetlonosi"}
 {"k": "svetlusky-a-jine-povidky~", "s": 2, "w": "Women's stories violence focus", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "svetovy-atlas-strasidel-a-duchu~ilustroval-patrik-antczak", "s": 2, "w": "monster atlas, reference", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "svety-za-obzorem~", "s": 2, "w": "sci-fi essay anthology", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-24", "rec": 0}
@@ -31478,16 +31478,21 @@
 {"k": "zvirata~david-alderton", "s": 1, "w": "animal guide", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "zvireci-ducharske-historky~gerina-dunwichova", "s": 1, "w": "Occult ghost animal stories", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "zvladani-emoci-u-deti-a-dospivajicich-s-adhd~ali-sonia", "s": 1, "w": "self-help", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
+{"k": "a-hory-odpovedely~khaled-hosseini", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "a-hory-odpovedely"}
 {"k": "a-presto-rici-zivotu-ano~viktor-e-frankl", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "mans-search-for-meaning"}
 {"k": "akademie-jednorozcu~julie-sykesova", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "akademie-jednorozcu"}
 {"k": "alexandr-veliky~texty-milo-j-krmpotic", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "alexandr-veliky"}
 {"k": "andel~barbara-taylor-bradford", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "andel"}
+{"k": "anna~eva-ava-srankova", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "anna"}
+{"k": "anna~justus-pfaue", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "anna"}
+{"k": "anton-a-jonatan~jostein-gaarder", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "anton-a-jonatan"}
 {"k": "arena~william-r-forstchen", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "arena"}
 {"k": "bajecna-medicina-podle-adama~kay-adam", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "bajecna-medicina-podle-adama"}
 {"k": "bajky~a-ilustrace-jarmila-maresova", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "bajky"}
 {"k": "bajky~ezop", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "bajky"}
 {"k": "bajky~josef-lada", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "bajky"}
 {"k": "beh-o-zivot~tess-gerritsenova", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "beh-o-zivot"}
+{"k": "bez-chlapce-bez~uri-orlev", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "bez-chlapce-bez"}
 {"k": "bez-duse~martin-strucovsky", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "bez-duse"}
 {"k": "bezcasi~erik-axl-sund", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "bezcasi"}
 {"k": "blackout~marc-elsberg", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "blackout"}
@@ -31514,12 +31519,15 @@
 {"k": "dobrodruzstvi-huckleberryho-finna~mark-twain", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "dobrodruzstvi-huckleberryho-finna"}
 {"k": "dokonala~tilly-bagshawe", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "dokonala"}
 {"k": "doktor-proktor-a-vana-casu~jo-nesbo", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "doktor-proktor-a-vana-casu"}
+{"k": "domu-ze-slunecnych-stepi~uri-orlev", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "domu-ze-slunecnych-stepi"}
 {"k": "druha-sance~marc-levy", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "druha-sance"}
 {"k": "druha-sance~rebecca-hagan-lee", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "druha-sance"}
 {"k": "duha~vlasta-javoricka", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "duha"}
 {"k": "dum-na-utesu~nora-robertsova", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "dum-na-utesu"}
 {"k": "dum-na-utesu~rachel-abbottova", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "dum-na-utesu"}
 {"k": "gregor-a-mesto-pod-mestem~suzanne-collinsova", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-10-25", "done": "gregor-a-mesto-pod-mestem"}
+{"k": "gwilanina-harfa-a-jine-povidky~ursula-k-le-guinova", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "gwilanina-harfa-a-jine-povidky"}
+{"k": "halo-je-tu-nekdo~jostein-gaarder", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "halo-je-tu-nekdo"}
 {"k": "hannibal~ross-leckie", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "hannibal"}
 {"k": "harry-potter~rowling-j-k", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "harry-potter"}
 {"k": "harry-potter~z-anglickeho-originalu-harry-pot", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "harry-potter"}
@@ -31534,6 +31542,8 @@
 {"k": "hubert-hugo~nikarrin", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "hubert-hugo"}
 {"k": "hvezdokote~james-turner-a-yasmin-sheikh", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "hvezdokote"}
 {"k": "invaze~jan-kotouc", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "invaze"}
+{"k": "jako-v-zrcadle-jen-v-hadance~jostein-gaarder", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "jako-v-zrcadle-jen-v-hadance"}
+{"k": "je-tezke-byt-lvem~uri-orlev", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "je-tezke-byt-lvem"}
 {"k": "je-to-pravda-tygriku~byron-katie-a-hans-wilhelm", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "je-to-pravda-tygriku"}
 {"k": "jursky-park~gail-herman", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "jurassic-park"}
 {"k": "jursky-park~jane-mason", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "jurassic-park"}
@@ -31543,6 +31553,7 @@
 {"k": "klofaci~milos-kratochvil", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "klofaci"}
 {"k": "kniha-noveho-slunce~muciteluv-stin", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "kniha-noveho-slunce"}
 {"k": "kostelik-ktery-se-radoval~vondrovic-tomas", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "kostelik-ktery-se-radoval"}
+{"k": "kouzelny-kalendar~jostein-gaarder", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "kouzelny-kalendar"}
 {"k": "kral-medvedu~vanessa-walderova", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "kral-medvedu"}
 {"k": "kralovska-krev~sherry-jones", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "kralovska-krev"}
 {"k": "kralovstvi-poniku~juliette-parachini-deny-a-olivie", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "kralovstvi-poniku"}
@@ -31567,6 +31578,7 @@
 {"k": "medvidek-pu~beth-hester", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "medvidek-pu"}
 {"k": "medvidek-pu~catherine-hapka-ilustrace-disney", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "medvidek-pu"}
 {"k": "medvidek-pu~upravila-lisa-ann-marsoli", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "medvidek-pu"}
+{"k": "mestecko-pines-3~blake-crouch", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "mestecko-pines-3"}
 {"k": "mesto-duchu~kevin-cchen", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "mesto-duchu"}
 {"k": "mesto-duchu~kresba-morris", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "mesto-duchu"}
 {"k": "mesto~dean-koontz", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "mesto"}
@@ -31588,6 +31600,7 @@
 {"k": "nikola-suhaj-loupeznik~", "w": "tier-2, never model-scored", "m": "-", "pd": "093b433445f0", "at": "2026-08-26", "done": "nikola-suhaj-loupeznik"}
 {"k": "nimona~stevenson-noelle", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "nimona"}
 {"k": "nuz~jo-nesb", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "nuz"}
+{"k": "o-snozroutkovi~michael-ende", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "o-snozroutkovi"}
 {"k": "ocelove-srdce~albert-cuba", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-10-25", "done": "ocelove-srdce"}
 {"k": "ohen~jane-caseyova", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "ohen"}
 {"k": "ohen~maria-pourchet", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "ohen"}
@@ -31603,7 +31616,16 @@
 {"k": "podraz~paulina-swist", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "podraz"}
 {"k": "pohadky-na-dobrou-noc~preklad-robert-novotny", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "pohadky-na-dobrou-noc"}
 {"k": "pohadky-na-dobrou-noc~tig-thomas", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "pohadky-na-dobrou-noc"}
+{"k": "pohadky~bozena-nemcova", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "pohadky"}
+{"k": "pohadky~bozena-nemcova-karel-jaromir-erb", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "pohadky"}
+{"k": "pohadky~hermann-hesse", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "pohadky"}
+{"k": "pohadky~john-ronald-reuel-tolkien", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "pohadky"}
+{"k": "pohadky~karel-jaromir-erben", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "pohadky"}
+{"k": "pohadky~karel-jaromir-erben-bozena-nemco", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "pohadky"}
+{"k": "pohadky~michael-coleman", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "pohadky"}
+{"k": "pohadky~polsky-text-anna-sojka-leszczyns", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "pohadky"}
 {"k": "pohyblive-obrazky~terry-pratchett", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "pohyblive-obrazky"}
+{"k": "pokani~ian-mcewan", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "pokani"}
 {"k": "polocas-rozpadu~lubomir-dolezel", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "polocas-rozpadu"}
 {"k": "pomsta~jane-caseyova", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "pomsta"}
 {"k": "pomsta~sara-mia-velinska", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "pomsta"}
@@ -31626,6 +31648,7 @@
 {"k": "pravda~neil-strauss", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "pravda-the-truth"}
 {"k": "pravda~peter-temple", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "pravda-the-truth"}
 {"k": "pravidla-hry~neil-strauss", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "pravidla-hry"}
+{"k": "proc-cist-fantasy-jak-to-ze-zvirata-v-knizkach-m~ursula-k-le-guinova", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "proc-cist-fantasy-jak-to-ze-zvirata-v-knizka"}
 {"k": "ptacatko~s-ren-sveistrup", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "ptacatko"}
 {"k": "pyramidy~terry-pratchett-z-anglickeho-ori", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "pyramidy"}
 {"k": "raj~toni-morrisonova", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "raj"}
@@ -31635,6 +31658,8 @@
 {"k": "ritual~inger-edelfeldtova", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "ritual"}
 {"k": "robinson-crusoe~podle-romanu-daniela-defoa-vypra", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "robinson-crusoe"}
 {"k": "robinson-crusoe~vojtech-kubasta", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "robinson-crusoe"}
+{"k": "rodrigo-raubir-a-neohrozeny-spunt~michael-ende-wieland-freund", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "rodrigo-raubir-a-neohrozeny-spunt"}
+{"k": "roky-pod-psa~markus-zusak", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "roky-pod-psa"}
 {"k": "rudy-sal~nora-robertsova", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "rudy-sal"}
 {"k": "sanctum~markus-heitz", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "sanctum"}
 {"k": "severka~milos-zapletal", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "severka"}
@@ -31648,6 +31673,7 @@
 {"k": "slib~lisa-kleypas", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "slib"}
 {"k": "slib~sharon-j-bolton", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "slib"}
 {"k": "slib~tana-keleova-vasilkova", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "slib"}
+{"k": "smrtonosne-sny~ursula-kroeber-le-guin", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "smrtonosne-sny"}
 {"k": "spanek~wendy-bjazevichova", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "spanek-murakami"}
 {"k": "splynuti~maggie-stiefvaterova", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "splynuti"}
 {"k": "srdce-z-kameni~andrew-clemson", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "srdce-z-kameni"}
@@ -31670,6 +31696,7 @@
 {"k": "superman~matt-de-la-pe-a", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-27", "done": "superman"}
 {"k": "superman~matt-de-la-pena", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "superman"}
 {"k": "syn~jo-nesbo", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "syn-lowry"}
+{"k": "tajemstvi-karet~jostein-gaarder", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "tajemstvi-karet"}
 {"k": "tezke-melodicno~terry-pratchett", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "tezke-melodicno"}
 {"k": "this-winter~alice-oseman", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "this-winter"}
 {"k": "tokijsky-ghul-re~sui-isida", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "tokijsky-ghul-re"}
@@ -31682,6 +31709,7 @@
 {"k": "valka~gro-dahle-a-kaia-dahle-nyhus", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "valka"}
 {"k": "velke-dobrodruzstvi-ctyrlistku~jaroslav-nemecek", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "velke-dobrodruzstvi-ctyrlistku"}
 {"k": "vlk-a-lev~denis-lepee", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "vlk-a-lev"}
+{"k": "volani-netvora~patrick-ness", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "volani-netvora"}
 {"k": "volba~henry-denker", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "volba"}
 {"k": "vrabcak~tana-kubatova", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-10-25", "done": "vrabcak"}
 {"k": "vsemi-dary-obdarovana~m-r-carey", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "vsemi-dary-obdarovana"}
@@ -31699,6 +31727,7 @@
 {"k": "zapadakov~jeffery-deaver", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "zapadakov"}
 {"k": "zapadakov~shuky", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "zapadakov"}
 {"k": "zaslana-posta~terry-pratchett", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "zaslana-posta"}
+{"k": "zavrazdeni-margaret-thatcherove-a-jine-povidky~hilary-mantelova", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "zavrazdeni-margaret-thatcherove-a-jine-povid"}
 {"k": "zeme~francois-aulas-et-al", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "zeme"}
 {"k": "zeme~z-anglickeho-originalu-prelozil-", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "zeme"}
 {"k": "zkaza~michael-palmer", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "zkaza"}
@@ -31723,6 +31752,8 @@
 {"k": "zlodejka~bryon-lucie", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "zlodejka"}
 {"k": "zmrzlinarky~dugan-jennifer", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "zmrzlinarky"}
 {"k": "zoldneri~bill-baldwin", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "zoldneri"}
+{"k": "zrada~adriana-machacova", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "zrada-cherryh"}
+{"k": "zrada~orson-scott-card", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "zrada-cherryh"}
 {"k": "zradce-mezi-nami~ruth-ware", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "zradce-mezi-nami"}
 {"k": "ztraceny-svet~michael-crichton", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "ztraceny-svet"}
 {"k": "ztraceny-svet~podle-sira-arthura-conana-doyla", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "ztraceny-svet"}

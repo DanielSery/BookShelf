@@ -709,7 +709,7 @@ decide, don't silently exclude:
 
 - *Sexual content* — **three dimensions and all three cost: volume, explicitness,
   crudeness** (corrected 2026-08-27, overruling the 2026-08-22 "crudeness, not
-  quantity"). Crude treatment costs even in small doses (*Artemis* 60) and the kind of sex
+  quantity"). Crude treatment costs even in small doses (*Artemis* 50) and the kind of sex
   sinks a book (*Ready Player One* 40); volume has no clean anchor (*The Witcher* 30 is confounded with occult). **Do not cite
   *Red Rising* 95 as proof that volume is free** — it is low on all three dimensions,
   so it was barely docked; a book that never incurred a penalty is not evidence the
@@ -983,7 +983,7 @@ Derive, using the current counters from `book-revs.json`:
   read; *Leviathan Wakes* 74-84 is wide because a whole strand of it is a
   detective case.
 - `leanedOn`: the dep that actually produces the number. Both prediction
-  failures so far — *Artemis* (predicted 80, scored 60 after revisions down from 76 and 69) and
+  failures so far — *Artemis* (predicted 80, scored 50 after revisions down from 76, 69 and 60) and
   *Mortal Engines* 50
   — came from leaning on the wrong axis, so this field is the audit trail.
 - `risks`: axis ids that could collapse the estimate below its range. A risk is
@@ -1193,7 +1193,7 @@ Say it in one or two lines per title, and only where it bites:
   magnitude together; physical and social implausibility weigh the same.
 - **It adds points too** — predict a worldbuilding-strong candidate *up*. It
   doesn't cancel other pushbacks: Tolkien's is good and still caps at 84, and a
-  thin protagonist beats it outright (*Artemis* 60).
+  thin protagonist beats it outright (*Artemis* 50).
 - **Kind and rules don't matter** — "consequences, not rules".
 - Say when you don't know. A guess about an unread book is a flag, not a
   finding, and should be labelled as one.

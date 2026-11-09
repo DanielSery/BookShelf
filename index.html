@@ -155,8 +155,8 @@
   .bk-author { color: var(--ink-2); font: italic 14px var(--serif); margin-top: 3px; }
   .bk-meta { color: var(--ink-muted); }
   .score {
-    margin: 8px 0; font: 600 30px/1.05 var(--serif); letter-spacing: -0.02em;
-    color: var(--bandcolor); font-variant-numeric: lining-nums tabular-nums;
+    margin: 8px 0; font: 600 22px/1.15 var(--serif); letter-spacing: -0.01em;
+    color: var(--bandcolor);
   }
 
   .badges { display: flex; flex-wrap: wrap; gap: 4px 6px; margin: 0 0 10px; }
@@ -336,7 +336,7 @@
   .wnode .wt { font-weight: 560; }
   .wnode .wt i { font-style: normal; color: var(--ink-muted); font-weight: 600; margin-right: 4px; }
   .wnode .ws { color: var(--ink-muted); font-size: 11px; }
-  .wnode .wv { font-weight: 700; color: var(--bandcolor); font-variant-numeric: tabular-nums; }
+  .wnode .wv { font-weight: 700; color: var(--bandcolor); }
   .wnode a { font-size: 11px; color: var(--ink-2); white-space: nowrap; text-decoration: none; }
   .wnode a:hover { color: var(--accent); text-decoration: underline; }
   .wm { width: 10px; height: 10px; border-radius: 50%; background: var(--bandcolor); }
@@ -392,10 +392,10 @@
   <select id="genre" data-for="candidates read similar" aria-label="Genre"></select>
   <select id="minscore" data-for="candidates read similar" aria-label="Minimum score">
     <option value="0">Any score</option>
-    <option value="45">Score 5+</option>
-    <option value="65" selected>Score 7+</option>
-    <option value="75">Score 8+</option>
-    <option value="85">Score 9+</option>
+    <option value="45">Discourage or better</option>
+    <option value="55">Neutral or better</option>
+    <option value="65" selected>Recommend or better</option>
+    <option value="85">Endorse</option>
   </select>
   <select id="rfilter" data-for="rejected" aria-label="Filter"></select>
   <select id="rscope" data-for="rejected" aria-label="Scope"></select>
@@ -434,17 +434,18 @@
 
 <script src="map.js"></script>
 <script>
-const BAND = [[95,'S+'],[85,'S'],[75,'A'],[65,'B'],[50,'C'],[0,'F']];
+// The reader scores in five words (2026-11-09); everything underneath stays on 0-100, so
+// this is the only place a number is turned into what he sees. BAND and WORD must match
+// tools/readlog.py, which reads the same log.
+const BAND = [[85,'Endorse'],[65,'Recommend'],[55,'Neutral'],[45,'Discourage'],[0,'Oppose']];
+const WORD = { endorse: 92, recommend: 75, neutral: 60, discourage: 50, oppose: 30 };
 const band = s => BAND.find(b => s >= b[0])[1];
+const rng = (a, b) => band(a) === band(b) ? band(a) : `${band(a)}–${band(b)}`;
 
-// Colour only ever repeats the number printed beside it, so C-orange and F-red sitting
-// close in colour space is acceptable: nothing is distinguished by hue alone.
-const TONE = { 'S+': 'bS', S: 'bS', A: 'bA', B: 'bB', C: 'bC', F: 'bF' };
+// Colour only ever repeats the word printed beside it, so Discourage-orange and
+// Oppose-red sitting close in colour space is acceptable: nothing is distinguished by hue alone.
+const TONE = { Endorse: 'bS', Recommend: 'bA', Neutral: 'bB', Discourage: 'bC', Oppose: 'bF' };
 const tone = s => TONE[band(s)];
-// The reader scores out of 10 in whole numbers (2026-10-29); everything underneath stays
-// on 0-100, so this is the only place a number is turned into what he sees.
-const ten = s => Math.round(s / 10);
-const rng = (a, b) => ten(a) === ten(b) ? `${ten(a)}` : `${ten(a)}–${ten(b)}`;
 
 // A bulk exclusion written from the catalogue's own genre heading by
 // tools/screen-headings.py — ~1,200 rows, none of which anybody read. fetch-media.py
@@ -510,9 +511,10 @@ function parseReadTable(md) {
     if (/^\|[\s:|-]+\|$/.test(l)) continue;
     const c = l.replace(/^\|/, '').replace(/\|$/, '').split('|').map(s => s.trim());
     const v = c[2] ? c[2].replace(',', '.') : '';
-    const num = /^\d+(\.\d+)?$/.test(v) ? +v : null;
-    if (c.length !== 4 || (num === null && !/^[—–-]$/.test(v))) { bad.push(l); continue; }
-    rows.push({ title: c[0], author: c[1], score: num === null ? null : Math.round(num <= 10 ? num * 10 : num),
+    const num = /^\d+(\.\d+)?$/.test(v) ? +v : null, word = WORD[v.toLowerCase()];
+    if (c.length !== 4 || (num === null && !word && !/^[—–-]$/.test(v))) { bad.push(l); continue; }
+    rows.push({ title: c[0], author: c[1],
+                score: word || (num === null ? null : Math.round(num <= 10 ? num * 10 : num)),
                 notes: c[3], key: slug(c[0]) });
   }
   return { rows, bad };
@@ -569,6 +571,7 @@ async function load() {
       dossier: e.depth === 'deep' ? DEEP[e.key] || null : null,
       mid: e.est ? (e.est[0] + e.est[1]) / 2 : -1,
       hasCz: cz.state === 'verified', hasEloan: cz.state === 'eloan',
+      czEd: cz.state === 'none' ? b.czEdition || null : null,
       // A gem is a book worth hunting down in English (reader, 2026-10-25): neither
       // library has it in print, its English is easy for a non-native reader, and the
       // predicted range centres on 80 or more (lowered from 85 the same day).
@@ -663,16 +666,18 @@ function fillFacets(view, want = {}) {
   }
 }
 
-// E-loans are a route the reader keeps apart (2026-10-24): only the options that name
-// them include them, and the default is print.
+// E-loans (2026-10-24) and Czech editions neither library holds (2026-11-03) are routes
+// the reader keeps apart: only the options that name them include them, and the default
+// is print.
 const ACCESS = [
   ['cz', 'CZ print', b => b.hasCz],
   ['czv', 'Valašské Meziříčí', b => b.lib === 'valmez'],
   ['czr', 'Rožnov', b => b.lib === 'roznov'],
   ['cze', 'CZ print or e-loan', b => b.hasCz || b.hasEloan],
   ['eloan', 'E-loan only', b => b.hasEloan],
+  ['czed', 'Czech edition, not in a library', b => !!b.czEd],
   ['engem', 'English gems', b => b.enGem],
-  ['none', 'No route yet', b => !b.hasCz && !b.hasEloan],
+  ['none', 'No route yet', b => !b.hasCz && !b.hasEloan && !b.czEd],
 ];
 
 function fillAccess() {
@@ -799,6 +804,9 @@ function accessLine(b) {
   }
   if (b.cz.state === 'eloan')
     bits.push(routeLink(b.cz.recordUrl, 'E-loan', LIBRARY.valmez) + (b.cz.year ? ` <em>${esc(b.cz.year)}</em>` : ''));
+  if (b.czEd)
+    bits.push(routeLink(b.czEd.source, 'Czech edition', 'Databáze knih · not held by either library')
+      + (b.czEd.year ? ` <em>${esc(b.czEd.year)}, not in a library</em>` : ' <em>not in a library</em>'));
   if (b.enGem) {
     const ec = b.cache.enCopy, et = b.cache.enText;
     bits.push((ec ? routeLink(ec.recordUrl, 'Borrow in English' + (ec.library === 'roznov' ? ' · Rožnov' : ''), LIBRARY[ec.library])
@@ -860,6 +868,7 @@ function seriesEntry(s) {
     form: first.form, audience: first.audience, origin: first.origin,
     hasCz: vols.some(b => b.hasCz),
     hasEloan: !vols.some(b => b.hasCz) && vols.some(b => b.hasEloan),
+    czEd: vols.some(b => b.hasCz || b.hasEloan) ? null : (vols.find(b => b.czEd) || {}).czEd || null,
     enGem: vols.some(b => b.enGem), lib: first.lib,
     hay: [s.name, s.nameEn, 'series', ...vols.map(b => b.hay)].join(' ').toLowerCase(),
   };
@@ -880,6 +889,7 @@ function volumeLine(b) {
   const range = b.blocked ? `blocked · ${esc(nice(b.blocked))}` : b.est ? rng(b.est[0], b.est[1]) : '—';
   const access = b.hasCz ? (b.cz.recordUrl ? routeLink(b.cz.recordUrl, 'Borrow') : 'CZ print')
     : b.hasEloan ? 'e-loan only'
+    : b.czEd ? routeLink(b.czEd.source, 'Czech edition') + ', not in a library'
     : b.enGem ? (b.cache.enCopy ? routeLink(b.cache.enCopy.recordUrl, 'Borrow in English') : 'English gem')
     : 'not in print here';
   return `${esc(czt || en)}${czt && en && czt !== en ? ` <span class="vr">(${esc(en)})</span>` : ''}
@@ -924,7 +934,7 @@ function readSeriesEntry(s) {
     title: s.name, alt: s.nameEn && s.nameEn !== s.name ? s.nameEn : '', author: first.author,
     media: first.media, genre: first.genre, tags: [...new Set(vols.flatMap(r => r.tags))], form: first.form,
     audience: first.audience, origin: first.origin,
-    notes: vols.length > 1 ? vols.map(r => `${r.title} ${r.score == null ? 'not finished' : ten(r.score)}`).join('; ') : first.notes,
+    notes: vols.length > 1 ? vols.map(r => `${r.title} ${r.score == null ? 'not finished' : band(r.score)}`).join('; ') : first.notes,
     hay: [s.name, s.nameEn, 'series', ...vols.map(r => r.hay)].join(' ').toLowerCase(),
   };
 }
@@ -940,11 +950,11 @@ function groupReadSeries(rows) {
 }
 
 function readVolumes(vols) {
-  return `<ol class="vols">${vols.map(r => `<li>${esc(r.title)} <span class="vr">· ${r.score == null ? 'not finished' : ten(r.score)}</span>
+  return `<ol class="vols">${vols.map(r => `<li>${esc(r.title)} <span class="vr">· ${r.score == null ? 'not finished' : band(r.score)}</span>
     ${r.notes ? `<details class="scoring"><summary>Notes</summary><p class="why">${esc(r.notes)}</p></details>` : ''}</li>`).join('')}</ol>`;
 }
 
-const readScore = x => x.score == null ? '—' : ten(x.score);
+const readScore = x => x.score == null ? '—' : band(x.score);
 
 function readSeriesCard(e) {
   const s = e.s, n = e.vols.length, left = D.series[s.id] ? D.series[s.id].members.length : 0, tips = seriesTips(s.id);
@@ -1043,7 +1053,7 @@ function candidates() {
       <td>${esc(b.cache.author || '')}</td><td>${esc(facetText(b))}</td>
       <td class="num">${b.est ? rng(b.est[0], b.est[1]) : 'blocked'}</td>
       <td>${(b.blocked ? ['blocked: ' + nice(b.blocked)] : []).concat((b.risks || []).map(nice)).map(esc).join(', ')}</td>
-      <td>${b.hasCz ? 'CZ print' : b.hasEloan ? 'e-loan' : b.enGem ? 'English gem' : '—'}</td>
+      <td>${b.hasCz ? 'CZ print' : b.hasEloan ? 'e-loan' : b.czEd ? 'Czech edition' : b.enGem ? 'English gem' : '—'}</td>
       <td>${esc(b.media.pitch || b.media.blurb || '')}</td></tr>`));
 }
 
@@ -1077,12 +1087,12 @@ function readView() {
   const rows = sortBy(kept.filter(r => r.score != null), F('sort').value);
   const sliced = ['genre', 'form', 'audience', 'origin'].some(id => F(id).value);
   setCount(plural(kept.length, 'book') +
-    (sliced && rows.length ? ` · mean ${ten(rows.reduce((s, r) => s + r.score, 0) / rows.length)}` : ''));
+    (sliced && rows.length ? ` · mean ${band(rows.reduce((s, r) => s + r.score, 0) / rows.length)}` : ''));
   if (!kept.length) return EMPTY;
   if (F('astable').checked) return table(`<th class="num">Score</th><th>Book</th><th>Author</th>
       <th>Genre</th><th>Notes</th>`,
     rows.concat(unfinished).map(r => `<tr class="${r.score == null ? 'bN' : tone(r.score)}">
-      <td class="num">${r.score == null ? 'not finished' : ten(r.score)}</td>
+      <td class="num">${r.score == null ? 'not finished' : band(r.score)}</td>
       <td>${r.isSeries ? '<b>Series:</b> ' : ''}${esc(r.title)}</td><td>${esc(r.author)}</td>
       <td>${esc(facetText(r))}</td><td>${esc(r.notes)}</td></tr>`));
   return grid(rows.map(readEntryCard)) + (unfinished.length

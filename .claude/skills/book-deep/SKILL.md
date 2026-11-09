@@ -110,7 +110,8 @@ limits) and `books-read.md` (the scores to anchor on).
 1. **The opening, from text.** An authorized excerpt of the first chapter: a
    publisher's excerpt page, BookBrowse, the author's site, a Reactor/Tor excerpt, a
    Czech publisher's *ukázka*, Google Books. Read it and judge filter 2 on what it
-   contains: how many threads start, and whether the reader has the context to read
+   contains: whether the first strand invests him before the book switches, and whether
+   the reader has the context to read
    the first scene. **No excerpt found means `axis:opening` is `unknown`**, unless
    several readers independently describe the opening in the same way.
 2. **The critical voices.** Goodreads 1-3 star reviews, and the comments on
@@ -119,7 +120,7 @@ limits) and `books-read.md` (the scores to anchor on).
 3. **The facts the filters key on.** Plot summaries and content notes (Wikipedia,
    StoryGraph content warnings, reviews): how power is *conferred* in the world, not
    only how it is used; any investigation-shaped strand; sexual content on volume,
-   explicitness and crudeness; infidelity; a same-sex romance and its prominence; a
+   explicitness and crudeness; infidelity; a same-sex relationship and whether a lead has it; a
    one-sided competence contrast between the sexes; how prophecy and faith are
    handled; the ending.
 4. **The praise, priced as carefully as the complaints.** Five of the ten recorded
@@ -219,7 +220,7 @@ go back to Phase 2. Otherwise stop.
 
 ## Phase 6 — PRESENT
 
-Per run: the good books first, each with the range out of 10 in whole numbers, what it leaned on, the
+Per run: the good books first, each with the range in the reader's five words (the bands in `/book-suggest`), what it leaned on, the
 two or three verdicts that moved it most since the screening range (old → new), and
 the library route. Then every other book dived, one line each with old → new range
 and the axis that kept it out. Say plainly when a run hit its budget short of the

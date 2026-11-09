@@ -32,8 +32,9 @@ the book and produce a predicted-score range with the reasoning that justifies i
 ## Step 1 — read the reader
 
 Read `books-read.md` in full — **real scores from this reader, your only
-calibration** — and `tools/reader-profile.md` for the rules. The log scores out of 10;
-everything you write uses 0-100, the log's score times ten (9.2 is 92). The short version:
+calibration** — and `tools/reader-profile.md` for the rules. The log scores in five words,
+older rows out of 10; everything you write uses 0-100: a word counts as the number in the
+log's table (Recommend is 75), an older score is its number times ten (9.2 is 92). The short version:
 
 - **Loves** page time on what characters *want and why* over what they do; a premise
   whose consequences are actually worked out; a protagonist who is both interesting
@@ -41,9 +42,9 @@ everything you write uses 0-100, the log's score times ten (9.2 is 92). The shor
 - **Six hard filters you decide, and only six:** a confusing opening; occult drawn from
   real practice or real gods, or a human sacrifice staged on the page; detective/mystery; a book whose premise IS an affair within a
   marriage or engagement, whatever the framing; a book whose plot is mainly sexual
-  behaviour or a sexual relationship; and **a book whose premise is a same-sex romance**
-  (new 2026-09-02 — same prominence-vetoes/amount-grades shape as the other two content
-  filters). Everything else is graded, never a veto. (No-readable-route is a seventh and
+  behaviour or a sexual relationship; and **a book where the protagonist or another lead
+  has a same-sex relationship** (2026-09-02 at premise level, widened to any lead
+  2026-11-09; a side character's stays graded). Everything else is graded, never a veto. (No-readable-route is a seventh and
   is decided for you in `cz`.)
 - **Two of those bars have a stated bound — read them before you use them.** The
   **opening** filter is mitigable on its shape-two form: *Čaropisci* was abandoned in
@@ -55,7 +56,7 @@ everything you write uses 0-100, the log's score times ten (9.2 is 92). The shor
   is almost never acceptable"); origin or elevation lore grades even when it is a human
   sacrifice — same book, same score, the hierofant sacrifice.
 - **Graded, with measured weights:** sexual content on three dimensions that all cost —
-  volume, explicitness and crudeness (*Artemis* 60 docked for crudeness at small volume,
+  volume, explicitness and crudeness (*Artemis* 50 docked for crudeness at small volume,
   *Ready Player One* 40 sunk by crudeness; volume has no clean anchor); worldbuilding self-consistency; heavy
   description with little story; how far toward a children's book it sits; bleakness
   (mid-severity since the 2026-10-29 rerank); teen or child lead (small); prophecy, graded on reverence not resemblance.
@@ -196,7 +197,7 @@ to gate 2 alone, and that is precisely what separates the two axes:
 |---|---|
 | **volume** | unmeasured: *The Witcher* 30 has it but is confounded with the occult filter |
 | **explicitness** | how much is enacted on the page rather than implied |
-| **crudeness** | *Ready Player One* 40, the one clean anchor; *Artemis* 60, docked for it at small volume |
+| **crudeness** | *Ready Player One* 40, the one clean anchor; *Artemis* 50, docked for it at small volume |
 
 - **"Only occasional" mitigates volume and nothing else.** It never rescues high
   explicitness or crudeness, and is never an argument for eligibility.
@@ -481,8 +482,8 @@ Field rules:
   ```
 
   The last two were added 2026-09-02 off *Čaropisci* (50 since the 2026-10-29 rerank). **`axis:same-sex-romance`** is a
-  same-sex romance and its prominence — premise level is filter 7 and a reject, below that
-  a heavy graded deduction. **`axis:sex-portrayal`** is a one-sided competence contrast
+  same-sex relationship and whose it is — a lead's is filter 7 and a reject (widened
+  2026-11-09 from premise level), a side character's a graded deduction. **`axis:sex-portrayal`** is a one-sided competence contrast
   between the sexes: men shown as dumb or incompetent while women are shown as good or
   clever, graded on how strong the contrast is. Neither is about framing, and neither is a
   count of who is competent.

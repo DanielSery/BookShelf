@@ -360,6 +360,11 @@
    "genre": "fantasy",
    "form": "novel",
    "audience": "adult"
+  },
+  "vydech-exhalation": {
+   "genre": "sf",
+   "form": "stories",
+   "audience": "adult"
   }
  }
 }

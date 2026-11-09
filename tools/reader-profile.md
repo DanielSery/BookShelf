@@ -22,11 +22,13 @@ decides a score.
 
 ## Scoring
 
-**`books-read.md` scores out of 10** (the reader's scale since 2026-10-29: 9.2, 8, 6.2).
-**Everything you write is on 0-100, his score times ten**: a logged 9.2 is 92, and every
-`est`, `why` and citation uses that form ("Golden Son 92"). **95-100** almost perfect ·
-**85-95** enjoyed very much · **75-85** a nice read · **65-75** ok · **50-65** disliked ·
-**<50** actively disliked.
+**`books-read.md` scores in five words** (the reader's scale since 2026-11-09); older rows
+keep a number out of 10 (9.2, 8, 6.2). **Everything you write is on 0-100**: a word counts
+as the number in the table at the top of the log (Recommend is 75), an older score is its
+number times ten (9.2 is 92), and every `est`, `why` and citation uses that form ("Golden
+Son 92"). The words' bands, as the reader drew them on 2026-11-09: **85-100** Endorse, enjoyed very
+much · **65-85** Recommend, a nice read or at least ok · **55-65** Neutral, not liked much
+and not disliked much · **45-55** Discourage, disliked · **<45** Oppose, actively disliked.
 
 A score is **peak minus pushbacks, not an average** — a modest book with no
 downsides ties an ambitious one with several. 75-85 and 65-75 are acceptable
@@ -69,7 +71,9 @@ and on staged human sacrifice, and grades every other staged rite. The other fiv
    breaks immersion. A promotion agent does not check this one — the Czech route
    arrives on its task line, precomputed by `tools/fetch-editions.py`.
 2. **A confusing or unclear opening.** It is *confusion*, not slowness. **Two shapes.**
-   *Shape one* — several plot lines starting at once before any is legible. *Shape two* —
+   *Shape one* — the book switches strand before any has invested him (re-ruled 2026-11-09:
+   not the number of POVs and not their simultaneity; several strands that each hook fast,
+   sometimes within a page or two, and come together are fine). *Shape two* —
    dropped into an action already underway, followable sentence by sentence and meaning
    nothing, because who these people are and what the invented terms denote have not been
    established. Wants one concrete starting situation **he has the context to read**, and
@@ -82,7 +86,8 @@ and on staged human sacrifice, and grades every other staged rite. The other fiv
    points off with a plot summary in hand — which follows from the diagnosis, since the failure
    is missing context and looking it up supplies it. So **a book whose only objection is
    shape two is proposable with a read-the-premise-first note**, and survived it costs a
-   few points rather than a tier. **Shape one has no such measurement and is still a bar.**
+   few points rather than a tier. **Shape one has no such measurement and is still a bar** —
+   judged on whether the first strand invests before the first switch, never on a POV count.
 3. **Occult, in any setting — Source vetoes, staged invented rites grade** (re-ruled
    2026-10-24). *Source* — a system drawn from actual occultism or real gods fails
    (witchcraft, spellcasting in that mould, séance, divination in the witch-or-seer mould,
@@ -124,17 +129,17 @@ and on staged human sacrifice, and grades every other staged rite. The other fiv
    stays graded, and so does a book whose *theme* is desire or sexuality while its plot
    is about something else. Below premise level the axis is graded on all three of
    volume, explicitness and crudeness — see the axis below.
-7. **A same-sex romance as the premise of the book** (ruled 2026-09-02, on *Čaropisci* 50:
-   "there is same sex relationship of the main character — which is quite a filter for
-   me"). **Same shape as filters 5 and 6: prominence vetoes, amount grades.** Premise means
-   remove the romance and there is no book. **Framing never enters the test**, as with
-   infidelity. **The veto has a bound the evidence sets:** the relationship in *Čaropisci*
-   is the **protagonist's own** and he read it to the end and scored it 67, so a
-   main character's relationship running as one thread among others is **not** premise level
-   and **not** a reject — it is the middle of the graded range. Below premise, grade on
-   prominence: a main character's thread in the middle, a background couple or a backstory
-   mention at the light end. **Where premise vs thread is genuinely unclear, grade it and
-   say so** — a wrong reject is unrecoverable. Axis id `axis:same-sex-romance`.
+7. **A same-sex relationship of a main character** (first ruled 2026-09-02 on *Čaropisci*
+   50, at premise level only; **widened 2026-11-09**: "I do not want to read same sex
+   relationships books when it's connected to the main character"). Reject when the
+   protagonist — or, in a multi-lead book, any lead whose strand it follows — has a
+   same-sex romance or sexual relationship, on the page or as the backstory the plot turns
+   on. **Framing never enters the test**, as with infidelity. This replaces the old bound
+   that kept a lead's thread graded because *Čaropisci* was read to the end. A side
+   character's relationship or a background couple stays graded — see the axis below.
+   **Where it is unclear whether the relationship is a lead's, or a relationship at all**
+   (an unconsummated undertone, a convention that hides gender, a dream), **grade it and
+   say so.** Axis id `axis:same-sex-romance`.
 
 **A hard exclusion is INHERITED by any sequel that depends on the excluded book**
 (reader's rule, 2026-08-31). Not a seventh filter — a propagation of the six above.
@@ -201,14 +206,12 @@ a positive case stated in its own words.
   verdicts carry no citation** — canonical titles cleared from the screener's own knowledge
   rather than from a source, so those are "no evidence found" rather than "checked and
   clean". Nothing below the propose line was screened at all.
-- **A same-sex romance below premise level — a heavy graded deduction**
-  (`axis:same-sex-romance`; filter 7 above is the premise-level veto). Grade on prominence:
-  a main character's relationship as one thread is the middle of the range, a background
-  couple or a backstory mention the light end. **Magnitude is not separable from the one
-  data point** — *Čaropisci* lost about thirty points to this, the hierofant rite and the
-  portrayal warning together (about thirteen before the 2026-10-29 rerank), off the ~80 the reader put on it with only the opening
-  against it. **Use the operative criterion, not the label:** a same-sex romance and its
-  prominence are checkable; "woke" is not.
+- **A same-sex relationship off the leads — a graded deduction** (`axis:same-sex-romance`;
+  filter 7 above vetoes it on a lead). A secondary character's relationship costs more
+  than a background couple or a passing mention. **Magnitude is unmeasured:** the only
+  anchor, *Čaropisci*, was a lead's relationship and now sits under the veto. **Use the
+  operative criterion, not the label:** a same-sex relationship and whose it is are
+  checkable; "woke" is not.
 - **Does it hold up under thought — the author must follow the rules he lays
   down.** Self-consistency with declared commitments, never an external realism
   audit. Nothing obliges an author to explain anything, but whatever he asserts,
@@ -275,7 +278,7 @@ a positive case stated in its own words.
   **Do not use *Red Rising* 95 as evidence that volume is free.** That was the previous
   wording's error: Red Rising is low on all three dimensions, so it was barely docked at
   all — it is not a book with a lot of explicit content that escaped a penalty. The
-  correct reading of the log is *Artemis* 60 docked for crudeness at small volume,
+  correct reading of the log is *Artemis* 50 docked for crudeness at small volume,
   *Ready Player One* 40 sunk by the kind of sex rather than the amount, *The Witcher* 30
   confounded with the occult filter so it anchors nothing, and Red Rising unaffected
   because there was little to affect it.
@@ -308,9 +311,10 @@ a positive case stated in its own words.
   treatment played for ridicule. Subversion is judged on tone: a manufactured
   saviour played straight is fine, played for cynicism is not. **Do not screen out
   epic fantasy for having a prophecy.**
-- **Sustained bleakness — disliked, and no longer mildly** (2026-10-29 rerank). *1984*,
-  whose whole note is "Too depressing", is 50, level with the incoherent-premise and
-  unrootable-lead books, so price it as a mid-severity objection. A discount, not a bar,
+- **Sustained bleakness — disliked, but less than a broken premise or an unrootable lead**
+  (2026-11-09 rerank). *1984*, whose whole note is "Too depressing", is Neutral 60, above
+  the incoherent-premise and unrootable-lead books at 50, and 18 under *Animal Farm* 78
+  where it sat 28 under: a bleakness deduction is about a third smaller than those. A discount, not a bar,
   and it is the mood, not the subject: *Animal Farm* 78 is bleak and distanced. Companionship and self-sacrifice beat solo
   survival.
 - **Faith as a thread inside a story**, not as the whole of it. No theology or

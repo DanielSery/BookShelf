@@ -164,7 +164,17 @@ STOP_TITLES = {"empire", "the joke", "the truth",
                # `Line`, `Escape`, `Past Lives`, `Cytonic` and `Defiant` (Skyward's society)
                # hit ordinary phrases.
                "old man s war", "ender saga", "the way", "the library", "the hierarchy",
-               "line", "escape", "past lives", "cytonic", "defiant"}
+               "line", "escape", "past lives", "cytonic", "defiant",
+               # 2026-11-03, the award-tips screen: all six hits ordinary language - a
+               # "Friday supplement", "a prologue on Titan", "a Frankenstein variation",
+               # "the centaur-like natives", and "Zeme" inside the read DNF Střepy Země.
+               # Cost: those five candidates can now be cited unnoticed.
+               "friday", "titan", "frankenstein", "the centaur", "zeme",
+               # 2026-11-09, the predicted-fit screen: Gleitzman's `Potom`/`Then`, Gaarder's
+               # `Anna`, McEwan's `The Innocent`, the Felix series and `Doctor Who` fired 19
+               # times on the adverb, a character's name, "the innocent", a lead called Felix
+               # and "a doctor who steers". Cost: those candidates can be cited unnoticed.
+               "potom", "then", "anna", "the innocent", "felix", "doctor who"}
 
 # Phrasing that argues from the neighbours without naming one.
 # "the Author(s) row" is exempt: that points at the Authors table in

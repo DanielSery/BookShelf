@@ -2,7 +2,7 @@
  "_readme": "Cover URLs and neutral blurbs for everything the viewer app renders. Three namespaces because the tabs are keyed differently: `media` by book-cache.json key, `readMedia` by a slug of the books-read.md title, `rejectMedia` by a slug of entity+author in book-rejects.jsonl. Fully regenerable: run tools/fetch-media.py. Kept out of book-cache.json so a cover refresh never has to reserialise that hand-formatted file. Blurbs say what the book IS; whether the reader would like it is book-estimates.jsonl's `why` and must not be duplicated here. A slug join is deliberately loose - editing a title in books-read.md costs a placeholder cover, never a broken row. `coverOL` is an Open Library cover for a row whose `cover` is on obalkyknih.cz, which serves only registered library catalogues; the GitHub Pages copy of the viewer shows it instead, and null means Open Library had none.",
  "schema": 2,
  "_cover": "Open Library cover id resolved by title+author search, rendered as https://covers.openlibrary.org/b/id/<id>-M.jpg. Null with a 'coverNote' means no match - the app draws a typographic placeholder, which is a missing cover and not an error.",
- "fetched": "2026-10-25",
+ "fetched": "2026-11-09",
  "media": {
   "morning-star": {
    "cover": "https://covers.openlibrary.org/b/id/8566174-M.jpg",
@@ -253,16 +253,6 @@
    "blurb": "A software engineer wakes up a century after death as the computer core of a self-replicating interstellar probe, and keeps making copies of himself.",
    "isbn": "9781680680584",
    "pitch": "A software engineer wakes a century after death as the computer core of a self-replicating interstellar probe and keeps making copies of himself. Funny and easy to read, told in one clear voice, with an idea you can sum up in a breath."
-  },
-  "ted-chiang-vydech": {
-   "cover": "https://cache.obalkyknih.cz/file/cover/2534766/preview510",
-   "isbn": "6056979865",
-   "blurb": "Nine stories, each taking one precisely stated premise - a mechanical universe, a device that records every moment - and following it exactly where it leads.",
-   "coverSource": "katalog",
-   "coverOL": "https://covers.openlibrary.org/b/id/8793546-M.jpg",
-   "pitch": "Nine stories, each starting from one precisely stated idea and following it exactly where it leads. The collection opens with its strongest pieces: a narrator facing a past cruelty and refusing to be that man again, then the title story, a mechanical universe thought through to the end of its own logic. You finish with ideas you keep turning over.",
-   "howto": "Give each story its own evening and a pause to think before the next, and read Chiang's note on it at the back only once you've finished it.",
-   "treasure": "The title story, in which a mechanical scientist dissects his own brain to learn how thought works, shows Chiang following one idea with total rigour until it becomes wonder."
   },
   "ted-chiang-pribehy-vaseho-zivota": {
    "cover": "https://cache.obalkyknih.cz/file/cover/2544231/preview510",
@@ -14671,10 +14661,12 @@
   "casokryt": {
    "blurb": "A narrator assists a therapist who opens clinics where Alzheimer's patients live inside a faithfully rebuilt past, a decade on each floor.",
    "pitch": "A man helps an enigmatic therapist open clinics for people losing their memory, each floor rebuilt in perfect detail as a different decade of the past. The idea slips out of the clinics, and the longing for yesterday spreads far beyond them. A bright, odd novel that leaves you thinking about nostalgia and what we do when the future looks frightening.",
-   "cover": "https://covers.openlibrary.org/b/id/13125096-M.jpg",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3181768/preview510",
    "isbn": "9781474623025",
    "treasure": "Each step of the idea feels reasonable while the whole drifts somewhere unsettling, which is how the novel makes nostalgia look dangerous.",
-   "howto": "Read in short sittings, as the fragments reward a pause, and notice what each new floor or country asks you to forget."
+   "howto": "Read in short sittings, as the fragments reward a pause, and notice what each new floor or country asks you to forget.",
+   "coverSource": "katalog",
+   "coverOL": "https://covers.openlibrary.org/b/id/13125096-M.jpg"
   },
   "casotreseni": {
    "blurb": "After the universe hiccups and replays ten years, humanity must live through them again on autopilot, while the author wanders through memories and the stories of his invented writer Kilgore Trout.",
@@ -14763,8 +14755,10 @@
   "epic": {
    "blurb": "On New Earth, where violence is banned and status is won in a fantasy computer game called Epic, fourteen-year-old Erik Haraldson sets out to change the system after the ruling power exiles his father.",
    "pitch": "On New Earth nobody fights, because everything from your job to your law case is decided by a vast fantasy game called Epic. When the authorities exile his father, Erik, fourteen, has to beat a system built on the game from inside the game. It moves fast and the world has a clear logic you can follow.",
-   "cover": "https://covers.openlibrary.org/b/id/653524-M.jpg",
-   "isbn": "9781596873001"
+   "cover": "https://cache.obalkyknih.cz/file/cover/2536355/preview510",
+   "isbn": "9781596873001",
+   "coverSource": "katalog",
+   "coverOL": "https://covers.openlibrary.org/b/id/653524-M.jpg"
   },
   "experiment-dosada": {
    "blurb": "Agent Jorj McKie is sent to Dosadi, a sealed and violent planet of humans and frog-like Gowachin, to learn whether it is an illegal experiment, and to find its rebel leader.",
@@ -14859,10 +14853,12 @@
   "kniha-ztracenych-veci": {
    "blurb": "After his mother's death, twelve-year-old David hears the books in his attic room whisper and slips into a fairy-tale land twisted by the Crooked Man, where he must find the King and his Book of Lost Things to get home.",
    "pitch": "Grief drives a twelve-year-old boy into a land built from fairy tales gone dark, where wolves walk like men and a sinister figure hunts children. David must cross it to find the King and the book that might send him home, and you want him to make it. It is a story about stories, and about growing up.",
-   "cover": "https://covers.openlibrary.org/b/id/896836-M.jpg",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3017327/preview510",
    "isbn": "0340899492",
    "treasure": "The old fairy tales return as warnings, with familiar figures bent out of shape, and each encounter teaches David something about fear and growing up.",
-   "howto": "Read it in the evening like a tale told after dark, one encounter at a time, and notice which old story each stop is twisting."
+   "howto": "Read it in the evening like a tale told after dark, one encounter at a time, and notice which old story each stop is twisting.",
+   "coverSource": "katalog",
+   "coverOL": "https://covers.openlibrary.org/b/id/896836-M.jpg"
   },
   "kolejmori": {
    "blurb": "Sham, an apprentice on a mole-hunting train, is pulled into a search for what the owners of a wrecked train were looking for, across the endless rails.",
@@ -14883,10 +14879,12 @@
   "krakatit": {
    "blurb": "Engineer Prokop invents an explosive of unheard-of power, and as he runs between laboratories, a princess and arms dealers he has to decide whether to let it be used.",
    "pitch": "An engineer who has invented the most powerful explosive ever made is chased across Europe by people who want it. You follow his fevered, fast-moving journey and the question that grows with it: what does an inventor owe the world once his work can end it?",
-   "cover": "https://covers.openlibrary.org/b/id/11888469-M.jpg",
+   "cover": "https://cache.obalkyknih.cz/file/cover/483888/preview510",
    "isbn": "384953345X",
    "treasure": "Fever-bright prose, with the moral weight of an invention carried across Europe as a hallucinated chase.",
-   "howto": "Read in a few big gulps so the delirium carries you, and don't stop to untangle every encounter."
+   "howto": "Read in a few big gulps so the delirium carries you, and don't stop to untangle every encounter.",
+   "coverSource": "katalog",
+   "coverOL": "https://covers.openlibrary.org/b/id/11888469-M.jpg"
   },
   "kukly": {
    "blurb": "David grows up in a farming community that destroys anything it counts as impure, and hides the fact that he and a few friends can speak mind to mind.",
@@ -15213,10 +15211,12 @@
   "valka-s-mloky": {
    "blurb": "A sea captain discovers intelligent giant newts off an island, teaches them to work, and the world's corporations begin to breed and sell them as labour.",
    "pitch": "A sea captain finds intelligent newts in a remote lagoon, and soon every industry wants them for cheap labour. You watch the consequences unfold across the whole world in reports, newspaper cuttings and farce, leading to a war nobody planned. If you liked the sharp, idea-first satire of Animal Farm, this is its bigger, funnier cousin.",
-   "cover": "https://covers.openlibrary.org/b/id/4113422-M.jpg",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2501642/preview510",
    "isbn": "9781725537606",
    "treasure": "The satire grows through its form: newspaper cuttings, scientific reports and speeches make humanity's greed sound reasonable at every step.",
-   "howto": "Read it in sections, enjoying the clippings and reports as the point itself, and do not wait for a single hero, since the world is the main character."
+   "howto": "Read it in sections, enjoying the clippings and reports as the point itself, and do not wait for a single hero, since the world is the main character.",
+   "coverSource": "katalog",
+   "coverOL": "https://covers.openlibrary.org/b/id/4113422-M.jpg"
   },
   "ve-sluzbach-milosti": {
    "blurb": "Captain Breq has the station under control until an unexpected person is found aboard, forcing a decision in her long fight with the empire's ruler.",
@@ -15249,10 +15249,12 @@
   "vezen-casu": {
    "blurb": "Tom Hazard looks forty but has lived for centuries, and must keep to the rules of a secret society while teaching history and trying not to fall in love.",
    "pitch": "Tom looks like an ordinary history teacher, but he has been alive for centuries and has met Shakespeare along the way. A secret society protects people like him, at the price of never letting anyone close. You follow him between today and the past he cannot shake, wondering whether a life that long is worth living if you cannot let yourself love anyone.",
-   "cover": "https://covers.openlibrary.org/b/id/12569812-M.jpg",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3339908/preview510",
    "isbn": "1786891751",
    "treasure": "The past cuts into Tom's day mid-scene, so you feel what it is like to carry too many lives at once.",
-   "howto": "Read it in a few sittings and accept the abrupt flashbacks as how Tom's mind works; the present-day thread is the spine and the jumps are the texture."
+   "howto": "Read it in a few sittings and accept the abrupt flashbacks as how Tom's mind works; the present-day thread is the spine and the jumps are the texture.",
+   "coverSource": "katalog",
+   "coverOL": "https://covers.openlibrary.org/b/id/12569812-M.jpg"
   },
   "vodikova-sonata": {
    "blurb": "The Gzilt, an ancient and oddly peaceful civilisation, are about to ascend beyond the material world when their high command is destroyed, and a reserve officer who once knew a key figure is sent to find out what is true.",
@@ -16343,10 +16345,12 @@
   "divoke-labute": {
    "blurb": "Jung Chang tells the story of her grandmother, a warlord's concubine, her mother, a Communist official, and herself, growing up in China through the Mao years and the Cultural Revolution.",
    "pitch": "Three women in one family live through warlords, Japanese occupation, civil war and Mao: Jung Chang's grandmother, her mother and herself. You get an inside view of how an enormous country actually felt from the kitchen table, and you keep wondering what each of them wanted and why they chose as they did. It is long, but it moves like a family saga and leaves you with a different picture of a century of Chinese history.",
-   "cover": "https://covers.openlibrary.org/b/id/6809006-M.jpg",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2430908/preview510",
    "isbn": "9784062062541",
    "treasure": "Chang tells each woman's choices at the scale of a household, so a century of public history appears through marriages, jobs, food and fear.",
-   "howto": "Read it as three linked stories in long sittings and let the wider background sections pass lightly; the family's own decisions are the real thread."
+   "howto": "Read it as three linked stories in long sittings and let the wider background sections pass lightly; the family's own decisions are the real thread.",
+   "coverSource": "katalog",
+   "coverOL": "https://covers.openlibrary.org/b/id/6809006-M.jpg"
   },
   "dorsai": {
    "blurb": "Donal Graeme, a young Dorsai mercenary, rises quickly through the ranks of the armies of the human colony worlds.",
@@ -16389,14 +16393,18 @@
   "gregor-a-mesto-pod-mestem": {
    "blurb": "Gregor falls through a grate in his apartment's laundry room into a hidden world beneath New York, where humans, giant rats and spiders are on the edge of war.",
    "pitch": "Gregor falls through a grate in his laundry room and lands in an underground world of giant spiders, rats and pale humans. His father is somewhere in it, and he cannot go home without him, so he takes his small sister Boots and goes looking. It is a fast adventure with a hero who cares about his family, from the author of The Hunger Games.",
-   "cover": "https://covers.openlibrary.org/b/id/8345963-M.jpg",
-   "isbn": "9781407172583"
+   "cover": "https://cache.obalkyknih.cz/file/cover/2054885/preview510",
+   "isbn": "9781407172583",
+   "coverSource": "katalog",
+   "coverOL": "https://covers.openlibrary.org/b/id/8345963-M.jpg"
   },
   "grisa-svetlo-a-stiny": {
    "blurb": "An orphaned mapmaker in the army discovers a power that might end the Shadow Fold that splits her country.",
    "pitch": "Alina is an orphaned army cartographer when a crossing of the dark Shadow Fold reveals a power nobody expected. She is brought into the glittering court of the magic-wielding Grisha, and the man who rules it draws her in. The setting is Russian-flavoured and the magic is built on a kind of small science, which makes it feel unusual.",
-   "cover": "https://covers.openlibrary.org/b/id/13816048-M.jpg",
-   "isbn": "8418002492"
+   "cover": "https://cache.obalkyknih.cz/file/cover/2637022/preview510",
+   "isbn": "8418002492",
+   "coverSource": "katalog",
+   "coverOL": "https://covers.openlibrary.org/b/id/13816048-M.jpg"
   },
   "half-way-home": {
    "blurb": "A few dozen teenagers wake on a distant planet with their ship burning and half their training, and must decide how to live together before they can survive.",
@@ -16475,10 +16483,12 @@
   "mame-na-vybranou": {
    "blurb": "Edith Eger survives Auschwitz as a teenage dancer, emigrates to the United States and becomes a clinical psychologist; she mixes her own story with the stories of the patients she helps.",
    "pitch": "Edith Eger was a sixteen-year-old gymnast and dancer when she was taken to Auschwitz, and she later became a psychologist who treats other survivors of trauma. The book braids her own story with the stories of her patients around one idea: that you can choose how you carry what happened to you. If you want a memoir that ends with something to think about, this is built for it.",
-   "cover": "https://covers.openlibrary.org/b/id/14814936-M.jpg",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2299430/preview510",
    "isbn": "9781501130816",
    "treasure": "Her patients' cases test the book's single idea in the present, so it works as a method that is tried against real lives rather than a slogan.",
-   "howto": "Take the camp chapters in measured sittings, and treat the therapy chapters as case studies to pause on and think about before moving on."
+   "howto": "Take the camp chapters in measured sittings, and treat the therapy chapters as case studies to pause on and think about before moving on.",
+   "coverSource": "katalog",
+   "coverOL": "https://covers.openlibrary.org/b/id/14814936-M.jpg"
   },
   "mec-prisahy": {
    "blurb": "As the war turns, a famous warlord who has begun to remember what he did in his violent youth tries to unite the nations against a returning enemy, while his allies face their own breaking points.",
@@ -16527,10 +16537,12 @@
   "nezlomny": {
    "blurb": "Louis Zamperini, a troubled youth turned Olympic distance runner, joins the Army Air Forces in World War II, survives a crash into the Pacific and weeks adrift on a raft, and is then held in Japanese prison camps.",
    "pitch": "Louis Zamperini starts as a delinquent kid in California who finds that he can run, and ends up at the Berlin Olympics. Then the war puts him on a bomber, in the open Pacific on a raft with two other men, and finally in prison camps where he has to decide what he will not give up. It is a true story told with the pace of an adventure, and it leaves you thinking about what actually keeps a person going.",
-   "cover": "https://covers.openlibrary.org/b/id/6668103-M.jpg",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1068668/preview510",
    "isbn": "904350713X",
    "treasure": "Hillenbrand's research puts exact detail into everything, from bomber crews to camp routine, so endurance reads as concrete, specific work rather than legend.",
-   "howto": "Read it with momentum in long sittings, following its move from athlete to airman to prisoner, and give the camp chapters the attention they need even when they are hard."
+   "howto": "Read it with momentum in long sittings, following its move from athlete to airman to prisoner, and give the camp chapters the attention they need even when they are hard.",
+   "coverSource": "katalog",
+   "coverOL": "https://covers.openlibrary.org/b/id/6668103-M.jpg"
   },
   "nor-crystal-tears": {
    "blurb": "A thranx diplomat meets humans for the first time and tries to bring two suspicious species together.",
@@ -16639,8 +16651,10 @@
   "prislib-krve": {
    "blurb": "A field marshal stages a coup against his king and finds the royal mages dead, whispering a warning about a broken promise.",
    "pitch": "A general has just overthrown his king, and the people who did it have to find out what the dying royal mages meant by their last words. You follow the general, his gunpowder-mage son and a debt-ridden inspector, each with a different stake in how the new order turns out. The magic runs on rules you can figure out, and the political fallout of the coup is thought through.",
-   "cover": "https://covers.openlibrary.org/b/id/7667720-M.jpg",
-   "isbn": "0356502007"
+   "cover": "https://cache.obalkyknih.cz/file/cover/1332029/preview510",
+   "isbn": "0356502007",
+   "coverSource": "katalog",
+   "coverOL": "https://covers.openlibrary.org/b/id/7667720-M.jpg"
   },
   "prokleti-chalionu": {
    "blurb": "Cazaril, returning broken from slavery, becomes tutor to a royal princess in a court under an ancient curse and must find a way to protect her.",
@@ -16693,9 +16707,12 @@
   "setkani-se-smrti": {
    "blurb": "In 1985 Joe Simpson and Simon Yates climb the west face of Siula Grande in the Peruvian Andes; after Simpson breaks his leg, Yates cuts the rope that holds them and Simpson falls into a crevasse and must crawl out alone.",
    "pitch": "Two young climbers reach the summit of a Peruvian peak, and on the way down one breaks his leg and the other has to decide what to do with the rope between them. The story is told from both men's side, so you see what each was thinking and why. It is short, fast and honest, and it leaves you arguing with yourself about what you would have done.",
-   "cover": "https://covers.openlibrary.org/b/id/7079999-M.jpg",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2535781/preview510",
    "treasure": "Simpson's plain, unshowy prose lets one agonising decision hold the whole book, with its moral weight growing out of physical details.",
-   "howto": "Read it in one or two sittings, since the pace is fast and the book short, and do not skip the climbing details; they make the choice understandable."
+   "howto": "Read it in one or two sittings, since the pace is fast and the book short, and do not skip the climbing details; they make the choice understandable.",
+   "coverSource": "katalog",
+   "isbn": "807217150X",
+   "coverOL": "https://covers.openlibrary.org/b/id/6751652-M.jpg"
   },
   "sirotcinec": {
    "blurb": "After alien missiles hit Earth and take his family, a young man chooses the army over jail and is sent to fight an enemy that has taken over Ganymede.",
@@ -16882,10 +16899,12 @@
   "vzdelana": {
    "blurb": "Tara Westover grows up in a survivalist family in the mountains of Idaho, never goes to school, and at seventeen walks into a university classroom, which begins an education that eventually takes her to Cambridge.",
    "pitch": "Tara Westover grows up in the Idaho mountains in a family that distrusts schools, doctors and the government, and she first sits in a classroom at seventeen. The book follows what she wants, what she has to unlearn and what it costs her to see her own family differently. It is an honest look at a way of life most readers never see from the inside, in the spirit of Seeking Allah, Finding Jesus.",
-   "cover": "https://covers.openlibrary.org/b/id/8314077-M.jpg",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2754708/preview510",
    "isbn": "9722533797",
    "treasure": "Westover keeps questioning her own memory on the page, checking journals against what she recalls, so you watch a person test how she knows what she knows.",
-   "howto": "Read it in long sittings so the pull toward the classroom builds, and pause after the hardest family chapters instead of racing through them."
+   "howto": "Read it in long sittings so the pull toward the classroom builds, and pause after the hardest family chapters instead of racing through them.",
+   "coverSource": "katalog",
+   "coverOL": "https://covers.openlibrary.org/b/id/8314077-M.jpg"
   },
   "vzdoroviti": {
    "blurb": "Spensa returns from the Nowhere to a war that is finally coming to her people, as the enemy gathers for a last assault and her cytonic powers turn out to be both stronger and less predictable than ever.",
@@ -16922,8 +16941,10 @@
   "zkouska": {
    "blurb": "Cia Vale is chosen to take the Testing, a brutal selection of the brightest graduates for the leadership of a rebuilt world.",
    "pitch": "Cia is chosen for the Testing, the stern exam that picks tomorrow's leaders of a rebuilt, battered country. As each round gets harder, she has to decide whom to trust and how far to go to stay alive. It moves quickly and the choices she makes keep you guessing.",
-   "cover": "https://covers.openlibrary.org/b/id/8114694-M.jpg",
-   "isbn": "9780547959108"
+   "cover": "https://cache.obalkyknih.cz/file/cover/1370910/preview510",
+   "isbn": "9780547959108",
+   "coverSource": "katalog",
+   "coverOL": "https://covers.openlibrary.org/b/id/8114694-M.jpg"
   },
   "zrak-mysli": {
    "blurb": "Oliver Sacks writes about people who lose sight, reading or face recognition, and about his own eye cancer.",
@@ -17166,6 +17187,1162 @@
    "isbn": "1433673088",
    "treasure": "Interviews with believers living under real pressure, giving a rare look at how faith is lived far from comfortable places.",
    "howto": "Read an interview chapter per sitting and pause on the stories that cut against your expectations before you continue."
+  },
+  "autonomie": {
+   "blurb": "In 2144 the drug pirate Jack makes cheap medicine for the poor, until one of her pirated drugs causes compulsive work and a human agent and his robot partner are sent to track her down.",
+   "pitch": "A near-future thriller about who owns a person, a patent or a drug, told from a pirate scientist's side and from the side of the agents hunting her. The robot partner's own growing awareness of itself is a thread worth following.",
+   "cover": "https://covers.openlibrary.org/b/id/8452721-M.jpg",
+   "isbn": "9788445006290"
+  },
+  "brasyl": {
+   "blurb": "Three people in different Brazilian eras, a television producer in 2006, an entrepreneur in 2032 and a Jesuit in 1732, are drawn into the same web of quantum parallel worlds.",
+   "pitch": "Three people in three eras of Brazil find themselves pulled into a web of parallel worlds. It is a vivid, noisy portrait of a place, with the past, present and near future all in it. Best read slowly, with the threads taken one at a time as they start to meet.",
+   "cover": "https://covers.openlibrary.org/b/id/1287001-M.jpg",
+   "isbn": "1591025435"
+  },
+  "budoucnost-jine-casove-linie": {
+   "blurb": "In 1992 teenage Beth and her friends take revenge on an attacker, while in a future that wants to rewrite the past, the time traveler Tess tries to stop a men's movement from changing history.",
+   "pitch": "Two timelines, a teenage punk in 1992 and a time traveler fighting to protect the future of women's rights. The book works through what changing the past would really take.",
+   "cover": "https://covers.openlibrary.org/b/id/8789314-M.jpg",
+   "isbn": "9780765392107"
+  },
+  "chanurina-pycha": {
+   "blurb": "Pyanfar Chanur, captain of a lion-like alien trading ship, takes in a lone human fugitive at a space station and finds her crew and her species caught in a conflict.",
+   "pitch": "The first contact story from the aliens' side: a proud ship's captain takes in a stranger nobody has heard of and bets her family on him. The pleasure is in the crew, the politics of a new species meeting others and Tully, the human, seen through alien eyes.",
+   "cover": "https://covers.openlibrary.org/b/id/683200-M.jpg",
+   "isbn": "0879976942"
+  },
+  "dabli": {
+   "blurb": "Brother Diaz is made spiritual leader of a secret Church unit of murderers and monsters, who are sent on a mission that only the damned can carry out.",
+   "pitch": "A priest expecting a promotion ends up shepherding the worst people in Europe on a holy errand. The comedy comes from his horror at his flock and their cheerful lack of shame.",
+   "cover": "https://covers.openlibrary.org/b/id/15229572-M.jpg",
+   "isbn": "1399603566"
+  },
+  "frankenstein": {
+   "blurb": "A young scientist assembles a living being from dead tissue, abandons it in horror, and is pursued across Europe by the creature he made.",
+   "pitch": "A student of natural philosophy brings a created being to life and cannot face what he has done. The creature gets to tell his own story, and the question of who is responsible for whom stays with you well after the last page. It is a short, serious book of ideas, more in the spirit of The Little Prince than of an adventure.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2675843/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788076612433",
+   "coverOL": "https://covers.openlibrary.org/b/id/12356249-M.jpg"
+  },
+  "kralovna-andelu": {
+   "blurb": "In a near-future Los Angeles where crime is rare, a celebrated poet is found to have killed several people, and a police officer, a therapist and a friend each pursue the question of why.",
+   "pitch": "Crime is almost gone in this future city, so when a famous poet commits mass murder the question is not who but why. Several people come at the answer from different sides, including a therapist who goes into the killer's mind.",
+   "cover": "https://covers.openlibrary.org/b/id/4094929-M.jpg",
+   "isbn": "9780575050228"
+  },
+  "kryptonomikon": {
+   "blurb": "A World War II code-breaker and a present-day tech entrepreneur, linked by a hidden treasure, pursue data havens and cryptography across two timelines.",
+   "pitch": "Two timelines, wartime codebreaking and a modern hunt for a data haven, slowly converge on one secret. It is full of mathematics, engineering and the early idea of private information.",
+   "cover": "https://covers.openlibrary.org/b/id/6424001-M.jpg",
+   "isbn": "9780434009534"
+  },
+  "mesto-uprostred-noci": {
+   "blurb": "Sophie, a scholarship student in the regimented city of Xiosphant, takes the blame for her roommate Bianca's theft and is expelled into the freezing night, where she is saved by the planet's native creatures. A second narrator, the smuggler Mouth, crosses the planet with the couriers.",
+   "pitch": "A tidally locked planet with one human city on the cold side and another far away makes an unusual setting, and the question of whether the creatures outside are thinking beings drives much of the book. It follows two very different women across it, one trying to survive and one trying to reach another city.",
+   "cover": "https://covers.openlibrary.org/b/id/10237408-M.jpg",
+   "isbn": "9781789091618"
+  },
+  "more-klidu": {
+   "blurb": "In 1912 an exiled young Englishman hears violin music in a Canadian forest. Two centuries later a novelist on a book tour and a time-travel investigator on the moon are drawn into the same strange anomaly.",
+   "pitch": "Four people in four centuries hear the same impossible moment, and a single quiet question threads their lives together. The prose is clean and clear, and the connections click into place at the end.",
+   "cover": "https://covers.openlibrary.org/b/id/11465138-M.jpg",
+   "isbn": "1529083524"
+  },
+  "nespoutani": {
+   "blurb": "Shevek, a physicist from an anarchist moon, travels to the capitalist world his ancestors left in order to bring his unfinished theory and an end to the two worlds' isolation, while the story alternates with his earlier life.",
+   "pitch": "A physicist leaves a society with no government for the rich world it broke away from, carrying a theory that could change both. You follow what he wants and what each place costs him, and both societies are worked out to their consequences. It leaves you with real questions about freedom and ownership, in the vein of what Speaker for the Dead does with an alien culture.",
+   "cover": "https://covers.openlibrary.org/b/id/6979680-M.jpg",
+   "isbn": "1473228417"
+  },
+  "plaz-nekonecno": {
+   "blurb": "A thousand years after humans spread to nine worlds without finding any other life, astrophysicist-turned-fundraiser Kim Brandywine discovers that the crew of a survey ship covered up something that happened decades ago. She sets out to learn what became of her clone-sister and what the crew found.",
+   "pitch": "One determined woman pulls at a decades-old secret about a survey ship and a missing sister, and the universe turns out to be less empty than humanity has believed. It is the slow uncovering of an unknown with a personal reason behind it, written in plain, clear prose.",
+   "cover": "https://covers.openlibrary.org/b/id/6818490-M.jpg",
+   "isbn": "9780061567803"
+  },
+  "posledni-civilizace": {
+   "blurb": "In a floating city above the Arctic circle, a fighter, a courier, a politician's aide and a wealthy young man each follow a private struggle while a stranger arrives on an orca with a polar bear at her side. A new disease spreads through the city.",
+   "pitch": "A floating city made from oil platforms and ambition, seen through the lives of several residents whose stories gradually intersect. A stranger riding an orca arrives and shakes the city loose.",
+   "cover": "https://covers.openlibrary.org/b/id/8595548-M.jpg",
+   "isbn": "0062684841"
+  },
+  "posledni-upir": {
+   "blurb": "Dr. Edward Weyland, a professor of anthropology, is in fact a vampire who hunts to survive among Americans. Five episodes follow the people who cross his path, from a hunter to a psychiatrist.",
+   "pitch": "A vampire who is also a patient scholar of human behaviour, seen through the eyes of those who meet him. It treats the legend as a predator's psychology and asks what the monster thinks of us.",
+   "cover": "https://covers.openlibrary.org/b/id/721658-M.jpg",
+   "isbn": "0671254154"
+  },
+  "robohistorie-i": {
+   "blurb": "Nineteen short stories trace robots from the first household machines to space work and emancipation, governed by the Three Laws of Robotics.",
+   "pitch": "The stories follow one simple idea through many situations: what happens when machines must obey a short list of rules about harming people. They are brisk and clear, and each ends on a turn.",
+   "cover": "https://covers.openlibrary.org/b/id/6666407-M.jpg",
+   "isbn": "9780586057247"
+  },
+  "roky-ryze-a-soli": {
+   "blurb": "After the Black Death kills nearly all of Europe, a small group of souls is reborn across seven hundred years of an alternate history dominated by Asia and Islam.",
+   "pitch": "An alternate history in which the plague wiped out Europe and other civilizations steered the world instead. You follow the same circle of souls through the centuries as they try again in each life to make things better.",
+   "cover": "https://covers.openlibrary.org/b/id/368194-M.jpg",
+   "isbn": "9780002246798"
+  },
+  "rudy-mars": {
+   "blurb": "In 2026 the First Hundred colonists set out to settle Mars and begin terraforming it, while disagreements over what the planet should become split the group.",
+   "pitch": "A near-future settlement of Mars worked out in unusual practical detail, from the first habitats to the arguments over whether the planet should be changed at all. The colonists hold clashing, defensible convictions and you watch those convictions shape a whole world.",
+   "cover": "https://covers.openlibrary.org/b/id/382552-M.jpg",
+   "isbn": "9788445076811"
+  },
+  "slepozrakost": {
+   "blurb": "A crew of altered specialists, including a narrator who reads people without feeling what they feel, is sent to investigate an alien object that appeared in the solar system.",
+   "pitch": "A ship goes out to meet something alien that does not communicate like anything we know. The narrator's job is to read minds without sharing them, and the crew around him are all unusual people with their own odd takes. What the book does is test what intelligence and awareness actually are, which gives you a lot to chew on after.",
+   "cover": "https://covers.openlibrary.org/b/id/524560-M.jpg",
+   "isbn": "9787547739792"
+  },
+  "stali-jsme-se-mestem": {
+   "blurb": "When New York is born as a living city, its five borough avatars must find one another and unite against a Lovecraftian Enemy that wants to consume it.",
+   "pitch": "A city that comes alive, with each borough embodied by a person who has to learn what the place wants from them. The setting is a contemporary New York that is vivid and specific.",
+   "cover": "https://covers.openlibrary.org/b/id/9314940-M.jpg",
+   "isbn": "9780356512655"
+  },
+  "stanice-pell": {
+   "blurb": "As Earth and its colonies edge toward war, Pell Station, a trade hub, becomes the refuge and bargaining chip of rival factions and the native aliens below.",
+   "pitch": "A station at the edge of a war takes in refugees and has to decide whose side it is on. The story is political and told through the people who live and trade there.",
+   "cover": "https://covers.openlibrary.org/b/id/683236-M.jpg",
+   "isbn": "9781101662274"
+  },
+  "tenka-hranice-touhy": {
+   "blurb": "Bast, the trader and trickster, spends a single day bargaining and scheming in a small village until he accepts something for free and finds himself in a debt he does not know how to repay.",
+   "pitch": "A short, illustrated day in the life of a charming trickster who knows how to trade but never how to owe. It is a light, voice-led story with a gentle sting in the tail.",
+   "cover": "https://covers.openlibrary.org/b/id/15247743-M.jpg",
+   "isbn": "9780756419172"
+  },
+  "trocha-zle-krve": {
+   "blurb": "As industry rises in the Union, a young warrior, a ruthless financier, an unfit prince and a northern girl with a gift of foresight are drawn into a war that the old order cannot stop.",
+   "pitch": "Sharp, sardonic characters caught between a changing country and their families' legacies. What each of them wants, and what they will do to get it, runs through every chapter.",
+   "cover": "https://covers.openlibrary.org/b/id/14543428-M.jpg",
+   "isbn": "0575095865"
+  },
+  "utes-nadeje": {
+   "blurb": "On Jijo, an off-limits world where exiles of six intelligent races live in secret, a stranger, a rebel and several scholars and hunters each begin to uncover something that threatens the fragile peace.",
+   "pitch": "A forbidden planet where six species live in a hidden truce, seen through scholars, hunters and outcasts. The setting is built from the inside, with each species behaving as its own kind of mind.",
+   "cover": "https://covers.openlibrary.org/b/id/6817756-M.jpg",
+   "isbn": "0553100343"
+  },
+  "anihilace": {
+   "blurb": "A biologist joins the twelfth expedition into Area X, a stretch of coast cut off from the world where earlier expeditions ended in suicide, violence or illness. As the four women explore, strange growth and a tunnel that behaves like a tower begin to change them.",
+   "pitch": "A scientist with an unusual inner life walks into a landscape that has swallowed every earlier team and slowly starts to read it. The prose is spare and precise, and the place stays with you after the last page.",
+   "cover": "https://covers.openlibrary.org/b/id/8408974-M.jpg",
+   "isbn": "8858418328"
+  },
+  "cary-cti": {
+   "blurb": "Betan survey captain Cordelia Naismith is stranded on an alien planet with the Barrayaran officer Aral Vorkosigan, and their uneasy truce is tested when he is pulled back into his empire's war and politics.",
+   "pitch": "A clear-headed captain, unmoved by the war around her, finds herself trading honest trust with an enemy officer. What each of them wants and will not give up drives every scene, and the book keeps asking what honor is actually worth.",
+   "cover": "https://covers.openlibrary.org/b/id/934049-M.jpg",
+   "isbn": "0671655744"
+  },
+  "cestou-svobody": {
+   "blurb": "Engineer Leo Graf is sent to teach welding to genetically engineered, zero-gravity workers called quaddies, and discovers the corporation that made them plans to discard them.",
+   "pitch": "An engineer arrives to teach a trade and finds that the people in his class are legally property. The practical problem of getting them out becomes the plot, and the question of what makes someone a person stays with you.",
+   "cover": "https://covers.openlibrary.org/b/id/407069-M.jpg",
+   "isbn": "9781433250873"
+  },
+  "eifelheim": {
+   "blurb": "In the present, a historian and a physicist wonder why a German village abandoned in the Black Death was never resettled. In 1348 its priest, Father Dietrich, meets travellers from another world whose ship has crashed nearby.",
+   "pitch": "A learned medieval priest tries to explain God, the world and plague to alien guests who see it all differently, and slowly learns who they are. It is a patient, thoughtful book about people understanding one another across a huge gap, with a modern mystery running alongside.",
+   "cover": "https://covers.openlibrary.org/b/id/523837-M.jpg",
+   "isbn": "9780765300966"
+  },
+  "hominide": {
+   "blurb": "A Neanderthal physicist from a parallel world where Homo sapiens died out is thrown into ours by a failed quantum experiment, and a human geneticist is asked to help him.",
+   "pitch": "A quantum physicist from a world where Neanderthals won out lands in ours, and a geneticist is called in to prove he is who he says he is. You get a well-thought-out alternative culture and his view of ours, with two clear leads and a mystery about what happened to him at home. Like the Ender books, it is about understanding people who think differently.",
+   "cover": "https://covers.openlibrary.org/b/id/183505-M.jpg",
+   "isbn": "9780312876920"
+  },
+  "hudba-krve": {
+   "blurb": "A biotechnologist injects himself with intelligent lymphocytes he has engineered, and the cells begin to transform him and then everyone they reach.",
+   "pitch": "A researcher puts the experiment into his own bloodstream, and the cells start thinking. The book follows what that intelligence wants and what it does to the people and the world it spreads through. A classic of ideas-first science fiction, with an unusually hopeful turn.",
+   "cover": "https://covers.openlibrary.org/b/id/477227-M.jpg",
+   "isbn": "1497607434"
+  },
+  "hyperion": {
+   "blurb": "Seven pilgrims travel to the world of Hyperion to meet a monstrous being called the Shrike, and on the way each tells the story of how he or she came to be there.",
+   "pitch": "Seven strangers are on a last pilgrimage to a creature that kills and grants wishes, and on the road they tell their stories. Each tale is its own piece of fiction in a different voice, and together they build the future and the mystery.",
+   "cover": "https://covers.openlibrary.org/b/id/380332-M.jpg",
+   "isbn": "1491514973"
+  },
+  "i-kdyz-pujdu-rokli-sere-smrti": {
+   "blurb": "A hospital psychologist studies near-death experiences by interviewing revived patients and finally volunteers to experience one herself.",
+   "pitch": "A researcher wants to know what dying feels like and builds an experiment that lets her find out. The book follows her work through a busy hospital and into the question she is trying to answer.",
+   "cover": "https://covers.openlibrary.org/b/id/368239-M.jpg",
+   "isbn": "0007118260"
+  },
+  "january-a-deset-tisic-dveri": {
+   "blurb": "In early 1900s America a young woman raised in a rich man's mansion finds a book describing doors between worlds, and learns that her own story is tied to it.",
+   "pitch": "A girl kept like a pet treasure by her guardian finds a book about doors to other worlds and slowly learns it is about her. Two stories, hers and the book's, run side by side and meet. It is a warm, lyrical fantasy about freedom and what stories can change.",
+   "cover": "https://covers.openlibrary.org/b/id/8753949-M.jpg",
+   "isbn": "9781549101069"
+  },
+  "kniha-posledniho-soudu": {
+   "blurb": "A historian from a future Oxford is sent back to the Middle Ages and lands in 1348 as the plague arrives, while her tutor tries to bring her home during an epidemic of his own time.",
+   "pitch": "A young historian travels to the Middle Ages and arrives in the one year she needed to avoid. She has to live among real people while her teacher in the present tries to find her. The book is about courage, small kindnesses and what endures when everything falls apart.",
+   "cover": "https://covers.openlibrary.org/b/id/369478-M.jpg",
+   "isbn": "9780739487136"
+  },
+  "ministerstvo-casu": {
+   "blurb": "In the near future a young translator becomes a 'bridge' at a secret ministry that pulls people out of past eras, and is assigned to live with Commander Graham Gore, believed lost on the Franklin expedition. As she helps him adapt, the ministry's real purpose emerges.",
+   "pitch": "You live inside a very specific relationship, one woman and one man from 1847 learning each other, and the book keeps asking what a person owes to the place they come from. It mixes workplace comedy, a slow love story and a late turn into a thriller. If what you like in a book is why people do things, that is where it spends its pages.",
+   "cover": "https://covers.openlibrary.org/b/id/14621125-M.jpg",
+   "isbn": "1399726374"
+  },
+  "nespasitelni": {
+   "blurb": "In a world where the delusional can make their beliefs real, a priest-led sect plots to remake faith and power while a crew of broken and delusional killers drifts through the wreckage. Their paths collide around a war between two priest-kings.",
+   "pitch": "A world where unshakeable belief literally rewrites reality, so every character is fighting both an enemy and their own mind. The magic is unlike any other system in fantasy and drives the plot at every turn.",
+   "cover": "https://covers.openlibrary.org/b/id/12191355-M.jpg",
+   "isbn": "9780062387035"
+  },
+  "piranesi": {
+   "blurb": "Piranesi lives in an endless House of halls and tides, recording its statues in a journal and helping the Other search for a hidden knowledge, until signs of another person start to upend everything he believes.",
+   "pitch": "A man who knows only a vast, flooded house of statues writes down everything he sees, and as clues appear you learn alongside him what the place is and who he was. It is a short, calm, quietly gripping book about wonder and memory.",
+   "cover": "https://covers.openlibrary.org/b/id/10226290-M.jpg",
+   "isbn": "9786586015317"
+  },
+  "proklety-rok": {
+   "blurb": "In a county that believes teenage girls hold a dangerous magic, each sixteen-year-old is sent into the wilderness for a year to burn it off. Tierney tries to survive the other girls, the poachers who hunt them and the truth behind the ritual.",
+   "pitch": "A girl's year of banishment with forty others becomes a fight for survival, where the other girls are the real danger and she tries to build something fairer. It is fast and told in one voice. The question of what the village is really doing keeps pulling you on.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2344210/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788075449467",
+   "coverOL": "https://covers.openlibrary.org/b/id/8988769-M.jpg"
+  },
+  "reka-zmrtvychvstani": {
+   "blurb": "Everyone who died on Earth is resurrected naked along the banks of an endless river. Sir Richard Burton sets out upriver to find out who did it and why, meeting along the way a former Nazi who builds a slave state.",
+   "pitch": "Every person who ever lived wakes up in the same place with no explanation, and one explorer decides to find out why. It is a big, strange world with a mystery that keeps pulling you upriver, and you meet people from every era.",
+   "cover": "https://covers.openlibrary.org/b/id/382159-M.jpg",
+   "isbn": "9780425028094"
+  },
+  "sedmeroev": {
+   "blurb": "After the Moon is shattered, humanity has two years to build an orbital refuge before the debris rains down and destroys the Earth's surface, and the book follows the survivors across millennia.",
+   "pitch": "The Moon breaks apart and the world has two years. You watch people work out, step by step, how to keep a few thousand humans alive in orbit, and then see what a civilisation built from that remnant looks like. It runs on engineering reasoning and people cooperating, in the spirit of Project Hail Mary.",
+   "cover": "https://covers.openlibrary.org/b/id/9295719-M.jpg",
+   "isbn": "9788466659413"
+  },
+  "setkani-s-ramou": {
+   "blurb": "In 2130 a huge object on a straight trajectory is detected passing through the solar system, and a ship is sent to board the hollow cylinder before it swings round the Sun.",
+   "pitch": "A cylindrical alien ship drifts into the solar system and one crew gets a short window to explore it. You get a world to uncover with a clock running, and each discovery fits with the last. It is a book about what the visitors can work out from the evidence in front of them, in the way you followed Ryland Grace figuring out astrophage.",
+   "cover": "https://covers.openlibrary.org/b/id/13472608-M.jpg",
+   "isbn": "033399969X"
+  },
+  "smrtici-luna": {
+   "blurb": "In an ancient desert city, Ehiru is a priest-assassin who gathers the dream-magic of the dying in service to a goddess, until a plot in the temple makes him doubt everything he serves.",
+   "pitch": "A priest whose duty is to bring a peaceful end finds that his order is being turned to murder. His young apprentice and he have to decide what faith and mercy actually require, in a city built on dreams.",
+   "cover": "https://covers.openlibrary.org/b/id/7554263-M.jpg",
+   "isbn": "9780748129997"
+  },
+  "strazce-snu": {
+   "blurb": "In a world recovering from nuclear war, the healer Snake travels with serpents whose venoms cure disease. When a frightened tribe kills her rare dreamsnake, she sets out for the city that might help her replace it.",
+   "pitch": "A woman whose work is easing the dying loses the one creature that made it possible, and you follow her across a ruined but still living landscape trying to put that right. It is a quiet, humane quest with a lead who is competent and kind, and the fragments of a changed world turn up along the way.",
+   "cover": "https://covers.openlibrary.org/b/id/7267148-M.jpg",
+   "isbn": "9780395264706"
+  },
+  "titan": {
+   "blurb": "A NASA crew exploring Saturn's moons meets a huge hollow wheel that turns out to be a living intelligence, Gaea, and its centaur-like inhabitants. Captain Cirocco Jones and her crew are pulled down into its world.",
+   "pitch": "The crew drops through a hole into an entire world nobody on Earth knew existed, with its own creatures, its own rules and a mind behind it. You explore it step by step through a captain who has to understand the place to get her people out.",
+   "cover": "https://covers.openlibrary.org/b/id/284640-M.jpg",
+   "isbn": "0441813046"
+  },
+  "vsichni-jsme-z-toho-uplne-na-vetvi": {
+   "blurb": "Rosemary, a quiet college student, was raised alongside a sister of nearly her own age who vanished from her life when she was five. As she reconstructs her childhood, the reader learns what the family experiment was.",
+   "pitch": "A narrator who once never stopped talking tells her own story out of order, circling the sister she lost. Behind the family secret sits a real question about what makes us human, handled with warmth and humour.",
+   "cover": "https://covers.openlibrary.org/b/id/7306787-M.jpg",
+   "isbn": "9781788167109"
+  },
+  "accelerando": {
+   "blurb": "Across three generations of one family, humanity passes through a technological singularity, beginning with an inventor who gives his ideas away in near-future Amsterdam.",
+   "pitch": "Three generations of one family live through the moment when technology outruns the people who made it. It is a big, fast, idea-packed look at what could come after us, best read knowing the setup first so the opening's flood of terms makes sense. If you liked the thinking in Project Hail Mary, this is that appetite pushed to the extreme.",
+   "cover": "https://covers.openlibrary.org/b/id/284259-M.jpg",
+   "isbn": "1841493899"
+  },
+  "anatem": {
+   "blurb": "Erasmas, a young monk in a walled community of scholars, lives through the ten-day opening of the gates to the outside world, which sets off a crisis that draws the scholars back into the world.",
+   "pitch": "A first-person narrator who has been shut away for a decade steps out into a world he does not understand, and you learn it with him. The monastery is a society of mathematicians and philosophers with its own words and customs, and the ideas under it are the real adventure. Keep the glossary close and it reads quickly.",
+   "cover": "https://covers.openlibrary.org/b/id/6304233-M.jpg",
+   "isbn": "0061701327"
+  },
+  "friday": {
+   "blurb": "Friday, a genetically engineered courier and secret agent, travels across a fractured near-future North America while working out what she is and where she belongs.",
+   "pitch": "A courier who is also a secret agent, and an artificial person, travels across a splintered future America. The book is her voice, wry and self-aware, and her search for a place to belong. If you liked how The Martian let a strong narrator carry you, this runs on the same kind of voice.",
+   "cover": "https://covers.openlibrary.org/b/id/14630717-M.jpg",
+   "isbn": "0450055493"
+  },
+  "lisci-gambit": {
+   "blurb": "A disgraced captain of an empire built on enforced belief is paired with the undead mind of a brilliant, murderous general to retake a fortress from heretics.",
+   "pitch": "A soldier in disgrace is given one chance to win back a fortress, and the only help available is a dead general who will not tell her what he wants. Both have their own hidden aims, and the world's rules about belief and calendars are the engine of the plot. Read with the setup looked up first so the invented terms make sense from the first pages.",
+   "cover": "https://covers.openlibrary.org/b/id/13354287-M.jpg",
+   "isbn": "9781664451834"
+  },
+  "martanska-cesta": {
+   "blurb": "Casseia Majumdar, a young Martian, is drawn into the politics of her colony's independence from Earth as scientists discover how to move matter in new ways.",
+   "pitch": "Told by one woman from her teenage years onwards, this is the story of Mars growing up and wanting to be free. The politics are driven by what each faction wants and why, and a scientific discovery changes what independence can mean.",
+   "cover": "https://covers.openlibrary.org/b/id/2815950-M.jpg",
+   "isbn": "9783453133099"
+  },
+  "preziva-nejsmutnejsi": {
+   "blurb": "Snowman may be the last human on a ruined Earth, caring for a tribe of engineered people while remembering his friend Crake, the biotech he built and the woman, Oryx, whom they both loved.",
+   "pitch": "A man alone on a beach with a tribe of gentle engineered people remembers, in flashback, how the world he knew was taken apart by his brilliant friend. The book is a thought experiment about what happens when science and appetite run without brakes.",
+   "cover": "https://covers.openlibrary.org/b/id/12507658-M.jpg",
+   "isbn": "9780747562597"
+  },
+  "spin": {
+   "blurb": "One night the stars go out and the Earth is wrapped in a membrane that makes time pass a million times faster outside. Tyler Dupree, a doctor, narrates his life with the Lawton twins as humanity learns to live under the Spin.",
+   "pitch": "The stars vanish for no reason and the book follows three friends through the decades of consequences, one chasing the science, one the faith and one telling the story. It stays focused on a handful of people while the question of who did it keeps pulling.",
+   "cover": "https://covers.openlibrary.org/b/id/6632328-M.jpg",
+   "isbn": "9782207258040"
+  },
+  "z-kosti-a-inkoustu": {
+   "blurb": "In an alternate world where the Great Library of Alexandria still stands and controls all books, Jess Brightwell, a London book smuggler's son, is sent to train there, and learns what the Library will do to keep its power.",
+   "pitch": "A boy raised to smuggle books is sent inside the institution that bans them, where he and a small group of friends compete for a place and find out what the institution is hiding. It is a story about friendship under pressure and about who gets to own knowledge.",
+   "cover": "https://covers.openlibrary.org/b/id/10134073-M.jpg",
+   "isbn": "9780451472397"
+  },
+  "zniceny-muz": {
+   "blurb": "In a 24th-century world policed by telepaths, the business magnate Ben Reich plans and commits the murder of a rival, while the telepathic police prefect Lincoln Powell tries to prove it.",
+   "pitch": "A world where murder is almost impossible gets one determined killer, and the book is a duel between him and the telepath who must prove it. It plays with how telepathy would shape crime, speech and punishment.",
+   "cover": "https://covers.openlibrary.org/b/id/6874573-M.jpg",
+   "isbn": "0140025367"
+  },
+  "zpev-drozda": {
+   "blurb": "In a New York four centuries from now, humans are sedated, childless and unable to read. Paul Bentley teaches himself to read, Mary Lou refuses drugs, and a long-lived android dean named Spofforth, who wants to die, becomes entangled with both.",
+   "pitch": "A man learns to read in a world that has forgotten how, and what he finds in old films and books slowly changes him and the people near him. The android who watches over the city is the most unexpectedly human character in it. It is short, clear and keeps coming back to why anyone bothers to think.",
+   "cover": "https://covers.openlibrary.org/b/id/209598-M.jpg",
+   "isbn": "0575079150"
+  },
+  "zrada-cherryh": {
+   "blurb": "After the scientist-ruler Ariane Emory is murdered, her laboratory cloned city tries to recreate her, while a young man and his artificial companion are caught in her political legacy.",
+   "pitch": "A scientist who ran her whole world is dead, and the people around her decide to grow her again, personality included. It is a long study of what shapes a person and what they want, told close to the characters.",
+   "cover": "https://covers.openlibrary.org/b/id/4125331-M.jpg",
+   "isbn": "9782277229353"
+  },
+  "diamantovy-vek": {
+   "blurb": "In a nanotechnology-dominated future society, an engineer makes an illicit copy of an interactive educational book for his daughter, and it falls into the hands of a poor girl named Nell, shaping her whole life.",
+   "pitch": "A book that teaches a child how to think, and a girl who grows up with it as her only teacher. The world has been rebuilt around cheap matter compilers, and every consequence of that is followed through into class, schooling and what a free mind is. If you liked an idea whose knock-on effects were actually thought through, as in Project Hail Mary, this is built the same way.",
+   "cover": "https://covers.openlibrary.org/b/id/8598269-M.jpg",
+   "isbn": "0553380966"
+  },
+  "assassin-s-fate": {
+   "blurb": "Fitz and the Fool set out to Clerres to end the people who hurt them, while Bee goes her own way in a world of dragons and old magic.",
+   "pitch": "The last journey: Fitz, the Fool and Bee each head toward the same distant city with their own reasons. It is a story about what the people we love owe us and what we owe them, set among dragons and old magic.",
+   "cover": "https://covers.openlibrary.org/b/id/8417258-M.jpg",
+   "isbn": "9780008240417"
+  },
+  "cas-zmen": {
+   "blurb": "Fitz, now living quietly as Tom Badgerlock, is drawn back to the court to help search for a missing prince.",
+   "pitch": "Years after his old life ended, Fitz lives quietly with his wolf and a boy he has taken in, until the court needs him one more time. You get a man with a past he cannot undo and real affection for the people near him, then a search for a missing prince. The people matter more than the fighting, as in Mockingjay.",
+   "cover": "https://covers.openlibrary.org/b/id/373090-M.jpg",
+   "isbn": "9780553897043"
+  },
+  "draci-domov": {
+   "blurb": "The keepers and their dragons press on upriver through flood and danger toward the city, while a married scholar finds she belongs with the river captain instead.",
+   "pitch": "The expedition upriver becomes dangerous, and the dragons and their keepers begin to change in ways no one planned. Alongside it runs a tangle of loyalties on the boat, with each person deciding who they will stand with.",
+   "cover": "https://covers.openlibrary.org/b/id/6298448-M.jpg",
+   "isbn": "0008154406"
+  },
+  "draci-krev": {
+   "blurb": "The dragons and their keepers face threats to the new city while the question of what dragons and humans owe each other is settled.",
+   "pitch": "The dragons and their keepers face the last test of their new home in the lost city. The bonds built across the earlier journey are finally put to the question, and you find out what dragons and humans owe each other once the travelling is over.",
+   "cover": "https://covers.openlibrary.org/b/id/7284727-M.jpg",
+   "isbn": "000744415X"
+  },
+  "draci-mesto-hobb": {
+   "blurb": "The expedition reaches the ruined Elderling city, where dragons and keepers try to make a home while an unwelcome husband follows the expedition.",
+   "pitch": "The long search ends in a half-ruined city, and the dragons and keepers must work out how to live there together. Old ties and new ones are tested as people from outside arrive with their own claims on the place.",
+   "cover": "https://covers.openlibrary.org/b/id/7254797-M.jpg",
+   "isbn": "0061561630"
+  },
+  "draci-strazce": {
+   "blurb": "Young dragons hatched malformed are sent upriver with a handful of human keepers to find the long-lost Elderling city of Kelsingra.",
+   "pitch": "You travel upriver with a crippled brood of dragons and the outcast young people assigned to care for them, toward a lost city nobody is sure exists. Each keeper has a reason to be on the boat and something to prove, and the dragons are far from the noble creatures of legend.",
+   "cover": "https://covers.openlibrary.org/b/id/8113171-M.jpg",
+   "isbn": "9780061561658"
+  },
+  "fool-s-assassin": {
+   "blurb": "Years after the Tawny Man events, Fitz lives in a quiet manor with his wife until a murdered messenger and a strange child change that.",
+   "pitch": "Fitz has finally found a quiet life, with a home and a family, when a strange child comes into it. You see a man who has spent his life serving others learn what it is to protect something of his own. It is slow, domestic and full of what people feel and want, in the way Speaker for the Dead was.",
+   "cover": "https://covers.openlibrary.org/b/id/10107391-M.jpg",
+   "isbn": "0007444249"
+  },
+  "fool-s-quest": {
+   "blurb": "The Fool returns to Fitz's door, battered and carrying a prophecy, just as Bee begins to find her own place in the household.",
+   "pitch": "An old friend arrives at Fitz's door with nothing left but a purpose, and the two of them try to protect a child who is growing up fast. You follow her alongside Fitz's own choices. Loyalty and what people owe each other drive nearly every scene.",
+   "cover": "https://covers.openlibrary.org/b/id/13172508-M.jpg",
+   "isbn": "8033640464"
+  },
+  "lod-osudu": {
+   "blurb": "The Vestrit family's fate comes to a head as the pirate king Kennit tries to rule the Pirate Isles with a liveship at his side, and the ships and serpents move toward the answer to their origins.",
+   "pitch": "The long-running family story reaches its crisis as ships, serpents and rival leaders all move toward the same shore. You see answers to questions the earlier chapters left open, and what the characters make of them.",
+   "cover": "https://covers.openlibrary.org/b/id/8314580-M.jpg",
+   "isbn": "9780007459742"
+  },
+  "magicka-lod": {
+   "blurb": "After old Ephron Vestrit dies aboard the sentient liveship Vivacia, his family fights over who inherits the ship while a young priest is forced to serve on her and a pirate plots his own rise.",
+   "pitch": "A trading family in a frontier port inherits a living ship that remembers its dead, and every member of the family wants something different from her. You get time inside each of their heads, with real flaws and real reasons, as the inheritance pulls the family apart. It is slow to gather, but built to repay the patience.",
+   "cover": "https://covers.openlibrary.org/b/id/372583-M.jpg",
+   "isbn": "9780007383467"
+  },
+  "silena-lod": {
+   "blurb": "The Vestrit family tries to hold on to its ship and its fortune while the pirate Kennit rises, the mad ship Paragon looks for her past, and the sea serpents head north.",
+   "pitch": "The family stories grow more tangled and more personal as old ships, a pirate's ambition and a young woman's rash choices collide. You keep reading to see what each person will finally do about what they want.",
+   "cover": "https://covers.openlibrary.org/b/id/368046-M.jpg",
+   "isbn": "1400144388"
+  },
+  "stara-krev": {
+   "blurb": "Believed dead, Fitz follows his wolf and a rumour of the Elderlings through a hostile land to find the help his kingdom needs.",
+   "pitch": "Fitz sets out into an unmapped land with Nighteyes at his side, searching for a legend that may save the Six Duchies. You learn the world as he does, and what drives him on is what he owes people he loves. A long journey that rewards patience, in the way Licanius rewarded its readers.",
+   "cover": "https://covers.openlibrary.org/b/id/368112-M.jpg",
+   "isbn": "7810369105"
+  },
+  "tajemny-ucen": {
+   "blurb": "Fitz takes up a hidden post at court, teaching a young prince the Skill while hiding who he is, and leans on his old friend the Fool.",
+   "pitch": "Fitz lives at court under a false name, teaching a young prince a magic that can harm the one who uses it, while a friendship from long ago becomes his anchor. You watch a man who has lost a great deal work out who he can still trust. It is quiet, character-first storytelling in a world with rules you slowly learn.",
+   "cover": "https://covers.openlibrary.org/b/id/373091-M.jpg",
+   "isbn": "0002247275"
+  },
+  "the-inheritance-and-other-stories": {
+   "blurb": "A collection of ten stories and novellas, seven under the name Megan Lindholm and three under Robin Hobb, with an introduction and notes.",
+   "pitch": "Ten stories by one writer under two names, with the three longest set in the Elderlings world. They are shaped as parables, so each leaves a small question behind about what we inherit and what we do with it.",
+   "cover": "https://covers.openlibrary.org/b/id/7150406-M.jpg",
+   "isbn": "1596064382"
+  },
+  "the-willful-princess-and-the-piebald-prince": {
+   "blurb": "A narrator recounts her youth beside a headstrong princess and the history of how her people's animal-bond magic came to be hated.",
+   "pitch": "A prequel that shows how a gift for bonding with animals was turned into something people were taught to fear. You read it as an old record, in the narrator's own voice and with her own place in events. Short, and built around one idea that stays with you.",
+   "cover": "https://covers.openlibrary.org/b/id/7727807-M.jpg",
+   "isbn": "9780007552603"
+  },
+  "vahadlo-osudu": {
+   "blurb": "Fitz, the king's bastard and assassin, is caught between a dying king, a prince fighting raiders and a scheming rival while he learns what the Skill and the Wit cost him.",
+   "pitch": "You stay inside Fitz's own voice as he serves a failing court with his loyalty tested at every turn. The bond with his wolf Nighteyes gives the book real warmth, and the court's schemes are driven by what people want and fear rather than by battles. It is a long, patient story for a reader who cares about people more than action, as in Mockingjay.",
+   "cover": "https://covers.openlibrary.org/b/id/14093093-M.jpg",
+   "isbn": "9780593722831"
+  },
+  "zlovestne-sny": {
+   "blurb": "Fitz journeys with a prince and the Fool to a remote island to carry out a destiny the Fool has foreseen.",
+   "pitch": "The long friendship between Fitz and the Fool is put to its hardest test on a voyage north with a young prince. Fate is questioned seriously inside the world's own rules, as in Licanius, and the dragons and old magic have a price you can feel. It is the climax a trilogy has been building toward.",
+   "cover": "https://covers.openlibrary.org/b/id/374007-M.jpg",
+   "isbn": "9780007370467"
+  },
+  "honor-among-thieves": {
+   "blurb": "Between two films, Han Solo goes on a mission to extract a Rebel spy from deep cover. He works with a new female agent and a smuggler.",
+   "pitch": "Han Solo's voice and banter carry a fast rescue mission across the Empire's edge. It is a light adventure that needs no preparation beyond the films. Along the way he teams up with a sharp new Rebel agent and a fellow smuggler, so the banter has more than one partner to bounce off.",
+   "cover": "https://covers.openlibrary.org/b/id/7484337-M.jpg",
+   "isbn": "0099594269"
+  },
+  "hry-nemesis": {
+   "blurb": "While the crew of the Rocinante is scattered, an unseen force strikes Mars and Earth, and each of them has to find a way back through personal trouble to the ship.",
+   "pitch": "The four people on the ship are pulled apart and each gets a story about where they came from and what they will do for the others. It is about reasons and loyalties, the thing you liked most in Golden Son. Each strand has a clear problem from the first pages.",
+   "cover": "https://covers.openlibrary.org/b/id/8036735-M.jpg",
+   "isbn": "1478933771"
+  },
+  "kalibanova-valka": {
+   "blurb": "After an attack on Ganymede, a botanist searches the system for his kidnapped daughter while a Martian marine and an Earth politician try to stop a war, and the Rocinante crew is pulled into all three.",
+   "pitch": "Four people who want very different things are on a collision course, and you read their reasons more than their gunfights. A father's search, a soldier's doubt and a politician's long game feel as distinct as the Mockingjay cast. The solar-system politics follow consistent rules.",
+   "cover": "https://covers.openlibrary.org/b/id/7314238-M.jpg",
+   "isbn": "1549153048"
+  },
+  "leviatanova-zhouba": {
+   "blurb": "The crew and the other survivors face the last threat to the gate network while the Laconian ruler hunts them and each of them decides what to leave behind.",
+   "pitch": "The series' central question is finally answered, and each of the crew gets a last decision that follows from who they have been. It pays off its long question the way The Light of All That Falls did for its trilogy. You read how the characters choose to end things.",
+   "cover": "https://covers.openlibrary.org/b/id/14424717-M.jpg",
+   "isbn": "8418037474"
+  },
+  "livesuit": {
+   "blurb": "Kirin Foss, an EMT, enlists for a promised eight-year tour in a war against an unnamed enemy and is put into a livesuit. The truth about the tour comes out as the story ends.",
+   "pitch": "A compact story about a soldier who signs on for a fixed tour and learns what the suit costs him. It is short enough to read in one sitting and leaves a hard question behind about what is lost to preserve humanity.",
+   "cover": "https://covers.openlibrary.org/b/id/14827571-M.jpg",
+   "isbn": "0316575348"
+  },
+  "o-poklad-ciboly": {
+   "blurb": "Colonists and a corporate-chartered science team clash over a newly opened planet where the alien gate network has awakened something, and Holden is sent to mediate.",
+   "pitch": "A whole planet is the unknown, and the people on it need to understand its rules to survive. You follow a security officer, a welder pushed to the edge, a scientist and Holden as the standoff turns stranger. If you liked working out the world with Rocky and the astrophage, this is a planet to work out.",
+   "cover": "https://covers.openlibrary.org/b/id/7610576-M.jpg",
+   "isbn": "9780356504186"
+  },
+  "popel-babylonu": {
+   "blurb": "After the strike on Earth, the Free Navy under Marco Inaros presses the Belt against the inner planets, and the Rocinante crew and Avasarala work to break the war.",
+   "pitch": "The war is seen from many sides, including the people who started it, and you read what each of them wants. If you liked the weighing of cost and cause in Mockingjay, this has it on a larger scale. Long-running threads of the series come to a head.",
+   "cover": "https://covers.openlibrary.org/b/id/8417833-M.jpg",
+   "isbn": "9781478965374"
+  },
+  "the-mercy-of-gods": {
+   "blurb": "Humans on a colony world are conquered by the Carryx, who take the scientific elite to their city to work on an alien problem. Dafyd, an assistant on one team, gets drawn into a resistance and the captors' politics.",
+   "pitch": "A captive research team has to solve a problem for its alien masters while working out what they want and how their world runs. It reads like the human-versus-alien-culture puzzle of Old Man's War and Speaker for the Dead, with Dafyd slowly becoming the only bridge between the two sides.",
+   "cover": "https://covers.openlibrary.org/b/id/14649358-M.jpg",
+   "isbn": "9780316525558"
+  },
+  "tiamatin-hnev": {
+   "blurb": "Under Laconian rule, Elvi is drafted to study the dead systems, Teresa grows up as the ruler's daughter, and Naomi and Alex build a resistance.",
+   "pitch": "Elvi has to choose how far to serve the people who hold her, while a young girl learns what her father has built. Both are about what they want and what they will not do. The resistance gives you people with a clear job to hold on to.",
+   "cover": "https://covers.openlibrary.org/b/id/8600919-M.jpg",
+   "isbn": "9780356510361"
+  },
+  "vzestup-persepole": {
+   "blurb": "Decades later, a new faction from beyond the Ring takes over Medina Station and the Rocinante crew is scattered and beaten.",
+   "pitch": "Time has moved on and the old crew meets an occupier with its own reasons. You see people on both sides of the defeat. It is a story about what characters will give up to protect what they built.",
+   "cover": "https://covers.openlibrary.org/b/id/8402849-M.jpg",
+   "isbn": "1664691782"
+  },
+  "a-hory-odpovedely": {
+   "blurb": "Two Afghan children, brother and sister, are separated in 1952 when their father gives the girl away to a wealthy Kabul household. The book follows the people touched by that decision across sixty years and several countries.",
+   "pitch": "A father tells his children a fable and the choice that follows it reaches through decades and many lives. The book is about what people want from one another, and what they will give up for it. Each chapter opens a new voice, from Kabul to Paris to California, and they converge on the siblings.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3176531/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788025709788",
+   "coverOL": "https://covers.openlibrary.org/b/id/7258558-M.jpg"
+  },
+  "a-ocean-byl-nasi-oblohou": {
+   "blurb": "Bathsheba, an apprentice on a whale hunting crew in a world where the ocean is the sky, joins a captain's hunt for the human devil Toby Wick and starts to doubt the legend behind it.",
+   "pitch": "You follow a young whale who thinks for herself while her crew hunts a legend. It turns Moby-Dick inside out and asks what a hunt like that does to the hunters. It is short and illustrated, and reads quickly.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2146495/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788075447876",
+   "coverOL": "https://covers.openlibrary.org/b/id/8538573-M.jpg"
+  },
+  "anna": {
+   "blurb": "Anna, about to turn sixteen, meets her great-granddaughter Nova in vivid dreams, and Nova's world of mass extinctions and refugees makes Anna determined to change what comes.",
+   "pitch": "A teenager meets, in her dreams, a descendant who lives in the world her generation is about to leave behind. The whole book is built around a single question about what we owe those who come after us.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/864837/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788000035093",
+   "coverOL": "https://covers.openlibrary.org/b/id/8566867-M.jpg"
+  },
+  "anton-a-jonatan": {
+   "blurb": "A teddy bear remembers the boy who took him everywhere on his bicycle, until one day an accident leaves him alone.",
+   "pitch": "A very short picture book told by a teddy bear about a friendship and what remains after it, with illustrations carrying much of the telling. It can be read in minutes and is meant for reading aloud or alone.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1008372/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788000036984",
+   "coverOL": null
+  },
+  "bez-chlapce-bez": {
+   "blurb": "A Jewish boy flees the Warsaw ghetto and lives for years in the forests and farms of Poland, hiding his identity as the war passes over him.",
+   "pitch": "A boy of eight survives on his own through the war by learning whom he can trust. It is a plainly told, true-based survival story and a view of how a child lived through the Holocaust.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2427044/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788072525379",
+   "coverOL": "https://covers.openlibrary.org/b/id/393645-M.jpg"
+  },
+  "brzy": {
+   "blurb": "In postwar Poland, Felix and Gabriek find chaos, hunger and cruelty, and Felix meets Anya, a girl hiding dangerous secrets.",
+   "pitch": "The war is over and Felix hopes to be safe, but postwar Poland is chaos and cruelty. He meets a girl with a secret and is tested again on what kind of person he wants to be.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2497406/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788025733202",
+   "coverOL": "https://covers.openlibrary.org/b/id/13936949-M.jpg"
+  },
+  "cervnec": {
+   "blurb": "A short novella in which a sixteen-year-old returning home falls for a twenty-year-old woman and lives through his first emotional storm.",
+   "pitch": "A very short summer story of a young man's first infatuation, told with the nostalgia Hesse brought to youth. Easy to read in one sitting, and a gentle taste of his early prose.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-11-09)"
+  },
+  "cizinci-ve-meste": {
+   "blurb": "A couple on holiday in Venice accept the hospitality of a charming local and his invalid wife, who have been following them.",
+   "pitch": "A compact, tense novella set in a half-dreamlike Venice. It has the pace of a thriller and the strangeness of a nightmare, and it is over in a couple of sittings.",
+   "cover": "https://covers.openlibrary.org/b/id/4344941-M.jpg",
+   "isbn": "1409089851"
+  },
+  "dedicove": {
+   "blurb": "A small band of Neanderthals, led by the gentle Lok, finds its world upended when a different kind of people arrives on its route to the summer grounds.",
+   "pitch": "You see the world through Lok, whose people think in pictures and share what they feel, and watch them meet strangers they cannot understand. The questions of what separates the two kinds of people stay with you. The same uncovering of an unknown world you loved in Project Hail Mary.",
+   "cover": "https://covers.openlibrary.org/b/id/7185372-M.jpg"
+  },
+  "desaty-stupen": {
+   "blurb": "Seismologist Lewis Crane, scarred by an earthquake in childhood, predicts a huge quake, is mocked, then discovers an error in his calculations and races to prevent it.",
+   "pitch": "A fast disaster story built around a scientist who has been waiting all his life for the Big One. It mixes real earthquake science with a bold engineering gamble.",
+   "cover": "https://covers.openlibrary.org/b/id/4672307-M.jpg",
+   "isbn": "9780786206940"
+  },
+  "dite-v-pravy-cas": {
+   "blurb": "After his daughter is abducted in a supermarket, a children's author and his wife drift apart while he serves on a government childcare committee and an old friend retreats into childhood.",
+   "pitch": "A novel about what a lost child leaves behind in two parents, with odd moments where time bends. It treats childhood as an idea rather than a stage, and wins its quiet moments through small, precise scenes.",
+   "cover": "https://covers.openlibrary.org/b/id/4075282-M.jpg",
+   "isbn": "8433931792"
+  },
+  "divka-s-pomeranci": {
+   "blurb": "Fifteen-year-old Georg's family finds a letter his father wrote eleven years earlier, just before dying, about a girl with a bag of oranges he glimpsed on a tram and spent years searching for.",
+   "pitch": "A letter from a father who is no longer there, addressed to the son he will not see grow up. It builds to a question about life and loss that stays with you after the last page.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2699889/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788000063287",
+   "coverOL": "https://covers.openlibrary.org/b/id/501727-M.jpg"
+  },
+  "domu-ze-slunecnych-stepi": {
+   "blurb": "A five-year-old boy, his mother and his siblings flee the German advance in the Second World War and travel to Kazakhstan.",
+   "pitch": "The war seen at a child's height, as a family flees east into a new life. It is a plainly told journey with a small hero who has to leave a beloved toy behind.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3026322/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788072527045",
+   "coverOL": null
+  },
+  "duvody-proc-zustat-nazivu": {
+   "blurb": "Matt Haig describes the day at 24 when he stood at a cliff edge, why he did not jump, and how he learned to live with depression and anxiety. The memoir mixes his story with lists and advice.",
+   "pitch": "A plain, honest first-person account of the worst stretch of one man's life and the long way back from it. It is short, hopeful in direction, and built from small observations you can check against your own experience.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1469787/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788073904777",
+   "coverOL": "https://covers.openlibrary.org/b/id/12639532-M.jpg"
+  },
+  "gwilanina-harfa-a-jine-povidky": {
+   "blurb": "Twenty-four short stories chosen by the Czech editor from across Le Guin's work, including Omelas and the title story Gwilan's Harp.",
+   "pitch": "Twenty-four stories from across Le Guin's work, grouped by theme. Some are classics of the idea-driven short form, such as the one about the city that depends on a hidden suffering.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-11-09)"
+  },
+  "halo-je-tu-nekdo": {
+   "blurb": "While waiting for his baby brother to be born, eight-year-old Joe is visited by Mika, a child from another planet, and they compare their worlds.",
+   "pitch": "A short conversation between a boy and a curious visitor from another planet that touches on evolution and the size of the universe. It reads in a single sitting and keeps the tone light.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1746347/preview510",
+   "coverSource": "katalog",
+   "isbn": "8000006170",
+   "coverOL": "https://covers.openlibrary.org/b/id/223879-M.jpg"
+  },
+  "hodiny-v-zahrade": {
+   "blurb": "Two short idylls by the aging Hesse: a year in his garden with its rhythms and work, and the memory of a boyhood meeting with a disabled boy while fishing.",
+   "pitch": "A quiet little book in which Hesse looks at his own garden and at one boyhood afternoon by the water. If you want something calm and short with a gentle eye for ordinary things, these two pieces are exactly that.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2393156/preview510",
+   "coverSource": "katalog",
+   "isbn": "8072073753",
+   "coverOL": null
+  },
+  "holka-ktera-zachranila-vanoce": {
+   "blurb": "Amelia, the first child to believe in Father Christmas, is shut in a workhouse and starts losing hope, which puts Christmas itself in danger; Father Christmas sets out to find her.",
+   "pitch": "A girl locked in a grim Victorian workhouse is the one person who can keep Christmas alive, if she can find her way back to hope. Dickens turns up as a character, and reviewers describe it as warm and funny.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3080438/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788025742679",
+   "coverOL": "https://covers.openlibrary.org/b/id/8568014-M.jpg"
+  },
+  "hrad-v-pyrenejich": {
+   "blurb": "Steinn and Solrun, lovers in the 1970s who parted for reasons neither fully understands, meet again in a Norwegian hotel and begin exchanging emails about what happened and what it meant.",
+   "pitch": "Two old lovers, one a rationalist and one a believer in something more, write to each other about a single event they both remember. It is a book of letters in the manner of an argument between two well-matched minds.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1834817/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788000026435",
+   "coverOL": "https://covers.openlibrary.org/b/id/7516414-M.jpg"
+  },
+  "jako-v-zrcadle-jen-v-hadance": {
+   "blurb": "Twelve-year-old Cecilie, terminally ill, is visited at her window by an angel named Ariel, and they talk about heaven, the senses and why being alive matters.",
+   "pitch": "Conversations between a girl and an angel who has never tasted a peach, which turn everyday things into something to look at again. It is brief and quietly funny in places, in the way The Little Prince is.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1746888/preview510",
+   "coverSource": "katalog",
+   "isbn": "8000007061",
+   "coverOL": "https://covers.openlibrary.org/b/id/501147-M.jpg"
+  },
+  "je-tezke-byt-lvem": {
+   "blurb": "A boy who has always dreamed of becoming a lion wakes up as one and has to explain it to his mother.",
+   "pitch": "A boy gets what he always wished for and finds that lions cannot open doors or talk to their mothers. It is a light children's comedy about wishing, friendship and how to explain the impossible at home.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2063937/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788072527762",
+   "coverOL": null
+  },
+  "jim-knoflik-lukas-a-lokomotiva-ema": {
+   "blurb": "A baby arrives in the mail on the island of Lummerland and grows up beside the engine driver Lukas and his locomotive Emma; the three set off into the world.",
+   "pitch": "A foundling who arrived in a parcel and his best friend, an engine driver, set off in a steam locomotive named Emma. It is a classic adventure about friendship, with a world of new lands to explore.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-11-09)"
+  },
+  "kdyz-psi-placou": {
+   "blurb": "Cameron Wolfe, overshadowed by his brothers, longs to win a girl while his family's quarrels come to a head.",
+   "pitch": "Cameron, the quiet middle-brother, wants someone to love him and tries to get the girl he cannot stop thinking about. The family's rough edges and its loyalty are all in the way.",
+   "cover": "https://covers.openlibrary.org/b/id/11472771-M.jpg",
+   "isbn": "9781849418393"
+  },
+  "kdyz": {
+   "blurb": "Thirteen-year-old Felix, hiding in a pit in 1945, is found by Polish partisans instead of Nazis and becomes a member of their unit.",
+   "pitch": "Felix comes out of two years in a pit and ends up with partisans instead of the soldiers he feared. The book follows how a boy who survives by hope and stories finds his place among fighters.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2111844/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788025727423",
+   "coverOL": "https://covers.openlibrary.org/b/id/8371237-M.jpg"
+  },
+  "klub-mrtvych-otcu": {
+   "blurb": "Eleven-year-old Philip sees his dead father's ghost at the pub after the funeral; the ghost says Uncle Alan killed him and tells Philip to take revenge.",
+   "pitch": "A boy whose father has died is visited by the ghost at the funeral and told who is to blame. The voice is Philip's own, in a single breathless run without punctuation, and the story echoes Hamlet.",
+   "cover": "https://covers.openlibrary.org/b/id/400833-M.jpg",
+   "isbn": "9780143112945"
+  },
+  "kluk-jmenem-vanoce": {
+   "blurb": "Eleven-year-old Nikolas lives in poverty in Finland; when his father vanishes on an expedition to prove elves exist, he sets off north to find him.",
+   "pitch": "A poor boy in Finland sets out across the snow to find his father and ends up among elves, reindeer and a very old secret. It is warm, quick and told with humour, and it is about hope and kindness.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2875599/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788025739242",
+   "coverOL": "https://covers.openlibrary.org/b/id/8539172-M.jpg"
+  },
+  "kniha-utechy": {
+   "blurb": "A mixed collection of short pieces, lists, quotations and case studies that Haig wrote as notes to himself during depressive episodes. It is meant to be dipped into rather than read straight through.",
+   "pitch": "Short pieces, lists and quotations gathered as notes to a future self, with hope and small steps as the thread. You can open it anywhere and read a page.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2865083/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788027710324",
+   "coverOL": "https://covers.openlibrary.org/b/id/11343826-M.jpg"
+  },
+  "kouzelny-kalendar": {
+   "blurb": "Joachim reads a story hidden behind each window of an Advent calendar, in which a girl follows a toy lamb across Europe and back in time towards Bethlehem, while his family tries to learn who made the calendar and what became of the girl.",
+   "pitch": "A story told one December window at a time, with a journey that crosses Europe and centuries and a small puzzle running alongside it. It suits reading in short sittings.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/972569/preview510",
+   "coverSource": "katalog",
+   "isbn": "8071926825",
+   "coverOL": "https://covers.openlibrary.org/b/id/1883072-M.jpg"
+  },
+  "kridlocky": {
+   "blurb": "Four winged kittens born in the city slums fly to the countryside, where they find life just as hard and friendship in unlikely places.",
+   "pitch": "Four kittens born with wings fly out of the city slums and learn that the country has its own dangers and its own friends. Short, illustrated, quick to read.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3102449/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788088299356",
+   "coverOL": "https://covers.openlibrary.org/b/id/4995583-M.jpg"
+  },
+  "labyrint-nedokoncenych-setkani": {
+   "blurb": "In 2018 a scout troop is taken from Prague to Terezin, where one boy finds a secret diary hidden in a ruined attic. It brings in the story of Pavel, a boy interned there in 1944, and links the fates of boys from both times.",
+   "pitch": "A scout trip to Terezin turns into a search through a hidden diary and the life of a boy who lived there in 1944. Two time lines run side by side and meet. It is written for young readers and avoids heavy pathos.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2435744/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788075151094",
+   "coverOL": null
+  },
+  "lazensky-host": {
+   "blurb": "Three prose works from Hesse's late-1920s crisis: a spa patient's diary, the account of a lecture trip to Nuremberg, and the novel of Harry Haller, an intellectual who feels himself half man, half wolf.",
+   "pitch": "Three prose works from one restless stretch of Hesse's life: a wry diary of a spa cure, a lecture trip told from the inside, and the novel of Harry Haller, a lonely intellectual who cannot decide whether he belongs among people at all. Haller keeps arguing with himself, and the questions he asks about who we really are stay with you.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1926673/preview510",
+   "coverSource": "katalog",
+   "isbn": "8072033190",
+   "coverOL": null
+  },
+  "leto-na-humrim-utesu-kniha-o-pranich-a-snech": {
+   "blurb": "Eight-year-old Boy spends a week of summer holidays at the Hummerklippen lighthouse with the keeper Johann and hears of wishes, dreams and journeys.",
+   "pitch": "A boy spends a summer week at a lighthouse and the keeper's stories take him across seas and centuries. It is a gentle, old-fashioned book of wishes and dreams, meant to be read slowly.",
+   "cover": "https://covers.openlibrary.org/b/id/3234639-M.jpg",
+   "isbn": "3551552673"
+  },
+  "leto-s-opicemi": {
+   "blurb": "Jay Berry Lee, fourteen, sets out to catch a troop of escaped circus monkeys in the Oklahoma Ozarks for the reward, hoping to buy a pony and a gun and to help his sister.",
+   "pitch": "A boy in the Ozarks tries to catch a band of runaway circus monkeys for the reward money. It is warm and funny, with a grandfather and a sister who matter, and a clever lead monkey who makes the job harder.",
+   "cover": "https://covers.openlibrary.org/b/id/8222175-M.jpg",
+   "isbn": "0440981751"
+  },
+  "mestecko-pines-2": {
+   "blurb": "Sheriff Ethan Burke knows the truth about what lies beyond the electrified fence and about the town's founder, and is torn between keeping the town's illusion and the escape attempts of residents who want out.",
+   "pitch": "Ethan Burke now knows what waits beyond the fence and what the town's founder is hiding. The question is whether to keep the town calm or tell everyone the truth, and a few residents are already making a break for it.",
+   "cover": "https://covers.openlibrary.org/b/id/9211388-M.jpg",
+   "isbn": "9781477858707"
+  },
+  "mestecko-pines-3": {
+   "blurb": "After Ethan Burke has told the town the truth and opened the gate, the town faces the abbies, a dwindling food supply, and a final confrontation with the man who created it.",
+   "pitch": "The truth is out, the gate is open and the town has to survive what is outside it while settling accounts with the man who built it. It is the closing volume and it moves quickly toward a finish.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2351585/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788024263908",
+   "coverOL": "https://covers.openlibrary.org/b/id/12538975-M.jpg"
+  },
+  "mestecko-pines": {
+   "blurb": "Secret Service agent Ethan Burke arrives in Wayward Pines, Idaho, to find two missing federal agents, wakes in hospital after a crash with no ID or phone, and finds the townspeople friendly and unhelpful and the town impossible to leave.",
+   "pitch": "You wake in a hospital in a pretty Idaho town with no wallet, no phone and a nurse who smiles too much, and you are not allowed to leave. The chapters are short and each one moves the question along: what is this place and why does no one say. If you liked uncovering an unknown world in Project Hail Mary, this is built on that.",
+   "cover": "https://covers.openlibrary.org/b/id/10114653-M.jpg",
+   "isbn": "1491537272"
+  },
+  "migrena": {
+   "blurb": "Oliver Sacks surveys migraine and its aura through case histories and the history of its study, with a section on treatment.",
+   "pitch": "A neurologist writes about the strange visions and sensations of migraine through his patients. It is a book to read for its cases and its curiosity about the mind.",
+   "cover": "https://covers.openlibrary.org/b/id/6994175-M.jpg",
+   "isbn": "9780330262378"
+  },
+  "milostne-povidky": {
+   "blurb": "A chronological selection of eighteen of Hesse's stories about love in its many forms, including the stories Cervenec, Hans Amstein, Hra stinu and Kavalir na ledu.",
+   "pitch": "Eighteen of Hesse's stories about love, arranged in the order he wrote them, so you can watch his view of it change from the first youthful infatuations onward.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-11-09)"
+  },
+  "misto-odkud-neni-navratu": {
+   "blurb": "Mihrigul Tursun, a Uyghur woman, describes being detained several times in Chinese re-education camps, during which one of her children died, and her escape to the West.",
+   "pitch": "A survivor's account of what happened inside the camps in Xinjiang and what it was like to leave and speak about it. It gives a view of a people whose experience is usually reported at a distance.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2748172/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788076622869",
+   "coverOL": "https://covers.openlibrary.org/b/id/7079999-M.jpg"
+  },
+  "morska-modlitba": {
+   "blurb": "On a moonlit beach a Syrian father holds his sleeping son and remembers their home in Homs, while they wait for the boat that will take them across the sea.",
+   "pitch": "A father recalls the Homs of his childhood while he waits with his son for a boat at dawn. It is very short, illustrated in watercolour, and reads in one sitting. The emotion comes from the plainly drawn memories of a home that is gone.",
+   "cover": "https://covers.openlibrary.org/b/id/8240369-M.jpg",
+   "isbn": "9788525066749"
+  },
+  "mozna": {
+   "blurb": "In 1946, fourteen-year-old Felix tries to build a new life in Australia while a killer from Poland who has sworn revenge hunts him.",
+   "pitch": "Felix leaves Europe for Australia, hoping for friendship and a new life, and the past comes after him. The book keeps the same warm, stubborn narrator while the stakes turn into a pursuit.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3124845/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788025743171",
+   "coverOL": "https://covers.openlibrary.org/b/id/8814282-M.jpg"
+  },
+  "narcis-a-goldmund": {
+   "blurb": "Goldmund, a gifted boy sent to a monastery school, is befriended by the austere young scholar Narcissus, who shows him he is not meant for the cloister; he leaves to wander medieval Germany, discovering women, art and the plague.",
+   "pitch": "A friendship between two opposites: Narcissus the devout scholar and Goldmund the pupil he frees to follow his own nature. You follow Goldmund through medieval roads, workshops and towns as he learns what he wants to make of his life, and the book keeps asking what the spirit and the senses each owe each other.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3106637/preview510",
+   "coverSource": "katalog",
+   "isbn": "807203698X",
+   "coverOL": null
+  },
+  "nevinny": {
+   "blurb": "In 1955 Berlin, a shy English telephone engineer is drawn into a joint Anglo-American tunnel under the Soviet sector and into a first love that turns violent.",
+   "pitch": "A Cold War story built on a real intelligence operation, told as a young man's education in a divided city. The tunnel plot and the personal plot press on each other until neither can be undone.",
+   "cover": "https://covers.openlibrary.org/b/id/5509507-M.jpg",
+   "isbn": "9780224027830"
+  },
+  "noc-zeriava": {
+   "blurb": "George Duncan, a divorced American printer in London, pulls an arrow from a wounded crane and next day a mysterious woman named Kumiko walks into his shop; his daughter Amanda has her own troubled story.",
+   "pitch": "A quiet London man helps a wounded crane and finds his life rearranged around the woman who appears next day. Alongside him you follow his daughter, who is less gentle but just as lost. A retelling of a Japanese folktale, with the myth kept at the edges and the people in front.",
+   "cover": "https://covers.openlibrary.org/b/id/8523324-M.jpg",
+   "isbn": "9780857868732"
+  },
+  "nova-zprava-o-treti-planete": {
+   "blurb": "A collection of Clarke's essays on technology, the space age and what the future might hold, first published in 1972.",
+   "pitch": "Clarke thinking aloud about satellites, communication and humanity's next steps, in short readable pieces. The big ideas arrive one at a time, and each piece can be read alone, so you can dip in wherever a topic draws you.",
+   "cover": "https://covers.openlibrary.org/b/id/6711929-M.jpg",
+   "isbn": "0060107936"
+  },
+  "o-snozroutkovi": {
+   "blurb": "A king's daughter cannot sleep because of nightmares; the king travels the world and finds a little creature who eats bad dreams.",
+   "pitch": "A sleepless princess, a king who goes searching the world for a cure, and a small creature that eats bad dreams. It is a picture book for reading aloud, soothing and strange.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2261047/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788075301680",
+   "coverOL": "https://covers.openlibrary.org/b/id/1017622-M.jpg"
+  },
+  "ostrov-delfinu": {
+   "blurb": "A sixteen-year-old stowaway survives a shipwreck, is carried to the Great Barrier Reef by dolphins and joins a station where scientists study dolphin communication.",
+   "pitch": "An adventure in the near future with a boy who learns diving and the language of the sea. It is a calm story about people and dolphins learning each other's signals.",
+   "cover": "https://covers.openlibrary.org/b/id/8236717-M.jpg",
+   "isbn": "9780425029367"
+  },
+  "pansky-dum": {
+   "blurb": "A successful painter lives apart from his wife on a grand estate, held there only by his young son, while an old friend home from India urges him to break free; the volume adds shorter prose and autobiographical stories.",
+   "pitch": "A painter and his estranged wife share a house and a son, and an old friend from India turns up to ask why he stays. A close look at a man's inner life and at what an artist owes his family, with shorter stories alongside.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-11-09)"
+  },
+  "pohadky": {
+   "blurb": "Eight adult fairy tales by Hesse: a man granted the wish to be loved by everyone, a poet, a visit to another star, a pilgrimage, a dream sequence, the town of Faldum and the story of Iris.",
+   "pitch": "Fairy tales for adults with meaning under the surface: a man whose wish to be loved by everyone is granted, a stranger's report from another star, a town where one wish may be made. Short, dreamlike and built around one idea each, in the way Labyrint sveta a raj srdce is.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2378257/preview510",
+   "coverSource": "katalog",
+   "isbn": "8072035878",
+   "coverOL": "https://covers.openlibrary.org/b/id/12773526-M.jpg"
+  },
+  "pokani": {
+   "blurb": "In 1935 a thirteen-year-old girl misreads a scene between her older sister and a family friend and makes an accusation that wrecks their lives; the book follows them through the war and her attempt to atone.",
+   "pitch": "A novel about how a single mistaken act ripples through three lives and what storytelling can and cannot repair. The first day at the Tallis house is built slowly and pays off in the later parts, in wartime France and a London hospital.",
+   "cover": "https://covers.openlibrary.org/b/id/8381043-M.jpg",
+   "isbn": "1409090019"
+  },
+  "potom": {
+   "blurb": "Felix, a young Jewish boy, escapes a deportation train with six-year-old Zelda and the two must survive on their own in occupied Poland.",
+   "pitch": "A boy and a small girl jump from a deportation train and have to survive on their own. What holds the book together is Felix's stubborn hope and the story he keeps telling to protect her.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2091874/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788025722268",
+   "coverOL": "https://covers.openlibrary.org/b/id/5698409-M.jpg"
+  },
+  "princ-se-zlutou-hvezdou": {
+   "blurb": "A biography of Petr Ginz, a Prague boy classed as a Jewish Mischling, from his childhood and drawings through Terezin, where he edited the secret magazine Vedem, to his death in Birkenau.",
+   "pitch": "The life of a boy who wrote, drew and edited a secret magazine inside the Terezin ghetto. It follows him from Prague to Terezin, with his own writing and drawings. One of his pictures later travelled into space.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1144350/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788087969052",
+   "coverOL": null
+  },
+  "principalova-dcera": {
+   "blurb": "Petter sells ideas and plots to blocked writers, until a woman asks him to father her child and a later love in Italy draws him back toward her story.",
+   "pitch": "A tale built from stories within stories, told by a narrator whose profession is inventing them for other people. The framing keeps handing you a new tale.",
+   "cover": "https://covers.openlibrary.org/b/id/158096-M.jpg",
+   "isbn": "0753817004"
+  },
+  "proc-cist-fantasy-jak-to-ze-zvirata-v-knizka": {
+   "blurb": "A Czech selection of Le Guin's essays and lectures on why fantasy matters, why animals speak in children's books, and why some readers fear dragons.",
+   "pitch": "Le Guin makes the case for reading fantasy and for animals that talk in books. Short pieces, each a self-contained argument, and one of them is the well-known dragons lecture.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-11-09)"
+  },
+  "prvni-laska-posledni-pomazani": {
+   "blurb": "Eight early stories about adolescents, outcasts and damaged families, dealing with incest, abuse and murder.",
+   "pitch": "McEwan's first book, a prize winner in 1976, written in cool, precise prose about people at the edge of ordinary life. Eight separate stories, so you can judge it story by story.",
+   "cover": "https://covers.openlibrary.org/b/id/998750-M.jpg",
+   "isbn": "0140112804"
+  },
+  "prvni-zakon-kniha-druha-az-budou-viset": {
+   "blurb": "While Glokta defends a besieged city of traitors, a mixed party led by the first magus crosses the world on a quest, and a northern warrior tries to hold onto the man he wants to be.",
+   "pitch": "You spend most of the book inside the heads of people who want different things and say less than they think. Glokta, the tortured torturer, is the most vivid of them. Plots grind forward from what these people choose, not from fate.",
+   "cover": "https://covers.openlibrary.org/b/id/14595640-M.jpg",
+   "isbn": "9788411480734"
+  },
+  "prvni-zakon-kniha-treti-posledni-argument-kr": {
+   "blurb": "War engulfs the Union and the North while Bayaz moves toward his own aims, and Logen, Glokta and Jezal each meet the consequences of their choices.",
+   "pitch": "Everything the earlier books set in motion comes to a head, and you find out what each person was willing to do to get what they wanted. Glokta and Logen are still the most interesting company.",
+   "cover": "https://covers.openlibrary.org/b/id/6901175-M.jpg",
+   "isbn": "8420676047"
+  },
+  "prvorozeni": {
+   "blurb": "Bisesa Dutt wakes after nineteen years in cryogenic sleep as humanity prepares to meet a threat from the Firstborn, the ancient entities behind everything that happened before.",
+   "pitch": "A big-picture space-age story about people trying to stop an old, patient enemy with the tools they have. It is full of ideas about moving humanity off Earth.",
+   "cover": "https://covers.openlibrary.org/b/id/2405474-M.jpg",
+   "isbn": "9780345504487"
+  },
+  "putovani": {
+   "blurb": "Short reflections and poems by Hesse from 1917-1918 on wandering and on the landscape of Ticino.",
+   "pitch": "A small book of Hesse's walking meditations and a few poems, written as he settled in the Ticino south. Short and calm, for when you want a view rather than a plot.",
+   "cover": "https://covers.openlibrary.org/b/id/14850625-M.jpg",
+   "isbn": "9788082034809"
+  },
+  "radleyovi": {
+   "blurb": "A suburban doctor and his wife have hidden for seventeen years that they are vampires living on abstinence, while their teenage children know nothing. When one of the children is attacked, the family's secret and the wife's past with her brother-in-law come out.",
+   "pitch": "A quiet family on a quiet street has spent seventeen years pretending to be ordinary, and the children are starting to notice that something is off. It is dark comedy about what happens when you deny what you are. You get a vampire story told from inside the household.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2717399/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788072179107",
+   "coverOL": "https://covers.openlibrary.org/b/id/6676204-M.jpg"
+  },
+  "rodrigo-raubir-a-neohrozeny-spunt": {
+   "blurb": "A small boy vanishes from his travelling puppeteer family on a stormy night, because he longs to become squire to a robber knight.",
+   "pitch": "A tiny boy is set on becoming squire to the most dreaded robber knight in the land, who turns out to be less fearsome than his name. It is a short, light knight story for a quiet evening.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2316567/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788026215363",
+   "coverOL": "https://covers.openlibrary.org/b/id/8567843-M.jpg"
+  },
+  "roky-pod-psa": {
+   "blurb": "Cameron Wolfe, a fifteen-year-old in a poor Sydney family, tells of his brothers, his parents and his small hopes.",
+   "pitch": "You hear a fifteen-year-old boy tell his own story, with a family that has little money and a pair of brothers who want different things. It is short, funny and warm, and written before the author's best-known novel.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3223487/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788025711880",
+   "coverOL": "https://covers.openlibrary.org/b/id/15267390-M.jpg"
+  },
+  "satanarcheolegenialkohrozny-punc-prani": {
+   "blurb": "Tomcat Maurizio and raven Jakob try to stop a wizard and his aunt from filling their quota of mischief by midnight on New Year's Eve with a punch whose wishes come true backwards.",
+   "pitch": "A fat cat and a gloomy raven join forces to stop a wizard on New Year's Eve, as a punch that grants wishes backwards threatens to spoil everything. Reviewers say the two animals are drawn so lovingly you like them at once.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2434730/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788025732540",
+   "coverOL": null
+  },
+  "slunecni-boure": {
+   "blurb": "After five years on Mir, Bisesa Dutt returns to London and a violent solar storm shows that a far larger one is coming within years.",
+   "pitch": "A near-future problem with a deadline: how do you protect a planet from its own star. Scientists and politicians race to build a defence while the cause of the threat becomes clear.",
+   "cover": "https://covers.openlibrary.org/b/id/380348-M.jpg",
+   "isbn": "9780575078017"
+  },
+  "smecka-rvacu": {
+   "blurb": "Brothers Ruben and Cameron Wolfe join an illegal boxing circuit to earn money while their family struggles with unemployment.",
+   "pitch": "Two brothers take illegal fights for cash while their father is out of work. You stay close to what each of them wants and what holds the family together.",
+   "cover": "https://covers.openlibrary.org/b/id/8291535-M.jpg",
+   "isbn": "6053482048"
+  },
+  "smrtonosne-sny": {
+   "blurb": "George Orr discovers his dreams change reality; his psychiatrist Dr. Haber, who learns this is true, steers the dreams to fix the world and every fix goes wrong.",
+   "pitch": "A man whose dreams rewrite reality is handed to a doctor who wants to use that to fix the world. Each fix has a price nobody planned for, so you spend the book working out the consequences. Like Project Hail Mary, it follows one big idea to its far end.",
+   "cover": "https://covers.openlibrary.org/b/id/26458-M.jpg",
+   "isbn": "1668014963"
+  },
+  "sobota": {
+   "blurb": "On 15 February 2003, neurosurgeon Henry Perowne goes through a Saturday of squash, family and a street protest, and a brief collision with a thug that returns that night.",
+   "pitch": "A single day told closely from inside a surgeon's mind, with the pending war in the background. It asks what a comfortable man owes to people who are not.",
+   "cover": "https://covers.openlibrary.org/b/id/11280683-M.jpg",
+   "isbn": "8433978101"
+  },
+  "solar": {
+   "blurb": "Michael Beard, a Nobel-winning physicist coasting on his name, sees his fifth marriage collapse and then stumbles into a solar-energy project built on someone else's work.",
+   "pitch": "A sharp comic portrait of a brilliant man who is bad at everything except physics, set against the practical question of how to power the world. You follow his self-deceptions across ten years, from an Arctic expedition to the American desert.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/517905/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788020713667",
+   "coverOL": "https://covers.openlibrary.org/b/id/6298660-M.jpg"
+  },
+  "souborne-dilo-x": {
+   "blurb": "The final volume of Hesse's collected works in Czech: essays and impressions, recollections, letters to friends, political reflections, a selection of letters from 1930-1961, and reviews, with a study of his life and work.",
+   "pitch": "Hesse in his own voice rather than through a character: his reflections on writing, his memories, his letters to friends and what he made of the politics of his time. If you want the thinking behind the novels, this is where it is set down directly.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2365414/preview510",
+   "coverSource": "katalog",
+   "isbn": "8072034693",
+   "coverOL": null
+  },
+  "stopa-ze-snu": {
+   "blurb": "A 1945 collection of twelve shorter pieces by Hesse: autobiographical sketches, fables and fairy tales, parodies and reflections on words and literature.",
+   "pitch": "A varied handful of Hesse's shorter pieces: a childhood remembered as a place of magic, his own life summed up in a few pages and carried into imagined later years, and several fables with a deeper meaning under them. A way into his smaller writing if you like short pieces that hint at more than they say.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1716985/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788025721865",
+   "coverOL": null
+  },
+  "stribrna-vetev": {
+   "blurb": "In Roman Britain of 292 AD, the surgeon Justin and the centurion Flavius discover a conspiracy against the emperor and flee, protecting a buried Roman eagle.",
+   "pitch": "Two young men who become friends find themselves on the run from a plot in Roman Britain. It is an old-fashioned adventure told through the eyes of a doctor, not a soldier.",
+   "cover": "https://covers.openlibrary.org/b/id/11713822-M.jpg",
+   "isbn": "9780192750648"
+  },
+  "strom-stul-kniha": {
+   "blurb": "Young Sophie fights to keep her 88-year-old best friend, also named Sophie, from being moved to a care home as her memory fades, and asks her for stories about three words to help her remember them.",
+   "pitch": "A warm story of an unlikely friendship that turns on a memory test of three words. Each word opens a memory from the older Sophie's childhood, so you get two voices in one short book.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3204601/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788025745823",
+   "coverOL": "https://covers.openlibrary.org/b/id/14614816-M.jpg"
+  },
+  "stupne": {
+   "blurb": "The first volume of Hesse's collected works: late poems, early dreamy prose, and the novel Peter Camenzind about a young artist's growth.",
+   "pitch": "Hesse from the very beginning: the poems of a lifetime including the famous Stupne, his first romantic prose, and Peter Camenzind, the novel that made his name about a young man finding his way as an artist.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-11-09)"
+  },
+  "svetlonosi": {
+   "blurb": "As the last Roman troops leave Britain, the officer Aquila deserts to be with his family, watches Saxons destroy it, and is taken as a thrall before he fights his way back.",
+   "pitch": "A man loses everything when the Roman army pulls out of Britain, and the book follows twenty years of what he does about it. It asks what you keep alive when a civilisation falls, with a lead who has to decide what kind of man he will be.",
+   "cover": "https://covers.openlibrary.org/b/id/117197-M.jpg",
+   "isbn": "9780192757432"
+  },
+  "tajemstvi-divokeho-hvozdu": {
+   "blurb": "Sir Ristridin, a knight sent to explore the Wild Wood, has vanished, and young knight Tiuri and his squire and friend Piak go into the forest to find him, where they meet a plot against the kingdom.",
+   "pitch": "Two friends, a young knight and his squire, go into a haunted forest to find a missing knight. Loyalty and honour drive the plot, and the forest hides a conspiracy. A knightly adventure that is easy to follow.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3230041/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788000076133",
+   "coverOL": "https://covers.openlibrary.org/b/id/2201437-M.jpg"
+  },
+  "tajemstvi-karet": {
+   "blurb": "Twelve-year-old Hans Thomas travels with his father through Europe to find the mother who left years before, and on the way a dwarf gives him a magnifying glass that reveals a tiny book about a sailor and a deck of living cards.",
+   "pitch": "A road trip with a philosophising father, and a hidden tiny book that you read alongside it. The two stories answer each other, and the cards turn out to be a way of looking at your own life.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3079672/preview510",
+   "coverSource": "katalog",
+   "isbn": "8000011875",
+   "coverOL": "https://covers.openlibrary.org/b/id/13872674-M.jpg"
+  },
+  "tak-akorat": {
+   "blurb": "Albert, a happily married retired teacher, retreats alone to a lakeside cabin after learning from his doctor, who was once his lover, that he is terminally ill, and writes through the night about his life.",
+   "pitch": "One night, one cabin, one man deciding what to make of his life, with the cosmos in the background. It is short and works as a reckoning rather than a plot.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-11-09)"
+  },
+  "ted-je-to-na-nas": {
+   "blurb": "A philosophical essay by Gaarder on nature, sustainability, love, ageing and death, and on what we owe each other and the Earth.",
+   "pitch": "A book of reflections by an author known for explaining big questions simply, gathered around how we live on this planet. It moves between the cosmic and the personal.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2865270/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788076624108",
+   "coverOL": "https://covers.openlibrary.org/b/id/14542536-M.jpg"
+  },
+  "tessin": {
+   "blurb": "Hesse's reflections, poems and sketches on Ticino, where he lived after the First World War: nature, the lakes, the villages and their changing people.",
+   "pitch": "Hesse's love letter to the Ticino he chose to live in: lake and mountain walks, evenings and autumn days, with some gentle humour about the old villages turning into suburbs. A book to dip into if you like places seen with affection.",
+   "cover": "https://covers.openlibrary.org/b/id/3157373-M.jpg",
+   "isbn": "2883400989"
+  },
+  "to-je-otazka": {
+   "blurb": "A picture book that poses large questions about where the world came from and what it is to be human, alongside a wordless story of a boy and his missing friend.",
+   "pitch": "A book of questions that you can read quickly and then spend a long time with. The pictures carry a second, wordless story that runs alongside the questions.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/735802/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788000030753",
+   "coverOL": "https://covers.openlibrary.org/b/id/14510669-M.jpg"
+  },
+  "upgrade": {
+   "blurb": "In the late 2060s a Gene Protection Agency agent, Logan Ramsay, has his genome hacked on a raid and begins to think faster and see the world differently; he learns his own family is behind a spreading upgrade.",
+   "pitch": "After a raid on an illegal lab, Logan Ramsay starts to notice he is sharper than he used to be: faster reading, better memory, less sleep. Then he finds out who is spreading the change and why. It moves fast and keeps asking what we would do with a better mind.",
+   "cover": "https://covers.openlibrary.org/b/id/13236900-M.jpg",
+   "isbn": "0593157532"
+  },
+  "uvahy-a-imprese": {
+   "blurb": "The final volume of Hesse's collected works in Czech: essays and impressions, recollections, letters to friends, political reflections, a selection of letters from 1930-1961, and reviews, with a study of his life and work.",
+   "pitch": "Hesse in his own voice rather than through a character: his reflections on writing, his memories, his letters to friends and what he made of the politics of his time. If you want the thinking behind the novels, this is where it is set down directly.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-11-09)"
+  },
+  "vetrelci-z-hlubin": {
+   "blurb": "Mike Watson, a radio journalist, and his wife Phyllis watch fireballs fall into the sea on their honeymoon and then follow, over years, how humanity copes with something nobody can see.",
+   "pitch": "You watch a slow-motion catastrophe through the eyes of two journalists and a scientist nobody listens to. The book asks what a society really does when an unknown power attacks from the sea. If you liked the problem-solving thinking of Weir, this applies the same habit to a world-sized problem.",
+   "cover": "https://covers.openlibrary.org/b/id/93011-M.jpg",
+   "isbn": "0140017054"
+  },
+  "vezeni-svobody": {
+   "blurb": "Eight stories by Michael Ende for adults, in which a corridor that never ends, a villa that cannot be entered and a room beyond all fate are set against dark evil and black humour.",
+   "pitch": "Eight fantastic stories for adults from the author of the children's classics, about corridors that never end and doors that may lead anywhere. Reviewers describe them as stranger and darker than his children's books.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-11-09)"
+  },
+  "virus-stesti": {
+   "blurb": "A virus with a four percent death rate leaves its survivors permanently calm and happy, so people begin trying to catch it while rich interests set out to stop it. Three teenagers, one of them immune, are drawn into the fight over it.",
+   "pitch": "A virus that takes away stress makes people want to catch it, and those who profit from worry want it stopped. The book follows three teenagers across the consequences, from a girl living in a car to a billionaire's son. It asks what a world without fear would cost.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3590439/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788028411756",
+   "coverOL": "https://covers.openlibrary.org/b/id/14840430-M.jpg"
+  },
+  "vita-brevis-list-florie-aemilie-aureliovi-au": {
+   "blurb": "In a fictional letter, Floria Aemilia, the concubine Augustine put aside for his faith, answers his Confessions and defends the love they shared.",
+   "pitch": "A long letter from a woman to the man who left her for God, written as an answer to a famous confession. It sets human love against divine love in one voice.",
+   "cover": "https://covers.openlibrary.org/b/id/501079-M.jpg",
+   "isbn": "8478444815"
+  },
+  "vnitrni-zalezitosti": {
+   "blurb": "Eleven science-fiction and fantasy stories by Connie Willis, from a time-travel tale set in the Blitz to comic pieces on aliens, physicists and Christmas.",
+   "pitch": "Eleven stories by one of the most awarded writers in the field, from the Blitz to physicists at a conference. They range from serious time-travel to comedy about aliens and fashion. A good way to meet her work in short form.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-11-09)"
+  },
+  "volani-netvora": {
+   "blurb": "Thirteen-year-old Conor, whose mother is seriously ill, is visited at 12:07 each night by a monster that tells him three stories and wants a fourth from him.",
+   "pitch": "A boy, a monster and three stories that never turn out the way he expects. It is short and sticks to one question, what it takes to tell the truth about something you cannot bear. You may know the idea from Little Prince, which also gets at hard things through a simple frame.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/719197/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788074621512",
+   "coverOL": "https://covers.openlibrary.org/b/id/7011713-M.jpg"
+  },
+  "zabi-zamek": {
+   "blurb": "A boy dreams himself into a fairy tale where he must kiss a frog, and the frog king who rules the castle looks like his late grandfather.",
+   "pitch": "A short, gentle fairy tale about a first loss, told through a dream that slowly lines up with what is happening in the waking family. It is quick to finish and its ending is quiet.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2388069/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788024220468",
+   "coverOL": "https://covers.openlibrary.org/b/id/912343-M.jpg"
+  },
+  "zaludny-vesmir-johna-wyndhama": {
+   "blurb": "A Czech selection of twelve stories from across Wyndham's career, from an interplanetary trade novella to invasion and horror pieces.",
+   "pitch": "A dozen stories from a master of the quiet disaster, where one strange idea is followed through to what it does to ordinary people. They span his whole career, so you see how his ideas changed.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-11-09)"
+  },
+  "zavrazdeni-margaret-thatcherove-a-jine-povid": {
+   "blurb": "Ten short stories by Hilary Mantel, among them a Saudi Arabia tale in which a woman watches an IRA sniper take aim at Margaret Thatcher.",
+   "pitch": "Ten short stories by an author known for her historical novels, from a black comedy about an assassination to quiet pieces on guilt and regret. Each is short and finished in a sitting.",
+   "cover": "https://covers.openlibrary.org/b/id/10236757-M.jpg",
+   "isbn": "9781443436588"
+  },
+  "zprava-o-treti-planete": {
+   "blurb": "A 1982 Czech selection of Clarke stories and one novella, drawn from The Nine Billion Names of God and The Wind from the Sun.",
+   "pitch": "Short science fiction where one clear idea drives each story, from a computer finishing a sacred task to a probe meeting a giant living in Jupiter's atmosphere. It is the classic Clarke in a single book.",
+   "cover": "https://covers.openlibrary.org/b/id/7884139-M.jpg"
+  },
+  "ztroskotani-christophera-martina": {
+   "blurb": "A naval officer, thrown into the ocean when his ship is torpedoed, clings to a barren rock in mid-Atlantic and fights to survive by will alone while his past comes back to him.",
+   "pitch": "Torpedoed in mid-Atlantic, a naval officer drags himself onto a bare rock and sets out to survive on will alone. What he remembers of his life while he struggles is the real story, and a book about a man who will not let go raises a hard question about what we hold onto.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-11-09)"
+  },
+  "oko-casu": {
+   "blurb": "A UN helicopter crew in 2037, British soldiers of 1885 and Alexander the Great's army find themselves on one Earth stitched together from many eras, watched by silent floating spheres.",
+   "pitch": "Earth has been cut into pieces from different centuries and sewn back together: a UN helicopter crew from 2037 lands beside British soldiers of 1885, and Alexander the Great's army is on the march nearby. You follow them as they work out what this new world is, who made it, and what the silent spheres floating overhead want.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2386203/preview510",
+   "coverSource": "katalog",
+   "isbn": "8072147560",
+   "coverOL": "https://covers.openlibrary.org/b/id/210598-M.jpg"
   }
  },
  "readMedia": {
@@ -17491,7 +18668,8 @@
   },
   "problem-tri-teles-the-three-body-problem": {
    "cover": "https://cache.obalkyknih.cz/file/cover/3438743/preview510",
-   "isbn": "9788075770615"
+   "isbn": "9788075770615",
+   "coverOL": null
   },
   "permafrost": {
    "cover": "https://cache.obalkyknih.cz/file/cover/3201752/preview510",
@@ -17520,6 +18698,16 @@
    "cover": "https://covers.openlibrary.org/b/id/15247547-M.jpg",
    "isbn": "9781922790910",
    "blurb": "A hidden heir enrols in an imperial academy in a republic where citizens cede their will - and thus their strength - upward to their betters."
+  },
+  "vydech-exhalation": {
+   "cover": "https://cache.obalkyknih.cz/file/cover/2534766/preview510",
+   "isbn": "6056979865",
+   "blurb": "Nine stories, each taking one precisely stated premise - a mechanical universe, a device that records every moment - and following it exactly where it leads.",
+   "coverSource": "katalog",
+   "coverOL": "https://covers.openlibrary.org/b/id/8793546-M.jpg",
+   "pitch": "Nine stories, each starting from one precisely stated idea and following it exactly where it leads. The collection opens with its strongest pieces: a narrator facing a past cruelty and refusing to be that man again, then the title story, a mechanical universe thought through to the end of its own logic. You finish with ideas you keep turning over.",
+   "howto": "Give each story its own evening and a pause to think before the next, and read Chiang's note on it at the back only once you've finished it.",
+   "treasure": "The title story, in which a mechanical scientist dissects his own brain to learn how thought works, shows Chiang following one idea with total rigour until it becomes wonder."
   }
  },
  "rejectMedia": {
@@ -17990,10 +19178,6 @@
   "nepritel-v-dome-lindsey-davisova": {
    "cover": null,
    "coverNote": "no cover on Open Library after two passes (2026-08-31)"
-  },
-  "oko-casu-arthur-c-clarke-stephen-baxter": {
-   "cover": "https://covers.openlibrary.org/b/id/183223-M.jpg",
-   "isbn": "0002247046"
   },
   "pani-hemingwayova-naomi-wood": {
    "cover": "https://covers.openlibrary.org/b/id/10091399-M.jpg",
@@ -19061,6 +20245,74 @@
   "zeleny-dum-mario-vargas-llosa": {
    "cover": "https://covers.openlibrary.org/b/id/5413375-M.jpg",
    "isbn": "8490625662"
+  },
+  "mother-of-learning-domagoj-kurmaic": {
+   "cover": "https://covers.openlibrary.org/b/id/14809273-M.jpg",
+   "isbn": "9781955252096"
+  },
+  "maly-velky-john-crowley": {
+   "cover": "https://covers.openlibrary.org/b/id/9366932-M.jpg",
+   "isbn": "185798711X"
+  },
+  "slunecni-poutnik-david-brin": {
+   "cover": "https://covers.openlibrary.org/b/id/2918408-M.jpg",
+   "isbn": "9781857236293"
+  },
+  "tajna-historie-donna-tartt": {
+   "cover": "https://covers.openlibrary.org/b/id/744854-M.jpg",
+   "isbn": "9782724276886"
+  },
+  "forest-mage-robin-hobb": {
+   "cover": "https://covers.openlibrary.org/b/id/34784-M.jpg",
+   "isbn": "0061797693"
+  },
+  "renegade-s-magic-robin-hobb": {
+   "cover": "https://covers.openlibrary.org/b/id/1067754-M.jpg",
+   "isbn": "9780060758301"
+  },
+  "shaman-s-crossing-robin-hobb": {
+   "cover": "https://covers.openlibrary.org/b/id/13004-M.jpg",
+   "isbn": "9780060895396"
+  },
+  "abaddonova-brana-james-s-a-corey": {
+   "cover": "https://covers.openlibrary.org/b/id/7314237-M.jpg",
+   "isbn": "9780356506111"
+  },
+  "cerne-lode-pred-trojou-rosemary-sutcliff": {
+   "cover": "https://covers.openlibrary.org/b/id/1053251-M.jpg",
+   "isbn": "9780192750457"
+  },
+  "kdyz-jsme-byli-sirotci-kazuo-ishiguro": {
+   "cover": "https://covers.openlibrary.org/b/id/1047334-M.jpg",
+   "isbn": "0571249388"
+  },
+  "kuze-plna-stinu-frances-hardinge": {
+   "cover": "https://covers.openlibrary.org/b/id/38701-M.jpg",
+   "isbn": "0060876298"
+  },
+  "na-chesilske-plazi-ian-mcewan": {
+   "cover": "https://covers.openlibrary.org/b/id/8381043-M.jpg",
+   "isbn": "1409090019"
+  },
+  "nejdelsi-den-adama-t-patrick-ness": {
+   "cover": "https://covers.openlibrary.org/b/id/10200429-M.jpg",
+   "isbn": "140632700X"
+  },
+  "ostre-konce-joe-abercrombie": {
+   "cover": "https://covers.openlibrary.org/b/id/14543422-M.jpg",
+   "isbn": "9780316387330"
+  },
+  "putovani-odysseovo-rosemary-sutcliff": {
+   "cover": "https://covers.openlibrary.org/b/id/1053251-M.jpg",
+   "isbn": "9780192750457"
+  },
+  "zivot-na-ceste-oliver-sacks": {
+   "cover": "https://covers.openlibrary.org/b/id/6986188-M.jpg",
+   "isbn": "9780593466674"
+  },
+  "zrada-v-zime-daniel-abraham": {
+   "cover": "https://covers.openlibrary.org/b/id/524624-M.jpg",
+   "isbn": "9781429910156"
   }
  },
  "_null_cover": "null with a coverNote is a SETTLED row, not a gap: the search already ran on the date in the note and Open Library had nothing, so the app draws a typographic placeholder and its Gaps panel does not count it - re-running this script cannot clear it, and reporting it would name a shortfall the reader can do nothing about. Later runs skip it too; --retry-missing searches again. 'names a group, not a book' means the row covers an author or a category, so there is no single cover that would be honest. null with NO coverNote is the real gap: a row nothing has looked up yet.",
