@@ -12358,10 +12358,16 @@
    ],
    "prereq": [
     {
-     "ref": "(Protektorát #1-2, not on the shelf)",
-     "kind": "absent",
+     "ref": "protektorat-rychlostni-zbran",
+     "kind": "candidate",
      "need": "hard",
-     "note": "Earlier volume of this series, not held in Czech print or not screened yet (audit 2026-10-29)."
+     "note": "The Protectorate #1."
+    },
+    {
+     "ref": "protektorat-pad-do-chaosu",
+     "kind": "candidate",
+     "need": "hard",
+     "note": "The Protectorate #2; both on the shelf since 2026-11-10, replacing the absent link of the 2026-10-29 audit."
     }
    ]
   },
@@ -69986,6 +69992,595 @@
    "audience": "adult",
    "audienceSource": "default",
    "czTitle": "Vypálená nenávist"
+  },
+  {
+   "key": "cerveny-trpaslik-lepsi-nez-zivot",
+   "title": "Better Than Life",
+   "author": "Grant Naylor",
+   "cz": {
+    "state": "verified",
+    "publisher": "Argo",
+    "year": 2020,
+    "translator": "Ladislav Šenkyřík",
+    "recordId": "e2a63e07-c15e-4a4c-908b-7254b886d413",
+    "edition": "print",
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.mekvalmez.cz/records/e2a63e07-c15e-4a4c-908b-7254b886d413",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Červený trpaslík: Lepší než život",
+   "series": "Red Dwarf",
+   "flags": [
+    "Bound in the Argo 2020 'Cerveny trpaslik: omnibus' (1,072 pp.) with all four novels, the same catalogue record as the Cerveny trpaslik already on the shelf (Red Dwarf #1, Infinity Welcomes Careful Drivers). Last Human and Backwards are alternate sequels to Better Than Life and diverge from each other.",
+    "Judged here as this novel alone; written by Rob Grant and Doug Naylor jointly for the first two and solo for the last two (Last Human by Doug Naylor, Backwards by Rob Grant)."
+   ],
+   "prereq": [
+    {
+     "ref": "cerveny-trpaslik",
+     "kind": "candidate",
+     "need": "hard",
+     "note": "Red Dwarf #1; same omnibus volume."
+    }
+   ]
+  },
+  {
+   "key": "cerveny-trpaslik-posledni-clovek",
+   "title": "Last Human",
+   "author": "Doug Naylor",
+   "cz": {
+    "state": "verified",
+    "publisher": "Argo",
+    "year": 2020,
+    "translator": "Ladislav Šenkyřík",
+    "recordId": "e2a63e07-c15e-4a4c-908b-7254b886d413",
+    "edition": "print",
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.mekvalmez.cz/records/e2a63e07-c15e-4a4c-908b-7254b886d413",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Červený trpaslík: Poslední člověk",
+   "series": "Red Dwarf",
+   "flags": [
+    "Bound in the Argo 2020 'Cerveny trpaslik: omnibus' (1,072 pp.) with all four novels, the same catalogue record as the Cerveny trpaslik already on the shelf (Red Dwarf #1, Infinity Welcomes Careful Drivers). Last Human and Backwards are alternate sequels to Better Than Life and diverge from each other.",
+    "Roznov also holds Last Human as a separate Argo 2003 print edition.",
+    "Judged here as this novel alone; written by Rob Grant and Doug Naylor jointly for the first two and solo for the last two (Last Human by Doug Naylor, Backwards by Rob Grant)."
+   ],
+   "prereq": [
+    {
+     "ref": "cerveny-trpaslik",
+     "kind": "candidate",
+     "need": "hard",
+     "note": "Red Dwarf #1 introduces the crew; same omnibus volume."
+    }
+   ]
+  },
+  {
+   "key": "cerveny-trpaslik-pozpatku",
+   "title": "Backwards",
+   "author": "Rob Grant",
+   "cz": {
+    "state": "verified",
+    "publisher": "Argo",
+    "year": 2020,
+    "translator": "Ladislav Šenkyřík",
+    "recordId": "e2a63e07-c15e-4a4c-908b-7254b886d413",
+    "edition": "print",
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.mekvalmez.cz/records/e2a63e07-c15e-4a4c-908b-7254b886d413",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Červený trpaslík: Pozpátku",
+   "series": "Red Dwarf",
+   "flags": [
+    "Bound in the Argo 2020 'Cerveny trpaslik: omnibus' (1,072 pp.) with all four novels, the same catalogue record as the Cerveny trpaslik already on the shelf (Red Dwarf #1, Infinity Welcomes Careful Drivers). Last Human and Backwards are alternate sequels to Better Than Life and diverge from each other.",
+    "Judged here as this novel alone; written by Rob Grant and Doug Naylor jointly for the first two and solo for the last two (Last Human by Doug Naylor, Backwards by Rob Grant)."
+   ],
+   "prereq": [
+    {
+     "ref": "cerveny-trpaslik",
+     "kind": "candidate",
+     "need": "hard",
+     "note": "Red Dwarf #1 introduces the crew; same omnibus volume."
+    },
+    {
+     "ref": "cerveny-trpaslik-lepsi-nez-zivot",
+     "kind": "candidate",
+     "need": "hard",
+     "note": "Rob Grant continues from the end of Better Than Life; same omnibus volume."
+    }
+   ]
+  },
+  {
+   "key": "cizinec-v-cizi-zemi",
+   "title": "Stranger in a Strange Land",
+   "author": "Robert A. Heinlein",
+   "cz": {
+    "state": "none",
+    "checked": "2026-11-10"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Cizinec v cizi zemi",
+   "flags": [
+    "A Czech print edition exists (And Classic 1994, Cizinec v cizi zemi); Roznov lists it but holds no physical copy and Valasske Mezirici has none.",
+    "1961 publication was cut by about 25 percent; the unexpurgated text came in 1991, so the edition read matters for sexual-content and religion-satire weight.",
+    "Same author as Citizen of the Galaxy and The Puppet Masters; author research shared, books judged separately.",
+    "Opening structure not sourced; Martian backstory then Earth politics, strands not checked."
+   ],
+   "enText": {
+    "level": "moderate",
+    "why": "1961 American prose with slang and long philosophical dialogues, plus Martian terms like grok.",
+    "checked": "2026-11-10"
+   }
+  },
+  {
+   "key": "hvezdotreseni",
+   "title": "Starquake",
+   "author": "Robert L. Forward",
+   "cz": {
+    "state": "none",
+    "checked": "2026-11-10"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Hvězdotřesení",
+   "series": "Dragon's Egg",
+   "flags": [
+    "Sequel to Dragon's Egg, which is on the shelf; this continues the same story directly.",
+    "Czech print edition exists (Polaris 2000); Roznov's catalogue lists it but holds no copy, and Valasske Mezirici has none.",
+    "Covers 24 hours of human time; most of the book follows the cheela."
+   ],
+   "enText": {
+    "level": "moderate",
+    "why": "Plain narrative prose, but the physics explanations and invented alien terms are dense.",
+    "checked": "2026-11-10"
+   },
+   "prereq": [
+    {
+     "ref": "draci-vejce",
+     "kind": "candidate",
+     "need": "hard",
+     "note": "Dragon's Egg; this book continues the same story directly."
+    }
+   ]
+  },
+  {
+   "key": "konec-detstvi",
+   "title": "Childhood's End",
+   "author": "Arthur C. Clarke",
+   "cz": {
+    "state": "none",
+    "checked": "2026-11-10"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Konec detstvi",
+   "flags": [
+    "A Czech print edition exists (Laser 1992, Konec detstvi); Roznov lists it but holds no physical copy and Valasske Mezirici has none.",
+    "Contains a staged Ouija-board session (Rupert Boyce's party), read in the text as emerging telepathy.",
+    "Cast changes across three parts; no single lead throughout."
+   ],
+   "enText": {
+    "level": "moderate",
+    "why": "Clear 1950s prose with abstract passages on philosophy and cosmology.",
+    "checked": "2026-11-10"
+   }
+  },
+  {
+   "key": "marsovsky-skluz-v-case",
+   "title": "Martian Time-Slip",
+   "author": "Philip K. Dick",
+   "cz": {
+    "state": "none",
+    "checked": "2026-11-10"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Marsovsky skluz v case",
+   "flags": [
+    "A Czech print edition exists (Leonardo 1998, Marsovsky skluz v case); Roznov lists it but holds no physical copy and Valasske Mezirici has none.",
+    "Jack Bohlen's affair is with Doreen Anderton, Arnie Kott's mistress.",
+    "Multiple strands from the start (Bohlen, Kott, the Steiners); opening not sourced."
+   ],
+   "enText": {
+    "level": "moderate",
+    "why": "1964 American prose with some hallucinatory passages, otherwise clear.",
+    "checked": "2026-11-10"
+   }
+  },
+  {
+   "key": "obcan-galaxie",
+   "title": "Citizen of the Galaxy",
+   "author": "Robert A. Heinlein",
+   "cz": {
+    "state": "none",
+    "checked": "2026-11-10"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Obcan Galaxie",
+   "flags": [
+    "A Czech print edition exists (And Classic 1996, Obcan Galaxie); Roznov lists it but holds no physical copy and Valasske Mezirici has none.",
+    "Counted among Heinlein's juveniles (1957).",
+    "Same author as Stranger in a Strange Land and The Puppet Masters; author research shared."
+   ],
+   "enText": {
+    "level": "easy",
+    "why": "Plain 1950s juvenile prose, short chapters, some invented ship and culture terms.",
+    "checked": "2026-11-10"
+   }
+  },
+  {
+   "key": "potomci-lidi",
+   "title": "The Children of Men",
+   "author": "P. D. James",
+   "cz": {
+    "state": "none",
+    "checked": "2026-11-10"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Potomci lidi",
+   "flags": [
+    "A Czech print edition exists (Motto 2006, Potomci lidi); Roznov lists it but holds no physical copy and Valasske Mezirici has none.",
+    "Differs substantially from the 2006 film: in the book the pregnant woman is Julian, a former student of Theo's.",
+    "Catalogue signal 'detective' reflects the author's crime fiction, not this book."
+   ],
+   "enText": {
+    "level": "moderate",
+    "why": "Literary British prose with long reflective sentences and a diary framing, but no dialect.",
+    "checked": "2026-11-10"
+   }
+  },
+  {
+   "key": "protektorat-pad-do-chaosu",
+   "title": "Chaos Vector",
+   "author": "Megan E. O'Keefe",
+   "cz": {
+    "state": "verified",
+    "publisher": "Host",
+    "year": 2023,
+    "translator": "Aleš Drobek",
+    "recordId": "481b46a9-8f07-4cec-b952-0cd4e1a0a5f8",
+    "edition": "print",
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.mekvalmez.cz/records/481b46a9-8f07-4cec-b952-0cd4e1a0a5f8",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Protektorát II: Pád do chaosu",
+   "series": "The Protectorate",
+   "tags": [
+    "exploration"
+   ],
+   "flags": [
+    "Sequel to Velocity Weapon (Protectorate #1, staged separately); Catalyst Gate (#3) is on the shelf.",
+    "Czech print Host 2023 (translator Ales Drobek).",
+    "Filter 7 unresolved: a single reviewer (MadProfessah) reports a lead, Biran, is also attracted to men in later chapters; a Czech reviewer calls his romantic line merely hinted. Check the text before proposing.",
+    "A fourth narrator, Tomas, is added per reviews."
+   ],
+   "prereq": [
+    {
+     "ref": "protektorat-rychlostni-zbran",
+     "kind": "candidate",
+     "need": "hard",
+     "note": "The Protectorate #1; this volume continues its plot."
+    }
+   ]
+  },
+  {
+   "key": "protektorat-rychlostni-zbran",
+   "title": "Velocity Weapon",
+   "author": "Megan E. O'Keefe",
+   "cz": {
+    "state": "verified",
+    "publisher": "Host",
+    "year": 2023,
+    "translator": "Aleš Drobek",
+    "recordId": "a45105c7-bd17-4b12-8c61-e8314b4de82f",
+    "edition": "print",
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.mekvalmez.cz/records/a45105c7-bd17-4b12-8c61-e8314b4de82f",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Protektorát I: Rychlostní zbraň",
+   "series": "The Protectorate",
+   "tags": [
+    "exploration"
+   ],
+   "flags": [
+    "Protectorate #1; #2 (Chaos Vector) is also staged and #3 (Catalyst Gate) is on the shelf.",
+    "Czech print Host 2023 (translator Ales Drobek).",
+    "Three POVs per reviewers (Sanda, Biran, Jules); the third is the commonest complaint. Chapter-one POV count not checked in text.",
+    "Sanda and Biran were raised by a gay male couple (reviews); the setting is described as queer-normative; reviewers note no sexual scenes."
+   ]
+  },
+  {
+   "key": "ritualy-dospelosti",
+   "title": "Adulthood Rites",
+   "author": "Octavia E. Butler",
+   "cz": {
+    "state": "none",
+    "checked": "2026-11-10"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Rituály dospělosti",
+   "series": "Xenogenesis",
+   "flags": [
+    "Xenogenesis #2 (Lilith's Brood); #1 (Dawn) is held by neither library and is not on the shelf, and this opening presumes its premise; read a summary first.",
+    "Czech print edition exists (Polaris 1998); Roznov's catalogue lists it but holds no copy, and Valasske Mezirici has none.",
+    "The Oankali have a third sex (ooloi) that mediates mating with humans; a reviewer notes an ooloi ordering a man to mate. No lead's same-sex relationship found; not checked in text."
+   ],
+   "enText": {
+    "level": "easy",
+    "why": "Butler's prose is spare and plain; the invented Oankali terms are few and explained in context.",
+    "checked": "2026-11-10"
+   },
+   "prereq": [
+    {
+     "ref": "(Usvit / Dawn, Xenogenesis #1, not on the shelf)",
+     "kind": "absent",
+     "need": "hard",
+     "note": "Held by neither library (checked 2026-11-10); the opening presumes its premise."
+    }
+   ]
+  },
+  {
+   "key": "temne-svetelne-roky",
+   "title": "The Dark Light Years",
+   "author": "Brian W. Aldiss",
+   "cz": {
+    "state": "none",
+    "checked": "2026-11-10"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Temne svetelne roky",
+   "flags": [
+    "A Czech print edition exists (Laser 1994, Temne svetelne roky); Roznov lists it but holds no physical copy and Valasske Mezirici has none.",
+    "Short novel (1964); reviews describe the plot as loosely connected."
+   ],
+   "enText": {
+    "level": "moderate",
+    "why": "British 1960s prose, satirical and sometimes ironic, with no heavy dialect.",
+    "checked": "2026-11-10"
+   }
+  },
+  {
+   "key": "ten-bajecny-den",
+   "title": "This Perfect Day",
+   "author": "Ira Levin",
+   "cz": {
+    "state": "none",
+    "checked": "2026-11-10"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Ten báječný den",
+   "tags": [
+    "exploration"
+   ],
+   "flags": [
+    "Czech print edition exists (Ivo Zelezny 1994); Roznov's catalogue lists it but holds no copy, and Valasske Mezirici has none.",
+    "Reviewers describe the lead raping the woman he loves to prove she is being brainwashed, with the novel forgiving it; secondhand, not checked in the text.",
+    "Thriller-leaning dystopia, first published 1970."
+   ],
+   "enText": {
+    "level": "easy",
+    "why": "Plain 1970 genre prose; invented vocabulary is limited to the controlled society's few terms.",
+    "checked": "2026-11-10"
+   }
+  },
+  {
+   "key": "triska-v-bozim-oku",
+   "title": "The Mote in God's Eye",
+   "author": "Larry Niven, Jerry Pournelle",
+   "cz": {
+    "state": "none",
+    "checked": "2026-11-10"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Triska v bozim oku",
+   "series": "Moties",
+   "flags": [
+    "A Czech print edition exists (And Classic 1997, Triska v bozim oku); Roznov lists it but holds no physical copy and Valasske Mezirici has none.",
+    "Sequel The Gripping Hand (1993) follows; not assessed.",
+    "Reviews describe a slow opening of exposition before the aliens appear."
+   ],
+   "enText": {
+    "level": "moderate",
+    "why": "Readable collaborative prose, but with naval and technical vocabulary and a large cast.",
+    "checked": "2026-11-10"
+   }
+  },
+  {
+   "key": "virtualni-divka",
+   "title": "Virtual Girl",
+   "author": "Amy Thomson",
+   "cz": {
+    "state": "none",
+    "checked": "2026-11-10"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Virtualni divka",
+   "flags": [
+    "A Czech print edition exists (Talpress 1998, Virtualni divka); Roznov lists it but holds no physical copy and Valasske Mezirici has none.",
+    "Winner of the John W. Campbell Award for Best New Writer (1994).",
+    "Catalogue occult signal comes from the blurb's Genesis allusion; no rite sourced."
+   ],
+   "enText": {
+    "level": "easy",
+    "why": "Plain 1990s American prose with simple sentences.",
+    "checked": "2026-11-10"
+   }
+  },
+  {
+   "key": "vladci-loutek",
+   "title": "The Puppet Masters",
+   "author": "Robert A. Heinlein",
+   "cz": {
+    "state": "none",
+    "checked": "2026-11-10"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Vladci loutek",
+   "flags": [
+    "A Czech print edition exists (AG kult 1992, Vladci loutek); Roznov lists it but holds no physical copy and Valasske Mezirici has none.",
+    "Same author as Stranger in a Strange Land and Citizen of the Galaxy; author research shared.",
+    "Investigation-shaped hunt for carriers, not a whodunnit; flagged, not a veto."
+   ],
+   "enText": {
+    "level": "easy",
+    "why": "Short, plain first-person 1951 prose with fast chapters.",
+    "checked": "2026-11-10"
+   }
+  },
+  {
+   "key": "zahada-sfingy",
+   "title": "Arm of the Sphinx",
+   "author": "Josiah Bancroft",
+   "cz": {
+    "state": "verified",
+    "library": "roznov",
+    "publisher": "Host",
+    "year": 2021,
+    "translator": "Aleš Drobek",
+    "recordId": "2d15cc9d-0d83-48d3-b5db-7564f1e0d89e",
+    "edition": "print",
+    "branches": [
+     "Rožnov"
+    ],
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.knir.cz/records/2d15cc9d-0d83-48d3-b5db-7564f1e0d89e",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "fantasy",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Záhada sfingy",
+   "series": "The Books of Babel",
+   "flags": [
+    "Sequel: The Books of Babel #1 (Senlin Ascends) is on the shelf; #3 (The Hod King) follows.",
+    "Czech print only at the Roznov library (Host 2021, translator Ales Drobek).",
+    "Narration widens from one POV to several (Edith, Voleta, Adam, Iren besides Senlin) per reviewers; opening shape not checked in text.",
+    "Reviews are silent on same-sex relationships among the leads; unverified."
+   ],
+   "prereq": [
+    {
+     "ref": "cesta-do-babylonu",
+     "kind": "candidate",
+     "need": "hard",
+     "note": "The Books of Babel #1; this volume continues its plot."
+    }
+   ]
   }
  ],
  "sweeps": [
@@ -70755,6 +71350,46 @@
     "Recent bestsellers with no adaptation yet, and Czech pop culture, which Wikidata sitelinks under-represent",
     "The 'dobrodruzne romany' heading (353 records), where the famous Verne and Stevenson titles sit unscreened",
     "The Roznov-pull triage rows (src knir-*) still at next: review"
+   ]
+  },
+  {
+   "at": "2026-11-10",
+   "scope": "SF/F top-up, two pools. (1) Series gaps: every SF/F series in book-series.json whose shelf volumes average 70+ at the low end and that has unscreened volumes (15 series, 39 volumes; Raven's Shadow left for after its opener is read, Wayfarers skipped as Becky Chambers). (2) What was left of the ranked queue: promote.py batch --cls sf-fantasy at >=4, 15 works, of which Strazce! Strazce! (read as Guards! Guards!), Konec civilizace (already on the shelf) and Vosi tovarna (not SF) were dropped.",
+   "queries": [
+    "katalog.mekvalmez.cz and katalog.knir.cz api/search q=<author> for the 15 series authors, every holding listed and matched to the missing volumes",
+    "katalog.knir.cz api/exemplars?document=<id> for every Roznov print record",
+    "argo.cz for the contents of the Cerveny trpaslik omnibus"
+   ],
+   "pulled": 54,
+   "screened": 19,
+   "yield": [
+    "cerveny-trpaslik-lepsi-nez-zivot",
+    "cerveny-trpaslik-posledni-clovek",
+    "cerveny-trpaslik-pozpatku",
+    "cizinec-v-cizi-zemi",
+    "hvezdotreseni",
+    "konec-detstvi",
+    "marsovsky-skluz-v-case",
+    "obcan-galaxie",
+    "potomci-lidi",
+    "protektorat-pad-do-chaosu",
+    "protektorat-rychlostni-zbran",
+    "ritualy-dospelosti",
+    "temne-svetelne-roky",
+    "ten-bajecny-den",
+    "triska-v-bozim-oku",
+    "virtualni-divka",
+    "vladci-loutek",
+    "zahada-sfingy"
+   ],
+   "lesson": "Series gaps are mostly untranslated or not held: 7 of 39 missing volumes had a Czech copy, and 3 of those are Red Dwarf 2-4 bound inside the 1,072-page Argo omnibus Valmez already held for volume 1 (contents per argo.cz), which a title search cannot see. The ranked SF/F queue is spent: its last 12 works were Roznov records with NO physical copy (api/exemplars returns []), so every one is recorded with cz none. A Roznov triage row is not a holding; run second-library copies() before trusting one. Two reached the 68 line at the low end: Protektorat I: Rychlostni zbran 70-80 and Zahada sfingy 68-78. Krvava Rose is rejected on filter 7 (the POV lead Tam's romance), which under the series-whole rule blocks The Band although Kralove Wyldu has a different lead.",
+   "ruledOut": "Krvava Rose rejected on axis:same-sex-romance. Ztrata spojeni (Murderbot) was already rejected on axis:detective. Ohen nad Hlubinou stays cz none: Roznov's record has no copy.",
+   "notYetSwept": [
+    "Series volumes not held in Czech by either library, listed in each series record's note (Old Man's War, Greatcoats, Lost Fleet, Codex Alera, Forever War, Dogs of War, Sparrow, Zones of Thought, Book of the Ancestor, Sprawl, Books of Babel 3-4)",
+    "The 42 other SF/F series with gaps whose shelf volumes average 64-69 at the low end",
+    "The Gripping Hand (sequel to Triska v bozim oku), not assessed",
+    "A copies() pass over the Roznov-pull triage rows (src knir-*) to mark records that have no physical copy",
+    "Unranked SF/F works (2,276): left alone, per the 2026-08-31 unknown-pool result"
    ]
   }
  ],

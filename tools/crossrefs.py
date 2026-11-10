@@ -177,7 +177,9 @@ STOP_TITLES = {"empire", "the joke", "the truth",
                "potom", "then", "anna", "the innocent", "felix", "doctor who",
                # 2026-11-10, the famous-authors screen: Endo's `Silence` fired on the Psy
                # "Silence" of two Singh rows and `The Help` on "escapes with the help of".
-               "silence", "the help"}
+               # The SF/F series-gap screen: `Last Human` on "the last human city", and the
+               # Red Dwarf series name on the ship itself in its own volume 1's row.
+               "silence", "the help", "last human", "red dwarf"}
 
 # Phrasing that argues from the neighbours without naming one.
 # "the Author(s) row" is exempt: that points at the Authors table in

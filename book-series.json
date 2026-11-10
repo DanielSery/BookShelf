@@ -680,7 +680,7 @@
    "read": [],
    "rejected": [],
    "volumes": 3,
-   "note": ""
+   "note": "Not held in Czech by either library (checked 2026-11-10): Grey Sister and Holy Sister."
   },
   "book-of-the-new-sun": {
    "name": "Kniha Nového Slunce",
@@ -705,12 +705,16 @@
     {
      "key": "cesta-do-babylonu",
      "n": 1
+    },
+    {
+     "key": "zahada-sfingy",
+     "n": 2
     }
    ],
    "read": [],
    "rejected": [],
    "volumes": 4,
-   "note": ""
+   "note": "Not held in Czech by either library (checked 2026-11-10): The Hod King and The Fall of Babel."
   },
   "borderlands-of-meekhan": {
    "name": "Příběhy z meekhanského pomezí",
@@ -1426,7 +1430,7 @@
    "read": [],
    "rejected": [],
    "volumes": 6,
-   "note": ""
+   "note": "Not held in Czech by either library (checked 2026-11-10): volumes 2-6."
   },
   "consentiency": {
    "name": "ConSentiency",
@@ -2075,7 +2079,7 @@
    "read": [],
    "rejected": [],
    "volumes": 2,
-   "note": ""
+   "note": "Not held in Czech by either library (checked 2026-11-10): Bear Head."
   },
   "doktor-proktor": {
    "name": "Doktor Proktor",
@@ -2130,6 +2134,10 @@
     {
      "key": "draci-vejce",
      "n": 1
+    },
+    {
+     "key": "hvezdotreseni",
+     "n": 2
     }
    ],
    "read": [],
@@ -2811,7 +2819,7 @@
    "read": [],
    "rejected": [],
    "volumes": 2,
-   "note": "Forever Free is the direct sequel; Forever Peace is only thematically linked"
+   "note": "Forever Free is the direct sequel; Forever Peace is only thematically linked. Not held in Czech by either library (checked 2026-11-10): Forever Free."
   },
   "foundation": {
    "name": "Nadace",
@@ -3158,7 +3166,7 @@
    "read": [],
    "rejected": [],
    "volumes": 4,
-   "note": ""
+   "note": "Not held in Czech by either library (checked 2026-11-10): Knight's Shadow, Saint's Blood and Tyrant's Throne."
   },
   "green-bone-saga": {
    "name": "Green Bone Saga",
@@ -4405,7 +4413,7 @@
    "read": [],
    "rejected": [],
    "volumes": 6,
-   "note": "Main six-book arc; spin-off series follow"
+   "note": "Main six-book arc; spin-off series follow. Not held in Czech by either library (checked 2026-11-10): Fearless to Victorious (#2-6); the library e-loan Predvoj is the Genesis Fleet prequel series, not this arc."
   },
   "lot-lands": {
    "name": "Lot Lands",
@@ -4915,6 +4923,21 @@
    "volumes": null,
    "note": ""
   },
+  "moties": {
+   "name": "Tříska v božím oku",
+   "nameEn": "Moties",
+   "kind": "series",
+   "members": [
+    {
+     "key": "triska-v-bozim-oku",
+     "n": 1
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 2,
+   "note": "The sequel, The Gripping Hand, was not assessed."
+  },
   "mouse-guard": {
    "name": "Myší hlídka",
    "nameEn": "Mouse Guard",
@@ -5163,7 +5186,7 @@
    ],
    "rejected": [],
    "volumes": 6,
-   "note": ""
+   "note": "Not held in Czech by either library (checked 2026-11-10): Zoe's Tale, The Human Division and The End of All Things."
   },
   "old-new-york": {
    "name": "Old New York",
@@ -5645,6 +5668,14 @@
    "kind": "series",
    "members": [
     {
+     "key": "protektorat-rychlostni-zbran",
+     "n": 1
+    },
+    {
+     "key": "protektorat-pad-do-chaosu",
+     "n": 2
+    },
+    {
      "key": "protektorat",
      "n": 3
     }
@@ -5942,12 +5973,24 @@
     {
      "key": "cerveny-trpaslik",
      "n": 1
+    },
+    {
+     "key": "cerveny-trpaslik-lepsi-nez-zivot",
+     "n": 2
+    },
+    {
+     "key": "cerveny-trpaslik-posledni-clovek",
+     "n": 3
+    },
+    {
+     "key": "cerveny-trpaslik-pozpatku",
+     "n": 4
     }
    ],
    "read": [],
    "rejected": [],
    "volumes": 4,
-   "note": ""
+   "note": "All four novels are bound in the Argo 2020 omnibus held at Valasske Mezirici."
   },
   "red-rising": {
    "name": "Red Rising",
@@ -6942,7 +6985,7 @@
    "read": [],
    "rejected": [],
    "volumes": 2,
-   "note": ""
+   "note": "Not held in Czech by either library (checked 2026-11-10): Children of God."
   },
   "spellshop": {
    "name": "Krámek s kouzly",
@@ -6989,7 +7032,7 @@
     "Hrabe Nula"
    ],
    "volumes": 3,
-   "note": ""
+   "note": "Not held in Czech by either library (checked 2026-11-10): Mona Lisa Overdrive."
   },
   "star-cat": {
    "name": "Hvězdokotě",
@@ -7425,7 +7468,9 @@
     }
    ],
    "read": [],
-   "rejected": [],
+   "rejected": [
+    "Krvava Rose (Bloody Rose)"
+   ],
    "volumes": 3,
    "note": ""
   },
@@ -8594,6 +8639,21 @@
    "volumes": 5,
    "note": ""
   },
+  "xenogenesis": {
+   "name": "Xenogenesis",
+   "nameEn": "Lilith's Brood (Xenogenesis)",
+   "kind": "series",
+   "members": [
+    {
+     "key": "ritualy-dospelosti",
+     "n": 2
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "Usvit (#1) and Imago (#3) are held by neither library (checked 2026-11-10)."
+  },
   "young-elites": {
    "name": "Mladí vyvolení",
    "nameEn": "The Young Elites",
@@ -8694,7 +8754,7 @@
    "read": [],
    "rejected": [],
    "volumes": 3,
-   "note": "Standalone novels with different casts; A Deepness in the Sky is a prequel written later."
+   "note": "Standalone novels with different casts; A Deepness in the Sky is a prequel written later. Not held in Czech by either library (checked 2026-11-10): The Children of the Sky."
   }
  }
 }
