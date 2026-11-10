@@ -48,8 +48,10 @@ MAX_EDS = 8
 # and comics alongside their print lists, so the publisher alone cannot decide it.
 AUDIO_RS = re.compile(r"\bčte\b|\bčtou\b|načet|nahrál|zvukov|interpret|"
                       r"\bread by\b|audiokniha", re.I)
+# `volně vypráv` catches Ondřej Neff's Albatros 2014 Tajuplný ostrov, "podle románu
+# Julese Verna volně vypráví", which classified as print and became the route.
 ADAPT_RS = re.compile(r"zkrácen|zkráceno|převyprávěl|převyprávěn|adaptac|adaptoval|"
-                      r"volně podle|podle stejnojmenn|komiks|"
+                      r"volně podle|volně vypráv|podle stejnojmenn|komiks|"
                       r"pro (?:děti|mládež) upravil|upravil pro", re.I)
 # `kresl` was here and matched 93 rows, almost none of them adaptations: it fires on
 # the AUTHOR NAME "Kresley Cole", on the title "Kordelie a kreslozemci", and on any

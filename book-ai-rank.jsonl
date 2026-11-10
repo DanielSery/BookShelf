@@ -1314,7 +1314,7 @@
 {"k": "jsem-paula~ondrej-stefanik", "s": 4, "w": "mother living through child's likes", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "jsem-rozohnena~tahereh-mafi", "s": 4, "w": "fantasy character", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "jsem-smrt~larsen-elisabeth-helland", "s": 4, "w": "emotional", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
-{"k": "jsou-svetla-ktera-nevidime~anthony-doerr", "s": 4, "w": "pilot", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-26"}
+{"k": "jsou-svetla-ktera-nevidime~anthony-doerr", "s": 4, "w": "pilot", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-26", "done": "jsou-svetla-ktera-nevidime"}
 {"k": "jste-tady~david-nicholls", "s": 4, "w": "Divorced couple lake walking", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 1, "done": "jste-tady"}
 {"k": "julie-a-zralok~hargrave-kiran-millwood", "s": 4, "w": "understan", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "julie-z-vlci-smecky~", "s": 4, "w": "Inuit girl wolf pack", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 1}
@@ -12001,7 +12001,7 @@
 {"k": "na-vysinach~thomas-bernhard", "s": 3, "w": "Autobiografická novela o utrpení", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "na-zapad-od-rima~john-fante", "s": 3, "w": "two novellas, youth and writing", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "na-zapad-od-svobody~thomas-engstrom", "s": 3, "w": "Cold War spy thriller", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
-{"k": "na-zapadni-fronte-klid~erich-maria-remarque", "s": 3, "w": "Can't tell", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
+{"k": "na-zapadni-fronte-klid~erich-maria-remarque", "s": 3, "w": "Can't tell", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "na-zapadni-fronte-klid"}
 {"k": "na-zavisti~marie-irova", "s": 3, "w": "Metadata insufficient", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "na-zemi-jsme-na-okamzik-nadherni~ocean-vuong", "s": 3, "w": "substantial plot unknown", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "na-zemske-stezce~martin-nesmerak", "s": 3, "w": "No strong signal", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
@@ -19968,7 +19968,7 @@
 {"k": "vynalezci-a-jejich-vymazlene-vynalezy~goldsmith-mike", "s": 3, "w": "no annotation", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
 {"k": "vynalezci-zazraku-sebrane-povidky-h-g-wellse-sva~", "s": 3, "w": "Sci-fi: limited info", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "done": "vynalezci-zazraku-sebrane-povidky-h-g-wellse"}
 {"k": "vynalezy~murphy-glenn", "s": 3, "w": "no annotation", "m": "haiku-4.5", "pd": "97382ffa6d47", "at": "2026-08-28", "rec": 0, "dissent": 1, "s1": 3}
-{"k": "vypalena-nenavist~angie-thomasova", "s": 3, "w": "Unclear", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-26"}
+{"k": "vypalena-nenavist~angie-thomasova", "s": 3, "w": "Unclear", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-26", "done": "vypalena-nenavist"}
 {"k": "vypalene-stiny~kamila-shamsie", "s": 3, "w": "historical fiction", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "vyplata~philip-k-dick", "s": 3, "w": "Dick sci-fi stories", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 1}
 {"k": "vyplavena-smrt~tomas-klimek", "s": 3, "w": "No strong signal", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0, "veto": "axis:detective"}
@@ -26228,7 +26228,7 @@
 {"k": "plameny-pekla~leo-kessler", "s": 2, "w": "military", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
 {"k": "plan-uniku~steve-hamilton", "s": 2, "w": "crime thriller, mob boss", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "planeta-leon~j-m-troska", "s": 2, "w": "Young men follow signal; adventure", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
-{"k": "planeta-opic~william-t-quick", "s": 2, "w": "licensed Planet of the Apes tie-in", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
+{"k": "planeta-opic~william-t-quick", "s": 2, "w": "licensed Planet of the Apes tie-in", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0, "done": "planeta-opic"}
 {"k": "planeta-zeme~enrico-lavagno", "s": 2, "w": "nonfiction", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "planouci-koruny~catherine-doyle-katherine-webber", "s": 2, "w": "romantasy sequel", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "plantaznikova-dcera~jana-cisarova", "s": 2, "w": "Romantic drama, probably", "m": "haiku-4.5", "pd": "093b433445f0", "at": "2026-08-27", "rec": 0}
@@ -26763,7 +26763,7 @@
 {"k": "prevoznici~tana-kubatova", "s": 2, "w": "marital affair, domestic", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "prevzeti~vojtech-zalesky", "s": 2, "w": "priest disappearance, generic", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "prezila-jsem-osvetim~krystyna-zywulska", "s": 2, "w": "survivor testimony", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
-{"k": "prezila-jsem~immaculee-ilibagiza-ve-spoluprac", "s": 2, "w": "genocide testimony", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
+{"k": "prezila-jsem~immaculee-ilibagiza-ve-spoluprac", "s": 2, "w": "genocide testimony", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0, "done": "prezila-jsem-ilibagiza"}
 {"k": "pri-zapadu-slunce~vlasta-javoricka", "s": 2, "w": "vesnický román bez nápadu", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "pribalovy-letak-a-dalsi-povidky~josef-laufer", "s": 2, "w": "Humorous jokes", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
 {"k": "pribeh-chytreho-mesta~petr-mrazek", "s": 2, "w": "technology picture book", "m": "haiku-5.5", "pd": "97382ffa6d47", "at": "2026-10-25", "rec": 0}
@@ -31510,6 +31510,7 @@
 {"k": "cizinec~albert-camus", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "cizinec"}
 {"k": "cizinec~nora-roberts", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "cizinec"}
 {"k": "cizinec~ursula-poznanski-arno-strobel", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "cizinec"}
+{"k": "daleka-cesta-za-domovem~richard-adams", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "daleka-cesta-za-domovem"}
 {"k": "dedictvi~kathryn-taylor", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "dedictvi"}
 {"k": "dedictvi~moa-herngren", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "dedictvi"}
 {"k": "devcatko-momo-a-ukradeny-cas~michael-ende", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "devcatko-momo"}
@@ -31542,7 +31543,9 @@
 {"k": "hubert-hugo~nikarrin", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "hubert-hugo"}
 {"k": "hvezdokote~james-turner-a-yasmin-sheikh", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "hvezdokote"}
 {"k": "invaze~jan-kotouc", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "invaze"}
+{"k": "ja-jsem-malala~malala-jusufzajova-christina-lam", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "ja-jsem-malala"}
 {"k": "jako-v-zrcadle-jen-v-hadance~jostein-gaarder", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "jako-v-zrcadle-jen-v-hadance"}
+{"k": "jako-zabit-ptacka~harper-lee", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "jako-zabit-ptacka"}
 {"k": "je-tezke-byt-lvem~uri-orlev", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "je-tezke-byt-lvem"}
 {"k": "je-to-pravda-tygriku~byron-katie-a-hans-wilhelm", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "je-to-pravda-tygriku"}
 {"k": "jursky-park~gail-herman", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "jurassic-park"}
@@ -31552,6 +31555,7 @@
 {"k": "klid-pred-bouri~linda-howard", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "klid-pred-bouri"}
 {"k": "klofaci~milos-kratochvil", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "klofaci"}
 {"k": "kniha-noveho-slunce~muciteluv-stin", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "kniha-noveho-slunce"}
+{"k": "koleje-osudu~eric-lomax", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "koleje-osudu"}
 {"k": "kostelik-ktery-se-radoval~vondrovic-tomas", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "kostelik-ktery-se-radoval"}
 {"k": "kouzelny-kalendar~jostein-gaarder", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "kouzelny-kalendar"}
 {"k": "kral-medvedu~vanessa-walderova", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "kral-medvedu"}
@@ -31584,10 +31588,13 @@
 {"k": "mesto~dean-koontz", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "mesto"}
 {"k": "mesto~valerjan-pidmohylnyj", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "mesto"}
 {"k": "milosrdenstvi~lidia-jorge", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "milosrdenstvi"}
+{"k": "mlceni~susaku-endo", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "mlceni-endo"}
 {"k": "morska-panna~camilla-lackberg", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "morska-panna"}
 {"k": "motyl-ktery-zapomnel-letat~vernerova-vanessa", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "motyl-ktery-zapomnel-letat"}
+{"k": "muz-jmenem-ove~fredrik-backman", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "muz-jmenem-ove"}
 {"k": "na-prvni-pohled~danielle-steel", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "na-prvni-pohled"}
 {"k": "na-prvni-pohled~gregoire-delacourt", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "na-prvni-pohled"}
+{"k": "nejstastnejsi-muz-na-zemi~eddie-jaku", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "nejstastnejsi-muz-na-zemi"}
 {"k": "nekonecny-pribeh~michael-ende", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "nekonecny-pribeh"}
 {"k": "neni-krve-bez-ohne~jiri-w-prochazka-miroslav-zamboc", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "neni-krve-bez-ohne"}
 {"k": "nesmrtelnost~jorge-luis-borges", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "nesmrtelnost"}
@@ -31600,6 +31607,7 @@
 {"k": "nikola-suhaj-loupeznik~", "w": "tier-2, never model-scored", "m": "-", "pd": "093b433445f0", "at": "2026-08-26", "done": "nikola-suhaj-loupeznik"}
 {"k": "nimona~stevenson-noelle", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "nimona"}
 {"k": "nuz~jo-nesb", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "nuz"}
+{"k": "o-mysich-a-lidech~john-steinbeck", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "o-mysich-a-lidech"}
 {"k": "o-snozroutkovi~michael-ende", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "o-snozroutkovi"}
 {"k": "ocelove-srdce~albert-cuba", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-10-25", "done": "ocelove-srdce"}
 {"k": "ohen~jane-caseyova", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "ohen"}
@@ -31610,6 +31618,7 @@
 {"k": "osvetim~sam-pivnik", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "osvetim"}
 {"k": "pirati~gideon-defoe", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "pirati"}
 {"k": "pisek~wolfgang-herrndorf", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "pisek"}
+{"k": "planeta-opic~pierre-boulle", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "planeta-opic"}
 {"k": "pod-kuzi~j-kenner", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "pod-kuzi"}
 {"k": "pod-kuzi~sabine-durrantova", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "pod-kuzi"}
 {"k": "podivny-regiment~terry-pratchett", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "podivny-regiment"}
@@ -31662,6 +31671,7 @@
 {"k": "roky-pod-psa~markus-zusak", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "roky-pod-psa"}
 {"k": "rudy-sal~nora-robertsova", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "rudy-sal"}
 {"k": "sanctum~markus-heitz", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "sanctum"}
+{"k": "schindleruv-seznam~thomas-keneally", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "schindleruv-seznam"}
 {"k": "severka~milos-zapletal", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "severka"}
 {"k": "shledani~m-j-arlidge-steph-broadribbova", "w": "tier-2, never model-scored", "m": "-", "pd": "093b433445f0", "at": "2026-08-26", "done": "shledani", "veto": "axis:detective"}
 {"k": "simpsonovi~created-by-matt-groening", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "simpsonovi"}
@@ -31669,6 +31679,7 @@
 {"k": "simpsonovi~preklad-petr-putna", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "simpsonovi"}
 {"k": "sipka-a-koumes~anabel-quiroga", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "sipka-a-koumes"}
 {"k": "sipka-a-koumes~blanca-alvarez", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "sipka-a-koumes"}
+{"k": "slavik~kristin-hannahova", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "slavik-hannah"}
 {"k": "slib~danielle-steel", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "slib"}
 {"k": "slib~lisa-kleypas", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "slib"}
 {"k": "slib~sharon-j-bolton", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "slib"}
@@ -31679,6 +31690,8 @@
 {"k": "srdce-z-kameni~andrew-clemson", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "srdce-z-kameni"}
 {"k": "stare-povesti-ceske~alois-jirasek", "w": "tier-2, never model-scored", "m": "-", "pd": "093b433445f0", "at": "2026-08-26", "done": "stare-povesti-ceske"}
 {"k": "stare-povesti-ceske~jana-eislerova", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "stare-povesti-ceske"}
+{"k": "starec-a-more~ernest-hemingway", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "starec-a-more"}
+{"k": "starec-a-more~hemingway", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "starec-a-more"}
 {"k": "stin~jiri-krizan", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "stin"}
 {"k": "stin~johana-ticha", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "stin"}
 {"k": "stin~robert-harris-mily-johne-nichola", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "stin"}
@@ -31697,10 +31710,13 @@
 {"k": "superman~matt-de-la-pena", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "superman"}
 {"k": "syn~jo-nesbo", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "syn-lowry"}
 {"k": "tajemstvi-karet~jostein-gaarder", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "tajemstvi-karet"}
+{"k": "tajuplny-ostrov~jules-verne", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "tajuplny-ostrov"}
 {"k": "tezke-melodicno~terry-pratchett", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "tezke-melodicno"}
 {"k": "this-winter~alice-oseman", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "this-winter"}
 {"k": "tokijsky-ghul-re~sui-isida", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "tokijsky-ghul-re"}
 {"k": "tokijsky-ghul-re~sui-isida-preklad-anna-krivankov", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "tokijsky-ghul-re"}
+{"k": "tri-kamaradi~erich-maria-remarque", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "tri-kamaradi"}
+{"k": "tri-kamaradi~hana-stepanova", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "tri-kamaradi"}
 {"k": "tri-musketyri~alexander-dumas", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "three-musketeers"}
 {"k": "tri-musketyri~alexandre-dumas", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "three-musketeers"}
 {"k": "tri-musketyri~alexandre-st-dumas", "w": "tier-2, never model-scored", "m": "-", "pd": "-", "at": "2026-08-26", "done": "three-musketeers"}

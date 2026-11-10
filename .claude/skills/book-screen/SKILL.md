@@ -896,6 +896,19 @@ Three facts about it, all verified 2026-08-26 rather than guessed:
   another, which is the same silent-disagreement failure the publisher/year note
   above was written for. Diff `cz.recordId` against the edition the row claims and
   repoint by hand, stamping `cz.linkCheck` so the next `--force` run does not undo it.
+- **The newest print record of a classic is often not the novel** (2026-11-10).
+  `resolve()` prefers the newest print edition, and for *Tajuplný ostrov* both newer
+  holdings were retellings that classified as print: Albatros 2014 reads "podle románu
+  Julese Verna volně vypráví Ondřej Neff" (now caught by `ADAPT_RS`), and Sun 2018 is a
+  69-page illustrated adaptation, which nothing catches because `classify()` never sees
+  the page count. Read *Fyzický popis* on the chosen record; a novel under ~80 pages is
+  an adaptation.
+- **`fetch-library.py` rewrites `book-cache.json` in its own layout** (found
+  2026-11-10): its `dump()` writes 2-space compact JSON where `absorb` and the committed
+  file use `indent=1`, so one run produced a 130,000-line diff. Re-dump with
+  `json.dump(..., ensure_ascii=False, indent=1)` afterwards. Its writes also failed
+  three times in nineteen runs with `OSError: [Errno 22]` on Windows; the file was left
+  intact and a rerun succeeded, but check the JSON loads before going on.
 
 ### Route 2 — free English audiobook (RETIRED 2026-10-25)
 

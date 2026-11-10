@@ -174,7 +174,10 @@ STOP_TITLES = {"empire", "the joke", "the truth",
                # `Anna`, McEwan's `The Innocent`, the Felix series and `Doctor Who` fired 19
                # times on the adverb, a character's name, "the innocent", a lead called Felix
                # and "a doctor who steers". Cost: those candidates can be cited unnoticed.
-               "potom", "then", "anna", "the innocent", "felix", "doctor who"}
+               "potom", "then", "anna", "the innocent", "felix", "doctor who",
+               # 2026-11-10, the famous-authors screen: Endo's `Silence` fired on the Psy
+               # "Silence" of two Singh rows and `The Help` on "escapes with the help of".
+               "silence", "the help"}
 
 # Phrasing that argues from the neighbours without naming one.
 # "the Author(s) row" is exempt: that points at the Authors table in

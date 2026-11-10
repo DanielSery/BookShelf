@@ -7820,6 +7820,29 @@
    "volumes": 3,
    "note": ""
   },
+  "thrawn-trilogy": {
+   "name": "Thrawnova trilogie",
+   "nameEn": "The Thrawn Trilogy",
+   "kind": "series",
+   "members": [
+    {
+     "key": "dedic-imperia",
+     "n": 1
+    },
+    {
+     "key": "temna-sila-na-vzestupu",
+     "n": 2
+    },
+    {
+     "key": "posledni-povel",
+     "n": 3
+    }
+   ],
+   "read": [],
+   "rejected": [],
+   "volumes": 3,
+   "note": "Star Wars tie-in set five years after Return of the Jedi; all three volumes in Egmont 2010 print at Rožnov only"
+  },
   "thursday-next": {
    "name": "Thursday Next",
    "nameEn": "Thursday Next",

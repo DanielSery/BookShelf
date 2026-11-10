@@ -69206,6 +69206,786 @@
     "Volume 1 of A Time Odyssey; Sluneční bouře and Prvorození, volumes 2 and 3, are also shelf candidates.",
     "Rožnov also holds the Baronet 2005 edition."
    ]
+  },
+  {
+   "key": "cernobily-svet",
+   "title": "The Help",
+   "author": "Kathryn Stockettová",
+   "cz": {
+    "state": "verified",
+    "publisher": "Ikar",
+    "year": 2026,
+    "translator": "Jana Kordíková",
+    "recordId": "01a0a424-9e0e-7cb4-8eac-1a6540d30809",
+    "edition": "print",
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.mekvalmez.cz/records/01a0a424-9e0e-7cb4-8eac-1a6540d30809",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "historical",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Černobílý svět",
+   "flags": [
+    "A second print edition exists (Knizni klub 2011, Jana Kordikova).",
+    "Per summaries the first two chapters are in Aibileen's voice, then Minny, then Skeeter."
+   ]
+  },
+  {
+   "key": "daleka-cesta-za-domovem",
+   "title": "Watership Down",
+   "author": "Richard Adams",
+   "cz": {
+    "state": "verified",
+    "library": "roznov",
+    "publisher": "Argo",
+    "year": 2018,
+    "translator": "Jitka Minaříková",
+    "recordId": "ca427b14-64ca-4caa-a0d5-22b887cd925e",
+    "edition": "print",
+    "branches": [
+     "Rožnov"
+    ],
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.knir.cz/records/ca427b14-64ca-4caa-a0d5-22b887cd925e",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "fantasy",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Daleká cesta za domovem",
+   "flags": [
+    "Czech print: Argo 2018 (translated by Jitka Minarikova), held at Roznov.",
+    "Fiver is a precognitive rabbit; Lapine religion (Frith, El-ahrairah, Black Rabbit of Inle) is invented. Whether any rite is staged on the page was not established."
+   ]
+  },
+  {
+   "key": "dedic-imperia",
+   "title": "Heir to the Empire",
+   "author": "Timothy Zahn",
+   "cz": {
+    "state": "verified",
+    "library": "roznov",
+    "publisher": "Egmont",
+    "year": 2010,
+    "translator": "Milan Pohl",
+    "recordId": "d428c9c4-ee00-445d-b55a-2c9da82ee64a",
+    "edition": "print",
+    "branches": [
+     "Rožnov"
+    ],
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.knir.cz/records/d428c9c4-ee00-445d-b55a-2c9da82ee64a",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Star Wars: Dědic impéria",
+   "series": "Thrawn Trilogy",
+   "flags": [
+    "First of three: Heir to the Empire, Dark Force Rising, The Last Command (Egmont 2010, Czech print at Roznov only).",
+    "Star Wars tie-in set five years after Return of the Jedi; Luke, Han and Leia are assumed to be known from the films.",
+    "Several POV strands open within the first chapters; if the opening loses him, read the premise first."
+   ]
+  },
+  {
+   "key": "ja-jsem-malala",
+   "title": "I Am Malala",
+   "author": "Malála Júsufzajová",
+   "cz": {
+    "state": "verified",
+    "publisher": "Praha : Ikar, 2014",
+    "year": 2014,
+    "translator": "Kamila Weiserová",
+    "recordId": "cd606481-2dde-4b3b-8515-3425d8a76e34",
+    "edition": "print",
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.mekvalmez.cz/records/cd606481-2dde-4b3b-8515-3425d8a76e34",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "testimony",
+   "form": "nonfiction",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Já jsem Malála",
+   "flags": [
+    "Czech print: Ikar 2014, translated by Kamila Weiserova.",
+    "Co-written with Christina Lamb."
+   ]
+  },
+  {
+   "key": "jako-zabit-ptacka",
+   "title": "To Kill a Mockingbird",
+   "author": "Harper Lee",
+   "cz": {
+    "state": "verified",
+    "publisher": "Mladá fronta",
+    "year": 2015,
+    "translator": "Marcela Mašková a Igor Hájek",
+    "recordId": "217d04ef-4171-4292-a5a9-3b25832d8cc7",
+    "edition": "print",
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.mekvalmez.cz/records/217d04ef-4171-4292-a5a9-3b25832d8cc7",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "litfic",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Jako zabít ptáčka",
+   "flags": [
+    "A second print edition exists (Knizni klub 1994)."
+   ]
+  },
+  {
+   "key": "je-tezke-byt-bohem",
+   "title": "Hard to Be a God",
+   "author": "Arkadij a Boris Strugačtí",
+   "cz": {
+    "state": "none",
+    "checked": "2026-11-10"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Je těžké být bohem",
+   "flags": [
+    "No Czech print copy at either library; more than one English translation exists.",
+    "Part of the Noon Universe but stands alone."
+   ],
+   "enText": {
+    "level": "moderate",
+    "why": "Translated Russian prose with invented place names and period vocabulary; plain sentences, some dense political dialogue.",
+    "checked": "2026-11-10"
+   }
+  },
+  {
+   "key": "jsou-svetla-ktera-nevidime",
+   "title": "All the Light We Cannot See",
+   "author": "Anthony Doerr",
+   "cz": {
+    "state": "verified",
+    "publisher": "Moba",
+    "year": 2015,
+    "translator": "Jakub Kalina",
+    "recordId": "a4dfa852-5092-47c9-a7ff-7316a53b1728",
+    "edition": "print",
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.mekvalmez.cz/records/a4dfa852-5092-47c9-a7ff-7316a53b1728",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "historical",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Jsou světla, která nevidíme",
+   "flags": [
+    "Library also holds an audio edition (2016) and an e-loan (Moba 2020).",
+    "Won the Pulitzer Prize for Fiction (stated in the catalogue annotation)."
+   ]
+  },
+  {
+   "key": "koleje-osudu",
+   "title": "The Railway Man",
+   "author": "Eric Lomax",
+   "cz": {
+    "state": "verified",
+    "publisher": "Mladá fronta",
+    "year": 2014,
+    "translator": "Milan Lžička",
+    "recordId": "ea99ea01-cfa6-4fa2-bc23-448518637e59",
+    "edition": "print",
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.mekvalmez.cz/records/ea99ea01-cfa6-4fa2-bc23-448518637e59",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "testimony",
+   "form": "nonfiction",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Koleje osudu",
+   "flags": [
+    "Czech print: Mlada fronta 2014, translated by Milan Lzicka.",
+    "A 2013 film adaptation exists and centres on the second marriage; the book centres on the war years."
+   ]
+  },
+  {
+   "key": "mlceni-endo",
+   "title": "Silence",
+   "author": "Šúsaku Endó",
+   "cz": {
+    "state": "verified",
+    "publisher": "Vyšehrad",
+    "year": 2019,
+    "translator": "a doslovem opatřila Libuše Boháčková",
+    "recordId": "ad06514b-c10d-469e-85d5-a6b7fe9a86d8",
+    "edition": "print",
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.mekvalmez.cz/records/ad06514b-c10d-469e-85d5-a6b7fe9a86d8",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "historical",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Mlčení"
+  },
+  {
+   "key": "muz-jmenem-ove",
+   "title": "A Man Called Ove",
+   "author": "Fredrik Backman",
+   "cz": {
+    "state": "verified",
+    "publisher": "Host",
+    "year": 2014,
+    "translator": "Jitka Herčíková",
+    "recordId": "b949019e-f402-4a67-ac7e-2166b721749f",
+    "edition": "print",
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.mekvalmez.cz/records/b949019e-f402-4a67-ac7e-2166b721749f",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "litfic",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Muž jménem Ove",
+   "flags": [
+    "A side character (Mirsad) is, from memory and unverified, a gay teenager; if so a side character's relationship, graded.",
+    "Library also holds an audio edition (blind library, 2015)."
+   ]
+  },
+  {
+   "key": "na-zapadni-fronte-klid",
+   "title": "All Quiet on the Western Front",
+   "author": "Erich Maria Remarque",
+   "cz": {
+    "state": "verified",
+    "publisher": "Ikar",
+    "year": 2020,
+    "translator": "Ivana Parkmanová",
+    "recordId": "fb685645-8417-4617-828a-92ba8ebff2aa",
+    "edition": "print",
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.mekvalmez.cz/records/fb685645-8417-4617-828a-92ba8ebff2aa",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "historical",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Na západní frontě klid",
+   "flags": [
+    "Four print editions are held (Ikar 2020, 2015, 2011; 1988 trans. Frantisek Gel); an audio edition exists (Macanova knihovna 2012).",
+    "Same author as Tri kamaradi, researched once."
+   ]
+  },
+  {
+   "key": "nejstastnejsi-muz-na-zemi",
+   "title": "The Happiest Man on Earth",
+   "author": "Eddie Jaku",
+   "cz": {
+    "state": "verified",
+    "publisher": "Dobrovský s.r.o.",
+    "year": 2021,
+    "translator": "Kristýna Dobiášová",
+    "recordId": "54e29783-8824-4f61-be1c-e1efb57488e3",
+    "edition": "print",
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.mekvalmez.cz/records/54e29783-8824-4f61-be1c-e1efb57488e3",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "testimony",
+   "form": "nonfiction",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Nejšťastnější muž na Zemi",
+   "flags": [
+    "Czech print: Dobrovsky 2021, translated by Kristyna Dobiasova."
+   ]
+  },
+  {
+   "key": "nepravdepodobna-pout-harolda-frye",
+   "title": "The Unlikely Pilgrimage of Harold Fry",
+   "author": "Rachel Joyceová",
+   "cz": {
+    "state": "verified",
+    "library": "roznov",
+    "publisher": "Knižní klub",
+    "year": 2012,
+    "translator": "Naďa Špetláková",
+    "recordId": "882f593f-622e-486a-9647-611fde97dc4b",
+    "edition": "print",
+    "branches": [
+     "Rožnov",
+     "Vigantice"
+    ],
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.knir.cz/records/882f593f-622e-486a-9647-611fde97dc4b",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "litfic",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Nepravděpodobná pouť Harolda Frye",
+   "flags": [
+    "Print copy is at the second library (Roznov)."
+   ]
+  },
+  {
+   "key": "o-mysich-a-lidech",
+   "title": "Of Mice and Men",
+   "author": "John Steinbeck",
+   "cz": {
+    "state": "verified",
+    "publisher": "Alpress",
+    "year": 2004,
+    "recordId": "5919d758-2594-4e16-a8d1-1d4b30c90f28",
+    "edition": "print",
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.mekvalmez.cz/records/5919d758-2594-4e16-a8d1-1d4b30c90f28",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "litfic",
+   "form": "novella",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "O myších a lidech",
+   "flags": [
+    "A second print edition exists (SNKLU 1965); an audio edition exists (Tympanum 2021, Vladimir Vendys)."
+   ]
+  },
+  {
+   "key": "planeta-opic",
+   "title": "Planet of the Apes",
+   "author": "Pierre Boulle",
+   "cz": {
+    "state": "none",
+    "checked": "2026-11-10"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Planeta opic",
+   "flags": [
+    "No Czech print copy; the catalogue holds a Czech audio edition (OneHotBook 2020).",
+    "Original French novel, La Planete des singes (1963); the ending differs from the 1968 film."
+   ],
+   "enText": {
+    "level": "moderate",
+    "why": "1960s French-to-English translated prose in a frame narrative with some dated diction; short novel.",
+    "checked": "2026-11-10"
+   }
+  },
+  {
+   "key": "posledni-povel",
+   "title": "The Last Command",
+   "author": "Timothy Zahn",
+   "cz": {
+    "state": "verified",
+    "library": "roznov",
+    "publisher": "Egmont",
+    "year": 2010,
+    "translator": "Milan Pohl",
+    "recordId": "03c28a39-63cb-4470-af0f-1c82470dcc5d",
+    "edition": "print",
+    "branches": [
+     "Rožnov"
+    ],
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.knir.cz/records/03c28a39-63cb-4470-af0f-1c82470dcc5d",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Star Wars: Poslední povel",
+   "series": "Thrawn Trilogy",
+   "flags": [
+    "Third of three in the Thrawn Trilogy (after Heir to the Empire and Dark Force Rising); Egmont 2010, Czech print at Roznov.",
+    "Reads as a continuation, not a standalone; Star Wars tie-in that assumes the films."
+   ]
+  },
+  {
+   "key": "prezila-jsem-ilibagiza",
+   "title": "Left to Tell",
+   "author": "Immaculée Ilibagiza",
+   "cz": {
+    "state": "verified",
+    "publisher": "V Praze : Ikar, 2007",
+    "year": 2007,
+    "recordId": "5e2ff22f-c62d-401b-9b72-e7d2235d16bb",
+    "edition": "print",
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.mekvalmez.cz/records/5e2ff22f-c62d-401b-9b72-e7d2235d16bb",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "testimony",
+   "form": "nonfiction",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Přežila jsem",
+   "flags": [
+    "Czech print: Ikar 2007."
+   ]
+  },
+  {
+   "key": "schindleruv-seznam",
+   "title": "Schindler's Ark",
+   "author": "Thomas Keneally",
+   "cz": {
+    "state": "verified",
+    "publisher": "Praha: Mht, 1994",
+    "year": 1994,
+    "recordId": "eeea972d-b421-4461-9ca7-914c6458b849",
+    "edition": "print",
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.mekvalmez.cz/records/eeea972d-b421-4461-9ca7-914c6458b849",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "testimony",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Schindlerův seznam",
+   "flags": [
+    "The catalogue edition is MHT 1994, no translator stated.",
+    "Based on real people and events with imagined dialogue."
+   ]
+  },
+  {
+   "key": "sedm-let-v-tibetu",
+   "title": "Seven Years in Tibet",
+   "author": "Heinrich Harrer",
+   "cz": {
+    "state": "verified",
+    "publisher": "Praha: Ivo Železný, 1998",
+    "year": 1998,
+    "recordId": "df4aa416-fa60-4115-8816-d24a66f7be76",
+    "edition": "print",
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.mekvalmez.cz/records/df4aa416-fa60-4115-8816-d24a66f7be76",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "testimony",
+   "form": "nonfiction",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Sedm let v Tibetu",
+   "flags": [
+    "Czech print: Ivo Zelezny 1998.",
+    "The author's Nazi party membership is omitted from the book (Slate; Himalayan Club review)."
+   ]
+  },
+  {
+   "key": "slavik-hannah",
+   "title": "The Nightingale",
+   "author": "Kristin Hannahová",
+   "cz": {
+    "state": "verified",
+    "publisher": "Argo",
+    "year": 2016,
+    "translator": "Klára Šumová",
+    "recordId": "05c163de-afdf-4252-95fc-89b560ef6bcb",
+    "edition": "print",
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.mekvalmez.cz/records/05c163de-afdf-4252-95fc-89b560ef6bcb",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "historical",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Slavík",
+   "flags": [
+    "An audio edition exists (Tympanum 2017)."
+   ]
+  },
+  {
+   "key": "starec-a-more",
+   "title": "The Old Man and the Sea",
+   "author": "Ernest Hemingway",
+   "cz": {
+    "state": "verified",
+    "publisher": "Odeon",
+    "year": 2015,
+    "translator": "Šimon Pellar",
+    "recordId": "7774a05f-c464-4211-b81f-9af00daf2cd3",
+    "edition": "print",
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.mekvalmez.cz/records/7774a05f-c464-4211-b81f-9af00daf2cd3",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "litfic",
+   "form": "novella",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Stařec a moře",
+   "flags": [
+    "A second print edition exists (F341 2012, Daniel Deyl and Vaclav Rakos); an audio edition exists (Tympanum 2008)."
+   ]
+  },
+  {
+   "key": "tajuplny-ostrov",
+   "title": "The Mysterious Island",
+   "author": "Jules Verne",
+   "cz": {
+    "state": "verified",
+    "publisher": "Praha: Albatos 1988",
+    "year": 1988,
+    "recordId": "70c9c8c2-b244-4968-9993-37da71f11364",
+    "edition": "print",
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.mekvalmez.cz/records/70c9c8c2-b244-4968-9993-37da71f11364",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog",
+    "linkCheck": "2026-11-10 by hand: the full Albatros 1988 text. The newer holdings are not the novel: Albatros 2014 is Ondrej Neff's free retelling and Sun 2018 a 69-page illustrated adaptation."
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Tajuplný ostrov",
+   "flags": [
+    "Catalogue holds this 1988 Albatos print and a 1987 Albatos print; retelling or comics adaptation also exist (Sun 2018, Dagmar Pilarova; Albatos 2014).",
+    "Direct sequel to Twenty Thousand Leagues; Nemo returns here, so earlier-book knowledge adds to the reveal."
+   ]
+  },
+  {
+   "key": "temna-sila-na-vzestupu",
+   "title": "Dark Force Rising",
+   "author": "Timothy Zahn",
+   "cz": {
+    "state": "verified",
+    "library": "roznov",
+    "publisher": "Egmont",
+    "year": 2010,
+    "translator": "Milan Pohl",
+    "recordId": "5db2ba76-7236-4317-8acb-3440753fa142",
+    "edition": "print",
+    "branches": [
+     "Rožnov"
+    ],
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.knir.cz/records/5db2ba76-7236-4317-8acb-3440753fa142",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "sf",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Star Wars: Temná síla na vzestupu",
+   "series": "Thrawn Trilogy",
+   "flags": [
+    "Second of three in the Thrawn Trilogy (after Heir to the Empire, before The Last Command); Egmont 2010, Czech print at Roznov.",
+    "Star Wars tie-in; assumes the films and the first book."
+   ]
+  },
+  {
+   "key": "tri-kamaradi",
+   "title": "Three Comrades",
+   "author": "Erich Maria Remarque",
+   "cz": {
+    "state": "verified",
+    "publisher": "Praha : Ikar, 2012",
+    "year": 2012,
+    "translator": "Věra a Karel Houbovi",
+    "recordId": "da14b90f-f430-425d-a8de-7bd0b1e70a97",
+    "edition": "print",
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.mekvalmez.cz/records/da14b90f-f430-425d-a8de-7bd0b1e70a97",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "litfic",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Tři kamarádi",
+   "flags": [
+    "A second print edition exists (Praha 1962).",
+    "Same author as Na zapadni fronte klid, researched once."
+   ]
+  },
+  {
+   "key": "ve-znameni-kon-tiki",
+   "title": "The Kon-Tiki Expedition",
+   "author": "Thor Heyerdahl",
+   "cz": {
+    "state": "none",
+    "checked": "2026-11-10"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "testimony",
+   "form": "nonfiction",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Ve znamení Kon-Tiki",
+   "flags": [
+    "No Czech print copy at either library.",
+    "Czech edition verified in Databaze knih and CBDB as Ve znameni Kon-Tiki, translated by Dagmar Chvojkova-Pallasova, Mlada fronta 1957 (first), 1958, 1960, 1964, 1970; neither library holds a copy."
+   ],
+   "enText": {
+    "level": "easy",
+    "why": "Plain first-person adventure prose, praised as accessible and vivid; some nautical and Polynesian terms.",
+    "checked": "2026-11-10"
+   }
+  },
+  {
+   "key": "vezenkyne-z-teheranu",
+   "title": "Prisoner of Tehran",
+   "author": "Marina Nematová",
+   "cz": {
+    "state": "verified",
+    "publisher": "Brno : Jota, 2007",
+    "year": 2007,
+    "translator": "Naďa Funioková",
+    "recordId": "99b5581e-a574-4b97-88c5-f6ea580a661e",
+    "edition": "print",
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.mekvalmez.cz/records/99b5581e-a574-4b97-88c5-f6ea580a661e",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "testimony",
+   "form": "nonfiction",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Vězeňkyně z Teheránu",
+   "flags": [
+    "Czech print: Jota 2007, translated by Nada Funiokova.",
+    "Library annotation calls the husband a prison guard; reviews also call him an interrogator."
+   ]
+  },
+  {
+   "key": "vypalena-nenavist",
+   "title": "The Hate U Give",
+   "author": "Angie Thomasová",
+   "cz": {
+    "state": "verified",
+    "publisher": "Euromedia",
+    "year": 2018,
+    "translator": "Kateřina Bínová",
+    "recordId": "b3c3ef35-cf5a-4c46-8338-eac406a5daac",
+    "edition": "print",
+    "checked": "2026-11-10",
+    "recordUrl": "https://katalog.mekvalmez.cz/records/b3c3ef35-cf5a-4c46-8338-eac406a5daac",
+    "recordChecked": "2026-11-10",
+    "publisherSource": "katalog"
+   },
+   "enAudio": {
+    "state": "unchecked"
+   },
+   "genre": "litfic",
+   "form": "novel",
+   "audience": "adult",
+   "audienceSource": "default",
+   "czTitle": "Vypálená nenávist"
   }
  ],
  "sweeps": [
@@ -69927,6 +70707,55 @@
    "ruledOut": "Rejected: putovani-odysseovo, cerne-lode-pred-trojou, kuze-plna-stinu (axis:occult); zrada-v-zime, kdyz-jsme-byli-sirotci (axis:detective); na-chesilske-plazi (axis:sexual-content, sex as the plot); nejdelsi-den-adama-t, ostre-konce, zivot-na-ceste (axis:same-sex-romance). Not promoted: 13 Ellen G. White and other non-E. B. White records the surname join matched, 8 Earthsea volumes (series reject the parenthetical entity hid from _decided), the 1987 translation Příběh, který nikdy neskončí (aliased to nekonecny-pribeh), a horse-care manual by another Ende, and 15 works held only as audio, foreign-language or without a borrowable copy - including Konec dětství, Světlo Země and Hlídka, whose Rožnov 1992-94 copies have no exemplar. Oko casu: reject of 2026-08-27 lifted under the re-ruled opening filter and promoted.",
    "lesson": "The Rožnov triage rows (2026-10-25) were never promoted, so most predicted-fit holdings sat there unscreened; a triage row is not proof of a borrowable copy - run second-library.copies() before calling a Rožnov title held. A surname-plus-initial match is not enough for common surnames (White, Ende): require the full authority heading. _decided()'s series prefix test misses a reject entity written 'Series (Czech name)'.",
    "notYetSwept": "Top pick / Confirmed fit authors not covered by this pass. Robin Hobb and Daniel Abraham returned nothing new."
+  },
+  {
+   "at": "2026-11-10",
+   "scope": "Named canon, outside the library sweeps: famous and pop-culture authors the reader asked for. Two sources: (1) about 190 well-known names checked by hand against the shelf, the rejects and the log, nearly all the SF/F ones already screened; (2) Wikidata, every work with an author, 20+ Wikipedia sitelinks and a film, TV series, miniseries or video game based on it (1,183 works), minus 169 already on the shelf or in the log and 365 dropped on genre (crime, horror, manga, verse, plays). 27 titles picked from the residue and promoted; books neither library holds were kept.",
+   "queries": [
+    "katalog.mekvalmez.cz and katalog.knir.cz api/search q=<Czech title without diacritics> [<surname>], matched on title and surname, Rožnov copies confirmed with api/exemplars",
+    "query.wikidata.org SPARQL: ?ad wdt:P31 (Q11424|Q5398426|Q1259759|Q7889); ?ad wdt:P144 ?book; ?book wdt:P50 ?author; sitelinks >= 20; then P136 genre and P577 date for the residue",
+    "databazeknih.cz and cbdb.cz for the Czech Kon-Tiki edition"
+   ],
+   "pulled": 1183,
+   "screened": 27,
+   "yield": [
+    "cernobily-svet",
+    "daleka-cesta-za-domovem",
+    "dedic-imperia",
+    "ja-jsem-malala",
+    "jako-zabit-ptacka",
+    "je-tezke-byt-bohem",
+    "jsou-svetla-ktera-nevidime",
+    "koleje-osudu",
+    "mlceni-endo",
+    "muz-jmenem-ove",
+    "na-zapadni-fronte-klid",
+    "nejstastnejsi-muz-na-zemi",
+    "nepravdepodobna-pout-harolda-frye",
+    "o-mysich-a-lidech",
+    "planeta-opic",
+    "posledni-povel",
+    "prezila-jsem-ilibagiza",
+    "schindleruv-seznam",
+    "sedm-let-v-tibetu",
+    "slavik-hannah",
+    "starec-a-more",
+    "tajuplny-ostrov",
+    "temna-sila-na-vzestupu",
+    "tri-kamaradi",
+    "ve-znameni-kon-tiki",
+    "vezenkyne-z-teheranu",
+    "vypalena-nenavist"
+   ],
+   "lesson": "Fame does not predict this reader any better than awards did: 2 of 27 reached the 68 line (Jako zabit ptacka 70-80, Daleka cesta za domovem 68-80), the rest came out 58-76, and none reached the 80 English-gem midpoint. But the famous non-genre shelf was not empty for lack of copies: 19 of the 27 were held in Valmez print, most of them sitting in book-triage.jsonl as Roznov-pull rows (src knir-*, next: review) that were never ranked or promoted, and Slavik was auto-dropped as edition-audio although the Argo print is held. Two method errors: fetch-editions classify() read Ondrej Neff's retelling of Tajuplny ostrov ('podle romanu Julese Verna volne vypravi', Albatros 2014) as print and made it the route (fixed: 'volne vyprav' added to ADAPT_RS), and it has no page-count test, so a 69-page illustrated Sun 2018 adaptation also read as print; the route was set by hand to the full Albatros 1988 text. And tools/fetch-library.py rewrites book-cache.json in its own JSON layout, a 130,000-line diff against the indent=1 file absorb writes; re-dump with indent=1 after running it.",
+   "ruledOut": "Not promoted, judged from memory on a hard filter and so NOT recorded as rejects: Doktor Zivago (the affair is the premise), Jih proti Severu (Scarlett's fixation on the married Ashley), Gejsa (the virginity auction as a plot spine), Svejk (the chaplain played for ridicule, a graded faith cost, not a filter), Karl May (unearned competence), Tater z Osvetimi (factual errors published by the Auschwitz Memorial), Motylek, Stolety starik, Diry (a fortune-teller's curse), Ben Hur (Quo Vadis 60 is its closest read analogue).",
+   "notYetSwept": [
+    "Held and named but not promoted, lower odds: Stroj casu (Valmez), Ztraceny obzor (Valmez), Zelena mile (Valmez), Zlocin a trest (Valmez), Chaloupka strycka Toma (Valmez), Tri muzi ve clunu (Valmez), Ostrov pokladu (Valmez), Hon na ponorku (Valmez/Roznov), Americka elegie (Roznov), Piknik u cesty (Roznov), Dvacet tisic mil pod morem and Cesta kolem sveta za 80 dni (Valmez)",
+    "The rest of the Wikidata adaptation residue (about 650 works, mostly pre-1950 classics and drama); the list lived in the session scratchpad and is not on disk",
+    "Recent bestsellers with no adaptation yet, and Czech pop culture, which Wikidata sitelinks under-represent",
+    "The 'dobrodruzne romany' heading (353 records), where the famous Verne and Stevenson titles sit unscreened",
+    "The Roznov-pull triage rows (src knir-*) still at next: review"
+   ]
   }
  ],
  "coverage": {

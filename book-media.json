@@ -2,7 +2,7 @@
  "_readme": "Cover URLs and neutral blurbs for everything the viewer app renders. Three namespaces because the tabs are keyed differently: `media` by book-cache.json key, `readMedia` by a slug of the books-read.md title, `rejectMedia` by a slug of entity+author in book-rejects.jsonl. Fully regenerable: run tools/fetch-media.py. Kept out of book-cache.json so a cover refresh never has to reserialise that hand-formatted file. Blurbs say what the book IS; whether the reader would like it is book-estimates.jsonl's `why` and must not be duplicated here. A slug join is deliberately loose - editing a title in books-read.md costs a placeholder cover, never a broken row. `coverOL` is an Open Library cover for a row whose `cover` is on obalkyknih.cz, which serves only registered library catalogues; the GitHub Pages copy of the viewer shows it instead, and null means Open Library had none.",
  "schema": 2,
  "_cover": "Open Library cover id resolved by title+author search, rendered as https://covers.openlibrary.org/b/id/<id>-M.jpg. Null with a 'coverNote' means no match - the app draws a typographic placeholder, which is a missing cover and not an error.",
- "fetched": "2026-11-09",
+ "fetched": "2026-11-10",
  "media": {
   "morning-star": {
    "cover": "https://covers.openlibrary.org/b/id/8566174-M.jpg",
@@ -18343,6 +18343,202 @@
    "coverSource": "katalog",
    "isbn": "8072147560",
    "coverOL": "https://covers.openlibrary.org/b/id/210598-M.jpg"
+  },
+  "cernobily-svet": {
+   "blurb": "Jackson, Mississippi, 1960s: a young white woman asks the Black maids of her friends to tell her what their work is really like for a secret book. Two of them agree at great risk.",
+   "pitch": "Three voices carry the story, each wanting something different and risking something real. The idea behind the book is simple and strong: what changes when people who are never asked finally speak. It is warm, funny and quietly brave.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3596162/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788024959764",
+   "coverOL": null
+  },
+  "daleka-cesta-za-domovem": {
+   "blurb": "Hazel and a small band of rabbits flee their doomed warren after Fiver's warning and cross the countryside to found a new one on Watership Down.",
+   "pitch": "A small band of rabbits sets out to find a home and has to work out how to live together safely. Each place they pass is a different answer to how a community should be run, and Hazel grows into the leader the group needs.",
+   "cover": "https://covers.openlibrary.org/b/id/6450196-M.jpg",
+   "isbn": "074515459X"
+  },
+  "dedic-imperia": {
+   "blurb": "Five years after the fall of the Emperor, Grand Admiral Thrawn rebuilds the Imperial remnant and goes after the New Republic, while Han, Leia and Luke are hunted and Luke meets the former Emperor's Hand Mara Jade.",
+   "pitch": "A clever enemy commander plans every move around knowing his opponents, and you follow both sides of the chase. Mara Jade arrives with her own grudge and her own secret order, which gives the story a second lead with something to work out. Pacing is brisk and the strands converge on a few concrete goals.",
+   "cover": "https://covers.openlibrary.org/b/id/11107659-M.jpg",
+   "isbn": "9780785727354"
+  },
+  "ja-jsem-malala": {
+   "blurb": "Malala Yousafzai describes growing up in Pakistan's Swat valley, her father's school, the Taliban takeover and the shooting that made her a worldwide symbol for girls' education.",
+   "pitch": "You see the Swat valley through a schoolgirl's eyes as it changes under the Taliban, then watch her refuse to be quiet. It is a sharp picture of what education means to someone who nearly lost it.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1025070/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788024925790",
+   "coverOL": null
+  },
+  "jako-zabit-ptacka": {
+   "blurb": "In 1930s Alabama, Scout Finch and her brother grow up watching their lawyer father defend a Black man accused of raping a white woman. Meanwhile they are fascinated by their reclusive neighbour.",
+   "pitch": "A child's clear eyes on a town that is not clear about itself. Atticus is the kind of father and lawyer you want in a hard case, and the book keeps asking what it costs to stand by what is right.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2151140/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788020435446",
+   "coverOL": "https://covers.openlibrary.org/b/id/14351077-M.jpg"
+  },
+  "je-tezke-byt-bohem": {
+   "blurb": "Anton, an observer from future Earth posing as the nobleman Don Rumata, watches the kingdom of Arkanar fall under a secret police that hunts the educated, and struggles with the order not to intervene.",
+   "pitch": "A man from a humane future must watch a kingdom destroy its own thinkers and is forbidden to stop it. The book keeps asking what you would do in his place, and the answer costs him.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-11-10)"
+  },
+  "jsou-svetla-ktera-nevidime": {
+   "blurb": "In occupied France and Germany, a blind Parisian girl and an orphaned German boy with a gift for radios move towards each other through the war, while a hunt for a legendary diamond closes in.",
+   "pitch": "Two young lives told in very short chapters, each pulled towards the same coastal town. The writing pays close attention to sound and light, and the question of who a person becomes under pressure runs through both.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1172245/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788024367606",
+   "coverOL": "https://covers.openlibrary.org/b/id/14559680-M.jpg"
+  },
+  "koleje-osudu": {
+   "blurb": "Eric Lomax, a Scottish signals officer captured at Singapore in 1942, is tortured on the Burma railway for hiding a radio, and decades later meets the Japanese interpreter who was present.",
+   "pitch": "A man who spent years imagining the death of the interpreter who sat through his torture finally meets him. The book is the long road from that hatred to a handshake, and what it took to get there.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3015964/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788020431813",
+   "coverOL": "https://covers.openlibrary.org/b/id/3809921-M.jpg"
+  },
+  "mlceni-endo": {
+   "blurb": "Two Portuguese Jesuit priests travel to 17th-century Japan to find their mentor, rumoured to have renounced his faith, and are drawn into the persecution of Japanese Christians.",
+   "pitch": "A young priest sets out to find what became of his teacher and is forced to ask what his faith asks of him. The book keeps the question open and treats belief seriously, with no easy answers.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2096123/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788076010895",
+   "coverOL": null
+  },
+  "muz-jmenem-ove": {
+   "blurb": "Ove, 59, a recently widowed and laid-off grump, plans to end his life, but new neighbours keep interrupting him. Flashbacks show his life with his wife Sonja.",
+   "pitch": "You follow one stubborn man whose rules and rudeness turn out to guard a great love. His reluctant dealings with the family next door slowly pull him back into the world. Warm and funny, with a lead whose reasons you come to understand.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2276314/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788074910340",
+   "coverOL": "https://covers.openlibrary.org/b/id/7437001-M.jpg"
+  },
+  "na-zapadni-fronte-klid": {
+   "blurb": "A young German soldier recounts the war from the trenches, from enlisting with his classmates to the deaths of his comrades.",
+   "pitch": "A plain-spoken narrator puts the war in front of you through his friends and what he loses. The strength of the book is the comradeship and one clear idea about what war takes from a generation.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2458028/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788024942230",
+   "coverOL": "https://covers.openlibrary.org/b/id/15262512-M.jpg"
+  },
+  "nejstastnejsi-muz-na-zemi": {
+   "blurb": "Eddie Jaku, a German-Jewish survivor of Buchenwald and Auschwitz who settled in Australia, looks back on his life and the choice he made to live in gratitude.",
+   "pitch": "A short, plainly told life story from a man who survived the camps and came out insisting on gratitude. It reads quickly and keeps coming back to a single question: how do you choose to live after that.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2694258/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788027700646",
+   "coverOL": "https://covers.openlibrary.org/b/id/13168552-M.jpg"
+  },
+  "nepravdepodobna-pout-harolda-frye": {
+   "blurb": "Harold Fry, newly retired, gets a letter from an old colleague dying of cancer and sets out to walk 627 miles to her, believing that as long as he walks she will live.",
+   "pitch": "One impulsive decision turns into a journey through England and through a whole marriage. You come to understand why Harold leaves and what he is carrying. Gentle and humane.",
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-11-10)"
+  },
+  "o-mysich-a-lidech": {
+   "blurb": "Two itinerant farm workers in 1930s California, a quick-witted man and the gentle giant he looks after, take a job on a ranch hoping to one day own their own land.",
+   "pitch": "A friendship carries the whole book. George and Lennie share one small dream, a patch of land of their own, and everything that happens on the ranch tests how far they will go for it. Short, direct, with a clear idea about why people hold on to a dream.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2385745/preview510",
+   "coverSource": "katalog",
+   "isbn": "8072184970",
+   "coverOL": "https://covers.openlibrary.org/b/id/14319003-M.jpg"
+  },
+  "planeta-opic": {
+   "blurb": "A French journalist on an interstellar expedition lands on a planet where intelligent apes rule and humans are mute animals, and tries to prove to the ape scientists that he can think.",
+   "pitch": "An explorer arrives on a world where apes run everything and humans are hunted, and has to prove to them that he is more than a beast. The satire on human self-regard keeps turning, and the last pages change how you read the whole story.",
+   "cover": "https://covers.openlibrary.org/b/id/8800778-M.jpg",
+   "isbn": "9781684153398"
+  },
+  "posledni-povel": {
+   "blurb": "Thrawn launches his final push against the New Republic, while Luke faces the mad Jedi Master C'baoth and Mara Jade decides what to do with the Emperor's last command.",
+   "pitch": "This is the finish of a long chase, and it is Mara Jade's story as much as anyone's: she has to decide what to do with an order that has ruled her life. The strategy keeps its edge to the end.",
+   "cover": "https://covers.openlibrary.org/b/id/6529190-M.jpg",
+   "isbn": "0553404431"
+  },
+  "prezila-jsem-ilibagiza": {
+   "blurb": "Immaculee Ilibagiza, a young Tutsi student, survives the 1994 genocide hidden with seven other women in a tiny bathroom in a Hutu pastor's house, and later says she forgave the killers.",
+   "pitch": "A true account of surviving the Rwandan genocide in a hiding place smaller than a closet, told by the woman who lived it. Its centre is how she decided to forgive.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3020979/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788024909509",
+   "coverOL": "https://covers.openlibrary.org/b/id/7883279-M.jpg"
+  },
+  "schindleruv-seznam": {
+   "blurb": "The true story of Oskar Schindler, a Nazi Party member and profiteer in occupied Poland, who used his factory to shelter over a thousand Jewish workers from deportation.",
+   "pitch": "The book follows a flawed businessman as he turns into the person who saves more than a thousand lives. The pull is the question of why he did it, and the facts are as plain and specific as a record.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1148347/preview510",
+   "coverSource": "katalog",
+   "isbn": "8085861054",
+   "coverOL": "https://covers.openlibrary.org/b/id/6458534-M.jpg"
+  },
+  "sedm-let-v-tibetu": {
+   "blurb": "Heinrich Harrer, an Austrian mountaineer interned in India in 1939, escapes, crosses the Himalaya to Lhasa and spends seven years there, becoming a tutor and friend of the young Dalai Lama.",
+   "pitch": "An escaped prisoner of war walks into a closed Himalayan kingdom and stays for seven years. You see Lhasa through his eyes, and the warm core is his friendship with the teenage Dalai Lama.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2018239/preview510",
+   "coverSource": "katalog",
+   "isbn": "8024002973",
+   "coverOL": "https://covers.openlibrary.org/b/id/3737876-M.jpg"
+  },
+  "slavik-hannah": {
+   "blurb": "France, 1939: Vianne, a mother and wife, must live with an occupying German officer in her house, while her rebellious younger sister Isabelle joins the Resistance.",
+   "pitch": "Two sisters answer the same occupation in opposite ways, and you follow what each one is protecting. The book is about courage that looks different in different people.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1370731/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788025717745",
+   "coverOL": "https://covers.openlibrary.org/b/id/1559766-M.jpg"
+  },
+  "starec-a-more": {
+   "blurb": "An old Cuban fisherman who has gone eighty-four days without a catch hooks a giant marlin far out at sea and fights it alone.",
+   "pitch": "A short, spare book about stubbornness and dignity. An old man and the great fish he will not let go are the whole story, and the boy who waits on shore gives it warmth.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3046326/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788020716217",
+   "coverOL": "https://covers.openlibrary.org/b/id/463307-M.jpg"
+  },
+  "tajuplny-ostrov": {
+   "blurb": "Five Union prisoners escape in a balloon in 1865 and land on an uncharted island, where an engineer leads them in building a home and a small industry while something unseen seems to help.",
+   "pitch": "A survival story built on problem-solving: how do five people with nothing make iron, bricks and a home? A quiet question, who is looking after them, keeps pulling you on.",
+   "cover": "https://covers.openlibrary.org/b/id/7883120-M.jpg"
+  },
+  "temna-sila-na-vzestupu": {
+   "blurb": "Thrawn and the New Republic race to find a lost fleet of dreadnoughts, while Leia pursues an alliance with the Noghri and Luke and Mara Jade are drawn deeper into the Force.",
+   "pitch": "A chase after a lost fleet draws the Empire, a smuggler network and the Republic into the same race. Leia's political thread gives some of the plot a personal stake, and Thrawn keeps the pressure on.",
+   "cover": "https://covers.openlibrary.org/b/id/538385-M.jpg",
+   "isbn": "0593358791"
+  },
+  "tri-kamaradi": {
+   "blurb": "In 1928 Germany, a veteran who runs a car repair shop with two war comrades meets a woman who is gravely ill and falls in love with her.",
+   "pitch": "Three war veterans keep a garage and each other going through hard years, until one of them finds something worth fighting for. It is a book about friendship that holds when little else does.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1829071/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788024918853",
+   "coverOL": "https://covers.openlibrary.org/b/id/4700943-M.jpg"
+  },
+  "ve-znameni-kon-tiki": {
+   "blurb": "Thor Heyerdahl and five companions sail a balsa raft from Peru across the Pacific in 1947 to show that South Americans could have settled Polynesia.",
+   "pitch": "Six men, one raft and three months of open Pacific, told with humour and a sharp eye for the sea. The goal is simple and clear, and you follow every day of the crossing.",
+   "cover": "https://covers.openlibrary.org/b/id/14997141-M.jpg"
+  },
+  "vezenkyne-z-teheranu": {
+   "blurb": "Marina Nemat, a Christian schoolgirl, is jailed and tortured in Evin prison in the 1980s and condemned to die until a guard intervenes, then is forced to marry him and convert to Islam.",
+   "pitch": "A teenager's account of Evin prison and what she had to trade to survive it, told with restraint instead of bitterness. You also see ordinary Tehran life change after the revolution.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2134389/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788072174904",
+   "coverOL": null
+  },
+  "vypalena-nenavist": {
+   "blurb": "Sixteen-year-old Starr, who lives between a poor neighbourhood and a wealthy school, is the only witness when a police officer shoots her friend Khalil.",
+   "pitch": "One clear voice and one decision hangs over the whole book: speak or stay silent. Starr is easy to root for, and her split between two worlds is shown from the inside.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2065320/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788075498939",
+   "coverOL": null
   }
  },
  "readMedia": {
