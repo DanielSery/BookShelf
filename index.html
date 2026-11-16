@@ -482,7 +482,18 @@ const AUDIENCE = { adult: 'adult', ya: 'young adult', childrens: "children's" };
 const ORIGIN = { cs: 'Czech original', foreign: 'translation' };
 // Themes orthogonal to genre: one book can be fantasy and world exploration at once.
 // They share the Genre select; a value found here filters on `tags` instead of `genre`.
-const TAGS = { exploration: 'world exploration' };
+const TAGS = { exploration: 'world exploration', ww2: 'Second World War' };
+// Lifted into `tags` from the similarity profiles rather than authored in book-cache.json,
+// so a book without a profile never carries them. Must match PROFILE_TAGS in tools/deep.py.
+const PROFILE_TAGS = ['ww2'];
+const profileTags = sim => {
+  const out = {};
+  PROFILE_TAGS.forEach(t => {
+    const f = sim ? sim.tags.findIndex(x => x[0] === t) : -1;
+    if (f >= 0) sim.books.forEach(p => { if (p.v.some(([i]) => i === f)) (out[p.id] ||= []).push(t); });
+  });
+  return out;
+};
 const tagLabels = tags => tags.map(t => TAGS[t] || t);
 const genreMatch = (x, gen) => !gen || (gen in TAGS ? x.tags.includes(gen) : x.genre === gen);
 // 'adult' and 'translation' are the overwhelming defaults, so only the exceptions are named.
@@ -555,10 +566,12 @@ async function load() {
   const M = media.media || {}, RM = media.readMedia || {}, JM = media.rejectMedia || {}, SM = media.seriesMedia || {};
   const OB = originDoc.books || {}, OR = originDoc.read || {};
   const DEEP = Object.fromEntries(jsonl(deepText).filter(d => d.key).map(d => [d.key, d]));
+  const PT = profileTags(sim);
 
   const books = est.map(e => {
     const b = byKey[e.key] || {}, m = M[e.key] || {};
     const cz = b.cz || {}, et = b.enText || {};
+    const tags = [...(b.tags || []), ...(PT['c:' + e.key] || [])];
     const stale = [];
     for (const [route, r, k] of [['CZ print', cz, 'cz']]) {
       const lim = ttl[k + '.' + r.state], age = r.checked ? daysSince(r.checked) : null;
@@ -577,10 +590,10 @@ async function load() {
       // predicted range centres on 80 or more (lowered from 85 the same day).
       enGem: cz.state !== 'verified' && GEM_LEVELS.includes(et.level) && !!e.est && (e.est[0] + e.est[1]) / 2 >= 80,
       lib: cz.state === 'verified' ? cz.library || 'valmez' : '',
-      genre: b.genre || '', tags: b.tags || [], form: b.form || '', audience: b.audience || 'adult',
+      genre: b.genre || '', tags, form: b.form || '', audience: b.audience || 'adult',
       origin: (OB[e.key] || {}).orig || '',
       hay: [e.key, e.t, b.title, b.czTitle, b.author, e.why, m.blurb, m.pitch,
-            GENRE[b.genre] || b.genre, ...tagLabels(b.tags || []), FORM[b.form] || b.form,
+            GENRE[b.genre] || b.genre, ...tagLabels(tags), FORM[b.form] || b.form,
             AUDIENCE[b.audience] || b.audience,
             ORIGIN[(OB[e.key] || {}).orig] || ''].join(' ').toLowerCase(),
     };
@@ -591,7 +604,7 @@ async function load() {
   read.rows.forEach(r => {
     r.media = RM[r.key] || {};
     const f = RF[r.key] || {};
-    r.genre = f.genre || ''; r.tags = f.tags || []; r.form = f.form || '';
+    r.genre = f.genre || ''; r.tags = [...(f.tags || []), ...(PT['r:' + r.key] || [])]; r.form = f.form || '';
     // '' rather than 'adult': an unfaceted read row must not masquerade as adult,
     // or a renamed title silently joins the wrong bucket instead of showing as a gap.
     r.audience = f.audience || '';
