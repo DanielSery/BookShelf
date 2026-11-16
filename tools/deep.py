@@ -16,11 +16,13 @@ import argparse, datetime, io, json, sys
 
 import radar
 
-EST, DEEP, CACHE, REVS, MEDIA = ("book-estimates.jsonl", "book-deep.jsonl", "book-cache.json",
-                                 "book-revs.json", "book-media.json")
+EST, DEEP, CACHE, REVS, MEDIA, PROFILES = ("book-estimates.jsonl", "book-deep.jsonl", "book-cache.json",
+                                           "book-revs.json", "book-media.json", "book-profiles.jsonl")
 MANDATORY = ["axis:opening", "axis:occult", "axis:detective", "axis:worldbuilding",
              "axis:protagonist", "axis:motives"]
 TAGS = {"exploration"}
+# Must match PROFILE_TAGS in index.html: read from the similarity profiles, not book-cache.json.
+PROFILE_TAGS = {"ww2"}
 VERDICTS = {"earns", "clear", "costs", "fires", "unknown"}
 MIN_WIDTH = 6
 
@@ -47,6 +49,12 @@ def estimates():
     return [json.loads(l) for l in lines[1:] if l.strip()]
 
 
+def profile_tags():
+    lines, _ = split(read(PROFILES))
+    profiles = (json.loads(l) for l in lines[1:] if l.strip())
+    return {p["id"][2:]: PROFILE_TAGS & set(p.get("tags", {})) for p in profiles if p.get("id", "").startswith("c:")}
+
+
 def fresh(route, ttl):
     if route.get("state") != "verified" or not route.get("checked"):
         return False
@@ -57,14 +65,15 @@ def fresh(route, ttl):
 def select(a):
     cache = books()
     ttl = json.loads(read(CACHE))["_ttlDays"]
+    ptags, themes = profile_tags(), TAGS | PROFILE_TAGS
     rows = []
     for e in estimates():
         b = cache.get(e["key"], {})
         if e.get("blocked") or not e.get("est") or e.get("depth"):
             continue
-        if a.genre in TAGS and a.genre not in (b.get("tags") or []):
+        if a.genre in themes and a.genre not in set(b.get("tags") or []) | ptags.get(e["key"], set()):
             continue
-        genre = None if a.genre in TAGS else a.genre
+        genre = None if a.genre in themes else a.genre
         if any(v and b.get(f) != v for f, v in (("genre", genre), ("form", a.form), ("audience", a.audience))):
             continue
         cz = fresh(b.get("cz", {}), ttl.get("cz.verified", 180))

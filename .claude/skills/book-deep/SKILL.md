@@ -52,7 +52,8 @@ first time an axis is reworded.
 ## Arguments
 
 - **Filter**: any of `genre` (sf · fantasy · litfic · historical · testimony ·
-  allegory · thriller, or the tag `exploration`, which matches `tags` instead), `form`,
+  allegory · thriller, or the tag `exploration`, which matches `tags` instead, or `ww2`,
+  which matches the similarity profile in `book-profiles.jsonl`), `form`,
   `audience`, matched against `book-cache.json`.
   Several genres means one independent run per genre, each with its own target.
 - **Route**: `cz` — Czech print verified in the library (what the reader means by
