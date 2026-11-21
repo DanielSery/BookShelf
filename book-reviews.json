@@ -1,0 +1,597 @@
+{
+ "_readme": "The reader's reviews, keyed like book-taste.jsonl. `helped` / `hurt` name the markers he says raised or lowered his score; `added` holds markers a book turned out to have that screening missed. Read books logged before the page could take reviews have their score in books-read.md and their ticks drawn from its notes.",
+ "schema": 1,
+ "reviews": {
+  "r:ozvena-veci-budoucich-an-echo-of-things-to-come": {
+   "helped": [
+    "coherent-world",
+    "faith-examined",
+    "interesting-lead",
+    "nameable-idea"
+   ],
+   "hurt": [],
+   "added": {}
+  },
+  "r:project-hail-mary": {
+   "helped": [
+    "coherent-world",
+    "discovery",
+    "rootable-lead"
+   ],
+   "hurt": [],
+   "added": {}
+  },
+  "r:seeking-allah-finding-jesus": {
+   "helped": [
+    "faith-examined",
+    "motives-on-page",
+    "nameable-idea"
+   ],
+   "hurt": [],
+   "added": {}
+  },
+  "r:svetlo-veci-konecnych-the-light-of-all-that-falls": {
+   "helped": [
+    "coherent-world",
+    "faith-examined",
+    "interesting-lead",
+    "nameable-idea"
+   ],
+   "hurt": [],
+   "added": {}
+  },
+  "r:red-rising": {
+   "helped": [
+    "interesting-lead",
+    "motives-on-page"
+   ],
+   "hurt": [],
+   "added": {
+    "sex-volume": 1
+   }
+  },
+  "r:stin-veci-ztracenych-the-shadow-of-what-was-lost": {
+   "helped": [
+    "coherent-world",
+    "discovery",
+    "interesting-lead"
+   ],
+   "hurt": [],
+   "added": {
+    "coherent-world": 2
+   }
+  },
+  "r:golden-son-red-rising-2": {
+   "helped": [
+    "coherent-world",
+    "differentiated-cast"
+   ],
+   "hurt": [
+    "action-over-motives"
+   ],
+   "added": {
+    "action-over-motives": 2,
+    "coherent-world": 3
+   }
+  },
+  "r:mockingjay-hunger-games-3": {
+   "helped": [
+    "motives-on-page"
+   ],
+   "hurt": [],
+   "added": {
+    "motives-on-page": 3
+   }
+  },
+  "r:speaker-for-the-dead-ender-2": {
+   "helped": [],
+   "hurt": [],
+   "added": {}
+  },
+  "r:the-hunger-games": {
+   "helped": [
+    "momentum"
+   ],
+   "hurt": [],
+   "added": {}
+  },
+  "r:sunrise-on-the-reaping": {
+   "helped": [
+    "interesting-lead",
+    "rootable-lead"
+   ],
+   "hurt": [],
+   "added": {}
+  },
+  "r:valka-stareho-muze-old-man-s-war": {
+   "helped": [
+    "coherent-world",
+    "interesting-lead"
+   ],
+   "hurt": [
+    "sex-volume"
+   ],
+   "added": {
+    "coherent-world": 3,
+    "interesting-lead": 2
+   }
+  },
+  "r:ender-s-game": {
+   "helped": [
+    "interesting-lead"
+   ],
+   "hurt": [
+    "child-feel-lead"
+   ],
+   "added": {
+    "child-feel-lead": 2
+   }
+  },
+  "r:the-hobbit": {
+   "helped": [
+    "nameable-idea",
+    "rootable-lead"
+   ],
+   "hurt": [],
+   "added": {
+    "nameable-idea": 1
+   }
+  },
+  "r:the-lord-of-the-rings-series": {
+   "helped": [
+    "nameable-idea",
+    "rootable-lead"
+   ],
+   "hurt": [
+    "padding"
+   ],
+   "added": {
+    "padding": 2
+   }
+  },
+  "r:catching-fire-hunger-games-2": {
+   "helped": [],
+   "hurt": [
+    "action-over-motives",
+    "sequel-rerun"
+   ],
+   "added": {
+    "action-over-motives": 2
+   }
+  },
+  "r:the-hitchhiker-s-guide-to-the-galaxy": {
+   "helped": [],
+   "hurt": [],
+   "added": {}
+  },
+  "r:mort-discworld-4": {
+   "helped": [],
+   "hurt": [],
+   "added": {}
+  },
+  "r:the-martian": {
+   "helped": [],
+   "hurt": [
+    "bleakness",
+    "padding"
+   ],
+   "added": {
+    "bleakness": 2,
+    "padding": 1
+   }
+  },
+  "r:the-little-prince": {
+   "helped": [
+    "nameable-idea"
+   ],
+   "hurt": [],
+   "added": {}
+  },
+  "r:ender-saga-3-5-xenocide-onward": {
+   "helped": [],
+   "hurt": [],
+   "added": {}
+  },
+  "r:pocitani-hvezd-the-calculating-stars": {
+   "helped": [
+    "nameable-idea"
+   ],
+   "hurt": [
+    "low-drive"
+   ],
+   "added": {
+    "low-drive": 2,
+    "nameable-idea": 2
+   }
+  },
+  "r:vule-vetsiny-the-will-of-the-many": {
+   "helped": [],
+   "hurt": [],
+   "added": {}
+  },
+  "r:ender-s-shadow-series": {
+   "helped": [],
+   "hurt": [],
+   "added": {}
+  },
+  "r:male-zeny-little-women": {
+   "helped": [
+    "differentiated-cast",
+    "interesting-lead"
+   ],
+   "hurt": [],
+   "added": {
+    "childish-register": 1
+   }
+  },
+  "r:animal-farm": {
+   "helped": [
+    "nameable-idea"
+   ],
+   "hurt": [],
+   "added": {}
+  },
+  "r:les-miserables": {
+   "helped": [],
+   "hurt": [
+    "padding"
+   ],
+   "added": {}
+  },
+  "r:the-silmarillion": {
+   "helped": [],
+   "hurt": [],
+   "added": {}
+  },
+  "r:saturnin": {
+   "helped": [
+    "differentiated-cast"
+   ],
+   "hurt": [],
+   "added": {}
+  },
+  "r:pycha-a-predsudek-pride-and-prejudice": {
+   "helped": [
+    "motives-on-page"
+   ],
+   "hurt": [],
+   "added": {
+    "motives-on-page": 3
+   }
+  },
+  "r:hranicaruv-ucen-1-4-ranger-s-apprentice": {
+   "helped": [],
+   "hurt": [
+    "world-logic-breach"
+   ],
+   "added": {
+    "world-logic-breach": 2
+   }
+  },
+  "r:hranicaruv-ucen-6": {
+   "helped": [],
+   "hurt": [
+    "world-logic-breach"
+   ],
+   "added": {
+    "world-logic-breach": 2
+   }
+  },
+  "r:hranicaruv-ucen-12-13": {
+   "helped": [],
+   "hurt": [
+    "world-logic-breach"
+   ],
+   "added": {
+    "world-logic-breach": 2
+   }
+  },
+  "r:hranicaruv-ucen-prvni-roky-1-the-early-years": {
+   "helped": [],
+   "hurt": [],
+   "added": {}
+  },
+  "r:labyrint-sveta-a-raj-srdce": {
+   "helped": [],
+   "hurt": [],
+   "added": {}
+  },
+  "r:the-count-of-monte-cristo": {
+   "helped": [
+    "momentum"
+   ],
+   "hurt": [],
+   "added": {}
+  },
+  "r:son-of-hamas": {
+   "helped": [],
+   "hurt": [],
+   "added": {}
+  },
+  "r:bratrstvo-1-3-brotherband": {
+   "helped": [],
+   "hurt": [],
+   "added": {}
+  },
+  "r:exodus": {
+   "helped": [],
+   "hurt": [],
+   "added": {}
+  },
+  "r:the-chronicles-of-narnia": {
+   "helped": [],
+   "hurt": [
+    "child-feel-lead",
+    "childish-register"
+   ],
+   "added": {
+    "child-feel-lead": 2
+   }
+  },
+  "r:quo-vadis": {
+   "helped": [],
+   "hurt": [],
+   "added": {}
+  },
+  "r:zaslana-posta-going-postal": {
+   "helped": [],
+   "hurt": [
+    "padding"
+   ],
+   "added": {
+    "padding": 2
+   }
+  },
+  "r:1984": {
+   "helped": [],
+   "hurt": [
+    "bleakness"
+   ],
+   "added": {}
+  },
+  "r:vydech-exhalation": {
+   "helped": [],
+   "hurt": [
+    "unconnected-collection"
+   ],
+   "added": {}
+  },
+  "r:hranicaruv-ucen-5": {
+   "helped": [],
+   "hurt": [
+    "world-logic-breach"
+   ],
+   "added": {
+    "world-logic-breach": 2
+   }
+  },
+  "r:hranicaruv-ucen-7-10": {
+   "helped": [],
+   "hurt": [
+    "world-logic-breach"
+   ],
+   "added": {
+    "world-logic-breach": 2
+   }
+  },
+  "r:hitchhiker-s-sequels-2-5": {
+   "helped": [],
+   "hurt": [],
+   "added": {}
+  },
+  "r:unfinished-tales": {
+   "helped": [],
+   "hurt": [
+    "unconnected-collection",
+    "world-logic-breach"
+   ],
+   "added": {
+    "world-logic-breach": 2
+   }
+  },
+  "r:artemis": {
+   "helped": [],
+   "hurt": [
+    "crude-sex",
+    "flat-lead"
+   ],
+   "added": {
+    "flat-lead": 2
+   }
+  },
+  "r:percy-jackson-full-series": {
+   "helped": [],
+   "hurt": [
+    "real-occult"
+   ],
+   "added": {}
+  },
+  "r:hranicaruv-ucen-11": {
+   "helped": [],
+   "hurt": [
+    "world-logic-breach"
+   ],
+   "added": {
+    "world-logic-breach": 2
+   }
+  },
+  "r:caropisci-foundryside": {
+   "helped": [
+    "coherent-world",
+    "interesting-lead"
+   ],
+   "hurt": [
+    "confusing-opening-context",
+    "invented-rite",
+    "same-sex-lead"
+   ],
+   "added": {
+    "confusing-opening-context": 2,
+    "sex-portrayal-contrast": 1
+   }
+  },
+  "r:the-ballad-of-songbirds-and-snakes": {
+   "helped": [],
+   "hurt": [
+    "unrootable-lead"
+   ],
+   "added": {}
+  },
+  "r:divergent-series": {
+   "helped": [],
+   "hurt": [
+    "unearned-competence",
+    "world-logic-breach"
+   ],
+   "added": {
+    "unearned-competence": 2
+   }
+  },
+  "r:oliver-twist": {
+   "helped": [],
+   "hurt": [
+    "passive-lead"
+   ],
+   "added": {}
+  },
+  "r:ja-robot-i-robot": {
+   "helped": [],
+   "hurt": [
+    "religion-mocked",
+    "unconnected-collection",
+    "unrootable-lead",
+    "world-logic-breach"
+   ],
+   "added": {
+    "unrootable-lead": 1,
+    "world-logic-breach": 2
+   }
+  },
+  "r:mortal-engines-smrtelne-stroje": {
+   "helped": [],
+   "hurt": [
+    "world-logic-breach"
+   ],
+   "added": {
+    "world-logic-breach": 3
+   }
+  },
+  "r:promena-the-metamorphosis": {
+   "helped": [],
+   "hurt": [
+    "bleakness",
+    "passive-lead",
+    "unrootable-lead"
+   ],
+   "added": {
+    "unrootable-lead": 1
+   }
+  },
+  "r:ready-player-one": {
+   "helped": [],
+   "hurt": [
+    "crude-sex"
+   ],
+   "added": {}
+  },
+  "r:the-witcher-series": {
+   "helped": [],
+   "hurt": [
+    "crude-sex",
+    "real-occult",
+    "sex-volume"
+   ],
+   "added": {
+    "real-occult": 3
+   }
+  },
+  "r:harry-potter-series": {
+   "helped": [],
+   "hurt": [
+    "real-occult",
+    "world-logic-breach"
+   ],
+   "added": {}
+  },
+  "r:havran-the-raven": {
+   "helped": [],
+   "hurt": [
+    "real-occult",
+    "verse"
+   ],
+   "added": {
+    "real-occult": 3
+   }
+  },
+  "r:permafrost": {
+   "helped": [],
+   "hurt": [
+    "early-stall"
+   ],
+   "added": {
+    "early-stall": 2
+   }
+  },
+  "r:strepy-zeme-shards-of-earth": {
+   "helped": [],
+   "hurt": [
+    "action-over-motives",
+    "early-stall"
+   ],
+   "added": {
+    "action-over-motives": 2,
+    "early-stall": 2
+   }
+  },
+  "r:problem-tri-teles-the-three-body-problem": {
+   "helped": [
+    "discovery"
+   ],
+   "hurt": [
+    "low-drive",
+    "passive-lead"
+   ],
+   "added": {
+    "low-drive": 2,
+    "passive-lead": 2
+   }
+  },
+  "r:the-diary-of-a-young-girl": {
+   "helped": [],
+   "hurt": [
+    "child-feel-lead"
+   ],
+   "added": {
+    "child-feel-lead": 2
+   }
+  },
+  "r:guards-guards-discworld-8": {
+   "helped": [],
+   "hurt": [
+    "confusing-opening-context",
+    "confusing-opening-switch"
+   ],
+   "added": {
+    "confusing-opening-context": 2,
+    "confusing-opening-switch": 3
+   }
+  },
+  "r:the-colour-of-magic-discworld-1": {
+   "helped": [],
+   "hurt": [
+    "confusing-opening-context"
+   ],
+   "added": {
+    "confusing-opening-context": 2
+   }
+  },
+  "r:the-gunslinger-the-dark-tower-1": {
+   "helped": [],
+   "hurt": [
+    "confusing-opening-context",
+    "early-stall"
+   ],
+   "added": {}
+  }
+ }
+}
