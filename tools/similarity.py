@@ -126,7 +126,8 @@ def save_profiles(profiles):
         "_readme": "What each shelf book IS, in the controlled vocabulary of tools/similarity-prompt.md: "
                    "weight 3 defining, 2 clearly present, 1 minor. Written by tools/similarity.py merge "
                    "from agent output; book-similarity.json is built from it. A description, never a "
-                   "judgement - nothing here may feed an estimate.",
+                   "judgement: the profiler says what a book is, and only the marker estimate "
+                   "(tools/taste.py fit, estimate.js) learns what each tag is worth to the reader.",
         "schema": 1,
         "_id": "c:<book-cache.json key> for a candidate, r:<slug of the books-read.md title> for a read "
                "book - the same slug as book-media.json readMedia. A logged candidate changes id, so it "
