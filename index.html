@@ -208,6 +208,11 @@
   details.scoring > summary { cursor: pointer; color: var(--ink-muted); width: fit-content; }
   details.scoring > summary:hover { color: var(--ink); }
   details.scoring .why { margin-top: 6px; color: var(--ink-2); }
+  .markers { margin: 6px 0 8px; font-size: 12.5px; color: var(--ink-2); }
+  .markers ul { margin: 4px 0 0; padding-left: 18px; }
+  .markers .v { display: inline-block; min-width: 2.4em; font-weight: 650; font-variant-numeric: tabular-nums; }
+  .markers .v.costs { color: var(--status-serious); }
+  .markers .v.earns { color: var(--b-A); }
   details.dossier { margin: 6px 0 0; }
   details.dossier > summary { cursor: pointer; color: var(--ink-muted); width: fit-content; }
   details.dossier ul { margin: 6px 0 0; padding-left: 18px; }
@@ -287,7 +292,55 @@
   .sheetside { min-height: 0; overflow-y: auto; padding: 14px; border-left: 1px solid var(--hairline); }
   .sheetside .card { grid-template-columns: 72px minmax(0, 1fr); gap: 12px; padding: 14px; }
   .sheetside .card .cover, .sheetside .card .cover-ph { width: 72px; height: 108px; }
-  body.sheet-open { overflow: hidden; }
+  body.sheet-open, body.rv-open { overflow: hidden; }
+  .rvsheet { z-index: 50; }
+  .rvpanel {
+    margin: auto; width: min(640px, 100%); max-height: 100%; display: flex; flex-direction: column; outline: none;
+    background: var(--surface); border-radius: 12px; overflow: hidden; box-shadow: 0 24px 60px -20px rgba(0,0,0,0.55);
+  }
+  .rvbody { flex: 1; min-height: 0; overflow-y: auto; padding: 0 16px 16px; }
+  .rvlabel { display: block; margin: 16px 0 6px; font-size: 12.5px; font-weight: 600; color: var(--ink-2); }
+  .rvlabel .bk-meta { font-weight: 400; }
+  .rvpanel .wseg { flex-wrap: wrap; width: fit-content; max-width: 100%; }
+  .rvpanel textarea, .rvpanel input[type="password"], .rvpanel select {
+    width: 100%; padding: 7px 10px; border: 1px solid var(--rule); border-radius: 8px; background: var(--plane); font-size: 13px;
+  }
+  .rvpanel textarea { resize: vertical; }
+  .rvmarks { list-style: none; margin: 0; padding: 0; font-size: 13px; }
+  .rvmarks li {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 12px;
+    padding: 6px 0; border-bottom: 1px solid var(--hairline);
+  }
+  .rvmarks .v { display: inline-block; min-width: 2.6em; font-weight: 650; font-variant-numeric: tabular-nums; }
+  .rvmarks .v.costs { color: var(--status-serious); }
+  .rvmarks .v.earns { color: var(--b-A); }
+  .rvmarks .unpick { font-size: 16px; padding: 0 4px; }
+  .rvadd { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .rvpanel .rvadd select { width: auto; }
+  .rvpanel .rvadd select:first-child { flex: 1 1 220px; }
+  .rvuse { margin: 6px 0 0; }
+  .rvuse:empty { display: none; }
+  .rvtok { margin: 16px 0 0; }
+  .rvfoot {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--hairline);
+  }
+  .rvmsg { flex: 1 1 200px; font-size: 12.5px; color: var(--ink-muted); }
+  .rvmsg.err { color: var(--status-critical); }
+  button.rvbtn {
+    height: 32px; padding: 0 14px; border: 1px solid var(--rule); border-radius: 8px;
+    background: var(--surface); font-size: 13px; font-weight: 560;
+  }
+  button.rvbtn:hover { border-color: var(--ink-muted); }
+  button.rvbtn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  button.rvbtn:disabled { opacity: 0.6; cursor: default; }
+  button.rvopen { display: block; margin: 4px 0 0; font-size: 12.5px; color: var(--ink-2); }
+  .vr button.rvopen { display: inline; margin: 0; font-size: inherit; }
+  .rvtoast {
+    position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 60;
+    width: max-content; max-width: calc(100% - 32px); padding: 10px 16px; border-radius: 10px;
+    background: var(--ink); color: var(--surface); font-size: 13px; box-shadow: 0 12px 30px -12px rgba(0,0,0,0.5);
+  }
   .wphead {
     display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: flex-start; justify-content: space-between;
     padding: 12px 14px 10px; border-bottom: 1px solid var(--hairline);
@@ -353,6 +406,7 @@
     .authorsheet { padding: 0; }
     .sheetpanel { border-radius: 0; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr) auto; }
     .sheetside { max-height: 50vh; border-left: 0; border-top: 1px solid var(--hairline); }
+    .rvpanel { width: 100%; height: 100%; border-radius: 0; }
   }
   @media (max-width: 640px) {
     header.top { padding: 8px 16px; }
@@ -431,11 +485,15 @@
   <div id="view"></div>
 </main>
 <div class="authorsheet" id="authorsheet" hidden></div>
+<div class="authorsheet rvsheet" id="reviewsheet" hidden></div>
 
 <script src="map.js"></script>
+<script src="estimate.js"></script>
+<script src="review.js"></script>
 <script>
 // The reader scores in five words (2026-11-09); everything underneath stays on 0-100, so
-// this is the only place a number is turned into what he sees. BAND and WORD must match
+// this is the only place a score is turned into what he sees. The marker breakdown under Why
+// and in the review sheet keeps its points (reader, 2026-11-21). BAND and WORD must match
 // tools/readlog.py, which reads the same log.
 const BAND = [[85,'Endorse'],[65,'Recommend'],[55,'Neutral'],[45,'Discourage'],[0,'Oppose']];
 const WORD = { endorse: 92, recommend: 75, neutral: 60, discourage: 50, oppose: 30 };
@@ -545,7 +603,8 @@ async function load() {
     if (!r.ok) throw new Error(p + ' → HTTP ' + r.status);
     return kind === 'text' ? r.text() : r.json();
   };
-  const [cache, revsDoc, media, estText, rejText, readMd, readFacets, originDoc, deepText, sim, seriesDoc, worldsDoc] = await Promise.all([
+  const [cache, revsDoc, media, estText, rejText, readMd, readFacets, originDoc, deepText, sim, seriesDoc, worldsDoc,
+         markersDoc, tasteText, reviewsDoc, profilesText] = await Promise.all([
     get('book-cache.json'), get('book-revs.json'), get('book-media.json'),
     get('book-estimates.jsonl', 'text'), get('book-rejects.jsonl', 'text'),
     get('books-read.md', 'text'),
@@ -557,6 +616,10 @@ async function load() {
     get('book-similarity.json').catch(() => null),
     get('book-series.json').catch(() => ({ series: {} })),
     get('book-worlds.json').catch(() => ({ worlds: {} })),
+    get('book-markers.json').catch(() => null),
+    get('book-taste.jsonl', 'text').catch(() => ''),
+    get('book-reviews.json').catch(() => ({ reviews: {} })),
+    get('book-profiles.jsonl', 'text').catch(() => ''),
   ]);
 
   const est = jsonl(estText).slice(1);
@@ -571,6 +634,7 @@ async function load() {
   const books = est.map(e => {
     const b = byKey[e.key] || {}, m = M[e.key] || {};
     const cz = b.cz || {}, et = b.enText || {};
+    const gemRoute = cz.state !== 'verified' && GEM_LEVELS.includes(et.level);
     const tags = [...(b.tags || []), ...(PT['c:' + e.key] || [])];
     const stale = [];
     for (const [route, r, k] of [['CZ print', cz, 'cz']]) {
@@ -588,7 +652,7 @@ async function load() {
       // A gem is a book worth hunting down in English (reader, 2026-10-25): neither
       // library has it in print, its English is easy for a non-native reader, and the
       // predicted range centres on 80 or more (lowered from 85 the same day).
-      enGem: cz.state !== 'verified' && GEM_LEVELS.includes(et.level) && !!e.est && (e.est[0] + e.est[1]) / 2 >= 80,
+      gemRoute, enGem: gemRoute && !!e.est && (e.est[0] + e.est[1]) / 2 >= 80,
       lib: cz.state === 'verified' ? cz.library || 'valmez' : '',
       genre: b.genre || '', tags, form: b.form || '', audience: b.audience || 'adult',
       origin: (OB[e.key] || {}).orig || '',
@@ -639,7 +703,9 @@ async function load() {
   });
 
   D = { cache, revs, books, read, rejects, sim, series, seriesOf, readSeries, readSeriesOf, seriesMedia: SM,
-        seriesDoc: seriesDoc.series || {}, worlds: worldsDoc.worlds || {} };
+        seriesDoc: seriesDoc.series || {}, worlds: worldsDoc.worlds || {},
+        taste: markersDoc && { model: tasteModel(markersDoc, tasteText, rvApplyPending(reviewsDoc), profilesText), fit: null } };
+  if (D.taste) tasteRefresh();
   fillSelect('rfilter', 'All filters', [...new Set(rejects.map(r => r.filter))].sort().map(f => [f, nice(f)]));
   fillSelect('rscope', 'All scopes', [...new Set(rejects.map(r => r.level))].sort().map(l => [l, l]));
   fillAccess();
@@ -837,6 +903,43 @@ const missingBefore = b => (b.cache.prereq || [])
 const riskBadges = (risks, gapped) => (risks || []).filter(r => !(gapped && r === 'axis:sequels'))
   .map(r => badge('risk', nice(r), 'Risk'));
 
+// A marked book is estimated from its markers alone; the agent's range stays beside it for
+// comparison (reader, 2026-11-21), until his reviews show which of the two lands closer.
+function applyTaste(b, model, te) {
+  if (!('agentEst' in b)) Object.assign(b, { agentEst: b.est, agentBlocked: b.blocked, agentMid: b.mid });
+  b.taste = te;
+  b.blocked = b.agentBlocked || (te && te.veto ? model.byId[te.veto].axis : null);
+  b.est = !te ? b.agentEst : te.veto ? null : [te.points, te.points];
+  b.mid = !te ? b.agentMid : te.veto ? -1 : te.points;
+  b.enGem = b.gemRoute && !!b.est && b.mid >= 80;
+}
+
+// A review written on the page has a date; a tick-only entry for a books-read.md row does not.
+const pageReview = b => { const rv = D.taste && D.taste.model.reviews['c:' + b.key]; return rv && rv.at ? rv : null; };
+
+function tasteRefresh() {
+  const { model } = D.taste;
+  const scored = D.read.rows.map(r => ({ id: 'r:' + r.key, score: r.score }))
+    .concat(D.books.filter(pageReview).map(b => ({ id: 'c:' + b.key, score: WORD[pageReview(b).score] ?? null })));
+  const fit = D.taste.fit = tasteFit(model, scored);
+  D.books.forEach(b => applyTaste(b, model, fit && tasteEstimate(model, fit, 'c:' + b.key)));
+  MAP.built = MAP.wix = null;
+}
+
+function tasteBlock(b) {
+  const t = b.taste;
+  if (t.veto) return `<p class="why">Blocked by the marker <b>${esc(D.taste.model.byId[t.veto].label)}</b>.</p>`;
+  const signed = x => `${x < 0 ? '−' : '+'}${Math.abs(Math.round(x))}`;
+  const tags = Math.round(t.tagPoints);
+  const items = t.parts.map(p => `<li><span class="v ${p.points < 0 ? 'costs' : 'earns'}">${signed(p.points)}</span>
+      ${esc(p.label)}${p.s < 3 ? ` <span class="bk-meta">${p.s}/3</span>` : ''}</li>`).join('')
+    + (tags ? `<li><span class="v ${tags < 0 ? 'costs' : 'earns'}">${signed(tags)}</span> subject and setting</li>` : '');
+  return `<div class="markers"><b>Markers: ${t.points}</b>, from your baseline ${Math.round(t.base)}${items ? `<ul>${items}</ul>` : ''}</div>`;
+}
+
+const reviewButton = (b, label = 'Review') => D.taste
+  ? `<button type="button" class="linkish rvopen" data-review="${esc(b.key)}">${label}</button>` : '';
+
 function candidateCard(b) {
   const gaps = missingBefore(b), czt = b.cache.czTitle, en = b.cache.title, tips = tipsOf(b.media);
   return shell({
@@ -846,6 +949,7 @@ function candidateCard(b) {
     author: (b.cache.author || '') + (b.cache.series ? ' · ' + b.cache.series : ''),
     badges: [
       b.depth === 'deep' && badge('deep', 'deep-dived'),
+      D.taste && !b.taste && badge('', 'agent estimate', 'Not marked yet: the range is the agent\'s, not the markers\''),
       b.blocked && badge('blocked', 'blocked · ' + nice(b.blocked)),
       ...gaps.map(g => badge('risk high', 'needs ' + g, 'High risk')),
       ...riskBadges(b.risks, gaps.length),
@@ -854,8 +958,10 @@ function candidateCard(b) {
     tips,
     body: `${pitchOf(b.media)}${inlineTips(tips)}
       <div class="access">${accessLine(b)}</div>
+      ${reviewButton(b)}
       <details class="scoring"><summary>Why</summary>
-        <p class="why">${esc(b.why)}</p>
+        ${b.taste ? tasteBlock(b) : ''}
+        <p class="why">${b.taste ? `<b>Agent estimate${b.agentEst ? ' ' + esc(rng(b.agentEst[0], b.agentEst[1])) : ''}:</b> ` : ''}${esc(b.why)}</p>
         ${b.dossier ? dossierBlock(b.dossier) : ''}
         ${(b.leanedOn || []).length ? `<div class="leaned">Rests on ${b.leanedOn.map(x => esc(nice(x))).join(', ')}</div>` : ''}
       </details>`,
@@ -868,7 +974,7 @@ function candidateCard(b) {
 function seriesEntry(s) {
   const vols = s.members.map(m => m.book), first = vols[0];
   const stop = vols.find(b => b.blocked);
-  const scored = vols.filter(b => b.est);
+  const scored = vols.filter(b => b.est && !pageReview(b));
   const est = !stop && scored.length
     ? [0, 1].map(i => Math.round(scored.reduce((t, b) => t + b.est[i], 0) / scored.length)) : null;
   return {
@@ -898,7 +1004,8 @@ function groupSeries(books) {
 }
 
 function volumeLine(b) {
-  const czt = b.cache.czTitle, en = b.cache.title;
+  const czt = b.cache.czTitle, en = b.cache.title, rv = pageReview(b);
+  if (rv) return `${esc(czt || en)} <span class="vr">· read · ${rv.score ? rvCap(rv.score) : 'not finished'} · ${reviewButton(b, 'Edit review')}</span>`;
   const range = b.blocked ? `blocked · ${esc(nice(b.blocked))}` : b.est ? rng(b.est[0], b.est[1]) : '—';
   const access = b.hasCz ? (b.cz.recordUrl ? routeLink(b.cz.recordUrl, 'Borrow') : 'CZ print')
     : b.hasEloan ? 'e-loan only'
@@ -906,7 +1013,7 @@ function volumeLine(b) {
     : b.enGem ? (b.cache.enCopy ? routeLink(b.cache.enCopy.recordUrl, 'Borrow in English') : 'English gem')
     : 'not in print here';
   return `${esc(czt || en)}${czt && en && czt !== en ? ` <span class="vr">(${esc(en)})</span>` : ''}
-    <span class="vr">· ${range} · ${access}${missingBefore(b).map(g => ` · needs ${esc(g)}`).join('')}</span>
+    <span class="vr">· ${range} · ${access}${missingBefore(b).map(g => ` · needs ${esc(g)}`).join('')}${D.taste ? ' · ' + reviewButton(b) : ''}</span>
     <details class="scoring"><summary>Why</summary><p class="why">${esc(b.why)}</p></details>`;
 }
 
@@ -983,16 +1090,27 @@ function readSeriesCard(e) {
   });
 }
 
+// A book reviewed on the page stays a shelf book (c:) and is shown on the Read tab as a read row.
+function pageReadRow(b) {
+  const rv = pageReview(b);
+  return {
+    title: b.cache.czTitle || b.cache.title || b.key, author: b.cache.author || '', key: b.key, ref: 'c:' + b.key,
+    book: b, at: rv.at, score: rv.score ? WORD[rv.score] : null, notes: rv.notes || '',
+    media: b.media, genre: b.genre, tags: b.tags, form: b.form, audience: b.audience, origin: b.origin,
+    hay: [b.hay, rv.notes || ''].join(' ').toLowerCase(),
+  };
+}
+
 // Unscored books already sit under their own "Not finished" heading.
 function readCard(r) {
   const dnf = r.score != null && /(^|[^A-Za-z])DNF([^A-Za-z]|$)|abandon|unfinished/i.test(r.notes);
   const tips = tipsOf(r.media);
   return shell({
-    key: r.key, media: r.media, fallback: r.author, title: r.title, author: r.author, mapId: 'r:' + r.key,
+    key: r.key, media: r.media, fallback: r.author, title: r.title, author: r.author, mapId: r.ref || 'r:' + r.key,
     tone: r.score == null ? 'bN' : tone(r.score), score: readScore(r),
-    badges: dnf ? [badge('', 'did not finish')] : [],
+    badges: [dnf && badge('', 'did not finish'), r.at && badge('', 'reviewed ' + r.at)].filter(Boolean),
     tips,
-    body: inlineTips(tips) + (r.notes ? whyBlock(esc(r.notes)) : ''),
+    body: inlineTips(tips) + (r.notes ? whyBlock(esc(r.notes)) : '') + (r.book ? reviewButton(r.book, 'Edit review') : ''),
   });
 }
 
@@ -1055,7 +1173,7 @@ const table = (head, rows) =>
 const setCount = text => { F('count').textContent = text; };
 
 function candidates() {
-  const rows = sortBy(groupSeries(D.books).filter(candidateFilter()), F('sort').value);
+  const rows = sortBy(groupSeries(D.books.filter(b => !pageReview(b))).filter(candidateFilter()), F('sort').value);
   setCount(plural(rows.length, 'book'));
   if (!rows.length) return EMPTY;
   if (!F('astable').checked) return grid(rows.map(b => b.isSeries ? seriesCard(b) : candidateCard(b)));
@@ -1085,7 +1203,7 @@ function readFilter() {
     if (aud === 'kids' ? !(r.audience === 'ya' || r.audience === 'childrens')
                        : aud && r.audience !== aud) return false;
     if (org && r.origin !== org) return false;
-    if (tag && !mapTagged(r.isSeries ? 'rs:' + r.s.id : 'r:' + r.key, tag)) return false;
+    if (tag && !mapTagged(r.isSeries ? 'rs:' + r.s.id : r.ref || 'r:' + r.key, tag)) return false;
     return true;
   };
 }
@@ -1093,7 +1211,7 @@ function readFilter() {
 const readEntryCard = r => r.isSeries ? readSeriesCard(r) : readCard(r);
 
 function readView() {
-  const kept = groupReadSeries(D.read.rows).filter(readFilter());
+  const kept = groupReadSeries(D.read.rows).concat(D.books.filter(pageReview).map(pageReadRow)).filter(readFilter());
   // Put down for lack of interest, not disliked (reader, 2026-10-29): kept apart from the
   // scored books so they never sit among the low scores.
   const unfinished = sortBy(kept.filter(r => r.score == null), 'title');

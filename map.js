@@ -1,8 +1,8 @@
 // Similar books and authors, and the author map. Loaded before the main script and run against
 // its globals (D, F, esc, plural, tone, band, rng, grid, EMPTY, state, candidateCard, seriesCard,
 // readCard, readSeriesCard, markClips, render, setView, setCount, store, recall, candidateFilter,
-// readFilter), all of which exist by the time anything here is called. Names are map-prefixed
-// because every top-level declaration shares one scope with index.html.
+// readFilter, pageReview, pageReadRow, WORD), all of which exist by the time anything here is
+// called. Names are map-prefixed because every top-level declaration shares one scope with index.html.
 
 // seeds: what the similar list is close to, in the current mode; bookSeeds keeps the books
 // so that switching Authors -> Books returns to them. from: the tab and scroll to go back to.
@@ -34,12 +34,15 @@ function mapBuild() {
     const kind = s.id[0], key = s.id.slice(2);
     const row = kind === 'c' ? byKey[key] : readByKey[key];
     if (!row) return;
+    // A shelf book reviewed on the page keeps its c: id but is read from then on.
+    const readRow = kind === 'c' && pageReview(row) ? pageReadRow(row) : null;
     const p = {
-      id: s.id, kind, key, row, sv: s.v, d: dense(s.v), i: books.length, ref: 'b' + books.length,
+      id: s.id, kind, key, row, readRow, read: kind === 'r' || !!readRow,
+      sv: s.v, d: dense(s.v), i: books.length, ref: 'b' + books.length,
       title: kind === 'c' ? row.cache.czTitle || row.cache.title : row.title,
       alt: kind === 'c' && row.cache.czTitle && row.cache.title !== row.cache.czTitle ? row.cache.title : '',
       author: kind === 'c' ? row.cache.author || '' : row.author,
-      score: kind === 'c' ? (row.est ? row.mid : null) : row.score,
+      score: readRow ? readRow.score : kind === 'c' ? (row.est ? row.mid : null) : row.score,
     };
     bySimIdx[i] = p;
     books.push(p);
@@ -61,7 +64,7 @@ function mapBuild() {
     const norm = Math.hypot(...d) || 1;
     const row = read ? readSeriesEntry(D.readSeries[sid]) : seriesEntry(D.series[sid]);
     const p = {
-      id: (read ? 'rs:' : 's:') + sid, kind, isSeries: true, key: row.key, row, vols: ps,
+      id: (read ? 'rs:' : 's:') + sid, kind, read, isSeries: true, key: row.key, row, vols: ps,
       d: d.map(x => x / norm), title: row.s.name, alt: row.s.nameEn && row.s.nameEn !== row.s.name ? row.s.nameEn : '',
       author: read ? row.author : row.cache.author, score: read ? row.score : row.est ? row.mid : null,
     };
@@ -100,7 +103,7 @@ const mapByRef = (B, ref) => ref[0] === 'a' ? B.authors[+ref.slice(1)] : B.books
 
 function mapMatches(B) {
   const cf = candidateFilter(), rf = readFilter();
-  B.books.forEach(p => { p.on = p.kind === 'c' ? cf(p.row) : rf(p.row); });
+  B.books.forEach(p => { p.on = p.readRow ? rf(p.readRow) : p.kind === 'c' ? cf(p.row) : rf(p.row); });
   B.authors.forEach(a => { a.on = a.members.some(m => m.on); });
   MAP.gen++;
 }
@@ -123,7 +126,7 @@ function mapResults(B) {
     // The reader knows a seed's author already, and a long series would otherwise
     // fill the whole list with its own volumes.
     const own = o.sameAuthor ? new Set() : new Set(seeds.map(s => s.authorRef));
-    pool = B.books.filter(p => p.on && !seeds.includes(p) && !(o.unread && p.kind === 'r') && !own.has(p.authorRef));
+    pool = B.books.filter(p => p.on && !seeds.includes(p) && !(o.unread && p.read) && !own.has(p.authorRef));
   }
   const all = pool.map(p => { const per = seeds.map(s => simDot(s, p)); return { p, per, sim: Math.min(...per) }; })
     .sort((a, b) => b.sim - a.sim);
@@ -143,7 +146,7 @@ const mapTone = p => p.score == null ? 'bN' : tone(p.score);
 const mapLabel = p => p.members ? p.name : p.title;
 
 // The same card the Candidates and Read tabs draw, so a book looks the same wherever it is opened.
-const mapCard = p => p.kind === 'c' ? (p.isSeries ? seriesCard : candidateCard)(p.row)
+const mapCard = p => p.readRow ? readCard(p.readRow) : p.kind === 'c' ? (p.isSeries ? seriesCard : candidateCard)(p.row)
   : (p.isSeries ? readSeriesCard : readCard)(p.row);
 
 const MAP_GROUPS = [['Kind', 'Kind'], ['Setting', 'Setting'], ['Theme', 'Theme'], ['Tone', 'Tone'],
@@ -234,7 +237,7 @@ function mapBar() {
   </div>`;
 }
 
-const mapAuthorBooks = a => a.members.filter(m => m.on && !(MAP.opts.unread && m.kind === 'r')).sort(mapBestFirst);
+const mapAuthorBooks = a => a.members.filter(m => m.on && !(MAP.opts.unread && m.read)).sort(mapBestFirst);
 
 function mapSimLine(r, B) {
   const shared = sharedTags(MAP.seeds, r.p, B);
@@ -325,7 +328,7 @@ function mapAuthorMap(name) {
   Object.entries(D.worlds).forEach(([id, w]) => { if (w.author === name) ids.add(id); });
   const blocks = [...ids].map(mapWorld);
   if (solo.length) {
-    solo.sort((a, b) => (b.kind === 'r') - (a.kind === 'r') || (b.score ?? -1) - (a.score ?? -1));
+    solo.sort((a, b) => !!b.read - !!a.read || (b.score ?? -1) - (a.score ?? -1));
     const raw = {
       name: 'Standalone books', lines: [{ id: 'solo', name: 'Standalone books', standalone: true }], links: [], arcs: [],
       books: solo.map(m => m.kind === 'c' ? { id: 'k:' + m.key, line: 'solo', n: null, key: m.key }
@@ -393,8 +396,11 @@ function mapWorldNode(b, w, X) {
                        word: row.score == null ? 'read, not finished' : 'read' });
     n.title ||= row.title;
   } else if (cand) {
-    Object.assign(n, { state: 'shelf', score: cand.est ? cand.mid : null, est: cand.est, author: cand.cache.author, ref: 'c:' + cand.key,
-                       word: cand.blocked ? `on the shelf, blocked · ${nice(cand.blocked)}` : 'on the shelf' });
+    const rv = pageReview(cand), score = rv ? (rv.score ? WORD[rv.score] : null) : cand.est ? cand.mid : null;
+    Object.assign(n, rv
+      ? { state: 'read', score, author: cand.cache.author, ref: 'c:' + cand.key, word: score == null ? 'read, not finished' : 'read' }
+      : { state: 'shelf', score, est: cand.est, author: cand.cache.author, ref: 'c:' + cand.key,
+          word: cand.blocked ? `on the shelf, blocked · ${nice(cand.blocked)}` : 'on the shelf' });
     n.title ||= cand.cache.czTitle || cand.cache.title;
     n.alt ||= cand.cache.czTitle && cand.cache.title !== cand.cache.czTitle ? cand.cache.title : '';
     if (cand.hasCz && cand.cz.recordUrl) n.href = cand.cz.recordUrl;
