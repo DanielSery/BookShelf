@@ -6,7 +6,7 @@ Three namespaces, because the app has three tabs and their rows are keyed
 differently:
 
   media       candidates  — keyed by the book key in book-cache.json
-  readMedia   read books  — keyed by a slug of the title in books-read.md
+  readMedia   read books  — keyed by their r: id in book-reviews.json (a slug of the title)
   rejectMedia exclusions  — keyed by a slug of entity+author in book-rejects.jsonl
 
 Idempotent and additive: existing covers and hand-written blurbs are preserved,
@@ -42,7 +42,7 @@ UA = {"User-Agent": "book-shelf/1.0 (personal reading list)"}
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CACHE = os.path.join(ROOT, "book-cache.json")
 MEDIA = os.path.join(ROOT, "book-media.json")
-READ = os.path.join(ROOT, "books-read.md")
+REVIEWS = os.path.join(ROOT, "book-reviews.json")
 REJECTS = os.path.join(ROOT, "book-rejects.jsonl")
 OL_COVER = "https://covers.openlibrary.org/b/id/%d-M.jpg"
 
@@ -137,7 +137,7 @@ def fill(bucket, wanted, today, label, retry):
 
 
 def read_rows():
-    return [(r["title"], r["author"]) for r in readlog.rows(READ)]
+    return [(r["key"], r["title"], r["author"]) for r in readlog.rows(REVIEWS, kind="r")]
 
 
 def main():
@@ -162,9 +162,9 @@ def main():
                   for b in cache["books"]]
 
     reads = []
-    for title, author in read_rows():
+    for key, title, author in read_rows():
         t = clean_title(title)
-        reads.append((slug(title), [{"title": t, "author": author},
+        reads.append((key, [{"title": t, "author": author},
                                     {"q": "%s %s" % (t, author)}]))
 
     rejects = []
@@ -206,13 +206,11 @@ def main():
     data["_readme"] = (
         "Cover URLs and neutral blurbs for everything the viewer app renders. Three "
         "namespaces because the tabs are keyed differently: `media` by book-cache.json key, "
-        "`readMedia` by a slug of the books-read.md title, `rejectMedia` by a slug of "
+        "`readMedia` by the r: id in book-reviews.json, `rejectMedia` by a slug of "
         "entity+author in book-rejects.jsonl. Fully regenerable: run tools/fetch-media.py. "
         "Kept out of book-cache.json so a cover refresh never has to reserialise that "
         "hand-formatted file. Blurbs say what the book IS; whether the reader would like it "
-        "is book-estimates.jsonl's `why` and must not be duplicated here. A slug join is "
-        "deliberately loose - editing a title in books-read.md costs a placeholder cover, "
-        "never a broken row. `coverOL` is an Open Library cover for a row whose `cover` is "
+        "is book-estimates.jsonl's `why` and must not be duplicated here. `coverOL` is an Open Library cover for a row whose `cover` is "
         "on obalkyknih.cz, which serves only registered library catalogues; the GitHub "
         "Pages copy of the viewer shows it instead, and null means Open Library had none.")
     data["_null_cover"] = (

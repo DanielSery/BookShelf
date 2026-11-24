@@ -15,6 +15,7 @@ disk: a checkout with core.autocrlf rewrites them as CRLF.
 import argparse, datetime, io, json, sys
 
 import radar
+import readlog
 
 EST, DEEP, CACHE, REVS, MEDIA, PROFILES = ("book-estimates.jsonl", "book-deep.jsonl", "book-cache.json",
                                            "book-revs.json", "book-media.json", "book-profiles.jsonl")
@@ -66,10 +67,11 @@ def select(a):
     cache = books()
     ttl = json.loads(read(CACHE))["_ttlDays"]
     ptags, themes = profile_tags(), TAGS | PROFILE_TAGS
+    reviewed = {r["key"] for r in readlog.rows(kind="c")}
     rows = []
     for e in estimates():
         b = cache.get(e["key"], {})
-        if e.get("blocked") or not e.get("est") or e.get("depth"):
+        if e.get("blocked") or not e.get("est") or e.get("depth") or e["key"] in reviewed:
             continue
         if a.genre in themes and a.genre not in set(b.get("tags") or []) | ptags.get(e["key"], set()):
             continue

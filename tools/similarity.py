@@ -36,7 +36,7 @@ for _s in (sys.stdout, sys.stderr):
         pass
 
 EST, CACHE, MEDIA = "book-estimates.jsonl", "book-cache.json", "book-media.json"
-READ, FACETS = "books-read.md", "book-read-facets.json"
+FACETS = "book-read-facets.json"
 PROMPT, PROFILES, OUT = "tools/similarity-prompt.md", "book-profiles.jsonl", "book-similarity.json"
 NOTES_MAX, BLURB_MAX = 700, 300
 MIN_TAGS, MAX_TAGS = 4, 18
@@ -81,7 +81,8 @@ def vocabulary():
 
 
 def read_rows():
-    return [{k: r[k] for k in ("title", "author", "notes")} for r in readlog.rows(READ)]
+    """Books read before they were on the shelf; a reviewed shelf book keeps its c: id."""
+    return [{k: r[k] for k in ("key", "title", "author", "notes")} for r in readlog.rows(kind="r")]
 
 
 def shelf():
@@ -103,7 +104,7 @@ def shelf():
             "notes": (e.get("why") or "")[:NOTES_MAX],
         })
     for r in read_rows():
-        s = slug(r["title"])
+        s = r["key"]
         f = facets.get(s, {})
         items.append({
             "id": "r:" + s, "title": r["title"], "alt": None, "author": r["author"], "series": None,
@@ -129,9 +130,9 @@ def save_profiles(profiles):
                    "judgement: the profiler says what a book is, and only the marker estimate "
                    "(tools/taste.py fit, estimate.js) learns what each tag is worth to the reader.",
         "schema": 1,
-        "_id": "c:<book-cache.json key> for a candidate, r:<slug of the books-read.md title> for a read "
-               "book - the same slug as book-media.json readMedia. A logged candidate changes id, so it "
-               "is profiled again; its old line is pruned as an orphan.",
+        "_id": "c:<book-cache.json key> for a shelf book, reviewed or not; r:<slug> for a book read "
+               "before it was on the shelf, its id in book-reviews.json and the same slug as "
+               "book-media.json readMedia.",
         "_vd": "Digest of the vocabulary's tag ids when the profile was made. An older vd still builds - "
                "unknown tags are dropped - but `status` counts it, because it never had the chance to use "
                "a tag added since.",

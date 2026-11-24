@@ -52,7 +52,9 @@ pass reported zero):
 """
 import json, io, re, sys, unicodedata
 
-CACHE, EST, DEEP, READ = "book-cache.json", "book-estimates.jsonl", "book-deep.jsonl", "books-read.md"
+import readlog
+
+CACHE, EST, DEEP = "book-cache.json", "book-estimates.jsonl", "book-deep.jsonl"
 PROFILE = "tools/reader-profile.md"
 MIN_LEN = 3
 
@@ -284,24 +286,16 @@ def scan(text, idx):
 
 
 def read_titles():
-    """Titles with a real score. Citing these is the whole point, so they are
+    """Titles of read books. Citing these is the whole point, so they are
     blanked from the why-text before any candidate needle is looked for."""
     out = []
-    try:
-        lines = io.open(READ, encoding="utf-8").readlines()
-    except OSError:
-        return out
-    for l in lines:
-        if not l.startswith("| ") or l.count("|") <= 4:
-            continue
-        col = [x.strip() for x in l.split("|")]
-        if len(col) > 1 and col[1] and col[1] not in ("Book", "Score"):
-            # Also the part before the parenthetical: a why cites "Golden Son 92",
-            # not "Golden Son (Red Rising #2)", and leaving that unblanked exposes
-            # `Son` to a candidate needle.
-            for t in (flat(col[1]), flat(col[1].split("(")[0])):
-                if len(t) >= MIN_LEN:
-                    out.append(t)
+    for r in readlog.rows():
+        # Also the part before the parenthetical: a why cites "Golden Son 92",
+        # not "Golden Son (Red Rising #2)", and leaving that unblanked exposes
+        # `Son` to a candidate needle.
+        for t in (flat(r["title"]), flat(r["title"].split("(")[0])):
+            if len(t) >= MIN_LEN:
+                out.append(t)
     return sorted(set(out), key=len, reverse=True)
 
 

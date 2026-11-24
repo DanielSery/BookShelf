@@ -32,7 +32,6 @@ for _s in (sys.stdout, sys.stderr):
 
 MARKERS, TASTE, REVIEWS = "book-markers.json", "book-taste.jsonl", "book-reviews.json"
 DEFAULT_SHAPE = [0.33, 0.67, 1.0]
-WORD = {"endorse": 92, "recommend": 75, "neutral": 60, "discourage": 50, "oppose": 30}
 
 
 def vocabulary():
@@ -69,10 +68,7 @@ def load_reviews():
         return json.load(io.open(REVIEWS, encoding="utf-8"))
     except FileNotFoundError:
         return {
-            "_readme": "The reader's reviews, keyed like book-taste.jsonl. `helped` / `hurt` name the "
-                       "markers he says raised or lowered his score; `added` holds markers a book turned "
-                       "out to have that screening missed. Read books logged before the page could take "
-                       "reviews have their score in books-read.md and their ticks drawn from its notes.",
+            "_readme": "The reader's log: every book the reader has read, keyed like book-taste.jsonl.",
             "schema": 1,
             "reviews": {},
         }
@@ -215,9 +211,7 @@ def design(markers, profiles, taste, reviews):
             x[len(graded) + j] = tagw.get(t, 0) / 3
         return x
 
-    # Read books score in books-read.md; shelf books reviewed on the page carry a dated score word.
-    scored = [("r:" + similarity.slug(r["title"]), r.get("score")) for r in similarity.readlog.rows(similarity.READ)]
-    scored += [(k, WORD.get(rv.get("score"))) for k, rv in reviews.items() if k.startswith("c:") and rv.get("at")]
+    scored = [(r["id"], r["score"]) for r in similarity.readlog.rows()]
     rows = []
     for k, y in scored:
         rv = reviews.get(k, {})

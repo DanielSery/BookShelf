@@ -1,5 +1,5 @@
 """Which read-book scores each prediction's range is set against, so a changed score in
-books-read.md moves the ranges built on it without rereading every `why`.
+book-reviews.json moves the ranges built on it without rereading every `why`.
 
 A `why` cites read books with their score ("the Narnia 67 position", "unlike Já, robot 55").
 The number in the text IS the score the range was derived under. A citation whose number no

@@ -20,8 +20,7 @@ for _s in (sys.stdout, sys.stderr):
     except AttributeError:
         pass
 
-CACHE, READ, REJ, SERIES, OUT = ("book-cache.json", "books-read.md", "book-rejects.jsonl",
-                                 "book-series.json", "book-worlds.json")
+CACHE, REJ, SERIES, OUT = "book-cache.json", "book-rejects.jsonl", "book-series.json", "book-worlds.json"
 LINKS = {"then", "prequel", "crossover"}
 
 
@@ -54,7 +53,7 @@ def reading_problems(wid, w, books):
 
 def check(path=OUT):
     keys = {b["key"] for b in json.load(io.open(CACHE, encoding="utf-8"))["books"]}
-    titles = {r["title"] for r in readlog.rows(READ)}
+    titles = {r["title"] for r in readlog.rows(kind="r")}
     rejected = {json.loads(l).get("entity") for l in io.open(REJ, encoding="utf-8") if l.startswith('{"entity')}
     series = json.load(io.open(SERIES, encoding="utf-8"))["series"]
     data = json.load(io.open(path, encoding="utf-8"))
@@ -79,7 +78,7 @@ def check(path=OUT):
             if b.get("key") and b["key"] not in keys:
                 problems.append(f"{where}: key {b['key']} is not on the shelf (logged or rejected since?)")
             if b.get("read") and b["read"] not in titles:
-                problems.append(f"{where}: read {b['read']!r} is not a books-read.md row")
+                problems.append(f"{where}: read {b['read']!r} is not a read book's title")
             if b.get("rejected") and b["rejected"] not in rejected:
                 problems.append(f"{where}: rejected {b['rejected']!r} is not a book-rejects.jsonl entity")
             if bool(b.get("lib")) != bool(b.get("recordUrl")):
