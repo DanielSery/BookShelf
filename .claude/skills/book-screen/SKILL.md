@@ -1111,18 +1111,26 @@ need a blurb. Run it after every screening pass; it refuses to guess the date.
    the nuance. **`form: stories` or `novella` is not a scoring signal**; see the
    short-form rule, which the 2026-08-26 sharpening made explicit.
 2. **`book-estimates.jsonl`** and **`book-media.json`** — per Phases 5 and 6.
-3. **`book-rejects.jsonl`** — one line per exclusion: `entity`, `level`
+3. **`book-taste.jsonl`** and **`book-profiles.jsonl`** — the page's marker estimate
+   reads both, and a book with neither shows only its agent range. Each command
+   below picks only the books that lack one:
+   `python tools/taste.py batches <scratchdir>`, one agent per file following
+   `tools/taste-prompt.md`, then `python tools/taste.py merge <outputs>`; and
+   `python tools/similarity.py batches <scratchdir>`, one agent per file following
+   `tools/similarity-prompt.md`, then `python tools/similarity.py merge <outputs>`
+   and `python tools/similarity.py build`.
+4. **`book-rejects.jsonl`** — one line per exclusion: `entity`, `level`
    (`author` / `series` / `title` / `category`), `author`, `filter` (the axis id,
    or `access` for an edition problem), `why`, `at`, `source`. **`author` is
    omitted entirely on `category` rows**, where it does not apply — never write a
    placeholder like `"(various)"`, which reads as data. **Scope matters:**
    an *Earthsea* objection must not sink Le Guin, which is the false negative
    that produced the scoping rule in the first place.
-4. **`book-recommendations.md`** — only what changes a *conclusion*: a new
+5. **`book-recommendations.md`** — only what changes a *conclusion*: a new
    author row, a status change, a scope correction. Access links, per-title
    assessments and reject lists do **not** go here any more; they have machine
    files now, and that file is explicitly not allowed to grow with the log.
-5. **A method error is worth more than a book.** If a documented query,
+6. **A method error is worth more than a book.** If a documented query,
    parameter or search pattern turns out wrong, fix it in this file — a wrong
    parameter costs every future run.
 
@@ -1133,6 +1141,8 @@ need a blurb. Run it after every screening pass; it refuses to guess the date.
 - Every new estimate's `deps` revs match `book-revs.json`.
 - Every new unblocked estimate has a `radar`, and `python tools/radar.py check`
   exits 0.
+- `python tools/taste.py status` and `python tools/similarity.py status` count every
+  shelf book as marked and profiled.
 - Every new cache entry has today's `checked` date on any route you actually
   checked, and no route is marked `verified` on an unverified guess.
 - Report: how many titles screened, how many eligible, how many rejected and on
