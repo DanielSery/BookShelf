@@ -16,7 +16,7 @@ which you do not read.**
    estimates file is an unverified guess** written by a model about a book nobody has
    read; not one has been checked against a real reading. Anchoring to one anchors a
    guess to a guess, and `absorb` refuses any `why` that names another candidate or
-   quotes another candidate's range. **`books-read.md` is your only ground truth.**
+   quotes another candidate's range. **The read books in `book-reviews.json` are your only ground truth.**
 
 **Access is already resolved — never query the library catalogue.** Your task line
 carries `cz`, the verified Czech print route, precomputed offline by
@@ -31,10 +31,11 @@ the book and produce a predicted-score range with the reasoning that justifies i
 
 ## Step 1 — read the reader
 
-Read `books-read.md` in full — **real scores from this reader, your only
-calibration** — and `tools/reader-profile.md` for the rules. The log scores in five words,
-older rows out of 10; everything you write uses 0-100: a word counts as the number in the
-log's table (Recommend is 75), an older score is its number times ten (9.2 is 92). The short version:
+Read `book-reviews.json` in full — **real scores from this reader, your only
+calibration**: each review's `title`, `author`, `score` and `notes`, and `logged` where an
+older number survives — and `tools/reader-profile.md` for the rules. The log scores in five
+words, older books out of 10; everything you write uses 0-100: a word counts as the number in
+the file's `_scores` (Recommend is 75), an older score is its number times ten (9.2 is 92). The short version:
 
 - **Loves** page time on what characters *want and why* over what they do; a premise
   whose consequences are actually worked out; a protagonist who is both interesting
@@ -215,7 +216,7 @@ off the reading list either way**, since nothing under 68 is ever proposed, so p
 sources to also learn it is occult buys a distinction that changes no decision.
 Consequence, and it is deliberate: **a C-low book carries an unexamined occult status.**
 Say so in `why` in one clause, and keep `axis:occult` in `deps` — that is exactly what
-makes it findable when `/book-log` bumps the axis.
+makes it findable when the axis is bumped.
 
 When a filter fires at gate 1, 2, 3 or 5, fill `reject` with it and the evidence, set `est`
 to null and `exitAt` accordingly, and STOP. Do not research the graded axes; they
@@ -358,7 +359,7 @@ put the relevant ones in `flags`.
 
 ## Step 4 — derive the estimate
 
-**Argue only from `books-read.md` scores and the rules.** Never from another
+**Argue only from the scores in `book-reviews.json` and the rules.** Never from another
 candidate. Cite the specific read book that anchors each claim: "the axis
 *Mockingjay* 91 and *Speaker for the Dead* 90 both score on", not "similar to other
 books in the queue".
@@ -498,7 +499,7 @@ Field rules:
   book refuses to answer, or an unfinished series, puts it in `risks` instead.
 
   A near-miss is worse than an omission and your file will be refused: when a rule
-  changes, `/book-log` bumps that id's counter and greps the estimates for it, so a
+  changes, that id's counter is bumped and the estimates are grepped for it, so a
   dep spelled almost-right is never found and the estimate goes stale forever.
 
   `axis:childrens` is how juvenile the book itself is — register, audience, simplicity

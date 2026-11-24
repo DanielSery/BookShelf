@@ -19,10 +19,9 @@ other things own them:
 
 | Owner | Writes | Invalidated by |
 |---|---|---|
-| `/book-log` | judgements — every `est` recomputation | a rule moving |
 | `/book-screen` | discovery, access facts, first estimates, rejects, covers | time passing |
 | `/book-deep` | sourced re-derivation of one book's estimate, and its dossier | — |
-| `index.html` | nothing — read-only viewer | — |
+| `index.html` | the reader's reviews in `book-reviews.json`, committed to `main` | — |
 | **this skill** | the Snoozed list, and nothing else | — |
 
 If you find yourself deriving a score, searching a catalogue or checking a
@@ -43,7 +42,8 @@ wants to snooze something. If they ask to browse, point them at the app.
 - `book-revs.json` — the current counters.
 - `book-cache.json` — access routes for the titles you shortlist.
 - `book-media.json` — the blurb, so you can say what the book *is*.
-- `books-read.md` — so nothing already read is proposed.
+- `book-reviews.json` — every read book (`python tools/readlog.py` lists them), so
+  nothing already read is proposed. A `c:<key>` id is a shelf book reviewed on the page.
 - `book-series.json` — which candidates are volumes of one series (`kind: series`).
 - `book-recommendations.md` — the Snoozed section, and only that, unless the
   reader asks *why* a rule says what it says.
@@ -55,7 +55,7 @@ State today's date to yourself: Snoozed and the access TTLs both compare dates.
 Exclude, in order:
 
 - Anything with `blocked` set — it fails a hard filter.
-- Anything in `books-read.md`.
+- Anything read: an `r:` title, or a shelf key with a `c:` id in `book-reviews.json`.
 - Anything in Snoozed whose `until` date has not passed.
 - Anything with no access route in `book-cache.json`. **But a cached `none` past
   its TTL is not an absence** — *Mistborn* was cached "no audio exists" twice and
@@ -76,8 +76,8 @@ signal about the reader, and it is the one thing the app's static sort can't do.
 
 **Three checks before you hand anything over:**
 
-1. **Dep revs match `book-revs.json`.** A mismatch means a `/book-log` run did
-   not finish its PROPAGATE phase. Say so plainly and stop — do not quote the
+1. **Dep revs match `book-revs.json`.** A mismatch means the line was derived
+   under a rule that has moved since. Say so plainly and stop — do not quote the
    stale number, and do not silently re-derive it here.
 2. **Access TTLs.** `enAudio: verified` is only 30 days old at most, and every
    link must be liveness-checked before it is handed over. If it is expired, say

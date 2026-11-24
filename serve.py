@@ -1,7 +1,7 @@
 """Book shelf, with a Claude session behind it.
 
-Serves index.html and the book-*.json(l) files, and drives the /book-log,
-/book-screen and /book-suggest skills through the Claude Agent SDK. The page
+Serves index.html and the book-*.json(l) files, and drives the /book-screen,
+/book-deep and /book-suggest skills through the Claude Agent SDK. The page
 never writes data: it sends prompts, the skills write files, a PostToolUse hook
 tells the page which file moved, and the page reloads it.
 
@@ -57,7 +57,7 @@ READING_FILE = REPO / "book-reading.json"
 WRITABLE = {
     "book-cache.json", "book-estimates.jsonl", "book-rejects.jsonl",
     "book-revs.json", "book-media.json", "book-recommendations.md",
-    "books-read.md", "book-triage.jsonl", "book-ai-rank.jsonl",
+    "book-triage.jsonl", "book-ai-rank.jsonl",
     "book-origin.json", "book-deep.jsonl", "book-read-radar.json",
 }
 

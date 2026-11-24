@@ -26,8 +26,8 @@ A dive examines **every** axis against sources: the opening is read rather than
 recalled, and the people who disliked the book are heard rather than averaged away.
 
 **What it does not fix.** About half the recorded misses came from a rule that was
-wrong (*Válka starého muže*, *Licanius* 1-2), not from an axis left unexamined. Only
-`/book-log` corrects a rule. A dived range is still a prediction from second-hand
+wrong (*Válka starého muže*, *Licanius* 1-2), not from an axis left unexamined. A
+dive does not correct a rule. A dived range is still a prediction from second-hand
 evidence.
 
 ## Ownership
@@ -44,9 +44,8 @@ It never touches the rules, the revs, the cache, rejects or Snoozed. A hard filt
 that fires becomes `blocked` on the estimate line; writing the reject row is
 `/book-screen`'s job, so say it is needed and stop there.
 
-`/book-log` keeps every *recomputation after a rule moves*, and for a deep line it
-re-prices the dossier's verdicts under the new rule instead of re-deriving from
-scratch. That is what keeps a dive from decaying back to a screening guess the
+When a rule moves, a deep line is re-priced from the dossier's verdicts under the
+new rule instead of re-derived from scratch. That is what keeps a dive from decaying back to a screening guess the
 first time an axis is reworded.
 
 ## Arguments
@@ -76,7 +75,8 @@ of this. From `book-estimates.jsonl` × `book-cache.json`, keep lines that:
 
 - match the filter and have the route verified (`cz.state` / `enAudio.state` ==
   `verified`, within `_ttlDays`);
-- are not `blocked`, not in `books-read.md`, not in Snoozed;
+- are not `blocked`, not read (`select` skips the books reviewed on the page), not
+  in Snoozed;
 - carry no `depth` yet. A book already dived is not re-dived: it counts toward the
   target from its recorded range and is reported from its dossier;
 - **can be read next**: skip a volume whose earlier volume is unread. Check
@@ -104,7 +104,8 @@ certain before a batch finishes, launch the next candidate rather than waiting.
 
 **Read first:** `book-recommendations.md` from `## Scoring` up to `## Authors`
 (the rules and the failure record; the Authors and Candidate tables below are off
-limits) and `books-read.md` (the scores to anchor on).
+limits) and `book-reviews.json` (the read books and their scores to anchor on;
+`python tools/readlog.py` lists them).
 
 **Gather, at minimum:**
 
@@ -143,7 +144,7 @@ Each verdict carries a `note` (one to three sentences, a short quote where one
 exists) and `src` (the URLs it rests on). A verdict with no source is the reader's
 memory, not evidence: say so in the note, and never use it to clear a hard filter.
 
-**Price it.** Derive the range from read books in `books-read.md` and from the
+**Price it.** Derive the range from read books in `book-reviews.json` and from the
 verdicts, never from another candidate and never from the screening range: the
 dive replaces that number rather than adjusting it. Rules for the range:
 
@@ -195,8 +196,8 @@ each returned dossier:
 2. **`book-deep.jsonl`**: append one line, `json.dumps(ensure_ascii=False)`:
    `key`, `at`, `pre` (the line's `est`, `leanedOn`, `risks` before the dive),
    `est`, `blocked` if set, `readingOrder`, `axes`. `pre` is what makes a dive
-   measurable: when the book is read, `/book-log` compares both against the real
-   score.
+   measurable: when the book is read, both can be set against the real score in
+   `book-reviews.json`.
 3. **`book-estimates.jsonl`**: rewrite that one line in place. `est`/`blocked`,
    `radar`, `leanedOn`, `risks`, `why` from the dossier; `deps` = the line's `author:` and
    `series:` ids plus every axis in `axes`, each stamped with its current rev; `at`

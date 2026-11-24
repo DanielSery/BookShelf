@@ -15,9 +15,9 @@ allowed-tools:
 ORIENT -> DISCOVER -> ELIGIBILITY -> ACCESS -> ESTIMATE -> MEDIA -> RECORD
 ```
 
-This skill owns *discovery*. `/book-log` owns judgements and recomputes
-estimates when a rule moves; `/book-suggest` only picks from what is already
-recorded; the viewer app (`index.html`) only displays it. **Every book the
+This skill owns *discovery*. The reader logs what they read on the page
+(`book-reviews.json`), and the marker estimate reranks the shelf from those
+reviews; `/book-suggest` only picks from what is already recorded. **Every book the
 reader can see came through here.**
 
 ## Two tiers — triage everything, promote what survives
@@ -34,7 +34,7 @@ paid to pull and re-review them from scratch.
 | Judgement | **none** — regex on title, author, publisher | access verified, worldbuilding verdict, `est` range |
 | Confidence | `conf: auto` | `deps` / `leanedOn` / `risks` |
 | Score | a **band** (`X` / `?` / `A?`) | a range, e.g. `[76, 86]` |
-| Reversible | yes, freely | only by `/book-log` |
+| Reversible | yes, freely | only by `/book-deep` or by hand |
 
 Write tier 1 with `python tools/triage.py <scratchdir>` — idempotent, rewrites
 the file wholesale, and joins against `book-rejects.jsonl` so an author already
@@ -547,14 +547,14 @@ python -c "import json,io;b=json.load(io.open('book-cache.json',encoding='utf-8'
 python tools/crossrefs.py
 ```
 
-- No key in `books-read.md` may appear in either file.
+- No read book (`book-reviews.json`) may appear in either file.
 - `sweeps[].yield` holds **book keys**, not author slugs. Mixed identifiers made
   the 2026-08-26 yields unusable as a foreign key.
 
 ## Phase 1 — ORIENT
 
-Read `book-recommendations.md` (the rules), `books-read.md` (what not to
-re-screen), `book-cache.json` (`sweeps`, so you don't redo covered ground), and
+Read `book-recommendations.md` (the rules), `python tools/readlog.py` (the read
+books, what not to re-screen), `book-cache.json` (`sweeps`, so you don't redo covered ground), and
 `book-rejects.jsonl` (so you don't re-reject what is already rejected). Note
 `notYetSwept` on the most recent sweeps — that is the live gap list, and it is
 where a sweep should start.
@@ -648,8 +648,8 @@ line and removes hundreds of records from every future sweep; recording Cornwell
 34 titles individually costs 34 lines and removes nothing else. **After a
 heading sweep, write the category rejects first, then review only the residue.**
 
-Sweep, then subtract every author already in the Authors table and in
-`books-read.md` before reading the results — otherwise the known names drown the
+Sweep, then subtract every author already in the Authors table and among the
+read books before reading the results — otherwise the known names drown the
 new ones. An author with 2+ distinct titles held is a stronger signal than one; so
 are multiple printings of the same title (a popularity proxy). Record the sweep in
 `book-cache.json` under `sweeps` so the next run knows what ground is covered and
@@ -660,7 +660,7 @@ what is still untouched.
 Decide, per title, whether it becomes a candidate row or a reject row. Skip
 outright, recording nothing:
 
-- Anything already in `books-read.md` (case-insensitively match title, not
+- Anything already read (`python tools/readlog.py`; case-insensitively match title, not
   just author — an author can appear once at S+ and still have unread books).
 - Anything already in `book-rejects.jsonl` at a scope that covers this title.
 
@@ -984,14 +984,13 @@ a route is a fact to re-check, so it belongs in the cache, not in Snoozed.
 
 Every eligible title needs a line in `book-estimates.jsonl` before it can ever
 be proposed. **This skill only writes first computations** — if a line already
-exists, leave it alone even if you disagree with it. Recomputation belongs to
-`/book-log`, in the turn where the rule that changed it was written, and a
-sourced re-derivation of one book to `/book-deep`.
+exists, leave it alone even if you disagree with it. A sourced re-derivation of
+one book belongs to `/book-deep`.
 
 Derive, using the current counters from `book-revs.json`:
 
 - `est`: a `[low, high]` range, **conditional on nothing in `risks` firing**.
-  Anchor it against real scores in `books-read.md`, never against another
+  Anchor it against real scores in `book-reviews.json`, never against another
   candidate. Width is confidence: *Den trifidů* 74-80 is a narrow, low-risk
   read; *Leviathan Wakes* 74-84 is wide because a whole strand of it is a
   detective case.
@@ -1040,14 +1039,12 @@ Three guards on the numbers:
 
 `book-media.json` carries a cover URL and a neutral blurb per key, in three
 namespaces because the viewer app's three tabs are keyed differently:
-`media` by cache key, `readMedia` by a slug of the `books-read.md` title,
+`media` by cache key, `readMedia` by a read book's `r:` id in `book-reviews.json`,
 `rejectMedia` by a slug of `entity + author`. Regenerable: if it is missing or
 stale, refetch rather than hand-writing it.
 
-The slug join is deliberately loose — renaming a title in `books-read.md` costs a
-placeholder cover, never a broken row. **The slug function in
-`tools/fetch-media.py` and the one in `index.html` must stay identical**, or half
-the covers silently stop joining.
+**The slug function in `tools/fetch-media.py` and the one in `index.html` must
+stay identical**, or the rejected tab's covers silently stop joining.
 
 ```
 python tools/fetch-media.py <today YYYY-MM-DD>
@@ -1160,17 +1157,11 @@ chapters on this axis alone — the prediction that proposed it had never
 examined it). This is the reader's heaviest axis, so a proposal that skips it
 is incomplete however good the access route is.
 
-**The verdict is carried in the `why` field of the estimate line, and it is
-current because `/book-log` keeps it current** (changed 2026-08-26; this used to
-say a cached verdict was stale whenever the global `profileRev` moved, which
-invalidated every verdict at once and meant nothing was ever really cached).
-What makes the cache safe now is that invalidation is per-dependency and
-recomputation happens in the log turn: when the 2026-08-22 revisions to the
-sexual-content and prophecy axes landed, only the 5 and 4 lines that actually
-carry those axes would have been re-derived, and they would have been re-derived
-*then*, not lazily on the next proposal. **Access facts and judgements now cache
-the same way — what differs is what invalidates them.** A judgement is
-invalidated by a rule moving, an access fact by time passing.
+**The verdict is carried in the `why` field of the estimate line.** Invalidation
+is per-dependency: a judgement is invalidated by a rule moving, an access fact by
+time passing. Nothing recomputes a line when a rule moves since `/book-log` was
+retired (2026-11-21); the marker estimate the page shows learns from the reader's
+reviews instead, and `/book-deep` re-derives one book on request.
 
 **The principle: the author must follow the rules he lays down.** This is
 self-consistency with what the book commits to, not an external realism audit.
