@@ -155,7 +155,7 @@ def known_authors():
 
 def read_authors():
     """Surnames of read authors. Never send these to a model."""
-    return {n for n in (surname(r["author"]) for r in readlog.rows()) if len(n) > 3}
+    return {n for n in (surname(r["author"]) for r in readlog.rows(withdrawn=True)) if len(n) > 3}
 
 
 def rejected_authors():

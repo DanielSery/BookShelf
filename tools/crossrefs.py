@@ -289,7 +289,7 @@ def read_titles():
     """Titles of read books. Citing these is the whole point, so they are
     blanked from the why-text before any candidate needle is looked for."""
     out = []
-    for r in readlog.rows():
+    for r in readlog.rows(withdrawn=True):
         # Also the part before the parenthetical: a why cites "Golden Son 92",
         # not "Golden Son (Red Rising #2)", and leaving that unblanked exposes
         # `Son` to a candidate needle.

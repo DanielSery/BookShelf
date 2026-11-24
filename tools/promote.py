@@ -338,9 +338,9 @@ def marc_genre(f):
 
 
 def read_rows():
-    """(title, author) for every read book, scored or not."""
+    """(title, author) for every read book, scored or not, withdrawn included."""
     import readlog
-    return [(r["title"], r["author"]) for r in readlog.rows(READ)]
+    return [(r["title"], r["author"]) for r in readlog.rows(READ, withdrawn=True)]
 
 
 def read_titles():
