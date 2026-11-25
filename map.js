@@ -1,6 +1,6 @@
 // Similar books and authors, and the author map. Loaded before the main script and run against
 // its globals (D, F, esc, plural, tone, band, rng, grid, EMPTY, state, candidateCard, seriesCard,
-// readCard, readSeriesCard, markClips, render, setView, setCount, store, recall, candidateFilter,
+// readCard, readSeriesCard, markClips, growList, render, setView, setCount, store, recall, candidateFilter,
 // readFilter, pageReview, pageReadRow, WORD), all of which exist by the time anything here is
 // called. Names are map-prefixed because every top-level declaration shares one scope with index.html.
 
@@ -199,6 +199,7 @@ function mapLeave() {
   MAP.bookSeeds = [];
   MAP.from = null;
   setView(from.view);
+  growList(from.y);
   scrollTo(0, from.y);
 }
 
