@@ -697,15 +697,29 @@ const AUDIENCE = { adult: 'adult', ya: 'young adult', childrens: "children's" };
 const ORIGIN = { cs: 'Czech original', foreign: 'translation' };
 // Themes orthogonal to genre: one book can be fantasy and world exploration at once.
 // They share the Genre select; a value found here filters on `tags` instead of `genre`.
-const TAGS = { exploration: 'world exploration', ww2: 'Second World War' };
+const TAGS = {
+  ancient: 'ancient world', medieval: 'medieval', 'medieval-fantasy': 'medieval fantasy',
+  'modern-war': 'modern war', ww2: 'Second World War', holocaust: 'Holocaust',
+  'communist-era': 'communist era', space: 'space', exploration: 'world exploration',
+};
 // Lifted into `tags` from the similarity profiles rather than authored in book-cache.json,
-// so a book without a profile never carries them. Must match PROFILE_TAGS in tools/deep.py.
-const PROFILE_TAGS = ['ww2'];
+// so a book without a profile never carries them. A book gets the tag when one of the
+// [profile tag, tags it must not have] pairs matches. Must match PROFILE_TAGS in tools/deep.py.
+const NOT_MODERN = ['ancient', 'medieval', 'pseudo-medieval', 'early-modern', 'nineteenth-century',
+                    'secondary-world', 'space', 'alien-world', 'far-future'];
+const PROFILE_TAGS = {
+  ancient: [['ancient']], medieval: [['medieval']], 'medieval-fantasy': [['pseudo-medieval']],
+  'modern-war': [['ww1'], ['ww2'], ['war-novel', NOT_MODERN]], ww2: [['ww2']], holocaust: [['holocaust']],
+  'communist-era': [['communist-era']], space: [['space']],
+};
 const profileTags = sim => {
   const out = {};
-  PROFILE_TAGS.forEach(t => {
-    const f = sim ? sim.tags.findIndex(x => x[0] === t) : -1;
-    if (f >= 0) sim.books.forEach(p => { if (p.v.some(([i]) => i === f)) (out[p.id] ||= []).push(t); });
+  if (!sim) return out;
+  const at = new Map(sim.tags.map((x, i) => [x[0], i]));
+  sim.books.forEach(p => {
+    const has = new Set(p.v.map(([i]) => i)), on = t => has.has(at.get(t));
+    const got = Object.keys(PROFILE_TAGS).filter(c => PROFILE_TAGS[c].some(([t, not = []]) => on(t) && !not.some(on)));
+    if (got.length) out[p.id] = got;
   });
   return out;
 };
