@@ -23,7 +23,15 @@ MANDATORY = ["axis:opening", "axis:occult", "axis:detective", "axis:worldbuildin
              "axis:protagonist", "axis:motives"]
 TAGS = {"exploration"}
 # Must match PROFILE_TAGS in index.html: read from the similarity profiles, not book-cache.json.
-PROFILE_TAGS = {"ww2"}
+# A book gets the tag when one of the (profile tag, tags it must not have) pairs matches.
+NOT_MODERN = {"ancient", "medieval", "pseudo-medieval", "early-modern", "nineteenth-century",
+              "secondary-world", "space", "alien-world", "far-future"}
+PROFILE_TAGS = {
+    "ancient": [("ancient", set())], "medieval": [("medieval", set())],
+    "medieval-fantasy": [("pseudo-medieval", set())],
+    "modern-war": [("ww1", set()), ("ww2", set()), ("war-novel", NOT_MODERN)], "ww2": [("ww2", set())],
+    "holocaust": [("holocaust", set())], "communist-era": [("communist-era", set())], "space": [("space", set())],
+}
 VERDICTS = {"earns", "clear", "costs", "fires", "unknown"}
 MIN_WIDTH = 6
 
@@ -53,7 +61,11 @@ def estimates():
 def profile_tags():
     lines, _ = split(read(PROFILES))
     profiles = (json.loads(l) for l in lines[1:] if l.strip())
-    return {p["id"][2:]: PROFILE_TAGS & set(p.get("tags", {})) for p in profiles if p.get("id", "").startswith("c:")}
+    return {p["id"][2:]: lifted(set(p.get("tags", {}))) for p in profiles if p.get("id", "").startswith("c:")}
+
+
+def lifted(tags):
+    return {c for c, pairs in PROFILE_TAGS.items() if any(t in tags and not tags & no for t, no in pairs)}
 
 
 def fresh(route, ttl):
@@ -66,7 +78,7 @@ def fresh(route, ttl):
 def select(a):
     cache = books()
     ttl = json.loads(read(CACHE))["_ttlDays"]
-    ptags, themes = profile_tags(), TAGS | PROFILE_TAGS
+    ptags, themes = profile_tags(), TAGS | set(PROFILE_TAGS)
     reviewed = {r["key"] for r in readlog.rows(kind="c")}
     rows = []
     for e in estimates():

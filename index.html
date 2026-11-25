@@ -697,15 +697,29 @@ const AUDIENCE = { adult: 'adult', ya: 'young adult', childrens: "children's" };
 const ORIGIN = { cs: 'Czech original', foreign: 'translation' };
 // Themes orthogonal to genre: one book can be fantasy and world exploration at once.
 // They share the Genre select; a value found here filters on `tags` instead of `genre`.
-const TAGS = { exploration: 'world exploration', ww2: 'Second World War' };
+const TAGS = {
+  ancient: 'ancient world', medieval: 'medieval', 'medieval-fantasy': 'medieval fantasy',
+  'modern-war': 'modern war', ww2: 'Second World War', holocaust: 'Holocaust',
+  'communist-era': 'communist era', space: 'space', exploration: 'world exploration',
+};
 // Lifted into `tags` from the similarity profiles rather than authored in book-cache.json,
-// so a book without a profile never carries them. Must match PROFILE_TAGS in tools/deep.py.
-const PROFILE_TAGS = ['ww2'];
+// so a book without a profile never carries them. A book gets the tag when one of the
+// [profile tag, tags it must not have] pairs matches. Must match PROFILE_TAGS in tools/deep.py.
+const NOT_MODERN = ['ancient', 'medieval', 'pseudo-medieval', 'early-modern', 'nineteenth-century',
+                    'secondary-world', 'space', 'alien-world', 'far-future'];
+const PROFILE_TAGS = {
+  ancient: [['ancient']], medieval: [['medieval']], 'medieval-fantasy': [['pseudo-medieval']],
+  'modern-war': [['ww1'], ['ww2'], ['war-novel', NOT_MODERN]], ww2: [['ww2']], holocaust: [['holocaust']],
+  'communist-era': [['communist-era']], space: [['space']],
+};
 const profileTags = sim => {
   const out = {};
-  PROFILE_TAGS.forEach(t => {
-    const f = sim ? sim.tags.findIndex(x => x[0] === t) : -1;
-    if (f >= 0) sim.books.forEach(p => { if (p.v.some(([i]) => i === f)) (out[p.id] ||= []).push(t); });
+  if (!sim) return out;
+  const at = new Map(sim.tags.map((x, i) => [x[0], i]));
+  sim.books.forEach(p => {
+    const has = new Set(p.v.map(([i]) => i)), on = t => has.has(at.get(t));
+    const got = Object.keys(PROFILE_TAGS).filter(c => PROFILE_TAGS[c].some(([t, not = []]) => on(t) && !not.some(on)));
+    if (got.length) out[p.id] = got;
   });
   return out;
 };
@@ -1355,6 +1369,30 @@ function candidateFilter() {
 
 const EMPTY = '<div class="empty">No matches</div>';
 const grid = cards => `<div class="grid">${cards.join('')}</div>`;
+
+// Laying out all 800+ cards froze a phone for seconds on every tab switch, so the long lists
+// draw a first batch and the rest as the reader scrolls near the end.
+const LIST_STEP = 40;
+let listRest = [];
+
+function longGrid(cards) {
+  listRest = cards.slice(LIST_STEP);
+  return `<div class="grid" id="longgrid">${cards.slice(0, LIST_STEP).join('')}</div>`;
+}
+
+function growList(y = scrollY) {
+  const g = F('longgrid');
+  while (g && listRest.length && g.getBoundingClientRect().bottom + scrollY < y + 3 * innerHeight) {
+    const t = document.createElement('template');
+    t.innerHTML = listRest.splice(0, LIST_STEP).join('');
+    const cards = [...t.content.children];
+    g.append(t.content);
+    markClips(cards);
+  }
+}
+addEventListener('scroll', () => growList(), { passive: true });
+addEventListener('resize', () => growList());
+
 const table = (head, rows) =>
   `<div class="tablewrap"><table><thead><tr>${head}</tr></thead><tbody>${rows.join('')}</tbody></table></div>`;
 const setCount = text => { F('count').textContent = text; };
@@ -1363,7 +1401,7 @@ function candidates() {
   const rows = sortBy(groupSeries(D.books.filter(b => !pageReview(b))).filter(candidateFilter()), F('sort').value);
   setCount(plural(rows.length, 'book'));
   if (!rows.length) return EMPTY;
-  if (!F('astable').checked) return grid(rows.map(b => b.isSeries ? seriesCard(b) : candidateCard(b)));
+  if (!F('astable').checked) return longGrid(rows.map(b => b.isSeries ? seriesCard(b) : candidateCard(b)));
   return table(`<th>Book</th><th>Author</th><th>Genre</th><th class="num">Predicted</th>
       <th>Risks</th><th>Access</th><th>Pitch</th>`,
     rows.map(b => `<tr class="${b.est ? tone(b.mid) : 'bN'}"><td>${b.isSeries ? '<b>Series:</b> ' : ''}${esc(b.cache.czTitle || b.cache.title)}${
@@ -1423,7 +1461,7 @@ function rejectedView() {
     (!f || r.filter === f) && (!sc || r.level === sc)), F('sort').value);
   setCount(`${rows.length} rejected`);
   if (!rows.length) return EMPTY;
-  if (!F('astable').checked) return grid(rows.map(rejectCard));
+  if (!F('astable').checked) return longGrid(rows.map(rejectCard));
   return table('<th>Name</th><th>Author</th><th>Filter</th><th>Scope</th><th>Why</th><th>Recorded</th>',
     rows.map(r => `<tr><td>${esc(r.entity)}</td><td>${esc(r.author)}</td><td>${esc(nice(r.filter))}</td>
       <td>${esc(r.level)}</td><td>${esc(r.why)}</td><td>${esc([r.at, r.source].filter(Boolean).join(' · '))}</td></tr>`));
@@ -1479,16 +1517,21 @@ function render() {
   const bar = F('simbar');
   bar.innerHTML = state.view === 'similar' ? mapBar() : '';
   bar.style.setProperty('--headh', document.querySelector('header.top').offsetHeight + 'px');
+  const y = scrollY;
+  listRest = [];
   F('view').innerHTML = VIEWS[state.view]();
-  markClips();
+  markClips([F('view')]);
+  growList(y);
+  if (scrollY !== y) scrollTo(0, y);
   markMore();
 }
 
-function markClips() {
-  document.querySelectorAll('.why.clip').forEach(p => {
-    const btn = p.nextElementSibling;
-    if (btn && btn.hasAttribute('data-more')) btn.hidden = p.scrollHeight <= p.clientHeight + 1;
-  });
+function markClips(roots = [document]) {
+  const clips = roots.flatMap(r => [...r.querySelectorAll('.why.clip')])
+    .filter(p => p.nextElementSibling && p.nextElementSibling.hasAttribute('data-more'));
+  // Every height before any toggle: a toggle between two reads forces a layout per card.
+  const long = clips.map(p => p.scrollHeight > p.clientHeight + 1);
+  clips.forEach((p, i) => { p.nextElementSibling.hidden = !long[i]; });
 }
 
 // The folded filters still narrow the list, so their summary says how many are set.
@@ -1536,11 +1579,11 @@ F('theme').onclick = () => {
   document.documentElement.dataset.theme = dark ? 'light' : 'dark';
   store('bookshelf.theme', document.documentElement.dataset.theme);
 };
-document.querySelectorAll('.tab').forEach(t => t.onclick = () => setView(t.dataset.view));
+document.querySelectorAll('.tab').forEach(t => t.onclick = () => { scrollTo(0, 0); setView(t.dataset.view); });
 F('filters').addEventListener('input', () => { render(); saveView(); });
 addEventListener('hashchange', () => {
   const v = location.hash.slice(1);
-  if (canOpen(v) && v !== state.view) setView(v);
+  if (canOpen(v) && v !== state.view) { scrollTo(0, 0); setView(v); }
 });
 
 const closePops = keep => document.querySelectorAll('details.pop[open]').forEach(d => {
