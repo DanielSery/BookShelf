@@ -1,5 +1,5 @@
 {
- "_readme": "Which shelf candidates belong to one series, written by tools/series.py from agents following tools/series-prompt.md. The reader reads a series whole (2026-10-25), so the viewer and /book-suggest propose a `series` as ONE entry; a `universe` (shared world, standalone novels) is not grouped. book-cache.json `series` is only the raw catalogue value and is often a publisher's line. /book-screen adds a new volume here; /book-log moves a logged volume from `members` to `read`.",
+ "_readme": "Which shelf candidates belong to one series, written by tools/series.py from agents following tools/series-prompt.md. The reader reads a series whole (2026-10-25), so the viewer and /book-suggest propose a `series` as ONE entry; a `universe` (shared world, standalone novels) is not grouped. book-cache.json `series` is only the raw catalogue value and is often a publisher's line. /book-screen adds a new volume here. `read` holds titles of books read before they were on the shelf; a member reviewed on the page stays in `members`, read because book-reviews.json has it.",
  "schema": 1,
  "series": {
   "a-boy-called-christmas": {

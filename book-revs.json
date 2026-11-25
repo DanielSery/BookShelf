@@ -1,8 +1,8 @@
 {
- "_readme": "Revision counters for everything a predicted score can depend on. Owned by /book-log: its PROPAGATE phase bumps a counter when the RULE that counter names changes, then greps book-estimates.jsonl for that id to find exactly which estimates need recomputing. Kept in its own file so that a grep of book-estimates.jsonl returns only book lines - a revs table living in that file would match every search.",
+ "_readme": "Revision counters for everything a predicted score can depend on. Bump a counter when the RULE it names changes, then grep book-estimates.jsonl for that id to find exactly which agent estimates are stale. /book-log did this until it was retired on 2026-11-21; nothing recomputes them now. Kept in its own file so that a grep of book-estimates.jsonl returns only book lines - a revs table living in that file would match every search.",
  "schema": 1,
  "_bump": "Bump when the rule changes wording, or when a book by that author/series gets a real score. New evidence cited under an unchanged rule bumps nothing - that is what makes an estimate stable rather than recomputed on every log entry.",
- "_epoch": "The escape hatch. Bump it to invalidate every estimate at once, e.g. after the profile was edited by hand outside /book-log.",
+ "_epoch": "The escape hatch. Bump it to invalidate every estimate at once, e.g. after the profile was edited by hand.",
  "_since": "2026-08-26",
  "revs": {
   "_epoch": 1,

@@ -22,9 +22,9 @@ decides a score.
 
 ## Scoring
 
-**`books-read.md` scores in five words** (the reader's scale since 2026-11-09); older rows
-keep a number out of 10 (9.2, 8, 6.2). **Everything you write is on 0-100**: a word counts
-as the number in the table at the top of the log (Recommend is 75), an older score is its
+**`book-reviews.json` scores in five words** (the reader's scale since 2026-11-09); older
+books keep a number out of 10 in `logged` (9.2, 8, 6.2). **Everything you write is on 0-100**:
+a word counts as the number in the file's `_scores` (Recommend is 75), an older score is its
 number times ten (9.2 is 92), and every `est`, `why` and citation uses that form ("Golden
 Son 92"). The words' bands, as the reader drew them on 2026-11-09: **85-100** Endorse, enjoyed very
 much · **65-85** Recommend, a nice read or at least ok · **55-65** Neutral, not liked much

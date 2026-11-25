@@ -13,6 +13,8 @@ filter kills a title.
 """
 import json, io, os, re, sys, unicodedata, collections
 
+import readlog
+
 SLICES = {
     "full.jsonl": "genre-sf-f", "cat.jsonl": "categories", "pov.jsonl": "povidky",
     "proza.jsonl": "anglo-us-proza", "cz.jsonl": "ceska-proza",
@@ -152,21 +154,8 @@ def known_authors():
 
 
 def read_authors():
-    """Surnames with a real score in books-read.md. Never send these to a model."""
-    out = set()
-    try:
-        lines = io.open("books-read.md", encoding="utf-8").readlines()
-    except OSError:
-        return out
-    for l in lines:
-        if not l.startswith("| ") or l.count("|") <= 4:
-            continue
-        col = [x.strip() for x in l.split("|")]
-        if len(col) > 2 and col[2] and col[2] != "Author":
-            n = surname(col[2])
-            if len(n) > 3:
-                out.add(n)
-    return out
+    """Surnames of read authors. Never send these to a model."""
+    return {n for n in (surname(r["author"]) for r in readlog.rows(withdrawn=True)) if len(n) > 3}
 
 
 def rejected_authors():
@@ -318,7 +307,7 @@ def main(scratch):
                    "auto` means a regex looked at the title, author and publisher and "
                    "nothing else.",
         "schema": 1,
-        "_cls": "already-read (the author has a real score in books-read.md) | "
+        "_cls": "already-read (the author has a read book in book-reviews.json) | "
                 "rejected (already killed at title, author or series level in "
                 "book-rejects.jsonl) | "
                 "edition-foreign (not readable in Czech) | edition-audio | "

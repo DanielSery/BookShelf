@@ -42,7 +42,7 @@ import pitch as pitchcheck
 import radar
 
 CACHE, EST, MEDIA = "book-cache.json", "book-estimates.jsonl", "book-media.json"
-REJECTS, REVS, READ = "book-rejects.jsonl", "book-revs.json", "books-read.md"
+REJECTS, REVS, READ = "book-rejects.jsonl", "book-revs.json", "book-reviews.json"
 STORE, TRIAGE = "book-ai-rank.jsonl", "book-triage.jsonl"
 INFID = "book-infidelity-screen.jsonl"
 CATALOG = "book-catalog.jsonl"
@@ -140,7 +140,7 @@ def groupkey(name):
 #
 # Measured from the 50-book run of 2026-08-27: 3.06 tool calls per book, staged output
 # mean 2,619 B per book, task line ~575 B per book. Fixed reading is the real size of
-# promote-prompt.md + reader-profile.md + books-read.md + the dispatch note. Czech text
+# promote-prompt.md + reader-profile.md + book-reviews.json + the dispatch note. Czech text
 # runs about 3.4 chars per token, search results nearer 3.8.
 #
 # CTX_RESULT is deliberately the pessimistic end of the search-result range (2.5-6 kB
@@ -164,7 +164,7 @@ def calls_per_book(per):
 
 
 def peak_context(per):
-    fixed = sum(os.path.getsize(p) for p in (PROMPT, PROFILE, "books-read.md")
+    fixed = sum(os.path.getsize(p) for p in (PROMPT, PROFILE, READ)
                 if os.path.exists(p)) + 2500
     return int((fixed + per * (CTX_TASK + CTX_OUT)) / 3.4
                + per * calls_per_book(per) * CTX_RESULT / 3.8)
@@ -338,9 +338,9 @@ def marc_genre(f):
 
 
 def read_rows():
-    """(title, author) for every row of both books-read.md tables, scored or not."""
+    """(title, author) for every read book, scored or not, withdrawn included."""
     import readlog
-    return [(r["title"], r["author"]) for r in readlog.rows(READ)]
+    return [(r["title"], r["author"]) for r in readlog.rows(READ, withdrawn=True)]
 
 
 def read_titles():
@@ -379,9 +379,9 @@ def already_decided():
     after being rejected because `authorid("")` cannot match `authorid("H. P. Lovecraft")`.
     A blank author cannot disambiguate anything, so the title is the best evidence there.
 
-    FOURTH CHANNEL, books-read.md, added 2026-09-01. The cache was assumed to cover
-    everything already handled, but /book-log DELETES the cache entry when it logs a
-    book, so all 51 read books were queueable - a promotion agent would spend a batch
+    FOURTH CHANNEL, the read books, added 2026-09-01. The cache was assumed to cover
+    everything already handled, but a book read before it was on the shelf has no
+    cache entry, so all 51 read books were queueable - a promotion agent would spend a batch
     predicting a range for a book that already carries a real score. Found when
     `Pycha a predsudek` (read, 75) turned up in a run-6 queue.
     """
@@ -698,7 +698,7 @@ def cmd_batch(outdir, per=15, n=200, minscore=4, per_author=15, top=0, unranked_
     pure = sum(1 for g in groups[:n] if len({groupkey(t["author"]) for t in g}) == 1)
     sent = [t for g in groups[:n] for t in g]
     route = collections.Counter(t["cz"]["state"] for t in sent)
-    fixed = sum(os.path.getsize(p) for p in (PROMPT, PROFILE, "books-read.md")
+    fixed = sum(os.path.getsize(p) for p in (PROMPT, PROFILE, READ)
                 if os.path.exists(p)) // 4          # chars -> rough tokens
     unrankedNote = " - INCLUDED by --include-unranked" if unranked_ok else ""
     biggest = max((len(g) for g in groups[:n]), default=per)
@@ -902,12 +902,12 @@ def validate(d, needles=None):
     m = BATCH_REL.search(why)
     if m:
         bad.append(f"why is batch-relative ({m.group(0)!r}) — an estimate must stand alone "
-                   f"against books-read.md, not against whatever was grouped with it")
+                   f"against the read books, not against whatever was grouped with it")
     m = SIBLING_REL.search(why)
     if m:
         bad.append(f"why argues from a sibling volume ({m.group(0)!r}) — reading order and "
                    f"which entry is stronger are facts, so move them to `flags`; `why` "
-                   f"carries only this book against books-read.md")
+                   f"carries only this book against the read books")
     # A READ book's title can never be a forbidden reference - citing one is the entire
     # point of the step - so it must not be a needle's context either. Blanked first,
     # longest first, exactly as tools/crossrefs.py has always done it. Without this,
@@ -921,7 +921,7 @@ def validate(d, needles=None):
         if t in own:
             continue
         if re.search(r"(?<![A-Za-z0-9])" + re.escape(t) + r"(?![A-Za-z0-9])", why, re.I):
-            bad.append(f"why names another candidate: {t!r} — argue from books-read.md only")
+            bad.append(f"why names another candidate: {t!r} — argue from the read books only")
     for rg in ranges:
         if re.search(r"(?<!\d)" + re.escape(rg) + r"(?!\d)", why):
             bad.append(f"why cites another candidate's est range {rg!r} — that number only "
@@ -980,8 +980,8 @@ def validate(d, needles=None):
         bad.append("no sources — an unsourced claim about how a book opens is the "
                    "failure mode this step exists to avoid")
     # An INVENTED axis id is the quiet failure this whole dep mechanism exists to
-    # prevent: /book-log bumps a counter when a named rule changes and greps the
-    # estimates for that id, so a dep spelled `axis:story-density` when the table
+    # prevent: a counter is bumped when a named rule changes and the estimates are
+    # grepped for that id, so a dep spelled `axis:story-density` when the table
     # says `axis:density` can never be found and the estimate is never revisited.
     # absorb used to register unknown ids silently, which made the breakage
     # invisible. Author and series ids are legitimately new; axes are not.

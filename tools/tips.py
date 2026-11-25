@@ -30,7 +30,6 @@ import io
 import json
 import re
 import sys
-import unicodedata
 
 sys.path.insert(0, "tools")
 import readlog
@@ -52,11 +51,6 @@ MACHINERY = re.compile(r"\b(?:scored?|scores|deduct\w*|axis|axes|filters?|estima
                        r"leaned|the reader|rootable|legible|interiority|declared|single[- ]POV|"
                        r"concrete (?:situation|want|problem)|clear want|second-order|premise|in the shape of)\b", re.I)
 SECOND_SENTENCE = re.compile(r"(?<!\b[A-Z])[.!?]\s+\S")  # an initial ("O. Henry") is not a sentence end
-
-
-def slug(s):
-    s = "".join(c for c in unicodedata.normalize("NFKD", s) if not unicodedata.combining(c))
-    return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")[:60]
 
 
 def problems(field, text, own_titles=()):
@@ -91,7 +85,7 @@ def ten(score):
 def units(est, cache, series, facets, media):
     """Every card the viewer draws outside the Rejected tab, grouped into series as it groups them."""
     by_key = {e["key"]: e for e in est}
-    reads = {r["title"]: r for r in readlog.rows()}
+    reads = {r["title"]: r for r in readlog.rows(kind="r")}
     m = media.get("media", {})
     in_series, read_in_series, out = set(), set(), []
 
@@ -140,7 +134,7 @@ def units(est, cache, series, facets, media):
     for r in reads.values():
         if r["title"] in read_in_series:
             continue
-        k, f = slug(r["title"]), facets.get(slug(r["title"]), {})
+        k, f = r["key"], facets.get(r["key"], {})
         out.append({
             "id": "r:" + k, "kind": "read", "slot": k, "floor": None, "hasRead": True, "titles": [r["title"]],
             "row": {"title": r["title"], "author": r["author"], "genre": f.get("genre"), "form": f.get("form"),

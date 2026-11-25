@@ -47,7 +47,7 @@ JSONL to the path you are given, one object per series or universe you identify:
 - `read` / `rejected`: copy the matching strings from the input — only those that
   really are volumes of this series.
 - `volumes`: how many volumes the series has in total, if you know it; else null.
-- `readWhole` (only on hand-written records): one `books-read.md` row that logs a whole
+- `readWhole` (only on hand-written records): one read book in `book-reviews.json` that logs a whole
   series ("Harry Potter (series)"). The Read tab labels it as read whole.
 - `note`: one short line only when something is non-obvious (a prequel written
   later, a volume the library holds only as an omnibus, a disputed order). Usually

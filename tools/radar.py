@@ -96,7 +96,7 @@ def dump(doc):
 def sync():
     doc = load()
     old = doc["radar"]
-    keys = [slug(r["title"]) for r in readlog.rows()]
+    keys = [r["key"] for r in readlog.rows(kind="r")]
     new = {k: old.get(k) or {s: None for s in SPOKES} for k in keys}
     orphans = [k for k in old if k not in new]
     new.update({k: old[k] for k in orphans})
@@ -105,14 +105,14 @@ def sync():
     dump(doc)
     print(f"{len(added)} row(s) added" + "".join(f"\n  + {k}" for k in added))
     for k in orphans:
-        print(f"  orphan {k}: no books-read.md row has this title; rename the key or delete the row")
+        print(f"  orphan {k}: no read book has this id in book-reviews.json; rename the key or delete the row")
     return 0
 
 
 def check():
     bad = []
     radar = load()["radar"]
-    keys = {slug(r["title"]) for r in readlog.rows()}
+    keys = {r["key"] for r in readlog.rows(kind="r")}
     bad += [f"{RADAR}: no row for read book {k} (run sync)" for k in sorted(keys - set(radar))]
     bad += [f"{RADAR}: orphan {k}" for k in sorted(set(radar) - keys)]
     for k, r in radar.items():
@@ -150,15 +150,15 @@ def xlsx(path):
         print(f"{path} exists and may hold numbers not yet imported. Import it, or delete it, first.")
         return 1
     radar = load()["radar"]
-    rows = readlog.rows()
-    rated = sum(1 for r in rows if any((radar.get(slug(r["title"])) or {}).get(s) is not None for s in SPOKES))
+    rows = readlog.rows(kind="r")
+    rated = sum(1 for r in rows if any((radar.get(r["key"]) or {}).get(s) is not None for s in SPOKES))
     wb = Workbook()
     ws = wb.active
     ws.title = SHEET
     head = ["Book", "Author", "Score"] + [label(s) for s in SPOKES] + ["Safety issue", "Notes", "key"]
     ws.append(head)
     for r in rows:
-        k = slug(r["title"])
+        k = r["key"]
         v = radar.get(k) or {}
         score = readlog.word(r["score"]) if r["score"] is not None else "not finished"
         ws.append([r["title"], r["author"], score] + [v.get(s) for s in SPOKES]
@@ -281,11 +281,11 @@ def estimate_lines():
 
 
 def batches(outdir, lowest, size, redo):
-    rows = readlog.rows()
+    rows = readlog.rows(kind="r")
     radar = load()["radar"]
     calib = [{"title": r["title"], "score": round(r["score"] / 10), "radar": {s: radar[k][s] for s in SPOKES}}
              for r in rows if r["score"] is not None
-             for k in [slug(r["title"])] if k in radar and all(radar[k][s] is not None for s in SPOKES)]
+             for k in [r["key"]] if k in radar and all(radar[k][s] is not None for s in SPOKES)]
     cache = {b["key"]: b for b in json.load(io.open("book-cache.json", encoding="utf-8"))["books"]}
     media = json.load(io.open("book-media.json", encoding="utf-8")).get("media", {})
     deep = {}

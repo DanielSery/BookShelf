@@ -27,8 +27,7 @@ for _s in (sys.stdout, sys.stderr):
     except AttributeError:
         pass
 
-CACHE, EST, READ, REJ, OUT = ("book-cache.json", "book-estimates.jsonl", "books-read.md",
-                              "book-rejects.jsonl", "book-series.json")
+CACHE, EST, REJ, OUT = "book-cache.json", "book-estimates.jsonl", "book-rejects.jsonl", "book-series.json"
 KINDS = {"series", "universe"}
 
 
@@ -44,7 +43,7 @@ def surname(a):
 
 
 def read_rows():
-    return [{k: r[k] for k in ("title", "author", "score")} for r in readlog.rows(READ)]
+    return [{k: r[k] for k in ("title", "author", "score")} for r in readlog.rows()]
 
 
 def batches(a):
@@ -112,7 +111,7 @@ def merge(a):
                         "rejected": d.get("rejected") or [], "volumes": d.get("volumes"),
                         "note": d.get("note") or ""}
     # Read-only records (a series read whole, no volume left on the shelf) and `read` lists
-    # were written by hand or by /book-log; a re-merge from agent output must not drop them.
+    # were written by hand; a re-merge from agent output must not drop them.
     try:
         prev = json.load(io.open(OUT, encoding="utf-8"))["series"]
     except FileNotFoundError:
@@ -129,8 +128,9 @@ def merge(a):
                    "tools/series-prompt.md. The reader reads a series whole (2026-10-25), so the viewer and "
                    "/book-suggest propose a `series` as ONE entry; a `universe` (shared world, standalone novels) "
                    "is not grouped. book-cache.json `series` is only the raw catalogue value and is often a "
-                   "publisher's line. /book-screen adds a new volume here; /book-log moves a logged volume from "
-                   "`members` to `read`.",
+                   "publisher's line. /book-screen adds a new volume here. `read` holds titles of books read "
+                   "before they were on the shelf; a member reviewed on the page stays in `members`, read "
+                   "because book-reviews.json has it.",
         "schema": 1,
         "series": dict(sorted(out.items())),
     }
@@ -144,11 +144,11 @@ def merge(a):
 
 def check(_):
     keys = {b["key"] for b in json.load(io.open(CACHE, encoding="utf-8"))["books"]}
-    titles = {r["title"] for r in read_rows()}
+    titles = {r["title"] for r in readlog.rows(kind="r")}
     doc = json.load(io.open(OUT, encoding="utf-8"))
     seen, problems = {}, []
     for sid, s in doc["series"].items():
-        problems += [f"{sid}: read title {t!r} is not a books-read.md row" for t in s.get("read", []) if t not in titles]
+        problems += [f"{sid}: read title {t!r} is not a read book's title" for t in s.get("read", []) if t not in titles]
         for m in s["members"]:
             if m["key"] not in keys:
                 problems.append(f"{sid}: {m['key']} is not on the shelf (logged or rejected? move it to read/rejected)")

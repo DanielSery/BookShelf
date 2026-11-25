@@ -521,7 +521,7 @@ const daysSince = iso => { const d = new Date(iso + 'T00:00:00'); return isNaN(d
 const jsonl = text => text.split('\n').filter(l => l.trim()).map(l => JSON.parse(l));
 
 // Must match slug() in tools/fetch-media.py — this is the join key for the
-// read and rejected tabs, which have no book key of their own.
+// rejected tab, which has no book key of its own.
 const slug = s => s.normalize('NFKD').replace(/[̀-ͯ]/g, '')
   .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60);
 
@@ -566,27 +566,46 @@ const SORTS = {
   rejected:   [['filter','By filter'],['entity','By name'],['author','By author'],['level','By scope']],
 };
 
-function parseReadTable(md) {
-  const lines = md.split('\n');
-  const isHead = l => /^\|\s*Book\s*\|\s*Author\s*\|\s*Score\s*\|/i.test(l);
-  if (!lines.some(isHead)) throw new Error('books-read.md: score table header not found');
-  const rows = [], bad = [];
-  let inside = false;
-  for (const raw of lines) {
-    const l = raw.trim();
-    if (isHead(l)) { inside = true; continue; }
-    if (!inside) continue;
-    if (!l.startsWith('|')) { inside = false; continue; }
-    if (/^\|[\s:|-]+\|$/.test(l)) continue;
-    const c = l.replace(/^\|/, '').replace(/\|$/, '').split('|').map(s => s.trim());
-    const v = c[2] ? c[2].replace(',', '.') : '';
-    const num = /^\d+(\.\d+)?$/.test(v) ? +v : null, word = WORD[v.toLowerCase()];
-    if (c.length !== 4 || (num === null && !word && !/^[—–-]$/.test(v))) { bad.push(l); continue; }
-    rows.push({ title: c[0], author: c[1],
-                score: word || (num === null ? null : Math.round(num <= 10 ? num * 10 : num)),
-                notes: c[3], key: slug(c[0]) });
-  }
-  return { rows, bad };
+// Must match score100() in tools/readlog.py: a book scored before the five words keeps its number.
+const score100 = rv => {
+  const x = rv.logged == null || !String(rv.logged).trim() ? NaN : +String(rv.logged).replace(',', '.');
+  if (!Number.isFinite(x)) return WORD[rv.score] ?? null;
+  return Math.round(x <= 10 ? x * 10 : x);
+};
+
+// Books read before they were on the shelf; a reviewed shelf book is a c: review instead.
+const readRows = doc => Object.entries(doc.reviews || {})
+  .filter(([id, rv]) => id.startsWith('r:') && 'score' in rv && !rv.withdrawn)
+  .map(([id, rv]) => ({ title: rv.title || '', author: rv.author || '', score: score100(rv), notes: rv.notes || '',
+                        at: rv.at, key: id.slice(2) }));
+
+function readDecorate(r, { RM, RF, PT, OR }) {
+  r.media = RM[r.key] || {};
+  const f = RF[r.key] || {};
+  r.genre = f.genre || ''; r.tags = [...(f.tags || []), ...(PT['r:' + r.key] || [])]; r.form = f.form || '';
+  // '' rather than 'adult': an unfaceted read row must not masquerade as adult,
+  // or a missing facet row silently joins the wrong bucket instead of showing as a gap.
+  r.audience = f.audience || '';
+  r.origin = (OR[r.key] || {}).orig || '';
+  r.hay = [r.title, r.author, r.notes, GENRE[f.genre] || f.genre || '', ...tagLabels(r.tags),
+           FORM[f.form] || f.form || '', AUDIENCE[f.audience] || f.audience || '',
+           ORIGIN[r.origin] || ''].join(' ').toLowerCase();
+  return r;
+}
+
+// After the review sheet saves or deletes an r: review. Rows are updated in place because
+// D.readSeries holds the same objects.
+function readSync(id, entry) {
+  const key = id.slice(2), row = D.read.rows.find(r => r.key === key);
+  if (!row) return;
+  if (entry) { Object.assign(row, readDecorate(readRows({ reviews: { [id]: entry } })[0], D.readCtx)); return; }
+  D.read.rows.splice(D.read.rows.indexOf(row), 1);
+  const sid = D.readSeriesOf[key];
+  if (!sid) return;
+  delete D.readSeriesOf[key];
+  const s = D.readSeries[sid];
+  s.reads = s.reads.filter(r => r !== row);
+  if (!s.reads.length) delete D.readSeries[sid];
 }
 
 const state = { view: 'candidates' };
@@ -603,13 +622,11 @@ async function load() {
     if (!r.ok) throw new Error(p + ' → HTTP ' + r.status);
     return kind === 'text' ? r.text() : r.json();
   };
-  const [cache, revsDoc, media, estText, rejText, readMd, readFacets, originDoc, deepText, sim, seriesDoc, worldsDoc,
+  const [cache, revsDoc, media, estText, rejText, readFacets, originDoc, deepText, sim, seriesDoc, worldsDoc,
          markersDoc, tasteText, reviewsDoc, profilesText] = await Promise.all([
     get('book-cache.json'), get('book-revs.json'), get('book-media.json'),
     get('book-estimates.jsonl', 'text'), get('book-rejects.jsonl', 'text'),
-    get('books-read.md', 'text'),
-    // Read-book facets live apart because books-read.md is hand-maintained and parsed
-    // as exactly four columns. A missing file is survivable: the notices list the orphans.
+    // A missing facets file is survivable: the notices list the orphans.
     get('book-read-facets.json').catch(() => ({ facets: {} })),
     get('book-origin.json').catch(() => ({ books: {}, read: {} })),
     get('book-deep.jsonl', 'text').catch(() => ''),
@@ -618,7 +635,7 @@ async function load() {
     get('book-worlds.json').catch(() => ({ worlds: {} })),
     get('book-markers.json').catch(() => null),
     get('book-taste.jsonl', 'text').catch(() => ''),
-    get('book-reviews.json').catch(() => ({ reviews: {} })),
+    get('book-reviews.json'),
     get('book-profiles.jsonl', 'text').catch(() => ''),
   ]);
 
@@ -663,22 +680,9 @@ async function load() {
     };
   });
 
-  const read = parseReadTable(readMd);
-  const RF = readFacets.facets || {};
-  read.rows.forEach(r => {
-    r.media = RM[r.key] || {};
-    const f = RF[r.key] || {};
-    r.genre = f.genre || ''; r.tags = [...(f.tags || []), ...(PT['r:' + r.key] || [])]; r.form = f.form || '';
-    // '' rather than 'adult': an unfaceted read row must not masquerade as adult,
-    // or a renamed title silently joins the wrong bucket instead of showing as a gap.
-    r.audience = f.audience || '';
-    r.origin = (OR[r.key] || {}).orig || '';
-    r.hay = [r.title, r.author, r.notes, GENRE[f.genre] || f.genre || '', ...tagLabels(r.tags),
-             FORM[f.form] || f.form || '', AUDIENCE[f.audience] || f.audience || '',
-             ORIGIN[r.origin] || ''].join(' ').toLowerCase();
-  });
-  read.unfaceted = read.rows.filter(r => !r.genre || !r.form || !r.audience);
-  read.unorigined = read.rows.filter(r => !r.origin);
+  const reviews = rvApplyPending(reviewsDoc);
+  const readCtx = { RM, RF: readFacets.facets || {}, PT, OR };
+  const read = { rows: readRows(reviews).map(r => readDecorate(r, readCtx)) };
 
   const rejects = jsonl(rejText).slice(1).map(r => ({
     ...r, author: r.author || '', media: JM[slug(r.entity + '-' + (r.author || ''))] || {},
@@ -702,9 +706,9 @@ async function load() {
     }
   });
 
-  D = { cache, revs, books, read, rejects, sim, series, seriesOf, readSeries, readSeriesOf, seriesMedia: SM,
+  D = { cache, revs, books, read, readCtx, rejects, sim, series, seriesOf, readSeries, readSeriesOf, seriesMedia: SM,
         seriesDoc: seriesDoc.series || {}, worlds: worldsDoc.worlds || {},
-        taste: markersDoc && { model: tasteModel(markersDoc, tasteText, rvApplyPending(reviewsDoc), profilesText), fit: null } };
+        taste: markersDoc && { model: tasteModel(markersDoc, tasteText, reviews, profilesText), fit: null } };
   if (D.taste) tasteRefresh();
   fillSelect('rfilter', 'All filters', [...new Set(rejects.map(r => r.filter))].sort().map(f => [f, nice(f)]));
   fillSelect('rscope', 'All scopes', [...new Set(rejects.map(r => r.level))].sort().map(l => [l, l]));
@@ -774,15 +778,14 @@ function notices() {
     <span class="mark">${crit ? '!' : '·'}</span><div>${html}${
       list.length ? `<div class="leaned ${cls}">${list.map(esc).join('<br>')}</div>` : ''}</div></div>` });
   const drifted = D.books.filter(b => b.drift.length);
-  if (drifted.length) add(true, `<b>${plural(drifted.length, 'estimate')} carry a stale dependency</b> — a
-    <code>/book-log</code> PROPAGATE did not finish, or the profile was edited by hand. Run
-    <code>/book-log</code> before trusting them.`, drifted.map(b => b.key + ' — ' + b.drift.join(', ')));
-  if (D.read.bad.length) add(true, `<b>${plural(D.read.bad.length, 'unparsable row')} in books-read.md</b>`,
-    D.read.bad, 'err');
-  if (D.read.unfaceted.length) add(false, `<b>${plural(D.read.unfaceted.length, 'read book')} without genre,
-    form or audience</b> — invisible to the facet filters. Add them to <code>book-read-facets.json</code> by title slug.`,
-    D.read.unfaceted.map(r => r.key + ' — ' + r.title));
-  const noOrigin = D.books.filter(b => !b.origin).map(b => b.key).concat(D.read.unorigined.map(r => r.key));
+  if (drifted.length) add(true, `<b>${plural(drifted.length, 'agent estimate')} carry a stale dependency</b> — a
+    rule moved after they were derived, or the profile was edited by hand. Re-derive one with
+    <code>/book-deep</code> before trusting its agent range.`, drifted.map(b => b.key + ' — ' + b.drift.join(', ')));
+  const unfaceted = D.read.rows.filter(r => !r.genre || !r.form || !r.audience);
+  if (unfaceted.length) add(false, `<b>${plural(unfaceted.length, 'read book')} without genre,
+    form or audience</b> — invisible to the facet filters. Add them to <code>book-read-facets.json</code> under the key shown.`,
+    unfaceted.map(r => r.key + ' — ' + r.title));
+  const noOrigin = D.books.filter(b => !b.origin).map(b => b.key).concat(D.read.rows.filter(r => !r.origin).map(r => r.key));
   if (noOrigin.length) add(false, `<b>${plural(noOrigin.length, 'book')} with no origin</b> — invisible to the
     Origin filter. Add them to <code>book-origin.json</code> or run <code>python tools/fetch-origin.py</code>.`, noOrigin);
   const nc = D.books.filter(b => NO_COVER(b.media)).length
@@ -914,8 +917,8 @@ function applyTaste(b, model, te) {
   b.enGem = b.gemRoute && !!b.est && b.mid >= 80;
 }
 
-// A review written on the page has a date; a tick-only entry for a books-read.md row does not.
-const pageReview = b => { const rv = D.taste && D.taste.model.reviews['c:' + b.key]; return rv && rv.at ? rv : null; };
+// Must match readlog.rows() in tools/readlog.py: a scored or not-finished entry, never a withdrawn one.
+const pageReview = b => { const rv = D.taste && D.taste.model.reviews['c:' + b.key]; return rv && 'score' in rv && !rv.withdrawn ? rv : null; };
 
 function tasteRefresh() {
   const { model } = D.taste;
@@ -937,8 +940,9 @@ function tasteBlock(b) {
   return `<div class="markers"><b>Markers: ${t.points}</b>, from your baseline ${Math.round(t.base)}${items ? `<ul>${items}</ul>` : ''}</div>`;
 }
 
-const reviewButton = (b, label = 'Review') => D.taste
-  ? `<button type="button" class="linkish rvopen" data-review="${esc(b.key)}">${label}</button>` : '';
+// `ref` is a cache key, or the r: id of a book read before it was on the shelf.
+const reviewButton = (ref, label = 'Review') => D.taste
+  ? `<button type="button" class="linkish rvopen" data-review="${esc(ref)}">${label}</button>` : '';
 
 function candidateCard(b) {
   const gaps = missingBefore(b), czt = b.cache.czTitle, en = b.cache.title, tips = tipsOf(b.media);
@@ -958,7 +962,7 @@ function candidateCard(b) {
     tips,
     body: `${pitchOf(b.media)}${inlineTips(tips)}
       <div class="access">${accessLine(b)}</div>
-      ${reviewButton(b)}
+      ${reviewButton(b.key)}
       <details class="scoring"><summary>Why</summary>
         ${b.taste ? tasteBlock(b) : ''}
         <p class="why">${b.taste ? `<b>Agent estimate${b.agentEst ? ' ' + esc(rng(b.agentEst[0], b.agentEst[1])) : ''}:</b> ` : ''}${esc(b.why)}</p>
@@ -1005,7 +1009,7 @@ function groupSeries(books) {
 
 function volumeLine(b) {
   const czt = b.cache.czTitle, en = b.cache.title, rv = pageReview(b);
-  if (rv) return `${esc(czt || en)} <span class="vr">· read · ${rv.score ? rvCap(rv.score) : 'not finished'} · ${reviewButton(b, 'Edit review')}</span>`;
+  if (rv) return `${esc(czt || en)} <span class="vr">· read · ${rv.score ? rvCap(rv.score) : 'not finished'} · ${reviewButton(b.key, 'Edit review')}</span>`;
   const range = b.blocked ? `blocked · ${esc(nice(b.blocked))}` : b.est ? rng(b.est[0], b.est[1]) : '—';
   const access = b.hasCz ? (b.cz.recordUrl ? routeLink(b.cz.recordUrl, 'Borrow') : 'CZ print')
     : b.hasEloan ? 'e-loan only'
@@ -1013,7 +1017,7 @@ function volumeLine(b) {
     : b.enGem ? (b.cache.enCopy ? routeLink(b.cache.enCopy.recordUrl, 'Borrow in English') : 'English gem')
     : 'not in print here';
   return `${esc(czt || en)}${czt && en && czt !== en ? ` <span class="vr">(${esc(en)})</span>` : ''}
-    <span class="vr">· ${range} · ${access}${missingBefore(b).map(g => ` · needs ${esc(g)}`).join('')}${D.taste ? ' · ' + reviewButton(b) : ''}</span>
+    <span class="vr">· ${range} · ${access}${missingBefore(b).map(g => ` · needs ${esc(g)}`).join('')}${D.taste ? ' · ' + reviewButton(b.key) : ''}</span>
     <details class="scoring"><summary>Why</summary><p class="why">${esc(b.why)}</p></details>`;
 }
 
@@ -1059,34 +1063,46 @@ function readSeriesEntry(s) {
   };
 }
 
+// A volume reviewed on the page stays a shelf member (c:), so it joins its read series by membership.
 function groupReadSeries(rows) {
-  const out = [], done = new Set();
+  const out = [], page = {};
   rows.forEach(r => {
-    const id = D.readSeriesOf[r.key];
+    const id = r.book ? D.seriesOf[r.key] : D.readSeriesOf[r.key];
     if (!id) return out.push(r);
-    if (!done.has(id)) { done.add(id); out.push(readSeriesEntry(D.readSeries[id])); }
+    if (!page[id]) { page[id] = []; out.push(id); }
+    if (r.book) page[id].push(r);
   });
-  return out;
+  return out.map(x => typeof x === 'string' ? readSeriesGroup(x, page[x]) : x);
 }
 
+function readSeriesGroup(id, page) {
+  const old = D.readSeries[id], at = key => D.series[id].members.findIndex(m => m.key === key);
+  const reads = [...(old ? old.reads : []), ...page.sort((a, b) => at(a.key) - at(b.key))];
+  return { ...readSeriesEntry({ ...(old || D.series[id]), reads }), mapId: (old ? 'rs:' : 's:') + id };
+}
+
+const editRef = r => r.book ? r.key : 'r:' + r.key;
+
 function readVolumes(vols) {
-  return `<ol class="vols">${vols.map(r => `<li>${esc(r.title)} <span class="vr">· ${r.score == null ? 'not finished' : band(r.score)}</span>
+  return `<ol class="vols">${vols.map(r => `<li>${esc(r.title)} <span class="vr">· ${r.score == null ? 'not finished' : band(r.score)} · ${reviewButton(editRef(r), 'Edit review')}</span>
     ${r.notes ? `<details class="scoring"><summary>Notes</summary><p class="why">${esc(r.notes)}</p></details>` : ''}</li>`).join('')}</ol>`;
 }
 
 const readScore = x => x.score == null ? '—' : band(x.score);
 
 function readSeriesCard(e) {
-  const s = e.s, n = e.vols.length, left = D.series[s.id] ? D.series[s.id].members.length : 0, tips = seriesTips(s.id);
+  const s = e.s, n = e.vols.length, tips = seriesTips(s.id);
+  const left = D.series[s.id] ? D.series[s.id].members.filter(m => !pageReview(m.book)).length : 0;
   return shell({
-    key: e.key, media: e.media, fallback: e.author, title: e.title, alt: e.alt, author: e.author, mapId: 'rs:' + s.id,
+    key: e.key, media: e.media, fallback: e.author, title: e.title, alt: e.alt, author: e.author, mapId: e.mapId || 'rs:' + s.id,
     tone: e.score == null ? 'bN' : tone(e.score), score: readScore(e),
     badges: [
       badge('series', 'Series · ' + (s.readWhole ? 'read whole' : `${n}${s.volumes ? ' of ' + s.volumes : ''} read`)),
       left && badge('', `${left} more to read`),
     ].filter(Boolean),
     tips,
-    body: inlineTips(tips) + (n > 1 ? readVolumes(e.vols) : e.notes ? whyBlock(esc(e.notes)) : ''),
+    body: inlineTips(tips) + (n > 1 ? readVolumes(e.vols)
+      : (e.notes ? whyBlock(esc(e.notes)) : '') + reviewButton(editRef(e.vols[0]), 'Edit review')),
   });
 }
 
@@ -1110,7 +1126,7 @@ function readCard(r) {
     tone: r.score == null ? 'bN' : tone(r.score), score: readScore(r),
     badges: [dnf && badge('', 'did not finish'), r.at && badge('', 'reviewed ' + r.at)].filter(Boolean),
     tips,
-    body: inlineTips(tips) + (r.notes ? whyBlock(esc(r.notes)) : '') + (r.book ? reviewButton(r.book, 'Edit review') : ''),
+    body: inlineTips(tips) + (r.notes ? whyBlock(esc(r.notes)) : '') + reviewButton(editRef(r), 'Edit review'),
   });
 }
 
@@ -1203,7 +1219,7 @@ function readFilter() {
     if (aud === 'kids' ? !(r.audience === 'ya' || r.audience === 'childrens')
                        : aud && r.audience !== aud) return false;
     if (org && r.origin !== org) return false;
-    if (tag && !mapTagged(r.isSeries ? 'rs:' + r.s.id : r.ref || 'r:' + r.key, tag)) return false;
+    if (tag && !mapTagged(r.isSeries ? r.mapId || 'rs:' + r.s.id : r.ref || 'r:' + r.key, tag)) return false;
     return true;
   };
 }
@@ -1211,7 +1227,7 @@ function readFilter() {
 const readEntryCard = r => r.isSeries ? readSeriesCard(r) : readCard(r);
 
 function readView() {
-  const kept = groupReadSeries(D.read.rows).concat(D.books.filter(pageReview).map(pageReadRow)).filter(readFilter());
+  const kept = groupReadSeries(D.read.rows.concat(D.books.filter(pageReview).map(pageReadRow))).filter(readFilter());
   // Put down for lack of interest, not disliked (reader, 2026-10-29): kept apart from the
   // scored books so they never sit among the low scores.
   const unfinished = sortBy(kept.filter(r => r.score == null), 'title');

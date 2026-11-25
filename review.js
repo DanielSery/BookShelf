@@ -26,13 +26,24 @@ function rvApplyPending(doc) {
   return doc;
 }
 
-function rvOpen(key) {
-  const b = D.books.find(x => x.key === key);
-  if (!b || !D.taste) return;
-  const id = 'c:' + key, rv = D.taste.model.reviews[id] || {}, ticks = {};
+function rvOpen(ref) {
+  if (!D.taste) return;
+  const id = ref.startsWith('r:') ? ref : 'c:' + ref, rv = D.taste.model.reviews[id] || {}, ticks = {};
+  let who;
+  if (id.startsWith('r:')) {
+    if (!('score' in rv) || rv.withdrawn) return;
+    who = { title: rv.title, alt: '', author: rv.author || '' };
+  } else {
+    const b = D.books.find(x => x.key === ref);
+    if (!b) return;
+    const c = b.cache;
+    who = { title: c.czTitle || c.title || b.key, alt: c.czTitle && c.title !== c.czTitle ? c.title : '', author: c.author || '' };
+  }
   ['helped', 'hurt', 'removed'].forEach(side => (rv[side] || []).forEach(t => { ticks[t] = side; }));
-  RV = { b, id, editing: !!rv.at, score: rv.at ? rv.score : undefined, notes: rv.notes || '', ticks,
-         added: { ...(rv.added || {}) }, token: '', busy: false, msg: '', err: false };
+  const editing = 'score' in rv;
+  RV = { id, ...who, editing, score: editing ? rv.score : undefined, was: rv.score, logged: rv.logged, at: rv.at,
+         notes: rv.notes || '', ticks, added: { ...(rv.added || {}) }, token: '', busy: false, msg: '', err: false,
+         sure: false };
   rvRender();
   F('reviewsheet').querySelector('.rvpanel').focus();
 }
@@ -72,8 +83,7 @@ function rvAddOptions() {
 }
 
 function rvRender() {
-  const el = F('reviewsheet'), b = RV.b;
-  const title = b.cache.czTitle || b.cache.title || b.key, alt = b.cache.czTitle && b.cache.title !== b.cache.czTitle ? b.cache.title : '';
+  const el = F('reviewsheet'), { title, alt } = RV;
   const marked = !!D.taste.model.taste[RV.id];
   const scores = [...RV_WORDS.map(w => [w, rvCap(w)]), ['', 'Not finished']].map(([w, label]) =>
     `<button type="button" data-rv-score="${w}" aria-pressed="${RV.score !== undefined && (RV.score || '') === w}">${label}</button>`).join('');
@@ -85,7 +95,7 @@ function rvRender() {
        in this browser, where every page on ${esc(location.hostname)} can read it.</p>`;
   el.innerHTML = `<div class="rvpanel" role="dialog" aria-modal="true" aria-label="${esc('Review: ' + title)}" tabindex="-1">
     <div class="wphead"><div><div class="bk-title">${esc(title)}${alt ? ` <span class="bk-alt">(${esc(alt)})</span>` : ''}</div>
-      <div class="bk-author">${esc(b.cache.author || '')}</div></div>
+      <div class="bk-author">${esc(RV.author)}</div></div>
       <button type="button" class="unpick" data-rv-close aria-label="Close">×</button></div>
     <div class="rvbody">
       <div class="rvlabel">Score</div>
@@ -105,7 +115,7 @@ function rvRender() {
     </div>
     <div class="rvfoot">
       <span class="rvmsg${RV.err ? ' err' : ''}" role="status">${esc(RV.msg)}</span>
-      ${RV.editing ? `<button type="button" class="rvbtn" data-rv-delete${RV.busy ? ' disabled' : ''}>Delete review</button>` : ''}
+      ${RV.editing ? `<button type="button" class="rvbtn" data-rv-delete${RV.busy ? ' disabled' : ''}>${RV.sure ? 'Delete for good' : 'Delete review'}</button>` : ''}
       <button type="button" class="rvbtn primary" data-rv-save${RV.busy ? ' disabled' : ''}>Save</button>
     </div></div>`;
   el.hidden = false;
@@ -118,10 +128,24 @@ function rvSay(msg, err = false) {
   rvRender();
 }
 
+// Updates the sheet in place: a full render would take the caret out of the notes.
+function rvDisarm() {
+  if (!RV.sure) return;
+  Object.assign(RV, { sure: false, msg: '', err: false });
+  const sheet = F('reviewsheet'), msg = sheet.querySelector('.rvmsg');
+  sheet.querySelector('[data-rv-delete]').textContent = 'Delete review';
+  msg.className = 'rvmsg';
+  msg.textContent = '';
+}
+
 function rvEntry() {
   const side = s => Object.keys(RV.ticks).filter(t => RV.ticks[t] === s).sort();
-  return { score: RV.score, notes: RV.notes.trim(), at: rvToday(), helped: side('helped'), hurt: side('hurt'),
-           removed: side('removed'), added: Object.fromEntries(Object.entries(RV.added).sort()) };
+  // An unchanged word keeps the number an old read was logged with, and the day it was given.
+  const same = RV.score === RV.was, logged = same && RV.logged != null ? { logged: RV.logged } : {};
+  const at = same ? RV.at : rvToday();
+  return { title: RV.title, author: RV.author, score: RV.score, ...logged, notes: RV.notes.trim(), ...(at ? { at } : {}),
+           helped: side('helped'), hurt: side('hurt'), removed: side('removed'),
+           added: Object.fromEntries(Object.entries(RV.added).sort()) };
 }
 
 const rvDecode = b64 => new TextDecoder().decode(Uint8Array.from(atob(b64.replace(/\s/g, '')), c => c.charCodeAt(0)));
@@ -163,7 +187,7 @@ async function rvSave(remove) {
   if (!remove && RV.score === undefined) return rvSay('Pick a score, or Not finished.', true);
   const token = recall(RV_TOKEN) || RV.token.trim();
   if (!token) return rvSay('Paste a GitHub token to save.', true);
-  const at = RV, entry = remove ? null : rvEntry(), title = at.b.cache.czTitle || at.b.cache.title || at.b.key;
+  const at = RV, entry = remove ? null : rvEntry(), title = at.title;
   at.busy = true;
   rvSay(remove ? 'Deleting…' : 'Saving…');
   try {
@@ -178,6 +202,7 @@ async function rvSave(remove) {
   store(RV_PENDING, JSON.stringify({ ...rvPending(), [at.id]: { e: entry, t: Date.now() } }));
   const reviews = D.taste.model.reviews;
   if (entry) reviews[at.id] = entry; else delete reviews[at.id];
+  if (at.id.startsWith('r:')) readSync(at.id, entry);
   tasteRefresh();
   rvClose();
   render();
@@ -205,6 +230,7 @@ document.addEventListener('click', e => {
   const sheet = F('reviewsheet');
   if (e.target === sheet || e.target.closest('[data-rv-close]')) { if (!RV.busy) rvClose(); return; }
   if (RV.busy) return;
+  if (e.target.closest('[data-rv-score], [data-rv-tick], [data-rv-drop], [data-rv-add]')) rvDisarm();
   const score = e.target.closest('[data-rv-score]');
   if (score) { RV.score = score.dataset.rvScore || null; RV.msg = ''; rvRender(); return; }
   const tick = e.target.closest('[data-rv-tick]');
@@ -223,12 +249,18 @@ document.addEventListener('click', e => {
   }
   if (e.target.closest('[data-rv-forget]')) { store(RV_TOKEN, ''); rvRender(); return; }
   if (e.target.closest('[data-rv-save]')) rvSave(false);
-  else if (e.target.closest('[data-rv-delete]')) rvSave(true);
+  else if (e.target.closest('[data-rv-delete]')) {
+    // An old read's notes exist nowhere else.
+    if (RV.id.startsWith('r:') && !RV.sure) {
+      RV.sure = true;
+      rvSay('Deleting removes this book and its notes from your log. Press Delete for good to confirm.', true);
+    } else rvSave(true);
+  }
 });
 
 document.addEventListener('input', e => {
   if (!RV) return;
-  if (e.target.id === 'rvnotes') RV.notes = e.target.value;
+  if (e.target.id === 'rvnotes') { RV.notes = e.target.value; rvDisarm(); }
   else if (e.target.id === 'rvtoken') RV.token = e.target.value;
 });
 

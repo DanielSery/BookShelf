@@ -1,10 +1,10 @@
 {
- "_readme": "The reader's own rating of each book in books-read.md on the seven radar spokes, beside its score. Hand-maintained: fill the spreadsheet from `python tools/radar.py xlsx` and run `import`, replace a null here with a whole number 0-10, or give /book-log the numbers. Nothing here duplicates the score or the notes, and no spoke is ever filled in for him from them (ruled 2026-11-02: he rates the old books himself).",
+ "_readme": "The reader's own rating of each book read before it was on the shelf (the r: reviews in book-reviews.json) on the seven radar spokes, beside its score. Not collected for new reads since 2026-11-21. Hand-maintained: fill the spreadsheet from `python tools/radar.py xlsx` and run `import`, or replace a null here with a whole number 0-10. Nothing here duplicates the score or the notes, and no spoke is ever filled in for him from them (ruled 2026-11-02: he rates the old books himself).",
  "schema": 1,
- "_key": "slug(title), the same key as book-read-facets.json. `python tools/radar.py sync` adds an all-null row for a newly logged book; `check` validates the file. Rows follow books-read.md order.",
+ "_key": "the r: id in book-reviews.json without its prefix, the same key as book-read-facets.json. `python tools/radar.py sync` adds an all-null row for a read book without one; `check` validates the file. Rows follow book-reviews.json order.",
  "_spokes": "world, coherence, pull, characters, heart, ideas, safety. 10 is the best on every spoke, so safety 10 means clean. null = not rated yet, and a DNF may leave the spokes it cannot judge null. Definitions: book-recommendations.md, ## The radar.",
  "_safetyIssue": "optional short text naming what pulled safety down, e.g. \"sex, one chapter\".",
- "_predicted": "written by /book-log when a candidate is logged: the radar its prediction carried, so a miss shows which spoke it came from. Never edited by hand.",
+ "_predicted": "written by /book-log (retired 2026-11-21) when a candidate was logged: the radar its prediction carried, so a miss shows which spoke it came from. Never edited by hand.",
  "radar": {
   "ozvena-veci-budoucich-an-echo-of-things-to-come": {
    "world": 10,

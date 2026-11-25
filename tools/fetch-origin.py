@@ -22,9 +22,8 @@ Two inverse traps the audit caught, both handled: an English edition of a Czech
 original reads "Přeloženo z češtiny" (Josef Čapek's A Doggie and a Pussycat), and a
 plain "Original" in a note is not a translation statement (Prašina).
 
-The `read` namespace cannot be derived - /book-log deletes the cache entry when it
-logs a book - so existing read rows are MERGED, never recomputed. Carrying the row
-across is part of the /book-log contract, the same as the facets.
+The `read` namespace cannot be derived - a book read before it was on the shelf has
+no cache entry - so existing read rows are MERGED, never recomputed.
 
 The statement evidence is cached in <scratchdir>/origin-evidence.jsonl and reused, so
 a re-run after screening in new books costs only the new titles.
@@ -225,10 +224,6 @@ def norm(s):
     return re.sub(r"[^a-z0-9]+", "-", s).strip("-")
 
 
-def slug(x):
-    return norm(x)[:60]
-
-
 def aname(a):
     """An author as an unordered bag of surname-length words, diacritics folded.
 
@@ -337,8 +332,8 @@ prev = {}
 if os.path.exists(os.path.join(REPO, "book-origin.json")):
     prev = (json.load(rd("book-origin.json")).get("read")) or {}
 read, lost = {}, []
-for r in readlog.rows(os.path.join(REPO, "books-read.md")):
-    s = slug(r["title"])
+for r in readlog.rows(os.path.join(REPO, "book-reviews.json"), kind="r"):
+    s = r["key"]
     if s in prev:
         read[s] = prev[s]
     else:
@@ -351,15 +346,13 @@ doc = {
         "work, never a judgement about it - what a translation costs the reading is the "
         "reader's own call and is not recorded anywhere here. Regenerable for "
         "`books` by tools/fetch-origin.py; `read` is merged, never recomputed, because "
-        "/book-log deletes the cache entry it would have to derive from. Kept out of "
+        "a book read before it was on the shelf has no cache entry to derive from. Kept out of "
         "book-cache.json so that regenerating it never forces that hand-formatted file "
         "to be reserialised, and out of book-read-facets.json because this covers both "
         "tabs and that file covers only the read table.",
     "schema": 1,
-    "_key": "`books` by book-cache.json key; `read` by slug(title) of a books-read.md "
-            "row - the SAME key as book-media.json's readMedia and "
-            "book-read-facets.json. A renamed title costs a missing row, which the "
-            "Gaps panel reports, not a wrong one.",
+    "_key": "`books` by book-cache.json key; `read` by the r: id in book-reviews.json "
+            "- the SAME key as book-media.json's readMedia and book-read-facets.json.",
     "_orig": "cs = written in Czech. foreign = written in another language, so the "
              "Czech edition is a translation. The language of the original is "
              "deliberately NOT recorded: it would be a third covered at best, and a "
@@ -388,4 +381,4 @@ print(f"read:  cs {n(read, 'cs')}, foreign {n(read, 'foreign')}, no row {len(los
 for k, a in unknown:
     print("  no row:", k, "-", a, "(add the author to CS_AUTHORS or FOREIGN_AUTHORS)")
 for t in lost:
-    print("  no read row:", t, "(carry it across when /book-log logs a book)")
+    print("  no read row:", t, "(add it by hand: the book has no cache entry)")
