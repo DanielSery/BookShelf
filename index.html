@@ -1391,6 +1391,7 @@ function growList(y = scrollY) {
   }
 }
 addEventListener('scroll', () => growList(), { passive: true });
+addEventListener('resize', () => growList());
 
 const table = (head, rows) =>
   `<div class="tablewrap"><table><thead><tr>${head}</tr></thead><tbody>${rows.join('')}</tbody></table></div>`;
@@ -1582,7 +1583,7 @@ document.querySelectorAll('.tab').forEach(t => t.onclick = () => { scrollTo(0, 0
 F('filters').addEventListener('input', () => { render(); saveView(); });
 addEventListener('hashchange', () => {
   const v = location.hash.slice(1);
-  if (canOpen(v) && v !== state.view) setView(v);
+  if (canOpen(v) && v !== state.view) { scrollTo(0, 0); setView(v); }
 });
 
 const closePops = keep => document.querySelectorAll('details.pop[open]').forEach(d => {
