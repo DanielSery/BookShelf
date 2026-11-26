@@ -289,6 +289,20 @@ books share an author, the author-level research is shared and counts once.
 research you have implicitly answered gate 4 with "no, the idea holds" — and on the
 last run that answer was wrong 58% of the time.
 
+## Non-fiction that explains (ruled 2026-11-26)
+
+Popular science, philosophy, history of ideas, essays and books about faith are **in
+scope when written for a general reader**, with or without a story. Never reject one for
+having no narrative. A textbook, manual, workbook, self-help or reference work is out of
+scope: exit at C-low and say so in `why` (a reject needs an `axis:` id, and none fits). Grade on the same axes: `axis:ideas` is what it leaves the reader
+thinking about; `axis:opening` is whether the first chapter is clear and pulls a lay
+reader in, not how many plot lines it opens; a dense, academic or dry register costs.
+**Apologetics and theology are graded, never vetoed** ("it needs to be approachable and
+interesting, I do not want to have strict theory or boring titles"): an engaging case
+for belief for a general reader scores normally, a systematic treatise low. Religion
+played for ridicule still costs. Genre `ideas` for popular science, philosophy and
+essays; a memoir or biography stays `testimony`.
+
 ## Step 2 — find out what the book actually is (gate 6, and the narrow checks in 1, 2, 3 and 5)
 
 Search the web. You need enough to answer the axes honestly, and the ones that decide
@@ -448,7 +462,8 @@ genre, a form or a page count you did not establish.
 
 Field rules:
 
-- `genre`: one of `sf fantasy litfic historical testimony allegory thriller`.
+- `genre`: one of `sf fantasy litfic historical testimony allegory thriller ideas`
+  (`ideas` = non-fiction that explains: popular science, philosophy, essays, faith).
   `tags`: optional list; the only value is `exploration` (added 2026-10-24) — the world
   is an unknown the lead has to explore, however he came not to know it (lost memory,
   arriving from another world or time, or never having been told). Descriptive, like

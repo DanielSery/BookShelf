@@ -22,8 +22,8 @@ EST, DEEP, CACHE, REVS, MEDIA, PROFILES = ("book-estimates.jsonl", "book-deep.js
 MANDATORY = ["axis:opening", "axis:occult", "axis:detective", "axis:worldbuilding",
              "axis:protagonist", "axis:motives"]
 TAGS = {"exploration"}
-# Must match PROFILE_TAGS in index.html: read from the similarity profiles, not book-cache.json.
-# A book gets the tag when one of the (profile tag, tags it must not have) pairs matches.
+# Must match PROFILE_TAGS and GENRE_TAGS in index.html: read from the similarity profiles, not book-cache.json.
+# A book gets the tag when one of the (profile tag, tags it must not have) pairs matches, or its genre is in GENRE_TAGS.
 NOT_MODERN = {"ancient", "medieval", "pseudo-medieval", "early-modern", "nineteenth-century",
               "secondary-world", "space", "alien-world", "far-future"}
 PROFILE_TAGS = {
@@ -33,6 +33,7 @@ PROFILE_TAGS = {
     "holocaust": [("holocaust", set())], "communist-era": [("communist-era", set())], "space": [("space", set())],
     "big-questions": [(t, set()) for t in ("memoir", "biography", "popular-science", "essays", "faith-nonfiction")],
 }
+GENRE_TAGS = {"ideas": "big-questions"}
 VERDICTS = {"earns", "clear", "costs", "fires", "unknown"}
 MIN_WIDTH = 6
 
@@ -86,7 +87,8 @@ def select(a):
         b = cache.get(e["key"], {})
         if e.get("blocked") or not e.get("est") or e.get("depth") or e["key"] in reviewed:
             continue
-        if a.genre in themes and a.genre not in set(b.get("tags") or []) | ptags.get(e["key"], set()):
+        tags = set(b.get("tags") or []) | ptags.get(e["key"], set()) | {GENRE_TAGS.get(b.get("genre"))}
+        if a.genre in themes and a.genre not in tags:
             continue
         genre = None if a.genre in themes else a.genre
         if any(v and b.get(f) != v for f, v in (("genre", genre), ("form", a.form), ("audience", a.audience))):

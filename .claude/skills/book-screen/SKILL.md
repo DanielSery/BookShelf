@@ -1098,7 +1098,8 @@ need a blurb. Run it after every screening pass; it refuses to guess the date.
    which is why the source field exists at all). 239 of 296 rows are `adult` by
    default, so treat that value as unverified unless the source says otherwise.
    `genre`: `sf` · `fantasy` · `litfic` · `historical` · `testimony` ·
-   `allegory` · `thriller`. `form`: `novel` · `novella` · `stories` ·
+   `allegory` · `thriller` · `ideas` (non-fiction that explains: popular science,
+   philosophy, essays, faith; since 2026-11-26). `form`: `novel` · `novella` · `stories` ·
    `nonfiction`. They are **facts, so they belong here, not in the estimate**,
    and they stay two fields rather than one because they are orthogonal: Chiang's
    *Výdech* and Saki's collection are both `stories` and share nothing else.
