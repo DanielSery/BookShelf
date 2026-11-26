@@ -2,7 +2,7 @@
  "_readme": "Cover URLs and neutral blurbs for everything the viewer app renders. Three namespaces because the tabs are keyed differently: `media` by book-cache.json key, `readMedia` by the r: id in book-reviews.json, `rejectMedia` by a slug of entity+author in book-rejects.jsonl. Fully regenerable: run tools/fetch-media.py. Kept out of book-cache.json so a cover refresh never has to reserialise that hand-formatted file. Blurbs say what the book IS; whether the reader would like it is book-estimates.jsonl's `why` and must not be duplicated here. `coverOL` is an Open Library cover for a row whose `cover` is on obalkyknih.cz, which serves only registered library catalogues; the GitHub Pages copy of the viewer shows it instead, and null means Open Library had none.",
  "schema": 2,
  "_cover": "Open Library cover id resolved by title+author search, rendered as https://covers.openlibrary.org/b/id/<id>-M.jpg. Null with a 'coverNote' means no match - the app draws a typographic placeholder, which is a missing cover and not an error.",
- "fetched": "2026-11-10",
+ "fetched": "2026-11-26",
  "media": {
   "morning-star": {
    "cover": "https://covers.openlibrary.org/b/id/8566174-M.jpg",
@@ -18545,7 +18545,8 @@
    "pitch": "Four crew members drift in deep space aboard an old mining ship: a slob, a hologram, a vain cat-descended creature and a servile robot. A game that grants every wish pulls them in and keeps them there. You get banter and absurd comic science fiction.",
    "cover": "https://cache.obalkyknih.cz/file/cover/2413836/preview510",
    "isbn": "9781897774762",
-   "coverSource": "katalog"
+   "coverSource": "katalog",
+   "coverOL": "https://covers.openlibrary.org/b/id/9557664-M.jpg"
   },
   "cerveny-trpaslik-posledni-clovek": {
    "blurb": "Lister and Kochanski may be humankind's last chance to rebuild the human race, and the crew of Red Dwarf faces what that costs.",
@@ -18656,6 +18657,778 @@
    "pitch": "A crew of oddballs flies an airship up through the tiers of an enormous Tower, each level a different society with its own rules and absurdities. Senlin still wants one thing, to find his wife, but now he has friends whose own wants pull the story in new directions. You get a world that keeps surprising you and people you come to care about.",
    "cover": "https://covers.openlibrary.org/b/id/8539755-M.jpg",
    "isbn": "9780316517973"
+  },
+  "etika-pro-dnesni-svet": {
+   "blurb": "The Dalai Lama argues for a secular ethics based on compassion, critical thinking and justice that believers and non-believers can share, and outlines practices of attention and emotional training.",
+   "pitch": "A short case that people can be good without a shared religion, from someone with a lifetime's religious practice. It combines the argument with practical exercises.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2561716/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788076014268",
+   "coverOL": null
+  },
+  "fraktalista": {
+   "blurb": "Benoit Mandelbrot, who founded fractal geometry, recounts his life from a Polish-Jewish childhood in France through his years at IBM and his battle for his ideas.",
+   "pitch": "The life behind the Mandelbrot set: a wartime youth, an outsider's career and the stubborn conviction that nature is rough, not smooth. It shows how one mind moved between mathematics, finance and art.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2694845/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788073636081",
+   "coverOL": "https://covers.openlibrary.org/b/id/7256887-M.jpg"
+  },
+  "male-dejiny-filosofie": {
+   "blurb": "A one-volume history of philosophy from ancient India and China through Greece and the Middle Ages to the twentieth century.",
+   "pitch": "A single readable pass through two and a half thousand years of ideas, written for people who never studied philosophy. Pick any thinker and read a few pages.",
+   "cover": "https://obalky.cvtisr.sk/file/cover/1355643/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788071952060"
+  },
+  "moje-silene-stoleti": {
+   "blurb": "The Czech writer Ivan Klima recalls his childhood in the Terezin ghetto, his early faith in communism, its loss and his life as a dissident, interleaved with essays on the century.",
+   "pitch": "A Czech writer looks back across two regimes and asks what made the century so hard to understand. The account moves from a child in a ghetto to a dissident, with essays that generalise from his own life.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1339921/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788020016973",
+   "coverOL": null
+  },
+  "moje-tricetileta-valka": {
+   "blurb": "Hiroo Onoda, a Japanese intelligence officer, recounts how he stayed at his post on Lubang island in the Philippines until 1974, refusing to believe the war had ended.",
+   "pitch": "One man keeps carrying out his orders in the jungle for decades, and you see from inside how he explains away each sign that the war is over. It is a survival story where the real question is what he believes and why.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3011956/preview510",
+   "coverSource": "katalog",
+   "isbn": "8020606483",
+   "coverOL": "https://covers.openlibrary.org/b/id/6670955-M.jpg"
+  },
+  "mozek-v-plamenech": {
+   "blurb": "A young newspaper reporter suddenly descends into paranoia and seizures, and doctors search for what is wrong; she rebuilds the missing month from records and the people around her.",
+   "pitch": "A gripping true account of losing yourself and the people who refused to give up on finding out why. The author writes as a reporter, checking her own memory against evidence.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/788753/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788073217358",
+   "coverOL": null
+  },
+  "pameti-stalinovy-dcery": {
+   "blurb": "Stalin's daughter looks back on her childhood and family, her mother's death, her father and the people around him, written as letters to a friend.",
+   "pitch": "You see Stalin from the one place nobody else could, the family table. She writes with real literary talent about love for her father alongside what he did.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2157290/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788020611635",
+   "coverOL": null
+  },
+  "prekrocit-prah-nadeje": {
+   "blurb": "In answers to questions put by the journalist Vittorio Messori, Pope John Paul II discusses belief in God, Christ, other religions, suffering and the Church's place in the modern world.",
+   "pitch": "A pope answers the questions a sceptical journalist actually asks: why believe, why does God allow suffering, what of Buddhism and Islam. The question-and-answer form keeps each topic short.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/975117/preview510",
+   "coverSource": "katalog",
+   "isbn": "8090100694",
+   "coverOL": null
+  },
+  "pribeh-konverze": {
+   "blurb": "The Spanish philosopher Manuel Garcia Morente, driven into exile in Paris by the civil war, recounts the religious experience that turned him to faith and later to the priesthood.",
+   "pitch": "A professor of ethics describes, in his own words and to his spiritual director, the night his philosophy gave way to an experience he could not explain. It is short and personal.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/836117/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788073877200",
+   "coverOL": null
+  },
+  "souostrovi-gulag": {
+   "blurb": "Solzhenitsyn's literary-documentary investigation of the Soviet camp system from arrest through prisons, transports and camps, built from witness accounts and his own imprisonment.",
+   "pitch": "A vast reckoning with how a whole system of camps was built and kept running, told through hundreds of voices and the author's own years inside. It leaves a large idea behind about how ordinary people take part.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/635399/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788020016621",
+   "coverOL": "https://covers.openlibrary.org/b/id/13947688-M.jpg"
+  },
+  "umeni-milovat": {
+   "blurb": "Fromm argues that love is an art requiring knowledge and effort, and examines its forms: brotherly, motherly, erotic, self-love and love of God.",
+   "pitch": "A classic short book that treats love as something you can get better at rather than something that happens to you. It looks at the different kinds of love, from friendship to parenthood to faith.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1121388/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788026208068",
+   "coverOL": "https://covers.openlibrary.org/b/id/4741809-M.jpg"
+  },
+  "utajeny-les": {
+   "blurb": "A biologist sits daily at one small patch of old-growth forest in Tennessee for a year and writes short essays on what he sees, from salamanders to fungi.",
+   "pitch": "A close look at how much happens in a small patch of woods over a year, with each short essay a separate small discovery. It leaves you seeing the connections between living things.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2003351/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788024260617",
+   "coverOL": "https://covers.openlibrary.org/b/id/9021456-M.jpg"
+  },
+  "z-mych-pozdejsich-let": {
+   "blurb": "A collection of essays, speeches and letters from Einstein's last years on physics, religion, education, freedom and international order.",
+   "pitch": "You hear Einstein himself on why he thought science and conscience belong together, and on what he hoped for after the atomic bomb. The short pieces on religion, freedom and education are the easiest way in.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/478656/preview510",
+   "coverSource": "katalog",
+   "isbn": "8071061166",
+   "coverOL": "https://covers.openlibrary.org/b/id/15032555-M.jpg"
+  },
+  "a-proto-skacu": {
+   "blurb": "Naoki Higashida, a Japanese teenager with severe autism, answers common questions about his behaviour and inner life, spelled out on an alphabet grid, with short stories between the answers.",
+   "pitch": "Why do you jump, why do you not look at people, what is hardest? A young man who cannot speak answers the questions people ask about autism, one at a time. Short enough to read in a sitting.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1457502/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788074327117",
+   "coverOL": null
+  },
+  "archimeduv-kodex": {
+   "blurb": "The curator who led the conservation and the historian who read the text tell how the Archimedes palimpsest was found, imaged and deciphered, and what it reveals.",
+   "pitch": "A hunt through auctions, forgers and imaging labs for a book that was scraped clean and prayed over. Between chapters you see what Archimedes was actually thinking about.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2351514/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788087087305",
+   "coverOL": "https://covers.openlibrary.org/b/id/11590155-M.jpg"
+  },
+  "astrofyzika-pro-lidi-ve-spechu": {
+   "blurb": "A short tour of the universe: from the Big Bang and the elements to dark matter, dark energy and how we measure the cosmos.",
+   "pitch": "Compact chapters take you from the first moments of the universe to the stuff your own body is made of. Written with wit for someone who is not a physicist, it is a quick way to come away with a bigger sense of scale.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2416433/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788075656452",
+   "coverOL": "https://covers.openlibrary.org/b/id/7984709-M.jpg"
+  },
+  "cekani-na-snih-v-havane": {
+   "blurb": "Carlos Eire recalls his privileged Havana childhood in the 1950s, the arrival of Castro's revolution and his flight to America at eleven without his parents.",
+   "pitch": "A vivid, often funny memory of a childhood in a country that changed overnight. You see the revolution through a boy's eyes, and the loss of home through the man he became.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2132200/preview510",
+   "coverSource": "katalog",
+   "isbn": "8073414996",
+   "coverOL": "https://covers.openlibrary.org/b/id/473529-M.jpg"
+  },
+  "cerne-diry-reithuv-cyklus-prednasek-pro-bbc": {
+   "blurb": "Hawking's BBC Reith lectures explain what black holes are, how they form and what happens to information that falls into one.",
+   "pitch": "Spoken lectures written down, short and aimed at anyone curious about the most famous objects in the universe. You get one clear puzzle, what happens to what falls into a black hole, laid out from first principles.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1663625/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788025720578",
+   "coverOL": "https://covers.openlibrary.org/b/id/13806468-M.jpg"
+  },
+  "cesta-k-lidstvi": {
+   "blurb": "Jean Vanier, founder of L'Arche, traces in five talks the path from loneliness and fear of difference towards belonging, forgiveness and community.",
+   "pitch": "Five talks from a man who spent his life in shared homes with people others turn away from. He asks what it takes to become fully human, and his answer starts with whom we let in.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3079963/preview510",
+   "coverSource": "katalog",
+   "isbn": "8071788058",
+   "coverOL": "https://covers.openlibrary.org/b/id/685556-M.jpg"
+  },
+  "co-kdyby": {
+   "blurb": "Randall Munroe answers absurd hypothetical questions with real physics, such as what happens if the Earth suddenly stops spinning.",
+   "pitch": "Every chapter starts with a ridiculous question, such as what happens if the Earth suddenly stops spinning, and follows the real physics step by step to a surprising answer. If you enjoyed how Project Hail Mary thinks through what really follows from one change, this does it for dozens of small scenarios, with jokes tucked into the footnotes.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3063511/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788072525393",
+   "coverOL": "https://covers.openlibrary.org/b/id/9083979-M.jpg"
+  },
+  "demokracie-v-americe": {
+   "blurb": "Alexis de Tocqueville reports on American society after a journey in 1831-32 and asks what democracy does to a people's freedom, habits and ideas.",
+   "pitch": "A young French aristocrat travels through the United States in 1831 and tries to understand what living in a democracy does to a people: their freedom, their habits, their ideas. Two centuries on, his worry about the tyranny of the majority and his portrait of a society built on equality still give you plenty to argue with.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1917098/preview510",
+   "coverSource": "katalog",
+   "isbn": "8071060518",
+   "coverOL": "https://covers.openlibrary.org/b/id/13281409-M.jpg"
+  },
+  "doba-z-druhe-ruky": {
+   "blurb": "A Nobel-winning writer assembles interviews with people who lived through the collapse of the USSR and its aftermath.",
+   "pitch": "Ordinary people speak in their own words about what the end of the Soviet Union took from them and what it gave them. There is no narrator telling you what to think, only voices of those who lived it, and you come away understanding how a whole society experienced the change from the inside.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1648946/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788087855898",
+   "coverOL": null
+  },
+  "elegantni-vesmir": {
+   "blurb": "Greene explains string theory and the search for a single theory that joins relativity and quantum mechanics, using analogies for the unfamiliar maths.",
+   "pitch": "A guided tour of the biggest unsolved puzzle in physics, written with analogies for readers who have no equations. It builds from the strange rules of relativity and quantum physics toward an idea of a universe made of tiny vibrating strings.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/970439/preview510",
+   "coverSource": "katalog",
+   "isbn": "8020408827",
+   "coverOL": "https://covers.openlibrary.org/b/id/1007630-M.jpg"
+  },
+  "genialni-omyly": {
+   "blurb": "Mario Livio examines five great scientists, from Darwin to Einstein, and the big mistakes that nevertheless moved science forward.",
+   "pitch": "Five famous scientists, each undone by one stubborn error, and what that error says about how discovery works. The interest is in what they were trying to prove and why they would not let go.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1326871/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788026402893",
+   "coverOL": "https://covers.openlibrary.org/b/id/7333080-M.jpg"
+  },
+  "hledani-materskeho-stromu": {
+   "blurb": "Suzanne Simard recounts growing up in the Canadian forest, her research on fungal networks between trees and the resistance she met from the forestry industry and scientific peers.",
+   "pitch": "A scientist's life story is woven through her discoveries about how trees support one another underground. It follows her from a logging family to the lab and the long fight to be taken seriously.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2854647/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788076700871",
+   "coverOL": null
+  },
+  "hovory-k-sobe": {
+   "blurb": "Roman emperor Marcus Aurelius writes down notes to himself on how to meet duty, loss and death with Stoic discipline.",
+   "pitch": "The private notebook of a Roman emperor who wrote himself short reminders on how to stay calm and fair while ruling an empire at war. The entries are brief and can be read in any order, and the core idea, that you control only your own judgement, is simple enough to carry around and think about all day.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/517273/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788086410630",
+   "coverOL": "https://covers.openlibrary.org/b/id/211529-M.jpg"
+  },
+  "ilustrovana-teorie-vseho": {
+   "blurb": "Hawking gives a short illustrated course on where the universe came from, how it evolved and where it is heading, covering gravity, black holes and the search for a complete theory.",
+   "pitch": "It is a quick way into Hawking's picture of the universe, set out as a lecture series with plenty of diagrams. You can finish it in an afternoon and come away with a clear sense of the biggest questions in cosmology.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1127378/preview510",
+   "coverSource": "katalog",
+   "isbn": "8072035754",
+   "coverOL": "https://covers.openlibrary.org/b/id/12188593-M.jpg"
+  },
+  "jak-svet-doopravdy-funguje": {
+   "blurb": "Vaclav Smil explains how energy, food production, materials and risk underlie modern civilisation, using numbers to separate what is possible from what is hoped for.",
+   "pitch": "Takes the parts of modern life you rarely think about, like fertiliser, steel and fuel, and shows how much depends on them. Built on figures rather than slogans, it is a sober look at what can and cannot change quickly.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2917173/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788076624597",
+   "coverOL": "https://covers.openlibrary.org/b/id/12777538-M.jpg"
+  },
+  "jsme-sami": {
+   "blurb": "A physicist asks what the discovery of life beyond Earth would mean for science, philosophy and religion, and how the search for it began.",
+   "pitch": "Starts from a question most people have wondered about and follows it through the history of the search and the stakes of an answer. It is a short book that asks what finding company in the universe would do to how we see ourselves.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/971752/preview510",
+   "coverSource": "katalog",
+   "isbn": "8071150614",
+   "coverOL": "https://covers.openlibrary.org/b/id/99010-M.jpg"
+  },
+  "kacirske-eseje-o-filosofii-dejin": {
+   "blurb": "Six essays by the Czech philosopher Jan Patocka on the meaning of history and Europe's spiritual crisis.",
+   "pitch": "Six essays by the Czech philosopher Jan Patocka ask what history is for, what makes a civilisation more than power and comfort, and what it means to care for the soul. A landmark of Czech thought that many readers find worth the effort, and a book that leaves you with real questions to carry around afterwards.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/785178/preview510",
+   "coverSource": "katalog",
+   "isbn": "8020002634",
+   "coverOL": "https://covers.openlibrary.org/b/id/604728-M.jpg"
+  },
+  "kdyz-se-zle-veci-stavaji-dobrym-lidem": {
+   "blurb": "Rabbi Harold Kushner, whose son died young, rejects the usual answers to why good people suffer and argues for a God who shares our pain rather than causing it.",
+   "pitch": "A short, personal and plain-spoken look at the hardest question in religion, written out of real loss. It does not hand you easy answers, and it gives you something concrete to weigh.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2123025/preview510",
+   "coverSource": "katalog",
+   "isbn": "8071784524",
+   "coverOL": "https://covers.openlibrary.org/b/id/167339-M.jpg"
+  },
+  "kratke-privitani-ve-vesmiru": {
+   "blurb": "Neil deGrasse Tyson, Michael Strauss and Richard Gott give a short tour of the universe from the solar system to the Big Bang and the possible multiverse.",
+   "pitch": "Three working astrophysicists guide you through the universe in eight short chapters, from the size of the cosmos and the life of stars to the Big Bang and the search for life elsewhere. They explain not only what we know but how we came to know it, in a friendly and conversational voice.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3129619/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788073784980",
+   "coverOL": "https://covers.openlibrary.org/b/id/13136234-M.jpg"
+  },
+  "lidstvo": {
+   "blurb": "A Dutch historian argues that people are, at bottom, cooperative rather than selfish, and tests the famous stories that say otherwise against what actually happened.",
+   "pitch": "It opens on a true story of boys stranded on an island that most people have never heard of, set against the novel everyone assumes is the truth. From there it keeps asking what really happened behind the stories we take for granted, and lands on a hopeful answer.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3210480/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788025744758",
+   "coverOL": "https://covers.openlibrary.org/b/id/11482298-M.jpg"
+  },
+  "male-uvahy-o-velkych-vecech": {
+   "blurb": "Short essays from television lectures by a Polish philosopher on big subjects such as evil, truth, sin, happiness, God and art.",
+   "pitch": "Each piece takes one big subject, from the nature of evil to the meaning of respect, and gives you a few clear pages to think about it. You can stop after any one.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/878763/preview510",
+   "coverSource": "katalog",
+   "isbn": "8020009663",
+   "coverOL": null
+  },
+  "marnotratny-buh": {
+   "blurb": "Timothy Keller reads Jesus' parable of the two sons as a story about two kinds of being lost, the rebellious and the respectable, and argues that both need the same grace.",
+   "pitch": "A short, clear reading of one famous parable that turns it on its head: the older, well-behaved brother is the one in the deeper trouble. It is built around a single idea you can carry away in a sentence. Seven brief chapters make it quick to read.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3118382/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788073874186",
+   "coverOL": "https://covers.openlibrary.org/b/id/8539486-M.jpg"
+  },
+  "mit-nebo-byt": {
+   "blurb": "Fromm contrasts a life built on possessing things with a life built on being and sharing, and argues that Western society has pushed people toward the first.",
+   "pitch": "A short, clear essay that gives you a simple test to hold against your own life: do you have, or do you be? It is written for anyone, with examples from ordinary experience like learning, remembering and loving.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3051921/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788072991068",
+   "coverOL": "https://covers.openlibrary.org/b/id/8656475-M.jpg"
+  },
+  "mizejici-lzice-ruzovy-snih-a-jiskrici-bonbon": {
+   "blurb": "Stories of scientists, rivalries, accidents and oddities behind the elements of the periodic table.",
+   "pitch": "Each chapter hangs a few vivid stories of discovery, obsession and mishap on a group of elements. You get the human history behind the chart on the classroom wall.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1459147/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788024758442",
+   "coverOL": "https://covers.openlibrary.org/b/id/10069131-M.jpg"
+  },
+  "moc-bezmocnych": {
+   "blurb": "In an essay written in 1978, Vaclav Havel argues that people under communist rule keep the regime alive by living within a lie, and that the powerless gain power by living within the truth.",
+   "pitch": "A short, clear essay built around one unforgettable image: a greengrocer deciding whether to hang a slogan he does not believe in. It asks what ordinary people owe the truth when lying is easy.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/712744/preview510",
+   "coverSource": "katalog",
+   "isbn": "8071060054",
+   "coverOL": "https://covers.openlibrary.org/b/id/663366-M.jpg"
+  },
+  "muj-posledni-vydech": {
+   "blurb": "Paul Kalanithi, a neurosurgeon, is diagnosed with lung cancer and writes about his work, his search for meaning and the time he has left.",
+   "pitch": "A doctor who spent his life saving others suddenly becomes the patient, and asks what is worth doing with the time that remains. Short, honest and clearly written.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1463859/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788081113864",
+   "coverOL": "https://covers.openlibrary.org/b/id/11463139-M.jpg"
+  },
+  "mzik": {
+   "blurb": "A journalist explores how quick, unconscious judgments work, when they are accurate and when they fail.",
+   "pitch": "Gladwell tells stories about snap judgments: how an art expert senses a fake in a moment, and how a quick first impression can be right or badly wrong. It is easy and entertaining to read, and it leaves you thinking about when you should trust your gut and when you should slow down.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2362358/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788073630973",
+   "coverOL": "https://covers.openlibrary.org/b/id/14421850-M.jpg"
+  },
+  "naha-opice": {
+   "blurb": "Zoologist Desmond Morris describes the human species as a naked ape, covering its origins, sex, child-rearing, aggression and habits.",
+   "pitch": "A zoologist looks at human beings the way he would look at any other primate: how we mate, raise our young, fight, eat and groom each other. Written for general readers in 1967 and still provocative, it makes you notice how much of everyday life has roots in our animal past.",
+   "cover": "https://covers.openlibrary.org/b/id/12887819-M.jpg",
+   "isbn": "9780385334303"
+  },
+  "nas-neobycejny-vesmir": {
+   "blurb": "Martin Rees explains six physical constants that set the shape of the universe and asks why they have the values that allow stars, planets and life.",
+   "pitch": "You get a guided tour of modern cosmology without a single equation, organised around one striking question: why is the universe built so that anything interesting can exist at all. It leaves you with a big idea to think over rather than a pile of facts.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/904861/preview510",
+   "coverSource": "katalog",
+   "isbn": "8086569179",
+   "coverOL": "https://covers.openlibrary.org/b/id/298701-M.jpg"
+  },
+  "nebudu-nenavidet": {
+   "blurb": "Izzeldin Abuelaish, a Gaza-born doctor, recounts his life and the loss of three daughters to Israeli shelling, and why he chose not to hate.",
+   "pitch": "A doctor who grew up in a refugee camp and treated both Palestinians and Israelis loses his daughters, and still argues for peace. A look at the conflict from inside, told with unusual restraint.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/951032/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788072949779",
+   "coverOL": "https://covers.openlibrary.org/b/id/6676944-M.jpg"
+  },
+  "neklidna-mysl": {
+   "blurb": "Psychologist Kay Redfield Jamison, a bipolar disorder researcher, recounts her own manic-depressive illness, its onset, her treatment and her decision to speak openly.",
+   "pitch": "A researcher of the illness turns out to live inside it, and tells you honestly what mania and depression are like and what it cost her to accept the diagnosis. It leaves a real understanding behind.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2044408/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788026213833",
+   "coverOL": "https://covers.openlibrary.org/b/id/418470-M.jpg"
+  },
+  "nekonecny-zazrak": {
+   "blurb": "A Spanish classicist traces the story of books from oral storytelling and the Library of Alexandria through the ancient Mediterranean.",
+   "pitch": "Starting from the ancient world and the dream of a library holding every book, Vallejo follows how stories were told, copied, saved and lost. She writes warmly and personally, moving through Egypt, Greece and Rome, and it leaves you thinking about why books matter so much to us.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3440732/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788073357139",
+   "coverOL": "https://covers.openlibrary.org/b/id/9689877-M.jpg"
+  },
+  "neresitelna-rovnice": {
+   "blurb": "Mario Livio traces how the unsolvable quintic equation led Abel and Galois to group theory and the mathematics of symmetry.",
+   "pitch": "The tragic short lives of Abel and Galois lead into the idea of symmetry as a language for physics and nature. Light on equations and written for readers without a maths degree.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1160655/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788073631505",
+   "coverOL": "https://covers.openlibrary.org/b/id/474159-M.jpg"
+  },
+  "nezlomeny": {
+   "blurb": "Louis Zamperini, a runner at the 1936 Olympics, becomes a wartime bombardier, survives a plane crash and weeks adrift on a raft, then years in Japanese prison camps, and struggles to rebuild afterwards.",
+   "pitch": "A restless boy becomes an Olympian, then a castaway, then a prisoner, and the book follows what he wanted and what held him up through each. The raft years are as much about the men beside him as about survival. It ends on forgiveness.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2778241/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788072179213",
+   "coverOL": null
+  },
+  "o-dusevnim-klidu": {
+   "blurb": "Seneca answers a friend who feels anxious and weary with life by laying out how to keep a calm and steady mind.",
+   "pitch": "A short ancient letter that tackles anxiety, restlessness and wasted ambition with plain examples. You can read it in an evening and keep one or two of its lines.",
+   "cover": "https://obalky.cvtisr.sk/file/cover/708705/preview510",
+   "coverSource": "katalog",
+   "isbn": "8073400553"
+  },
+  "o-smyslu-zivota": {
+   "blurb": "Three lectures given by the psychiatrist Viktor Frankl in 1946 on why life has meaning even in suffering and crisis.",
+   "pitch": "Frankl speaks to a postwar audience about meaning, suffering and responsibility, short enough to read in an evening. It leaves one clear question to think about long after.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2740989/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788027133574",
+   "coverOL": "https://covers.openlibrary.org/b/id/8516506-M.jpg"
+  },
+  "odpustila-jsem": {
+   "blurb": "A Tutsi student survives the 1994 Rwandan genocide by hiding for 91 days with seven other women in a small bathroom, and tells how she held on to her faith and came to forgive.",
+   "pitch": "For three months eight women hide in a bathroom the size of a closet while the killing goes on outside. It is a first-hand account of what faith and forgiveness meant to someone who needed them to live.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2884061/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788071953838",
+   "coverOL": null
+  },
+  "otazka-viny": {
+   "blurb": "Jaspers lectures to German students after the war, asking what guilt means for a nation and splitting it into criminal, political, moral and metaphysical kinds.",
+   "pitch": "A short, serious look at responsibility: when are you guilty for what your country did, and what do you owe afterwards. The four kinds of guilt Jaspers sets out give you a way of thinking that applies far beyond Germany.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2272436/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788020029881",
+   "coverOL": "https://covers.openlibrary.org/b/id/15047373-M.jpg"
+  },
+  "pani-curieova": {
+   "blurb": "Eve Curie's biography of her mother Marie Curie, from her Polish youth through the discovery of radium and her later life.",
+   "pitch": "Marie Curie's determination from a poor student in Paris to the discovery of radium, told warmly by her own daughter. The story of someone who wanted one thing and refused to let it go.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2570156/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788090777187",
+   "coverOL": null
+  },
+  "pianista": {
+   "blurb": "Wladyslaw Szpilman, a Polish-Jewish pianist, describes the Warsaw ghetto, his escape from deportation and his months hiding in the ruins of the city until a German officer helps him.",
+   "pitch": "A concert pianist survives the destruction of Warsaw, told in a calm, unadorned voice by the man himself. The book is short and its ending turns on one unexpected act of decency.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2026612/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788025725252",
+   "coverOL": "https://covers.openlibrary.org/b/id/3234243-M.jpg"
+  },
+  "podzemi": {
+   "blurb": "Robert Macfarlane travels beneath the surface, from Bronze Age burial sites and Paris catacombs to Greenland ice and a nuclear waste repository, reflecting on deep time and human legacy.",
+   "pitch": "A writer goes underground in a series of real places, from Bronze Age burial sites and the Paris catacombs to melting Greenland ice and a vault built to hold nuclear waste. Along the way he asks what we hide, preserve and leave behind, and sets human time against geological time.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2733410/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788020459480",
+   "coverOL": "https://covers.openlibrary.org/b/id/8753724-M.jpg"
+  },
+  "pomoc-dekuji-pani": {
+   "blurb": "Anne Lamott writes three brief essays on the three prayers she thinks are essential: asking for help, giving thanks and standing in awe.",
+   "pitch": "Anne Lamott takes three prayers anyone can say, asking for help, giving thanks and standing in awe, and writes about each with humour and candour. She is at ease talking about faith without sounding sure of everything. It is about a hundred pages, quick to read in an afternoon, and easy to dip into.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1682635/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788073900380",
+   "coverOL": "https://covers.openlibrary.org/b/id/7281429-M.jpg"
+  },
+  "poustevnici-v-tajze": {
+   "blurb": "In 1978 Soviet geologists found a family of Old Believers who had lived in the Siberian taiga since the 1930s. The journalist Peskov reconstructs how they survived and what happened when the modern world reached them.",
+   "pitch": "Geologists spot a clearing in the deepest taiga and find a family that has lived there for decades, cut off from the whole century. You get their survival, their faith and what contact with the outside world did to them. It is real, concrete and told with respect.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3349813/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788074077265",
+   "coverOL": null
+  },
+  "pozvani-do-sociologie": {
+   "blurb": "A sociologist invites the general reader to see everyday life as shaped by social structures and argues for a humanistic sociology.",
+   "pitch": "A sociologist talks to you plainly and with wit about how much of ordinary life is shaped by the society around us without our noticing. It is an invitation more than a lesson: short, conversational, and likely to change the way you look at the everyday things people take for granted.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2343576/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788087029107",
+   "coverOL": "https://covers.openlibrary.org/b/id/6919945-M.jpg"
+  },
+  "pribeh-meho-zivota": {
+   "blurb": "Helen Keller tells the first twenty-two years of her life: the illness that took her sight and hearing, her teacher Anne Sullivan, and her education through college.",
+   "pitch": "The moment a child who has no words learns that everything has a name is the heart of this short autobiography. You follow her mind opening, in her own account of what she wanted to learn and why.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2711659/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788075303196",
+   "coverOL": "https://covers.openlibrary.org/b/id/7101652-M.jpg"
+  },
+  "prisne-milosrdenstvi": {
+   "blurb": "Sheldon Vanauken recounts his marriage to Davy, their shared pact to keep their love above all else, their conversion to Christianity through friendship with C. S. Lewis, and her early death.",
+   "pitch": "A couple who thought love was enough end up testing belief the way they test everything else, in letters with C. S. Lewis. It is a love story first and a spiritual argument second. The Lewis letters carry real thought.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2384812/preview510",
+   "coverSource": "katalog",
+   "isbn": "8085495872",
+   "coverOL": "https://covers.openlibrary.org/b/id/5492075-M.jpg"
+  },
+  "proc-spime": {
+   "blurb": "A sleep scientist explains what happens in the brain and body during sleep and what is lost when we do not get enough.",
+   "pitch": "An approachable look at something everyone does every night and few understand. It makes a case for why a third of your life matters, with vivid studies along the way.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2545421/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788075551221",
+   "coverOL": "https://covers.openlibrary.org/b/id/8814155-M.jpg"
+  },
+  "profesor-a-silenec": {
+   "blurb": "In the 1850s a London scholar begins compiling the Oxford English Dictionary, and an American surgeon locked up for murder sends in thousands of entries.",
+   "pitch": "Two men who never should have met, one driven by language and the other by a mind he could not control, build the biggest dictionary of its age together. It is a story about why people do the work they do.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2097897/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788073908355",
+   "coverOL": "https://covers.openlibrary.org/b/id/37557-M.jpg"
+  },
+  "propleteny-zivot": {
+   "blurb": "A biologist explores the world of fungi, from lichens and truffles to the underground networks linking plants, and what they suggest about cooperation and intelligence.",
+   "pitch": "Looks closely at organisms that are everywhere and rarely noticed, and asks what it means to cooperate, to communicate and perhaps to think without a brain. Written for a curious general reader, with wonder and caution in equal measure.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2889562/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788076700956",
+   "coverOL": "https://covers.openlibrary.org/b/id/10152882-M.jpg"
+  },
+  "pruvodce-inteligentniho-cloveka-filosofii": {
+   "blurb": "Roger Scruton argues through the main questions of philosophy, from the self and the mind to free will and morality, with his own view.",
+   "pitch": "A book that thinks out loud about what a person is, what we can know and why it matters. If you like to argue back, it gives you plenty to push against.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2339609/preview510",
+   "coverSource": "katalog",
+   "isbn": "8085947919",
+   "coverOL": "https://covers.openlibrary.org/b/id/452257-M.jpg"
+  },
+  "putovani-s-epikurem": {
+   "blurb": "A man in his seventies settles on the Greek island of Hydra and thinks about how to grow old well, with the help of Epicurus and other philosophers.",
+   "pitch": "A gentle, funny stay on a Greek island where an older man asks what Epicurus would make of friendship, food and getting old. It makes philosophy feel like conversation.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2734421/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788088429173",
+   "coverOL": "https://covers.openlibrary.org/b/id/7584519-M.jpg"
+  },
+  "sapiens": {
+   "blurb": "Yuval Noah Harari traces human history from the Cognitive Revolution through agriculture, empire and science, arguing that shared beliefs made large-scale cooperation possible.",
+   "pitch": "A fast, confident sweep through the whole of human history built around one provocative idea about why we dominate the planet. It is easy to read and keeps handing you questions you will want to argue about.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2077482/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788073355692",
+   "coverOL": "https://covers.openlibrary.org/b/id/8634250-M.jpg"
+  },
+  "setri-se-einsteine": {
+   "blurb": "Joshua Foer covers the US Memory Championship, then trains with its champions and enters the contest himself, exploring the history and science of memory along the way.",
+   "pitch": "A curious reporter sets out to find how far a normal memory can be trained, and goes through the training himself. It mixes his own progress with a look at why remembering matters.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/717591/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788074620096",
+   "coverOL": "https://covers.openlibrary.org/b/id/14426425-M.jpg"
+  },
+  "skryta-realita": {
+   "blurb": "Greene surveys the different ways physicists arrive at parallel universes, from the shape of space to quantum theory and string theory.",
+   "pitch": "A fast-moving look at the idea that our universe may be one of many, each reached by a different line of reasoning. Greene opens with scenes and everyday comparisons before the physics, so the biggest idea in cosmology stays in view.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1327387/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788074322051",
+   "coverOL": "https://covers.openlibrary.org/b/id/7322416-M.jpg"
+  },
+  "snad-ti-nedelaji-starosti-cizi-nazory": {
+   "blurb": "Feynman recalls his first wife's illness and his father's lessons in curiosity, then tells how he helped investigate the Challenger shuttle disaster.",
+   "pitch": "You get a scientist's habit of refusing to fool himself, shown in a love story and then in a high-stakes inquiry where he won't accept a comfortable answer. His simple ice-water demonstration of the O-ring failure is the part people remember.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2362445/preview510",
+   "coverSource": "katalog",
+   "isbn": "8085974908",
+   "coverOL": "https://covers.openlibrary.org/b/id/1468422-M.jpg"
+  },
+  "stephen-hawking": {
+   "blurb": "Physicist and writer Leonard Mlodinow recalls working with Stephen Hawking on popular science books from 2003, and sketches Hawking's life and ideas.",
+   "pitch": "An insider's view of how Hawking worked, joked and argued, written by the man who helped him explain black holes and the universe to ordinary readers. The physics is kept clear, and the portrait is warm without turning him into a saint.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2491945/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788027600953",
+   "coverOL": "https://covers.openlibrary.org/b/id/10456366-M.jpg"
+  },
+  "stret-civilizaci": {
+   "blurb": "A political scientist argues that after the Cold War the main global conflicts will follow the lines between civilizations.",
+   "pitch": "Huntington argues that after the Cold War the biggest divisions in the world would run along lines of culture and religion rather than ideology. It is a big-picture theory of world politics that gives you a lot to argue with and a lot to think about when you read the news.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1860650/preview510",
+   "coverSource": "katalog",
+   "isbn": "8086182495",
+   "coverOL": "https://covers.openlibrary.org/b/id/472725-M.jpg"
+  },
+  "strucna-historie-casu": {
+   "blurb": "Hawking traces how people came to understand space, time and the universe, from the ancient cosmos to the big bang, black holes and the search for a single unifying theory.",
+   "pitch": "It starts with something every reader has wondered about, what the universe is and whether it had a beginning, and walks through the answers step by step without equations. The big ideas stay with you long after the harder middle chapters.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1326974/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788072039463",
+   "coverOL": "https://covers.openlibrary.org/b/id/10432365-M.jpg"
+  },
+  "strucna-historie-temer-vseho": {
+   "blurb": "Bill Bryson sets out to understand how science knows what it knows about the universe, the Earth and life, and retells the discoveries through the odd people who made them.",
+   "pitch": "A curious traveller's tour of everything science has worked out, told through gossip about the people who worked it out. It is funny, clear and made of short pieces you can read in any order, and it leaves you looking at the planet differently.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3065908/preview510",
+   "coverSource": "katalog",
+   "isbn": "8072051814",
+   "coverOL": "https://covers.openlibrary.org/b/id/12725620-M.jpg"
+  },
+  "strucne-odpovedi-na-velke-otazky": {
+   "blurb": "Stephen Hawking's last book answers ten big questions, among them whether God exists, whether time travel is possible, what lies inside a black hole and what artificial intelligence means for us.",
+   "pitch": "Each chapter takes one question people really ask and answers it in a few pages, in plain language and with Hawking's dry humour. You can read it from the first page without any physics, and every chapter leaves a thought to argue with afterwards.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2543503/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788025733769",
+   "coverOL": "https://covers.openlibrary.org/b/id/8815165-M.jpg"
+  },
+  "strucnejsi-historie-casu": {
+   "blurb": "Stephen Hawking and Leonard Mlodinow explain time, space, black holes and the origin of the universe for general readers.",
+   "pitch": "Stephen Hawking and Leonard Mlodinow take you through black holes, relativity, quantum theory and the beginning of the universe in plain language, with colour illustrations and no heavy mathematics. A short way to meet the biggest questions in physics and keep thinking about them long after you close it.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3028718/preview510",
+   "coverSource": "katalog",
+   "isbn": "8072037250",
+   "coverOL": "https://covers.openlibrary.org/b/id/1283677-M.jpg"
+  },
+  "svet-vcerejska": {
+   "blurb": "Stefan Zweig recalls the Vienna of his youth, the cultural life of Europe before 1914 and the two wars that destroyed it.",
+   "pitch": "A first-hand portrait of a vanished Europe from a writer who knew everyone, from Vienna's coffeehouses to Rodin's studio. It shows how a world that felt permanent was lost, and what it was like to be inside that change.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2338331/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788075301918",
+   "coverOL": "https://covers.openlibrary.org/b/id/6793214-M.jpg"
+  },
+  "symposion": {
+   "blurb": "At a banquet in Athens, guests take turns praising Eros, the god of love, and Socrates closes by relaying what a wise woman once taught him about it.",
+   "pitch": "A dinner party where Athens' wits each give their best speech on love, ending with Socrates and an idea about love that has been argued over for twenty-four centuries. It is short, funny in places and full of images worth keeping.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1837453/preview510",
+   "coverSource": "katalog",
+   "isbn": "8072981390",
+   "coverOL": "https://covers.openlibrary.org/b/id/14398204-M.jpg"
+  },
+  "syr-a-cervi": {
+   "blurb": "Carlo Ginzburg reconstructs the trials of Domenico Scandella, a sixteenth-century Friulian miller condemned by the Inquisition for his unorthodox ideas about the cosmos and the Church.",
+   "pitch": "A true story that reads a little like a case file: a stubborn miller who read too much, thought for himself and would not keep quiet. It shows how an ordinary man built a whole picture of the universe, and why the Church could not leave him alone.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1971191/preview510",
+   "coverSource": "katalog",
+   "isbn": "807203278X",
+   "coverOL": "https://covers.openlibrary.org/b/id/566032-M.jpg"
+  },
+  "tajny-zivot-stromu": {
+   "blurb": "A German forester describes how trees communicate, share nutrients and support one another, based on his years managing a forest.",
+   "pitch": "A German forester describes what he has seen in the woods he manages: trees that share nutrients, warn one another and look after their neighbours. Short, vivid chapters in plain language leave you looking at a forest as a community rather than a row of trunks.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2071856/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788090742055",
+   "coverOL": "https://covers.openlibrary.org/b/id/8064205-M.jpg"
+  },
+  "tyranie": {
+   "blurb": "A historian draws twenty short lessons from twentieth-century collapses of democracy for citizens today.",
+   "pitch": "A historian draws twenty short lessons from the democracies that collapsed in the twentieth century and puts them in a pocket-sized book. It reads in an evening, speaks directly to ordinary citizens, and leaves you thinking about what each person can do to protect the freedom they take for granted.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2714425/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788072605095",
+   "coverOL": "https://covers.openlibrary.org/b/id/10186935-M.jpg"
+  },
+  "ustava": {
+   "blurb": "Socrates and his friends set out to discover what justice is, and to find it they design an ideal city and the kind of person who could rule it.",
+   "pitch": "A conversation that begins on a late-night walk and grows into one of the great arguments about justice, power and what a good life is. The image of the cave alone is worth the journey.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/914404/preview510",
+   "coverSource": "katalog",
+   "isbn": "8072981420",
+   "coverOL": "https://covers.openlibrary.org/b/id/14409178-M.jpg"
+  },
+  "utekl-jsem-z-osvetimi": {
+   "blurb": "Rudolf Vrba, a young Slovak Jew deported to Auschwitz, describes the camp and his 1944 escape with a companion to warn the world of the planned destruction of Hungarian Jews.",
+   "pitch": "You follow one man who decides the truth about the camp must get out and risks everything to carry it. It is a clear, concrete account of what he saw, how he escaped and why he was not believed at first. If the Qureshi memoir held you because it asked what is actually true, this asks the same question under far higher stakes.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1367487/preview510",
+   "coverSource": "katalog",
+   "isbn": "8085924501",
+   "coverOL": "https://covers.openlibrary.org/b/id/825497-M.jpg"
+  },
+  "uvnitr-velryby-a-jine-eseje": {
+   "blurb": "Essays by George Orwell, from the 1940 collection on Dickens, boys weekly papers and the writer in a time of political upheaval.",
+   "pitch": "Orwell at his plainest: short essays about why writers should be honest, how popular stories shape the people who read them, and what politics does to literature.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2296584/preview510",
+   "coverSource": "katalog",
+   "isbn": "807108140X",
+   "coverOL": "https://covers.openlibrary.org/b/id/8349686-M.jpg"
+  },
+  "uvod-do-filosofie": {
+   "blurb": "Jaspers introduces philosophy to non-specialists, starting from why people philosophise and moving to being, truth and the limits of knowledge.",
+   "pitch": "An introduction to philosophy meant for anyone, not only students, beginning with what makes people start asking such questions. It is short and gives a map of how a thoughtful person approaches the biggest ones.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1745052/preview510",
+   "coverSource": "katalog",
+   "isbn": "8086005054",
+   "coverOL": "https://covers.openlibrary.org/b/id/9944582-M.jpg"
+  },
+  "v-existencialisticke-kavarne": {
+   "blurb": "Sarah Bakewell follows the existentialist philosophers from Husserl and Heidegger through Sartre, Beauvoir and Camus, weaving their lives with the ideas they argued about.",
+   "pitch": "A readable route into existentialism through the people who lived it: what they argued over in cafes, what they did in occupied Paris and how their thought changed. You come away able to say what freedom meant to each of them.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2223263/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788075776365",
+   "coverOL": null
+  },
+  "v-sere-zone": {
+   "blurb": "Adrian Owen describes how brain scans revealed awareness in patients thought to be vegetative, and what that means for diagnosis, care and the nature of consciousness.",
+   "pitch": "A researcher tells how a single scan changed what we know about patients who cannot move or speak. It raises a question about where consciousness begins and ends, told through experiments and real cases.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1974008/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788075535504",
+   "coverOL": "https://covers.openlibrary.org/b/id/14479957-M.jpg"
+  },
+  "v-zajeti-geografie": {
+   "blurb": "A journalist uses ten regions of the world to explain how mountains, rivers and coasts shape global politics.",
+   "pitch": "Through ten regions of the world, Marshall shows how mountains, rivers, coasts and plains have steered the choices of nations for centuries. It is clear, brisk and written for a general reader, and it gives you a fresh way to understand the news from Russia, China, the Middle East and beyond.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2058790/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788087950494",
+   "coverOL": "https://covers.openlibrary.org/b/id/8900233-M.jpg"
+  },
+  "vabive-ticho": {
+   "blurb": "Climber Joe Simpson writes about his life after his Andes accident, the deaths of friends in the mountains and his attempt on the Eiger north face.",
+   "pitch": "A climber looks back on the friends the mountains have taken and asks why he keeps going back to them. You follow him through the losses and into a hard attempt on the Eiger north face, told in his own plain, honest voice. It leaves you thinking about what a passion is worth.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3015080/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788072176823",
+   "coverOL": "https://covers.openlibrary.org/b/id/8369761-M.jpg"
+  },
+  "velky-vysvetlovac": {
+   "blurb": "An illustrated book that explains machines and science using only the thousand most common English words, with large labelled diagrams.",
+   "pitch": "Rockets, nuclear reactors, the human body and washing machines are shown as large labelled diagrams, explained using only the thousand most common words. Randall Munroe brings his usual humour to it. A book you can open anywhere and learn how something actually works, one machine at a time.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1802756/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788072527175",
+   "coverOL": "https://covers.openlibrary.org/b/id/7402068-M.jpg"
+  },
+  "vesmir-v-kostce": {
+   "blurb": "Hawking explores the newest ideas in theoretical physics, from extra dimensions to the nature of time, with illustrations to guide the reader through each topic.",
+   "pitch": "A picture-led tour of the strangest ideas in modern physics, from universes with extra dimensions to the possibility of travelling in time. Hawking keeps his humour and the illustrations carry you through the harder passages.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2724403/preview510",
+   "coverSource": "katalog",
+   "isbn": "8072034219",
+   "coverOL": "https://covers.openlibrary.org/b/id/8673699-M.jpg"
+  },
+  "vesmir-z-niceho": {
+   "blurb": "Physicist Lawrence Krauss argues that modern cosmology shows how a universe can arise from nothing.",
+   "pitch": "A physicist explains what we now know about how the universe began, and what empty space actually is. Written for general readers, and certain to start an argument.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/785221/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788024241456",
+   "coverOL": "https://covers.openlibrary.org/b/id/9454845-M.jpg"
+  },
+  "vytouzene-davnoveke-pahorky": {
+   "blurb": "A popular historian describes the Jewish, Greek and Roman world of Jesus and how his message entered Western history.",
+   "pitch": "Cahill pictures Jesus as a man of his time and sets him in the Jewish, Greek and Roman world around him. It is popular history in an engaging voice, and it leaves you thinking about what that life and message meant to the people who first heard them, and what they have meant since.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3063487/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788073493844",
+   "coverOL": "https://covers.openlibrary.org/b/id/241114-M.jpg"
+  },
+  "vyznani": {
+   "blurb": "Augustine of Hippo tells the story of his youth, restlessness and conversion as a prayer addressed to God, then turns to memory, time and creation.",
+   "pitch": "A brilliant, restless man looks back on his youth, his ambitions and his long search for something that would satisfy him, and tells it all as an open conversation with God. If you want to see how one of the most influential thinkers in history understood himself, and what he made of memory and time, you hear it from his own voice.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/716416/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788070171653",
+   "coverOL": "https://covers.openlibrary.org/b/id/9022521-M.jpg"
+  },
+  "vzpoura-davu": {
+   "blurb": "A Spanish philosopher analyses the rise of the mass man in European society and the danger he poses to civilization.",
+   "pitch": "Ortega y Gasset wrote a famous essay about the ordinary person who is satisfied with himself and feels no duty to anything beyond his own comfort. It is vivid and provocative, and it makes you think about what a society asks of its people and what happens when they stop answering.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2301092/preview510",
+   "coverSource": "katalog",
+   "isbn": "8020600728",
+   "coverOL": "https://covers.openlibrary.org/b/id/15052282-M.jpg"
+  },
+  "zelena-svatozar": {
+   "blurb": "A Czech philosopher examines human relations to animals and nature and surveys strategies of ecological ethics.",
+   "pitch": "A Czech philosopher asks how people should treat animals and the natural world, from cruelty and tenderness toward animals to our place in nature as a whole. It is thoughtful and grounded in Czech experience, and it leaves you with real questions about our responsibility to the living world.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3018723/preview510",
+   "coverSource": "katalog",
+   "isbn": "8085850869",
+   "coverOL": "https://covers.openlibrary.org/b/id/10366255-M.jpg"
+  },
+  "zivot-jak-ho-nezname": {
+   "blurb": "A NASA-adjacent biologist surveys where and how life might exist beyond the familiar, from extreme environments on Earth to Mars and the moons of the outer planets, and the labs trying to make it.",
+   "pitch": "A guided tour of the strangest places life has been found and the strangest places it might be. It asks how much of what we call life is simply the version we happen to know.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/2716989/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788024230627",
+   "coverOL": "https://covers.openlibrary.org/b/id/400590-M.jpg"
+  },
+  "zivotni-moudrost": {
+   "blurb": "Schopenhauer gathers counsel on how to live a tolerable life, arguing that happiness depends mostly on personality, health and inner resources.",
+   "pitch": "A philosopher turns his attention from big systems to a practical question: what actually makes a life go well. In short pieces he argues that contentment depends far more on who you are, your health and your inner resources than on wealth or reputation, which gives you a lot to weigh against your own habits.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/1066246/preview510",
+   "coverSource": "katalog",
+   "isbn": "8020502173",
+   "coverOL": "https://covers.openlibrary.org/b/id/2010228-M.jpg"
+  },
+  "metafory-kterymi-zijeme": {
+   "blurb": "Two scholars argue that everyday language is built on conceptual metaphors that shape how we think and act.",
+   "pitch": "This book shows that phrases we use without a thought, like winning an argument, wasting time or feeling down, quietly steer how we think and act. Once you notice the pattern in everyday language, you start spotting it everywhere, and it gives you a new way to look at how minds make sense of the world.",
+   "cover": "https://cache.obalkyknih.cz/file/cover/3116104/preview510",
+   "coverSource": "katalog",
+   "isbn": "9788026221487",
+   "coverOL": "https://covers.openlibrary.org/b/id/5265915-M.jpg"
   }
  },
  "readMedia": {
@@ -20158,10 +20931,6 @@
    "cover": "https://covers.openlibrary.org/b/id/667178-M.jpg",
    "isbn": "1574532030"
   },
-  "budoucnost-geografie-tim-marshall": {
-   "cover": "https://covers.openlibrary.org/b/id/8900233-M.jpg",
-   "isbn": "1501121472"
-  },
   "c-miroslav-virius": {
    "cover": null,
    "coverNote": "no cover on Open Library after two passes (2026-09-03)"
@@ -20174,17 +20943,9 @@
    "cover": null,
    "coverNote": "no cover on Open Library after two passes (2026-09-03)"
   },
-  "druha-derivace-touhy-tomas-sedlacek": {
-   "cover": "https://covers.openlibrary.org/b/id/7008551-M.jpg",
-   "isbn": "9780199767205"
-  },
   "efektivni-vzdelavani-zamestnancu-josef-vodak-alzbeta-kucharc": {
    "cover": null,
    "coverNote": "no cover on Open Library after two passes (2026-09-03)"
-  },
-  "etika-umele-inteligence-mark-coeckelbergh": {
-   "cover": "https://covers.openlibrary.org/b/id/13283555-M.jpg",
-   "isbn": "9780262538190"
   },
   "jde-o-vase-strevo-jean-claude-alix": {
    "cover": null,
@@ -20226,10 +20987,6 @@
    "cover": null,
    "coverNote": "no cover on Open Library after two passes (2026-09-03)"
   },
-  "odemceny-vesmir-stephen-a-lucy-hawkingovi": {
-   "cover": null,
-   "coverNote": "no cover on Open Library after two passes (2026-09-03)"
-  },
   "pedagogicky-takt-max-van-manen": {
    "cover": "https://covers.openlibrary.org/b/id/4095981-M.jpg",
    "isbn": "1629584169"
@@ -20262,10 +21019,6 @@
    "cover": "https://covers.openlibrary.org/b/id/12110298-M.jpg",
    "isbn": "6050601194"
   },
-  "telo-scita-rany-bessel-van-der-kolk": {
-   "cover": "https://covers.openlibrary.org/b/id/8315367-M.jpg",
-   "isbn": "8412067193"
-  },
   "tenis-alessandro-gennari": {
    "cover": null,
    "coverNote": "no cover on Open Library after two passes (2026-09-03)"
@@ -20277,14 +21030,6 @@
   "uvod-do-psychologie-osobnosti-panajotis-cakirpaloglu": {
    "cover": null,
    "coverNote": "no cover on Open Library after two passes (2026-09-03)"
-  },
-  "v-zajeti-geografie-tim-marshall": {
-   "cover": "https://covers.openlibrary.org/b/id/8900233-M.jpg",
-   "isbn": "1501121472"
-  },
-  "vsechno-co-opravdu-potrebuju-znat-jsem-se-naucil-v-materske-": {
-   "cover": "https://covers.openlibrary.org/b/id/291037-M.jpg",
-   "isbn": "9780586208922"
   },
   "vycvik-beze-slov-liane-rauchova": {
    "cover": null,
@@ -20630,6 +21375,14 @@
   "krvava-rose-nicholas-eames": {
    "cover": "https://covers.openlibrary.org/b/id/9252364-M.jpg",
    "isbn": "9780316362474"
+  },
+  "narozen-v-modry-den-daniel-tammet": {
+   "cover": "https://covers.openlibrary.org/b/id/760257-M.jpg",
+   "isbn": "9780786295616"
+  },
+  "nebeska-intrika-joshua-gilder-anne-lee-gilderova": {
+   "cover": null,
+   "coverNote": "no cover on Open Library after two passes (2026-11-26)"
   }
  },
  "_null_cover": "null with a coverNote is a SETTLED row, not a gap: the search already ran on the date in the note and Open Library had nothing, so the app draws a typographic placeholder and its Gaps panel does not count it - re-running this script cannot clear it, and reporting it would name a shortfall the reader can do nothing about. Later runs skip it too; --retry-missing searches again. 'names a group, not a book' means the row covers an author or a category, so there is no single cover that would be honest. null with NO coverNote is the real gap: a row nothing has looked up yet.",

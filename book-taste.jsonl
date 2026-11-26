@@ -19,6 +19,7 @@
 {"id": "c:a-hory-odpovedely", "m": {"bleakness": 1, "differentiated-cast": 2, "motives-on-page": 2, "same-sex-secondary": 2, "unconnected-collection": 1}, "vd": "4fc8010d0215"}
 {"id": "c:a-long-way-gone", "m": {"bleakness": 2, "rootable-lead": 1}, "vd": "4fc8010d0215"}
 {"id": "c:a-ocean-byl-nasi-oblohou", "m": {"bleakness": 1, "childish-register": 1, "nameable-idea": 2}, "vd": "4fc8010d0215"}
+{"id": "c:a-proto-skacu", "m": {"interesting-lead": 3, "nameable-idea": 3}, "vd": "4fc8010d0215"}
 {"id": "c:a-zrodi-se-nadace", "m": {"motives-on-page": 2, "unconnected-collection": 1}, "vd": "4fc8010d0215"}
 {"id": "c:accelerando", "m": {"action-over-motives": 1, "confusing-opening-context": 3, "crude-sex": 2, "nameable-idea": 2, "sex-volume": 1, "unconnected-collection": 1}, "vd": "4fc8010d0215"}
 {"id": "c:ada-a-ja", "m": {"childish-register": 3, "verse": 3}, "vd": "4fc8010d0215"}
@@ -69,6 +70,7 @@
 {"id": "c:arabella-z-marsu", "m": {"low-drive": 2}, "vd": "4fc8010d0215"}
 {"id": "c:arabie", "m": {"child-feel-lead": 1, "childish-register": 2}, "vd": "4fc8010d0215"}
 {"id": "c:arabska-nocni-mura", "m": {"confusing-opening-context": 1, "passive-lead": 2}, "vd": "4fc8010d0215"}
+{"id": "c:archimeduv-kodex", "m": {"coherent-world": 2, "nameable-idea": 1}, "vd": "4fc8010d0215"}
 {"id": "c:archiv-ticha", "m": {}, "vd": "4fc8010d0215"}
 {"id": "c:arcizar", "m": {"action-over-motives": 1, "rootable-lead": 1}, "vd": "4fc8010d0215"}
 {"id": "c:arena", "m": {"action-over-motives": 1, "childish-register": 1}, "vd": "4fc8010d0215"}
@@ -80,6 +82,7 @@
 {"id": "c:artur-a-zlate-lano", "m": {"childish-register": 3}, "vd": "4fc8010d0215"}
 {"id": "c:aru-sah-a-konec-casu", "m": {"child-feel-lead": 2, "childish-register": 2, "invented-rite": 2}, "vd": "4fc8010d0215"}
 {"id": "c:assassin-s-fate", "m": {"bleakness": 2, "child-feel-lead": 1, "differentiated-cast": 2, "faith-examined": 1, "interesting-lead": 3, "invented-rite": 2, "motives-on-page": 3, "padding": 2, "rootable-lead": 2, "same-sex-secondary": 2}, "vd": "4fc8010d0215"}
+{"id": "c:astrofyzika-pro-lidi-ve-spechu", "m": {"coherent-world": 2, "momentum": 2}, "vd": "4fc8010d0215"}
 {"id": "c:atlantida", "m": {"action-over-motives": 2, "confusing-opening-context": 1}, "vd": "4fc8010d0215"}
 {"id": "c:atlantsky-gen", "m": {"action-over-motives": 1, "flat-lead": 1}, "vd": "4fc8010d0215"}
 {"id": "c:atlas-mraku", "m": {"infidelity-subplot": 2, "nameable-idea": 2, "same-sex-secondary": 3}, "vd": "4fc8010d0215"}
@@ -190,10 +193,12 @@
 {"id": "c:casotreseni", "m": {"low-drive": 2, "padding": 2}, "vd": "4fc8010d0215"}
 {"id": "c:catwoman", "m": {"unrootable-lead": 1}, "vd": "4fc8010d0215"}
 {"id": "c:cekam-az-si-pro-me-prijdou", "m": {"bleakness": 2, "interesting-lead": 2, "motives-on-page": 2, "nameable-idea": 2, "rootable-lead": 2}, "vd": "4fc8010d0215"}
+{"id": "c:cekani-na-snih-v-havane", "m": {"interesting-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:cena-za-krale", "m": {"motives-on-page": 1}, "vd": "4fc8010d0215"}
 {"id": "c:centralni-imperium-omega", "m": {"rootable-lead": 1}, "vd": "4fc8010d0215"}
 {"id": "c:cerna-flotila", "m": {"coherent-world": 1, "early-stall": 1}, "vd": "4fc8010d0215"}
 {"id": "c:cerna-labut", "m": {"nameable-idea": 3, "padding": 2}, "vd": "4fc8010d0215"}
+{"id": "c:cerne-diry-reithuv-cyklus-prednasek-pro-bbc", "m": {"coherent-world": 2, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:cerni-psi", "m": {"faith-examined": 2, "nameable-idea": 2, "passive-lead": 1}, "vd": "4fc8010d0215"}
 {"id": "c:cernobily-svet", "m": {"differentiated-cast": 2, "motives-on-page": 2, "nameable-idea": 2, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:cerny-dort", "m": {"same-sex-secondary": 3}, "vd": "4fc8010d0215"}
@@ -209,6 +214,7 @@
 {"id": "c:cesta-do-babylonu", "m": {"discovery": 2, "early-stall": 2, "interesting-lead": 3}, "vd": "4fc8010d0215"}
 {"id": "c:cesta-do-hlubin-noci", "m": {"bleakness": 3, "crude-sex": 1, "passive-lead": 1, "unrootable-lead": 1}, "vd": "4fc8010d0215"}
 {"id": "c:cesta-dvou-afrika", "m": {"motives-on-page": 1}, "vd": "4fc8010d0215"}
+{"id": "c:cesta-k-lidstvi", "m": {"faith-examined": 2, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:cesta-kolem-mesice", "m": {"action-over-motives": 2, "discovery": 1, "flat-lead": 1, "low-drive": 2, "padding": 2, "world-logic-breach": 1}, "vd": "4fc8010d0215"}
 {"id": "c:cesta-kralu", "m": {"coherent-world": 2, "confusing-opening-context": 2, "differentiated-cast": 2, "early-stall": 1, "faith-examined": 2, "interesting-lead": 3, "invented-rite": 1, "motives-on-page": 2, "padding": 1, "rootable-lead": 3}, "vd": "4fc8010d0215"}
 {"id": "c:cesta-na-okraj", "m": {}, "vd": "4fc8010d0215"}
@@ -252,6 +258,7 @@
 {"id": "c:clayuv-most", "m": {"confusing-opening-context": 2, "early-stall": 2}, "vd": "4fc8010d0215"}
 {"id": "c:clobrd-na-obzoru", "m": {"childish-register": 3}, "vd": "4fc8010d0215"}
 {"id": "c:clovek-bez-osudu", "m": {"bleakness": 1, "nameable-idea": 2, "passive-lead": 2}, "vd": "4fc8010d0215"}
+{"id": "c:co-kdyby", "m": {"coherent-world": 3, "momentum": 2, "nameable-idea": 2, "unconnected-collection": 1}, "vd": "4fc8010d0215"}
 {"id": "c:co-te-nezabije", "m": {"nameable-idea": 1, "world-logic-breach": 1}, "vd": "4fc8010d0215"}
 {"id": "c:co-ti-svira-hrdlo", "m": {"infidelity-subplot": 1, "nameable-idea": 2, "same-sex-secondary": 1, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:co-zbylo-z-moji-sestry", "m": {"early-stall": 1}, "vd": "4fc8010d0215"}
@@ -298,6 +305,7 @@
 {"id": "c:delta-v", "m": {"action-over-motives": 1, "coherent-world": 1, "momentum": 1}, "vd": "4fc8010d0215"}
 {"id": "c:demanty-noci", "m": {"bleakness": 2, "nameable-idea": 1, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:demian", "m": {"nameable-idea": 2, "passive-lead": 1, "theology-subject": 2}, "vd": "4fc8010d0215"}
+{"id": "c:demokracie-v-americe", "m": {"coherent-world": 2, "nameable-idea": 3, "padding": 1}, "vd": "4fc8010d0215"}
 {"id": "c:demon-copperhead", "m": {"bleakness": 2, "interesting-lead": 2, "nameable-idea": 2, "passive-lead": 1, "sex-volume": 1}, "vd": "4fc8010d0215"}
 {"id": "c:den", "m": {"motives-on-page": 2, "same-sex-secondary": 2}, "vd": "4fc8010d0215"}
 {"id": "c:den-cisaru", "m": {"rootable-lead": 2}, "vd": "4fc8010d0215"}
@@ -355,6 +363,7 @@
 {"id": "c:dny-krve-a-hvezdneho-trpytu", "m": {"bleakness": 2, "invented-rite": 3, "motives-on-page": 2}, "vd": "4fc8010d0215"}
 {"id": "c:do-pekla-a-zpet", "m": {"action-over-motives": 2, "unearned-competence": 2}, "vd": "4fc8010d0215"}
 {"id": "c:do-poklidne-modri", "m": {"action-over-motives": 1, "rootable-lead": 2}, "vd": "4fc8010d0215"}
+{"id": "c:doba-z-druhe-ruky", "m": {"bleakness": 2, "interesting-lead": 2, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:dobreho-cloveka-tezko-najdes", "m": {"bleakness": 1, "faith-examined": 2, "unconnected-collection": 2, "unrootable-lead": 1}, "vd": "4fc8010d0215"}
 {"id": "c:dobrodruzstvi-bajecnych-kamaradu", "m": {"child-feel-lead": 2, "childish-register": 3}, "vd": "4fc8010d0215"}
 {"id": "c:dobrodruzstvi-huckleberryho-finna", "m": {"faith-examined": 1, "interesting-lead": 2, "invented-rite": 1, "nameable-idea": 3, "padding": 1, "religion-mocked": 1, "rootable-lead": 2}, "vd": "4fc8010d0215"}
@@ -427,6 +436,7 @@
 {"id": "c:elder-race", "m": {"bleakness": 1, "differentiated-cast": 1, "interesting-lead": 2, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:eldest-mekka-vazba", "m": {"invented-rite": 2, "padding": 2, "unearned-competence": 2}, "vd": "4fc8010d0215"}
 {"id": "c:eleanor-se-ma-vazne-skvele", "m": {"interesting-lead": 3, "motives-on-page": 2, "nameable-idea": 1, "rootable-lead": 2}, "vd": "4fc8010d0215"}
+{"id": "c:elegantni-vesmir", "m": {"coherent-world": 2, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:elektricky-michelangelo", "m": {"padding": 2}, "vd": "4fc8010d0215"}
 {"id": "c:elias-mezi-lidojedy", "m": {"child-feel-lead": 1, "childish-register": 3}, "vd": "4fc8010d0215"}
 {"id": "c:elias-mezi-piraty", "m": {"childish-register": 3}, "vd": "4fc8010d0215"}
@@ -447,6 +457,7 @@
 {"id": "c:erectus", "m": {}, "vd": "4fc8010d0215"}
 {"id": "c:erendira-marquez", "m": {"bleakness": 2, "nameable-idea": 1, "passive-lead": 2, "sex-plot": 3, "sex-volume": 3}, "vd": "4fc8010d0215"}
 {"id": "c:erik-eric", "m": {"passive-lead": 2, "real-occult": 3}, "vd": "4fc8010d0215"}
+{"id": "c:etika-pro-dnesni-svet", "m": {"nameable-idea": 2, "theology-subject": 1}, "vd": "4fc8010d0215"}
 {"id": "c:europeana-ourednik", "m": {"bleakness": 2, "low-drive": 2, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:evakuace", "m": {"action-over-motives": 1}, "vd": "4fc8010d0215"}
 {"id": "c:evangelium-ohne", "m": {"nameable-idea": 1, "religion-mocked": 2}, "vd": "4fc8010d0215"}
@@ -476,6 +487,7 @@
 {"id": "c:fool-s-assassin", "m": {"child-feel-lead": 1, "early-stall": 2, "interesting-lead": 3, "motives-on-page": 3, "padding": 2}, "vd": "4fc8010d0215"}
 {"id": "c:fool-s-quest", "m": {"bleakness": 2, "child-feel-lead": 1, "interesting-lead": 3, "motives-on-page": 3, "padding": 1, "same-sex-secondary": 2}, "vd": "4fc8010d0215"}
 {"id": "c:fotograf-z-mauthausenu", "m": {"rootable-lead": 1}, "vd": "4fc8010d0215"}
+{"id": "c:fraktalista", "m": {"interesting-lead": 2, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:fraktalni-sum", "m": {"bleakness": 2, "low-drive": 2}, "vd": "4fc8010d0215"}
 {"id": "c:frankenstein", "m": {"bleakness": 2, "interesting-lead": 2, "motives-on-page": 2, "nameable-idea": 3, "padding": 1, "passive-lead": 1}, "vd": "4fc8010d0215"}
 {"id": "c:frankenstein-aneb-novodoby-prometheus", "m": {"bleakness": 2, "early-stall": 1, "interesting-lead": 1, "motives-on-page": 2, "nameable-idea": 3, "passive-lead": 1, "world-logic-breach": 1}, "vd": "4fc8010d0215"}
@@ -489,6 +501,7 @@
 {"id": "c:gateway", "m": {"bleakness": 1, "discovery": 1, "interesting-lead": 3, "low-drive": 1, "nameable-idea": 2, "same-sex-secondary": 1, "sex-volume": 2}, "vd": "4fc8010d0215"}
 {"id": "c:gen", "m": {"nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:general-ve-svem-labyrintu", "m": {"bleakness": 2, "confusing-opening-context": 1, "infidelity-subplot": 1, "interesting-lead": 2, "low-drive": 1, "motives-on-page": 2, "sex-volume": 1}, "vd": "4fc8010d0215"}
+{"id": "c:genialni-omyly", "m": {"coherent-world": 2, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:gentleman-v-moskve", "m": {"differentiated-cast": 2, "interesting-lead": 2, "motives-on-page": 2, "nameable-idea": 2, "padding": 1, "rootable-lead": 3, "sex-volume": 1}, "vd": "4fc8010d0215"}
 {"id": "c:gernsbackovo-kontinuum", "m": {"nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:gerta", "m": {"childish-register": 2}, "vd": "4fc8010d0215"}
@@ -524,6 +537,7 @@
 {"id": "c:hlas-lesa", "m": {"childish-register": 1}, "vd": "4fc8010d0215"}
 {"id": "c:hleda-se-autor-bestselleru-2015-sci-fi-a-fan", "m": {"unconnected-collection": 3}, "vd": "4fc8010d0215"}
 {"id": "c:hleda-se-medved", "m": {"child-feel-lead": 2, "childish-register": 2, "sequel-rerun": 1}, "vd": "4fc8010d0215"}
+{"id": "c:hledani-materskeho-stromu", "m": {"interesting-lead": 2, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:hledani-modre", "m": {"childish-register": 1, "interesting-lead": 2, "invented-rite": 1, "low-drive": 1, "nameable-idea": 2, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:hlidka-na-konci-vesmiru", "m": {"interesting-lead": 2, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:hlubina-na-nebi", "m": {"coherent-world": 3, "differentiated-cast": 2, "interesting-lead": 2, "motives-on-page": 2, "nameable-idea": 2, "rootable-lead": 2}, "vd": "4fc8010d0215"}
@@ -551,6 +565,7 @@
 {"id": "c:horka-linka-z-hadonose", "m": {"nameable-idea": 1, "world-logic-breach": 1}, "vd": "4fc8010d0215"}
 {"id": "c:hororovky", "m": {"childish-register": 2, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:hostitel", "m": {"interesting-lead": 2, "low-drive": 1, "motives-on-page": 3, "nameable-idea": 2, "padding": 2, "rootable-lead": 3}, "vd": "4fc8010d0215"}
+{"id": "c:hovory-k-sobe", "m": {"nameable-idea": 3, "unconnected-collection": 1}, "vd": "4fc8010d0215"}
 {"id": "c:hra-o-manzelstvi", "m": {"differentiated-cast": 2, "faith-examined": 2, "interesting-lead": 2, "motives-on-page": 2, "nameable-idea": 2, "sex-volume": 1}, "vd": "4fc8010d0215"}
 {"id": "c:hra-se-sklenenymi-perlami", "m": {"early-stall": 2, "interesting-lead": 2, "low-drive": 1, "nameable-idea": 3, "real-occult": 3, "unconnected-collection": 1, "verse": 1}, "vd": "4fc8010d0215"}
 {"id": "c:hrac", "m": {"infidelity-subplot": 2, "nameable-idea": 1, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
@@ -586,6 +601,7 @@
 {"id": "c:idealni-svet", "m": {"coherent-world": 2, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:illuminae", "m": {"childish-register": 1, "momentum": 2, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:ilustrado", "m": {"confusing-opening-context": 2}, "vd": "4fc8010d0215"}
+{"id": "c:ilustrovana-teorie-vseho", "m": {"coherent-world": 2}, "vd": "4fc8010d0215"}
 {"id": "c:ilustrovany-muz", "m": {"faith-examined": 1, "nameable-idea": 2, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:in-memoriam", "m": {"same-sex-lead": 3, "sex-volume": 1}, "vd": "4fc8010d0215"}
 {"id": "c:in-the-lives-of-puppets", "m": {"motives-on-page": 2, "same-sex-lead": 3}, "vd": "4fc8010d0215"}
@@ -623,6 +639,7 @@
 {"id": "c:jak-se-uspesne-ucit-s-adhd", "m": {}, "vd": "4fc8010d0215"}
 {"id": "c:jak-se-vari-drak", "m": {"child-feel-lead": 2, "childish-register": 2}, "vd": "4fc8010d0215"}
 {"id": "c:jak-stvorit-divku", "m": {"crude-sex": 3, "interesting-lead": 2, "rootable-lead": 2, "sex-volume": 2}, "vd": "4fc8010d0215"}
+{"id": "c:jak-svet-doopravdy-funguje", "m": {"coherent-world": 3, "nameable-idea": 3}, "vd": "4fc8010d0215"}
 {"id": "c:jak-tukoni-zachranili-strom", "m": {"childish-register": 3}, "vd": "4fc8010d0215"}
 {"id": "c:jak-uchvatit-draci-klenot", "m": {"childish-register": 2}, "vd": "4fc8010d0215"}
 {"id": "c:jak-vysoko-klesneme", "m": {"bleakness": 2, "same-sex-secondary": 1, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
@@ -660,12 +677,14 @@
 {"id": "c:jonathan-strange-norrell", "m": {"early-stall": 1, "invented-rite": 3, "padding": 2, "real-occult": 3}, "vd": "4fc8010d0215"}
 {"id": "c:joseph-anton", "m": {"infidelity-subplot": 1, "padding": 1, "religion-mocked": 1}, "vd": "4fc8010d0215"}
 {"id": "c:jsem-milena-z-prahy", "m": {"infidelity-subplot": 2}, "vd": "4fc8010d0215"}
+{"id": "c:jsme-sami", "m": {"coherent-world": 2, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:jsou-svetla-ktera-nevidime", "m": {"bleakness": 1, "interesting-lead": 2, "nameable-idea": 2, "padding": 1, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:jste-tady", "m": {"interesting-lead": 2, "motives-on-page": 2, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:julie-z-vlci-smecky", "m": {"childish-register": 1, "discovery": 2, "interesting-lead": 1, "invented-rite": 1, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:jumper-griffinuv-pribeh", "m": {"low-drive": 1}, "vd": "4fc8010d0215"}
 {"id": "c:jura-a-lama", "m": {"child-feel-lead": 2, "childish-register": 3, "same-sex-secondary": 2}, "vd": "4fc8010d0215"}
 {"id": "c:jurassic-park", "m": {"action-over-motives": 2, "coherent-world": 2, "flat-lead": 1, "momentum": 2, "nameable-idea": 2}, "vd": "4fc8010d0215"}
+{"id": "c:kacirske-eseje-o-filosofii-dejin", "m": {"nameable-idea": 3, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:kaddis-za-nenarozene-dite", "m": {"bleakness": 3, "low-drive": 2, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:kalamita", "m": {"childish-register": 1, "momentum": 1, "rootable-lead": 2, "world-logic-breach": 1}, "vd": "4fc8010d0215"}
 {"id": "c:kaleidoskop", "m": {"nameable-idea": 2, "unconnected-collection": 3}, "vd": "4fc8010d0215"}
@@ -701,6 +720,7 @@
 {"id": "c:kdyz-panda-tanci", "m": {"motives-on-page": 2, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:kdyz-psi-placou", "m": {"interesting-lead": 2, "sex-volume": 1}, "vd": "4fc8010d0215"}
 {"id": "c:kdyz-se-pohne-les", "m": {"interesting-lead": 1, "unconnected-collection": 1}, "vd": "4fc8010d0215"}
+{"id": "c:kdyz-se-zle-veci-stavaji-dobrym-lidem", "m": {"faith-examined": 3, "nameable-idea": 3, "theology-subject": 2}, "vd": "4fc8010d0215"}
 {"id": "c:kentaur", "m": {"confusing-opening-context": 1, "infidelity-subplot": 1, "nameable-idea": 1}, "vd": "4fc8010d0215"}
 {"id": "c:kepler62-parvela", "m": {"action-over-motives": 1, "childish-register": 3}, "vd": "4fc8010d0215"}
 {"id": "c:kepler62-sorland", "m": {"childish-register": 3}, "vd": "4fc8010d0215"}
@@ -782,6 +802,7 @@
 {"id": "c:kralovske-spiknuti", "m": {"differentiated-cast": 2, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:kralovstvi-poniku", "m": {"child-feel-lead": 2, "childish-register": 3}, "vd": "4fc8010d0215"}
 {"id": "c:kramek-s-kouzly", "m": {"invented-rite": 2, "low-drive": 1}, "vd": "4fc8010d0215"}
+{"id": "c:kratke-privitani-ve-vesmiru", "m": {"unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:krcmarova-pisen", "m": {"confusing-opening-context": 2, "invented-rite": 3, "same-sex-secondary": 1}, "vd": "4fc8010d0215"}
 {"id": "c:krecek-v-utajeni", "m": {"childish-register": 3}, "vd": "4fc8010d0215"}
 {"id": "c:krehke-veci", "m": {"crude-sex": 1, "same-sex-secondary": 2, "unconnected-collection": 2, "verse": 1}, "vd": "4fc8010d0215"}
@@ -860,6 +881,7 @@
 {"id": "c:lichozrouti-se-vraceji", "m": {"childish-register": 2}, "vd": "4fc8010d0215"}
 {"id": "c:lide-haig", "m": {"discovery": 1, "interesting-lead": 1, "nameable-idea": 2, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:lide-sawyer", "m": {"same-sex-lead": 3}, "vd": "4fc8010d0215"}
+{"id": "c:lidstvo", "m": {"momentum": 2, "nameable-idea": 3}, "vd": "4fc8010d0215"}
 {"id": "c:life-of-pi", "m": {"discovery": 1, "early-stall": 2, "faith-examined": 3, "interesting-lead": 2, "invented-rite": 1, "nameable-idea": 3}, "vd": "4fc8010d0215"}
 {"id": "c:light-bringer", "m": {"action-over-motives": 1, "differentiated-cast": 2, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:lightfall", "m": {"childish-register": 1, "rootable-lead": 1}, "vd": "4fc8010d0215"}
@@ -908,7 +930,9 @@
 {"id": "c:majak-na-severu", "m": {"same-sex-lead": 3}, "vd": "4fc8010d0215"}
 {"id": "c:mala-cviceni-v-bezohlednosti", "m": {"unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:malamandr", "m": {"child-feel-lead": 1, "childish-register": 2}, "vd": "4fc8010d0215"}
+{"id": "c:male-dejiny-filosofie", "m": {"coherent-world": 2}, "vd": "4fc8010d0215"}
 {"id": "c:male-divadlo-hannah-arendtove", "m": {"childish-register": 1, "nameable-idea": 2}, "vd": "4fc8010d0215"}
+{"id": "c:male-uvahy-o-velkych-vecech", "m": {"nameable-idea": 3, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:malevil", "m": {"coherent-world": 3, "differentiated-cast": 2, "early-stall": 1, "faith-examined": 1, "interesting-lead": 2, "motives-on-page": 3, "nameable-idea": 2, "rootable-lead": 2, "sex-volume": 1}, "vd": "4fc8010d0215"}
 {"id": "c:mali-bohove", "m": {"differentiated-cast": 2, "faith-examined": 3, "interesting-lead": 2, "nameable-idea": 3, "padding": 1, "religion-mocked": 1, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:malir-pomijiveho-sveta", "m": {"interesting-lead": 2, "low-drive": 1, "motives-on-page": 3, "nameable-idea": 2}, "vd": "4fc8010d0215"}
@@ -926,6 +950,7 @@
 {"id": "c:mapa-jinozemi-emily-wildove", "m": {"world-logic-breach": 1}, "vd": "4fc8010d0215"}
 {"id": "c:marcy-a-hadanka-od-sfingy", "m": {"child-feel-lead": 2, "childish-register": 3}, "vd": "4fc8010d0215"}
 {"id": "c:marmelada", "m": {"childish-register": 3}, "vd": "4fc8010d0215"}
+{"id": "c:marnotratny-buh", "m": {"faith-examined": 2, "nameable-idea": 2, "theology-subject": 3}, "vd": "4fc8010d0215"}
 {"id": "c:marsovsky-skluz-v-case", "m": {"bleakness": 1, "infidelity-subplot": 2, "nameable-idea": 2, "sex-volume": 1}, "vd": "4fc8010d0215"}
 {"id": "c:martanska-cesta", "m": {"early-stall": 1, "motives-on-page": 2, "nameable-idea": 1}, "vd": "4fc8010d0215"}
 {"id": "c:martanska-kronika", "m": {"bleakness": 1, "faith-examined": 1, "nameable-idea": 2, "unconnected-collection": 1}, "vd": "4fc8010d0215"}
@@ -968,6 +993,7 @@
 {"id": "c:mesto-uprostred-noci", "m": {"nameable-idea": 1, "passive-lead": 1, "same-sex-secondary": 3}, "vd": "4fc8010d0215"}
 {"id": "c:mesto-v-oblacich", "m": {"confusing-opening-context": 2, "nameable-idea": 2, "same-sex-secondary": 2}, "vd": "4fc8010d0215"}
 {"id": "c:mesto-zazraku", "m": {"confusing-opening-context": 1, "faith-examined": 1, "interesting-lead": 2, "motives-on-page": 2, "nameable-idea": 2, "rootable-lead": 2}, "vd": "4fc8010d0215"}
+{"id": "c:metafory-kterymi-zijeme", "m": {"nameable-idea": 3}, "vd": "4fc8010d0215"}
 {"id": "c:metalstory", "m": {"confusing-opening-context": 1, "world-logic-breach": 1}, "vd": "4fc8010d0215"}
 {"id": "c:meteorit-z-muslovky", "m": {"child-feel-lead": 2, "childish-register": 2}, "vd": "4fc8010d0215"}
 {"id": "c:metro-2034", "m": {"bleakness": 1, "low-drive": 2, "padding": 1}, "vd": "4fc8010d0215"}
@@ -1000,6 +1026,8 @@
 {"id": "c:misteri", "m": {}, "vd": "4fc8010d0215"}
 {"id": "c:misto-na-svete", "m": {"padding": 1, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:misto-odkud-neni-navratu", "m": {"bleakness": 2}, "vd": "4fc8010d0215"}
+{"id": "c:mit-nebo-byt", "m": {"nameable-idea": 3}, "vd": "4fc8010d0215"}
+{"id": "c:mizejici-lzice-ruzovy-snih-a-jiskrici-bonbon", "m": {"coherent-world": 2, "momentum": 2}, "vd": "4fc8010d0215"}
 {"id": "c:mladej-mungo", "m": {"bleakness": 2, "same-sex-lead": 3, "sex-volume": 2}, "vd": "4fc8010d0215"}
 {"id": "c:mladi-vyvoleni", "m": {"same-sex-secondary": 1, "unrootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:mladokrevni-sasha", "m": {"same-sex-lead": 3}, "vd": "4fc8010d0215"}
@@ -1011,10 +1039,13 @@
 {"id": "c:moby-dick", "m": {"childish-register": 2}, "vd": "4fc8010d0215"}
 {"id": "c:moc", "m": {"early-stall": 2, "interesting-lead": 1, "invented-rite": 2, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:moc-a-slava", "m": {"bleakness": 2, "faith-examined": 3, "interesting-lead": 3, "motives-on-page": 2, "nameable-idea": 2, "rootable-lead": 2}, "vd": "4fc8010d0215"}
+{"id": "c:moc-bezmocnych", "m": {"coherent-world": 2, "nameable-idea": 3}, "vd": "4fc8010d0215"}
 {"id": "c:modlitba-horovitzova", "m": {"bleakness": 3, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:modra-planeta", "m": {"childish-register": 3, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:modrovousovo-vejce", "m": {"infidelity-subplot": 2, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:moje-adhd-ma-uzkosti", "m": {}, "vd": "4fc8010d0215"}
+{"id": "c:moje-silene-stoleti", "m": {"interesting-lead": 2, "nameable-idea": 2}, "vd": "4fc8010d0215"}
+{"id": "c:moje-tricetileta-valka", "m": {"interesting-lead": 3, "momentum": 2, "nameable-idea": 2, "rootable-lead": 1}, "vd": "4fc8010d0215"}
 {"id": "c:moje-uprimna-posedlost-jmenem-anorexie", "m": {"bleakness": 1}, "vd": "4fc8010d0215"}
 {"id": "c:mojmir", "m": {"childish-register": 2}, "vd": "4fc8010d0215"}
 {"id": "c:mor", "m": {"bleakness": 2, "differentiated-cast": 2, "faith-examined": 2, "low-drive": 1, "nameable-idea": 3, "rootable-lead": 2}, "vd": "4fc8010d0215"}
@@ -1033,12 +1064,14 @@
 {"id": "c:mosty-pres-propast-casu", "m": {"confusing-opening-context": 3, "unconnected-collection": 1}, "vd": "4fc8010d0215"}
 {"id": "c:motyl-ktery-zapomnel-letat", "m": {}, "vd": "4fc8010d0215"}
 {"id": "c:moudra-krev", "m": {"bleakness": 2, "faith-examined": 3, "religion-mocked": 1, "unrootable-lead": 1}, "vd": "4fc8010d0215"}
+{"id": "c:mozek-v-plamenech", "m": {"coherent-world": 2, "interesting-lead": 2, "momentum": 3}, "vd": "4fc8010d0215"}
 {"id": "c:mozna", "m": {"bleakness": 1, "child-feel-lead": 2, "childish-register": 2, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:moznost-ostrova", "m": {"bleakness": 3, "crude-sex": 3, "religion-mocked": 2, "sex-volume": 3, "unrootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:mravenci", "m": {"flat-lead": 1, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:muj-bratr-mesias", "m": {"flat-lead": 1}, "vd": "4fc8010d0215"}
 {"id": "c:muj-bratr-ocean", "m": {"low-drive": 2}, "vd": "4fc8010d0215"}
 {"id": "c:muj-i-q", "m": {}, "vd": "4fc8010d0215"}
+{"id": "c:muj-posledni-vydech", "m": {"faith-examined": 1, "interesting-lead": 3, "nameable-idea": 3}, "vd": "4fc8010d0215"}
 {"id": "c:muj-tata-pise-knihu", "m": {"childish-register": 3}, "vd": "4fc8010d0215"}
 {"id": "c:murderbot-all-systems-red", "m": {"interesting-lead": 3, "momentum": 2, "nameable-idea": 2, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:murodejka", "m": {"childish-register": 2}, "vd": "4fc8010d0215"}
@@ -1060,6 +1093,7 @@
 {"id": "c:mysi-hlidka", "m": {}, "vd": "4fc8010d0215"}
 {"id": "c:myska-a-medved-a-jejich-cesta-za-poznanim", "m": {"childish-register": 3, "unconnected-collection": 1}, "vd": "4fc8010d0215"}
 {"id": "c:myslete-na-deti", "m": {"coherent-world": 1, "faith-examined": 2, "infidelity-subplot": 2, "interesting-lead": 2, "motives-on-page": 2, "nameable-idea": 3}, "vd": "4fc8010d0215"}
+{"id": "c:mzik", "m": {"momentum": 2, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:na-ceste", "m": {"infidelity-subplot": 2, "padding": 2, "same-sex-secondary": 1, "sex-volume": 1}, "vd": "4fc8010d0215"}
 {"id": "c:na-hrane-koule", "m": {"bleakness": 1}, "vd": "4fc8010d0215"}
 {"id": "c:na-hranicich-nadace", "m": {"discovery": 1, "flat-lead": 1, "low-drive": 1, "motives-on-page": 2, "nameable-idea": 2, "sex-volume": 1}, "vd": "4fc8010d0215"}
@@ -1079,6 +1113,7 @@
 {"id": "c:nadelat-prachy", "m": {"interesting-lead": 1, "padding": 1, "sequel-rerun": 3}, "vd": "4fc8010d0215"}
 {"id": "c:nadherne-posetila-snaha", "m": {"flat-lead": 1, "same-sex-lead": 3, "world-logic-breach": 1}, "vd": "4fc8010d0215"}
 {"id": "c:nadrazi-perdido", "m": {"early-stall": 2, "padding": 2, "real-occult": 3, "sex-volume": 1}, "vd": "4fc8010d0215"}
+{"id": "c:naha-opice", "m": {"coherent-world": 1, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:nahy-obed", "m": {"confusing-opening-context": 3, "crude-sex": 3, "low-drive": 2, "religion-mocked": 2, "same-sex-secondary": 3, "sex-volume": 2, "unrootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:najdi-odpoved", "m": {"bleakness": 2, "childish-register": 1, "differentiated-cast": 2, "interesting-lead": 2, "momentum": 2, "motives-on-page": 3, "nameable-idea": 3, "rootable-lead": 2, "unrootable-lead": 1}, "vd": "4fc8010d0215"}
 {"id": "c:nanook-ledovy-netvor", "m": {"child-feel-lead": 2, "childish-register": 3, "sequel-rerun": 3}, "vd": "4fc8010d0215"}
@@ -1088,6 +1123,7 @@
 {"id": "c:narozeny-mimo-zakon", "m": {"interesting-lead": 2, "momentum": 1, "nameable-idea": 2, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:nas-clovek-v-havane", "m": {"motives-on-page": 1, "nameable-idea": 2, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:nas-manzel", "m": {"infidelity-subplot": 1, "world-logic-breach": 1}, "vd": "4fc8010d0215"}
+{"id": "c:nas-neobycejny-vesmir", "m": {"coherent-world": 2, "nameable-idea": 3}, "vd": "4fc8010d0215"}
 {"id": "c:nase-pani-doktorka", "m": {}, "vd": "4fc8010d0215"}
 {"id": "c:nasleduj-me-tise", "m": {"same-sex-lead": 3}, "vd": "4fc8010d0215"}
 {"id": "c:naslouchac", "m": {"flat-lead": 1, "low-drive": 2, "padding": 2}, "vd": "4fc8010d0215"}
@@ -1110,6 +1146,7 @@
 {"id": "c:nebezpecny-pacient", "m": {}, "vd": "4fc8010d0215"}
 {"id": "c:neboj-se-vzdyt-mas-cesnek", "m": {"child-feel-lead": 2, "childish-register": 3}, "vd": "4fc8010d0215"}
 {"id": "c:nebojte-se-zmen", "m": {}, "vd": "4fc8010d0215"}
+{"id": "c:nebudu-nenavidet", "m": {"bleakness": 1, "interesting-lead": 2, "nameable-idea": 2, "rootable-lead": 3}, "vd": "4fc8010d0215"}
 {"id": "c:neco-uzasneho", "m": {}, "vd": "4fc8010d0215"}
 {"id": "c:neco-vic", "m": {"bleakness": 2, "nameable-idea": 1, "same-sex-lead": 3, "world-logic-breach": 1}, "vd": "4fc8010d0215"}
 {"id": "c:nefritove-mesto", "m": {"coherent-world": 2, "differentiated-cast": 2, "motives-on-page": 2, "same-sex-secondary": 1}, "vd": "4fc8010d0215"}
@@ -1121,7 +1158,9 @@
 {"id": "c:nejtemnejsi-cast-lesa", "m": {"low-drive": 1, "same-sex-lead": 3}, "vd": "4fc8010d0215"}
 {"id": "c:nekde-za-morem", "m": {"same-sex-lead": 3}, "vd": "4fc8010d0215"}
 {"id": "c:nekdy-proste-prsi", "m": {"unconnected-collection": 2}, "vd": "4fc8010d0215"}
+{"id": "c:neklidna-mysl", "m": {"interesting-lead": 3, "nameable-idea": 1}, "vd": "4fc8010d0215"}
 {"id": "c:nekonecny-pribeh", "m": {"childish-register": 1, "coherent-world": 2, "discovery": 2, "interesting-lead": 2, "low-drive": 1, "nameable-idea": 3, "rootable-lead": 2}, "vd": "4fc8010d0215"}
+{"id": "c:nekonecny-zazrak", "m": {"nameable-idea": 2, "padding": 1}, "vd": "4fc8010d0215"}
 {"id": "c:nemame-na-vybranou", "m": {"confusing-opening-context": 2, "interesting-lead": 1, "motives-on-page": 2}, "vd": "4fc8010d0215"}
 {"id": "c:nemrtvi", "m": {}, "vd": "4fc8010d0215"}
 {"id": "c:neni-krve-bez-ohne", "m": {}, "vd": "4fc8010d0215"}
@@ -1134,6 +1173,7 @@
 {"id": "c:nepravdepodobna-pout-harolda-frye", "m": {"bleakness": 1, "interesting-lead": 2, "low-drive": 1, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:nepremozitelny", "m": {"coherent-world": 2, "discovery": 3, "nameable-idea": 3}, "vd": "4fc8010d0215"}
 {"id": "c:nepritel-pritel-ctitel", "m": {"infidelity-subplot": 2, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
+{"id": "c:neresitelna-rovnice", "m": {"coherent-world": 2, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:neslibovala-jsem-ti-prochazku-ruzovym-sadem", "m": {"bleakness": 1, "interesting-lead": 3, "motives-on-page": 2, "nameable-idea": 2, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:neslysno", "m": {"world-logic-breach": 1}, "vd": "4fc8010d0215"}
 {"id": "c:nesmrtelnost", "m": {"infidelity-subplot": 2, "low-drive": 1, "nameable-idea": 2, "sex-volume": 2}, "vd": "4fc8010d0215"}
@@ -1156,6 +1196,7 @@
 {"id": "c:nez-potkala-me", "m": {"infidelity-subplot": 2, "sex-plot": 3, "sex-volume": 2, "unrootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:nezbedny-myval", "m": {"child-feel-lead": 2, "childish-register": 3}, "vd": "4fc8010d0215"}
 {"id": "c:nezdolna", "m": {"rootable-lead": 2}, "vd": "4fc8010d0215"}
+{"id": "c:nezlomeny", "m": {"coherent-world": 2, "interesting-lead": 3, "momentum": 3, "rootable-lead": 3}, "vd": "4fc8010d0215"}
 {"id": "c:nezlomny", "m": {"bleakness": 1, "faith-examined": 1, "interesting-lead": 2, "momentum": 2, "rootable-lead": 3}, "vd": "4fc8010d0215"}
 {"id": "c:nezna-dostojevskij", "m": {"bleakness": 2, "interesting-lead": 3, "motives-on-page": 3, "nameable-idea": 2, "unrootable-lead": 1}, "vd": "4fc8010d0215"}
 {"id": "c:nezname-veledilo-a-jine-prozy", "m": {"nameable-idea": 2, "same-sex-secondary": 1, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
@@ -1194,6 +1235,7 @@
 {"id": "c:o-auticku-brouckovi", "m": {"childish-register": 3, "verse": 3}, "vd": "4fc8010d0215"}
 {"id": "c:o-cem-reka-vi", "m": {"early-stall": 1, "world-logic-breach": 1}, "vd": "4fc8010d0215"}
 {"id": "c:o-cem-se-nemluvi", "m": {"crude-sex": 1, "sex-volume": 1}, "vd": "4fc8010d0215"}
+{"id": "c:o-dusevnim-klidu", "m": {"nameable-idea": 3}, "vd": "4fc8010d0215"}
 {"id": "c:o-dusi-a-divce", "m": {"childish-register": 1, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:o-koblizkovi-a-jine-pohadky", "m": {"childish-register": 3, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:o-medvidkovi-co-neumel-plavat-ale-naucil-se-", "m": {"childish-register": 3}, "vd": "4fc8010d0215"}
@@ -1204,6 +1246,7 @@
 {"id": "c:o-princezne-naruby", "m": {"childish-register": 3}, "vd": "4fc8010d0215"}
 {"id": "c:o-psu-nemluve", "m": {"coherent-world": 2, "confusing-opening-context": 2, "differentiated-cast": 2, "nameable-idea": 1}, "vd": "4fc8010d0215"}
 {"id": "c:o-ropuse-ktera-nechtela-vstavat", "m": {"childish-register": 3, "verse": 2}, "vd": "4fc8010d0215"}
+{"id": "c:o-smyslu-zivota", "m": {"faith-examined": 1, "nameable-idea": 3}, "vd": "4fc8010d0215"}
 {"id": "c:o-snozroutkovi", "m": {"childish-register": 3, "invented-rite": 1, "verse": 1}, "vd": "4fc8010d0215"}
 {"id": "c:o-vlkovi-se-sklerozou-a-jine-pohadky", "m": {"childish-register": 2, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:obcan-galaxie", "m": {"childish-register": 1, "motives-on-page": 1, "nameable-idea": 2, "rootable-lead": 3, "unearned-competence": 1, "world-logic-breach": 1}, "vd": "4fc8010d0215"}
@@ -1230,6 +1273,7 @@
 {"id": "c:odlisni", "m": {"nameable-idea": 1, "sex-volume": 1}, "vd": "4fc8010d0215"}
 {"id": "c:odmaturuj-z-literatury", "m": {}, "vd": "4fc8010d0215"}
 {"id": "c:odpocivej-v-pokoji", "m": {}, "vd": "4fc8010d0215"}
+{"id": "c:odpustila-jsem", "m": {"faith-examined": 2, "interesting-lead": 2, "momentum": 3, "rootable-lead": 3}, "vd": "4fc8010d0215"}
 {"id": "c:odsouzene-mesto", "m": {"differentiated-cast": 2, "interesting-lead": 2, "low-drive": 1, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:odvaha", "m": {"action-over-motives": 1, "faith-examined": 1, "invented-rite": 3, "motives-on-page": 1, "rootable-lead": 2, "unrootable-lead": 1}, "vd": "4fc8010d0215"}
 {"id": "c:odvazny-buddy", "m": {"childish-register": 2}, "vd": "4fc8010d0215"}
@@ -1280,6 +1324,7 @@
 {"id": "c:osudna-vejce", "m": {"nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:osvetim", "m": {"action-over-motives": 1, "coherent-world": 2, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:osvetimsky-orchestr", "m": {"bleakness": 2, "world-logic-breach": 1}, "vd": "4fc8010d0215"}
+{"id": "c:otazka-viny", "m": {"coherent-world": 2, "nameable-idea": 3}, "vd": "4fc8010d0215"}
 {"id": "c:otcove-prstenu", "m": {"unconnected-collection": 3}, "vd": "4fc8010d0215"}
 {"id": "c:otec-prasatek", "m": {"faith-examined": 2, "interesting-lead": 2, "invented-rite": 2, "nameable-idea": 3, "padding": 1}, "vd": "4fc8010d0215"}
 {"id": "c:otec-vanoce-a-ja", "m": {"child-feel-lead": 2, "childish-register": 2}, "vd": "4fc8010d0215"}
@@ -1295,6 +1340,7 @@
 {"id": "c:paddington-v-dzungli", "m": {"childish-register": 3}, "vd": "4fc8010d0215"}
 {"id": "c:pamet-kosti", "m": {"padding": 1, "same-sex-secondary": 2, "sex-volume": 2}, "vd": "4fc8010d0215"}
 {"id": "c:pameti-imaginarniho-kamarada", "m": {"childish-register": 1, "nameable-idea": 1, "rootable-lead": 2}, "vd": "4fc8010d0215"}
+{"id": "c:pameti-stalinovy-dcery", "m": {"interesting-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:pampeliskove-vino", "m": {"child-feel-lead": 1, "low-drive": 2, "nameable-idea": 1, "padding": 2, "unconnected-collection": 1}, "vd": "4fc8010d0215"}
 {"id": "c:pan-blesku", "m": {"world-logic-breach": 1}, "vd": "4fc8010d0215"}
 {"id": "c:pan-cavendish-jestli-se-nemylim", "m": {"sequel-rerun": 3, "sex-volume": 1}, "vd": "4fc8010d0215"}
@@ -1302,6 +1348,7 @@
 {"id": "c:pan-much", "m": {"bleakness": 2, "differentiated-cast": 2, "invented-rite": 2, "motives-on-page": 2, "nameable-idea": 3, "rootable-lead": 2, "world-logic-breach": 1}, "vd": "4fc8010d0215"}
 {"id": "c:pan-tompkins-stale-v-risi-divu", "m": {"nameable-idea": 2, "unconnected-collection": 1}, "vd": "4fc8010d0215"}
 {"id": "c:panenky-z-ku-ku-kurice", "m": {"childish-register": 2}, "vd": "4fc8010d0215"}
+{"id": "c:pani-curieova", "m": {"interesting-lead": 3, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:pani-komisarka", "m": {"padding": 1}, "vd": "4fc8010d0215"}
 {"id": "c:panna-ve-zbroji", "m": {"faith-examined": 2, "flat-lead": 1, "padding": 1, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:pansky-dum", "m": {"bleakness": 2, "interesting-lead": 1, "passive-lead": 2, "unconnected-collection": 1}, "vd": "4fc8010d0215"}
@@ -1330,6 +1377,7 @@
 {"id": "c:pet-prani-pana-murrayho-mcbridea", "m": {"rootable-lead": 2, "world-logic-breach": 1}, "vd": "4fc8010d0215"}
 {"id": "c:petova-bajecna-dobrodruzstvi", "m": {"childish-register": 2, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:pi-a-jeho-zivot", "m": {"early-stall": 2, "faith-examined": 3, "invented-rite": 1, "nameable-idea": 3, "rootable-lead": 2}, "vd": "4fc8010d0215"}
+{"id": "c:pianista", "m": {"bleakness": 2, "interesting-lead": 3, "momentum": 2, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:pikova-dama-a-jine-povidky", "m": {"unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:pillars-of-the-earth", "m": {"crude-sex": 1, "differentiated-cast": 2, "faith-examined": 2, "infidelity-subplot": 2, "interesting-lead": 2, "motives-on-page": 2, "rootable-lead": 2, "sex-volume": 2}, "vd": "4fc8010d0215"}
 {"id": "c:piranesi", "m": {"coherent-world": 2, "confusing-opening-context": 1, "discovery": 3, "interesting-lead": 3, "invented-rite": 1, "nameable-idea": 2, "rootable-lead": 3}, "vd": "4fc8010d0215"}
@@ -1374,6 +1422,7 @@
 {"id": "c:podivuhodny-pribeh-benjamina-buttona", "m": {}, "vd": "4fc8010d0215"}
 {"id": "c:podobenstvi-o-rozsevaci", "m": {"bleakness": 2, "coherent-world": 2, "faith-examined": 2, "interesting-lead": 2, "motives-on-page": 2, "nameable-idea": 2, "rootable-lead": 2, "theology-subject": 1}, "vd": "4fc8010d0215"}
 {"id": "c:podraz", "m": {"low-drive": 1}, "vd": "4fc8010d0215"}
+{"id": "c:podzemi", "m": {"nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:podzimni-mouchy-aneb-zena-z-davnych-dob", "m": {"bleakness": 2, "passive-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:pohadka-o-trech-prasatkach", "m": {"childish-register": 3}, "vd": "4fc8010d0215"}
 {"id": "c:pohadka-z-hnizda", "m": {"childish-register": 3, "unconnected-collection": 1}, "vd": "4fc8010d0215"}
@@ -1395,6 +1444,7 @@
 {"id": "c:polocas-rozpadu", "m": {"action-over-motives": 1, "momentum": 1}, "vd": "4fc8010d0215"}
 {"id": "c:pomalost-kundera", "m": {"crude-sex": 2, "infidelity-subplot": 3, "nameable-idea": 1, "sex-volume": 3}, "vd": "4fc8010d0215"}
 {"id": "c:pomnenka", "m": {}, "vd": "4fc8010d0215"}
+{"id": "c:pomoc-dekuji-pani", "m": {"faith-examined": 3, "theology-subject": 1}, "vd": "4fc8010d0215"}
 {"id": "c:pomsta", "m": {}, "vd": "4fc8010d0215"}
 {"id": "c:pomsta-mlokum", "m": {"flat-lead": 1}, "vd": "4fc8010d0215"}
 {"id": "c:popel-a-duse", "m": {}, "vd": "4fc8010d0215"}
@@ -1432,6 +1482,7 @@
 {"id": "c:potom", "m": {"bleakness": 1, "child-feel-lead": 2, "childish-register": 2, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:potomci-lidi", "m": {"bleakness": 2, "faith-examined": 1, "infidelity-subplot": 2, "nameable-idea": 3, "passive-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:potopena-mesta", "m": {"bleakness": 2, "childish-register": 1, "rootable-lead": 2}, "vd": "4fc8010d0215"}
+{"id": "c:poustevnici-v-tajze", "m": {"coherent-world": 2, "interesting-lead": 3, "momentum": 2}, "vd": "4fc8010d0215"}
 {"id": "c:povidky-a-mensi-prozy", "m": {"unconnected-collection": 3}, "vd": "4fc8010d0215"}
 {"id": "c:povidky-malostranske", "m": {"unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:povidky-o-vlasti", "m": {"unconnected-collection": 2}, "vd": "4fc8010d0215"}
@@ -1444,6 +1495,7 @@
 {"id": "c:pozlacene", "m": {"invented-rite": 2, "same-sex-secondary": 1, "unearned-competence": 1}, "vd": "4fc8010d0215"}
 {"id": "c:pozlaceny-mesic", "m": {"low-drive": 1}, "vd": "4fc8010d0215"}
 {"id": "c:pozustali", "m": {"faith-examined": 2, "infidelity-subplot": 1, "motives-on-page": 2, "nameable-idea": 2, "religion-mocked": 1, "sex-volume": 1}, "vd": "4fc8010d0215"}
+{"id": "c:pozvani-do-sociologie", "m": {"nameable-idea": 3}, "vd": "4fc8010d0215"}
 {"id": "c:pozvani-na-popravu", "m": {"bleakness": 2, "infidelity-subplot": 1, "nameable-idea": 2, "passive-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:prach", "m": {"coherent-world": 1, "nameable-idea": 1, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:pramen-povyseni", "m": {"coherent-world": 2, "differentiated-cast": 1, "faith-examined": 1, "motives-on-page": 2, "nameable-idea": 1, "padding": 2}, "vd": "4fc8010d0215"}
@@ -1465,6 +1517,7 @@
 {"id": "c:predtuchy-smyslnosti", "m": {"sex-volume": 3}, "vd": "4fc8010d0215"}
 {"id": "c:predvedte-mrtve", "m": {"coherent-world": 2, "differentiated-cast": 2, "infidelity-subplot": 2, "interesting-lead": 3, "motives-on-page": 3, "unrootable-lead": 1}, "vd": "4fc8010d0215"}
 {"id": "c:prekonavani-traumatu", "m": {}, "vd": "4fc8010d0215"}
+{"id": "c:prekrocit-prah-nadeje", "m": {"faith-examined": 2, "theology-subject": 3}, "vd": "4fc8010d0215"}
 {"id": "c:pres-pisek", "m": {"motives-on-page": 1}, "vd": "4fc8010d0215"}
 {"id": "c:prestupni-stanice", "m": {"faith-examined": 1, "interesting-lead": 2, "low-drive": 1, "nameable-idea": 1, "world-logic-breach": 1}, "vd": "4fc8010d0215"}
 {"id": "c:pretorian", "m": {"rootable-lead": 2}, "vd": "4fc8010d0215"}
@@ -1482,7 +1535,9 @@
 {"id": "c:pri-loupani-cibule", "m": {"nameable-idea": 1, "padding": 1}, "vd": "4fc8010d0215"}
 {"id": "c:pribeh-biafry", "m": {}, "vd": "4fc8010d0215"}
 {"id": "c:pribeh-ellie", "m": {"childish-register": 2}, "vd": "4fc8010d0215"}
+{"id": "c:pribeh-konverze", "m": {"faith-examined": 3, "theology-subject": 1}, "vd": "4fc8010d0215"}
 {"id": "c:pribeh-lily", "m": {"childish-register": 2}, "vd": "4fc8010d0215"}
+{"id": "c:pribeh-meho-zivota", "m": {"interesting-lead": 3, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:pribeh-o-lasce-a-tme", "m": {"differentiated-cast": 2, "interesting-lead": 2, "padding": 1}, "vd": "4fc8010d0215"}
 {"id": "c:pribeh-sluzebnice", "m": {"bleakness": 2, "confusing-opening-context": 1, "infidelity-subplot": 2, "interesting-lead": 2, "nameable-idea": 2, "passive-lead": 2, "same-sex-secondary": 1, "sex-volume": 2}, "vd": "4fc8010d0215"}
 {"id": "c:pribeh-ukryty-v-notach", "m": {"childish-register": 3}, "vd": "4fc8010d0215"}
@@ -1497,6 +1552,7 @@
 {"id": "c:priserne-pribehy-z-cerne-lodi", "m": {"childish-register": 1, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:prislib-krve", "m": {"confusing-opening-context": 1, "invented-rite": 2, "motives-on-page": 2}, "vd": "4fc8010d0215"}
 {"id": "c:prislib-nadeje", "m": {"flat-lead": 1}, "vd": "4fc8010d0215"}
+{"id": "c:prisne-milosrdenstvi", "m": {"faith-examined": 3, "interesting-lead": 2, "theology-subject": 1}, "vd": "4fc8010d0215"}
 {"id": "c:pristav-nebezpeci", "m": {}, "vd": "4fc8010d0215"}
 {"id": "c:priste-bude-vsechno-dobry", "m": {"motives-on-page": 1}, "vd": "4fc8010d0215"}
 {"id": "c:pristi-rok-v-tento-den", "m": {"passive-lead": 1}, "vd": "4fc8010d0215"}
@@ -1505,7 +1561,9 @@
 {"id": "c:probud-monstrum", "m": {"action-over-motives": 1, "bleakness": 2, "childish-register": 1, "differentiated-cast": 3, "interesting-lead": 2, "momentum": 2, "motives-on-page": 3, "nameable-idea": 3, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:proc-cist-fantasy-jak-to-ze-zvirata-v-knizka", "m": {"unconnected-collection": 3}, "vd": "4fc8010d0215"}
 {"id": "c:proc-se-stroje-uci", "m": {}, "vd": "4fc8010d0215"}
+{"id": "c:proc-spime", "m": {"nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:prodam-2-deti", "m": {"nameable-idea": 2}, "vd": "4fc8010d0215"}
+{"id": "c:profesor-a-silenec", "m": {"interesting-lead": 2, "momentum": 2}, "vd": "4fc8010d0215"}
 {"id": "c:projekt-dum", "m": {}, "vd": "4fc8010d0215"}
 {"id": "c:projekt-gilgames", "m": {"nameable-idea": 2, "unconnected-collection": 1}, "vd": "4fc8010d0215"}
 {"id": "c:projekt-kronos", "m": {"confusing-opening-context": 3, "early-stall": 1}, "vd": "4fc8010d0215"}
@@ -1517,6 +1575,7 @@
 {"id": "c:promeny-kafkovy-prahy", "m": {"unconnected-collection": 3}, "vd": "4fc8010d0215"}
 {"id": "c:promluv-pameti", "m": {"low-drive": 1, "unconnected-collection": 1}, "vd": "4fc8010d0215"}
 {"id": "c:propast-casu", "m": {}, "vd": "4fc8010d0215"}
+{"id": "c:propleteny-zivot", "m": {"coherent-world": 2, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:propustka-na-svobodu", "m": {"infidelity-subplot": 3, "momentum": 1, "rootable-lead": 1, "sex-volume": 1}, "vd": "4fc8010d0215"}
 {"id": "c:prorok-zahrada-prorokova", "m": {"faith-examined": 1, "nameable-idea": 1, "unconnected-collection": 2, "verse": 2}, "vd": "4fc8010d0215"}
 {"id": "c:prospektivni-bioetika", "m": {}, "vd": "4fc8010d0215"}
@@ -1530,6 +1589,7 @@
 {"id": "c:prozretelnost-ohne", "m": {"invented-rite": 1, "nameable-idea": 1}, "vd": "4fc8010d0215"}
 {"id": "c:prsten-nibelungu", "m": {"action-over-motives": 1}, "vd": "4fc8010d0215"}
 {"id": "c:prstenec", "m": {"differentiated-cast": 2, "discovery": 3, "sex-volume": 1, "world-logic-breach": 1}, "vd": "4fc8010d0215"}
+{"id": "c:pruvodce-inteligentniho-cloveka-filosofii", "m": {"nameable-idea": 3}, "vd": "4fc8010d0215"}
 {"id": "c:pruvodce-ztracenych", "m": {"childish-register": 1}, "vd": "4fc8010d0215"}
 {"id": "c:pruzracne-veci", "m": {"confusing-opening-context": 2, "sex-volume": 1}, "vd": "4fc8010d0215"}
 {"id": "c:prvni-clovek", "m": {"low-drive": 1}, "vd": "4fc8010d0215"}
@@ -1567,6 +1627,7 @@
 {"id": "c:pustina-zvana-mir", "m": {"same-sex-lead": 3}, "vd": "4fc8010d0215"}
 {"id": "c:putovani", "m": {"low-drive": 2, "unconnected-collection": 1, "verse": 2}, "vd": "4fc8010d0215"}
 {"id": "c:putovani-jednoho-slona", "m": {"low-drive": 1, "religion-mocked": 1}, "vd": "4fc8010d0215"}
+{"id": "c:putovani-s-epikurem", "m": {"nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:putovani-skritka-vltavinka-po-vltave", "m": {"childish-register": 3}, "vd": "4fc8010d0215"}
 {"id": "c:puvod", "m": {"action-over-motives": 2, "world-logic-breach": 1}, "vd": "4fc8010d0215"}
 {"id": "c:pycha-a-premlouvani", "m": {"differentiated-cast": 2, "interesting-lead": 2, "motives-on-page": 3, "rootable-lead": 2}, "vd": "4fc8010d0215"}
@@ -1650,6 +1711,7 @@
 {"id": "c:sance-na-lasku", "m": {"sex-volume": 2}, "vd": "4fc8010d0215"}
 {"id": "c:sanctum", "m": {"childish-register": 1, "same-sex-secondary": 1, "sequel-rerun": 1}, "vd": "4fc8010d0215"}
 {"id": "c:sanghajske-nadrazi", "m": {"sex-volume": 2}, "vd": "4fc8010d0215"}
+{"id": "c:sapiens", "m": {"momentum": 2, "nameable-idea": 3}, "vd": "4fc8010d0215"}
 {"id": "c:sarlotina-pavucinka", "m": {"child-feel-lead": 2, "childish-register": 1, "nameable-idea": 2, "passive-lead": 2, "rootable-lead": 3}, "vd": "4fc8010d0215"}
 {"id": "c:satanarcheolegenialkohrozny-punc-prani", "m": {"childish-register": 2, "real-occult": 3}, "vd": "4fc8010d0215"}
 {"id": "c:sauronova-nevesta", "m": {}, "vd": "4fc8010d0215"}
@@ -1683,6 +1745,7 @@
 {"id": "c:setkani-s-ramou", "m": {"action-over-motives": 2, "coherent-world": 3, "discovery": 2, "flat-lead": 1}, "vd": "4fc8010d0215"}
 {"id": "c:setkani-se-smrti", "m": {"bleakness": 1, "momentum": 2, "motives-on-page": 2, "nameable-idea": 2, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:setkani-v-telgte", "m": {"confusing-opening-context": 2, "low-drive": 1, "nameable-idea": 1}, "vd": "4fc8010d0215"}
+{"id": "c:setri-se-einsteine", "m": {"momentum": 2, "nameable-idea": 1}, "vd": "4fc8010d0215"}
 {"id": "c:severka", "m": {"motives-on-page": 1}, "vd": "4fc8010d0215"}
 {"id": "c:sfumato", "m": {"bleakness": 1, "same-sex-secondary": 1}, "vd": "4fc8010d0215"}
 {"id": "c:shannarovy-magicke-elfeiny", "m": {"interesting-lead": 2, "invented-rite": 3, "rootable-lead": 2}, "vd": "4fc8010d0215"}
@@ -1725,6 +1788,7 @@
 {"id": "c:skritci-radostnicci-a-vesele-carovani", "m": {"childish-register": 3, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:skritkove", "m": {"childish-register": 3}, "vd": "4fc8010d0215"}
 {"id": "c:skrivanci-ve-valce", "m": {"childish-register": 1, "motives-on-page": 2, "nameable-idea": 1, "rootable-lead": 2}, "vd": "4fc8010d0215"}
+{"id": "c:skryta-realita", "m": {"coherent-world": 2, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:skyward", "m": {"child-feel-lead": 1, "childish-register": 1, "coherent-world": 1, "differentiated-cast": 2, "discovery": 2, "interesting-lead": 2, "momentum": 1, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:slavik-hannah", "m": {"bleakness": 2, "differentiated-cast": 2, "motives-on-page": 2, "rootable-lead": 2, "sex-volume": 1}, "vd": "4fc8010d0215"}
 {"id": "c:slavne-casy", "m": {"flat-lead": 1, "padding": 1}, "vd": "4fc8010d0215"}
@@ -1755,6 +1819,7 @@
 {"id": "c:smrtka", "m": {"nameable-idea": 1, "world-logic-breach": 1}, "vd": "4fc8010d0215"}
 {"id": "c:smrtna-zima", "m": {"discovery": 1}, "vd": "4fc8010d0215"}
 {"id": "c:smrtonosne-sny", "m": {"bleakness": 1, "nameable-idea": 3, "passive-lead": 3}, "vd": "4fc8010d0215"}
+{"id": "c:snad-ti-nedelaji-starosti-cizi-nazory", "m": {"interesting-lead": 3, "momentum": 2, "nameable-idea": 1}, "vd": "4fc8010d0215"}
 {"id": "c:snidane-sampionu-aneb-sbohem-modre-pondeli", "m": {"crude-sex": 2, "low-drive": 2, "nameable-idea": 1, "padding": 2}, "vd": "4fc8010d0215"}
 {"id": "c:snih", "m": {"crude-sex": 2, "nameable-idea": 2, "padding": 1, "religion-mocked": 2, "sex-volume": 1}, "vd": "4fc8010d0215"}
 {"id": "c:snis-o-druhe-zemi", "m": {"low-drive": 1}, "vd": "4fc8010d0215"}
@@ -1768,6 +1833,7 @@
 {"id": "c:some-desperate-glory", "m": {"bleakness": 2, "early-stall": 1, "interesting-lead": 2, "motives-on-page": 2, "nameable-idea": 2, "same-sex-secondary": 1}, "vd": "4fc8010d0215"}
 {"id": "c:souborne-dilo-x", "m": {"unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:soumrak-dne", "m": {"interesting-lead": 3, "motives-on-page": 2, "nameable-idea": 3, "passive-lead": 1}, "vd": "4fc8010d0215"}
+{"id": "c:souostrovi-gulag", "m": {"bleakness": 2, "coherent-world": 3, "nameable-idea": 3}, "vd": "4fc8010d0215"}
 {"id": "c:souostrovi-gulag-3", "m": {"bleakness": 2, "padding": 1}, "vd": "4fc8010d0215"}
 {"id": "c:souziti-s-partnerem-po-mrtvici", "m": {}, "vd": "4fc8010d0215"}
 {"id": "c:sovi-pribeh", "m": {"child-feel-lead": 2, "childish-register": 2, "padding": 1}, "vd": "4fc8010d0215"}
@@ -1808,6 +1874,7 @@
 {"id": "c:stella-maris", "m": {"bleakness": 3, "low-drive": 1, "nameable-idea": 2, "sex-volume": 1}, "vd": "4fc8010d0215"}
 {"id": "c:sten", "m": {"action-over-motives": 2, "flat-lead": 1}, "vd": "4fc8010d0215"}
 {"id": "c:stepanuv-podivuhodny-stroj", "m": {"childish-register": 3}, "vd": "4fc8010d0215"}
+{"id": "c:stephen-hawking", "m": {"interesting-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:stepni-vlk", "m": {"bleakness": 1, "nameable-idea": 2, "passive-lead": 1, "same-sex-secondary": 1, "sex-volume": 1}, "vd": "4fc8010d0215"}
 {"id": "c:stesti-si-te-najde", "m": {"rootable-lead": 1}, "vd": "4fc8010d0215"}
 {"id": "c:stezka-v-troskach", "m": {"low-drive": 1, "nameable-idea": 1}, "vd": "4fc8010d0215"}
@@ -1841,6 +1908,7 @@
 {"id": "c:straz-casu", "m": {"nameable-idea": 1, "unconnected-collection": 1}, "vd": "4fc8010d0215"}
 {"id": "c:strazce-snu", "m": {"motives-on-page": 2, "rootable-lead": 3, "same-sex-secondary": 1, "sex-volume": 1, "unconnected-collection": 1}, "vd": "4fc8010d0215"}
 {"id": "c:strazcove-varadinu", "m": {"interesting-lead": 1, "motives-on-page": 1, "unearned-competence": 1}, "vd": "4fc8010d0215"}
+{"id": "c:stret-civilizaci", "m": {"nameable-idea": 3}, "vd": "4fc8010d0215"}
 {"id": "c:stret-imperii", "m": {"action-over-motives": 2}, "vd": "4fc8010d0215"}
 {"id": "c:stretnuti", "m": {}, "vd": "4fc8010d0215"}
 {"id": "c:stribrna-maska", "m": {"child-feel-lead": 1, "childish-register": 2, "invented-rite": 3}, "vd": "4fc8010d0215"}
@@ -1853,7 +1921,11 @@
 {"id": "c:stroje-jako-ja-a-lide-jako-vy", "m": {"low-drive": 1, "nameable-idea": 3, "same-sex-secondary": 1, "sex-volume": 1}, "vd": "4fc8010d0215"}
 {"id": "c:strom-lzi", "m": {"coherent-world": 2, "interesting-lead": 2, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:strom-stul-kniha", "m": {"child-feel-lead": 1, "childish-register": 2, "nameable-idea": 1}, "vd": "4fc8010d0215"}
+{"id": "c:strucna-historie-casu", "m": {"coherent-world": 3, "nameable-idea": 3}, "vd": "4fc8010d0215"}
+{"id": "c:strucna-historie-temer-vseho", "m": {"coherent-world": 2, "momentum": 2, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:strucna-historie-vecneho-zivota", "m": {}, "vd": "4fc8010d0215"}
+{"id": "c:strucne-odpovedi-na-velke-otazky", "m": {"coherent-world": 2, "nameable-idea": 2, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
+{"id": "c:strucnejsi-historie-casu", "m": {"coherent-world": 2, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:studene-svetlo-hvezd", "m": {"bleakness": 2, "nameable-idea": 1, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:stul-pro-dva", "m": {"unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:stul-v-koute", "m": {"differentiated-cast": 1, "low-drive": 1}, "vd": "4fc8010d0215"}
@@ -1880,6 +1952,7 @@
 {"id": "c:svet-na-konci-casu", "m": {}, "vd": "4fc8010d0215"}
 {"id": "c:svet-uzasny-jako-kapka-jedu", "m": {"unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:svet-v-bouri", "m": {"action-over-motives": 1}, "vd": "4fc8010d0215"}
+{"id": "c:svet-vcerejska", "m": {"interesting-lead": 2, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:svet-ve-stinu-demonu", "m": {"coherent-world": 2, "nameable-idea": 3, "padding": 1}, "vd": "4fc8010d0215"}
 {"id": "c:svetelne-kroky", "m": {"confusing-opening-context": 1, "low-drive": 1}, "vd": "4fc8010d0215"}
 {"id": "c:svetla-na-obloze", "m": {}, "vd": "4fc8010d0215"}
@@ -1889,10 +1962,12 @@
 {"id": "c:svezest-vody", "m": {"motives-on-page": 2, "nameable-idea": 2, "same-sex-lead": 3}, "vd": "4fc8010d0215"}
 {"id": "c:svobodni-bastardi", "m": {}, "vd": "4fc8010d0215"}
 {"id": "c:symbiont", "m": {"bleakness": 1, "coherent-world": 1, "discovery": 2, "nameable-idea": 2}, "vd": "4fc8010d0215"}
+{"id": "c:symposion", "m": {"nameable-idea": 3}, "vd": "4fc8010d0215"}
 {"id": "c:syn-draka", "m": {"low-drive": 1, "world-logic-breach": 1}, "vd": "4fc8010d0215"}
 {"id": "c:syn-lowry", "m": {"childish-register": 1, "interesting-lead": 1, "low-drive": 1, "motives-on-page": 2, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:synove-a-milenci", "m": {"infidelity-subplot": 2, "motives-on-page": 2, "passive-lead": 1, "sex-volume": 1}, "vd": "4fc8010d0215"}
 {"id": "c:synteza", "m": {"discovery": 1}, "vd": "4fc8010d0215"}
+{"id": "c:syr-a-cervi", "m": {"interesting-lead": 2, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:syren", "m": {"childish-register": 2, "invented-rite": 2, "world-logic-breach": 1}, "vd": "4fc8010d0215"}
 {"id": "c:tabaterka-z-bagomba-vonnegut", "m": {"unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:tagus-kentaur", "m": {"child-feel-lead": 2, "childish-register": 3, "sequel-rerun": 3}, "vd": "4fc8010d0215"}
@@ -1909,6 +1984,7 @@
 {"id": "c:tajemstvi-na-kuzi", "m": {"infidelity-subplot": 2, "interesting-lead": 2, "motives-on-page": 2, "nameable-idea": 1, "rootable-lead": 2, "sex-volume": 1}, "vd": "4fc8010d0215"}
 {"id": "c:tajemstvi-wilhelma-storitze", "m": {}, "vd": "4fc8010d0215"}
 {"id": "c:tajny-agent", "m": {"bleakness": 2, "passive-lead": 1, "unrootable-lead": 1}, "vd": "4fc8010d0215"}
+{"id": "c:tajny-zivot-stromu", "m": {"momentum": 1, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:tajuplny-ostrov", "m": {"childish-register": 1, "discovery": 2, "flat-lead": 1, "padding": 1, "unearned-competence": 2, "world-logic-breach": 1}, "vd": "4fc8010d0215"}
 {"id": "c:tak-akorat", "m": {"bleakness": 1, "nameable-idea": 1}, "vd": "4fc8010d0215"}
 {"id": "c:tak-pravil-nietzsche", "m": {"childish-register": 1, "nameable-idea": 2}, "vd": "4fc8010d0215"}
@@ -2023,6 +2099,7 @@
 {"id": "c:tygrik-v-nesnazich", "m": {"childish-register": 3}, "vd": "4fc8010d0215"}
 {"id": "c:tymian-z-oxary", "m": {"childish-register": 2}, "vd": "4fc8010d0215"}
 {"id": "c:typhonsky-pakt", "m": {"action-over-motives": 2, "world-logic-breach": 2}, "vd": "4fc8010d0215"}
+{"id": "c:tyranie", "m": {"momentum": 2, "nameable-idea": 3}, "vd": "4fc8010d0215"}
 {"id": "c:tyranuv-zakon", "m": {"differentiated-cast": 2, "faith-examined": 1, "interesting-lead": 2, "invented-rite": 1, "motives-on-page": 2, "nameable-idea": 2, "unrootable-lead": 1}, "vd": "4fc8010d0215"}
 {"id": "c:u-jezera", "m": {"infidelity-subplot": 1, "motives-on-page": 2, "same-sex-secondary": 2}, "vd": "4fc8010d0215"}
 {"id": "c:u-ra-no-va", "m": {"world-logic-breach": 1}, "vd": "4fc8010d0215"}
@@ -2033,6 +2110,7 @@
 {"id": "c:udoli-nadeje", "m": {"low-drive": 1}, "vd": "4fc8010d0215"}
 {"id": "c:uglies", "m": {"childish-register": 1, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:ulice-ztracenych-bratri", "m": {"bleakness": 2, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
+{"id": "c:umeni-milovat", "m": {"nameable-idea": 3}, "vd": "4fc8010d0215"}
 {"id": "c:umeni-radosti", "m": {"crude-sex": 2, "same-sex-lead": 3, "sex-volume": 3}, "vd": "4fc8010d0215"}
 {"id": "c:underground", "m": {"action-over-motives": 1}, "vd": "4fc8010d0215"}
 {"id": "c:unsouled", "m": {"childish-register": 1, "momentum": 2, "rootable-lead": 2}, "vd": "4fc8010d0215"}
@@ -2042,7 +2120,9 @@
 {"id": "c:urbo-kune", "m": {"padding": 1}, "vd": "4fc8010d0215"}
 {"id": "c:urla", "m": {}, "vd": "4fc8010d0215"}
 {"id": "c:usmev-lorda-ickenhama", "m": {}, "vd": "4fc8010d0215"}
+{"id": "c:ustava", "m": {"nameable-idea": 3, "padding": 1}, "vd": "4fc8010d0215"}
 {"id": "c:ustrickova-smutna-smrt-a-jine-pribehy", "m": {"childish-register": 1, "unconnected-collection": 2, "verse": 3}, "vd": "4fc8010d0215"}
+{"id": "c:utajeny-les", "m": {"coherent-world": 2, "low-drive": 1, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:utek-z-arestonu", "m": {}, "vd": "4fc8010d0215"}
 {"id": "c:utek-z-cecny", "m": {}, "vd": "4fc8010d0215"}
 {"id": "c:utek-z-male-pevnosti-terezin", "m": {"early-stall": 2}, "vd": "4fc8010d0215"}
@@ -2050,6 +2130,7 @@
 {"id": "c:utek-z-tabora-14", "m": {"bleakness": 2, "nameable-idea": 2, "world-logic-breach": 1}, "vd": "4fc8010d0215"}
 {"id": "c:utek-z-teritoria-smrti", "m": {"world-logic-breach": 2}, "vd": "4fc8010d0215"}
 {"id": "c:utek-ze-sveta", "m": {}, "vd": "4fc8010d0215"}
+{"id": "c:utekl-jsem-z-osvetimi", "m": {"bleakness": 2, "coherent-world": 2, "interesting-lead": 3, "momentum": 3}, "vd": "4fc8010d0215"}
 {"id": "c:utes-nadeje", "m": {"confusing-opening-context": 2, "early-stall": 1, "padding": 1}, "vd": "4fc8010d0215"}
 {"id": "c:utociste", "m": {"rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:utociste-en", "m": {"bleakness": 1, "motives-on-page": 2, "rootable-lead": 3, "theology-subject": 1}, "vd": "4fc8010d0215"}
@@ -2057,22 +2138,28 @@
 {"id": "c:utopie", "m": {"action-over-motives": 1, "low-drive": 2, "nameable-idea": 3}, "vd": "4fc8010d0215"}
 {"id": "c:uvahy-a-imprese", "m": {"unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:uvezneni-v-robloxu", "m": {"child-feel-lead": 2, "childish-register": 3}, "vd": "4fc8010d0215"}
+{"id": "c:uvnitr-velryby-a-jine-eseje", "m": {"nameable-idea": 3, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
+{"id": "c:uvod-do-filosofie", "m": {"nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:uz-davno-ti-chci-neco-rict-a-jine-povidky", "m": {"infidelity-subplot": 1, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:uz-je-to-tady", "m": {"unconnected-collection": 3}, "vd": "4fc8010d0215"}
 {"id": "c:uzasny-mauric", "m": {"childish-register": 1, "differentiated-cast": 2, "interesting-lead": 1, "nameable-idea": 2, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:uzdraveni-rose-gold-wattsove", "m": {"unrootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:uzitecne-sebeklamy", "m": {"nameable-idea": 2, "padding": 1}, "vd": "4fc8010d0215"}
 {"id": "c:v-brise", "m": {"childish-register": 3}, "vd": "4fc8010d0215"}
+{"id": "c:v-existencialisticke-kavarne", "m": {"interesting-lead": 1, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:v-hlave", "m": {"confusing-opening-context": 2, "nameable-idea": 1}, "vd": "4fc8010d0215"}
 {"id": "c:v-jine-dobe", "m": {"world-logic-breach": 2}, "vd": "4fc8010d0215"}
 {"id": "c:v-kleci", "m": {"infidelity-subplot": 2, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:v-melounovem-cukru", "m": {"flat-lead": 1, "low-drive": 1}, "vd": "4fc8010d0215"}
 {"id": "c:v-pohode-na-vode", "m": {"child-feel-lead": 2, "childish-register": 2}, "vd": "4fc8010d0215"}
 {"id": "c:v-prazdnote", "m": {"world-logic-breach": 1}, "vd": "4fc8010d0215"}
+{"id": "c:v-sere-zone", "m": {"momentum": 2, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:v-seru-davnych-veku", "m": {"action-over-motives": 1, "childish-register": 2}, "vd": "4fc8010d0215"}
 {"id": "c:v-tajne-sluzbe-koruny-ceske", "m": {"flat-lead": 1}, "vd": "4fc8010d0215"}
+{"id": "c:v-zajeti-geografie", "m": {"coherent-world": 2, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:v-zakulisi-srdce", "m": {}, "vd": "4fc8010d0215"}
 {"id": "c:vabeni-mesice", "m": {"unearned-competence": 1}, "vd": "4fc8010d0215"}
+{"id": "c:vabive-ticho", "m": {"interesting-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:vahadlo-osudu", "m": {"bleakness": 2, "differentiated-cast": 2, "interesting-lead": 3, "motives-on-page": 3, "padding": 1, "rootable-lead": 3}, "vd": "4fc8010d0215"}
 {"id": "c:valcik-na-rozloucenou", "m": {"infidelity-subplot": 3, "sex-volume": 1}, "vd": "4fc8010d0215"}
 {"id": "c:valecna-lest", "m": {"unconnected-collection": 2}, "vd": "4fc8010d0215"}
@@ -2118,11 +2205,14 @@
 {"id": "c:velka-laska-malych-rozmeru", "m": {}, "vd": "4fc8010d0215"}
 {"id": "c:velke-cisteni-zubu-v-zoo", "m": {"childish-register": 3}, "vd": "4fc8010d0215"}
 {"id": "c:velke-dobrodruzstvi-ctyrlistku", "m": {"childish-register": 3, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
+{"id": "c:velky-vysvetlovac", "m": {"coherent-world": 2, "nameable-idea": 1}, "vd": "4fc8010d0215"}
 {"id": "c:velky-zly-lisak", "m": {"childish-register": 2, "nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:velmoc", "m": {"motives-on-page": 1}, "vd": "4fc8010d0215"}
 {"id": "c:venkovsky-lekar", "m": {"bleakness": 1, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:vepsano-krvi-vlastniho-srdce", "m": {"confusing-opening-context": 2, "differentiated-cast": 2, "motives-on-page": 2, "padding": 2, "same-sex-secondary": 2, "sex-volume": 2}, "vd": "4fc8010d0215"}
 {"id": "c:verejna-tajemstvi", "m": {"infidelity-subplot": 1, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
+{"id": "c:vesmir-v-kostce", "m": {"coherent-world": 2}, "vd": "4fc8010d0215"}
+{"id": "c:vesmir-z-niceho", "m": {"nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:vesmirna-zasilkovna", "m": {"child-feel-lead": 2, "childish-register": 3}, "vd": "4fc8010d0215"}
 {"id": "c:vesmirni-pytlaci", "m": {"child-feel-lead": 2, "childish-register": 2}, "vd": "4fc8010d0215"}
 {"id": "c:vestcuv-rok", "m": {"flat-lead": 1, "nameable-idea": 2}, "vd": "4fc8010d0215"}
@@ -2196,7 +2286,9 @@
 {"id": "c:vyslapana-cara", "m": {"bleakness": 2, "low-drive": 2, "passive-lead": 1}, "vd": "4fc8010d0215"}
 {"id": "c:vysvetlovanky", "m": {"childish-register": 2, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:vysvobozeni", "m": {"interesting-lead": 2, "nameable-idea": 2, "sex-volume": 1}, "vd": "4fc8010d0215"}
+{"id": "c:vytouzene-davnoveke-pahorky", "m": {}, "vd": "4fc8010d0215"}
 {"id": "c:vyvrhel", "m": {"faith-examined": 1, "interesting-lead": 2, "motives-on-page": 2, "rootable-lead": 1}, "vd": "4fc8010d0215"}
+{"id": "c:vyznani", "m": {"faith-examined": 3, "interesting-lead": 3, "nameable-idea": 3, "theology-subject": 1}, "vd": "4fc8010d0215"}
 {"id": "c:vzdalena-hvezda", "m": {"bleakness": 2, "padding": 1, "passive-lead": 1}, "vd": "4fc8010d0215"}
 {"id": "c:vzdelana", "m": {"bleakness": 1, "faith-examined": 1, "interesting-lead": 3, "momentum": 2, "motives-on-page": 2, "nameable-idea": 3, "rootable-lead": 3}, "vd": "4fc8010d0215"}
 {"id": "c:vzdor", "m": {"bleakness": 2}, "vd": "4fc8010d0215"}
@@ -2210,6 +2302,7 @@
 {"id": "c:vzpominka-zvana-rise", "m": {"coherent-world": 2, "interesting-lead": 2, "nameable-idea": 2, "same-sex-secondary": 3}, "vd": "4fc8010d0215"}
 {"id": "c:vzpominky-jednoho-disidenta", "m": {}, "vd": "4fc8010d0215"}
 {"id": "c:vzpominky-na-zemi", "m": {"faith-examined": 2, "invented-rite": 2, "motives-on-page": 2, "nameable-idea": 1}, "vd": "4fc8010d0215"}
+{"id": "c:vzpoura-davu", "m": {"nameable-idea": 3}, "vd": "4fc8010d0215"}
 {"id": "c:warleggan", "m": {"infidelity-subplot": 2, "interesting-lead": 2, "motives-on-page": 2, "sex-volume": 1}, "vd": "4fc8010d0215"}
 {"id": "c:warren-xiii-a-septajici-les", "m": {"child-feel-lead": 1, "childish-register": 2}, "vd": "4fc8010d0215"}
 {"id": "c:we-are-legion", "m": {"momentum": 2, "rootable-lead": 2}, "vd": "4fc8010d0215"}
@@ -2222,6 +2315,7 @@
 {"id": "c:z-domu-a-zahrady", "m": {"childish-register": 3, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:z-kosti-a-inkoustu", "m": {"childish-register": 1, "early-stall": 1, "nameable-idea": 2, "rootable-lead": 2, "same-sex-secondary": 1}, "vd": "4fc8010d0215"}
 {"id": "c:z-mitfordu-do-stare-vlasti", "m": {"low-drive": 1}, "vd": "4fc8010d0215"}
+{"id": "c:z-mych-pozdejsich-let", "m": {"nameable-idea": 2, "unconnected-collection": 3}, "vd": "4fc8010d0215"}
 {"id": "c:z-podruci-islamu-otazka-integrace-muslimu-do", "m": {"theology-subject": 1}, "vd": "4fc8010d0215"}
 {"id": "c:za-hranice-lasky", "m": {"sex-volume": 2}, "vd": "4fc8010d0215"}
 {"id": "c:za-modrym-horizontem-udalosti", "m": {"action-over-motives": 1, "discovery": 1}, "vd": "4fc8010d0215"}
@@ -2265,6 +2359,7 @@
 {"id": "c:zazracni-hosi", "m": {"infidelity-subplot": 3, "same-sex-secondary": 2, "sex-volume": 1}, "vd": "4fc8010d0215"}
 {"id": "c:zazrak-v-andach", "m": {"faith-examined": 1, "interesting-lead": 2, "momentum": 1, "nameable-idea": 1, "rootable-lead": 3}, "vd": "4fc8010d0215"}
 {"id": "c:ze-zeme-na-mesic", "m": {"low-drive": 1, "world-logic-breach": 1}, "vd": "4fc8010d0215"}
+{"id": "c:zelena-svatozar", "m": {"nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:zeleny-mozek", "m": {"flat-lead": 2, "low-drive": 1}, "vd": "4fc8010d0215"}
 {"id": "c:zelezna-vdova", "m": {"same-sex-secondary": 3}, "vd": "4fc8010d0215"}
 {"id": "c:zelezny-pulmesic", "m": {"action-over-motives": 2, "flat-lead": 1}, "vd": "4fc8010d0215"}
@@ -2285,11 +2380,13 @@
 {"id": "c:zimni-pribeh", "m": {"low-drive": 2, "padding": 2, "world-logic-breach": 1}, "vd": "4fc8010d0215"}
 {"id": "c:zimni-vcely", "m": {"infidelity-subplot": 2, "sex-volume": 1}, "vd": "4fc8010d0215"}
 {"id": "c:zivot-a-doba-michaela-k", "m": {"bleakness": 2, "nameable-idea": 2, "passive-lead": 1}, "vd": "4fc8010d0215"}
+{"id": "c:zivot-jak-ho-nezname", "m": {"nameable-idea": 2}, "vd": "4fc8010d0215"}
 {"id": "c:zivot-je-jinde", "m": {"infidelity-subplot": 2, "motives-on-page": 2, "nameable-idea": 3, "sex-volume": 2, "unrootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:zivot-je-slehane-hruskove-pyre", "m": {}, "vd": "4fc8010d0215"}
 {"id": "c:zivot-je-zmena", "m": {"rootable-lead": 1}, "vd": "4fc8010d0215"}
 {"id": "c:zivot-k-nevire", "m": {"interesting-lead": 1}, "vd": "4fc8010d0215"}
 {"id": "c:zivot-za-zivot", "m": {"bleakness": 1, "motives-on-page": 2, "nameable-idea": 3, "padding": 1}, "vd": "4fc8010d0215"}
+{"id": "c:zivotni-moudrost", "m": {"nameable-idea": 2, "unconnected-collection": 2}, "vd": "4fc8010d0215"}
 {"id": "c:zjizvena", "m": {"confusing-opening-context": 1, "interesting-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:zkaza", "m": {"action-over-motives": 1, "invented-rite": 2, "rootable-lead": 2}, "vd": "4fc8010d0215"}
 {"id": "c:zkaza-ostrova-sachalin", "m": {"bleakness": 2, "flat-lead": 2, "low-drive": 1}, "vd": "4fc8010d0215"}
