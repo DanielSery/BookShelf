@@ -10,8 +10,10 @@ verdicts, so this runs a variant prompt over a named `src` instead.
 
 Verdicts land in the SAME store, `book-ai-rank.jsonl`, so the no-repeat guarantee
 still holds — but each carries `pv` (the variant name) and the digest of the
-variant prompt. The main ranker therefore treats them as foreign and re-ranks
-nothing, and `seal` still works on them because `done` is a fact about the work.
+variant prompt. The main ranker leaves a variant verdict alone on a work whose
+triage rows are all the variant's `src` (register a new variant in ai_rank.PV_SRC)
+and re-ranks it where a main slice holds the work too. A main verdict is never
+replaced here, and `seal` still works on both because `done` is a fact about the work.
 
     python tools/ai_rank_scoped.py batches <outdir> --src kids-heading \
         --prompt tools/ai-rank-crossover-prompt.md --pv crossover-v1 [--size 500]
@@ -79,6 +81,10 @@ def load_annots():
     return out
 
 
+def main_held(row):
+    return bool(row) and not row.get("pv")
+
+
 def todo_list(src, pd, pv):
     works, store = load_works(src), ai_rank.load_store()
     out = []
@@ -86,7 +92,7 @@ def todo_list(src, pd, pv):
         if w["skip"]:
             continue
         s = store.get(k, {})
-        if s.get("done"):
+        if s.get("done") or main_held(s):
             continue
         if s.get("pd") == pd and s.get("pv") == pv:
             continue
@@ -150,7 +156,7 @@ def cmd_merge(paths, prompt, pv, at):
                    "pv": pv, "at": at}
             if rec is not None:
                 row["rec"], row["idea"] = rec, idea
-            if k in store and not store[k].get("pv"):
+            if main_held(store.get(k)):
                 kept += 1
                 continue
             if store.get(k, {}).get("done"):
