@@ -701,6 +701,7 @@ const TAGS = {
   ancient: 'ancient world', medieval: 'medieval', 'medieval-fantasy': 'medieval fantasy',
   'modern-war': 'modern war', ww2: 'Second World War', holocaust: 'Holocaust',
   'communist-era': 'communist era', space: 'space', exploration: 'world exploration',
+  'big-questions': 'big questions',
 };
 // Lifted into `tags` from the similarity profiles rather than authored in book-cache.json,
 // so a book without a profile never carries them. A book gets the tag when one of the
@@ -711,6 +712,7 @@ const PROFILE_TAGS = {
   ancient: [['ancient']], medieval: [['medieval']], 'medieval-fantasy': [['pseudo-medieval']],
   'modern-war': [['ww1'], ['ww2'], ['war-novel', NOT_MODERN]], ww2: [['ww2']], holocaust: [['holocaust']],
   'communist-era': [['communist-era']], space: [['space']],
+  'big-questions': [['memoir'], ['biography'], ['popular-science'], ['essays'], ['faith-nonfiction']],
 };
 const profileTags = sim => {
   const out = {};
