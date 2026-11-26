@@ -31,6 +31,7 @@ PROFILE_TAGS = {
     "medieval-fantasy": [("pseudo-medieval", set())],
     "modern-war": [("ww1", set()), ("ww2", set()), ("war-novel", NOT_MODERN)], "ww2": [("ww2", set())],
     "holocaust": [("holocaust", set())], "communist-era": [("communist-era", set())], "space": [("space", set())],
+    "big-questions": [(t, set()) for t in ("memoir", "biography", "popular-science", "essays", "faith-nonfiction")],
 }
 VERDICTS = {"earns", "clear", "costs", "fires", "unknown"}
 MIN_WIDTH = 6

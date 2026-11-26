@@ -53,7 +53,8 @@ first time an axis is reworded.
 - **Filter**: any of `genre` (sf · fantasy · litfic · historical · testimony ·
   allegory · thriller, or the tag `exploration`, which matches `tags` instead, or one of
   `ancient` · `medieval` · `medieval-fantasy` · `modern-war` · `ww2` · `holocaust` ·
-  `communist-era` · `space`, which match the similarity profile in `book-profiles.jsonl`
+  `communist-era` · `space` · `big-questions` (memoir, biography, popular science, essays,
+  faith non-fiction), which match the similarity profile in `book-profiles.jsonl`
   by the rules in `PROFILE_TAGS` of `tools/deep.py`), `form`,
   `audience`, matched against `book-cache.json`.
   Several genres means one independent run per genre, each with its own target.
