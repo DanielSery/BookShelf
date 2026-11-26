@@ -716,6 +716,7 @@ const PROFILE_TAGS = {
   'big-questions': [['memoir'], ['biography'], ['popular-science'], ['essays'], ['faith-nonfiction']],
 };
 const GENRE_TAGS = { ideas: 'big-questions' };
+const allTags = (own, profiled, genre) => [...new Set([...(own || []), ...(profiled || []), GENRE_TAGS[genre]].filter(Boolean))];
 const profileTags = sim => {
   const out = {};
   if (!sim) return out;
@@ -757,7 +758,8 @@ const readRows = doc => Object.entries(doc.reviews || {})
 function readDecorate(r, { RM, RF, PT, OR }) {
   r.media = RM[r.key] || {};
   const f = RF[r.key] || {};
-  r.genre = f.genre || ''; r.tags = [...(f.tags || []), ...(PT['r:' + r.key] || [])]; r.form = f.form || '';
+  r.genre = f.genre || ''; r.form = f.form || '';
+  r.tags = allTags(f.tags, PT['r:' + r.key], f.genre);
   // '' rather than 'adult': an unfaceted read row must not masquerade as adult,
   // or a missing facet row silently joins the wrong bucket instead of showing as a gap.
   r.audience = f.audience || '';
@@ -827,7 +829,7 @@ async function load() {
     const b = byKey[e.key] || {}, m = M[e.key] || {};
     const cz = b.cz || {}, et = b.enText || {};
     const gemRoute = cz.state !== 'verified' && GEM_LEVELS.includes(et.level);
-    const tags = [...new Set([...(b.tags || []), ...(PT['c:' + e.key] || []), GENRE_TAGS[b.genre]].filter(Boolean))];
+    const tags = allTags(b.tags, PT['c:' + e.key], b.genre);
     const stale = [];
     for (const [route, r, k] of [['CZ print', cz, 'cz']]) {
       const lim = ttl[k + '.' + r.state], age = r.checked ? daysSince(r.checked) : null;

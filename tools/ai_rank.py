@@ -617,7 +617,7 @@ def cmd_batches(outdir, size=500, mx=20):
     vetoed = 0
     todo = []
     for k, w in works.items():
-        if w["skip"] or store.get(k, {}).get("done") or store.get(k, {}).get("pd") == pd:
+        if w["skip"] or store.get(k, {}).get("done") or store.get(k, {}).get("pd") == pd                 or store.get(k, {}).get("pv"):
             continue
         if heading_veto(hdgs.get(k, [])):
             vetoed += 1
@@ -721,7 +721,7 @@ def cmd_status():
     print(f"works           {len(works)}  ({len(live)} neither tier-2 nor sealed)")
     print(f"judged (fresh)  {len(fresh)}   stale/other-prompt {len(store) - len(fresh)}")
     print(f"sealed done     {len(done)}   (promoted; never re-sent even on a new prompt)")
-    print(f"remaining       {sum(1 for w in live if store.get(w['k'], {}).get('pd') != pd)}")
+    print(f"remaining       {sum(1 for w in live if store.get(w['k'], {}).get('pd') != pd and not store.get(w['k'], {}).get('pv'))}")
     unsealed = [r for r in fresh.values() if "s" in r and not r.get("done")]
     d = collections.Counter(ranked(r) for r in unsealed)
     raw = collections.Counter(r["s"] for r in unsealed if not r.get("rec"))

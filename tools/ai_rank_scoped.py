@@ -120,7 +120,7 @@ def cmd_batches(outdir, src, prompt, pv, size):
 
 def cmd_merge(paths, prompt, pv, at):
     pd, store = digest(prompt), ai_rank.load_store()
-    added = skipped = 0
+    added = skipped = kept = 0
     for p in paths:
         for line in io.open(p, encoding="utf-8"):
             line = line.strip()
@@ -150,12 +150,16 @@ def cmd_merge(paths, prompt, pv, at):
                    "pv": pv, "at": at}
             if rec is not None:
                 row["rec"], row["idea"] = rec, idea
+            if k in store and not store[k].get("pv"):
+                kept += 1
+                continue
             if store.get(k, {}).get("done"):
                 row["done"] = store[k]["done"]
             store[k] = row
             added += 1
     ai_rank.save_store(store)
-    print("merged %d verdicts (%d unparseable) | store now %d" % (added, skipped, len(store)))
+    print("merged %d verdicts (%d unparseable, %d kept the main prompt's verdict) | store now %d"
+          % (added, skipped, kept, len(store)))
     mine = [r for r in store.values() if r.get("pv") == pv]
     c = collections.Counter(r["s"] for r in mine)
     print("  %s: %d verdicts | scores %s" % (pv, len(mine), sorted(c.items(), reverse=True)))

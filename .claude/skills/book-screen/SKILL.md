@@ -336,7 +336,8 @@ Three rules for using the scores:
 
 Promote a tier-1 row when **all four** hold:
 
-1. `cls` is eligible — `sf-fantasy`, `litfic`, `short-idea`, `testimony-allegory`.
+1. `cls` is eligible — `sf-fantasy`, `litfic`, `short-idea`, `testimony-allegory`,
+   `ideas` (general-reader non-fiction, since 2026-11-26).
 2. `band` is `A?`, not `?`. A `?` means the classifier had nothing to go on;
    send it back for a name-review first, don't promote blind.
 3. Nothing obviously trips a hard filter on the title itself.
