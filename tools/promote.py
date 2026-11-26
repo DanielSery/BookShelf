@@ -30,12 +30,13 @@ it replaced, and one batch of holdout up front would have caught it.
     python tools/promote.py queue   <dir> [--n 10] [--min-score 4] [--include-unranked]
     python tools/promote.py batch   <dir> [--per 15] [--per-author 15] [--n 200]
                                           [--unknown] [--cls litfic,sf-fantasy]
-                                          [--marc fantasy,sf,none]
+                                          [--marc fantasy,sf,none] [--pv ideas-v1]
     python tools/promote.py absorb  <dir> [--force-low]
     python tools/promote.py score   <dir>
 
 `--unknown` queues the works the cheap model did NOT recognise, which every other
-selection excludes. See cmd_batch.
+selection excludes. See cmd_batch. `--pv` keeps only verdicts from that variant prompt
+(tools/ai_rank_scoped.py), so a targeted screen is not mixed with the main queue.
 """
 import json, io, os, re, sys, glob, statistics, collections, difflib, unicodedata
 import pitch as pitchcheck
@@ -57,7 +58,7 @@ LIBRARY_URL = {"roznov": "https://katalog.knir.cz/records/"}
 # library holds in Czech print; easy and moderate make it an English gem (2026-10-25).
 EN_LEVELS = ("easy", "moderate", "hard")
 
-GENRE = {"sf", "fantasy", "litfic", "historical", "testimony", "allegory", "thriller"}
+GENRE = {"sf", "fantasy", "litfic", "historical", "testimony", "allegory", "thriller", "ideas"}
 # `verse` added 2026-08-27: Havran 40 ties the lowest score in the log and the reader
 # named the form itself as a cause, which no existing axis covered - short PROSE merely
 # fails to earn points under the short-idea-driven suspension, verse actually costs.
@@ -513,7 +514,7 @@ def eligible_score(A, r, unranked_ok):
 
 
 def cmd_batch(outdir, per=15, n=200, minscore=4, per_author=15, top=0, unranked_ok=False,
-              unknown=False, clsfilter=None, marcfilter=None):
+              unknown=False, clsfilter=None, marcfilter=None, pv=None):
     """Group the queue so one agent covers several books and the fixed context is
     paid once instead of once per book.
 
@@ -580,6 +581,8 @@ def cmd_batch(outdir, per=15, n=200, minscore=4, per_author=15, top=0, unranked_
     for k, w in wk.items():
         r = store.get(k)
         if not r or r.get("done") or w["skip"] or "s" not in r:
+            continue
+        if pv and r.get("pv") != pv:
             continue
         # The triage class is the best predictor available before promotion, and the
         # score is not: measured over 1,275 promoted books, `litfic` reached the propose
@@ -1269,7 +1272,8 @@ if __name__ == "__main__":
               if "--marc" in sys.argv else None)
         cmd_batch(a[1], g("--per", 15), g("--n", 200), g("--min-score", 4),
                   g("--per-author", 15), g("--top", 0), "--include-unranked" in sys.argv,
-                  "--unknown" in sys.argv, cf, mf)
+                  "--unknown" in sys.argv, cf, mf,
+                  sys.argv[sys.argv.index("--pv") + 1] if "--pv" in sys.argv else None)
     elif a[0] == "holdout":
         cmd_holdout(a[1], g("--n", 10))
     elif a[0] == "absorb":

@@ -181,7 +181,11 @@ STOP_TITLES = {"empire", "the joke", "the truth",
                # "Silence" of two Singh rows and `The Help` on "escapes with the help of".
                # The SF/F series-gap screen: `Last Human` on "the last human city", and the
                # Red Dwarf series name on the ship itself in its own volume 1's row.
-               "silence", "the help", "last human", "red dwarf"}
+               "silence", "the help", "last human", "red dwarf",
+               # 2026-11-26, the big-questions screen: `What If`, `Confessions`, `Republic`,
+               # `Dark Matter` and `Egypt` fired on "the 'what if' idea-work", a Murakami
+               # story title, Star Wars' Republic, the physics and a setting.
+               "what if", "confessions", "republic", "dark matter", "egypt"}
 
 # Phrasing that argues from the neighbours without naming one.
 # "the Author(s) row" is exempt: that points at the Authors table in

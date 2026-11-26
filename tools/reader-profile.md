@@ -317,8 +317,11 @@ a positive case stated in its own words.
   where it sat 28 under: a bleakness deduction is about a third smaller than those. A discount, not a bar,
   and it is the mood, not the subject: *Animal Farm* 78 is bleak and distanced. Companionship and self-sacrifice beat solo
   survival.
-- **Faith as a thread inside a story**, not as the whole of it. No theology or
-  apologetics as a subject in its own right. **And religion played as SATIRE is
+- **Faith: best as a thread inside a story; a book about faith must be approachable**
+  (re-ruled 2026-11-26). Apologetics and theology are no longer excluded, but "it needs
+  to be approachable and interesting, I do not want to have strict theory or boring
+  titles": grade an engaging case for belief normally, a systematic or dry one low.
+  **And religion played as SATIRE is
   disliked outright — anchored 2026-09-03** on *Já, robot* 50, abandoned partly on a
   story whose robots invent a god: "it seemed quite as satire on main religions, blind
   faith, which I did not like". **The object is religion, not satire** — political and
@@ -335,6 +338,10 @@ a positive case stated in its own words.
   exposed: a multi-author or best-of anthology, where the order is an editor's and
   nothing earns patience. Screened over the 28 collections at or above the propose line
   and no others.
+- **Non-fiction that explains is in scope when written for a general reader**
+  (2026-11-26): popular science, philosophy, essays, approachable apologetics
+  (*A Briefer History of Time* is his example). It earns on `axis:ideas` and costs on a
+  dense or dry register. Textbooks, manuals, self-help and reference works stay out.
 - **The memoir/testimony form earns nothing by itself.** What earns is examining
   what is actually true, plus insight into how another group experiences the world.
   The same form produced both the highest non-fiction score and an outright DNF.

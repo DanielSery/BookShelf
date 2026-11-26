@@ -685,7 +685,7 @@ const slug = s => s.normalize('NFKD').replace(/[̀-ͯ]/g, '')
 const GENRE = {
   sf: 'science fiction', fantasy: 'fantasy', litfic: 'literary fiction',
   historical: 'historical', testimony: 'testimony / memoir',
-  allegory: 'allegory / fable', thriller: 'thriller',
+  allegory: 'allegory / fable', thriller: 'thriller', ideas: 'science & ideas',
 };
 const FORM = { novel: 'novel', novella: 'novella', stories: 'stories',
                nonfiction: 'non-fiction', verse: 'verse' };
@@ -705,7 +705,8 @@ const TAGS = {
 };
 // Lifted into `tags` from the similarity profiles rather than authored in book-cache.json,
 // so a book without a profile never carries them. A book gets the tag when one of the
-// [profile tag, tags it must not have] pairs matches. Must match PROFILE_TAGS in tools/deep.py.
+// [profile tag, tags it must not have] pairs matches, or its genre is in GENRE_TAGS.
+// Must match PROFILE_TAGS and GENRE_TAGS in tools/deep.py.
 const NOT_MODERN = ['ancient', 'medieval', 'pseudo-medieval', 'early-modern', 'nineteenth-century',
                     'secondary-world', 'space', 'alien-world', 'far-future'];
 const PROFILE_TAGS = {
@@ -714,6 +715,8 @@ const PROFILE_TAGS = {
   'communist-era': [['communist-era']], space: [['space']],
   'big-questions': [['memoir'], ['biography'], ['popular-science'], ['essays'], ['faith-nonfiction']],
 };
+const GENRE_TAGS = { ideas: 'big-questions' };
+const allTags = (own, profiled, genre) => [...new Set([...(own || []), ...(profiled || []), GENRE_TAGS[genre]].filter(Boolean))];
 const profileTags = sim => {
   const out = {};
   if (!sim) return out;
@@ -755,7 +758,8 @@ const readRows = doc => Object.entries(doc.reviews || {})
 function readDecorate(r, { RM, RF, PT, OR }) {
   r.media = RM[r.key] || {};
   const f = RF[r.key] || {};
-  r.genre = f.genre || ''; r.tags = [...(f.tags || []), ...(PT['r:' + r.key] || [])]; r.form = f.form || '';
+  r.genre = f.genre || ''; r.form = f.form || '';
+  r.tags = allTags(f.tags, PT['r:' + r.key], f.genre);
   // '' rather than 'adult': an unfaceted read row must not masquerade as adult,
   // or a missing facet row silently joins the wrong bucket instead of showing as a gap.
   r.audience = f.audience || '';
@@ -825,7 +829,7 @@ async function load() {
     const b = byKey[e.key] || {}, m = M[e.key] || {};
     const cz = b.cz || {}, et = b.enText || {};
     const gemRoute = cz.state !== 'verified' && GEM_LEVELS.includes(et.level);
-    const tags = [...(b.tags || []), ...(PT['c:' + e.key] || [])];
+    const tags = allTags(b.tags, PT['c:' + e.key], b.genre);
     const stale = [];
     for (const [route, r, k] of [['CZ print', cz, 'cz']]) {
       const lim = ttl[k + '.' + r.state], age = r.checked ? daysSince(r.checked) : null;

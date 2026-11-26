@@ -128,8 +128,9 @@ def load_works():
         k = workkey(r["t"], r["a"])
         w = works.setdefault(k, {"k": k, "t": r["t"], "a": r["a"], "p": r["p"],
                                  "y": r["y"], "rank": -999, "skip": False,
-                                 "cls": r["cls"], "clsAll": set()})
+                                 "cls": r["cls"], "clsAll": set(), "srcAll": set()})
         w["clsAll"].add(r["cls"])
+        w["srcAll"].add(r.get("src"))
         # Display only: `aCat` is the e-loan author recovered from the catalogue on
         # 2026-10-24, and the key stays on `a` so the stores joined on it still match.
         if not w["a"] and r.get("aCat"):
@@ -142,6 +143,16 @@ def load_works():
     for w in works.values():
         w["skip"] |= bool(w["clsAll"]) and all(c in DROP_CLS for c in w["clsAll"])
     return works
+
+
+# A variant verdict (ai_rank_scoped.py) holds a work only when all its triage rows are the
+# variant's own slice: elsewhere its rubric (ideas scores every novel 1) must not replace a main verdict.
+PV_SRC = {"crossover-v1": "kids-heading", "ideas-v1": "ideas-sweep"}
+
+
+def variant_held(w, r):
+    pv = r.get("pv")
+    return bool(pv) and (pv not in PV_SRC or w["srcAll"] <= {PV_SRC[pv]})
 
 
 def wants_annotation():
@@ -617,7 +628,8 @@ def cmd_batches(outdir, size=500, mx=20):
     vetoed = 0
     todo = []
     for k, w in works.items():
-        if w["skip"] or store.get(k, {}).get("done") or store.get(k, {}).get("pd") == pd:
+        r = store.get(k, {})
+        if w["skip"] or r.get("done") or r.get("pd") == pd or variant_held(w, r):
             continue
         if heading_veto(hdgs.get(k, [])):
             vetoed += 1
@@ -721,7 +733,9 @@ def cmd_status():
     print(f"works           {len(works)}  ({len(live)} neither tier-2 nor sealed)")
     print(f"judged (fresh)  {len(fresh)}   stale/other-prompt {len(store) - len(fresh)}")
     print(f"sealed done     {len(done)}   (promoted; never re-sent even on a new prompt)")
-    print(f"remaining       {sum(1 for w in live if store.get(w['k'], {}).get('pd') != pd)}")
+    left = [w for w in live if store.get(w["k"], {}).get("pd") != pd
+            and not variant_held(w, store.get(w["k"], {}))]
+    print(f"remaining       {len(left)}")
     unsealed = [r for r in fresh.values() if "s" in r and not r.get("done")]
     d = collections.Counter(ranked(r) for r in unsealed)
     raw = collections.Counter(r["s"] for r in unsealed if not r.get("rec"))

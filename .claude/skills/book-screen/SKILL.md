@@ -336,7 +336,8 @@ Three rules for using the scores:
 
 Promote a tier-1 row when **all four** hold:
 
-1. `cls` is eligible — `sf-fantasy`, `litfic`, `short-idea`, `testimony-allegory`.
+1. `cls` is eligible — `sf-fantasy`, `litfic`, `short-idea`, `testimony-allegory`,
+   `ideas` (general-reader non-fiction, since 2026-11-26).
 2. `band` is `A?`, not `?`. A `?` means the classifier had nothing to go on;
    send it back for a name-review first, don't promote blind.
 3. Nothing obviously trips a hard filter on the title itself.
@@ -1098,7 +1099,8 @@ need a blurb. Run it after every screening pass; it refuses to guess the date.
    which is why the source field exists at all). 239 of 296 rows are `adult` by
    default, so treat that value as unverified unless the source says otherwise.
    `genre`: `sf` · `fantasy` · `litfic` · `historical` · `testimony` ·
-   `allegory` · `thriller`. `form`: `novel` · `novella` · `stories` ·
+   `allegory` · `thriller` · `ideas` (non-fiction that explains: popular science,
+   philosophy, essays, faith; since 2026-11-26). `form`: `novel` · `novella` · `stories` ·
    `nonfiction`. They are **facts, so they belong here, not in the estimate**,
    and they stay two fields rather than one because they are orthogonal: Chiang's
    *Výdech* and Saki's collection are both `stories` and share nothing else.
